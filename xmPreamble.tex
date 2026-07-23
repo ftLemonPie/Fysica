@@ -11,6 +11,15 @@
 \usepackage{xpatch}
 \usepackage{titlesec}
 \makeatletter
+
+% \addcounter{chapter}
+
+\makeatletter
+\@ifundefined{c@chapter}
+  {\newcounter{chapter}}
+  {}
+\makeatother
+
 \titleformat{\chapter}[frame]
   {\normalfont}{\filright\enspace \@chapapp~\thechapter\enspace}
   {8pt}{\LARGE\bfseries\filcenter}
@@ -52,7 +61,7 @@
 \tcbuselibrary{raster}
 \usepackage[T1]{fontenc}                            % Font Styling
 \usepackage{lmodern,mathrsfs}
-\usepackage[shortlabels]{enumitem}                  % Enumitem Options
+% \usepackage[shortlabels]{enumitem}                  % Enumitem Options
 \usepackage{mathtools,amsthm,amssymb,amsfonts,bm}   % Math Presets
 \usepackage{thmtools,amsmath}
 \usepackage{array,tabularx,booktabs}                % Table Presets
@@ -140,7 +149,7 @@ textheight=.795\paperheight,textwidth=.62\paperwidth}
 }
 % --- theorie kader
 \theoremstyle{theorem}
-\newtheorem{theorie}{\colorbox{White!90!Red}{Theorie}}[chapter] %<-----------------chapter
+\newtheorem{theorie}{\colorbox{White!90!Red}{Theorie}}%%%[chapter] %<-----------------chapter
 \tcolorboxenvironment{theorie}{
   boxrule=0pt,
   boxsep=0pt,
@@ -161,17 +170,17 @@ textheight=.795\paperheight,textwidth=.62\paperwidth}
 
 %\declaretheorem[style=theorem]{theorie}
 
-\let\proof\relax
-\let\endproof\relax
+% \let\proof\relax
+% \let\endproof\relax
 
-\declaretheoremstyle[
-    headfont={\small\scshape},
-    notefont={\normalfont},
-    bodyfont={\normalfont},
-    headpunct={\relax},
-    headformat={%
-        \makebox[0pt][r]{\NAME\ \NUMBER\hspace{\marginparsep}}\hskip-\spacelength{\NOTE}},
-]{proof}
+% \declaretheoremstyle[
+%     headfont={\small\scshape},
+%     notefont={\normalfont},
+%     bodyfont={\normalfont},
+%     headpunct={\relax},
+%     headformat={%
+%         \makebox[0pt][r]{\NAME\ \NUMBER\hspace{\marginparsep}}\hskip-\spacelength{\NOTE}},
+% ]{proof}
 % --- Samenvatting
 \theoremstyle{theorem}
 \newtheorem{samenvatting}{\colorbox{White!90!Goldenrod}{Samenvatting}}[chapter]%<-----------------chapter
@@ -261,7 +270,8 @@ textheight=.795\paperheight,textwidth=.62\paperwidth}
 ]{claim}
 
 \declaretheorem[
-    style=proof,
+    % style=proof,
+    style=claim,
     qed=\qedsymbol]{bewijs}
 
 \declaretheorem[style=claim]{Intuition}
@@ -447,7 +457,7 @@ textheight=.795\paperheight,textwidth=.62\paperwidth}
 colback=white,varwidth upper}
 
 % voor kolom
-{\renewcommand{\arraystretch}{2}
+\renewcommand{\arraystretch}{2}
 	\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 
 % tikz
@@ -460,6 +470,7 @@ colback=white,varwidth upper}
 \def\R{0.15}
 \def\F{0.8}
 %\def\s{1}		%scale van figuren
+
 
 % ----------------------------------------------------------------------
 %           Boek informatie				als je met maketitle werkt

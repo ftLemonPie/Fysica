@@ -1,0 +1,817 @@
+\documentclass[11pt,oneside,a4paper]{book}
+% ----------------------------------------------------------------------
+%           Packages 
+% ----------------------------------------------------------------------
+\usepackage{lipsum}%dummy tekst
+\usepackage{todonotes}%todo's : https://tug.ctan.org/macros/latex/contrib/todonotes/todonotes.pdf
+
+% -- layout hoofdstukken: Sonny, Lenny, Glenn, Conny, Rejne, Bjarne, Bjornstrup
+%\usepackage[Glenn]{fncychap}
+% -- andere manier voor hoofdstukken, maar misschien niet met hyperref : https://markov.htwsaar.de/tex-archive/macros/latex/contrib/titlesec/titlesec.pdf
+\usepackage{xpatch}
+\usepackage{titlesec}
+\makeatletter
+\titleformat{\chapter}[frame]
+  {\normalfont}{\filright\enspace \@chapapp~\thechapter\enspace}
+  {8pt}{\LARGE\bfseries\filcenter}
+\titlespacing*{\chapter}
+  {0pt}{0pt}{20pt}
+%\@addtoreset{chapter}{part}. %-- als je de hoofdstuk nummering altijd opnieuw wilt hebben
+% ---- met de 2 lijnen hieronder kan je onder een part title toch wat schrijven.
+\xpatchcmd{\@endpart}{\vfil\newpage}{}{}{}%\vspace{10mm}
+\xpatchcmd{\@endpart}{\newpage}{}{}{}
+
+\makeatother
+
+%-- QR codes
+\usepackage{hyperref}
+\usepackage{qrcode}
+% -- language: dutch --
+\usepackage{csquotes}
+\usepackage[dutch]{babel}
+% -- notes in margin
+%Why use both marginnotes and sidenotes? Quite simply, marginnotes overlap
+%each other if they are too close whereas sidenotes both numbers and dynamically aligns
+%all side notes, figures, and tables. However sidenotes cannot be used in equations,
+%multicols, and with the tcolorbox4 environment. As the majority of the special
+%environments from amsthm are modified to use tcolorbox, marginnotes becomes an
+%essential part of NotesTeX.
+\usepackage{marginnote}
+\usepackage{sidenotes}
+\usepackage{nuc}	%Nuclides  https://mirror.ibcp.fr/pub/CTAN/macros/latex/contrib/nuc/nuc.pdf 
+\usepackage{ifthen}
+% nodig voor sitenotes
+\usepackage{xparse}
+\usepackage{l3keys2e}
+\usepackage{changepage}
+% -- nodig voor env en andere zaken
+\usepackage{marginnote,sidenotes,fancyhdr,geometry}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[many]{tcolorbox}
+\usepackage{varwidth}
+\tcbuselibrary{raster}
+\usepackage[T1]{fontenc}                            % Font Styling
+\usepackage{lmodern,mathrsfs}
+\usepackage[shortlabels]{enumitem}                  % Enumitem Options
+\usepackage{mathtools,amsthm,amssymb,amsfonts,bm}   % Math Presets
+\usepackage{thmtools,amsmath}
+\usepackage{array,tabularx,booktabs}                % Table Presets
+\usepackage{graphicx,wrapfig,float,caption}         % Figure Presets
+\usepackage[export]{adjustbox}
+\usepackage{setspace,multicol}                      % Text Presets
+\usepackage{tikz,physics}                           % Physics Presets
+\usepackage{tkz-euclide}
+\usetikzlibrary{arrows.meta, positioning}
+\usepackage{circuitikz}
+\usepackage{xcolor}						%text kleur
+\usepackage{colortbl}
+\usepackage{tabularx}
+\colorlet{tableheadcolor}{gray!25} %eerste rij tabel grijs
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{cancel} %cancel streepjes
+\usepackage{setspace} %voor interlinie: \onehalfspacing en \singlespacing
+% -- file packages
+\usepackage{pdfpages} %om pdf's toe te voegen
+\usepackage{filecontents}
+\usepackage{subfiles} % Best loaded last in the preamble
+\usepackage{siunitx} % SI units en aanpassingen
+\usepackage[locale=FR]{siunitx}
+\AtBeginDocument{\RenewCommandCopy\qty\SI}
+\usepackage{physics}
+	\sisetup{exponent-product = \cdot, output-product = \cdot}
+	\sisetup{per-mode = fraction}
+	\sisetup{group-separator = {\,}} %kleine spatie tussen 1000 tallen
+	\DeclareSIUnit\seconde{s}
+	\DeclareSIUnit\jaar{j}
+	\DeclareSIUnit\dag{d}
+	\DeclareSIUnit\graden{^\circ C}
+	\DeclareSIUnit\meter{m}
+	\DeclareSIUnit\newton{N}
+	\DeclareSIUnit\radiaal{rad}	
+% Margins
+%\oddsidemargin = 0pt
+%\marginparwidth = 85pt
+% dit werkt------------------------------
+\geometry{paperheight=11in,paperwidth=8.5in,
+marginparsep=.019\paperwidth,marginparwidth=.2\paperwidth,
+inner=.12\paperwidth,voffset=0in,headheight=.02\paperheight,hoffset=0.2in,
+headsep=.02\paperheight,footskip=20pt,
+textheight=.795\paperheight,textwidth=.62\paperwidth}
+%--------------------------------------------
+\setcounter{tocdepth}{1} %om subsections niet in inhoudstafel te krijgen
+
+
+
+% ----------------------------------------------------------------------
+%           User Created Environments 
+% ----------------------------------------------------------------------
+% marginnotes voor theorie, samenvatting, bewijs, oefeningen, voorbeeld, oefenmoment.
+% sidenote voor herhaling, oplossing, opmerking en toepassing.
+%
+%kleuren:		theorie - rood
+%			samenvatting - goudgeel
+%			definitie - groen geel
+%			bewijs - blauw
+
+\newlength{\spacelength}
+\settowidth{\spacelength}{\normalfont\ }
+\declaretheoremstyle[
+    headfont={\bfseries\sffamily\footnotesize},
+    notefont={\normalfont},
+    bodyfont={\normalfont},
+    headpunct={\relax},%\newline,
+    headformat={%
+        \makebox[0pt][r]{\NAME\ \NUMBER\hspace{\marginparsep}}\hskip-\spacelength{\normalsize\NOTE}},
+]{theorem}
+
+\tcolorboxenvironment{theorem}{
+  boxrule=0pt,
+  boxsep=0pt,
+  colback={White!90!Red},
+  enhanced jigsaw, 
+  borderline west={1pt}{0pt}{Red},
+  sharp corners,
+  before skip=10pt,
+  after skip=10pt,
+  left=5pt,
+  right=5pt,
+  breakable,
+}
+% --- theorie kader
+\theoremstyle{theorem}
+\newtheorem{theorie}{\colorbox{White!90!Red}{Theorie}}[chapter] %<-----------------chapter
+\tcolorboxenvironment{theorie}{
+  boxrule=0pt,
+  boxsep=0pt,
+  colback={White!90!Red},
+  enhanced jigsaw, 
+  borderline west={1.5pt}{0pt}{Red},
+  borderline east={0.5pt}{0pt}{Red},
+  borderline north={0.5pt}{0pt}{Red},
+  borderline south={0.5pt}{0pt}{Red},  
+  sharp corners,
+  before skip=10pt,
+  after skip=10pt,
+  left=5pt,
+  right=5pt,
+  breakable,
+}
+
+
+%\declaretheorem[style=theorem]{theorie}
+
+\let\proof\relax
+\let\endproof\relax
+
+\declaretheoremstyle[
+    headfont={\small\scshape},
+    notefont={\normalfont},
+    bodyfont={\normalfont},
+    headpunct={\relax},
+    headformat={%
+        \makebox[0pt][r]{\NAME\ \NUMBER\hspace{\marginparsep}}\hskip-\spacelength{\NOTE}},
+]{proof}
+% --- Samenvatting
+\theoremstyle{theorem}
+\newtheorem{samenvatting}{\colorbox{White!90!Goldenrod}{Samenvatting}}[chapter]%<-----------------chapter
+
+
+\tcolorboxenvironment{samenvatting}{
+  boxrule=0pt,
+  boxsep=0pt,
+  colback={White!90!Goldenrod},
+  enhanced jigsaw, 
+  borderline west={1.5pt}{0pt}{Goldenrod},
+  borderline east={0.5pt}{0pt}{Goldenrod},
+  borderline north={0.5pt}{0pt}{Goldenrod},
+  borderline south={0.5pt}{0pt}{Goldenrod},
+  sharp corners,
+  before skip=10pt,
+  after skip=10pt,
+  left=5pt,
+  right=5pt,
+  breakable,
+}
+% --- definitie
+\theoremstyle{theorem}
+\newtheorem{definitie}{\colorbox{White!90!GreenYellow}{Definitie}}[chapter]%<-----------------chapter
+
+
+\tcolorboxenvironment{definitie}{
+  boxrule=0pt,
+  boxsep=0pt,
+  colback={White!90!GreenYellow},
+  enhanced jigsaw, 
+  borderline west={1.5pt}{0pt}{GreenYellow},
+  borderline east={0.5pt}{0pt}{GreenYellow},
+  borderline north={0.5pt}{0pt}{GreenYellow},
+  borderline south={0.5pt}{0pt}{GreenYellow},
+  sharp corners,
+  before skip=10pt,
+  after skip=10pt,
+  left=5pt,
+  right=5pt,
+  breakable,
+}
+% --- definitie
+\theoremstyle{theorem}
+\newtheorem{wet}{\colorbox{White!90!Green}{Wet}}[chapter]%<-----------------chapter
+
+
+\tcolorboxenvironment{wet}{
+  boxrule=0pt,
+  boxsep=0pt,
+  colback={White!90!Green},
+  enhanced jigsaw, 
+  borderline west={1.5pt}{0pt}{Green},
+  borderline east={0.5pt}{0pt}{Green},
+  borderline north={0.5pt}{0pt}{Green},
+  borderline south={0.5pt}{0pt}{Green},
+  sharp corners,
+  before skip=10pt,
+  after skip=10pt,
+  left=5pt,
+  right=5pt,
+  breakable,
+}
+% --- bewijs
+\tcolorboxenvironment{bewijs}{
+  boxrule=0pt,
+  boxsep=0pt,
+  blanker,
+  borderline west={1.5pt}{0pt}{NavyBlue!80!white},
+  borderline east={0.5pt}{0pt}{NavyBlue!80!white},
+  borderline north={0.5pt}{0pt}{NavyBlue!80!white},
+  borderline south={0.5pt}{0pt}{NavyBlue!80!white},
+  before skip=10pt,
+  after skip=10pt,
+  left=5pt,
+  right=5pt,
+  breakable,
+}
+
+\declaretheoremstyle[
+    headfont={\footnotesize\itshape},
+    notefont={\normalfont},
+    bodyfont={\normalfont},
+    headpunct={\relax},
+    headformat={%
+        \makebox[0pt][r]{\NAME\hspace{\marginparsep}}\hskip-\spacelength{\NOTE}},
+]{claim}
+
+\declaretheorem[
+    style=proof,
+    qed=\qedsymbol]{bewijs}
+
+\declaretheorem[style=claim]{Intuition}
+
+
+% --- vraag
+\theoremstyle{theorem}
+\newtheorem{vraag}{Vraag}[chapter]%<-----------------chapter
+\tcolorboxenvironment{vraag}{
+  boxrule=0pt,
+  boxsep=0pt,
+  blanker,
+%  borderline west={1pt}{0pt}{Black},
+  borderline south={0.5pt}{-5pt}{Black},
+  %borderline north={1pt}{-3pt}{Black},
+  before skip=10pt,
+  after skip=10pt,
+  sharp corners,
+  left=5pt,
+  right=5pt,
+  breakable,
+}
+
+% --- Oefening
+\theoremstyle{theorem}
+\newtheorem{oef}{Oefening}[chapter]%<-----------------chapter
+\tcolorboxenvironment{oef}{
+  boxrule=0pt,
+  boxsep=0pt,
+  blanker,
+%  borderline west={1pt}{0pt}{Black},
+  borderline south={0.5pt}{-5pt}{Black},
+  %borderline north={1pt}{-3pt}{Black},
+  before skip=10pt,
+  after skip=10pt,
+  sharp corners,
+  left=5pt,
+  right=5pt,
+  breakable,
+}
+% --- voorbeeld
+\theoremstyle{theorem}
+\newtheorem{voorbeeld}{\colorbox{White!90!Cerulean}{Voorbeeld}}[chapter]%<-----------------chapter
+\tcolorboxenvironment{voorbeeld}{
+  boxrule=0pt,
+  boxsep=0pt,
+  colback={White!90!Cerulean},
+  enhanced jigsaw, 
+  borderline west={1.5pt}{0pt}{Cerulean},
+  borderline north={0.5pt}{0pt}{Cerulean},
+  borderline south={0.5pt}{0pt}{Cerulean},
+  borderline east={0.5pt}{0pt}{Cerulean},
+  sharp corners,
+  before skip=10pt,
+  after skip=15pt,
+  left=5pt,
+  right=5pt,
+  breakable,
+}
+% --- oefenmoment: quizjes tijdens de cursus om te testen of je mee bent. Oplossingen staan in oplossingen
+\theoremstyle{theorem}
+\newtheorem{quiz}{\colorbox{White!90!NavyBlue}{Quiz}}[chapter]%<-----------------chapter
+\tcolorboxenvironment{quiz}{
+  boxrule=0pt,
+  boxsep=0pt,
+  blanker,
+  borderline north={1pt}{-5pt}{NavyBlue!80!white},
+  borderline south={1pt}{-5pt}{NavyBlue!80!white},
+  before skip=10pt,
+  after skip=10pt,
+  sharp corners,
+  left=5pt,
+  right=5pt,
+  %breakable,
+}
+
+% ----- oplossingen van de quisjes
+\theoremstyle{theorem}
+\newtheorem{oplq}{\colorbox{White!90!NavyBlue}{Opl. Quiz}}[chapter]%<-----------------chapter
+\tcolorboxenvironment{oplq}{
+  boxrule=0pt,
+  boxsep=0pt,
+  blanker,
+  borderline west={1pt}{0pt}{NavyBlue},
+  before skip=10pt,
+  after skip=10pt,
+  sharp corners,
+  left=5pt,
+  right=5pt,
+  breakable,
+}
+% ----- antwoorden op de vragen
+\theoremstyle{theorem}
+\newtheorem{ant}{\colorbox{White!90!black}{Antwoord}}[chapter]%<-----------------chapter
+\tcolorboxenvironment{ant}{
+  boxrule=0pt,
+  boxsep=0pt,
+  blanker,
+%  borderline west={1pt}{0pt}{Black},
+  borderline south={1pt}{-5pt}{Black},
+  %borderline north={1pt}{-3pt}{Black},
+  before skip=10pt,
+  after skip=10pt,
+  sharp corners,
+  left=5pt,
+  right=5pt,
+  breakable,
+}
+
+% ----- oplossingen van de vraagstukken
+\theoremstyle{theorem}
+\newtheorem{opl}{\colorbox{White!90!black}{Oplossing}}[chapter]%<-----------------chapter
+\tcolorboxenvironment{opl}{
+  boxrule=0pt,
+  boxsep=0pt,
+  blanker,
+%  borderline west={1pt}{0pt}{Black},
+  borderline south={1pt}{-5pt}{Black},
+  %borderline north={1pt}{-3pt}{Black},
+  before skip=10pt,
+  after skip=10pt,
+  sharp corners,
+  left=5pt,
+  right=5pt,
+  breakable,
+}
+% --- herhaling
+\theoremstyle{claim}
+\newtheorem{her}{Herhaling}[chapter]%<-----------------chapter
+
+
+% --- oplossingen, gebruik \label en \ref
+%\theoremstyle{claim}
+%\newtheorem{opl}{Oplossing}[chapter]%<-----------------chapter
+
+ % --- opmerkingen
+\theoremstyle{claim}
+\newtheorem{opm}{Opmerking}[chapter]%<-----------------chapter
+\tcolorboxenvironment{opm}{
+  boxrule=0pt,
+  boxsep=0pt,
+  blanker,
+  borderline west={1.5pt}{0pt}{lightgray},
+  sharp corners,
+  before skip=10pt,
+  after skip=10pt,
+  left=5pt,
+  right=5pt,
+  breakable,
+}
+
+% --- toepassing
+\theoremstyle{claim}
+\newtheorem{toepassing}{Toepassing}[chapter]%<-----------------chapter
+\tcolorboxenvironment{toepassing}{
+  boxrule=0pt,
+  boxsep=0pt,
+  blanker,
+  borderline west={1.5pt}{0pt}{Black},
+  sharp corners,
+  before skip=10pt,
+  after skip=10pt,
+  left=5pt,
+  right=5pt,
+  breakable,
+}
+
+\renewcommand*{\raggedleftmarginnote}{\noindent}
+\renewcommand*{\raggedrightmarginnote}{\noindent}
+\newcommand{\mn}[1]{\textsuperscript{\thesidenote}{}\marginnote{\textsuperscript{\thesidenote}{}\itshape\footnotesize #1}\refstepcounter{sidenote}}
+\newcommand{\en}[1]{\marginnote{\footnotesize{#1}}}
+\newcommand{\lec}[2]{{\setlength{\marginparwidth}{.07\paperwidth}\reversemarginpar\marginnote{\centering\footnotesize{\textsf{\bfseries #1}}\\#2}}}
+\newcommand{\sn}[1]{\sidenote{\itshape\footnotesize #1}}
+
+% -- fullpage
+\newenvironment{fullpage}
+    {\smallskip\noindent\begin{minipage}
+    {\textwidth+\marginparwidth+\marginparsep}\hrule\smallskip\smallskip}
+    {\hrule\end{minipage}\vspace{.1in}}
+
+% --- varwidth
+\newtcbox{\varbox}{colframe=black,
+colback=white,varwidth upper}
+
+% voor kolom
+{\renewcommand{\arraystretch}{2}
+	\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+% tikz
+\tikzstyle{charge}=[thin,top color=red!50,bottom color=red!70,shading angle=20]
+\tikzstyle{charge+}=[thin,top color=red!50,bottom color=red!90!black,shading angle=20]
+\tikzstyle{charge-}=[thin,top color=blue!50,bottom color=blue!80,shading angle=20]
+\tikzstyle{force}=[->,very thick,orange!80!black]
+\tikzstyle{vector}=[->,very thick,green!45!black]
+\def\a{1.4}
+\def\R{0.15}
+\def\F{0.8}
+%\def\s{1}		%scale van figuren
+
+% ----------------------------------------------------------------------
+%           Boek informatie				als je met maketitle werkt
+% ----------------------------------------------------------------------
+% Information about the book
+% to be put on the title page
+%\title{Boek template}
+%\author{Daan Lipkens}
+%\date{Sint-Ursula Instituut \today}
+
+% ----------------------------------------------------------------------
+%          Begin document 
+% ----------------------------------------------------------------------
+%\singelspacing
+\onehalfspacing
+%\doublespacing
+\begin{document}
+% no page numbering in front matter
+\frontmatter
+% generate the title page
+\include{titelblad/Titelblad}
+%\maketitle %alternatief
+%\new page
+
+% show the table of contents
+\tableofcontents
+% start to number the pages
+% ----------------------------------------------------------------------
+%          voorwoord (met * zodat ze niet verschijnen in de inhoudsopgave
+% ----------------------------------------------------------------------
+\chapter*{Voorwoord}
+QR-codes in de marge kan je zowel scannen of op klikken als je digitaal zou werken. \begin{marginfigure}
+	\begin{center}
+		\qrcode[hyperlink,height=0.85in]{https://phet.colorado.edu/en/simulations/filter?subjects=electricity-magnets-and-circuits&type=html}
+	\end{center}
+	\vspace*{-5mm}
+	\caption*{\scriptsize Link naar PHET fysica simulaties.}
+\end{marginfigure}
+\begin{theorie}
+Theorie kader.
+\end{theorie}
+\begin{definitie}
+Een definitie.
+\end{definitie}
+\begin{wet}
+Een wet in de fysica.
+\end{wet}
+\begin{voorbeeld}
+Een uitgewerkte oefening.
+\end{voorbeeld}
+\begin{quiz}\label{q: voorwoord} 
+Een kleine quiz om te kijken of de concepten begrepen zijn of om misconcepten\mn{Een misconcept in de fysica is een hardnekkig maar foutief idee of verklaring over een natuurkundig verschijnsel.} onder de aandacht te brengen.
+\end{quiz}
+\begin{toepassing}
+Een toepassing van de theorie.
+\end{toepassing}
+\begin{her}
+Herhaling van vorige jaren/thema's.
+\end{her}
+\begin{opm}
+Een opmerking.
+\end{opm}
+\begin{samenvatting}
+Samenvatting op einde van hoofdstuk.
+\end{samenvatting}
+\begin{vraag}\label{vH0:vb}
+\marginnote{\raggedleft(\hyperref[opl vH0:vb]{antwoord})}
+Vragen op einde van een thema. Dit zijn een soort oefeningen zonder getallen. In de marge is er een link naar het antwoord.
+\end{vraag}
+\begin{oef}\label{oH0:vb}
+\marginnote{\raggedleft(\hyperref[opl oH0:vb]{oplossing})}
+Oefeningen op einde van een thema. In de marge is er een link naar de oplossing
+\end{oef}
+\begin{oplq}
+Oplossing van de quiz, met link naar de quiz.\hyperref[q: voorwoord]{(Link naar opgaven)}
+\end{oplq}
+\begin{ant}\label{opl vH0:vb}
+\marginnote{\raggedleft(\hyperref[vH0:vb]{Terug naar de vraag})}
+Antwoord op een vraag, met in de marge een link naar de vraag.
+\end{ant}
+\begin{opl}\label{opl oH0:vb}
+\marginnote{\raggedleft(\hyperref[oH0:vb]{Terug naar de vraag})}
+Oplossing van een oefening, met link naar de oefening in de marge.
+\end{opl}
+\section*{Hoe fysica te studeren}
+\todo{hoe te studeren en cursus te gebruiken}
+%========================
+\section{Hoe fysica te studeren}
+%========================
+% https://subjectguides.york.ac.uk/study-revision/feynman-technique nog in QR code
+\begin{quote}
+\textit{“De natuurkunde leer je niet door ze te lezen, maar door ze te doen.”}
+\end{quote}
+
+Welkom in de derde graad, waar fysica je uitdaagt om de wereld op een dieper niveau te begrijpen.  
+Van de beweging van planeten tot de wereld van de kwantummechanica: de concepten worden abstracter en de wiskunde complexer.  
+
+Maar geen paniek, met de juiste aanpak kan je dit vak niet alleen overleven, maar er zelfs in uitblinken.  
+Fysica is géén “stampvak”; het is een \textbf{vaardigheidsvak}.  
+Je leert fysica niet door te lezen, maar door te doen.
+
+\begin{center}
+\rule{0.6\textwidth}{0.4pt}
+\end{center}
+
+\subsection*{De gouden regel: begrijpen gaat voor formules}
+
+\begin{theorie}
+De grootste valkuil in fysica is formules van buiten leren zonder te begrijpen waarom ze werken.  
+Een formule is enkel een hulpmiddel, een samenvatting van een dieper concept.
+\end{theorie}
+
+\subsubsection*{Focus op het waarom:}  
+\begin{itemize}
+    \item Lees de theorie \textbf{actief}: Onderstreep sleutelwoorden en stel jezelf vragen:
+    \begin{itemize}
+        \item Wat \textbf{betekent} deze term?
+        \item Hoe \textbf{hangt} dit samen met vorige lessen?
+        \item Waar zie ik dit \textbf{in het echt}?
+    \end{itemize}
+    \item Maak \textbf{schematische tekeningen} (zelfs als je niet goed kunt tekenen!).
+    \item Gebruik \textbf{voorbeelden uit het dagelijks leven} (bv. wrijving = remmen met de fiets).
+\end{itemize}
+Voordat je een formule memoriseert, stel jezelf de vraag: \textit{Wat beschrijft deze wet?}  
+Welk fysisch principe zit hierachter?  
+Zo beschrijft de eerste wet van Newton, de traagheidswet, dat objecten “lui” zijn en hun bewegingstoestand willen behouden.  
+Pas als je dat begrijpt, wordt de formule $F_{\text{res}} = 0$ logisch.
+
+
+\subsubsection*{Herformuleer in je eigen woorden:}
+Kun je de tweede wet van Newton uitleggen aan iemand die weinig van fysica weet?  
+Wie een concept in eenvoudige taal kan uitleggen, begrijpt het echt.
+
+\subsubsection*{Maak schema’s of mindmaps:}
+Visualiseer hoe concepten met elkaar verbonden zijn.  
+De wetten van Newton vormen de basis van de mechanica; wrijvingskracht en normaalkracht zijn toepassingen ervan.  
+Zo’n overzicht helpt je om het grotere geheel te zien.
+
+\begin{opm}
+De beste fysici onthouden geen tientallen formules. Ze begrijpen hoe ze allemaal uit één basisprincipe kunnen worden afgeleid.
+\end{opm}
+
+\begin{center}
+\rule{0.6\textwidth}{0.4pt}
+\end{center}
+
+\subsection*{De kunst van het oefeningen maken}
+
+Oefeningen vormen de kern van je fysicastudie.
+Het doel is niet alleen het juiste antwoord vinden, maar vooral het proces beheersen.
+
+Om echt inzicht te krijgen, is het waardevol om af en toe vast te lopen in een oefening.
+Leg de opgave in dat geval even aan de kant en probeer ze pas de volgende dag opnieuw.
+Vaak zie je het probleem dan met een frisse blik en vind je zelf de juiste aanpak.
+
+Blijf niet eindeloos zoeken en kijk ook niet te snel naar de oplossing.
+Dat betekent wel dat je je studie fysica moet spreiden over meerdere momenten,
+in plaats van alles in één lange sessie te proberen leren.
+
+Tijdens het maken van oefeningen gebruik je enkel wat je tijdens een test mag gebruiken, \textbf{niets anders}.
+Dus geen notities, geen andere oefeningen, geen verbeteringen en geen internet.
+
+Zodra je klaar bent met de oefening, neem je een \textcolor{green}{andere kleur} en verbeter je je werk.
+Wees kritisch voor alle tussenstappen en controleer of de eenheden overal kloppen.
+Noteer in de kantlijn welk type fouten je hebt gemaakt.
+Zo zie je in één oogopslag welke fouten vaak terugkeren en weet je precies waar je extra op moet letten.
+
+\begin{itemize}
+    \item Begin met \textbf{eenvoudige oefeningen} en werk toe naar moeilijkere.
+    \item Gebruik het \textbf{stappenplan} hieronder voor elke opgave.
+    \item Fouten maken is \textbf{goed} – ze laten zien waar je nog moet leren.
+\end{itemize}
+
+\begin{tcolorbox}[colback=cyan!5!white,colframe=cyan!75!black,title=Stappenplan voor fysica-problemen]
+\begin{enumerate}
+    \item \textbf{Lees zorgvuldig}: Wat wordt gevraagd, fluoriseer het in het rood? Welke gegevens heb je, fluoriseer het in het groen? Zet alle gegevens nu al in hun S.I.-eenheid.
+    \item \textbf{Teken een schets}: Vrijlichaamsdiagram, circuit, situatie, \dots.
+    \item \textbf{Kies de juiste wet/formule}: Bv. behoud van energie, \(F = m \cdot a\).
+    \item \textbf{Substitueer waarden}: Vervang symbolen door getallen + eenheden.
+    \item \textbf{Reken uit}: Let op eenheden en beduidende cijfers! Zet je antwoord in standaardvorm.
+    \item \textbf{Controleer}: Is het antwoord redelijk? (bv. een auto van 1000 kg versnelt niet met 500 m/s²!)
+\end{enumerate}
+\end{tcolorbox}
+
+\subsubsection*{Stap 1 – Analyseer de opgave}
+Neem eerst de tijd om de situatie te begrijpen.
+\begin{itemize}
+  \item \textbf{Gegeven en Gevraagd:} noteer systematisch wat je weet (bv. $m=\qty{10,0}{\kilogram}$, $F=\qty{40,0}{\newton}$) en wat je zoekt (bijv. versnelling $a$).
+  \item \textbf{Maak een tekening:} visualiseer het probleem.  
+  Teken een krachtendiagram en geef alle krachten aan: zwaartekracht $F_z$, normaalkracht $F_N$, trekkracht $F_p$, wrijvingskracht $F_w$, …  
+  Zo behoud je het overzicht en vergeet je geen krachten.
+\end{itemize}
+
+\subsubsection*{Stap 2 – Kies je hulpmiddelen}
+Bepaal welke wetten of principes van toepassing zijn.
+\begin{itemize}
+  \item Gaat het over kracht en beweging? → gebruik de tweede wet van Newton: $\sum F = m \cdot a$.
+  \item Werkt een kracht onder een hoek? → ontbind ze in componenten (x- en y-richting).
+  \item Komt er wrijving voor? → gebruik $F_w = \mu \cdot F_N$.
+\end{itemize}
+
+\subsubsection*{Stap 3 – De wiskundige uitwerking}
+\begin{itemize}
+  \item \textbf{Werk met assenstelsels:} schrijf per richting een vergelijking op. In veel gevallen is $\sum F_y = 0$, wat helpt om $F_N$ te vinden.
+  \item \textbf{Schrijf elke stap op:} noteer eerst de formule, vul daarna pas de gegevens in. Vergeet geen eenheden in je tussenstappen!
+  \item \textbf{Controleer je antwoord:}  
+  Heeft je resultaat fysisch zin? Een versnelling van \qty{5000}{\metre\per\second\squared} voor een doos is niet realistisch.  
+  Een kritische blik toont dat je begrijpt wat je doet.
+\end{itemize}
+
+\begin{center}
+\rule{0.6\textwidth}{0.4pt}
+\end{center}
+
+ \subsection*{Praktische tips voor succes}
+  
+
+\begin{itemize}
+  \item \textbf{Studeer actief, niet passief:}  
+  Lees niet enkel de theorie, maar werk voorbeelden opnieuw uit zonder naar de oplossing te kijken.  
+  Pas na het vergelijken leer je écht.
+
+  \item \textbf{Werk samen:}  
+  Leg een oefening uit aan een klasgenoot. Uitleggen dwingt je om helder te denken.  
+  Verschillende perspectieven kunnen nieuwe inzichten geven. Eén van de beste leer methodes is zelf les geven. Dit wordt ook wel de Feynman methode genoemd. De techniek wilt dat je het concept zo simpel mogelijk uitlegt, alsof je het aan een 12 jarige uitlegt die er niets van kent. Lukt het je niet om dit simpel uit te leggen, dan snap je het concept niet niet goed genoeg.
+
+  \begin{marginfigure}
+	\begin{center}
+		\qrcode[hyperlink,height=0.85in]{https://subjectguides.york.ac.uk/study-revision/feynman-technique}
+	\end{center}
+	\vspace*{-5mm}
+	\caption*{\scriptsize Link naar uitleg over de Feynman techniek}
+\end{marginfigure}
+ 
+  \item \textbf{Vraag hulp op tijd:}  
+  Blijf niet te lang vastzitten. Stel gerichte vragen:  
+  “Waarom is de normaalkracht hier kleiner dan het gewicht?” helpt veel meer dan “Ik snap het niet”.
+
+  \item \textbf{Beheers je wiskunde:}  
+Fysica is geschreven in de taal van de wiskunde.
+Oefen op algebra, goniometrie en het oplossen van vergelijkingen.
+Wanneer de wiskunde vlot gaat, blijft er meer ruimte over om fysisch inzicht te ontwikkelen.
+
+Heb je moeite met de wiskundige technieken, oefen ze dan extra in.
+De beste manier om ze onder de knie te krijgen, is door regelmatig korte oefensessies te houden.
+Plan bijvoorbeeld drie vaste momenten per dag in waarop je telkens vijf minuten met pen en papier wiskundige technieken oefent.
+Tijdens deze oefenmomenten mag je niet naar de oplossingen of hulpmiddelen kijken tot de sessie voorbij is.
+
+Deze sessies zijn een aanvulling op je gewone studiemomenten, geen vervanging ervan.
+Als je dit een tijd volhoudt, zal je merken dat je de technieken beter beheerst en sneller toepast.
+\begin{opm}
+Deze methode is gebaseerd op de \textit{repetition method}, waarbij je iets dat je wilt leren herhaalt vlak na het leren, vervolgens één dag later, één week later en één maand later.
+Op die manier bereik je met minder totale studietijd een groter en langduriger leerresultaat.
+Het nadeel is wel dat deze aanpak wat planning en discipline vraagt.
+ \end{opm}
+
+  \begin{marginfigure}
+	\begin{center}
+		\qrcode[hyperlink,height=0.85in]{https://www.bcu.ac.uk/exams-and-revision/best-ways-to-revise/spaced-repetition}
+	\end{center}
+	\vspace*{-5mm}
+	\caption*{\scriptsize Link naar spaced repetition methode}
+\end{marginfigure}
+
+  \item \textbf{Gebruik fouten als leermoment:}  
+  Kijk na een toets of oefening niet enkel \textit{wat} fout ging, maar \textit{waarom}.  
+  Dat is de snelste manier om vooruit te gaan.
+
+  \item \textbf{Bereid je toetsen slim voor:}  
+  Herhaal niet enkel oude oefeningen, maar maak varianten. Of beter nog, verzin zelf eens een oefening. Kijk hoe je deze oefening zo moeilijk mogelijk kunt maken in de gegeven leerstof. Door zelf de opbouw van een oefening te bekijken, ga je ook meer inzichten krijgen in hoe andere oefeningen zijn opgebouwd en hoe je deze moet oplossen.
+  Vraag jezelf af: “Wat als de kracht dubbel zo groot was?” of “Wat als het object nu op een helling ligt?”
+\end{itemize}
+
+
+\begin{center}
+\rule{0.6\textwidth}{0.4pt}
+\end{center}
+
+\subsection*{Tot slot}
+
+\begin{opm}
+Fysica in de derde graad is een uitdaging, maar een haalbare en lonende.  
+Het leert je logisch redeneren, verbanden leggen en kritisch nadenken — vaardigheden die veel verder reiken dan dit vak alleen.  
+\end{opm}
+
+Blijf nieuwsgierig, stel vragen en geniet van het moment waarop de puzzelstukjes in elkaar vallen.  
+\begin{center}
+\textbf{Succes!}
+\end{center}
+
+\section*{Afspraken Kleuren}
+\begin{enumerate}
+\item Blauw: kracht vector
+\end{enumerate}
+\todo{lijst van kleuren/symbolen opstellen}
+\missingfigure{lijst met kleuren}
+
+\section*{Disclaimer}
+Ik heb dyslectie en heb deze cursus zelf gemaakt, er zal dus hier en daar een foutje opduiken. Zie je iets stuur dan zeker een berichtje of meld het me.
+% ----------------------------------------------------------------------
+%          cursus zelf
+% ----------------------------------------------------------------------
+\mainmatter %pagina nummering met getallen
+\part{Elektromagnetisme} %de grote delen, met daarin de chapters
+\vspace{3mm}
+Elektromagnetisme is één van de vier fundamentele natuurkrachten en vormt samen met mechanica en thermodynamica een pijler van de fysica. Het vakgebied onderzoekt hoe elektrische ladingen en stromen elektrische en magnetische velden opwekken, en hoe die velden op hun beurt weer krachten uitoefenen. Wat op het eerste gezicht een abstract verhaal lijkt, blijkt in werkelijkheid de sleutel tot talloze toepassingen.
+
+Van de bliksem aan de hemel tot het licht dat aangaat wanneer je op een schakelaar drukt: overal kom je elektromagnetisme tegen. Elektromotoren laten wielen draaien, generatoren zetten beweging om in elektriciteit, luidsprekers en microfoons maken geluidsgolven hoorbaar, en draadloze netwerken zorgen ervoor dat informatie in fracties van een seconde door de lucht reist. Zelfs in het menselijk lichaam – denk aan de elektrische signalen in zenuwen en hersenen – speelt elektromagnetisme een cruciale rol.
+
+In dit onderdeel van de cursus bouwen we stap voor stap de theorie op: we starten bij de elektrische kracht tussen ladingen,  bekijken hoe stromen magnetische velden opwekken, welke kracht een bewegende lading ondervindt in een magnetisch veld en ontdekken vervolgens hoe veranderende velden elkaar kunnen beïnvloeden en zien we hoe deze basisprincipes samenkomen in toepassingen die de moderne samenleving draaiende houden.
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.85\textwidth]{hoofdstukken/Elektromagnetisme/elektromagnetisme.jpg}
+\caption{De Joint European Torus (JET) is het grootste kernfusie-experiment ter wereld. Met behulp van krachtige elektromagnetische velden houdt deze tokamak het extreem hete plasma op zijn plaats, zodat de wandmaterialen niet smelten.}
+\end{center}
+\end{figure}
+
+\include{hoofdstukken/Elektromagnetisme/coulombkracht}
+\include{hoofdstukken/Elektromagnetisme/magnetisch veld}
+\include{hoofdstukken/Elektromagnetisme/lorentzkracht}
+\include{hoofdstukken/Elektromagnetisme/elektromagnetische inductie}
+
+\part{Wisselspanning}
+\todo{uitleg maken}
+\include{hoofdstukken/Wisselspanning/herhaling spanning en stroomsterkte}%gelijkspanning en schakelingen
+\include{hoofdstukken/Wisselspanning/eenfasige en driefasige wisselspanning}
+\include{hoofdstukken/Wisselspanning/RLC kringen}
+\include{hoofdstukken/Wisselspanning/distributienetten}
+
+\part{Kernfysica}
+\todo{uitleg maken}
+\include{hoofdstukken/Kernfysica/deeltjes fysica}
+\include{hoofdstukken/Kernfysica/de atoomkern}
+\include{hoofdstukken/Kernfysica/radioactiviteit}
+\include{hoofdstukken/Kernfysica/toepassingen en gevolgen van radioactiviteit}
+% ----------------------------------------------------------------------
+%          Appendix denk eraan om alle chapters, sections, ... met * te doen. Als je dit wilt.
+% ----------------------------------------------------------------------
+\pagenumbering{Alph} %pagina nummering start bij A, ...
+
+\part{Appendix}
+\include{hoofdstukken/Appendix/Standaardvorm}%LPD 29
+\include{hoofdstukken/Appendix/Scalaire en vectoriële grootheden}
+\include{hoofdstukken/Appendix/complexe getallen}
+\include{hoofdstukken/Appendix/nuclide tabel}
+\include{hoofdstukken/Appendix/logaritmes en exponentiële functies}
+
+\listoftodos %list of todo's
+ 
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%
+
+
+
+

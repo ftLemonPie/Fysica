@@ -1,4 +1,4 @@
-\documentclass[draft]{ximera}
+\documentclass{ximera}
 % \input{../../preamble.tex}
 % \input{../../preambles/oplossingen.tex}    % to get \shortanswerscols
 % \addPrintStyle{../..}
@@ -44,16 +44,16 @@ Er zijn simpele experimentjes om aan te tonen dat er elektrische krachten zijn. 
 % ---------------------------
 
 %--------------------------
-% afbeelding buisjes
-% \begin{figure}[htbp]
-% \captionsetup{width=0.85\textwidth}
-% \begin{center}
-% \includegraphics[width=0.8\textwidth]{hoofdstukken/Elektromagnetisme/buisjes.jpg}
-% \caption{(a) Een negatief geladen rubberen staaf die aan een draad hangt, wordt aangetrokken door een positief geladen glazen staaf. (b) Een negatief geladen rubberen staaf wordt afgestoten door een andere negatief geladen rubberen staaf.}
-% \label{fig:buisjes}
-% \end{center}
-% \end{figure}
-% --------------------------
+afbeelding buisjes
+\begin{figure}[htbp]
+\captionsetup{width=0.85\textwidth}
+\begin{center}
+\includegraphics[width=0.8\textwidth]{hoofdstukken/Elektromagnetisme/buisjes.jpg}
+\caption{(a) Een negatief geladen rubberen staaf die aan een draad hangt, wordt aangetrokken door een positief geladen glazen staaf. (b) Een negatief geladen rubberen staaf wordt afgestoten door een andere negatief geladen rubberen staaf.}
+\label{fig:buisjes}
+\end{center}
+\end{figure}
+--------------------------
 
 
 
@@ -179,7 +179,6 @@ Je wrijft met rubber op een PVC buis. Wat kan je zeggen over de lading van beide
 \end{quiz}
 %------------------------------------------------------
 
-\end{document}
 
 
 % ----------------------
@@ -187,20 +186,26 @@ Je wrijft met rubber op een PVC buis. Wat kan je zeggen over de lading van beide
 % -----------------------
 \section{Objecten Laden via Inductie}
 \subsection{Geleiders, Isolatoren en Halfgeleiders}
+
+% \end{document}
+
+
 \begin{marginfigure}
 		\begin{center}
 		\begin{subfigure}{.2\textwidth}
 			\centering
-			\begin{circuitikz}%
+			\begin{tikzpicture}%
+			% \begin{circuitikz}%
 				\draw (0,0) node[ ground ] {};%(2,0); 
-			\end{circuitikz}%
-		\caption{}
+			% \end{circuitikz}%
+			\end{tikzpicture}%
+	%	\caption{}
 		\label{fig:symbool aarding}
 	\end{subfigure}%
 	\begin{subfigure}{.5\textwidth}
 		\centering
-		% \includegraphics[width=.95\textwidth]{hoofdstukken/elektromagnetisme/aarding kabels.jpeg}
-		\caption{}
+		\includegraphics[width=.95\textwidth]{hoofdstukken/Elektromagnetisme/aarding_kabels.jpg}
+	%	\caption{}
 		\label{fig:kleur aarding}
 	\end{subfigure}
 		\end{center}
@@ -214,6 +219,8 @@ Je wrijft met rubber op een PVC buis. Wat kan je zeggen over de lading van beide
 	Aarding is de benaming als je iets met de aarde aansluit.	Hierdoor kan een teveel van elektronen gecompenseerd worden door elektronen naar de aarde te sturen, of kan bij een tekort van elektronen er elektronen van de aarde onttrokken worden.
 \end{her}
 % SUBSECTION: geleiders
+
+
 \subsubsection{Geleiders}
 De meeste metalen zijn goede geleiders. In de chemie heb je al kennisgemaakt met het metaalrooster. Metaalatomen bezitten elektronen die gemakkelijk loskomen van het atoom: de zogenaamde valentie-elektronen. Deze elektronen bewegen ‘vrij’ door het rooster van positieve metaalionen.
 
@@ -239,13 +246,13 @@ De vrije elektronen botsen voortdurend met de roosterionen, zie figuur~\ref{fig:
 	\centering
 	\begin{subfigure}{.5\textwidth}
 		\centering
-		\includegraphics[width=.95\textwidth]{hoofdstukken/elektromagnetisme/metaal1.png}
+		\includegraphics[width=.95\textwidth]{hoofdstukken/Elektromagnetisme/metaal1.png}
 		\caption{}
 		\label{fig:metaal1}
 	\end{subfigure}%
 	\begin{subfigure}{.5\textwidth}
 		\centering
-		\includegraphics[width=.95\textwidth]{hoofdstukken/elektromagnetisme/metaal2.png}
+		\includegraphics[width=.95\textwidth]{hoofdstukken/Elektromagnetisme/metaal2.png}
 		\caption{}
 		\label{fig:metaal2}
 	\end{subfigure}
@@ -260,31 +267,34 @@ De vrije elektronen botsen voortdurend met de roosterionen, zie figuur~\ref{fig:
 Een metaal in vaste toestand bevat vrije (negatieve) elektronen en vaste (positieve) roosterionen.
 \end{theorie}
 
+% \end{document}
+
+
 \begin{figure}[H]
 	\marginnote{Er zouden ook een elektronen op de metalen staaf gezet kunnen worden.}
 	\captionsetup{width=0.85\textwidth}
 	\centering
 	\begin{subfigure}{.25\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{hoofdstukken/elektromagnetisme/metalen staaf 1.jpeg}
+		\includegraphics[width=\textwidth]{hoofdstukken/Elektromagnetisme/metalen_staaf 1.jpg}
 		\caption{}
 		\label{fig:metalen staaf 1}
 	\end{subfigure}%
 	\begin{subfigure}{.25\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{hoofdstukken/elektromagnetisme/metalen staaf 2.jpeg}
+		\includegraphics[width=\textwidth]{hoofdstukken/Elektromagnetisme/metalen_staaf 2.jpg}
 		\caption{}
 		\label{fig:metalen staaf 2}
 	\end{subfigure}%
 	\begin{subfigure}{.25\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{hoofdstukken/elektromagnetisme/metalen staaf 3.jpeg}
+		\includegraphics[width=\textwidth]{hoofdstukken/Elektromagnetisme/metalen_staaf 3.jpg}
 		\caption{}
 		\label{fig:metalen staaf 3}
 	\end{subfigure}%	
 	\begin{subfigure}{.25\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{hoofdstukken/elektromagnetisme/metalen staaf 4.jpeg}
+		\includegraphics[width=\textwidth]{hoofdstukken/Elektromagnetisme/metalen_staaf 4.jpg}
 		\caption{}
 		\label{fig:metalen staaf 4}
 	\end{subfigure}%
@@ -317,6 +327,8 @@ Positieve roosterionen kunnen niet verplaatsen: zij hebben een vaste positie in 
 	Een geaarde geleider wordt geladen wanneer een geladen voorwerp in de buurt wordt gebracht. De lading van de geleider zal steeds tegengesteld zijn aan de lading van het voorwerp.
 \end{theorie}
 
+% \end{document}
+
 % ----------------------
 %	SUBSECTION: Isolator
 % ----------------------
@@ -345,19 +357,19 @@ De elektronen die rond hun kern gebonden zijn, kunnen slechts een beetje \textit
 	\centering
 	\begin{subfigure}{.25\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{hoofdstukken/elektromagnetisme/isolator staaf 1.jpg}
+		\includegraphics[width=\textwidth]{hoofdstukken/Elektromagnetisme/isolator staaf 1.jpg}
 		\caption{}
 		\label{fig:isolator staaf 1}
 	\end{subfigure}%
 	\begin{subfigure}{.25\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{hoofdstukken/elektromagnetisme/isolator staaf 2.jpg}
+		\includegraphics[width=\textwidth]{hoofdstukken/Elektromagnetisme/isolator staaf 2.jpg}
 		\caption{}
 		\label{fig:isolator staaf 2}
 	\end{subfigure}%
 	\begin{subfigure}{.25\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{hoofdstukken/elektromagnetisme/isolator staaf 3.jpg}
+		\includegraphics[width=\textwidth]{hoofdstukken/Elektromagnetisme/isolator staaf 3.jpg}
 		\caption{}
 		\label{fig:isolator staaf 3}
 	\end{subfigure}%	
@@ -400,13 +412,13 @@ Halfgeleiders gedragen zich bij lage temperaturen als isolatoren en bij hogere t
 	\centering
 	\begin{subfigure}{.5\textwidth}
 		\centering
-		\includegraphics[width=.95\textwidth]{hoofdstukken/elektromagnetisme/halfgeleider laag.png}
+		\includegraphics[width=.95\textwidth]{hoofdstukken/Elektromagnetisme/halfgeleider laag.png}
 		\caption{}
 		\label{fig:halfgeleider laag}
 	\end{subfigure}%
 	\begin{subfigure}{.5\textwidth}
 		\centering
-		\includegraphics[width=.95\textwidth]{hoofdstukken/elektromagnetisme/halfgeleider hoog.png}
+		\includegraphics[width=.95\textwidth]{hoofdstukken/Elektromagnetisme/halfgeleider hoog.png}
 		\caption{}
 		\label{fig:halfgeleider hoog}
 	\end{subfigure}
@@ -415,6 +427,7 @@ Halfgeleiders gedragen zich bij lage temperaturen als isolatoren en bij hogere t
 \end{figure}
 % ------------------------------
 \newpage %lange margin figure
+
 % --------------------------------
 %	SUBSECTION: inductie
 % -----------------------------
@@ -425,31 +438,31 @@ Halfgeleiders gedragen zich bij lage temperaturen als isolatoren en bij hogere t
 \begin{marginfigure}
 	\centering
 		\begin{subfigure}{\linewidth}
-			\includegraphics[width=\linewidth]{hoofdstukken/elektromagnetisme/Laden via inductie 1.jpeg}%
+			\includegraphics[width=\linewidth]{hoofdstukken/Elektromagnetisme/Laden via inductie 1.jpeg}%
 			\caption{}
 			\label{fig:opladen via inductie a}
 		\end{subfigure}
 		\vfill %nieuwe rij
 		\begin{subfigure}{\linewidth}
-			\includegraphics[width=\linewidth]{hoofdstukken/elektromagnetisme/Laden via inductie 2.jpeg}%
+			\includegraphics[width=\linewidth]{hoofdstukken/Elektromagnetisme/Laden via inductie 2.jpeg}%
 			\caption{}
 			\label{fig:opladen via inductie b}
 		\end{subfigure}
 		\vfill %nieuwe rij
 		\begin{subfigure}{\linewidth}
-			\includegraphics[width=\linewidth]{hoofdstukken/elektromagnetisme/Laden via inductie 3.jpeg}%
+			\includegraphics[width=\linewidth]{hoofdstukken/Elektromagnetisme/Laden via inductie 3.jpeg}%
 			\caption{}
 			\label{fig:opladen via inductie c}
 		\end{subfigure}
 		\vfill %nieuwe rij		
 		\begin{subfigure}{\linewidth}	
-			\includegraphics[width=\linewidth]{hoofdstukken/elektromagnetisme/Laden via inductie 4.jpeg}%
+			\includegraphics[width=\linewidth]{hoofdstukken/Elektromagnetisme/Laden via inductie 4.jpeg}%
 			\caption{}
 			\label{fig:opladen via inductie d}
 		\end{subfigure}
 		\vfill %nieuwe rij		
 		\begin{subfigure}{\linewidth}	
-			\includegraphics[width=\linewidth]{hoofdstukken/elektromagnetisme/Laden via inductie 5.jpeg}%
+			\includegraphics[width=\linewidth]{hoofdstukken/Elektromagnetisme/Laden via inductie 5.jpeg}%
 			\caption{}			
 			\label{fig:opladen via inductie e}
 		\end{subfigure}
@@ -457,6 +470,7 @@ Halfgeleiders gedragen zich bij lage temperaturen als isolatoren en bij hogere t
 	\label{fig:opladen via inductie}
 \end{marginfigure}
 % EINDE LANGE margin figuur LADEN VIA INDUCITE
+
 
 Om te begrijpen hoe een geleider kan worden opgeladen door middel van een proces dat inductie wordt genoemd, kijken we naar een neutrale (ongeladen) geleidende bol die is geïsoleerd van de grond, zoals weergegeven in figuur \ref{fig:opladen via inductie a}. Er zijn evenveel elektronen als protonen in de bol als de lading op de bol precies nul is. Wanneer een negatief geladen rubberen staaf dicht bij de bol wordt gebracht, ondervinden de elektronen in het gebied dat zich het dichtst bij de staaf bevindt een afstotende kracht en migreren ze naar de tegenoverliggende kant van de bol. Door deze migratie krijgt de kant van de bol die zich dicht bij de staaf bevindt een effectieve positieve lading vanwege het verminderde aantal elektronen, zoals weergegeven in figuur 23.3b. (De linkerkant van de bol in figuur \ref{fig:opladen via inductie b} is positief geladen alsof positieve ladingen naar dit gebied zijn verplaatst, maar onthoud dat alleen elektronen vrij kunnen bewegen.) Dit proces vindt zelfs plaats als de staaf de bol nooit daadwerkelijk raakt. Als hetzelfde experiment wordt uitgevoerd met een geleidende draad die de bol met de aarde verbindt (Fig. \ref{fig:opladen via inductie c}), worden sommige elektronen in de geleider zo sterk afgestoten door de aanwezigheid van de negatieve lading in de staaf dat ze via de draad uit de bol naar de aarde bewegen. Het symbool
 \begin{circuitikz}%
@@ -466,12 +480,15 @@ Om te begrijpen hoe een geleider kan worden opgeladen door middel van een proces
  
  Voor het opladen van een object door inductie is geen contact nodig met het object dat de lading induceert. Dit in tegenstelling tot het opladen van een object door wrijving (dat wil zeggen door geleiding), waarvoor wel contact tussen de twee objecten nodig is.
 
+\end{document}
+
+
 %------------------------------------------------
 % TOEPASSING; VAN DE GRAAF GENERATOR
 \newpage
 \begin{marginfigure}
 		\begin{center}
-			\includegraphics[width=\textwidth]{hoofdstukken/elektromagnetisme/vadegraaffgenerator.jpg}
+			\includegraphics[width=\textwidth]{hoofdstukken/Elektromagnetisme/vadegraaffgenerator.jpg}
 		\end{center}
 		\caption{vandegraaffgenerator wekt een grote ladingshoeveelheid op dankzij het trio-elektrisch effect.}
 		\label{fig:vandegraaffgenerator foto}
@@ -483,7 +500,7 @@ Om te begrijpen hoe een geleider kan worden opgeladen door middel van een proces
 \begin{figure}[H]
 \captionsetup{width=0.85\textwidth}
 	\begin{center}
-		\includegraphics[width=0.35\textwidth]{hoofdstukken/elektromagnetisme/schema vandegraaffgenerator.png}
+		\includegraphics[width=0.35\textwidth]{hoofdstukken/Elektromagnetisme/schema vandegraaffgenerator.png}
 		\caption{Schematische voorstelling van een vandegraaffgenerator. In punt A ontstaat elektrische lading door wrijving tussen de band en de onderste rol. De bewegende band transporteert deze lading naar de bovenzijde van het toestel. In punt B wordt de lading via interactie met de bovenste rol overgedragen op de metalen koepel, waar ze zich gelijkmatig verspreidt over het buitenoppervlak.}
 		\label{fig:vandegraaffgenerator schema}
 	\end{center}
@@ -985,12 +1002,12 @@ Dit principe verklaart waarom een geladen kam, nadat deze door het haar is gehaa
 \captionsetup{width=0.85\textwidth}
       \centering
 	   \begin{subfigure}{0.45\linewidth}
-		\includegraphics[width=\linewidth]{hoofdstukken/elektromagnetisme/ballon en muur.png}
+		\includegraphics[width=\linewidth]{hoofdstukken/Elektromagnetisme/ballon en muur.png}
 		\caption{}
 		\label{fig:ballon en muur}
 	   \end{subfigure}
 	   \begin{subfigure}{0.45\linewidth}
-		\includegraphics[width=\linewidth]{hoofdstukken/elektromagnetisme/aantrekken papier.jpeg}
+		\includegraphics[width=\linewidth]{hoofdstukken/Elektromagnetisme/aantrekken papier.jpeg}
 		\caption{}
 		\label{fig:aantrekken papier}
 	    \end{subfigure}
@@ -1006,7 +1023,7 @@ Stofdeeltjes en haren in de omgeving zijn elektrisch neutraal, maar de lading in
 \end{toepassing}
 \begin{marginfigure}
 		\begin{center}
-			\includegraphics[width=\textwidth]{hoofdstukken/elektromagnetisme/swiffer.jpg}
+			\includegraphics[width=\textwidth]{hoofdstukken/Elektromagnetisme/swiffer.jpg}
 		\end{center}
 		\caption{Swiffer stofveeg doekje.}
 		\label{fig:swiffer}
@@ -1035,17 +1052,17 @@ Stofdeeltjes en haren in de omgeving zijn elektrisch neutraal, maar de lading in
 %\captionsetup{width=0.85\textwidth}
       \centering
 	   \begin{subfigure}{0.32\linewidth}
-		\includegraphics[width=\linewidth]{hoofdstukken/elektromagnetisme/besproeien.jpeg}
+		\includegraphics[width=\linewidth]{hoofdstukken/Elektromagnetisme/besproeien.jpeg}
 		\caption{}
 		\label{fig:poedercoating}
 	   \end{subfigure}
 	   \begin{subfigure}{0.32\linewidth}
-		\includegraphics[width=\linewidth]{hoofdstukken/elektromagnetisme/stofvanger.jpeg}
+		\includegraphics[width=\linewidth]{hoofdstukken/Elektromagnetisme/stofvanger.jpeg}
 		\caption{}
 		\label{fig:stofvanger}
 	    \end{subfigure}
 	     \begin{subfigure}{0.32\linewidth}
-		\includegraphics[width=\linewidth]{hoofdstukken/elektromagnetisme/printer.jpeg}
+		\includegraphics[width=\linewidth]{hoofdstukken/Elektromagnetisme/printer.jpeg}
 		\caption{}
 		\label{fig:printer}
 	    \end{subfigure}

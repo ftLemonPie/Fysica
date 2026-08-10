@@ -22,7 +22,7 @@ YOUR_EMAIL="noproblem@dummy.org"
 #
 
 ## : "${XIMERA_NAME:=myreponame}"
- : "${XIMERA_URL:=http://localhost:2000/}"
+## : "${XIMERA_URL:=http://localhost:2000/}"
 ## : "${XIMERA_URL:=https://xerxes.ximera.org/}"
 ## : "${XIMERA_URL:=https://ximera.osu.edu/}"
 ## : "${XIMERA_URL:=https://set-p-dsb-zomercursus-latest.cloud-ext.icts.kuleuven.be/}"
@@ -32,9 +32,9 @@ YOUR_EMAIL="noproblem@dummy.org"
 # For a local ximeraserver
 #
 
-# : "${SERVER_PORT:=2000}"
-# : "${SERVER_NAME:=ximeraserver}"
-# : "${SERVER_IMAGE:=registry.gitlab.kuleuven.be/wet/ximera/ximeradocker:2.3_b}"
+ : "${SERVER_PORT:=2000}"
+ : "${SERVER_NAME:=ximeraserver}"
+ : "${SERVER_IMAGE:=registry.gitlab.kuleuven.be/wet/ximera/ximeradocker:2.3_b}"
 
 #
 # For testing/debugging

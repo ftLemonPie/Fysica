@@ -98,378 +98,378 @@
 	\DeclareSIUnit\meter{m}
 	\DeclareSIUnit\newton{N}
 	\DeclareSIUnit\radiaal{rad}	
-% Margins
-%\oddsidemargin = 0pt
-%\marginparwidth = 85pt
-% dit werkt------------------------------
-\geometry{paperheight=11in,paperwidth=8.5in,
-marginparsep=.019\paperwidth,marginparwidth=.2\paperwidth,
-inner=.12\paperwidth,voffset=0in,headheight=.02\paperheight,hoffset=0.2in,
-headsep=.02\paperheight,footskip=20pt,
-textheight=.795\paperheight,textwidth=.62\paperwidth}
-%--------------------------------------------
+% % Margins
+% %\oddsidemargin = 0pt
+% %\marginparwidth = 85pt
+% % dit werkt------------------------------
+% \geometry{paperheight=11in,paperwidth=8.5in,
+% marginparsep=.019\paperwidth,marginparwidth=.2\paperwidth,
+% inner=.12\paperwidth,voffset=0in,headheight=.02\paperheight,hoffset=0.2in,
+% headsep=.02\paperheight,footskip=20pt,
+% textheight=.795\paperheight,textwidth=.62\paperwidth}
+% %--------------------------------------------
 \setcounter{tocdepth}{1} %om subsections niet in inhoudstafel te krijgen
 
 
 
-% ----------------------------------------------------------------------
-%           User Created Environments 
-% ----------------------------------------------------------------------
-% marginnotes voor theorie, samenvatting, bewijs, oefeningen, voorbeeld, oefenmoment.
-% sidenote voor herhaling, oplossing, opmerking en toepassing.
-%
-%kleuren:		theorie - rood
-%			samenvatting - goudgeel
-%			definitie - groen geel
-%			bewijs - blauw
+% % ----------------------------------------------------------------------
+% %           User Created Environments --> alles in commentaar gezet, gaan proberen zonder dit te doen
+% % ----------------------------------------------------------------------
+% % marginnotes voor theorie, samenvatting, bewijs, oefeningen, voorbeeld, oefenmoment.
+% % sidenote voor herhaling, oplossing, opmerking en toepassing.
+% %
+% %kleuren:		theorie - rood
+% %			samenvatting - goudgeel
+% %			definitie - groen geel
+% %			bewijs - blauw
 
-\newlength{\spacelength}
-\settowidth{\spacelength}{\normalfont\ }
-\declaretheoremstyle[
-    headfont={\bfseries\sffamily\footnotesize},
-    notefont={\normalfont},
-    bodyfont={\normalfont},
-    headpunct={\relax},%\newline,
-    headformat={%
-        \makebox[0pt][r]{\NAME\ \NUMBER\hspace{\marginparsep}}\hskip-\spacelength{\normalsize\NOTE}},
-]{theorem}
+% \newlength{\spacelength}
+% \settowidth{\spacelength}{\normalfont\ }
+% \declaretheoremstyle[
+%     headfont={\bfseries\sffamily\footnotesize},
+%     notefont={\normalfont},
+%     bodyfont={\normalfont},
+%     headpunct={\relax},%\newline,
+%     headformat={%
+%         \makebox[0pt][r]{\NAME\ \NUMBER\hspace{\marginparsep}}\hskip-\spacelength{\normalsize\NOTE}},
+% ]{theorem}
 
-\tcolorboxenvironment{theorem}{
-  boxrule=0pt,
-  boxsep=0pt,
-  colback={White!90!Red},
-  enhanced jigsaw, 
-  borderline west={1pt}{0pt}{Red},
-  sharp corners,
-  before skip=10pt,
-  after skip=10pt,
-  left=5pt,
-  right=5pt,
-  breakable,
-}
-% --- theorie kader
-\theoremstyle{theorem}
-\newtheorem{theorie}{\colorbox{White!90!Red}{Theorie}}%%%[chapter] %<-----------------chapter
-\tcolorboxenvironment{theorie}{
-  boxrule=0pt,
-  boxsep=0pt,
-  colback={White!90!Red},
-  enhanced jigsaw, 
-  borderline west={1.5pt}{0pt}{Red},
-  borderline east={0.5pt}{0pt}{Red},
-  borderline north={0.5pt}{0pt}{Red},
-  borderline south={0.5pt}{0pt}{Red},  
-  sharp corners,
-  before skip=10pt,
-  after skip=10pt,
-  left=5pt,
-  right=5pt,
-  breakable,
-}
+% \tcolorboxenvironment{theorem}{
+%   boxrule=0pt,
+%   boxsep=0pt,
+%   colback={White!90!Red},
+%   enhanced jigsaw, 
+%   borderline west={1pt}{0pt}{Red},
+%   sharp corners,
+%   before skip=10pt,
+%   after skip=10pt,
+%   left=5pt,
+%   right=5pt,
+%   breakable,
+% }
+% % --- theorie kader
+% \theoremstyle{theorem}
+% \newtheorem{theorie}{\colorbox{White!90!Red}{Theorie}}%%%[chapter] %<-----------------chapter
+% \tcolorboxenvironment{theorie}{
+%   boxrule=0pt,
+%   boxsep=0pt,
+%   colback={White!90!Red},
+%   enhanced jigsaw, 
+%   borderline west={1.5pt}{0pt}{Red},
+%   borderline east={0.5pt}{0pt}{Red},
+%   borderline north={0.5pt}{0pt}{Red},
+%   borderline south={0.5pt}{0pt}{Red},  
+%   sharp corners,
+%   before skip=10pt,
+%   after skip=10pt,
+%   left=5pt,
+%   right=5pt,
+%   breakable,
+% }
 
 
-%\declaretheorem[style=theorem]{theorie}
+% %\declaretheorem[style=theorem]{theorie}
 
-% \let\proof\relax
-% \let\endproof\relax
+% % \let\proof\relax
+% % \let\endproof\relax
+
+% % \declaretheoremstyle[
+% %     headfont={\small\scshape},
+% %     notefont={\normalfont},
+% %     bodyfont={\normalfont},
+% %     headpunct={\relax},
+% %     headformat={%
+% %         \makebox[0pt][r]{\NAME\ \NUMBER\hspace{\marginparsep}}\hskip-\spacelength{\NOTE}},
+% % ]{proof}
+% % --- Samenvatting
+% \theoremstyle{theorem}
+% \newtheorem{samenvatting}{\colorbox{White!90!Goldenrod}{Samenvatting}}[chapter]%<-----------------chapter
+
+
+% \tcolorboxenvironment{samenvatting}{
+%   boxrule=0pt,
+%   boxsep=0pt,
+%   colback={White!90!Goldenrod},
+%   enhanced jigsaw, 
+%   borderline west={1.5pt}{0pt}{Goldenrod},
+%   borderline east={0.5pt}{0pt}{Goldenrod},
+%   borderline north={0.5pt}{0pt}{Goldenrod},
+%   borderline south={0.5pt}{0pt}{Goldenrod},
+%   sharp corners,
+%   before skip=10pt,
+%   after skip=10pt,
+%   left=5pt,
+%   right=5pt,
+%   breakable,
+% }
+% % --- definitie
+% \theoremstyle{theorem}
+% \newtheorem{definitie}{\colorbox{White!90!GreenYellow}{Definitie}}[chapter]%<-----------------chapter
+
+
+% \tcolorboxenvironment{definitie}{
+%   boxrule=0pt,
+%   boxsep=0pt,
+%   colback={White!90!GreenYellow},
+%   enhanced jigsaw, 
+%   borderline west={1.5pt}{0pt}{GreenYellow},
+%   borderline east={0.5pt}{0pt}{GreenYellow},
+%   borderline north={0.5pt}{0pt}{GreenYellow},
+%   borderline south={0.5pt}{0pt}{GreenYellow},
+%   sharp corners,
+%   before skip=10pt,
+%   after skip=10pt,
+%   left=5pt,
+%   right=5pt,
+%   breakable,
+% }
+% % --- definitie
+% \theoremstyle{theorem}
+% \newtheorem{wet}{\colorbox{White!90!Green}{Wet}}[chapter]%<-----------------chapter
+
+
+% \tcolorboxenvironment{wet}{
+%   boxrule=0pt,
+%   boxsep=0pt,
+%   colback={White!90!Green},
+%   enhanced jigsaw, 
+%   borderline west={1.5pt}{0pt}{Green},
+%   borderline east={0.5pt}{0pt}{Green},
+%   borderline north={0.5pt}{0pt}{Green},
+%   borderline south={0.5pt}{0pt}{Green},
+%   sharp corners,
+%   before skip=10pt,
+%   after skip=10pt,
+%   left=5pt,
+%   right=5pt,
+%   breakable,
+% }
+% % --- bewijs
+% \tcolorboxenvironment{bewijs}{
+%   boxrule=0pt,
+%   boxsep=0pt,
+%   blanker,
+%   borderline west={1.5pt}{0pt}{NavyBlue!80!white},
+%   borderline east={0.5pt}{0pt}{NavyBlue!80!white},
+%   borderline north={0.5pt}{0pt}{NavyBlue!80!white},
+%   borderline south={0.5pt}{0pt}{NavyBlue!80!white},
+%   before skip=10pt,
+%   after skip=10pt,
+%   left=5pt,
+%   right=5pt,
+%   breakable,
+% }
 
 % \declaretheoremstyle[
-%     headfont={\small\scshape},
+%     headfont={\footnotesize\itshape},
 %     notefont={\normalfont},
 %     bodyfont={\normalfont},
 %     headpunct={\relax},
 %     headformat={%
-%         \makebox[0pt][r]{\NAME\ \NUMBER\hspace{\marginparsep}}\hskip-\spacelength{\NOTE}},
-% ]{proof}
-% --- Samenvatting
-\theoremstyle{theorem}
-\newtheorem{samenvatting}{\colorbox{White!90!Goldenrod}{Samenvatting}}[chapter]%<-----------------chapter
+%         \makebox[0pt][r]{\NAME\hspace{\marginparsep}}\hskip-\spacelength{\NOTE}},
+% ]{claim}
+
+% \declaretheorem[
+%     % style=proof,
+%     style=claim,
+%     qed=\qedsymbol]{bewijs}
+
+% \declaretheorem[style=claim]{Intuition}
 
 
-\tcolorboxenvironment{samenvatting}{
-  boxrule=0pt,
-  boxsep=0pt,
-  colback={White!90!Goldenrod},
-  enhanced jigsaw, 
-  borderline west={1.5pt}{0pt}{Goldenrod},
-  borderline east={0.5pt}{0pt}{Goldenrod},
-  borderline north={0.5pt}{0pt}{Goldenrod},
-  borderline south={0.5pt}{0pt}{Goldenrod},
-  sharp corners,
-  before skip=10pt,
-  after skip=10pt,
-  left=5pt,
-  right=5pt,
-  breakable,
-}
-% --- definitie
-\theoremstyle{theorem}
-\newtheorem{definitie}{\colorbox{White!90!GreenYellow}{Definitie}}[chapter]%<-----------------chapter
+% % --- vraag
+% \theoremstyle{theorem}
+% \newtheorem{vraag}{Vraag}[chapter]%<-----------------chapter
+% \tcolorboxenvironment{vraag}{
+%   boxrule=0pt,
+%   boxsep=0pt,
+%   blanker,
+% %  borderline west={1pt}{0pt}{Black},
+%   borderline south={0.5pt}{-5pt}{Black},
+%   %borderline north={1pt}{-3pt}{Black},
+%   before skip=10pt,
+%   after skip=10pt,
+%   sharp corners,
+%   left=5pt,
+%   right=5pt,
+%   breakable,
+% }
+
+% % --- Oefening
+% \theoremstyle{theorem}
+% \newtheorem{oef}{Oefening}[chapter]%<-----------------chapter
+% \tcolorboxenvironment{oef}{
+%   boxrule=0pt,
+%   boxsep=0pt,
+%   blanker,
+% %  borderline west={1pt}{0pt}{Black},
+%   borderline south={0.5pt}{-5pt}{Black},
+%   %borderline north={1pt}{-3pt}{Black},
+%   before skip=10pt,
+%   after skip=10pt,
+%   sharp corners,
+%   left=5pt,
+%   right=5pt,
+%   breakable,
+% }
+% % --- voorbeeld
+% \theoremstyle{theorem}
+% \newtheorem{voorbeeld}{\colorbox{White!90!Cerulean}{Voorbeeld}}[chapter]%<-----------------chapter
+% \tcolorboxenvironment{voorbeeld}{
+%   boxrule=0pt,
+%   boxsep=0pt,
+%   colback={White!90!Cerulean},
+%   enhanced jigsaw, 
+%   borderline west={1.5pt}{0pt}{Cerulean},
+%   borderline north={0.5pt}{0pt}{Cerulean},
+%   borderline south={0.5pt}{0pt}{Cerulean},
+%   borderline east={0.5pt}{0pt}{Cerulean},
+%   sharp corners,
+%   before skip=10pt,
+%   after skip=15pt,
+%   left=5pt,
+%   right=5pt,
+%   breakable,
+% }
+% % --- oefenmoment: quizjes tijdens de cursus om te testen of je mee bent. Oplossingen staan in oplossingen
+% \theoremstyle{theorem}
+% \newtheorem{quiz}{\colorbox{White!90!NavyBlue}{Quiz}}[chapter]%<-----------------chapter
+% \tcolorboxenvironment{quiz}{
+%   boxrule=0pt,
+%   boxsep=0pt,
+%   blanker,
+%   borderline north={1pt}{-5pt}{NavyBlue!80!white},
+%   borderline south={1pt}{-5pt}{NavyBlue!80!white},
+%   before skip=10pt,
+%   after skip=10pt,
+%   sharp corners,
+%   left=5pt,
+%   right=5pt,
+%   %breakable,
+% }
+
+% % ----- oplossingen van de quisjes
+% \theoremstyle{theorem}
+% \newtheorem{oplq}{\colorbox{White!90!NavyBlue}{Opl. Quiz}}[chapter]%<-----------------chapter
+% \tcolorboxenvironment{oplq}{
+%   boxrule=0pt,
+%   boxsep=0pt,
+%   blanker,
+%   borderline west={1pt}{0pt}{NavyBlue},
+%   before skip=10pt,
+%   after skip=10pt,
+%   sharp corners,
+%   left=5pt,
+%   right=5pt,
+%   breakable,
+% }
+% % ----- antwoorden op de vragen
+% \theoremstyle{theorem}
+% \newtheorem{ant}{\colorbox{White!90!black}{Antwoord}}[chapter]%<-----------------chapter
+% \tcolorboxenvironment{ant}{
+%   boxrule=0pt,
+%   boxsep=0pt,
+%   blanker,
+% %  borderline west={1pt}{0pt}{Black},
+%   borderline south={1pt}{-5pt}{Black},
+%   %borderline north={1pt}{-3pt}{Black},
+%   before skip=10pt,
+%   after skip=10pt,
+%   sharp corners,
+%   left=5pt,
+%   right=5pt,
+%   breakable,
+% }
+
+% % ----- oplossingen van de vraagstukken
+% \theoremstyle{theorem}
+% \newtheorem{opl}{\colorbox{White!90!black}{Oplossing}}[chapter]%<-----------------chapter
+% \tcolorboxenvironment{opl}{
+%   boxrule=0pt,
+%   boxsep=0pt,
+%   blanker,
+% %  borderline west={1pt}{0pt}{Black},
+%   borderline south={1pt}{-5pt}{Black},
+%   %borderline north={1pt}{-3pt}{Black},
+%   before skip=10pt,
+%   after skip=10pt,
+%   sharp corners,
+%   left=5pt,
+%   right=5pt,
+%   breakable,
+% }
+% % --- herhaling
+% \theoremstyle{claim}
+% \newtheorem{her}{Herhaling}[chapter]%<-----------------chapter
 
 
-\tcolorboxenvironment{definitie}{
-  boxrule=0pt,
-  boxsep=0pt,
-  colback={White!90!GreenYellow},
-  enhanced jigsaw, 
-  borderline west={1.5pt}{0pt}{GreenYellow},
-  borderline east={0.5pt}{0pt}{GreenYellow},
-  borderline north={0.5pt}{0pt}{GreenYellow},
-  borderline south={0.5pt}{0pt}{GreenYellow},
-  sharp corners,
-  before skip=10pt,
-  after skip=10pt,
-  left=5pt,
-  right=5pt,
-  breakable,
-}
-% --- definitie
-\theoremstyle{theorem}
-\newtheorem{wet}{\colorbox{White!90!Green}{Wet}}[chapter]%<-----------------chapter
+% % --- oplossingen, gebruik \label en \ref
+% %\theoremstyle{claim}
+% %\newtheorem{opl}{Oplossing}[chapter]%<-----------------chapter
 
+%  % --- opmerkingen
+% \theoremstyle{claim}
+% \newtheorem{opm}{Opmerking}[chapter]%<-----------------chapter
+% \tcolorboxenvironment{opm}{
+%   boxrule=0pt,
+%   boxsep=0pt,
+%   blanker,
+%   borderline west={1.5pt}{0pt}{lightgray},
+%   sharp corners,
+%   before skip=10pt,
+%   after skip=10pt,
+%   left=5pt,
+%   right=5pt,
+%   breakable,
+% }
 
-\tcolorboxenvironment{wet}{
-  boxrule=0pt,
-  boxsep=0pt,
-  colback={White!90!Green},
-  enhanced jigsaw, 
-  borderline west={1.5pt}{0pt}{Green},
-  borderline east={0.5pt}{0pt}{Green},
-  borderline north={0.5pt}{0pt}{Green},
-  borderline south={0.5pt}{0pt}{Green},
-  sharp corners,
-  before skip=10pt,
-  after skip=10pt,
-  left=5pt,
-  right=5pt,
-  breakable,
-}
-% --- bewijs
-\tcolorboxenvironment{bewijs}{
-  boxrule=0pt,
-  boxsep=0pt,
-  blanker,
-  borderline west={1.5pt}{0pt}{NavyBlue!80!white},
-  borderline east={0.5pt}{0pt}{NavyBlue!80!white},
-  borderline north={0.5pt}{0pt}{NavyBlue!80!white},
-  borderline south={0.5pt}{0pt}{NavyBlue!80!white},
-  before skip=10pt,
-  after skip=10pt,
-  left=5pt,
-  right=5pt,
-  breakable,
-}
+% % --- toepassing
+% \theoremstyle{claim}
+% \newtheorem{toepassing}{Toepassing}[chapter]%<-----------------chapter
+% \tcolorboxenvironment{toepassing}{
+%   boxrule=0pt,
+%   boxsep=0pt,
+%   blanker,
+%   borderline west={1.5pt}{0pt}{Black},
+%   sharp corners,
+%   before skip=10pt,
+%   after skip=10pt,
+%   left=5pt,
+%   right=5pt,
+%   breakable,
+% }
 
-\declaretheoremstyle[
-    headfont={\footnotesize\itshape},
-    notefont={\normalfont},
-    bodyfont={\normalfont},
-    headpunct={\relax},
-    headformat={%
-        \makebox[0pt][r]{\NAME\hspace{\marginparsep}}\hskip-\spacelength{\NOTE}},
-]{claim}
+% \renewcommand*{\raggedleftmarginnote}{\noindent}
+% \renewcommand*{\raggedrightmarginnote}{\noindent}
+% \newcommand{\mn}[1]{\textsuperscript{\thesidenote}{}\marginnote{\textsuperscript{\thesidenote}{}\itshape\footnotesize #1}\refstepcounter{sidenote}}
+% \newcommand{\en}[1]{\marginnote{\footnotesize{#1}}}
+% \newcommand{\lec}[2]{{\setlength{\marginparwidth}{.07\paperwidth}\reversemarginpar\marginnote{\centering\footnotesize{\textsf{\bfseries #1}}\\#2}}}
+% \newcommand{\sn}[1]{\sidenote{\itshape\footnotesize #1}}
 
-\declaretheorem[
-    % style=proof,
-    style=claim,
-    qed=\qedsymbol]{bewijs}
+% % -- fullpage
+% \newenvironment{fullpage}
+%     {\smallskip\noindent\begin{minipage}
+%     {\textwidth+\marginparwidth+\marginparsep}\hrule\smallskip\smallskip}
+%     {\hrule\end{minipage}\vspace{.1in}}
 
-\declaretheorem[style=claim]{Intuition}
+% % --- varwidth
+% \newtcbox{\varbox}{colframe=black,
+% colback=white,varwidth upper}
 
+% % voor kolom
+% \renewcommand{\arraystretch}{2}
+% 	\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 
-% --- vraag
-\theoremstyle{theorem}
-\newtheorem{vraag}{Vraag}[chapter]%<-----------------chapter
-\tcolorboxenvironment{vraag}{
-  boxrule=0pt,
-  boxsep=0pt,
-  blanker,
-%  borderline west={1pt}{0pt}{Black},
-  borderline south={0.5pt}{-5pt}{Black},
-  %borderline north={1pt}{-3pt}{Black},
-  before skip=10pt,
-  after skip=10pt,
-  sharp corners,
-  left=5pt,
-  right=5pt,
-  breakable,
-}
-
-% --- Oefening
-\theoremstyle{theorem}
-\newtheorem{oef}{Oefening}[chapter]%<-----------------chapter
-\tcolorboxenvironment{oef}{
-  boxrule=0pt,
-  boxsep=0pt,
-  blanker,
-%  borderline west={1pt}{0pt}{Black},
-  borderline south={0.5pt}{-5pt}{Black},
-  %borderline north={1pt}{-3pt}{Black},
-  before skip=10pt,
-  after skip=10pt,
-  sharp corners,
-  left=5pt,
-  right=5pt,
-  breakable,
-}
-% --- voorbeeld
-\theoremstyle{theorem}
-\newtheorem{voorbeeld}{\colorbox{White!90!Cerulean}{Voorbeeld}}[chapter]%<-----------------chapter
-\tcolorboxenvironment{voorbeeld}{
-  boxrule=0pt,
-  boxsep=0pt,
-  colback={White!90!Cerulean},
-  enhanced jigsaw, 
-  borderline west={1.5pt}{0pt}{Cerulean},
-  borderline north={0.5pt}{0pt}{Cerulean},
-  borderline south={0.5pt}{0pt}{Cerulean},
-  borderline east={0.5pt}{0pt}{Cerulean},
-  sharp corners,
-  before skip=10pt,
-  after skip=15pt,
-  left=5pt,
-  right=5pt,
-  breakable,
-}
-% --- oefenmoment: quizjes tijdens de cursus om te testen of je mee bent. Oplossingen staan in oplossingen
-\theoremstyle{theorem}
-\newtheorem{quiz}{\colorbox{White!90!NavyBlue}{Quiz}}[chapter]%<-----------------chapter
-\tcolorboxenvironment{quiz}{
-  boxrule=0pt,
-  boxsep=0pt,
-  blanker,
-  borderline north={1pt}{-5pt}{NavyBlue!80!white},
-  borderline south={1pt}{-5pt}{NavyBlue!80!white},
-  before skip=10pt,
-  after skip=10pt,
-  sharp corners,
-  left=5pt,
-  right=5pt,
-  %breakable,
-}
-
-% ----- oplossingen van de quisjes
-\theoremstyle{theorem}
-\newtheorem{oplq}{\colorbox{White!90!NavyBlue}{Opl. Quiz}}[chapter]%<-----------------chapter
-\tcolorboxenvironment{oplq}{
-  boxrule=0pt,
-  boxsep=0pt,
-  blanker,
-  borderline west={1pt}{0pt}{NavyBlue},
-  before skip=10pt,
-  after skip=10pt,
-  sharp corners,
-  left=5pt,
-  right=5pt,
-  breakable,
-}
-% ----- antwoorden op de vragen
-\theoremstyle{theorem}
-\newtheorem{ant}{\colorbox{White!90!black}{Antwoord}}[chapter]%<-----------------chapter
-\tcolorboxenvironment{ant}{
-  boxrule=0pt,
-  boxsep=0pt,
-  blanker,
-%  borderline west={1pt}{0pt}{Black},
-  borderline south={1pt}{-5pt}{Black},
-  %borderline north={1pt}{-3pt}{Black},
-  before skip=10pt,
-  after skip=10pt,
-  sharp corners,
-  left=5pt,
-  right=5pt,
-  breakable,
-}
-
-% ----- oplossingen van de vraagstukken
-\theoremstyle{theorem}
-\newtheorem{opl}{\colorbox{White!90!black}{Oplossing}}[chapter]%<-----------------chapter
-\tcolorboxenvironment{opl}{
-  boxrule=0pt,
-  boxsep=0pt,
-  blanker,
-%  borderline west={1pt}{0pt}{Black},
-  borderline south={1pt}{-5pt}{Black},
-  %borderline north={1pt}{-3pt}{Black},
-  before skip=10pt,
-  after skip=10pt,
-  sharp corners,
-  left=5pt,
-  right=5pt,
-  breakable,
-}
-% --- herhaling
-\theoremstyle{claim}
-\newtheorem{her}{Herhaling}[chapter]%<-----------------chapter
-
-
-% --- oplossingen, gebruik \label en \ref
-%\theoremstyle{claim}
-%\newtheorem{opl}{Oplossing}[chapter]%<-----------------chapter
-
- % --- opmerkingen
-\theoremstyle{claim}
-\newtheorem{opm}{Opmerking}[chapter]%<-----------------chapter
-\tcolorboxenvironment{opm}{
-  boxrule=0pt,
-  boxsep=0pt,
-  blanker,
-  borderline west={1.5pt}{0pt}{lightgray},
-  sharp corners,
-  before skip=10pt,
-  after skip=10pt,
-  left=5pt,
-  right=5pt,
-  breakable,
-}
-
-% --- toepassing
-\theoremstyle{claim}
-\newtheorem{toepassing}{Toepassing}[chapter]%<-----------------chapter
-\tcolorboxenvironment{toepassing}{
-  boxrule=0pt,
-  boxsep=0pt,
-  blanker,
-  borderline west={1.5pt}{0pt}{Black},
-  sharp corners,
-  before skip=10pt,
-  after skip=10pt,
-  left=5pt,
-  right=5pt,
-  breakable,
-}
-
-\renewcommand*{\raggedleftmarginnote}{\noindent}
-\renewcommand*{\raggedrightmarginnote}{\noindent}
-\newcommand{\mn}[1]{\textsuperscript{\thesidenote}{}\marginnote{\textsuperscript{\thesidenote}{}\itshape\footnotesize #1}\refstepcounter{sidenote}}
-\newcommand{\en}[1]{\marginnote{\footnotesize{#1}}}
-\newcommand{\lec}[2]{{\setlength{\marginparwidth}{.07\paperwidth}\reversemarginpar\marginnote{\centering\footnotesize{\textsf{\bfseries #1}}\\#2}}}
-\newcommand{\sn}[1]{\sidenote{\itshape\footnotesize #1}}
-
-% -- fullpage
-\newenvironment{fullpage}
-    {\smallskip\noindent\begin{minipage}
-    {\textwidth+\marginparwidth+\marginparsep}\hrule\smallskip\smallskip}
-    {\hrule\end{minipage}\vspace{.1in}}
-
-% --- varwidth
-\newtcbox{\varbox}{colframe=black,
-colback=white,varwidth upper}
-
-% voor kolom
-\renewcommand{\arraystretch}{2}
-	\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
-
-% tikz
-\tikzstyle{charge}=[thin,top color=red!50,bottom color=red!70,shading angle=20]
-\tikzstyle{charge+}=[thin,top color=red!50,bottom color=red!90!black,shading angle=20]
-\tikzstyle{charge-}=[thin,top color=blue!50,bottom color=blue!80,shading angle=20]
-\tikzstyle{force}=[->,very thick,orange!80!black]
-\tikzstyle{vector}=[->,very thick,green!45!black]
-\def\a{1.4}
-\def\R{0.15}
-\def\F{0.8}
-%\def\s{1}		%scale van figuren
+% % tikz
+% \tikzstyle{charge}=[thin,top color=red!50,bottom color=red!70,shading angle=20]
+% \tikzstyle{charge+}=[thin,top color=red!50,bottom color=red!90!black,shading angle=20]
+% \tikzstyle{charge-}=[thin,top color=blue!50,bottom color=blue!80,shading angle=20]
+% \tikzstyle{force}=[->,very thick,orange!80!black]
+% \tikzstyle{vector}=[->,very thick,green!45!black]
+% \def\a{1.4}
+% \def\R{0.15}
+% \def\F{0.8}
+% %\def\s{1}		%scale van figuren
 
 
 % ----------------------------------------------------------------------

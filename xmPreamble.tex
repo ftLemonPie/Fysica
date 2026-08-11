@@ -3,7 +3,7 @@
 %           Packages 
 % ----------------------------------------------------------------------
 \usepackage{lipsum}%dummy tekst
-\usepackage{todonotes}%todo's : https://tug.ctan.org/macros/latex/contrib/todonotes/todonotes.pdf
+%\usepackage{todonotes}%todo's : https://tug.ctan.org/macros/latex/contrib/todonotes/todonotes.pdf
 
 % -- layout hoofdstukken: Sonny, Lenny, Glenn, Conny, Rejne, Bjarne, Bjornstrup
 %\usepackage[Glenn]{fncychap}
@@ -46,18 +46,18 @@
 %environments from amsthm are modified to use tcolorbox, marginnotes becomes an
 %essential part of NotesTeX.
 \usepackage{marginnote}
-\usepackage{sidenotes}
+%\usepackage{sidenotes}
 \usepackage{nuc}	%Nuclides  https://mirror.ibcp.fr/pub/CTAN/macros/latex/contrib/nuc/nuc.pdf 
 \usepackage{ifthen}
 % nodig voor sitenotes
 \usepackage{xparse}
 \usepackage{l3keys2e}
-\usepackage{changepage}
+%\usepackage{changepage}
 % -- nodig voor env en andere zaken
-\usepackage{marginnote,sidenotes,fancyhdr,geometry}
+\usepackage{fancyhdr,geometry}
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage[many]{tcolorbox}
-\usepackage{varwidth}
+%\usepackage{varwidth}
 \tcbuselibrary{raster}
 \usepackage[T1]{fontenc}                            % Font Styling
 \usepackage{lmodern,mathrsfs}
@@ -82,8 +82,8 @@
 \usepackage{setspace} %voor interlinie: \onehalfspacing en \singlespacing
 % -- file packages
 \usepackage{pdfpages} %om pdf's toe te voegen
-\usepackage{filecontents}
-\usepackage{subfiles} % Best loaded last in the preamble
+%\usepackage{filecontents}
+%\usepackage{subfiles} % Best loaded last in the preamble
 \usepackage{siunitx} % SI units en aanpassingen
 \usepackage[locale=FR]{siunitx}
 \AtBeginDocument{\RenewCommandCopy\qty\SI}
@@ -483,17 +483,16 @@
 
 % Logo command
 \ifdefined\isXourse
-
+\logo{xmPictures/buisjes.jpg}
 \else
 
 % \logo is only defined in xourses (but that prevents \logo to be used in global.sty etc ....)
 
-\newcommand*{\logo}[1]{%
-    \IfFileExists{#1}%
-      {\gdef\xourse@logo{#1}}%
-      {\ClassError{xmPreamble}{logo file does not exist}
-        {To use logo, make sure that the referenced image file exists}}%
-}
+% \renewcommand*{\logo}[1]{%
+%     \IfFileExists{#1}%
+%       {\gdef\xourse@logo{#1}}%
+%       {\ClassError{xmPreamble}{logo file does not exist}
+%         {To use logo, make sure that the referenced image file exists}}%
+% }
 
-\fi
-\logo{xmPictures/buisjes.jpg}
+ \fi

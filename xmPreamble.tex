@@ -489,16 +489,11 @@
 % \logo is only defined in xourses (but that prevents \logo to be used in global.sty etc ....)
 
 \newcommand*{\logo}[1]{%
-
     \IfFileExists{#1}%
-
       {\gdef\xourse@logo{#1}}%
-
       {\ClassError{xmPreamble}{logo file does not exist}
-
         {To use logo, make sure that the referenced image file exists}}%
-
 }
 
 \fi
- \logo{xmPictures/buisje.jpg}
+\logo{xmPictures/buisjes.jpg}

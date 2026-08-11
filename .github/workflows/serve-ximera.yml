@@ -48,7 +48,7 @@ jobs:
           GPG_KEY: ${{ secrets.GPG_KEY }}
           GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
           XIMERA_URL: "https://xerxes.ximera.org/"
-          XIMERA_NAME: "test-daan*preview"
+          XIMERA_NAME: "sui*preview"
         run: |
           ls -alrt
           chmod +x xmScripts/xmlatex   # Overleaf sync might reset it :-()
@@ -86,7 +86,7 @@ jobs:
           GPG_KEY: ${{ secrets.GPG_KEY }}
           GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
           XIMERA_URL: "https://xerxes.ximera.org/"
-          XIMERA_NAME: "test-daan"
+          XIMERA_NAME: "sui"
         run: |
           chmod +x xmScripts/xmlatex # Overleaf sync might reset it :-()
           ./xmScripts/xmlatex name         

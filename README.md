@@ -1,3 +1,8 @@
+# TODO
+- [] \mylink: doet nog niet wat het zou moeten doen. QR met onderschrift in pdf en een klikbare hyperlink online.
+- afmaken activity "hoe fysica te studeren"
+- [ ] inleiding maken
+
 # Make a new project in Ximera
 
 Use this repository to create a new Ximera project by clicking the "Use This Template" button in the upper right hand corner.

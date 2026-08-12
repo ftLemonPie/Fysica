@@ -496,3 +496,17 @@
 % }
 
  \fi
+
+
+ % Mylink: doet nog niet wat ik dacht dat het doet!!!
+ \newcommand{\mylink}[2][]{
+	\ifdefined\HCode
+			\href{#1}{#2}   
+	\else
+		\begin{figure}
+			\qrcode[hyperlink,height=0.85in]{#1}
+			\vspace*{-5mm}
+			\caption*{\scriptsize #2}
+		\end{figure}
+	\fi	
+ }

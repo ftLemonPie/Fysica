@@ -1,7 +1,7 @@
 \documentclass{ximera}
 
 \title{A new Ximera Activity}
-\author{YOUR-NAME-HERE}
+\author{Daan Lipkens}
 
 \begin{document}
 \begin{abstract}

@@ -3,8 +3,8 @@
 #
 # : "${XAKE_BASE:=ximeralatex}"
 #: "${XAKE_VERSION:=2026a}"    # with texlive_full
-#: "${XAKE_VERSION:=v2.7.9-full}"    # with texlive_full voor vol
-: "${XAKE_VERSION:=v2.7.9}"    # kleinere versie
+: "${XAKE_VERSION:=v2.7.9-full}"    # with texlive_full voor vol
+#: "${XAKE_VERSION:=v2.7.9}"    # kleinere versie
 #
 # For publishing you'll need a GPG Key
 # To generate a key-pair, fill in your name and email, and run 'xmlatex genKey'

@@ -1,6 +1,6 @@
 # TODO
-- [] \mylink: doet nog niet wat het zou moeten doen. QR met onderschrift in pdf en een klikbare hyperlink online.
-- afmaken activity "hoe fysica te studeren"
+- [ ] \mylink: doet nog niet wat het zou moeten doen. QR met onderschrift in pdf en een klikbare hyperlink online.
+- [ ] afmaken activity "hoe fysica te studeren"
 - [ ] inleiding maken
 
 # Make a new project in Ximera

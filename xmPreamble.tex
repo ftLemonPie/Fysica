@@ -98,6 +98,7 @@
 	\DeclareSIUnit\meter{m}
 	\DeclareSIUnit\newton{N}
 	\DeclareSIUnit\radiaal{rad}	
+	\sisetup{inter-unit-product = \ensuremath{{}\cdot{}}} %nog nodig?
 % % Margins
 % %\oddsidemargin = 0pt
 % %\marginparwidth = 85pt
@@ -500,14 +501,17 @@
 
  % Mylink: doet nog niet wat ik dacht dat het doet!!!
  \newcommand{\mylink}[2][]{
-	\ifdefined\HCode %welke beste?
-			\url{#1}{#2}   
-			%\href{#1}{#2}   
+	\ifdefined\HCode %Werkt niet?
+		\href{#2}{#1}
 	\else
-		\begin{figure}
-			\qrcode[hyperlink,height=0.85in]{#1}
-			\vspace*{-5mm}
-			\caption*{\scriptsize #2}
-		\end{figure}
-	\fi	
+		
+		\qrcode[hyperlink]{#2}#1
+
+		%figure werkt niet goed.
+		% \begin{figure}[h!]
+		% 	\qrcode[hyperlink]{#2}
+		% 	\caption*{#1}
+		% \end{figure}
+
+		\fi	
  }

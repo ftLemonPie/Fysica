@@ -500,8 +500,9 @@
 
  % Mylink: doet nog niet wat ik dacht dat het doet!!!
  \newcommand{\mylink}[2][]{
-	\ifdefined\HCode
-			\href{#1}{#2}   
+	\ifdefined\HCode %welke beste?
+			\url{#1}{#2}   
+			%\href{#1}{#2}   
 	\else
 		\begin{figure}
 			\qrcode[hyperlink,height=0.85in]{#1}

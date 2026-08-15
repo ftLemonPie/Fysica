@@ -1,3 +1,4 @@
+%Basis geschreven zonder verbetering
 \documentclass{ximera}
 
 \title{Hoe Fysica Te Studeren}
@@ -9,7 +10,6 @@
 \end{abstract}
 \maketitle
 
-% https://subjectguides.york.ac.uk/study-revision/feynman-technique nog in QR code
 \begin{quote}
 \textit{“De natuurkunde leer je niet door ze te lezen, maar door ze te doen.”}
 \end{quote}
@@ -45,13 +45,12 @@ Een formule is enkel een hulpmiddel, een samenvatting van een dieper concept.
 \end{itemize}
 Voordat je een formule memoriseert, stel jezelf de vraag: \textit{Wat beschrijft deze wet?}  
 Welk fysisch principe zit hierachter?  
-Zo activiteit het aantal vervallen per seconden van een radioactief element of de verandering van het aantal nog niet vervallen kernen.  
+Zo geeft de activiteit het aantal vervallen kernen per seconde weer van een radioactief element, oftewel de verandering van het aantal nog niet vervallen kernen.  
 Pas als je dat begrijpt, zie je dat er verschillende formules zijn die hetzelfde principe beschrijven, maar in een andere context:
 
 \begin{align*}
-A(t)=-\dv{N(t)}{t} && At(t)=-A_0 e^{\frac{-t\cdot \ln{2}}{T}}&& A=-\frac{-N(t)}{\Delta t}
+A(t) = -\dv{N(t)}{t} && A(t) = A_0 e^{\frac{-t\cdot \ln{2}}{T_{1/2}}} && A_{gem} = -\frac{\Delta N(t)}{\Delta t}
 \end{align*}
-
 
 \subsection*{Herformuleer in je eigen woorden:}
 Kun je activiteit uitleggen aan iemand die weinig van fysica weet?  
@@ -59,8 +58,8 @@ Wie een concept in eenvoudige taal kan uitleggen, begrijpt het echt.
 
 \subsection*{Maak schema’s of mindmaps:}
 Visualiseer hoe concepten met elkaar verbonden zijn.  
-Hoe hangt activiet samen met de halfwaardetijd, vervalwet, \dots?
-In de practijk heb je vaak niet te maken met een losstaande formule, maar met een combinatie van concepten.
+Hoe hangt activiteit samen met de halfwaardetijd, de vervalwet, \dots?
+In de praktijk heb je vaak niet te maken met een losstaande formule, maar met een combinatie van concepten.
 
 \begin{remark}
 De beste fysici onthouden geen tientallen formules. Ze begrijpen hoe ze allemaal uit één basisprincipe kunnen worden afgeleid.
@@ -75,7 +74,6 @@ De beste fysici onthouden geen tientallen formules. Ze begrijpen hoe ze allemaal
 Oefeningen vormen de kern van je fysicastudie.
 Het doel is niet alleen het juiste antwoord vinden, maar vooral het proces beheersen.
 
-
 Om echt inzicht te krijgen, is het waardevol om af en toe vast te lopen in een oefening.
 Leg de opgave in dat geval even aan de kant en probeer ze pas de volgende dag opnieuw.
 Vaak zie je het probleem dan met een frisse blik en vind je zelf de juiste aanpak.
@@ -83,79 +81,59 @@ Blijf niet eindeloos zoeken en kijk ook niet te snel naar de oplossing.
 Dat betekent wel dat je je studie fysica moet spreiden over meerdere momenten,
 in plaats van alles in één lange sessie te proberen leren.
 
-
 Tijdens het maken van oefeningen gebruik je enkel wat je tijdens een test mag gebruiken, \textbf{niets anders}.
 Dus geen notities, geen andere oefeningen, geen verbeteringen en geen internet.
 \newline
-Lukt het niet, pak dan een \textcolor{teal}{een groene pen} en behandel de oefening alsof het een openboek toets is: gebruik de theorie en de voorbeelden in de cursus om je weg te vinden.
-Zet in de kantlijn waar je vastloopt en welke stappen je hebt genomen of wat je hebt moeten opzoeken om het te kunnen.
+Lukt het niet, pak dan \textcolor{teal}{een groene pen} en behandel de oefening alsof het een openboektoets is: gebruik de theorie en de voorbeelden in de cursus om je weg te vinden.
+Zet in de kantlijn waar je vastloopt, welke stappen je hebt genomen of wat je hebt moeten opzoeken om verder te kunnen.
 \newline
-Zodra je klaar bent met de oefening of nog steeds vast zit, neem je een \textcolor{red}{rode pen} en verbeter je je werk. Zet in de kantlijn welk type fouten je gemaakt hebt.
-Op deze manier heb je een duidelijk overzicht van je fouten en waar je dus extra op moet letten.
-Bovendien zie je duidelijk welke delen je echt onder de knie hebt, de delen met enkel \textcolor{blue}{blauw} en welke delen je nog moet oefenen, de delen met \textcolor{red}{rood} en \textcolor{teal}{groen}.
+Zodra je klaar bent met de oefening of nog steeds vastzit, neem je een \textcolor{red}{rode pen} en verbeter je je werk. Zet in de kantlijn welk type fouten je gemaakt hebt.
+Op deze manier heb je een duidelijk overzicht van je fouten en weet je waar je extra op moet letten.
+Bovendien zie je zo heel duidelijk welke delen je echt onder de knie hebt (de delen met enkel \textcolor{blue}{blauw}) en welke delen je nog moet oefenen (de delen met \textcolor{red}{rood} en \textcolor{teal}{groen}).
 Wees kritisch voor alle tussenstappen en controleer of de eenheden overal kloppen.
-
-
 
 \begin{itemize}
     \item Begin met \textbf{eenvoudige oefeningen} en werk toe naar moeilijkere.
     \item Gebruik het \textbf{stappenplan} hieronder voor elke opgave.
-    \item Fouten maken is \textbf{goed} – ze laten zien waar je nog moet leren.
+    \item Fouten maken is \textbf{goed}, ze laten zien wat je nog moet leren.
 \end{itemize}
 
 \begin{example}[Stappenplan voor fysica-problemen]
 \begin{enumerate}
-    \item \textbf{Lees zorgvuldig}: Wat wordt gevraagd, fluoriseer het in het rood? Welke gegevens heb je, fluoriseer het in het groen? Zet alle gegevens nu al in hun S.I.-eenheid.
-    \item \textbf{Teken een schets}: Vrijlichaamsdiagram, circuit, situatie, \dots.
-    \item \textbf{Kies de juiste wet/formule}: Bv. behoud van energie, \(E_\text{kin1}+E_\text{pot1} = E_\text{kin2}+E_\text{pot2}\).
+    \item \textbf{Lees zorgvuldig}: Wat wordt gevraagd? Markeer dit in het rood. Welke gegevens heb je? Markeer dit in het groen. Zet alle gegevens nu al om naar hun SI-eenheid.
+    \item \textbf{Teken een schets}: Vrijlichaamsdiagram, circuit, situatie, \dots
+    \item \textbf{Kies de juiste wet/formule}: Bv. behoud van energie, \(E_\text{kin1} + E_\text{pot1} = E_\text{kin2} + E_\text{pot2}\).
     \item \textbf{Substitueer waarden}: Vervang symbolen door getallen + eenheden.
-    \item \textbf{Reken uit}: Let op een eenheden en beduidende cijfers! Zet je antwoord in standaardvorm.
-    \item \textbf{Controleer}: Is het antwoord redelijk? (bv. een auto van 1000 kg versnelt niet met 500 m/s²!)
+    \item \textbf{Reken uit}: Let op de eenheden en beduidende cijfers! Zet je antwoord in de wetenschappelijke notatie (standaardvorm).
+    \item \textbf{Controleer}: Is het antwoord redelijk? (Bv. een auto van $1000 \mathrm{\, kg}$ versnelt niet met $500 \mathrm{\, m/s^2}$!)
 \end{enumerate}
 \end{example}
-
-
-% \begin{tcolorbox}[colback=cyan!5!white,colframe=cyan!75!black,title=Stappenplan voor fysica-problemen]  % Kan dit anders?
-% \begin{enumerate}
-%     \item \textbf{Lees zorgvuldig}: Wat wordt gevraagd, fluoriseer het in het rood? Welke gegevens heb je, fluoriseer het in het groen? Zet alle gegevens nu al in hun S.I.-eenheid.
-%     \item \textbf{Teken een schets}: Vrijlichaamsdiagram, circuit, situatie, \dots.
-%     \item \textbf{Kies de juiste wet/formule}: Bv. behoud van energie, \(F = m \cdot a\).
-%     \item \textbf{Substitueer waarden}: Vervang symbolen door getallen + eenheden.
-%     \item \textbf{Reken uit}: Let op eenheden en beduidende cijfers! Zet je antwoord in standaardvorm.
-%     \item \textbf{Controleer}: Is het antwoord redelijk? (bv. een auto van 1000 kg versnelt niet met 500 m/s²!)
-% \end{enumerate}
-% \end{tcolorbox}
-
-// ... existing code ...
 
 \subsection{Stap 1 – Analyseer de opgave}
 Neem eerst de tijd om de situatie te begrijpen.
 \begin{itemize}
-  \item \textbf{Gegeven en Gevraagd:} noteer systematisch wat je weet (bv. ladingen $Q_1 = \qty{2,0}{\micro\coulomb}$ en $Q_2 = \qty{-5,0}{\micro\coulomb}$, afstand $r = \qty{15}{\centi\metre}$) en wat je zoekt (bv. de coulombkracht $F_c$).
+  \item \textbf{Gegeven en Gevraagd:} noteer systematisch wat je weet (bv. ladingen $Q_1 = 2,0 \mathrm{\, \mu C}$ en $Q_2 = -5,0 \mathrm{\, \mu C}$, afstand $r = 15 \mathrm{\, cm}$) en wat je zoekt (bv. de coulombkracht $F_C$).
   \item \textbf{Maak een tekening:} visualiseer het probleem.  
-  Teken de ladingen en schets de elektrische veldlijnen of krachtvectoren. Trekken de ladingen elkaar aan of stoten ze elkaar af? Bij magnetisme: gebruik een schets om de richting van het magnetisch veld $\vec{B}$ en de Lorentzkracht $\vec{F}_L$ te bepalen.
+  Teken de ladingen en schets de elektrische veldlijnen of krachtvectoren. Trekken de ladingen elkaar aan of stoten ze elkaar af? Bij magnetisme: gebruik een schets om de richting van het magnetisch veld $\vec{B}$ en de lorentzkracht $\vec{F}_L$ te bepalen.
 \end{itemize}
 
 \subsection{Stap 2 – Kies je hulpmiddelen}
 Bepaal welke wetten of principes van toepassing zijn.
 \begin{itemize}
   \item Gaat het over de kracht tussen twee statische ladingen? → gebruik de wet van Coulomb: $F_C = k \cdot \frac{|q_1 \cdot q_2|}{r^2}$.
-  \item Beweegt er een geladen deeltje door een magnetisch veld? → gebruik de formule voor de Lorentzkracht ($F_L = B \cdot q \cdot v \cdot \sin\theta$) en pas de rechterhandregel toe.
+  \item Beweegt er een geladen deeltje door een magnetisch veld? → gebruik de formule voor de lorentzkracht ($F_L = B \cdot q \cdot v \cdot \sin\theta$) en pas de rechterhandregel toe.
   \item Heb je te maken met radioactief verval? → gebruik de formule voor de activiteit of de vervalwet met de halfwaardetijd $T_{1/2}$.
 \end{itemize}
 
 \subsection{Stap 3 – De wiskundige uitwerking}
 \begin{itemize}
-  \item \textbf{Zet eenheden om naar SI-basiseenheden:} dit is cruciaal bij elektriciteit en kernfysica! Zet microcoulomb ($\unit{\micro\coulomb}$) altijd om naar coulomb ($\unit{\coulomb}$) en centimeters ($\unit{\centi\metre}$) naar meters ($\unit{\metre}$) voordat je begint te rekenen.
-  \item \textbf{Schrijf elke stap op:} noteer eerst de formule in symbolen, vul daarna pas de gegevens in. Vergeet geen eenheden in je tussenstappen!
+  \item \textbf{Zet eenheden om naar SI-basiseenheden:} dit is cruciaal bij elektriciteit en kernfysica! Zet microcoulomb ($\mathrm{\mu C}$) altijd om naar coulomb ($\mathrm{C}$) en centimeters ($\mathrm{cm}$) naar meters ($\mathrm{m}$) voordat je begint te rekenen.
+  \item \textbf{Schrijf elke stap op:} noteer eerst de formule in symbolen, vul daarna pas de gegevens in. Vergeet de eenheden niet in je tussenstappen!
   \item \textbf{Controleer je antwoord:}  
-  Heeft je resultaat fysisch zin? Een berekende snelheid van een elektron na een kernreactie kan bijvoorbeeld nooit groter zijn dan de lichtsnelheid ($c \approx \qty{3,00e8}{\metre\per\second}$). Een kritische blik toont dat je begrijpt wat je doet.
+  Heeft je resultaat fysisch zin? Een berekende snelheid van een elektron na een kernreactie kan bijvoorbeeld nooit groter zijn dan de lichtsnelheid ($c \approx 3,00 \cdot 10^8 \mathrm{\, m/s}$). Een kritische blik toont dat je begrijpt wat je doet.
 \end{itemize}
 
-
-
- \section{Praktische tips voor succes}
-  
+\section{Praktische tips voor succes}
 
 \begin{itemize}
   \item \textbf{Studeer actief, niet passief:}  
@@ -164,83 +142,42 @@ Bepaal welke wetten of principes van toepassing zijn.
 
   \item \textbf{Werk samen:}  
   Leg een oefening uit aan een klasgenoot. Uitleggen dwingt je om helder te denken.  
-  Verschillende perspectieven kunnen nieuwe inzichten geven. Eén van de beste leer methodes is zelf les geven. Dit wordt ook wel de Feynman methode genoemd. De techniek wilt dat je het concept zo simpel mogelijk uitlegt, alsof je het aan een 12 jarige uitlegt die er niets van kent. Lukt het je niet om dit simpel uit te leggen, dan snap je het concept niet niet goed genoeg.
-
+  Verschillende perspectieven kunnen nieuwe inzichten geven. Een van de beste leermethodes is zelf lesgeven. Dit wordt ook wel de Feynmanmethode genoemd. De techniek houdt in dat je het concept zo simpel mogelijk uitlegt, alsof je het aan een 12-jarige vertelt die er niets van kent. Lukt het je niet om het in eenvoudige taal over te brengen, dan beheers je het concept nog niet goed genoeg.
   \mylink{https://subjectguides.york.ac.uk/study-revision/feynman-technique}{Link naar uitleg over de Feynman techniek}
-%   \begin{marginfigure}
-% 	\begin{center}
-% 		\qrcode[hyperlink,height=0.85in]{https://subjectguides.york.ac.uk/study-revision/feynman-technique}
-% 	\end{center}
-% 	\vspace*{-5mm}
-% 	\caption*{\scriptsize Link naar uitleg over de Feynman techniek}
-% \end{marginfigure}
  
   \item \textbf{Vraag hulp op tijd:}  
   Blijf niet te lang vastzitten. Stel gerichte vragen:  
-  “Waarom is de normaalkracht hier kleiner dan het gewicht?” helpt veel meer dan “Ik snap het niet”.
+  “Waarom is de normaalkracht hier kleiner dan de zwaartekracht?” helpt veel meer dan “Ik snap het niet”.
 
   \item \textbf{Beheers je wiskunde:}  
-Fysica is geschreven in de taal van de wiskunde.
-Oefen op algebra, goniometrie en het oplossen van vergelijkingen.
-Wanneer de wiskunde vlot gaat, blijft er meer ruimte over om fysisch inzicht te ontwikkelen.
+  Fysica is geschreven in de taal van de wiskunde.
+  Oefen op algebra, goniometrie en het oplossen van vergelijkingen.
+  Wanneer de wiskunde vlot gaat, blijft er meer ruimte over om fysisch inzicht te ontwikkelen.
 
-Heb je moeite met de wiskundige technieken, oefen ze dan extra in.
-De beste manier om ze onder de knie te krijgen, is door regelmatig korte oefensessies te houden.
-Plan bijvoorbeeld drie vaste momenten per dag in waarop je telkens vijf minuten met pen en papier wiskundige technieken oefent.
-Tijdens deze oefenmomenten mag je niet naar de oplossingen of hulpmiddelen kijken tot de sessie voorbij is.
-\newline
-Deze sessies zijn een aanvulling op je gewone studiemomenten, geen vervanging ervan.
-Als je dit een tijd volhoudt, zal je merken dat je de technieken beter beheerst en sneller toepast.
-\begin{remark}
-Deze methode is gebaseerd op de \textit{repetition method}, waarbij je iets dat je wilt leren herhaalt vlak na het leren, vervolgens één dag later, één week later en één maand later.
-Op die manier bereik je met minder totale studietijd een groter en langduriger leerresultaat.
-Het nadeel is wel dat deze aanpak wat planning en discipline vraagt.
- \end{remark}
-
-%   \begin{marginfigure}
-% 	\begin{center}
-% 		\qrcode[hyperlink,height=0.85in]{https://www.bcu.ac.uk/exams-and-revision/best-ways-to-revise/spaced-repetition}
-% 	\end{center}
-% 	\vspace*{-5mm}
-% 	\caption*{\scriptsize Link naar spaced repetition methode}
-% \end{marginfigure}
+  Heb je moeite met de wiskundige technieken? Oefen ze dan extra in.
+  De beste manier om ze onder de knie te krijgen, is door regelmatig korte oefensessies te houden.
+  Plan bijvoorbeeld drie vaste momenten per dag in waarop je telkens vijf minuten met pen en papier wiskundige technieken oefent.
+  Tijdens deze oefenmomenten mag je niet naar de oplossingen of hulpmiddelen kijken tot de sessie voorbij is.
+  \newline
+  Deze sessies zijn een aanvulling op je gewone studiemomenten, geen vervanging ervan.
+  Als je dit een tijd volhoudt, zal je merken dat je de technieken beter beheerst en sneller toepast.
+  \begin{remark}
+  Deze methode is gebaseerd op \textit{spaced repetition}, waarbij je de leerstof herhaalt vlak na het leren, vervolgens één dag later, één week later en één maand later.
+  Op die manier bereik je met minder totale studietijd een groter en langduriger leerresultaat.
+  Het nadeel is wel dat deze aanpak wat planning en discipline vraagt.
+  \mylink{https://www.bcu.ac.uk/exams-and-revision/best-ways-to-revise/spaced-repetition}{Link naar spaced repetition methode}
+  \end{remark}
 
   \item \textbf{Gebruik fouten als leermoment:}  
-  Kijk na een toets of oefening niet enkel \textit{wat} fout ging, maar \textit{waarom}.  
+  Kijk na een toets of oefening niet enkel \textit{wat} er fout ging, maar \textit{waarom}.  
   Dat is de snelste manier om vooruit te gaan.
 
   \item \textbf{Bereid je toetsen slim voor:}  
-  Herhaal niet enkel oude oefeningen, maar maak varianten. Of beter nog, verzin zelf eens een oefening. Kijk hoe je deze oefening zo moeilijk mogelijk kunt maken in de gegeven leerstof. Door zelf de opbouw van een oefening te bekijken, ga je ook meer inzichten krijgen in hoe andere oefeningen zijn opgebouwd en hoe je deze moet oplossen.
-  Vraag jezelf af: “Wat als de kracht dubbel zo groot was?” of “Wat als het object nu op een helling ligt?”
+  Herhaal niet enkel oude oefeningen, maar maak varianten. Of beter nog: verzin zelf eens een oefening. Bedenk hoe je een vraag zo uitdagend mogelijk kunt maken met de gegeven leerstof. Door zelf de opbouw van een opgave te ontwerpen, krijg je meer inzicht in hoe andere oefeningen in elkaar zitten en hoe je ze moet oplossen.
+  Vraag jezelf af: “Wat als de kracht dubbel zo groot was?” of “Wat als het object zich nu op een helling bevindt?”
 \end{itemize}
 
-
-% \begin{center}
-% \rule{0.6\textwidth}{0.4pt}
-% \end{center}
-
-% \subsection*{Tot slot}
-
-% \begin{opm}
-% Fysica in de derde graad is een uitdaging, maar een haalbare en lonende.  
-% Het leert je logisch redeneren, verbanden leggen en kritisch nadenken — vaardigheden die veel verder reiken dan dit vak alleen.  
-% \end{opm}
-
-% Blijf nieuwsgierig, stel vragen en geniet van het moment waarop de puzzelstukjes in elkaar vallen.  
-% \begin{center}
-% \textbf{Succes!}
-% \end{center}
-
-% \section*{Afspraken Kleuren}
-% \begin{enumerate}
-% \item Blauw: kracht vector
-% \end{enumerate}
-% \todo{lijst van kleuren/symbolen opstellen}
-% \missingfigure{lijst met kleuren}
-
 \section*{Disclaimer}
-Ik heb dyslectie en heb deze cursus zelf gemaakt, er zal dus hier en daar een foutje opduiken. Zie je iets stuur dan zeker een berichtje of meld het me.
+Ik heb dyslexie en heb deze cursus zelf geschreven; er zal dus hier en daar een tikfoutje opduiken. Zie je iets? Stuur dan zeker een berichtje of meld het me voor of na de les.
 
 \end{document}
-
-

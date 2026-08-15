@@ -501,18 +501,11 @@
 
  % Mylink: doet nog niet wat ik dacht dat het doet!!!
  \newcommand{\mylink}[2][]{
-	\ifdefined\HCode %Werkt niet?
-		
-	href: \href{#2}{#1}
-
-	url1: \url{#2}{#1}
-
-	url2: \url{#2}
-
+	\ifdefined\HCode %Href werkt niet?
+		\\\url{#2}: \text{#1} 
 	\else
 
 		\qrcode[hyperlink]{#2}#1
-
 		%figure werkt niet goed.
 		% \begin{figure}[h!]
 		% 	\qrcode[hyperlink]{#2}

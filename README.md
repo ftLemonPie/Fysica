@@ -32,3 +32,5 @@
 - [ ] kleuren voor vectoren vast leggen? of zo laten --> zo laten. Te veel werk, te veel kans om eens te vergissen en leerlingen moeten ook altijd 
 vectoren benoemen.
 - [ ] in hoe_fysica_te_studeren_5 en 6 staat nog een fact omgeving
+- [ ] Appendix
+    -[ ] nummering anders

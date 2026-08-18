@@ -56,8 +56,8 @@
 %\usepackage{changepage}
 % -- nodig voor env en andere zaken
 \usepackage{fancyhdr,geometry}
-\usepackage[usenames,dvipsnames]{xcolor}
-\usepackage[many]{tcolorbox}
+% \usepackage[usenames,dvipsnames]{xcolor}
+% \usepackage[many]{tcolorbox}
 %\usepackage{varwidth}
 \tcbuselibrary{raster}
 \usepackage[T1]{fontenc}                            % Font Styling
@@ -125,16 +125,16 @@
 % %			definitie - groen geel
 % %			bewijs - blauw
 
-% \newlength{\spacelength}
-% \settowidth{\spacelength}{\normalfont\ }
-% \declaretheoremstyle[
-%     headfont={\bfseries\sffamily\footnotesize},
-%     notefont={\normalfont},
-%     bodyfont={\normalfont},
-%     headpunct={\relax},%\newline,
-%     headformat={%
-%         \makebox[0pt][r]{\NAME\ \NUMBER\hspace{\marginparsep}}\hskip-\spacelength{\normalsize\NOTE}},
-% ]{theorem}
+\newlength{\spacelength}
+\settowidth{\spacelength}{\normalfont\ }
+\declaretheoremstyle[
+    headfont={\bfseries\sffamily\footnotesize},
+    notefont={\normalfont},
+    bodyfont={\normalfont},
+    headpunct={\relax},%\newline,
+    headformat={%
+        \makebox[0pt][r]{\NAME\ \NUMBER\hspace{\marginparsep}\hspace{1cm}}\hskip-\spacelength{\normalsize\NOTE}},
+]{definition}
 
 % \tcolorboxenvironment{theorem}{
 %   boxrule=0pt,
@@ -515,3 +515,16 @@
 
 		\fi	
  }
+
+
+ % hack om na hoofding van definition/proposition/... als dan niet op een nieuwe lijn te starten
+% soms is dat goed en mooi, en soms niet; en in HTML is het nu (2/2020) anders dan in pdf
+% vandaar suggestie om 
+%     \begin{definition}[Nieuw concept] \nl
+% te gebruiken als je zeker een newline wil na de hoofdig en titel
+% (in het bijzonder itemize zonder \nl is 'lelijk' ...)
+\ifdefined\HCode
+\newcommand{\nl}{}
+\else
+\newcommand{\nl}{\ \par} % newline (achter heading van definition etc.)
+\fi

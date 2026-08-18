@@ -45,45 +45,6 @@
 }
 
 
-
-
-.exercise::before {
-	content: "exercise" attr(numbered) ".";
-}
-.definition::before {
-	content: "definition" attr(numbered) ".";
-}
-.remark::before {
-	content: "remark" attr(numbered) ".";
-}
-.proposition::before {
-	content: "proposition" attr(numbered) ".";
-}
-.example::before {
-	content: "example" attr(numbered) ".";
-}
-.warning::before {
-	content: "warning" attr(numbered) ".";
-}
-.theorem::before {
-     content: "theorem" attr(numbered) ".";
-}
-.explanation::before {
-      content: "explanation" attr(numbered) ".";
-}
-.exploration::before {
-      content: "exploration" attr(numbered) ".";
-}
-.formula::before {
-      content: "formula" attr(numbered) ".";
-}
-.problem::before {
-      content: "problem" attr(numbered) ".";
-}
-.notation::before {
-      content: "notation" attr(numbered) ".";
-}
-
 /* Overwrite labels */ 
 span.hint-text {
  display: none;
@@ -143,11 +104,49 @@ span#prev-activity-label {
   display: none;
 }
 
+/* reset base.css settings in the server */
+details.theorem-like:has( .summary-header)::before,
+div.theorem-like:has( .summary-header)::before 
+{
+	content: unset;
+	color:red;
+}
+
+/* remove all theorem- header formatting */
+h4.summary-header,
+h5.summary-header,
+h6.summary-header
+{
+	all: unset
+}
+
+/* and set them for ximera */
+section .summary-header {
+    display: inline;
+    text-transform: capitalize;
+    font-weight: bold;
+    padding-right: 0.5em;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+details.theorem-like .summary-title::before {
+    content: "(";
+}
+details.theorem-like .summary-title::after {
+    content: ")";
+}
+
+details.theorem-like .summary-title {
+    opacity: 0.75;
+    padding-right: 0.5em;
+}
+
+
 .en-text {
-      display: initial;
+  display: none;
 }
 .nl-text {
-      display: none;
+  display: initial;
 }
 
 
@@ -217,3 +216,13 @@ e.g. use "P1", "Problem 1", "Prob 1", "Exciting Problem 1", etc.
 .outcomeHead:hover + .outcomeContent {
 	display: block;
 } */
+
+
+/* Voorbeeld alternatieve layout :
+.definition {
+    background-color: lightgray;
+    border: 2px solid black;
+    border-left: 12px solid black;
+	border-radius: 6px;
+}
+*/

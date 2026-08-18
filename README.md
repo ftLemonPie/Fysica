@@ -1,6 +1,8 @@
 # TODO
 ## te doen volgende keer
 - [ ] omgevingen testen
+- [ ] \SI met \cdot in html
+- [ ] ref laat label zien in html
 - [ ] download pdf zonder antwoorden --> ?
 - [ ] beter manier afbeelding in title
 - [x] footnote in html laten uitklappen

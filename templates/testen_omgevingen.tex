@@ -26,6 +26,47 @@
 
 % \def\xmDebug{true}
 
+\section{Keuze van de chef}
+\begin{definition}[foldable=true,title={Veelterm, foldable (synonym for expandable and expanded)}]\nl
+Body   foldable (ie, expandable and expanded)
+\end{definition}
+
+\section{testjes}
+\subsection{anders dan defenition}
+\begin{theorem}[foldable=true,title={Behoud van ladingen}]\nl
+Body   foldable (ie, expandable and expanded)
+\end{theorem}
+
+\begin{question}[foldable=true,title={Vraag}]\nl
+Body   foldable (ie, expandable and expanded)
+\end{question}
+
+\begin{question}[foldable=true,title={Vraag met antwoord}]\nl
+Body   foldable (ie, expandable and expanded)
+\begin{solution}
+test met niets bij
+\end{solution}
+\end{question}
+
+\subsection{expandeble en titels}
+\subsubsection{zonder nl}
+\begin{definition}[expandable=true,expanded,title={Veelterm, expandable and expanded}]
+ Body expandable AND expanded (initially!)
+\end{definition}
+
+\begin{definition}[foldable=true,title={Veelterm, foldable (synonym for expandable and expanded)}]
+ Body foldable (ie, expandable and expanded)
+\end{definition}
+\subsubsection{met nl}
+\begin{definition}[expandable=true,expanded,title={Veelterm, expandable and expanded}]\nl
+Body  expandable AND expanded (initially!)
+\end{definition}
+
+\begin{definition}[foldable=true,title={Veelterm, foldable (synonym for expandable and expanded)}]\nl
+Body   foldable (ie, expandable and expanded)
+\end{definition}
+
+\section{vb van wim}
 \begin{BoxI}[Veelterm,print=false]
   Body, print=false
 \end{BoxI}
@@ -35,6 +76,7 @@ Body  \verb|x^2|
 \item borderline
 \end{itemize}
 \end{BoxI}
+
 
 \begin{BoxI}[title={Veelterm, not numbered},nonumbered]
 Body no numbers
@@ -89,11 +131,11 @@ Met een tweede lijn.
 Body noprint, expandable 
 \end{definition}
 
-\begin{definition}[print=false,expandable=true,expanded,title={Veelterm, expandable and expanded}]
+\begin{definition}[expandable=true,expanded,title={Veelterm, expandable and expanded}]
 Body noprint, expandable AND expanded (initially!)
 \end{definition}
 
-\begin{definition}[print=false,foldable=true,title={Veelterm, foldable (synonym for expandable and expanded)}]
+\begin{definition}[foldable=true,title={Veelterm, foldable (synonym for expandable and expanded)}]
 Body noprint,  foldable (ie, expandable and expanded)
 \end{definition}
 
@@ -109,11 +151,18 @@ Body noprint,  NO title
 Body noprint,  empty title
 \end{definition}
 
-\begin{definition}[expandable=true]%,title={Dit is een titel, met komma}]
+\begin{definition}[expandable=true],title={Dit is een titel, met komma}]\nl
 Body expandable=true, NO title; check the correct number after lot's of non-printing definitions!
 \end{definition}
 
-\begin{definition}[expandable]%,title={Dit is een titel, met komma}]
+\begin{definition}[expandable],title={Dit is een titel, met komma}]\nl
+Body expandable, NO title; Hopefully the title is not 'expandable' !!!
+\end{definition}
+\begin{definition}[expandable=true],title={Dit is een titel, met komma}]
+Body expandable=true, NO title; check the correct number after lot's of non-printing definitions!
+\end{definition}
+
+\begin{definition}[expandable],title={Dit is een titel, met komma}]
 Body expandable, NO title; Hopefully the title is not 'expandable' !!!
 \end{definition}
 

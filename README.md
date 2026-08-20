@@ -1,11 +1,11 @@
 # TODO
 ## te doen volgende keer
-- [ ] omgevingen testen
+- [ ] error html maken oplossen
+- [ ] omgevingen testen --> andere dan theorem en definition, zeker oefeningen enzo
 - [ ] \SI met \cdot in html
 - [ ] ref laat label zien in html
 - [ ] download pdf zonder antwoorden --> ?
 - [ ] beter manier afbeelding in title
-- [x] footnote in html laten uitklappen
 - [ ] denken over wat part en wat niet part is.
     - of part per groot deel, maar dan klopt nummering niet goed
     - ofwel elk hoofdstuk een part

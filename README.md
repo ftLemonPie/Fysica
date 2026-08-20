@@ -2,6 +2,8 @@
 ## te doen volgende keer
 - [ ] error html maken oplossen
 - [ ] omgevingen testen --> andere dan theorem en definition, zeker oefeningen enzo
+- [ ] omgevingen aanpassen die al gedaan zijn.
+- [ ] rest van deel 1 afmaken.
 - [ ] \SI met \cdot in html
 - [ ] ref laat label zien in html
 - [ ] download pdf zonder antwoorden --> ?

@@ -129,7 +129,8 @@
 \settowidth{\spacelength}{\normalfont\ }
 \declaretheoremstyle[
     headfont={\bfseries\sffamily\footnotesize},
-    notefont={\normalfont},
+    notebraces={}{}, % <--- Verwijdert de openings- en sluithaakjes
+	notefont={\bfseries},
     bodyfont={\normalfont},
     headpunct={\relax},%\newline,
     headformat={%

@@ -1,0 +1,24 @@
+%-------------
+% afbeeldingen:
+\begin{figure}[h]
+    \begin{center}
+    \includegraphics[width=9cm]{pic5/elektriciteit/coulomb/naam.png}
+    \end{center}
+    \caption{}
+    \label{fig:}
+\end{figure}
+%------------
+
+%------------
+% Herhaling: 
+\begin{remark}[expandable=true,title={Herhaling: titel}]\nl
+    uitleg
+    %---------
+    % afbeelding in omgeving
+    \begin{center}
+        \includegraphics[width=8cm]{pic5/elektriciteit/coulomb/naam.jpg}
+        \captionof{figure}{uitleg}
+        \label{fig:}
+    \end{center}
+    %--------    
+\end{remark}

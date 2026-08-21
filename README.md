@@ -1,6 +1,7 @@
 # TODO
 ## te doen volgende keer
-- [ ] subfigre werkt niet, aanpassen (inductie opmladen)
+- [ ] verwijzingen nakijken.
+- [ ] figuren in html (bv laden via inductie) zien er raar uit.
 - [ ] omgevingen testen --> andere dan theorem en definition, zeker oefeningen enzo
 - [ ] rest van deel 1 afmaken.
 - [ ] \SI met \cdot in html

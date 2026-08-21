@@ -20,6 +20,15 @@
 %\chapterstyle voor hoofdstukken >> \activity{hoofdstuk ....}
 %\sectionstyle voor delen in het hoofstuk >> \activity{met onderdelen}
 % Inleiding, informatie, ...
+
+
+% INFO
+% toepassingen onder \begin{example}
+% Quisjes als \question met \begin{selectAll}
+% voorbeeld oefeningen met align x &= berekening && (uitleg)
+% komma's met {,} in math mode
+
+
 \part{Inleiding}
 \activity{praktische_richtlijnen.tex}
 \activity{hoe_fysica_te_studeren_5.tex}
@@ -27,14 +36,15 @@
 \part{Elektrische krachtwerking} %parts nog aanpassen
 %COULOMBKRACHT of ELEKTRICHE KRACHTWERKING
 %picture path: pic5/elektriciteit/coulomb/
-%\chapterstyle
-\activity{elektrische_krachtwerking.tex} %inleiding hoofdstuk coulombkracht
-\label{hoofdstuk: elektrische_krachtwerking}
 %\sectionstyle
+\chapterstyle
+\activity{elektrische_krachtwerking.tex} %inleiding hoofdstuk coulombkracht
+\sectionstyle
 \activity{lading.tex} %ladingen en soorten ladingen
 \activity{tribo-eletkrisch_effect.tex} %tribo-elektrisch effect
 \activity{laden_via_inductie.tex}
 \activity{coulombkracht.tex} %coulombkracht
+\activity{aantrekken_ongeladen_deeltjes.tex}
 
 
 \part{Elektrisch veld}
@@ -66,6 +76,7 @@
 
 %---------APENDIX---------------
 \part{Appendix} %nummering anders
+\activity{vectoren.tex}
 %Vectorrekenen
     %vectoren
     %cosinus regel

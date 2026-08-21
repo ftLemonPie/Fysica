@@ -114,16 +114,7 @@
 
 
 
-% % ----------------------------------------------------------------------
-% %           User Created Environments --> alles in commentaar gezet, gaan proberen zonder dit te doen
-% % ----------------------------------------------------------------------
-% % marginnotes voor theorie, samenvatting, bewijs, oefeningen, voorbeeld, oefenmoment.
-% % sidenote voor herhaling, oplossing, opmerking en toepassing.
-% %
-% %kleuren:		theorie - rood
-% %			samenvatting - goudgeel
-% %			definitie - groen geel
-% %			bewijs - blauw
+
 
 \newlength{\spacelength}
 \settowidth{\spacelength}{\normalfont\ }
@@ -137,6 +128,81 @@
         \makebox[0pt][r]{\NAME\ \NUMBER\hspace{\marginparsep}\hspace{1cm}}\hskip-\spacelength{\normalsize\NOTE}},
 ]{definition}
 
+
+% Logo command
+\ifdefined\isXourse
+\logo{xmPictures/buisjes.jpg}
+\else
+
+% \logo is only defined in xourses (but that prevents \logo to be used in global.sty etc ....)
+
+% \renewcommand*{\logo}[1]{%
+%     \IfFileExists{#1}%
+%       {\gdef\xourse@logo{#1}}%
+%       {\ClassError{xmPreamble}{logo file does not exist}
+%         {To use logo, make sure that the referenced image file exists}}%
+% }
+
+ \fi
+
+
+ % Mylink: doet nog niet wat ik dacht dat het doet!!!
+ \newcommand{\mylink}[2][]{
+	\ifdefined\HCode %Href werkt niet?
+		\nl\url{#2}: \text{#1} 
+	\else
+
+		\qrcode[hyperlink]{#2}#1
+		%figure werkt niet goed.
+		% \begin{figure}[h!]
+		% 	\qrcode[hyperlink]{#2}
+		% 	\caption*{#1}
+		% \end{figure}
+
+		\fi	
+ }
+
+
+ % hack om na hoofding van definition/proposition/... als dan niet op een nieuwe lijn te starten
+% soms is dat goed en mooi, en soms niet; en in HTML is het nu (2/2020) anders dan in pdf
+% vandaar suggestie om 
+%     \begin{definition}[Nieuw concept] \nl
+% te gebruiken als je zeker een newline wil na de hoofdig en titel
+% (in het bijzonder itemize zonder \nl is 'lelijk' ...)
+\ifdefined\HCode
+\newcommand{\nl}{}
+\else
+\newcommand{\nl}{\ \par} % newline (achter heading van definition etc.)
+\fi
+
+
+
+% % ----------------------------------------------------------------------
+% %           User Created Environments --> alles in commentaar gezet, gaan proberen zonder dit te doen
+% % ----------------------------------------------------------------------
+% % marginnotes voor theorie, samenvatting, bewijs, oefeningen, voorbeeld, oefenmoment.
+% % sidenote voor herhaling, oplossing, opmerking en toepassing.
+% %
+% %kleuren:		theorie - rood
+% %			samenvatting - goudgeel
+% %			definitie - groen geel
+% %			bewijs - blauw
+% Oude commands:
+% % --- toepassing --> springt niet in enzo...
+% \theoremstyle{claim}
+% \newtheorem{toepassing}{Toepassing}%[chapter]%<-----------------chapter
+% \tcolorboxenvironment{toepassing}{
+%   boxrule=0pt,
+%   boxsep=0pt,
+%   blanker,
+%   borderline west={1.5pt}{0pt}{black},
+%   sharp corners,
+%   before skip=10pt,
+%   after skip=10pt,
+%   left=5pt,
+%   right=5pt,
+%   breakable,
+% }
 
 
 % \tcolorboxenvironment{theorem}{
@@ -485,49 +551,3 @@
 %\title{Boek template}
 %\author{Daan Lipkens}
 %\date{Sint-Ursula Instituut \today}
-
-% Logo command
-\ifdefined\isXourse
-\logo{xmPictures/buisjes.jpg}
-\else
-
-% \logo is only defined in xourses (but that prevents \logo to be used in global.sty etc ....)
-
-% \renewcommand*{\logo}[1]{%
-%     \IfFileExists{#1}%
-%       {\gdef\xourse@logo{#1}}%
-%       {\ClassError{xmPreamble}{logo file does not exist}
-%         {To use logo, make sure that the referenced image file exists}}%
-% }
-
- \fi
-
-
- % Mylink: doet nog niet wat ik dacht dat het doet!!!
- \newcommand{\mylink}[2][]{
-	\ifdefined\HCode %Href werkt niet?
-		\\\url{#2}: \text{#1} 
-	\else
-
-		\qrcode[hyperlink]{#2}#1
-		%figure werkt niet goed.
-		% \begin{figure}[h!]
-		% 	\qrcode[hyperlink]{#2}
-		% 	\caption*{#1}
-		% \end{figure}
-
-		\fi	
- }
-
-
- % hack om na hoofding van definition/proposition/... als dan niet op een nieuwe lijn te starten
-% soms is dat goed en mooi, en soms niet; en in HTML is het nu (2/2020) anders dan in pdf
-% vandaar suggestie om 
-%     \begin{definition}[Nieuw concept] \nl
-% te gebruiken als je zeker een newline wil na de hoofdig en titel
-% (in het bijzonder itemize zonder \nl is 'lelijk' ...)
-\ifdefined\HCode
-\newcommand{\nl}{}
-\else
-\newcommand{\nl}{\ \par} % newline (achter heading van definition etc.)
-\fi

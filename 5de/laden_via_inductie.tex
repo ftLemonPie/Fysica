@@ -15,322 +15,260 @@
 \section{Objecten Laden via Inductie}
 \subsection{Geleiders, Isolatoren en Halfgeleiders}
 
-Aarding is de benaming wanneer je iets op de aarde aansluit. Hierdoor kan een teveel aan elektronen gecompenseerd worden door elektronen naar de aarde te sturen, of kunnen er bij een tekort aan elektronen elektronen aan de aarde onttrokken worden.
 
-% \begin{figure}[h]
-%       \begin{center}
-%       \begin{subfigure}{.2\textwidth}
-%           \centering
-%           \begin{circuitikz}%
-%               \draw (0,0) node[ ground , scale=4] {};%(2,0); 
-%           \end{circuitikz}%
-%       \caption{~} % <--- OOK HIER DE TILDE GEBRUIKEN ALS JE DIT OOIT UIT COMMENTAAR HAALT
-%       \label{fig:symbool aarding}
-%   \end{subfigure}%
-%   \begin{subfigure}{.5\textwidth}
-%       \centering
-%       \includegraphics[width=.45\textwidth]{pic5/elektriciteit/coulomb/aarding_kabels.jpg}
-%       \caption{~} % <--- OOK HIER DE TILDE GEBRUIKEN
-%       \label{fig:kleur aarding}
-%   \end{subfigure}
-%       \end{center}
-%       \caption{(a) Symbool voor aarding. (b) kleur van aarding in kabels is geel+groen.}
-%       \label{f:aarding}
-% \end{figure}
+%----------------------
+% Herhaling aarding
+\begin{remark}[expandable=true,title={Herhaling: aarding}]\nl
+    Aarding is de benaming wanneer je iets op de aarde aansluit. Hierdoor kan een teveel aan elektronen gecompenseerd worden door elektronen naar de aarde te sturen, of kunnen er bij een tekort aan elektronen elektronen aan de aarde onttrokken worden.
+    
+    %--------
+    % afbeelding symbool aarding
+    \begin{center}
+        \begin{circuitikz}
+            \draw (0,0) node[ground, scale=4] {};
+        \end{circuitikz}
+        \captionof{figure}{Symbool voor aarding.}
+        \label{fig:aarding_symbool}
+    \end{center}    
+    %---------
+    
+    %---------
+    % afbeelding aarding
+    \begin{center}
+        \includegraphics[width=0.45\textwidth]{pic5/elektriciteit/coulomb/aarding_kabels.jpg}
+        \captionof{figure}{Kleur van aarding in kabels is geel-groen.}
+        \label{fig:aarding}
+    \end{center}
+    %--------    
+\end{remark}
+%------------------
 
 
 % SUBSECTION: geleiders
 \subsubsection{Geleiders}
-De meeste metalen zijn goede geleiders. In de chemie heb je al kennisgemaakt met het metaalrooster. Metaalatomen bezitten elektronen die gemakkelijk loskomen van het atoom: de zogenaamde valentie-elektronen. Deze elektronen bewegen 'vrij' door het rooster van positieve metaalionen.
+De meeste metalen zijn goede geleiders. In de chemie heb je al kennisgemaakt met het metaalrooster. Metaalatomen bezitten elektronen die gemakkelijk loskomen van het atoom: de zogenaamde valentie-elektronen. Deze elektronen bewegen 'vrij' door het rooster van positieve metaalionen (zie figuur~\ref{fig:metaal_vrij}).
 
-De vrije elektronen botsen voortdurend met de roosterionen (zie figuur~\ref{fig:metaal}), waardoor hun bewegingsrichting en bewegingszin steeds veranderen. Hun gemiddelde snelheid is daardoor nul. Toch kunnen de vrije elektronen zich binnen het metaal verplaatsen, en ook van het ene metaal naar het andere wanneer beide in contact staan. Dankzij het grote aantal vrije elektronen zijn metalen uitstekende geleiders.\\
+%-----------------------------
+%   afbeelding 1 elektronen rond geleider
+\begin{figure}[h]
+    \begin{center}
+    \includegraphics[width=9cm]{pic5/elektriciteit/coulomb/metaal1.png}
+    \end{center}
+    \caption{De valentie-elektronen komen los van de atomen en kunnen vrij bewegen tussen de metaalionen. De overige elektronen blijven gebonden aan de atoomkern.}
+    \label{fig:metaal_vrij}
+\end{figure}
+% ------------------------------
+
+De vrije elektronen botsen voortdurend met de roosterionen (zie figuur~\ref{fig:metaal_botsing}), waardoor hun bewegingsrichting en bewegingszin steeds veranderen. Hun gemiddelde snelheid is daardoor nul. Toch kunnen de vrije elektronen zich binnen het metaal verplaatsen, en ook van het ene metaal naar het andere wanneer beide in contact staan. Dankzij het grote aantal vrije elektronen zijn metalen uitstekende geleiders.\\
+
+%-----------------------------
+%   afbeelding 2 botsingen geleider
+\begin{figure}[h]
+    \begin{center}
+    \includegraphics[width=9cm]{pic5/elektriciteit/coulomb/metaal2.png}
+    \end{center}
+    \caption{De 'vrije' elektronen veranderen voortdurend van richting en zin door botsingen met de roosterionen.}
+    \label{fig:metaal_botsing}
+\end{figure}
+% ------------------------------
 
 % --------------------
 % Video beweging elektronen geleider en isolator
 \begin{onlineOnly}
-    Link naar video met de beweging van elektronen van geleiders en isolatoren: \youtube{gm5cepGTDKo}
+    Link naar video met de beweging van elektronen in geleiders en isolatoren: \youtube{gm5cepGTDKo}
 \end{onlineOnly}
-\pdfOnly{\mylink{https://youtu.be/gm5cepGTDKo}{Link naar video met de beweging van elektronen van geleiders en isolatoren}} 
+\pdfOnly{\mylink{https://youtu.be/gm5cepGTDKo}{Link naar video met de beweging van elektronen in geleiders en isolatoren.}}   
 
 % -----------------------------------
 
+% ---------------------
+%   geleiders
+% -------------------
+\begin{theorem}
+Een metaal in vaste toestand bevat vrije (negatieve) elektronen en vaste (positieve) roosterionen.
+\end{theorem}
 
-% %-----------------------------
-% %   afbeelding elektronen rond geleider
-% \begin{figure}[h]
-% % \captionsetup{width=0.85\textwidth} % <-- In commentaar gezet voor Ximera HTML-compatibiliteit
-%     \centering
-%     \begin{subfigure}{0.5\textwidth}
-%         \centering
-%         \includegraphics[width=0.95\textwidth]{pic5/elektriciteit/coulomb/metaal1.png}
-%         \caption{~} % <--- OPLOSSING: De tilde (onzichtbare spatie)
-%         \label{fig:metaal1}
-%     \end{subfigure}%
-%     \begin{subfigure}{0.5\textwidth}
-%         \centering
-%         \includegraphics[width=0.95\textwidth]{pic5/elektriciteit/coulomb/metaal2.png}
-%         \caption{~} % <--- OPLOSSING: De tilde (onzichtbare spatie)
-%         \label{fig:metaal2}
-%     \end{subfigure}
-%     \caption{(a) De valentie-elektronen komen los van de atomen en kunnen vrij bewegen tussen de metaalionen. De overige elektronen blijven gebonden aan de atoomkern. (b) De 'vrije' elektronen veranderen voortdurend van richting en zin door botsingen met de roosterionen.}
-%     \label{fig:metaal}
-% \end{figure}
-% % ------------------------------
+\begin{remark}
+    Let op: In het onderstaande voorbeeld worden elektronen aan de staaf onttrokken. Er zouden evengoed elektronen op de metalen staaf gezet kunnen worden om deze negatief te laden.
+\end{remark}
+
+\begin{figure}[h!]
+    \begin{center}
+        \begin{tabular}{cc}
+            \includegraphics[width=2.5cm]{pic5/elektriciteit/coulomb/metalen_staaf 1.jpg} &
+            \includegraphics[width=2.5cm]{pic5/elektriciteit/coulomb/metalen_staaf 2.jpg} \\
+            (a) & (b) \\[2ex]
+            \includegraphics[width=2.5cm]{pic5/elektriciteit/coulomb/metalen_staaf 3.jpg} &
+            \includegraphics[width=2.5cm]{pic5/elektriciteit/coulomb/metalen_staaf 4.jpg} \\
+            (c) & (d)
+        \end{tabular}
+    \end{center}
+    \caption{(a) Een neutrale metalen staaf. Deze bevat evenveel positieve als negatieve ladingen. (b) Wanneer er elektronen aan de metalen staaf worden onttrokken, krijgt de staaf een positieve lading. Omdat metaal een goede geleider is, wordt het tekort aan elektronen gelijkmatig over de hele staaf verdeeld. (c) De positief geladen staaf wordt verbonden met de aarding. (d) Via de aarding kunnen nieuwe elektronen worden aangevoerd. Omdat metaal een goede geleider is, zullen deze elektronen zich gelijkmatig over de staaf verdelen.}
+    \label{fig:metalen staaf}
+\end{figure}
+
+Een metalen staaf kan positief geladen worden door elektronen af te geven (zie figuur~\ref{fig:metalen staaf}b). Vermits de elektronen zich vrij kunnen bewegen, gaat het tekort aan elektronen zich gelijkmatig verspreiden over het hele oppervlak aan de buitenkant van de staaf en zo ver mogelijk van elkaar. Voor een positief geladen staaf is er op de buitenkant van de staaf een tekort aan vrije elektronen. 
+
+Ga je de staaf met de aarde verbinden door middel van een isolator, dan gebeurt er niets (zie figuur~\ref{fig:metalen staaf}c). Verbind je de staaf met de aarde door middel van een geleider, dan gaan er via de aarding elektronen van de aarde naar de staaf en wordt de staaf weer neutraal (zie figuur~\ref{fig:metalen staaf}d).
+
+Een metalen staaf kan negatief geladen worden door elektronen op te nemen. Omdat de elektronen zich vrij kunnen bewegen, verspreiden ze zich gelijkmatig over het hele oppervlak aan de buitenkant van de staaf, zo ver mogelijk van elkaar. Voor een negatief geladen staaf betekent dit dat er een overschot aan vrije elektronen aanwezig is aan de buitenzijde.
+
+% --------------------
+% Video ladingen bij geleider
+\begin{onlineOnly}
+    Link naar video waar ladingen naderen bij een geleider: \youtube{bfw8XaQExqc}
+\end{onlineOnly}
+\pdfOnly{\nl Link naar video waar ladingen naderen bij een geleider: \mylink{https://youtu.be/bfw8XaQExqc}{Bekijk de video op YouTube}}   
+% -----------------------------------
+
+\begin{remark}
+Positieve roosterionen kunnen zich niet verplaatsen: zij hebben een vaste positie in het metaalrooster.
+\end{remark}
+
+% --------------
+%   Influentie
+% ---------------
+\begin{definition}[expandable=true,title={Influentie of elektrostatische inductie}]\nl
+    \textbf{Influentie of elektrostatische inductie} is het scheiden van een lading in een geleider wanneer die in de nabijheid komt van een geladen voorwerp.
+    Een geaarde geleider wordt geladen wanneer een geladen voorwerp in de buurt wordt gebracht. De lading van de geleider zal steeds tegengesteld zijn aan de lading van het voorwerp.
+\end{definition}
+
+% ----------------------
+%   SUBSECTION: Isolator
+% ----------------------
+\subsubsection{Isolatoren}
+
+Atomen uit groep 15, 16 of 17 van het periodiek systeem staan geen elektronen af. In een vaste stof vormen ze bindingen met andere atomen en gedragen ze zich als isolatoren. Voor wrijvingsproeven gebruik je daarom isolatoren: de aangebrachte ladingen verplaatsen zich niet. De elektronen blijven zitten waar ze zijn aangebracht (zie figuur~\ref{fig:isolator staaf}b), zelfs wanneer je een geleidende verbinding maakt met de aarde (zie figuur~\ref{fig:isolator staaf}c). De lading verdwijnt enkel door contact met een tegengesteld geladen voorwerp of door interactie met moleculen in de lucht (ionisatie).
+
+% --------------------
+% Video ladingen bij isolator
+\begin{onlineOnly}
+    Link naar video waar ladingen naderen bij een isolator: \youtube{nDSWiCz8ba8}
+\end{onlineOnly}
+\pdfOnly{\mylink{https://youtu.be/nDSWiCz8ba8}{Link naar video waar ladingen naderen bij een isolator.}}   
+% -----------------------------------
+
+% -----------
+%   polarisatie
+% -------------
+De elektronen die rond hun kern gebonden zijn, kunnen slechts een beetje \textit{opschuiven}. Wanneer een externe lading nadert, verschuift daardoor de gemiddelde negatieve lading (de elektronenwolk). Omdat die niet langer volledig samenvalt met de positieve kern, spreken we van \textbf{polarisatie}. Hierdoor wordt elk atoom tijdelijk een dipool.
+
+\begin{remark}
+    Ook hier geldt: er zouden evengoed elektronen van de isolerende staaf genomen kunnen worden.
+\end{remark}
+
+\begin{figure}[h!]
+    \begin{center}
+        \begin{tabular}{ccc}
+            \includegraphics[width=2.5cm]{pic5/elektriciteit/coulomb/isolator staaf 1.jpg} &
+            \includegraphics[width=2.5cm]{pic5/elektriciteit/coulomb/isolator staaf 2.jpg} &
+            \includegraphics[width=2.5cm]{pic5/elektriciteit/coulomb/isolator staaf 3.jpg} \\
+            (a) & (b) & (c)
+        \end{tabular}
+    \end{center}
+    \caption{(a) Een neutrale staaf van een isolerend materiaal. De staaf bevat evenveel positieve als negatieve ladingen. (b) Wanneer er elektronen op de isolator worden geplaatst, krijgt de staaf lokaal een negatieve lading. Omdat de elektronen in een isolator gebonden zijn aan hun kern, blijft het teveel aan elektronen lokaal aanwezig. (c) De negatief geladen staaf wordt verbonden met de aarding. Omdat de elektronen in een isolator gebonden zijn, kunnen de overtollige elektronen niet via de aarding weg, en blijft de staaf negatief geladen.}
+    \label{fig:isolator staaf}
+\end{figure}
+
+\begin{definition}\nl
+    Materialen waarin ladingen vrij kunnen bewegen, zijn \textbf{geleiders}.\\
+    Materialen waarin ladingen niet vrij kunnen bewegen, maar gebonden zijn aan hun kern, zijn \textbf{isolatoren}.
+\end{definition}
+
+% Applet link
+\mylink{https://javalab.org/en/conductor_and_insulator_en/}{Applet over het gedrag van elektronen in geleiders en isolatoren bij een nabije lading.}
+
+% ----------------------------
+%   SUBSECTION: Halfgeleiders
+% ----------------------------
+\subsubsection{Halfgeleiders}
+Halfgeleiders gedragen zich bij lage temperaturen als isolatoren en bij hogere temperaturen als geleiders. Het gaat meestal om elementen uit groep 14 van het periodiek systeem, zoals silicium en germanium. Bij lage temperaturen zitten de meeste elektronen vast in covalente bindingen, waardoor het materiaal zich als een isolator gedraagt (zie figuur~\ref{fig:halfgeleider}a). Wanneer de temperatuur stijgt, kunnen sommige covalente bindingen 'breken'. Hierdoor komen meer elektronen vrij, waardoor het materiaal zich geleidend gaat gedragen (zie figuur~\ref{fig:halfgeleider}b).
+
+%-----------------------------
+%   afbeelding elektronen rond halfgeleider
+\begin{figure}[h!]
+    \begin{center}
+        \begin{tabular}{cc}
+            \includegraphics[width=5cm]{pic5/elektriciteit/coulomb/halfgeleider laag.png} &
+            \includegraphics[width=5cm]{pic5/elektriciteit/coulomb/halfgeleider hoog.png} \\
+            (a) & (b)
+        \end{tabular}
+    \end{center}
+    \caption{(a) Bij een halfgeleider op lage temperatuur zitten de elektronen nog vast in covalente bindingen. Daardoor gedraagt de halfgeleider zich als een isolator. (b) Bij hoge temperaturen is er voldoende thermische energie om valentie-elektronen los te maken uit de covalente bindingen. Deze elektronen worden dan 'vrij', waardoor de halfgeleider zich als een geleider gaat gedragen.}
+    \label{fig:halfgeleider}
+\end{figure}
+% ------------------------------
+
+\newpage 
+
+% --------------------------------
+%   SUBSECTION: inductie
+% -----------------------------
+\subsubsection{Objecten Opladen via Inductie}
+
+% --------------------
+%   LANGE FIGUUR - inductie (omgezet naar 2x3 grid)
+% ------------------
+\begin{figure}[h!]
+    \begin{center}
+        \begin{tabular}{cc}
+            \includegraphics[width=3.5cm,keepaspectratio]{pic5/elektriciteit/coulomb/Laden via inductie 1.jpg} &
+            \includegraphics[width=3.5cm,keepaspectratio]{pic5/elektriciteit/coulomb/Laden via inductie 2.jpg} \\
+            (a) & (b) \\[2ex]
+            \includegraphics[width=3.5cm,keepaspectratio]{pic5/elektriciteit/coulomb/Laden via inductie 3.jpg} &
+            \includegraphics[width=3.5cm,keepaspectratio]{pic5/elektriciteit/coulomb/Laden via inductie 4.jpg} \\
+            (c) & (d) \\[2ex]
+            \multicolumn{2}{c}{\includegraphics[width=3.5cm,keepaspectratio]{pic5/elektriciteit/coulomb/Laden via inductie 5.jpg}} \\
+            \multicolumn{2}{c}{(e)}
+        \end{tabular}
+    \end{center}
+    \caption{Het opladen van een metalen voorwerp door inductie (dat wil zeggen, de twee voorwerpen raken elkaar nooit). (a) Een neutrale metalen bol, met een gelijk aantal positieve en negatieve ladingen. (b) De elektronen op de neutrale bol worden herverdeeld wanneer een geladen rubberen staaf in de buurt van de bol wordt geplaatst. (c) Wanneer de bol wordt geaard, verlaten sommige elektronen de bol via de aardingsdraad. (d) Wanneer de aardverbinding wordt verwijderd, heeft de bol een overschot aan positieve lading die ongelijkmatig is verdeeld. (e) Wanneer de staaf wordt verwijderd, worden de resterende elektronen gelijkmatig herverdeeld en is er een netto gelijkmatige verdeling van positieve lading op de bol.}
+    \label{fig:opladen via inductie}
+\end{figure}
+
+Om te begrijpen hoe een geleider kan worden opgeladen door middel van een proces dat inductie wordt genoemd, kijken we naar een neutrale (ongeladen) geleidende bol die is geïsoleerd van de grond, zoals weergegeven in figuur \ref{fig:opladen via inductie}a. Er zijn evenveel elektronen als protonen in de bol als de lading op de bol precies nul is. Wanneer een negatief geladen rubberen staaf dicht bij de bol wordt gebracht, ondervinden de elektronen in het gebied dat zich het dichtst bij de staaf bevindt een afstotende kracht en migreren ze naar de tegenoverliggende kant van de bol. Door deze migratie krijgt de kant van de bol die zich dicht bij de staaf bevindt een effectieve positieve lading vanwege het verminderde aantal elektronen, zoals weergegeven in figuur \ref{fig:opladen via inductie}b. (De linkerkant van de bol in figuur \ref{fig:opladen via inductie}b is positief geladen alsof positieve ladingen naar dit gebied zijn verplaatst, maar onthoud dat alleen elektronen zich vrij kunnen bewegen.) Dit proces vindt zelfs plaats als de staaf de bol nooit daadwerkelijk raakt. 
+
+Als hetzelfde experiment wordt uitgevoerd met een geleidende draad die de bol met de aarde verbindt (figuur \ref{fig:opladen via inductie}c), worden sommige elektronen in de geleider zo sterk afgestoten door de aanwezigheid van de negatieve lading in de staaf dat ze via de draad uit de bol naar de aarde bewegen. Het symbool \begin{circuitikz}[baseline=-0.5ex, scale=0.8, transform shape] \draw (0,0) node[ground] {}; \end{circuitikz} aan het uiteinde van de draad in figuur \ref{fig:opladen via inductie}c geeft aan dat de draad is verbonden met de aarde (een reservoir dat vrijelijk elektronen kan opnemen of afgeven zonder dat dit een noemenswaardig effect heeft op de elektrische eigenschappen ervan). 
+
+Als de draad naar de aarde vervolgens wordt verwijderd (figuur \ref{fig:opladen via inductie}d), bevat de geleidende bol een overschot aan geïnduceerde positieve lading omdat deze minder elektronen heeft dan nodig is om de positieve lading van de protonen te neutraliseren. Wanneer de rubberen staaf uit de buurt van de bol wordt verwijderd (figuur \ref{fig:opladen via inductie}e), blijft deze geïnduceerde positieve lading op de niet-geaarde bol achter. Merk op dat de rubberen staaf tijdens dit proces niets van zijn negatieve lading verliest.
+ 
+Voor het opladen van een object door inductie is geen contact nodig met het object dat de lading induceert. Dit in tegenstelling tot het opladen van een object door wrijving (geleiding), waarvoor wél contact tussen de twee objecten nodig is.
+
+%------------------------------------------------
+% TOEPASSING; VAN DE GRAAF GENERATOR
+
+\begin{example}[foldable=true,title={Toepassing: vandegraaffgenerator}]\nl
+    De \textbf{vandegraaffgenerator} maakt het mogelijk een grote hoeveelheid lading op te wekken. Dit is te zien op de foto in figuur \ref{fig:vandegraaffgenerator foto} en in de schematische voorstelling in figuur \ref{fig:vandegraaffgenerator schema}. Het toestel bestaat uit twee rollen van verschillend materiaal waarover een rubberen band loopt. De onderste rol is bv. van pvc en de bovenste van nylon. Vlakbij de rollen zit een metalen kam. Onderaan is die kam verbonden met de aarde, terwijl de kam bovenaan verbonden is met een metalen koepel.
+
+
+    %---------
+    % afbeelding in omgeving
+        \begin{center}
+            \includegraphics[width=8cm]{pic5/elektriciteit/coulomb/vadegraaffgenerator.jpg}
+        \end{center}
+        \captionof{figure}{De vandegraaffgenerator wekt een grote ladingshoeveelheid op dankzij het tribo-elektrisch effect.}
+        \label{fig:vandegraaffgenerator foto}
+
+
+        \begin{center}
+            \includegraphics[width=6cm]{pic5/elektriciteit/coulomb/schema vandegraaffgenerator.png}
+        \end{center}
+        \captionof{figure}{Schematische voorstelling van een vandegraaffgenerator. In punt A ontstaat elektrische lading door wrijving tussen de band en de onderste rol. De bewegende band transporteert deze lading naar de bovenzijde van het toestel. In punt B wordt de lading via interactie met de bovenste rol overgedragen op de metalen koepel, waar ze zich gelijkmatig verspreidt over het buitenoppervlak.}
+        \label{fig:vandegraaffgenerator schema}
+
+    De onderste rol van de vandegraaffgenerator wordt mechanisch aangedreven zodat de band continu rondbeweegt. Door het tribo-elektrische effect wisselt de rol lading uit met de band. Afhankelijk van de gebruikte materialen wordt er ofwel positieve ofwel negatieve lading op de band overgedragen. In het voorbeeld met pvc als onderste rol en een rubberen band neemt de rol elektronen op van de band. Omdat de negatieve ladingen op de rol dichter bij elkaar zitten dan op de band, ondervinden de vrije elektronen in de nabijgelegen kam een netto afstotende kracht. Hierdoor springen elektronen van de band naar de kam en blijft er een positieve lading achter op de band, die vervolgens naar boven wordt getransporteerd. De kam is verbonden met de aarde en kan daardoor onbeperkt lading opnemen of afgeven.
+
+    Ook aan de bovenste rol treedt het tribo-elektrische effect op. In dit voorbeeld met nylon en rubber wordt de bovenste rol positief geladen. De combinatie van de positieve lading op de rol en die op de band zorgt ervoor dat via de bovenste kam elektronen worden onttrokken aan de metalen koepel. Deze elektronen vloeien via de band terug naar beneden, waardoor de koepel netto positief geladen achterblijft.
+
+    Dit proces herhaalt zich voortdurend. Op die manier kan de vandegraaffgenerator een zeer grote hoeveelheid lading op de metalen koepel opslaan. Belangrijk hierbij is dat de vandegraaffgenerator geen lading aanmaakt, maar door middel van ladingscheiding en transport een aanzienlijke netto lading kan accumuleren op de koepel.
+\end{example}
+
+% --------------------
+% Video haren rechtkomen
+\begin{onlineOnly}
+    Link naar video met haren die recht komen bij een vandegraaffgenerator: \youtube{xPTt42lPMVs}
+\end{onlineOnly}
+\pdfOnly{\mylink{https://youtu.be/xPTt42lPMVs}{Link naar video met haren die recht komen bij een vandegraaffgenerator.}}   
+% -----------------------------------
 
 \end{document}
-
-
-
-% % ---------------------
-% %	geleiders
-% % -------------------
-% \begin{theorem}
-% Een metaal in vaste toestand bevat vrije (negatieve) elektronen en vaste (positieve) roosterionen.
-% \end{theorem}
-
-% \begin{figure}[H]
-% 	\marginnote{Er zouden ook een elektronen op de metalen staaf gezet kunnen worden.}
-% 	\captionsetup{width=0.85\textwidth}
-% 	\centering
-% 	\begin{subfigure}{.25\textwidth}
-% 		\centering
-% 		\includegraphics[width=\textwidth]{hoofdstukken/elektromagnetisme/metalen staaf 1.jpeg}
-% 		\caption{}
-% 		\label{fig:metalen staaf 1}
-% 	\end{subfigure}%
-% 	\begin{subfigure}{.25\textwidth}
-% 		\centering
-% 		\includegraphics[width=\textwidth]{hoofdstukken/elektromagnetisme/metalen staaf 2.jpeg}
-% 		\caption{}
-% 		\label{fig:metalen staaf 2}
-% 	\end{subfigure}%
-% 	\begin{subfigure}{.25\textwidth}
-% 		\centering
-% 		\includegraphics[width=\textwidth]{hoofdstukken/elektromagnetisme/metalen staaf 3.jpeg}
-% 		\caption{}
-% 		\label{fig:metalen staaf 3}
-% 	\end{subfigure}%	
-% 	\begin{subfigure}{.25\textwidth}
-% 		\centering
-% 		\includegraphics[width=\textwidth]{hoofdstukken/elektromagnetisme/metalen staaf 4.jpeg}
-% 		\caption{}
-% 		\label{fig:metalen staaf 4}
-% 	\end{subfigure}%
-% 	\caption{(a) Een neutrale metalen staaf. Het bevat even veel positieve als negatieve ladingen. (b) Wanneer er elektronen aan de metalen staaf worden onttrokken, krijgt de staaf een positieve lading. Omdat metaal een goede geleider is, wordt het tekort aan elektronen gelijkmatig over de hele staaf verdeeld. (c) De positief geladen staaf wordt verbonden met de aarding. (d) Via de aarding kunnen nieuwe elektronen worden aangevoerd. Omdat metaal een goede geleider is, zullen deze elektronen zich gelijkmatig over de staaf verdelen. }
-% 	\label{fig:metalen staaf}
-% \end{figure}
-
-% Een metalen staaf kan positief geladen worden door elektronen af te geven, zie tekening~\ref{fig:metalen staaf 2}. Vermits de elektronen zich vrij kunnen bewegen, gaat het tekort aan elektronen zich gelijkmatig verspreiden over het hele oppervlak aan de buitenkant van de staaf en zo ver mogelijk van elkaar. Voor een positief geladen staaf is er op de buitenkant van de staaf een tekort aan vrije elektronen. 
-
-% Ga je de staaf met de aarde verbinden door middel van een isolator dan gebeurt er niets, zie tekening~\ref{fig:metalen staaf 3}. Verbind je de staaf met de aarde door middel van een geleider dan gaan er via de aarding elektronen van de aarde naar de staaf en wordt de staaf terug neutraal, zie tekening~\ref{fig:metalen staaf 4}.
-
-% Een metalen staaf kan negatief geladen worden door elektronen op te nemen. Omdat de elektronen zich vrij kunnen bewegen, verspreiden ze zich gelijkmatig over het hele oppervlak aan de buitenkant van de staaf, zo ver mogelijk van elkaar. Voor een negatief geladen staaf betekent dit dat er een overschot aan vrije elektronen aanwezig is aan de buitenzijde.
-
-% \begin{marginfigure}
-% 	\begin{center}
-% 		\qrcode[hyperlink,height=0.85in]{https://youtu.be/bfw8XaQExqc}
-% 	\end{center}
-% 	\vspace*{-5mm}
-% 	\caption*{\scriptsize Link naar video waar ladingen naderen bij een geleider.}
-% \end{marginfigure}
-
-% \begin{opm}
-% Positieve roosterionen kunnen niet verplaatsen: zij hebben een vaste positie in het metaalrooster.
-% \end{opm}
-% % --------------
-% %	Influentie
-% % ---------------
-% \begin{theorie}
-% 	\textbf{Influentie of elektrostatische inductie} is het scheiden van een lading in een geleider wanneer die in de nabijheid komt van een geladen voorwerp.
-% 	Een geaarde geleider wordt geladen wanneer een geladen voorwerp in de buurt wordt gebracht. De lading van de geleider zal steeds tegengesteld zijn aan de lading van het voorwerp.
-% \end{theorie}
-
-% % ----------------------
-% %	SUBSECTION: Isolator
-% % ----------------------
-% \subsubsection{Isolatoren}
-
-% Atomen uit groep 15, 16 of 17 van het periodiek systeem staan geen elektronen af. In een vaste stof vormen ze bindingen met andere atomen en gedragen ze zich als isolatoren. Voor wrijvingsproeven gebruik je daarom isolatoren: de aangebrachte ladingen verplaatsen zich niet. De elektronen blijven zitten waar ze zijn aangebracht (zie tekening~\ref{fig:isolator staaf 2}), zelfs wanneer je een geleidende verbinding maakt met de aarde (zie tekening~\ref{fig:isolator staaf 3}). De lading verdwijnt enkel door contact met een tegengesteld geladen voorwerp of door interactie met moleculen in de lucht (ionisatie).
-
-
-% \begin{marginfigure}
-% 	\begin{center}
-% 		\qrcode[hyperlink,height=0.85in]{https://youtu.be/nDSWiCz8ba8}
-% 	\end{center}
-% 	\vspace*{-5mm}
-% 	\caption*{\scriptsize Link naar video waar ladingen naderen bij een isolator.}
-% \end{marginfigure}
-% % -----------
-% % 	polarisatie
-% % -------------
-% De elektronen die rond hun kern gebonden zijn, kunnen slechts een beetje \textit{opschuiven}. Wanneer een externe lading nadert, verschuift daardoor de gemiddelde negatieve lading (de elektronenwolk). Omdat die niet langer volledig samenvalt met de positieve kern, spreken we van \textbf{polarisatie}. Hierdoor wordt elk atoom tijdelijk een dipool.
-
-
-
-% \begin{figure}[H]
-% \captionsetup{width=0.85\textwidth}
-% 	\marginnote{Er zou ook elektronen van de isolerende staaf genomen kunnen worden.}
-% 	\centering
-% 	\begin{subfigure}{.25\textwidth}
-% 		\centering
-% 		\includegraphics[width=\textwidth]{hoofdstukken/elektromagnetisme/isolator staaf 1.jpg}
-% 		\caption{}
-% 		\label{fig:isolator staaf 1}
-% 	\end{subfigure}%
-% 	\begin{subfigure}{.25\textwidth}
-% 		\centering
-% 		\includegraphics[width=\textwidth]{hoofdstukken/elektromagnetisme/isolator staaf 2.jpg}
-% 		\caption{}
-% 		\label{fig:isolator staaf 2}
-% 	\end{subfigure}%
-% 	\begin{subfigure}{.25\textwidth}
-% 		\centering
-% 		\includegraphics[width=\textwidth]{hoofdstukken/elektromagnetisme/isolator staaf 3.jpg}
-% 		\caption{}
-% 		\label{fig:isolator staaf 3}
-% 	\end{subfigure}%	
-% 	\caption{(a) Een neutrale staaf van een isolerend materiaal. De staaf bevat evenveel positieve als negatieve ladingen. (b) Wanneer er elektronen op de isolator worden geplaatst, krijgt de staaf lokaal een negatieve lading. Omdat de elektronen in een isolator gebonden zijn aan hun kern, blijft het teveel aan elektronen lokaal aanwezig. (c) De negatief geladen staaf wordt verbonden met de aarding. Omdat de elektronen in een isolator gebonden zijn, kunnen de overtollige elektronen niet via de aarding weg, en blijft de staaf negatief geladen.}
-% 	\label{fig:metalen staaf}
-% \end{figure}
-
-
-
-% \begin{marginfigure}
-% 	\begin{center}
-% 		\qrcode[hyperlink,height=0.85in]{https://youtu.be/nDSWiCz8ba8}
-% 	\end{center}
-% 	\vspace*{-5mm}
-% 	\caption*{\scriptsize Link naar video waar ladingen naderen bij een isolator.}
-% \end{marginfigure}
-
-
-% \begin{theorie}
-% 	Materialen waarin ladingen rij kunnen bewegen, zijn \textbf{geleiders}.\\
-% 	Materialen waarin ladingen niet vrij kunnen bewegen, maar gebonden zijn aan hun kern, zijn \textbf{isolatoren}.
-% \end{theorie}
-
-% \begin{marginfigure}
-% 	\begin{center}
-% 		\qrcode[hyperlink,height=0.85in]{https://javalab.org/en/conductor_and_insulator_en/}
-% 	\end{center}
-% 	\vspace*{-5mm}
-% 	\caption*{\scriptsize Applet: gedrag van elektronen in geleiders en isolatoren bij een nabije lading}
-% \end{marginfigure}
-% % ----------------------------
-% %	SUBSECTION: Halfgeleiders
-% % ----------------------------
-% \subsubsection{Halfgeleiders}
-% Halfgeleiders gedragen zich bij lage temperaturen als isolatoren en bij hogere temperaturen als geleiders. Het gaat meestal om elementen uit groep 14 van het periodiek systeem, zoals silicium en germanium. Bij lage temperaturen zitten de meeste elektronen vast in covalente bindingen, waardoor het materiaal zich als een isolator gedraagt, zie figuur~\ref{fig:halfgeleider laag}. Wanneer de temperatuur stijgt, kunnen sommige covalente bindingen ‘breken’. Hierdoor komen meer elektronen vrij, waardoor het materiaal zich geleidend gaat gedragen, zie figuur~\ref{fig:halfgeleider hoog}.
-% %-----------------------------
-% %	afbeelding elektronen rond halfgeleider
-% \begin{figure}[H]
-% \captionsetup{width=0.85\textwidth}
-% 	\centering
-% 	\begin{subfigure}{.5\textwidth}
-% 		\centering
-% 		\includegraphics[width=.95\textwidth]{hoofdstukken/elektromagnetisme/halfgeleider laag.png}
-% 		\caption{}
-% 		\label{fig:halfgeleider laag}
-% 	\end{subfigure}%
-% 	\begin{subfigure}{.5\textwidth}
-% 		\centering
-% 		\includegraphics[width=.95\textwidth]{hoofdstukken/elektromagnetisme/halfgeleider hoog.png}
-% 		\caption{}
-% 		\label{fig:halfgeleider hoog}
-% 	\end{subfigure}
-% 	\caption{a) Bij een halfgeleider op lage temperatuur zitten de elektronen nog vast in covalente bindingen. Daardoor gedraagt de halfgeleider zich als een isolator. (b) Bij hoge temperaturen is er voldoende thermische energie om valentie-elektronen los te maken uit de covalente bindingen. Deze elektronen worden dan “vrij”, waardoor de halfgeleider zich als een geleider gaat gedragen.}
-% 	\label{fig:halfgeleider}
-% \end{figure}
-% % ------------------------------
-% \newpage %lange margin figure
-% % --------------------------------
-% %	SUBSECTION: inductie
-% % -----------------------------
-% \subsubsection{Objecten Opladen via Inductie}
-% % --------------------
-% %	LANGE MARGIN FIGURE - inductie
-% % ------------------
-% \begin{marginfigure}
-% 	\centering
-% 		\begin{subfigure}{\linewidth}
-% 			\includegraphics[width=\linewidth]{hoofdstukken/elektromagnetisme/Laden via inductie 1.jpeg}%
-% 			\caption{}
-% 			\label{fig:opladen via inductie a}
-% 		\end{subfigure}
-% 		\vfill %nieuwe rij
-% 		\begin{subfigure}{\linewidth}
-% 			\includegraphics[width=\linewidth]{hoofdstukken/elektromagnetisme/Laden via inductie 2.jpeg}%
-% 			\caption{}
-% 			\label{fig:opladen via inductie b}
-% 		\end{subfigure}
-% 		\vfill %nieuwe rij
-% 		\begin{subfigure}{\linewidth}
-% 			\includegraphics[width=\linewidth]{hoofdstukken/elektromagnetisme/Laden via inductie 3.jpeg}%
-% 			\caption{}
-% 			\label{fig:opladen via inductie c}
-% 		\end{subfigure}
-% 		\vfill %nieuwe rij		
-% 		\begin{subfigure}{\linewidth}	
-% 			\includegraphics[width=\linewidth]{hoofdstukken/elektromagnetisme/Laden via inductie 4.jpeg}%
-% 			\caption{}
-% 			\label{fig:opladen via inductie d}
-% 		\end{subfigure}
-% 		\vfill %nieuwe rij		
-% 		\begin{subfigure}{\linewidth}	
-% 			\includegraphics[width=\linewidth]{hoofdstukken/elektromagnetisme/Laden via inductie 5.jpeg}%
-% 			\caption{}			
-% 			\label{fig:opladen via inductie e}
-% 		\end{subfigure}
-% 	\caption{Het opladen van een metalen voorwerp door inductie (dat wil zeggen, de twee voorwerpen raken elkaar nooit). (a) Een neutrale metalen bol, met een gelijk aantal positieve en negatieve ladingen. (b) De elektronen op de neutrale bol worden herverdeeld wanneer een geladen rubberen staaf in de buurt van de bol wordt geplaatst. (c) Wanneer de bol wordt geaard, verlaten sommige van zijn elektronen deze via de aardingsdraad. (d) Wanneer de aardverbinding wordt verwijderd, heeft de bol een overschot aan positieve lading die ongelijkmatig is verdeeld. (e) Wanneer de staaf wordt verwijderd, worden de resterende elektronen gelijkmatig herverdeeld en is er een netto gelijkmatige verdeling van positieve lading op de bol.}
-% 	\label{fig:opladen via inductie}
-% \end{marginfigure}
-% % EINDE LANGE margin figuur LADEN VIA INDUCITE
-
-% Om te begrijpen hoe een geleider kan worden opgeladen door middel van een proces dat inductie wordt genoemd, kijken we naar een neutrale (ongeladen) geleidende bol die is geïsoleerd van de grond, zoals weergegeven in figuur \ref{fig:opladen via inductie a}. Er zijn evenveel elektronen als protonen in de bol als de lading op de bol precies nul is. Wanneer een negatief geladen rubberen staaf dicht bij de bol wordt gebracht, ondervinden de elektronen in het gebied dat zich het dichtst bij de staaf bevindt een afstotende kracht en migreren ze naar de tegenoverliggende kant van de bol. Door deze migratie krijgt de kant van de bol die zich dicht bij de staaf bevindt een effectieve positieve lading vanwege het verminderde aantal elektronen, zoals weergegeven in figuur 23.3b. (De linkerkant van de bol in figuur \ref{fig:opladen via inductie b} is positief geladen alsof positieve ladingen naar dit gebied zijn verplaatst, maar onthoud dat alleen elektronen vrij kunnen bewegen.) Dit proces vindt zelfs plaats als de staaf de bol nooit daadwerkelijk raakt. Als hetzelfde experiment wordt uitgevoerd met een geleidende draad die de bol met de aarde verbindt (Fig. \ref{fig:opladen via inductie c}), worden sommige elektronen in de geleider zo sterk afgestoten door de aanwezigheid van de negatieve lading in de staaf dat ze via de draad uit de bol naar de aarde bewegen. Het symbool
-% \begin{circuitikz}%
-% 				\draw (0,0) node[ ground ] {};%(2,0); 
-% 			\end{circuitikz}%
-%  \, aan het uiteinde van de draad in figuur \ref{fig:opladen via inductie c} geeft aan dat de draad is verbonden met de aarde, dat wil zeggen een reservoir, zoals de aarde, dat vrijelijk elektronen kan opnemen of afgeven zonder dat dit een noemenswaardig effect heeft op de elektrische eigenschappen ervan. Als de draad naar de aarde vervolgens wordt verwijderd (Fig. \ref{fig:opladen via inductie d}), bevat de geleidende bol een overschot aan geïnduceerde positieve lading omdat deze minder elektronen heeft dan nodig is om de positieve lading van de protonen te neutraliseren. Wanneer de rubberen staaf uit de buurt van de bol wordt verwijderd (Fig. \ref{fig:opladen via inductie e}), blijft deze geïnduceerde positieve lading op de niet-geaarde bol achter. Merk op dat de rubberen staaf tijdens dit proces niets van zijn negatieve lading verliest.
- 
-%  Voor het opladen van een object door inductie is geen contact nodig met het object dat de lading induceert. Dit in tegenstelling tot het opladen van een object door wrijving (dat wil zeggen door geleiding), waarvoor wel contact tussen de twee objecten nodig is.
-
-% %------------------------------------------------
-% % TOEPASSING; VAN DE GRAAF GENERATOR
-% \newpage
-% \begin{marginfigure}
-% 		\begin{center}
-% 			\includegraphics[width=\textwidth]{hoofdstukken/elektromagnetisme/vadegraaffgenerator.jpg}
-% 		\end{center}
-% 		\caption{vandegraaffgenerator wekt een grote ladingshoeveelheid op dankzij het trio-elektrisch effect.}
-% 		\label{fig:vandegraaffgenerator foto}
-% \end{marginfigure}
-
-% \begin{toepassing}
-% 	De \textbf{vandegraaffgenerator} laat toe een grote hoeveelheid lading op te wekken, te zien op de foto op figuur \ref{fig:vandegraaffgenerator foto} en een schematische voorstelling op figuur \ref{fig:vandegraaffgenerator schema}. Het toestel bestaat uit twee rollen van verschillend materiaal waarover een rubberen band loopt. De onderste rol is bv. van PVC en de bovenste van nylon. Vlakbij de rollen zit een metalen kam. Onderaan is die kam verbonden met de aarde, terwijl de kam bovenaan verbonden is met een metalen kap.
-
-% \begin{figure}[H]
-% \captionsetup{width=0.85\textwidth}
-% 	\begin{center}
-% 		\includegraphics[width=0.35\textwidth]{hoofdstukken/elektromagnetisme/schema vandegraaffgenerator.png}
-% 		\caption{Schematische voorstelling van een vandegraaffgenerator. In punt A ontstaat elektrische lading door wrijving tussen de band en de onderste rol. De bewegende band transporteert deze lading naar de bovenzijde van het toestel. In punt B wordt de lading via interactie met de bovenste rol overgedragen op de metalen koepel, waar ze zich gelijkmatig verspreidt over het buitenoppervlak.}
-% 		\label{fig:vandegraaffgenerator schema}
-% 	\end{center}
-% \end{figure}
-
-
-
-
-% De onderste rol van de vandegraaffgenerator wordt mechanisch aangedreven zodat de band continu rondbeweegt. Door het tribo-elektrische effect wisselt de rol lading uit met de band. Afhankelijk van de gebruikte materialen wordt er ofwel positieve ofwel negatieve lading op de band overgedragen. In het voorbeeld met PVC als onderste rol en een rubberen band neemt de rol elektronen op van de band. Omdat de negatieve ladingen op de rol dichter bij elkaar zitten dan op de band, ondervinden de vrije elektronen in de nabijgelegen kam een netto afstotende kracht. Hierdoor springen elektronen van de band naar de kam en blijft er een positieve lading achter op de band, die vervolgens naar boven wordt getransporteerd. De kam is verbonden met de aarde en kan daardoor onbeperkt lading opnemen of afgeven.
-
-% Ook aan de bovenste rol treedt het tribo-elektrische effect op. In dit voorbeeld met nylon en rubber wordt de bovenste rol positief geladen. De combinatie van de positieve lading op de rol en die op de band zorgt ervoor dat via de bovenste kam elektronen worden onttrokken aan de metalen koepel. Deze elektronen vloeien via de band terug naar beneden, waardoor de koepel netto positief geladen achterblijft.
-
-% Dit proces herhaalt zich voortdurend. Op die manier kan de vandegraaffgenerator een zeer grote hoeveelheid lading op de metalen koepel opslaan. Belangrijk hierbij is dat de vandegraaffgenerator geen lading aanmaakt, maar door middel van ladingscheiding en transport een aanzienlijke netto lading kan accumuleren op de koepel.
-% \end{toepassing}
-%  \begin{marginfigure}
-% 	\begin{center}
-% 		\qrcode[hyperlink,height=0.85in]{https://youtu.be/xPTt42lPMVs}
-% 	\end{center}
-% 	\vspace*{-5mm}
-% 	\caption*{\scriptsize Link naar video met haren die recht komen bij een vandegraaff\-generator}
-% \end{marginfigure}
-

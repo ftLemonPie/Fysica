@@ -1,5 +1,7 @@
 # TODO
 ## te doen volgende keer
+- [ ] samenvatting maken
+- [ ] oefeningen maken
 - [ ] verwijzingen nakijken.
 - [ ] figuren in html (bv laden via inductie) zien er raar uit.
 - [ ] omgevingen testen --> andere dan theorem en definition, zeker oefeningen enzo

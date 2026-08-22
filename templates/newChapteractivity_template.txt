@@ -1,0 +1,22 @@
+\documentclass{ximera}
+
+\title{naam hoofdstuk}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+    Wat het is
+\end{abstract}
+
+\maketitle
+\label{hoofdstuk:naam_hoofdstuk}
+% ----------------------------------------------------------------------
+%          inleiding hoofdstuk
+% ----------------------------------------------------------------------
+\section*{Inleiding}
+
+\begin{definition}
+\emph{Elektrostatica} is het deel van de fysica dat het gedrag en de interacties van elektrische ladingen in rust en de krachtwerking ertussen bestudeert.
+\end{definition}
+
+\end{document}

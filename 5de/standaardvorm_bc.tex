@@ -1,0 +1,95 @@
+\documentclass{ximera}
+
+\title{Beduidende cijfers en standaardvorm}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+    Nauwkeurigheid van meetresultaten en de correcte wetenschappelijke schrijfwijze.
+\end{abstract}
+\maketitle
+
+\section{Beduidende cijfers en afrondingsregels}
+Wanneer je tijdens een experiment een waarde meet, kan je deze waarde maar met een zekere nauwkeurigheid meten. Als je bijvoorbeeld een meetlat hebt die maar tot een millimeter nauwkeurig is, is het niet mogelijk om met deze meetlat lengtes te meten die nauwkeuriger zijn dan een millimeter. Daarom is het belangrijk om afspraken te hebben die aangeven hoe meetresultaten afgerond moeten worden. Hiervoor heeft men de beduidende cijfers ingevoerd, want als we een zeer nauwkeurig resultaat gebruiken in een berekening met een zeer onnauwkeurig resultaat, is het resultaat niet zeer nauwkeurig gekend.
+
+\begin{definition}\nl
+    De cijfers in een meetresultaat die je werkelijk afleest, zijn de \textbf{beduidende of significante cijfers (B.C.)}. Een nul vooraan dient enkel om het getal te kunnen schrijven en is geen beduidend cijfer.
+\end{definition}
+
+\begin{example}[title={Aantal B.C.}]\nl
+    102 heeft drie B.C.: 1, 0 en 2.
+\end{example}
+
+\begin{example}[title={Aantal B.C.}]\nl
+    Zowel $0{,}2$ als $0{,}02$ als $0{,}002$ hebben alle drie 1 B.C. (de 2). Het getal $2{,}0$ daarentegen heeft 2 B.C. omdat de 0 niet vooraan staat.
+\end{example}
+
+Je zal echter in fysica zelden maar één waarde meten in een experiment of maar één waarde nodig hebben in een oefening: Vaak zal je immers meetresultaten met mekaar moeten optellen, delen,... Daarom is het belangrijk dat je ook met beduidende cijfers kan rekenen. Hiervoor dienen onderstaande twee eigenschappen.
+
+\subsection{Som en Verschil}
+\begin{theorem}\nl
+    Bij een \textbf{som} of een \textbf{verschil} van meetresultaten wordt het laatste cijfer bepaald door het minst nauwkeurige getal. Is het eerste cijfer dat je weglaat kleiner dan een 5, dan rond je af naar beneden. Is het groter dan of gelijk aan 5, dan rond je af naar boven.
+\end{theorem}
+
+\begin{example}[title={B.C. Plus}]\nl
+    $14{,}3 \, \mathrm{kg} + 3{,}56 \, \mathrm{kg} = 17{,}86 \, \mathrm{kg}$. De eerste term ($14{,}3 \, \mathrm{kg}$) is nauwkeurig tot op 1 cijfer na de komma. De tweede term ($3{,}56 \, \mathrm{kg}$) is nauwkeurig tot op 2 cijfers na de komma. Het resultaat ($17{,}86 \, \mathrm{kg}$) moet dus afgerond worden tot een nauwkeurigheid van 1 cijfer na de komma (= minst nauwkeurige). Het laatste cijfer is een 6, dus afgerond geeft dit $17{,}9 \, \mathrm{kg}$.
+\end{example}
+
+\begin{example}[title={B.C. Min}]\nl
+    $200{,}9 \, \mathrm{m} - 15{,}86 \, \mathrm{m} = 185{,}04 \, \mathrm{m}$. Door dezelfde regels toe te passen zoals hierboven, moeten we dit resultaat afronden tot 1 cijfer na de komma nauwkeurig waardoor we op $185{,}0 \, \mathrm{m}$ uitkomen.
+\end{example}
+
+\subsection{Product en Quotiënt}
+\begin{theorem}\nl
+    Bij een \textbf{product} of \textbf{quotiënt} van meetresultaten mag je slechts zoveel beduidende cijfers laten staan als er voorkomen in de factor met het kleinste aantal beduidende cijfers.
+\end{theorem}
+
+\begin{example}[title={B.C. Product}]\nl
+    $0{,}25 \, \mathrm{m} \cdot 0{,}334 \, \mathrm{m} = 0{,}0835 \, \mathrm{m}$. De eerste term ($0{,}25 \, \mathrm{m}$) heeft 2 B.C., de tweede term ($0{,}334 \, \mathrm{m}$) heeft 3 B.C.. Het resultaat mag bijgevolg maar uit 2 B.C. bestaan. Bijgevolg wordt deze uitkomst afgerond tot $0{,}084 \, \mathrm{m}$.
+\end{example}
+
+\begin{example}[title={B.C. Quotiënt}]\nl
+    Door dezelfde regels toe te passen als in het vorige voorbeeld vinden we dat $\frac{125 \, \mathrm{kg}}{44 \, \mathrm{kg}} \approx 2{,}8 \, \mathrm{kg}$.
+\end{example}
+
+\section{Wetenschappelijke notatie}
+De wetenschappelijke notatie is een manier om meetresultaten te schrijven met behulp van machten van 10. Het grote voordeel van deze notatie is dat eenheden van meetresultaten zo snel en makkelijk omgezet kunnen worden als je ook de prefixen van de eenheden noteert met machten van 10. De wetenschappelijke notatie heeft volgende eigenschappen:
+
+\begin{definition}\nl
+    De \textbf{wetenschappelijke notatie} is een manier om meetresultaten weer te geven. De wetenschappelijke notatie bestaat uit een product van twee getallen waarbij:
+    \begin{enumerate}
+    \item het eerste getal een kommagetal is met maar één enkel cijfer voor de komma (verschillend van nul),
+    \item het tweede getal een macht van 10 is.
+    \end{enumerate}
+    Het product van beide getallen wordt gevolgd door de bijhorende eenheid.
+\end{definition}
+
+\begin{example}[title={Wetenschappelijke Notatie}]\nl
+    Het meetresultaat $6{,}33 \cdot 10^{5} \, \mathrm{m}$ staat genoteerd in wetenschappelijke notatie: Zo hebben we een eerste getal ($6{,}33$), wat een kommagetal is met maar één cijfer voor de komma verschillend van nul, dat vermenigvuldigd wordt met een macht van 10 ($10^{5}$), gevolgd door een bijhorende eenheid ($\mathrm{m}$).
+\end{example}
+
+\begin{example}[title={Niet Wetenschappelijke Notatie}]\nl
+    Het meetresultaat $25{,}3 \cdot 10^{2} \, \mathrm{Pa}$ staat niet in wetenschappelijke notatie omdat het eerste getal ($25{,}3$) twee cijfers voor de komma heeft staan in plaats van één cijfer.
+\end{example}
+
+\begin{example}[foldable=true,title={Voorbeeld: Groot getal afronden op aantal B.C.}]\nl
+    Je meet een waarde van $0{,}03589 \, \mathrm{m}^{2}$. Rond dit meetresultaat af tot op 2 B.C. en noteer de meetwaarde met behulp van een macht van 10 (i.e., wetenschappelijke notatie). 
+
+    \begin{solution}\nl
+    Door de komma twee plaatsen naar rechts op te schuiven, vinden we dat:
+    \[0{,}03589 \, \mathrm{m}^{2} = 3{,}589 \cdot 10^{-2} \, \mathrm{m}^{2}.\] 
+    Door af te ronden tot op 2 B.C. vinden we tot slot dat:
+    \[3{,}589 \cdot 10^{-2} \, \mathrm{m}^{2} \approx 3{,}6 \cdot 10^{-2} \, \mathrm{m}^{2}.\]
+    \end{solution}
+\end{example}
+
+\section{Standaardvorm}
+
+De combinatie van correcte afronding van nauwkeurigheid en beduidende cijfers, wetenschappelijke schrijfwijze en de S.I.-eenheid wordt de standaardvorm genoemd. Het voordeel van deze notatie is dat je antwoord in de afgesproken eenheid staat, de nauwkeurigheid van het resultaat direct af te lezen is en hoofdrekenen met cijfers tussen 0 en 9 en werken met machten van 10 is relatief eenvoudig.
+
+\begin{example}\nl
+    Zo is $24{,}23 \, \mathrm{m} \cdot 43{,}1 \, \mathrm{m}$ gelijk aan $2{,}423 \cdot 10^1 \, \mathrm{m} \cdot 4{,}31 \cdot 10^1 \, \mathrm{m}$, wat ongeveer $2 \cdot 10^1 \, \mathrm{m} \cdot 4 \cdot 10^1 \, \mathrm{m}$ is.\\
+    $4 \cdot 2 = 8$ en $10^{1} \cdot 10^{1} = 10^{2}$ dus het antwoord zal ongeveer $8 \cdot 10^2 \, \mathrm{m}^{2}$ zijn. (Het correcte antwoord zit in de buurt van $1044$ vierkante meter.)
+\end{example}
+
+\end{document}

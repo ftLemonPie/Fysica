@@ -57,7 +57,7 @@
 % -- nodig voor env en andere zaken
 \usepackage{fancyhdr,geometry}
 % \usepackage[usenames,dvipsnames]{xcolor}
-% \usepackage[many]{tcolorbox}
+ %\usepackage[many]{tcolorbox}
 %\usepackage{varwidth}
 \tcbuselibrary{raster}
 \usepackage[T1]{fontenc}                            % Font Styling
@@ -113,7 +113,20 @@
 \setcounter{tocdepth}{1} %om subsections niet in inhoudstafel te krijgen
 
 
+% % --------
+% % nummering aanpassen
+% \usepackage{chngcntr}
 
+% % 1. Reset chapters na een part
+% \counterwithin{chapter}{part}
+
+% % 2. Maak de opmaak van het chapter als Roman.Arabic (bijv. II.1)
+% \renewcommand{\thechapter}{\Roman{part}.\arabic{chapter}}
+
+% % 3. Zorg dat secties resetten na een chapter en toon als II.1.1
+% \counterwithin{section}{chapter}
+% \renewcommand{\thesection}{\thechapter.\arabic{section}}
+% %-----------------------
 
 
 \newlength{\spacelength}
@@ -174,6 +187,22 @@
 \else
 \newcommand{\nl}{\ \par} % newline (achter heading van definition etc.)
 \fi
+
+% --- samenvatting boc ---
+% Dit commando toont een tcolorbox in de PDF en een definition in de HTML!
+\newcommand{\samenbox}[2]{
+	\ifdefined\HCode %Href werkt niet?
+	    \begin{conclusion}[foldable=true,nonumbered,title={#1}]\nl
+            #2
+        \end{conclusion}
+	\else
+        \begin{tcolorbox}[title={#1},colback=white,colframe=black,sharp corners]
+            #2
+        \end{tcolorbox}
+		\fi	
+
+}
+% ----------------------------------
 
 
 

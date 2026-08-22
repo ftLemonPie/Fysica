@@ -1,0 +1,58 @@
+\documentclass{ximera}
+
+\title{Samenvatting elektrische krachtwerking}
+%\author{Daan Lipkens}
+\begin{document}
+\begin{abstract}
+\end{abstract}
+
+% pagestyle aanpassen zodat er meer op 1 blad kan
+\newgeometry{left=3cm,bottom=0.1cm}
+\pagestyle{empty}
+
+\begin{conclusion}[title={Samenvatting}]\nl
+
+    % Behoud van lading
+    \samenbox{Behoud van Lading}{
+        De totale elektrische lading in een gesloten systeem blijft altijd gelijk. Met andere woorden: lading kan niet uit het niets ontstaan of zomaar verdwijnen. Ze kan enkel worden verplaatst van het ene voorwerp naar het andere. Wanneer een voorwerp elektronen verliest, neemt een ander voorwerp ze op, zodat de totale hoeveelheid lading onveranderd blijft.
+    }
+    
+    % Wet van Coulomb
+    \samenbox{Wet van Coulomb}{
+        De grootte van de elektrische kracht uitgeoefend door een puntlading $Q_1$ op een tweede puntlading $Q_2$ is:
+        \begin{equation*}
+            F_{12} = k \cdot \frac{\lvert Q_1 \rvert \cdot \lvert Q_2 \rvert}{r_{12}^2}
+        \end{equation*}
+        Hierbij is $r_{12}$ de afstand tussen de twee ladingen in meter ($\mathrm{m}$) en is $Q$ de ladingshoeveelheid in coulomb ($\mathrm{C}$). De constante $k_e$ (of kortweg $k$) is de coulombconstante en heeft in vacuüm of lucht een waarde van: 
+        $$k = 8{,}99 \cdot 10^9 \, \mathrm{\frac{N\cdot m^2}{C^2}}$$
+    }
+    
+    % Tribo-elektrisch effect
+    \samenbox{Tribo-elektrisch Effect}{
+        Ladingsoverdracht door \textbf{wrijving} tussen materialen: elektronen springen van het ene materiaal naar het andere volgens de \textbf{tribo-elektrische reeks}.
+    }
+    
+    % Polarisatie en influentie
+    \samenbox{Polarisatie en Influentie}{
+        Bij \textbf{isolatoren} veroorzaakt een extern geladen voorwerp \textbf{polarisatie}: moleculen krijgen een \textbf{dipoolmoment} doordat de ladingscentra in de moleculen licht verschuiven. Het materiaal zelf blijft neutraal, maar er ontstaat een \textbf{ladingsverschil} aan het oppervlak.
+
+        Bij \textbf{geleiders} treedt \textbf{influentie} (of elektrostatische inductie) op: vrije elektronen herverdelen zich totdat de ladingen geen resulterende kracht meer ondervinden. Dit zorgt voor een \textbf{netto-oppervlaktelading}.
+
+        Beide effecten veroorzaken netto een aantrekking, omdat de elektrische kracht volgens de wet van Coulomb omgekeerd evenredig is met het kwadraat van de afstand ($F \sim \frac{1}{r^2}$) en de tegengestelde ladingen zich het dichtst bij het geladen voorwerp bevinden.
+    }
+    
+    % Geleider, isolator en halfgeleider
+    \samenbox{Geleider, Isolator en Halfgeleider}{
+        De valentie-elektronen van \textbf{geleiders} (zoals metalen en zoutoplossingen) zijn zwak gebonden aan hun kern. Hierdoor beschikken ze over vrije ladingsdragers en kunnen ze elektrische stroom uitstekend geleiden.
+
+        De valentie-elektronen van \textbf{isolatoren} (zoals plastic en glas) zijn sterk gebonden aan hun kern. Hierdoor is er zeer veel energie nodig om ze vrij te maken en zijn er in vrijwel alle omstandigheden geen vrije ladingsdragers aanwezig. Hierdoor kan er geen elektrische stroom geleid worden.
+
+        Bij \textbf{halfgeleiders} (zoals silicium en germanium) zijn de elektronen in principe gebonden, maar afhankelijk van de hoeveelheid toegevoegde energie kunnen ze toch gaan geleiden. Bij een lage temperatuur of spanning gedraagt het materiaal zich als een isolator, maar bij een hoge temperatuur of spanning gedraagt het zich als een geleider.
+    }
+    
+\end{conclusion}
+
+% restore pagestyle
+\pagestyle{plain}
+\restoregeometry
+\end{document}

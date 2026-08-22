@@ -22,3 +22,73 @@
     \end{center}
     %--------    
 \end{remark}
+
+
+%-------BEGIN SAMENVATTING----------------------------------------------------
+\documentclass{ximera}
+
+\title{Samenvatting elektrische krachtwerking}
+%\author{Daan Lipkens}
+\begin{document}
+\begin{abstract}
+\end{abstract}
+
+% pagestyle aanpassen zodat er meer op 1 blad kan
+\newgeometry{left=3cm,bottom=0.1cm}
+\pagestyle{empty}
+%
+% \samenbox{titel}{inhoud} doet in pdf een box, en \begin{conclussion} in html
+%
+\begin{conclusion}[title={Samenvatting}]\nl
+
+    % samenvatting van
+    \samenbox{Behoud van Lading}{
+       inhoudt
+    }
+    
+\end{conclusion}
+
+% restore pagestyle
+\pagestyle{plain}
+\restoregeometry
+\end{document}
+
+%-------EINDE SAMENVATTING----------------------------------------------------
+
+
+%-------BEGIN SAMENVATTING - oude versie----------------------------------------------------
+
+\documentclass{ximera}
+
+\title{Samenvatting: }
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+    Samenvatting 
+\end{abstract}
+
+
+
+
+\begin{conclusion}[Samenvatting]\nl
+%OP 1 LIJN
+	\begin{tcolorbox}[title={TITEL},colback=white,colframe=black,sharp corners]%behoud van lading
+		Inhoud
+	\end{tcolorbox}
+
+% 2 DINGEN NAAST ELKAAR
+ 	\begin{tcbitemize}[raster columns=2, varwidth upper, raster equal height=rows,colframe=black,colback=white,fonttitle=\bfseries,sharp corners]
+ 		% ding 1
+ 		\tcbitem[squeezed title={TITEL 1}]
+ 		Inhoud
+ 		\begin{equation}\label{eq:coulombkracht}
+ 			formule
+ 		\end{equation}
+ 		% Ding 2
+ 		\tcbitem[squeezed title={Titel 2}]
+ 		inhoudt
+ 	\end{tcbitemize}
+\end{conclusion}
+\end{document}
+%-------EINDE SAMENVATTING----------------------------------------------------

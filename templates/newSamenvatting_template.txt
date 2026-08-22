@@ -1,0 +1,30 @@
+%-------BEGIN SAMENVATTING----------------------------------------------------
+\documentclass{ximera}
+
+\title{Samenvatting elektrische krachtwerking}
+%\author{Daan Lipkens}
+\begin{document}
+\begin{abstract}
+\end{abstract}
+
+% pagestyle aanpassen zodat er meer op 1 blad kan
+\newgeometry{left=3cm,bottom=0.1cm}
+\pagestyle{empty}
+%
+% \samenbox{titel}{inhoud} doet in pdf een box, en \begin{conclussion} in html
+%
+\begin{conclusion}[title={Samenvatting}]\nl
+
+    % samenvatting van
+    \samenbox{Behoud van Lading}{
+       inhoudt
+    }
+    
+\end{conclusion}
+
+% restore pagestyle
+\pagestyle{plain}
+\restoregeometry
+\end{document}
+
+%-------EINDE SAMENVATTING----------------------------------------------------

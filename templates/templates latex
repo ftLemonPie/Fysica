@@ -92,3 +92,226 @@
 \end{conclusion}
 \end{document}
 %-------EINDE SAMENVATTING----------------------------------------------------
+
+%----------- OEFENIGNEN----------------
+
+%------- enkelvoudige vraag
+\begin{exercise}
+   Vraag.
+
+    \[ X = \answer[tolerance=0.05,onlineshowanswerbutton]{X} \, \mathrm{X} \]
+    
+    Dit is een: \wordChoice{  
+                    \choice[correct]{aantrekking}
+                    \choice{afstoting}
+                }  
+
+    \begin{hint}
+        Hint
+    \end{hint}
+
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & X = X{,}X \cdot 10^{ } \, \mathrm{ } & & X = X{,}X \cdot 10^{X} \, \mathrm{X}\\
+            & X = X{,}X \, \mathrm{X} & & X = X{,}X \cdot 10^X \, \mathrm{\frac{X}}
+        \end{align*}
+
+        \underline{Gevraagd:} $X$ \\
+
+        \underline{Oplossing:}\\
+        We gebruiken de \textbf{}.
+        \begin{align*}
+            
+        \end{align*}
+
+        antwoordzin: 
+    \end{solution}
+\end{exercise}
+%------------------------
+
+%----- antwoordzin
+\[ grootheid = \answer[tolerance=0.01,onlineshowanswerbutton]{0.22} \, \mathrm{eenheid} \]
+
+%----- multiplechoice alle juiste aanduiden
+        \begin{selectAll}
+            \choice{$a$}
+            \choice[correct]{$b$}
+            \choice{$c$}
+            \choice{$d$}
+        \end{selectAll}
+
+%------ in zin
+lalalalalala: \wordChoice{  
+                    \choice[correct]{juist}
+                    \choice{fout}
+                }  
+
+% ------- tikz in \begin{center}
+
+
+Dat is een uitstekend idee! Een goede set templates bespaart je uren typwerk en zorgt ervoor dat je hele cursus (zowel online als in PDF) er overal perfect strak en consistent uitziet.
+
+Hier is je "Ximera Fysica Toolkit". Je kan deze blokken code gewoon kopiëren, plakken en invullen!
+
+### 1. Vraagstuk met numeriek antwoord en stappenplan
+
+Dit is de gouden standaard voor je oefeningen. Het bevat een invulvak voor wetenschappelijke notatie, hints en de gestructureerde oplossing (Gegevens, Gevraagd, Oplossing).
+
+```latex
+%———————————————————————————————————————
+% OEFENING: [Korte beschrijving voor jezelf]
+\begin{exercise}
+    [Typ hier de opgave van het vraagstuk. Gebruik de juiste eenheden en wiskundige notatie, bv. $Q_1 = +2{,}0 \cdot 10^{-6} \, \mathrm{C}$.]
+    
+    % Invulvak (pas de tolerance aan indien nodig)
+    \[ F_{\text{res}} = \answer[tolerance=0.05,onlineshowanswerbutton]{1.23} \cdot 10^{\answer{-4}} \, \mathrm{N} \]
+    
+    % Optioneel: Inline keuzemenu
+    De kracht wijst naar: \wordChoice{
+        \choice{links}
+        \choice[correct]{rechts}
+    }
+
+    % Hints (bouw ze logisch op)
+    \begin{hint}
+        Hint 1: Wat moet je eerst doen of omzetten?
+    \end{hint}
+    \begin{hint}
+        Hint 2: Welke formule of wiskundige bewerking heb je nodig?
+    \end{hint}
+
+    % Oplossing
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & [Symbool] = [Waarde] \, \mathrm{[Eenheid]} & & [Symbool] = [Waarde] \, \mathrm{[Eenheid]}\\
+            & [Symbool] = [Waarde] \, \mathrm{[Eenheid]} & & 
+        \end{align*}
+
+        \underline{Gevraagd:} $[Symbool]$ \\
+
+        \underline{Oplossing:}\\
+        [Typ hier de uitwerking met eventueel een align-omgeving voor de berekening]
+        \begin{align*}
+            [Formule] &= [Invullen] \\
+            &= [Uitkomst] \, \mathrm{[Eenheid]}
+        \end{align*}
+        
+        Conclusie: [Schrijf hier een korte eindzin].
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+```
+
+### 2. Conceptuele vraag (Meerkeuze)
+
+Ideaal voor theorievragen of kleine quizjes tussendoor.
+
+```latex
+%———————————————————————————————————————
+% VRAAG: [Korte beschrijving]
+\begin{question}
+    [Typ hier je vraag. Bijvoorbeeld: Wat gebeurt er als we de afstand verdubbelen?]
+    
+    \begin{multipleChoice}
+        \choice{Dit is een fout antwoord.}
+        \choice[correct]{Dit is het juiste antwoord.}
+        \choice{Dit is nog een fout antwoord.}
+    \end{multipleChoice}
+
+    \begin{hint}
+        Geef een tip over de theorie (bv. evenredigheden).
+    \end{hint}
+
+    \begin{solution}\nl
+        [Geef hier de verklaring waarom het juiste antwoord klopt.]
+    \end{solution}
+\end{question}
+%———————————————————————————————————————
+
+```
+
+### 3. Uitgewerkt Voorbeeld in de theorie
+
+Voor theoriestukken waar je een toepassing of rekenvoorbeeld wilt meegeven dat leerlingen kunnen uitklappen.
+
+```latex
+%------------------------------------------------
+% VOORBEELD: [Titel]
+\begin{example}[foldable=true,title={Voorbeeld: [Titel van het voorbeeld]}]\nl
+    [Typ hier de inleiding of de opgave van het voorbeeld.]
+    
+    \begin{solution}\nl
+        [Werk hier het voorbeeld stap voor stap uit. Je kan hier ook afbeeldingen of TikZ in plaatsen.]
+    \end{solution}
+\end{example}
+%------------------------------------------------
+
+```
+
+### 4. Theorieblokken (Definities, Wetten, Opmerkingen)
+
+Gebruik deze omgevingen om belangrijke theorie te accentueren. Ximera geeft ze automatisch een mooie opmaak in de online versie en in de PDF.
+
+```latex
+% Definitie (met of zonder extra titel)
+\begin{definition}[title={Optionele titel}]\nl
+    [Typ hier de definitie. Zet sleutelwoorden in \textbf{vet}.]
+\end{definition}
+
+% Stelling of Wet
+\begin{theorem}[title={Wet van [Naam]}]\nl
+    [Typ hier de stelling of de wet.]
+    \begin{equation}
+        [Formule]
+    \end{equation}
+\end{theorem}
+
+% Opmerking (met of zonder uitklap-optie)
+\begin{remark}[expandable=true,title={Let op!}]\nl
+    [Plaats hier een belangrijke tip, valkuil of extra context.]
+\end{remark}
+
+```
+
+### 5. Afbeeldingen invoegen
+
+Dit is de veiligste manier om afbeeldingen in te voegen, zodat ze zowel in de PDF als op de webpagina mooi in het midden staan en een bijschrift hebben.
+
+```latex
+%---------------------------
+% AFBEELDING: [Beschrijving]
+\begin{figure}[ht!]
+    \begin{center}
+        \includegraphics[width=0.6\textwidth]{[Pad/naar/je/afbeelding.jpg]}
+    \end{center}
+    \caption{[Typ hier het bijschrift van de figuur.]}
+    \label{fig:[korte_naam]}
+\end{figure}
+%---------------------------
+
+```
+
+### 6. Video's integreren
+
+Omdat YouTube-video's online mooi kunnen afspelen, maar in een geprinte PDF gewoon verdwijnen, gebruiken we deze combinatie om beide weergaven perfect te maken.
+
+```latex
+%---------------------------
+% VIDEO: [Beschrijving]
+\begin{onlineOnly}
+    \youtube{[YouTube-ID, bv. dQw4w9WgXcQ]}
+\end{onlineOnly}
+\pdfOnly{
+    \begin{center}
+        \mylink{https://youtu.be/[YouTube-ID]}{Link naar de video over [onderwerp].}
+    \end{center}
+}
+%---------------------------
+
+```
+
+Sla dit overzicht ergens veilig op! Laat het gerust weten zodra je theorie- of oefeningenbestanden van het volgende hoofdstuk (*Elektrisch veld*) klaar hebt, dan zet ik met plezier de syntax weer op punt voor je.

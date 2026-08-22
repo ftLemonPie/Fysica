@@ -1,11 +1,13 @@
 \documentclass{ximera}
-
+%verbeterd 21 augustus 2026
 \title{Samenvatting elektrische krachtwerking}
 %\author{Daan Lipkens}
 \begin{document}
 \begin{abstract}
 \end{abstract}
-
+\begin{onlineOnly}
+\maketitle
+\end{onlineOnly}
 % pagestyle aanpassen zodat er meer op 1 blad kan
 \newgeometry{left=3cm,bottom=0.1cm}
 \pagestyle{empty}
@@ -23,7 +25,7 @@
         \begin{equation*}
             F_{12} = k \cdot \frac{\lvert Q_1 \rvert \cdot \lvert Q_2 \rvert}{r_{12}^2}
         \end{equation*}
-        Hierbij is $r_{12}$ de afstand tussen de twee ladingen in meter ($\mathrm{m}$) en is $Q$ de ladingshoeveelheid in coulomb ($\mathrm{C}$). De constante $k_e$ (of kortweg $k$) is de coulombconstante en heeft in vacuüm of lucht een waarde van: 
+        Hierbij is $r_{12}$ de afstand tussen de twee ladingen in meter ($\mathrm{m}$) en zijn $Q_1$ en $Q_2$ de ladingshoeveelheden in coulomb ($\mathrm{C}$). De constante $k$ is de coulombconstante en heeft in vacuüm of lucht een waarde van: 
         $$k = 8{,}99 \cdot 10^9 \, \mathrm{\frac{N\cdot m^2}{C^2}}$$
     }
     
@@ -34,18 +36,18 @@
     
     % Polarisatie en influentie
     \samenbox{Polarisatie en Influentie}{
-        Bij \textbf{isolatoren} veroorzaakt een extern geladen voorwerp \textbf{polarisatie}: moleculen krijgen een \textbf{dipoolmoment} doordat de ladingscentra in de moleculen licht verschuiven. Het materiaal zelf blijft neutraal, maar er ontstaat een \textbf{ladingsverschil} aan het oppervlak.
+        Bij \textbf{isolatoren} veroorzaakt een extern geladen voorwerp \textbf{polarisatie}: moleculen krijgen een \textbf{dipoolmoment} doordat de ladingscentra in de moleculen licht verschuiven. Het materiaal zelf blijft neutraal, maar er ontstaat een \textbf{ladingsscheiding} aan het oppervlak.
 
-        Bij \textbf{geleiders} treedt \textbf{influentie} (of elektrostatische inductie) op: vrije elektronen herverdelen zich totdat de ladingen geen resulterende kracht meer ondervinden. Dit zorgt voor een \textbf{netto-oppervlaktelading}.
+        Bij \textbf{geleiders} treedt \textbf{influentie} (of elektrostatische inductie) op: vrije elektronen herverdelen zich totdat de ladingen in de geleider geen resulterende kracht meer ondervinden. Dit zorgt voor gebieden met een \textbf{netto-oppervlaktelading}.
 
-        Beide effecten veroorzaken netto een aantrekking, omdat de elektrische kracht volgens de wet van Coulomb omgekeerd evenredig is met het kwadraat van de afstand ($F \sim \frac{1}{r^2}$) en de tegengestelde ladingen zich het dichtst bij het geladen voorwerp bevinden.
+        Beide effecten veroorzaken netto een aantrekking, omdat de elektrische kracht volgens de wet van Coulomb omgekeerd evenredig is met het kwadraat van de afstand ($F \propto \frac{1}{r^2}$) en de tegengestelde ladingen zich het dichtst bij het geladen voorwerp bevinden.
     }
     
     % Geleider, isolator en halfgeleider
     \samenbox{Geleider, Isolator en Halfgeleider}{
-        De valentie-elektronen van \textbf{geleiders} (zoals metalen en zoutoplossingen) zijn zwak gebonden aan hun kern. Hierdoor beschikken ze over vrije ladingsdragers en kunnen ze elektrische stroom uitstekend geleiden.
+        \textbf{Geleiders} (zoals metalen en zoutoplossingen) beschikken over sterk beweeglijke, vrije ladingsdragers waardoor ze elektrische stroom uitstekend kunnen geleiden. In metalen zijn dit de valentie-elektronen die zwak gebonden zijn aan hun atoomkern, terwijl dit in zoutoplossingen om vrije ionen gaat.
 
-        De valentie-elektronen van \textbf{isolatoren} (zoals plastic en glas) zijn sterk gebonden aan hun kern. Hierdoor is er zeer veel energie nodig om ze vrij te maken en zijn er in vrijwel alle omstandigheden geen vrije ladingsdragers aanwezig. Hierdoor kan er geen elektrische stroom geleid worden.
+        De valentie-elektronen van \textbf{isolatoren} (zoals plastic en glas) zijn net heel sterk gebonden aan hun atoomkern. Er is zeer veel energie nodig om ze vrij te maken, waardoor er in vrijwel alle omstandigheden geen vrije ladingsdragers aanwezig zijn. Hierdoor kan er geen elektrische stroom geleid worden.
 
         Bij \textbf{halfgeleiders} (zoals silicium en germanium) zijn de elektronen in principe gebonden, maar afhankelijk van de hoeveelheid toegevoegde energie kunnen ze toch gaan geleiden. Bij een lage temperatuur of spanning gedraagt het materiaal zich als een isolator, maar bij een hoge temperatuur of spanning gedraagt het zich als een geleider.
     }

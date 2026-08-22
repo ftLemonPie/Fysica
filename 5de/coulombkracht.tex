@@ -1,5 +1,5 @@
 \documentclass{ximera}
-
+%verbeterd 22 augustus 2026
 \title{Coulombkracht}
 \author{Daan Lipkens}
 
@@ -14,7 +14,7 @@
 
 \section{Elektrische Kracht}
 
-In figuur \ref{fig:coulombkracht} is te zien dat ladingen met hetzelfde teken elkaar afstoten, terwijl ladingen met een verschillend teken elkaar aantrekken. De kracht die dit veroorzaakt, noemen we de coulombkracht. De krachten tussen twee ladingen $\vec{F}_{12}$ en $\vec{F}_{21}$ zijn altijd even groot.
+In figuur \ref{fig:coulombkracht} is te zien dat ladingen met hetzelfde teken elkaar afstoten, terwijl ladingen met een verschillend teken elkaar aantrekken. De kracht die dit veroorzaakt, noemen we de coulombkracht. De krachten $\vec{F}_{12}$ en $\vec{F}_{21}$ tussen twee ladingen zijn altijd even groot.
 
 % --------------------
 %   UITKLAPBARE REMARK - geschiedenis coulomb
@@ -116,15 +116,15 @@ In figuur \ref{fig:coulombkracht} is te zien dat ladingen met hetzelfde teken el
 Coulomb onderzocht de grootte $F$ van de kracht die ladingen $Q_{1}$ en $Q_{2}$ op een afstand $r$ op elkaar uitoefenen en vond:
 
 \begin{align*}
-F &\sim \lvert Q_{1}\rvert\\
-F &\sim \lvert Q_{2}\rvert\\
-F &\sim \frac{1}{r^{2}}
+F &\propto \lvert Q_{1}\rvert\\
+F &\propto \lvert Q_{2}\rvert\\
+F &\propto \frac{1}{r^{2}}
 \end{align*}
 
 Hieruit volgt dat:
-$$F \sim \frac{\lvert Q_{1}\rvert\cdot \lvert Q_{2}\rvert}{r^{2}} \quad \text{en dus} \quad F=k \cdot \frac{\lvert Q_{1}\rvert\cdot \lvert Q_{2}\rvert}{r^{2}}$$
+$$F \propto \frac{\lvert Q_{1}\rvert\cdot \lvert Q_{2}\rvert}{r^{2}} \quad \text{en dus} \quad F=k \cdot \frac{\lvert Q_{1}\rvert\cdot \lvert Q_{2}\rvert}{r^{2}}$$
 
-Deze constante, de coulombconstante, is afhankelijk van de stof die zich tussen de ladingen bevindt. Men stelt ze voor door $k$.
+Deze constante, de coulombconstante, is afhankelijk van de stof die zich tussen de ladingen bevindt. Men stelt deze voor door $k$.
 
 % BEGIN WET COULOMB
 \begin{theorem}[title={Wet van Coulomb}]\nl
@@ -139,7 +139,7 @@ Deze constante, de coulombconstante, is afhankelijk van de stof die zich tussen 
 % QUIZ 4: FORMULE LADING Q
 \vspace{2mm}
 \begin{question}\label{q:formule coulomb}
-    Welke grootheden beïnvloeden de grootte van de coulombkracht volgens de wet van Coulomb? (a) enkel de ladingen (b) enkel de onderlinge afstand (c) de grootte van de ladingen en de afstand (d) De grootte van de ladingen, de afstand én de aard van het medium.
+    Welke grootheden beïnvloeden de grootte van de coulombkracht volgens de wet van Coulomb? (a) enkel de ladingen (b) enkel de onderlinge afstand (c) de grootte van de ladingen en de afstand (d) de grootte van de ladingen, de afstand én de aard van het medium.
     \begin{onlineOnly}
         \begin{multipleChoice}
             \choice{Enkel de grootte van de ladingen.}
@@ -324,7 +324,7 @@ Een andere interessante vraag is waar een derde lading tussen twee andere lading
         Dus lading $Q_{3}$ ligt tussen $Q_{1}$ en $Q_{2}$ en op $12 \, \mathrm{cm}$ van lading $Q_{1}$ (of $8 \, \mathrm{cm}$ van lading $Q_{2}$).
         
         \begin{hint}
-            Het tekenen van de situatie is essentieel om inzicht te verkrijgen in het probleem. De grootte en het teken van $Q_{3}$ zijn hierbij niet van belang, zolang er sprake is van een lading. Bij complexere oefeningen kan het teken en de grootte van $Q_{3}$ dan ook achterwege gelaten worden, zonder dat dit invloed heeft op de gevolgde werkwijze.
+            Het tekenen van de situatie is essentieel om inzicht te verkrijgen in het probleem. De grootte en het teken van $Q_{3}$ zijn hierbij niet van belang, zolang er sprake is van een lading. Bij complexere oefeningen kunnen het teken en de grootte van $Q_{3}$ dan ook achterwege gelaten worden, zonder dat dit invloed heeft op de gevolgde werkwijze.
         \end{hint}
     \end{solution}
 \end{example}
@@ -341,14 +341,14 @@ Een bijkomende moeilijkheid is dat niet altijd alle afstanden tussen de ladingen
 Door alle krachten te tekenen ontstaat ook een driehoek van krachtvectoren. Hierop kan de cosinusregel ($A^{2} = B^{2} + C^{2} - 2 \cdot B \cdot C \cdot \cos(\widehat{BC})$) worden toegepast.
 
 \begin{remark}[title={Let op bij de cosinusregel}]
-In dit geval zijn $A$, $B$ en $C$ de vectoren van de krachten, en betreft de hoek in de cosinusregel de \textbf{overstaande} hoek van de resulterende vector. Dit is niet noodzakelijk de hoek die in de opgave gegeven is.
+In dit geval zijn $A$, $B$ en $C$ de \textbf{groottes van de vectoren}, en betreft de hoek in de cosinusregel de hoek die tegenover de resulterende vector ligt. Dit is niet noodzakelijk de hoek die in de opgave gegeven is.
 \end{remark}
 
 % ------------------------------------------------------------------------------------------
 %---voorbeeld: cosinus regel
 %---------------------------------------------------------------------------------------
 \begin{example}[foldable=true,title={Voorbeeld: Drie ladingen niet op een lijn}]\label{vb:driehoek}\nl
-    Drie ladingen bevinden zich op de hoeken van een driehoek, zoals te zien in de figuur hieronder.			
+    Drie ladingen bevinden zich op de hoeken van een driehoek, zoals te zien in de figuur hieronder.            
     
     % TEKEN DRIEHOEK OPGAVE
     \begin{center}
@@ -365,7 +365,7 @@ In dit geval zijn $A$, $B$ en $C$ de vectoren van de krachten, en betreft de hoe
             \tkzDrawPolygon(A,B,C)
             
             % BENOEMEN VAN LADINGEN
-            \tkzLabelPoint[left, below=4pt](A){$Q_{1}=0{,}452 \, \mathrm{mC}$}
+            \tkzLabelPoint[left, below=4pt](A){$Q_{1}=0{,}542 \, \mathrm{mC}$}
             \tkzLabelPoint[right, below=4pt](B){$Q_{2}=12{,}76 \, \mathrm{\mu C}$}
             \tkzLabelPoint[above=4pt](C){$Q_{3}=-765{,}2 \, \mathrm{\mu C}$}
             
@@ -390,7 +390,7 @@ In dit geval zijn $A$, $B$ en $C$ de vectoren van de krachten, en betreft de hoe
         Eerst zetten we alle gegevens met hun juiste symbool in de S.I.-eenheden en maken we een schets van de situatie. Zo kunnen we de richting en zin van de deelkrachten al bepalen en zien welke hoek we zoeken.\\[1ex]
         
         \underline{Gegevens:}\\
-        $Q_{1} = 0{,}452 \, \mathrm{mC} = 0{,}452 \cdot 10^{-3} \, \mathrm{C}$\\
+        $Q_{1} = 0{,}542 \, \mathrm{mC} = 0{,}542 \cdot 10^{-3} \, \mathrm{C}$\\
         $Q_{2} = 12{,}76 \, \mathrm{\mu C} = 12{,}76 \cdot 10^{-6} \, \mathrm{C}$\\
         $Q_{3} = -765{,}2 \, \mathrm{\mu C} = -765{,}2 \cdot 10^{-6} \, \mathrm{C}$\\
         $r_{12} = 10 \, \mathrm{cm} = 10 \cdot 10^{-2} \, \mathrm{m}$\\
@@ -465,7 +465,7 @@ In dit geval zijn $A$, $B$ en $C$ de vectoren van de krachten, en betreft de hoe
         \begin{align*}
             F_{12} &= k \cdot \frac{\lvert Q_{1}\rvert \cdot \lvert Q_{2}\rvert}{r^{2}_{12}} \\
             F_{32} &= k \cdot \frac{\lvert Q_{3}\rvert \cdot \lvert Q_{2}\rvert}{r^{2}_{23}}
-        \end{align*}		
+        \end{align*}        
         
         Om $r_{23}$ te vinden gebruiken we de cosinusregel. We kennen twee zijden en één hoek en kunnen dus de laatste zijde berekenen.
         \begin{align*}
@@ -476,16 +476,16 @@ In dit geval zijn $A$, $B$ en $C$ de vectoren van de krachten, en betreft de hoe
         
         Hiermee krijgen we dat:
         \begin{align*}
-            F_{12} &= 8{,}99 \cdot 10^9 \, \mathrm{\frac{N\cdot m^2}{C^2}} \cdot \frac{\lvert 0{,}452 \cdot 10^{-3} \, \mathrm{C} \rvert \cdot \lvert 12{,}76 \cdot 10^{-6} \, \mathrm{C}\rvert}{(10 \cdot 10^{-2} \, \mathrm{m})^{2}} \\
+            F_{12} &= 8{,}99 \cdot 10^9 \, \mathrm{\frac{N\cdot m^2}{C^2}} \cdot \frac{\lvert 0{,}542 \cdot 10^{-3} \, \mathrm{C} \rvert \cdot \lvert 12{,}76 \cdot 10^{-6} \, \mathrm{C}\rvert}{(10 \cdot 10^{-2} \, \mathrm{m})^{2}} \\
             &= 6217{,}4 \, \mathrm{N} \\
-            F_{32} &= 8{,}99 \cdot 10^9 \, \mathrm{\frac{N\cdot m^2}{C^2}} \cdot \frac{\lvert -765{,}2 \cdot 10^{-6} \, \mathrm{C}\rvert \cdot \lvert 12{,}76 \cdot 10^{-6} \, \mathrm{C}\rvert}{(7{,}5 \cdot 10^{-2} \, \mathrm{m})^{2}} \\
-            &= 15604{,}96 \, \mathrm{N}
-        \end{align*}	
+            F_{32} &= 8{,}99 \cdot 10^9 \, \mathrm{\frac{N\cdot m^2}{C^2}} \cdot \frac{\lvert -765{,}2 \cdot 10^{-6} \, \mathrm{C}\rvert \cdot \lvert 12{,}76 \cdot 10^{-6} \, \mathrm{C}\rvert}{(0{,}09636 \, \mathrm{m})^{2}} \\
+            &= 9454 \, \mathrm{N}
+        \end{align*}    
         
-        Met deze twee deelkrachten kunnen we de resulterende kracht $F_{\text{res}}$ berekenen. Hiervoor hebben we de overstaande hoek nodig, $\theta$. Deze is jammer genoeg niet gegeven, we weten wel dat $\theta = 180^\circ - \beta$. 
+        Met deze twee deelkrachten kunnen we de resulterende kracht $F_{\text{res}}$ berekenen. Hiervoor hebben we de overstaande hoek in het krachtenparallellogram nodig, $\theta$. Deze is jammer genoeg niet gegeven, we weten wel dat $\theta = 180^\circ - \beta$. 
         
         \begin{hint}
-            Waarom is $\theta = 180^\circ - \beta$? In de krachtenparallellogram geldt dat de som van alle hoeken $360^\circ$ is, dus: $360^\circ = 2\theta + 2\beta$.
+            Waarom is $\theta = 180^\circ - \beta$? In het krachtenparallellogram geldt dat de som van alle hoeken $360^\circ$ is, dus: $360^\circ = 2\theta + 2\beta$.
         \end{hint}
 
         Daarbij weten we dat $\alpha + \beta = 180^\circ$ (dit zijn supplementaire hoeken) en kunnen we $\alpha$ berekenen door in de afstandsdriehoek de cosinusregel toe te passen. Hierbij is $\alpha$ de overstaande hoek van de zijde van $7{,}5 \cdot 10^{-2} \, \mathrm{m}$:
@@ -493,7 +493,7 @@ In dit geval zijn $A$, $B$ en $C$ de vectoren van de krachten, en betreft de hoe
             r^{2}_{13} &= r^{2}_{12} + r^{2}_{23} - 2 \cdot r_{12} \cdot r_{23} \cdot \cos(\alpha) \\
             r^{2}_{13} - r^{2}_{12} - r^{2}_{23} &= -2 \cdot r_{12} \cdot r_{23} \cdot \cos(\alpha) \\
             \cos(\alpha) &= \frac{r^{2}_{13} - r^{2}_{12} - r^{2}_{23}}{-2 \cdot r_{12} \cdot r_{23}} \\
-            \alpha &= \cos^{-1} \left( \frac{r^{2}_{13} - r^{2}_{12} - r^{2}_{23}}{-2 \cdot r_{12} \cdot r_{23}} \right) = 45{,}06^\circ \simeq 45^\circ
+            \alpha &= \cos^{-1} \left( \frac{r^{2}_{13} - r^{2}_{12} - r^{2}_{23}}{-2 \cdot r_{12} \cdot r_{23}} \right) = 44{,}86^\circ \simeq 45^\circ
         \end{align*}
         
         Hieruit volgt dus dat:
@@ -501,7 +501,7 @@ In dit geval zijn $A$, $B$ en $C$ de vectoren van de krachten, en betreft de hoe
             \beta = 180^\circ - \alpha = 135^\circ
         \end{equation*}
         
-        En de overstaande hoek $\theta$ in de krachtenparallellogram wordt dan:
+        En de overstaande hoek $\theta$ in het krachtenparallellogram wordt dan:
         \begin{equation*}
             \theta = 180^\circ - \beta = 45^\circ
         \end{equation*}
@@ -509,16 +509,16 @@ In dit geval zijn $A$, $B$ en $C$ de vectoren van de krachten, en betreft de hoe
         Nu hebben we alle informatie berekend om de resulterende kracht te vinden:
         \begin{align*}
             F^{2}_{\text{res}} &= F^{2}_{12} + F^{2}_{32} - 2 \cdot F_{12} \cdot F_{32} \cdot \cos(\theta) && \text{(grootte vectoren via cosinusregel)} \\
-            F_{\text{res}} &= \sqrt{(6217{,}4 \, \mathrm{N})^{2} + (15604{,}96 \, \mathrm{N})^{2} - 2 \cdot 6217{,}4 \, \mathrm{N} \cdot 15604{,}96 \, \mathrm{N} \cdot \cos(45^\circ)} \\
-            &= 12039 \, \mathrm{N} \simeq 1{,}2 \cdot 10^4 \, \mathrm{N}
+            F_{\text{res}} &= \sqrt{(6217{,}4 \, \mathrm{N})^{2} + (9454 \, \mathrm{N})^{2} - 2 \cdot 6217{,}4 \, \mathrm{N} \cdot 9454 \, \mathrm{N} \cdot \cos(45^\circ)} \\
+            &= 6701 \, \mathrm{N} \simeq 6{,}7 \cdot 10^3 \, \mathrm{N}
         \end{align*}
         
         \begin{hint}
-            Let op: Bij de laatste stap zijn we met de \textit{grootte} van de vector bezig en gebruiken we ze als lijnstuk voor de cosinusregel. Vandaar dat we $F$ noteren en niet de vector $\vec{F}$. De richting en zin van de vector hebben we namelijk al in rekening gebracht via onze schets.
+            Let op: Bij de laatste stap zijn we met de \textit{grootte} van de vector bezig en gebruiken we ze als lijnstukken voor de cosinusregel. Vandaar dat we $F$ noteren en niet de vector $\vec{F}$. De richting en zin van de vector hebben we namelijk al in rekening gebracht via onze schets.
         \end{hint}
     \end{solution}
 \end{example}
-%	EINDE OEFENING DRIEHOEK
+%   EINDE OEFENING DRIEHOEK
 % ------------------------------------------------------------------------------------------
 
 We zien dat de moeilijkheid bij deze oefeningen niet zozeer in de fysica zelf ligt, maar in de meetkundige aspecten. Het zijn vooral de geometrie en het toepassen van de cosinusregel die de opgaven complex maken.

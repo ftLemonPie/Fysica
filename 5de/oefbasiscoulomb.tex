@@ -1,0 +1,275 @@
+\documentclass{ximera}
+%nagekeken 22 augustus 2026
+\title{Vraagstukken elektrische krachtwerking: Basisoefeningen}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+%———————————————————————————————————————
+% BASIS OEFENINGEN COULOMBKRACHT
+%———————————————————————————————————————
+\section*{Basisoefeningen Coulombkracht}
+
+%———————————————————————————————————————
+% BASIS OEFENING 1: FC
+\begin{exercise}
+    Twee ladingen $Q_{1}= +2{,}0 \cdot 10^{-6} \, \mathrm{C}$ en $Q_{2}= +3{,}0 \cdot 10^{-6} \, \mathrm{C}$ bevinden zich op een afstand van $0{,}500 \, \mathrm{m}$. Bereken de coulombkracht tussen beide ladingen.
+    
+    \[ F_{c} = \answer[tolerance=0.01,onlineshowanswerbutton]{0.22} \, \mathrm{N} \]
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & Q_{1} = +2{,}0 \cdot 10^{-6} \, \mathrm{C} & & Q_{2} = +3{,}0 \cdot 10^{-6} \, \mathrm{C}\\
+            & r = 0{,}500 \, \mathrm{m} & & k = 8{,}99 \cdot 10^9 \, \mathrm{\frac{N \cdot m^2}{C^2}}
+        \end{align*}
+
+        \underline{Gevraagd:} $F_{c}$ \\
+
+        \underline{Oplossing:}\\
+        We gebruiken de \textbf{wet van Coulomb}.
+
+        \begin{align*}
+            F_{c}&=\frac{k\cdot |Q_{1}|\cdot |Q_{2}|}{r^{2}}\\
+            &=\frac{8{,}99 \cdot 10^9 \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 2{,}0 \cdot 10^{-6} \, \mathrm{C} \cdot 3{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}500 \, \mathrm{m})^{2}}\\
+            &= 0{,}216 \, \mathrm{N} \simeq 2{,}2 \cdot 10^{-1} \, \mathrm{N}
+        \end{align*}
+
+        De ladingen zijn beide positief, dus de kracht is een \textbf{afstoting}.
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% BASIS OEFENING  2: FC
+\begin{exercise}
+    Twee ladingen $Q_{1}= +4{,}00 \cdot 10^{-6} \, \mathrm{C}$ en $Q_{2}= -6{,}0 \cdot 10^{-6} \, \mathrm{C}$ bevinden zich op een afstand van $0{,}2 \, \mathrm{m}$. Bereken de coulombkracht en bepaal of het een aantrekking of afstoting is.
+
+    \[ F_{c} = \answer[tolerance=0.05,onlineshowanswerbutton]{5.39} \, \mathrm{N} \]
+    
+    Dit is een: \wordChoice{  
+                    \choice[correct]{aantrekking}
+                    \choice{afstoting}
+                }  
+
+    \begin{hint}
+        Voor het berekenen van de grootte van de kracht, neem je de absolute waarden ($\lvert Q \rvert$) van de ladingen. Het minteken van lading 2 gebruik je dus niet in de wiskundige formule.
+    \end{hint}
+    \begin{hint}
+        Hoe bepaal je aantrekking of afstoting?
+    \end{hint}
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & Q_{1} = +4{,}00 \cdot 10^{-6} \, \mathrm{C} & & Q_{2} = -6{,}0 \cdot 10^{-6} \, \mathrm{C}\\
+            & r = 0{,}2 \, \mathrm{m} & & k = 8{,}99 \cdot 10^9 \, \mathrm{\frac{N \cdot m^2}{C^2}}
+        \end{align*}
+
+        \underline{Gevraagd:} $F_{c}$ \\
+
+        \underline{Oplossing:}\\
+        We gebruiken de \textbf{wet van Coulomb}.
+        \begin{align*}
+            F_{c}&=\frac{k\cdot |Q_{1}|\cdot |Q_{2}|}{r^{2}}\\
+            &=\frac{8{,}99 \cdot 10^9 \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 4{,}00 \cdot 10^{-6} \, \mathrm{C} \cdot 6{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}2 \, \mathrm{m})^{2}} \\
+            &= 5{,}39 \, \mathrm{N} \simeq 5 \, \mathrm{N}
+        \end{align*}
+
+        Omdat de ladingen een verschillend teken hebben, is de kracht een \textbf{aantrekking}.
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% BASIS OEFENING  3: FC-> H2
+\begin{exercise}
+    Bereken de afstotingskracht tussen de 2 protonen in een $\mathrm{H}_{2}$–molecule. De afstand tussen de protonen is $7{,}4 \cdot 10^{-10} \, \mathrm{m}$.
+
+    \[ F_{c} = \answer[tolerance=0.05,onlineshowanswerbutton]{4.2} \cdot 10^{-10} \, \mathrm{N} \]
+
+    \begin{hint}
+        Wat is de lading van één enkel proton? Zoek de \textbf{elementaire lading} op in je tabellenboekje.
+    \end{hint}
+    \begin{hint}
+        De lading van een proton is $Q_p = +1{,}60 \cdot 10^{-19} \, \mathrm{C}$.
+    \end{hint}
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & Q_{p} = 1{,}60 \cdot 10^{-19} \, \mathrm{C} & & r = 7{,}4 \cdot 10^{-10} \, \mathrm{m}
+        \end{align*}
+
+        \underline{Gevraagd:} $F_{c} $\\    
+
+        \underline{Oplossing:}\\
+        Er zijn 2 ladingen en we zoeken de kracht, dus gebruiken we de \textbf{wet van Coulomb}.        
+
+        \begin{align*}
+            F_{c}&=\frac{k\cdot \lvert Q_{1}\rvert \lvert Q_{2}\rvert}{r^{2}} \\
+            &=\frac{8{,}99 \cdot 10^9 \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 1{,}60 \cdot 10^{-19} \, \mathrm{C} \cdot 1{,}60 \cdot 10^{-19} \, \mathrm{C}}{(7{,}4 \cdot 10^{-10} \, \mathrm{m})^{2}} \\
+            &= 4{,}202 \cdot 10^{-10} \, \mathrm{N} \\
+            &\simeq 4{,}2 \cdot 10^{-10} \, \mathrm{N}
+        \end{align*}
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% BASIS OEFENING  4:  FC
+\begin{exercise}
+    Bereken de kracht tussen twee ladingen $Q_{1}= +1{,}0 \cdot 10^{-6} \, \mathrm{C}$ en $Q_{2}= -2{,}0 \cdot 10^{-6} \, \mathrm{C}$ die zich op $0{,}3 \, \mathrm{m}$ van elkaar bevinden.
+
+    \[ F_{c} = \answer[tolerance=0.01,onlineshowanswerbutton]{0.20} \, \mathrm{N} \]
+
+    \begin{hint}
+        Gebruik de wet van Coulomb en denk aan de absolute waarden: het minteken van lading 2 valt weg in de wiskundige berekening.
+    \end{hint}
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & Q_{1} = +1{,}0 \cdot 10^{-6} \, \mathrm{C} & & Q_{2} = -2{,}0 \cdot 10^{-6} \, \mathrm{C}\\
+            & r = 0{,}3 \, \mathrm{m} & & k = 8{,}99 \cdot 10^9 \, \mathrm{\frac{N \cdot m^2}{C^2}}
+        \end{align*}
+
+        \underline{Gevraagd:} $F_{c}$ \\
+
+        \underline{Oplossing:}\\
+        We gebruiken de \textbf{wet van Coulomb}.
+        \begin{align*}
+            F_{c}&=\frac{k\cdot \lvert Q_{1}\rvert\cdot \lvert Q_{2}\rvert}{r^{2}}\\
+            &=\frac{8{,}99 \cdot 10^9 \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 1{,}0 \cdot 10^{-6} \, \mathrm{C} \cdot 2{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}3 \, \mathrm{m})^{2}}\\
+            &= 0{,}20 \, \mathrm{N} \simeq 2 \cdot 10^{-1} \, \mathrm{N}
+        \end{align*}
+
+        De ladingen hebben tegengestelde tekens, dus de kracht is een \textbf{aantrekking}.  
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% BASIS OEFENING  5:  Q^{2}
+\begin{exercise}
+    Twee identieke ladingen oefenen op elkaar een kracht uit van $2{,}0 \, \mathrm{N}$ bij een onderlinge afstand van $20 \, \mathrm{cm}$. Bereken de grootte van elke lading.
+
+    \[ Q = \answer[tolerance=0.05,onlineshowanswerbutton]{3.0} \cdot 10^{-6} \, \mathrm{C} \]
+
+    \begin{hint}
+        Omdat de ladingen identiek zijn ($Q_1 = Q_2 = Q$), vereenvoudigt de wet van Coulomb naar: $F_{c} = k \cdot \frac{Q^2}{r^2}$.
+    \end{hint}
+    \begin{hint}
+        Vorm deze formule wiskundig om naar $Q$. Zorg eerst dat $Q^2$ alleen staat. Neem daarna de vierkantswortel.
+    \end{hint}
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & F_{c} = 2{,}0 \, \mathrm{N} & & Q_{1}=Q_{2}=Q\\
+            & r = 20 \, \mathrm{cm} = 0{,}20 \, \mathrm{m} & & k = 8{,}99 \cdot 10^9 \, \mathrm{\frac{N \cdot m^2}{C^2}}
+        \end{align*}
+
+        \underline{Gevraagd:} $Q$ \\
+
+        \underline{Oplossing:}\\
+        We gebruiken de \textbf{wet van Coulomb}.
+        \begin{align*}
+            F_{c} &= \frac{k\cdot Q^{2}}{r^{2}}\\
+            Q^{2} &= \frac{F_{c}\cdot r^{2}}{k}\\
+            Q &= \sqrt{\frac{2{,}0 \, \mathrm{N} \cdot (0{,}20 \, \mathrm{m})^{2}}{8{,}99 \cdot 10^9 \, \mathrm{\frac{N \cdot m^2}{C^2}}}}\\
+            Q &= 2{,}983 \cdot 10^{-6} \, \mathrm{C} \simeq 3{,}0 \cdot 10^{-6} \, \mathrm{C}
+        \end{align*}
+
+        Elke lading bedraagt dus $3{,}0 \cdot 10^{-6} \, \mathrm{C}$.
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+
+%———————————————————————————————————————
+% OEF H12 (Minstrel)
+\begin{exercise}
+    Twee even grote ladingen \( Q_1 \) en \( Q_2 \) bevinden zich op \( 1{,}00 \, \mathrm{m} \) van elkaar en oefenen op elkaar een kracht uit van \( 1{,}00 \, \mathrm{N} \). Bepaal de absolute grootte van elke lading.
+
+    \[ \lvert Q \rvert = \answer[tolerance=0.05,onlineshowanswerbutton]{1.05} \cdot 10^{-5} \, \mathrm{C} \]
+
+    \begin{hint}
+        Omdat de twee ladingen exact even groot zijn ($\lvert Q_1 \rvert = \lvert Q_2 \rvert = \lvert Q \rvert$), wordt de absolute term in de teller van de wet van Coulomb eenvoudigweg $\lvert Q \rvert^2$.
+    \end{hint}
+    \begin{hint}
+        Vorm de vergelijking algebraïsch om zodat $\lvert Q \rvert^2$ geïsoleerd staat aan de linkerkant en neem vervolgens de vierkantswortel van de hele breuk.
+    \end{hint}
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & F = 1{,}00 \, \mathrm{N} \\
+            & r = 1{,}00 \, \mathrm{m} \\
+            & k = 8{,}99 \cdot 10^9 \, \mathrm{\frac{N \cdot m^2}{C^2}}
+        \end{align*}
+
+        \underline{Gevraagd:} \( Q \) (grootte van de ladingen) \\
+
+        \underline{Oplossing:}\\
+        We gebruiken de \textbf{wet van Coulomb} en lossen op voor \( Q \):
+
+        \begin{align*}
+            F &= \frac{k \cdot \lvert Q \rvert \cdot \lvert Q \rvert}{r^2} \\
+            \lvert Q \rvert^2 &= \frac{F \cdot r^2}{k} \\
+            \lvert Q \rvert^2 &= \frac{1{,}00 \, \mathrm{N} \cdot (1{,}00 \, \mathrm{m})^2}{8{,}99 \cdot 10^9 \, \mathrm{\frac{N \cdot m^2}{C^2}}} \\
+            \lvert Q \rvert^2 &= 1{,}11 \cdot 10^{-10} \, \mathrm{C^2} \\
+            \lvert Q \rvert &= \sqrt{1{,}11 \cdot 10^{-10} \, \mathrm{C^2}} \\
+            Q &= \pm 1{,}05 \cdot 10^{-5} \, \mathrm{C}
+        \end{align*}
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% OEF 2 ONBEKENDE LADINGEN (Minstrel)
+\begin{exercise}
+    Twee ladingen op \( 1{,}00 \, \mathrm{m} \) van elkaar trekken elkaar aan met een kracht van \( 1{,}00 \, \mathrm{N} \). Welke van de volgende opties is mogelijk?
+    
+    \begin{multipleChoice}
+        \choice{$+1 \, \mathrm{C}$ en $+1 \, \mathrm{C}$}
+        \choice{$+1 \, \mathrm{C}$ en $-1 \, \mathrm{C}$}
+        \choice[correct]{$+1{,}0 \cdot 10^{-5} \, \mathrm{C}$ en $-1{,}1 \cdot 10^{-5} \, \mathrm{C}$}
+        \choice{$+5{,}6 \cdot 10^{-11} \, \mathrm{C}$ en $-5{,}6 \cdot 10^{-11} \, \mathrm{C}$}
+    \end{multipleChoice}
+
+    \begin{hint}
+        We weten in dit geval niet of de ladingen gelijk of ongelijk zijn. Maar door de wet van Coulomb om te vormen, kunnen we wel berekenen aan hoeveel het \textbf{product} van beide ladingen ($\lvert Q_1 \rvert \cdot \lvert Q_2 \rvert$) exact gelijk moet zijn.
+    \end{hint}
+    \begin{hint}
+        Controleer na je berekening eenvoudigweg voor elk van de vier opties of het wiskundige product van de twee ladingen overeenkomt met jouw gevonden waarde!
+    \end{hint}
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & F = 1{,}00 \, \mathrm{N} \\
+            & r = 1{,}00 \, \mathrm{m} \\
+            & k = 8{,}99 \cdot 10^9 \, \mathrm{\frac{N \cdot m^2}{C^2}}
+        \end{align*}
+
+        \underline{Gevraagd:} Welke optie voldoet aan \( \lvert Q_1 \rvert \cdot \lvert Q_2 \rvert = 1{,}11 \cdot 10^{-10} \, \mathrm{C^2} \) \\
+
+        \underline{Oplossing:}\\
+        We berekenen het product van de ladingen:
+
+        \begin{align*}
+            \lvert Q_1 \rvert \cdot \lvert Q_2 \rvert &= \frac{F \cdot r^2}{k} \\
+            &= \frac{1{,}00 \, \mathrm{N} \cdot (1{,}00 \, \mathrm{m})^2}{8{,}99 \cdot 10^9 \, \mathrm{\frac{N \cdot m^2}{C^2}}} \\
+            &= 1{,}11 \cdot 10^{-10} \, \mathrm{C^2}
+        \end{align*}
+
+        Enkel optie c) voldoet: \( \lvert 1{,}0 \cdot 10^{-5} \, \mathrm{C} \rvert \cdot \lvert -1{,}1 \cdot 10^{-5} \, \mathrm{C} \rvert = 1{,}1 \cdot 10^{-10} \, \mathrm{C^2} \) $\simeq 1{,}11 \cdot 10^{-10} \, \mathrm{C^2}$.
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+\end{document}

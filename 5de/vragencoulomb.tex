@@ -1,0 +1,141 @@
+\documentclass{ximera}
+
+\title{Vragen elektrische krachtwerking}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+\label{vragen:coulombkracht}
+
+%———————————————————————————————————————
+% VRAAG 1: REKENEN ZONDER GETALLEN
+\begin{question}
+    Een geladen staaf oefent een kracht uit op een andere geladen staaf. Hoe verandert de kracht wanneer de afstand tussen beide staven wordt verdubbeld?
+
+    \begin{solution}\nl
+        \underline{Gegevens:}\\
+        Conceptuele vraag. $F_{c}\propto \tfrac{1}{r^{2}}$.\\
+        
+            \begin{align*}
+                &r_{\text{oud}}=r' & & r_{\text{nieuw}}=2\cdot r'\\
+                &Q_{1,\text{oud}} =Q_{1,\text{nieuw}} = Q_{1}' & & Q_{2,\text{oud}} =Q_{2,\text{nieuw}} = Q_{2}'
+            \end{align*}
+        
+    \underline{Gevraagd:} verband tussen $F_{c,\text{oud}}$ en $F_{c,\text{nieuw}}$ \\
+
+    \underline{Oplossing:}\\
+    \emph{Manier 1, met redeneren:}\\
+    Wanneer de afstand $r$ verdubbelt, geldt:  
+    \[
+        F_{c,\text{nieuw}}=\frac{1}{(2)^{2}}F_{c,\text{oud}}=\frac{1}{4}F_{c,\text{oud}}
+    \]
+    De kracht wordt dus vier keer kleiner.\\
+
+    \emph{Manier 2, met de formule van Coulomb:}
+        \begin{align*}
+            F_{c,\text{nieuw}}&=\frac{k\cdot\lvert Q_{1,\text{nieuw}}\rvert\cdot\lvert Q_{2,\text{nieuw}}\rvert}{r_{\text{nieuw}}^{2}}\\
+            &=\frac{k\cdot\lvert Q'_{1}\rvert\cdot\lvert Q'_{2}\rvert}{(2\cdot r')^{2}}\\
+            &=\frac{k\cdot\lvert Q_{1,\text{oud}}\rvert\cdot\lvert Q_{2,\text{oud}}\rvert}{(2\cdot r_{\text{oud}})^{2}}\\
+            &=\frac{1}{2^{2}}\cdot\frac{k\cdot\lvert Q_{1,\text{oud}}\rvert\cdot\lvert Q_{2,\text{oud}}\rvert}{r_{\text{oud}}^{2}}\\
+            &=\frac{1}{4}\cdot F_{c,\text{oud}}
+        \end{align*}
+    De kracht wordt dus vier keer kleiner.\\
+    \end{solution}
+
+\end{question}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% VRAAG 2: REKENEN MET EENHEDEN
+\begin{question}
+    Geef de eenheid van de elektrische kracht volgens de wet van Coulomb en leid deze af uit de formule.
+
+        \begin{solution}\nl
+            \underline{Gegevens:}\\
+            Wet van Coulomb: $F_{c}=\dfrac{k\cdot Q_{1}Q_{2}}{r^{2}}$
+
+            \underline{Gevraagd:} eenheid $[F_{c}]$ \\
+
+            \underline{Oplossing:}\\
+            De constante $k$ heeft als eenheid $\mathrm{\frac{N\cdot m^2}{C^2}}$.  
+
+            \begin{align*}
+                [F_{c}] &= \frac{\mathrm{\frac{N\cdot m^2}{C^2}} \cdot \mathrm{C^2}}{\mathrm{m^2}} = \frac{\mathrm{N \cdot m^2}}{\mathrm{m^2}} = \mathrm{N}
+            \end{align*}
+            De eenheid van de coulombkracht is dus de \textbf{newton (N)}.\\
+        \end{solution}
+\end{question}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% VRAAG 3: REKENEN ZONDER GETALLEN
+\begin{question}
+    Wat gebeurt er met de coulombkracht als de afstand tussen twee ladingen driemaal zo groot wordt en beide ladingen verdubbelen in grootte?
+
+    \begin{solution}\nl
+        \underline{Gegevens:}\\
+        $\begin{array}{@{}w{l}{0.5\textwidth}@{}w{l}{0.5\textwidth}@{}}
+            r_{\text{oud}}=r' & r_{\text{nieuw}}=3\cdot r'\\
+            Q_{1,\text{oud}} = Q'_{1} & Q_{2,\text{oud}} =Q'_{2}\\
+            Q_{1,\text{nieuw}} = 2\cdot Q'_{1}  & Q_{2,\text{nieuw}} = 2\cdot Q'_{2} 
+        \end{array}$
+
+        \underline{Gevraagd:} verband tussen $F_{c,\text{oud}}$ en $F_{c,\text{nieuw}}$ \\
+
+        \underline{Oplossing:}\\
+        \begin{align*}
+            F_{c,\text{nieuw}}&=\frac{k\cdot\lvert Q_{1,\text{nieuw}}\rvert\cdot\lvert Q_{2,\text{nieuw}}\rvert}{r_{\text{nieuw}}^{2}}\\
+            &=\frac{k\cdot\lvert 2\cdot Q'_{1}\rvert\cdot\lvert 2\cdot Q'_{2}\rvert}{(3\cdot r')^{2}}\\
+            &=\frac{k\cdot\lvert 2\cdot Q_{1,\text{oud}}\rvert\cdot\lvert 2\cdot Q_{2,\text{oud}}\rvert}{(3\cdot r_{\text{oud}})^{2}}\\
+            &=\frac{2\cdot 2}{3^{2}}\cdot\frac{k\cdot\lvert Q_{1,\text{oud}}\rvert\cdot\lvert Q_{2,\text{oud}}\rvert}{r_{\text{oud}}^{2}}\\
+            &=\frac{4}{9}\cdot F_{c,\text{oud}}
+        \end{align*}
+        De kracht wordt dus $\frac{4}{9} $ keer zo groot, oftewel 2,25 keer zo klein.\\
+    \end{solution}
+\end{question}
+%———————————————————————————————————————
+
+
+%———————————————————————————————————————
+% VRAAG 4: AANTREKKEN NEUTRAAL VW
+\begin{question}
+    Leg uit waarom een neutraal voorwerp toch kan worden aangetrokken door een geladen voorwerp.
+
+    \begin{solution}\nl
+        Een neutraal voorwerp bevat evenveel positieve als negatieve ladingen.
+
+        Wanneer een geladen voorwerp in de buurt komt, verschuiven de ladingscentra in de moleculen (polarisatie). Hierdoor komt de tegengestelde lading dichter bij het geladen voorwerp te liggen dan de gelijksoortige lading. De aantrekkende kracht is daardoor groter dan de afstotende kracht ($F_{c}\propto \tfrac{1}{r^{2}} $).
+
+        Dit verklaart waarom een neutraal voorwerp toch wordt aangetrokken.\\
+    \end{solution}
+\end{question}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% VRAAG 5: BALLON
+\begin{question}
+    Een geladen ballon wordt tegen een muur gehouden en blijft tijdelijk plakken. Hoe kan dit fenomeen verklaard worden?
+
+    \begin{solution}\nl
+        De geladen ballon veroorzaakt een polarisatie in de moleculen van de muur. Daardoor verschuiven de ladingen in de muur, zodat de tegengestelde lading dichter bij de ballon komt te liggen. De resulterende coulombkracht zorgt ervoor dat de ballon aangetrokken wordt en blijft kleven.
+
+        Er geldt $F_{c}\propto \tfrac{1}{r^{2}} $ en ladingen met een tegengesteld teken liggen dichter bij dan ladingen met dezelfde lading, dus de aantrekkende kracht is groter dan de afstotende kracht.
+
+        Dit is een voorbeeld van \textbf{inductie en polarisatie}.\\
+    \end{solution}
+\end{question}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% VRAAG 6: DAGELIJKS LEVEN
+\begin{question}
+    Waarom ervaren we in het dagelijks leven de coulombkrachten tussen voorwerpen meestal niet, hoewel deze in theorie zeer groot kunnen zijn?
+
+    \begin{solution}\nl
+        Voorwerpen zijn in het dagelijks leven meestal elektrisch neutraal: ze bevatten evenveel positieve als negatieve ladingen. De coulombkrachten van de afzonderlijke ladingen heffen elkaar dan op. Alleen bij een overschot of tekort aan elektronen ontstaat er een merkbare kracht.\\
+    \end{solution}
+\end{question}
+%———————————————————————————————————————
+\end{document}

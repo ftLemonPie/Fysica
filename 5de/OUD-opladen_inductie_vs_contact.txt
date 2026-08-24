@@ -1,0 +1,184 @@
+\documentclass{ximera}
+
+\title{Opladen via Inductie en Contact}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+    Het verschil tussen het opladen van een voorwerp via fysiek contact en via elektrostatische inductie.
+\end{abstract}
+\maketitle
+
+\section{Opladen via contact (Geleiding)}
+Wanneer een elektrisch neutraal, geleidend voorwerp (zoals een metalen bol) in \textbf{fysiek contact} komt met een geladen voorwerp, kunnen er ladingen (elektronen) overspringen. Dit noemen we opladen door geleiding of contact.
+
+Breng je bijvoorbeeld een negatief geladen rubberen staaf in contact met een neutrale metalen bol, dan zullen de elektronen---die elkaar op de staaf afstoten---overspringen naar de bol om zich zo ver mogelijk van elkaar te verspreiden. Na het contact hebben zowel de staaf als de bol een \textbf{negatieve} lading. 
+
+Bij opladen via contact krijgt het neutrale voorwerp dus steeds een lading met \textbf{hetzelfde teken} als het ladende voorwerp.
+
+
+\begin{figure}[ht!]
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
+        \begin{tikzpicture}[scale=1]
+            
+            % Stijlen
+            \tikzset{
+                minlijn/.style={thick, blue!40!black},
+                bruindraad/.style={thick, brown!70!black},
+                rooddraad/.style={thick, red!70!black}
+            }
+
+            % --- BOL 1: Neutraal ---
+            \shade[ball color=gray!70] (0,0) circle (1);
+            \node at (0, -2) {(a)};
+
+            % --- BOL 2: Laden met elektronen ---
+            \shade[ball color=gray!70] (4.5,0) circle (1);
+            \node at (4.5, -2) {(b)};
+            
+            % Pijl voor inkomende elektronen
+            \draw[->, thick, shorten >=2pt] (3.0, 1.3) to[out=-45, in=135] (3.8, 0.7);
+            \node[above left, inner sep=2pt] at (3.2, 1.1) {$\mathrm{e}^-$};
+            
+            % Minnetjes (horizontale blauwe lijntjes, organisch verspreid)
+            \draw[minlijn] (4.1, 0.4) -- (4.4, 0.4);
+            \draw[minlijn] (4.7, 0.3) -- (5.0, 0.3);
+            \draw[minlijn] (4.0, 0.0) -- (4.3, 0.0);
+            \draw[minlijn] (4.8, -0.1) -- (5.1, -0.1);
+            \draw[minlijn] (4.2, -0.4) -- (4.5, -0.4);
+            \draw[minlijn] (4.6, -0.6) -- (4.9, -0.6);
+
+            % --- BOL 3: Negatief geladen en geaard ---
+            \shade[ball color=gray!70] (9,0) circle (1);
+            \node at (9, -2) {(c)};
+            
+            % Minnetjes
+            \draw[minlijn] (8.6, 0.4) -- (8.9, 0.4);
+            \draw[minlijn] (9.2, 0.3) -- (9.5, 0.3);
+            \draw[minlijn] (8.5, 0.0) -- (8.8, 0.0);
+            \draw[minlijn] (9.3, -0.1) -- (9.6, -0.1);
+            \draw[minlijn] (8.7, -0.4) -- (9.0, -0.4);
+            \draw[minlijn] (9.1, -0.6) -- (9.4, -0.6);
+
+            % Bruine aardingsdraad
+            \draw[bruindraad] (10,0) to[out=0, in=90] (10.8, -0.5) -- (10.8, -1.2);
+            
+            % Aardingssymbool (bruin)
+            \draw[bruindraad] (10.4, -1.2) -- (11.2, -1.2);
+            \draw[bruindraad] (10.55, -1.35) -- (11.05, -1.35);
+            \draw[bruindraad] (10.7, -1.5) -- (10.9, -1.5);
+
+            % --- BOL 4: Neutraal, elektronen vloeien weg ---
+            \shade[ball color=gray!70] (13.5,0) circle (1);
+            \node at (13.5, -2) {(d)};
+            
+            % Rode aardingsdraad
+            \draw[rooddraad] (14.5, 0) to[out=0, in=90] (15.3, -0.5);
+            \draw[rooddraad, ->, >=stealth] (15.3, -0.5) -- (15.3, -0.9);
+            \draw[rooddraad] (15.3, -0.9) -- (15.3, -1.2);
+            
+            % Aardingssymbool (rood)
+            \draw[rooddraad] (14.9, -1.2) -- (15.7, -1.2);
+            \draw[rooddraad] (15.05, -1.35) -- (15.55, -1.35);
+            \draw[rooddraad] (15.2, -1.5) -- (15.4, -1.5);
+            
+            % Label weggestroomde elektronen
+            \node[right] at (15.3, -0.4) {$\mathrm{e}^-$};
+
+        \end{tikzpicture}
+    \end{center}
+    \caption{Opladen en ontladen via contact bij een geleider. (a) Een neutrale metalen bol. (b) Elektronen van buitenaf worden op de metalen bol geplaatst en kunnen zich direct verspreiden. (c) Door contact met een aarding kan het teveel aan elektronen wegvloeien. (d) Er blijft een neutrale bol achter.}
+    \label{fig:opladen_ontladen_geleider}
+\end{figure}
+
+%--- opmerking naderen met positievelading
+\begin{remark}[expandable=true,title={Opladen met een positief voorwerp}]\nl
+    In het vorige voorbeeld keken we naar een negatief geladen staaf. Maar wat gebeurt er als je de neutrale metalen bol aanraakt met een \textbf{positief} geladen voorwerp (zoals een glazen staaf)? 
+    
+    Een positief voorwerp heeft een tekort aan elektronen. Zodra er contact is, trekt de staaf elektronen uit de neutrale metalen bol aan. Er springen dus elektronen van de bol over naar de staaf. De bol verliest hierdoor elektronen en blijft achter met een elektronentekort. Het resultaat is dat de metalen bol zelf ook \textbf{positief} geladen wordt. 
+    
+    Ook hier geldt dus de regel voor opladen via contact: de bol krijgt uiteindelijk \textbf{hetzelfde teken} als het ladende voorwerp.
+\end{remark}
+
+
+%———————————————————————————————————————
+%QUIZ: Inductie proberen bij een isolator
+\begin{question}
+    Je brengt een negatief geladen rubberen staaf dicht in de buurt van een neutrale plastic bol (een isolator). Terwijl je de staaf in de buurt houdt, verbind je de tegenoverliggende kant van de plastic bol met de aarde via een koperdraad. Vervolgens verwijder je eerst de aarding en daarna de geladen staaf. 
+    
+    Wat is de uiteindelijke netto lading van de plastic bol?
+    \begin{onlineOnly}
+        \begin{multipleChoice}
+            \choice{De bol is positief geladen.}
+            \choice{De bol is negatief geladen.}
+            \choice[correct]{De bol blijft elektrisch neutraal.}
+            \choice{De helft van de bol is positief, de andere helft is negatief.}
+        \end{multipleChoice}
+
+        \begin{hint}
+            Denk aan de microscopische eigenschappen van een isolator. Kunnen elektronen zich vrij doorheen het hele materiaal verplaatsen?
+        \end{hint}
+        \begin{hint}
+            Bij een isolator treedt wel \textbf{polarisatie} op (de ladingscentra van de atomen verschuiven een beetje), maar de elektronen zitten sterk gebonden aan hun atoomkern. Ze kunnen dus niet zomaar via het plastic materiaal naar de aarding stromen.
+        \end{hint}
+
+        \begin{solution}\nl
+            In een isolator (zoals plastic) zitten de elektronen sterk gebonden aan hun atoomkern. Wanneer de geladen staaf nadert, treedt er wel lokale polarisatie op (de moleculen worden kleine dipooltjes), maar er zijn geen \emph{vrije} elektronen die door de bol kunnen reizen om via de aarding weg te vloeien. 
+        
+            Zelfs als er wél direct contact is, zal een isolator lading slechts zeer lokaal opnemen. Op de exacte plaats waar de negatief geladen staaf de bol raakt, blijft dan een negatieve lading achter. Omdat de lading zich niet door het materiaal kan verplaatsen, zal dit teveel aan elektronen onmogelijk kunnen wegvloeien wanneer je de plastic bol aan de andere kant verbindt met een aarding. 
+        
+            Conclusie: Opladen via inductie (met behulp van een aarding) werkt uitsluitend bij \textbf{geleiders}!
+        \end{solution}
+    \end{onlineOnly}
+\end{question}
+%———————————————————————————————————————
+
+\section{Opladen via inductie}
+Bij opladen via inductie wordt een voorwerp geladen \textbf{zonder} dat er fysiek contact is met het ladende voorwerp. Dit proces maakt gebruik van de polarisatie van ladingen en een aarding. Het proces verloopt in vier stappen:
+
+\begin{enumerate}
+    \item \textbf{Naderen:} Een negatief geladen staaf wordt in de buurt van een neutrale, geïsoleerde metalen bol gebracht. Door de afstotende coulombkracht worden de vrije elektronen in de bol naar de achterkant geduwd.
+    \item \textbf{Aarden:} De achterkant van de bol wordt geleidend met de aarde verbonden (bijvoorbeeld door een draad of door er met een vinger tegen te tikken). De weggeduwde elektronen stromen nu via de aarding weg van de bol naar de aarde.
+    \item \textbf{Aarding wegnemen:} Terwijl de geladen staaf nog steeds in de buurt wordt gehouden, wordt de aardingsdraad verwijderd. De weggevloeide elektronen kunnen nu niet meer terug naar de bol. De bol heeft nu een tekort aan elektronen.
+    \item \textbf{Staaf verwijderen:} Tot slot wordt de geladen staaf weggenomen. Het ontstane tekort aan elektronen verspreidt zich gelijkmatig over de bol. De bol is nu netto \textbf{positief} geladen.
+\end{enumerate}
+
+% --------------------
+%   LANGE FIGUUR - inductie (omgezet naar 2x3 grid)
+% ------------------
+\begin{figure}[h!]
+    \begin{center}
+        \begin{tabular}{cc}
+            \includegraphics[width=3.5cm,keepaspectratio]{pic5/elektriciteit/coulomb/laden_via_inductie_1.jpg} &
+            \includegraphics[width=3.5cm,keepaspectratio]{pic5/elektriciteit/coulomb/laden_via_inductie_2.jpg} \\
+            (a) & (b) \\[2ex]
+            \includegraphics[width=3.5cm,keepaspectratio]{pic5/elektriciteit/coulomb/laden_via_inductie_3.jpg} &
+            \includegraphics[width=3.5cm,keepaspectratio]{pic5/elektriciteit/coulomb/laden_via_inductie_4.jpg} \\
+            (c) & (d) \\[2ex]
+            \multicolumn{2}{c}{\includegraphics[width=1.7cm,keepaspectratio]{pic5/elektriciteit/coulomb/laden_via_inductie_5.jpg}} \\
+            \multicolumn{2}{c}{(e)}
+        \end{tabular}
+    \end{center}
+    \caption{Het opladen van een metalen voorwerp door inductie (dat wil zeggen, de twee voorwerpen raken elkaar nooit). (a) Een neutrale metalen bol, met een gelijk aantal positieve en negatieve ladingen. (b) De elektronen op de neutrale bol worden herverdeeld wanneer een geladen rubberen staaf in de buurt van de bol wordt geplaatst. (c) Wanneer de bol wordt geaard, verlaten sommige elektronen de bol via de aarding. (d) Wanneer de aarding wordt verwijderd, heeft de bol een overschot aan positieve lading die ongelijkmatig is verdeeld. (e) Wanneer de staaf wordt verwijderd, worden de resterende elektronen gelijkmatig herverdeeld en is er een netto gelijkmatige verdeling van positieve lading op de bol.}
+    \label{fig:opladen via inductie}
+\end{figure}
+
+\section{Samenvatting: Het grote verschil}
+Het belangrijkste verschil tussen beide methoden zit hem in het fysieke contact, de aarding en het teken van de uiteindelijke lading.
+
+\begin{center}
+    \begin{tabular}{ |p{4cm}|p{5cm}|p{5cm}| } 
+    \hline
+    \textbf{Eigenschap} & \textbf{Opladen via Contact} & \textbf{Opladen via Inductie} \\
+    \hline
+    \textbf{Fysiek contact?} & Ja & Nee \\
+    \hline
+    \textbf{Aarding nodig?} & Nee & Ja \\
+    \hline
+    \textbf{Eindlading bol?} & Hetzelfde teken als de staaf & Tegengesteld teken aan de staaf \\
+    \hline
+    \end{tabular}
+\end{center}
+
+\end{document}

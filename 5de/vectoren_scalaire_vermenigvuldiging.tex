@@ -1,0 +1,54 @@
+\documentclass{ximera}
+
+\title{Scalair Product}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+
+Twee vectoren kan men op twee verschillende manieren met elkaar vermenigvuldigen, die telkens een heel ander resultaat opleveren. 
+
+Het \textbf{scalair product} (of inwendig product) levert een \textbf{scalar} (= een reëel getal) als resultaat op. Dit getal is per definitie gelijk aan de grootte van de projectie van de ene vector op de andere, vermenigvuldigd met de grootte van diezelfde andere vector. 
+
+Het scalair product wordt als volgt gedefinieerd: 
+\[ c = \vec{a} \cdot \vec{b} = \| \vec{a}_x \| \cdot \|\vec{b}\| = \|\vec{a}\| \cdot \cos(\alpha) \cdot \|\vec{b}\| = \| \vec{a}\| \cdot \| \vec{b}\| \cdot \cos(\alpha) \]
+
+%---------------------------
+% AFBEELDING: Scalair product
+\begin{figure}[ht!]
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
+        \begin{tikzpicture}[scale=1.5]
+            \coordinate (O) at (0,0); 
+            \coordinate (A) at (1.5,2); 
+            \coordinate (B) at (3.5,0); 
+            \coordinate (AX) at (1.5,0);
+            
+            \fill (O) circle (1.5pt) node[below left]{$O$};
+            
+            \draw[->, thick, blue!70!black] (O) -- (A) node[midway, above left]{$\vec{a}$};
+            \draw[->, thick, red!70!black] (O) -- (B) node[midway, below]{$\vec{b}$};
+            
+            \draw[->, ultra thick, dashed, green!60!black] (O) -- (AX) node[midway, below=3pt]{$\vec{a}_x$};
+            \draw[dashed, gray] (A) -- (AX);
+            
+            \draw[thick, cyan!70!blue] (0.6,0) arc (0:53.1:0.6) node[midway, right=1pt] {$\alpha$};
+        \end{tikzpicture}
+    \end{center}
+    \caption{De projectie van vector $\vec{a}$ op $\vec{b}$.}
+    \label{fig:scalair_product}
+\end{figure}
+%---------------------------
+
+\begin{question}
+    Is de eerste bewerking `$\cdot$` in de formule hierboven wiskundig exact hetzelfde als de tweede bewerking `$\cdot$`? Verklaar dit aan de hand van de betekenis van een scalair versus vectorieel karakter.
+    
+    \begin{solution}\nl
+        Nee. Het eerste puntje ($\vec{a} \cdot \vec{b}$) is een \textbf{vectorbewerking} (het inwendig product tussen twee pijlen). Het tweede puntje ($\| \vec{a}_x \| \cdot \|\vec{b}\|$) is een \textbf{gewone rekenkundige vermenigvuldiging} tussen twee reële getallen. Ze delen wel hetzelfde symbool!
+    \end{solution}
+\end{question}
+
+\end{document}

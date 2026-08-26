@@ -167,6 +167,8 @@ Omdat YouTube-video's online mooi kunnen afspelen, maar in een geprinte PDF gewo
 - [ ] download pdf zonder antwoorden --> ?
 - [ ] beter manier afbeelding in title
 - [ ] hoe afval bestandjes kuisen? (map op pc komt vol te zitten)
+- [ ] oefeningen elektrisch veld
+- [ ] Eveld en materie
 
 
 

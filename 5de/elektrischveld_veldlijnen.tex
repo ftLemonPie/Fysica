@@ -1,0 +1,212 @@
+\documentclass{ximera}
+
+\title{Elektrische Veldlijnen}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+    Het visualiseren van elektrische velden aan de hand van veldlijnen.
+\end{abstract}
+\maketitle
+
+\section{Veldlijnen tekenen}
+
+Om de wiskundige vectoren van een elektrisch veld inzichtelijk te maken, gebruiken we een grafische voorstelling: \textbf{elektrische veldlijnen} (een concept dat eveneens bedacht werd door Faraday). 
+
+Deze veldlijnen geven ons snel een kwalitatief beeld van hoe het veld zich in de ruimte gedraagt en volgen enkele strikte regels:
+
+\begin{theorem}[foldable,title={Regels voor elektrische veldlijnen}]\nl
+    \begin{enumerate}
+        \item De elektrische veldvector $\vec{E}$ is in elk punt \textbf{raaklijnig} aan de veldlijn. De pijl op de veldlijn geeft de zin van het veld aan (de richting waarin een positieve testlading weggeduwd zou worden).
+        \item De \textbf{dichtheid van de lijnen} (het aantal lijnen per oppervlakte-eenheid) is evenredig met de grootte van de veldsterkte. Veldlijnen die dicht bij elkaar liggen, duiden op een sterk elektrisch veld; lijnen die ver uit elkaar liggen, duiden op een zwak veld.
+        \item Veldlijnen \textbf{vertrekken altijd vanuit een positieve lading} en \textbf{eindigen op een negatieve lading} (of in het oneindige als er geen tegengestelde lading in de buurt is).
+        \item Het aantal veldlijnen dat uit een positieve lading vertrekt, of op een negatieve lading toekomt, is \textbf{evenredig met de grootte van die lading}.
+        \item Twee elektrische veldlijnen kunnen \textbf{nooit} elkaar snijden!
+    \end{enumerate}
+\end{theorem}
+
+\begin{remark}
+    Veldlijnen zijn geen echte fysieke objecten in de ruimte, maar slechts een hulpmiddel om het veld te visualiseren. Bovendien stellen ze niet de baan voor die een deeltje zal volgen (behalve in specifieke gevallen zoals beweging op een rechte lijn).
+\end{remark}
+
+\section{Patronen van veldlijnen}
+
+We bekijken de drie meest voorkomende situaties: de veldlijnen van een puntlading of radiaalveld, de veldlijnen van twee puntladingen en een homogeen veld.
+
+\subsection{Elektrisch radiaalveld}\label{s:radiaalveld}
+Bij een enkele positieve lading wijzen de veldlijnen radiaal naar buiten, zoals te zien op figuur \ref{fig:veldlijnen_puntlading}(a). Bij een negatieve lading wijzen ze radiaal naar binnen, zoals te zien op figuur \ref{fig:veldlijnen_puntlading}(b). Omdat de lijnen in 3D uitwaaieren, wordt de dichtheid van de lijnen kleiner naarmate je verder van de bron weggaat, wat overeenkomt met de afname in veldsterkte ($E \propto 1/r^2$).
+
+%---------------------------
+% AFBEELDING: Figuur 23.19 (Veldlijnen 1 puntlading)
+\begin{figure}[ht!]
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
+        \begin{tikzpicture}[scale=1.2]
+            
+            % Stijlen
+            \tikzset{
+                poscharge/.style={circle, draw=orange!80!red, fill=orange!30, thick, inner sep=0pt, minimum size=8mm, font=\large},
+                negcharge/.style={circle, draw=cyan!80!blue, fill=cyan!30, thick, inner sep=0pt, minimum size=8mm, font=\large},
+                fieldline/.style={thick, orange!70!black}
+            }
+
+            % --- DEEL (a): Positieve lading ---
+            \coordinate (O1) at (0,0);
+            
+            \foreach \angle in {0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330} {
+                % Deel 1: Vanuit het centrum tot halverwege met een pijl naar buiten
+                \draw[fieldline, ->, >=latex] (O1) -- ++(\angle:1.4);
+                % Deel 2: Vanaf halverwege tot het einde
+                \draw[fieldline] (O1) ++(\angle:1.4) -- ++(\angle:1.1);
+            }
+            
+            % Lading (als laatste getekend zodat deze de start van de lijnen netjes afdekt)
+            \node[poscharge] at (O1) {$+$};
+            
+            % Label q
+            \node[above] at (1.4, 0.05) {$q$};
+            
+            % Bijschrift (a)
+            \node at (0, -2.8) {(a)};
+
+
+            % --- DEEL (b): Negatieve lading ---
+            \coordinate (O2) at (6.5,0);
+            
+            \foreach \angle in {0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330} {
+                % Deel 1: Vanuit het centrum tot halverwege zonder pijl
+                \draw[fieldline] (O2) -- ++(\angle:1.4);
+                % Deel 2: Vanaf halverwege tot het einde, met een pijl gericht naar het centrum (<-)
+                \draw[fieldline, <-, >=latex] (O2) ++(\angle:1.4) -- ++(\angle:1.1);
+            }
+            
+            % Lading
+            \node[negcharge] at (O2) {$-$};
+            
+            % Label -q
+            \node[above] at (7.9, 0.05) {$-q$};
+            
+            % Bijschrift (b)
+            \node at (6.5, -2.8) {(b)};
+
+        \end{tikzpicture}
+    \end{center}
+    \caption{Elektrische veldlijnen voor een puntlading. (a) Voor een positieve puntlading wijzen de lijnen radiaal naar buiten. (b) Voor een negatieve puntlading wijzen de lijnen radiaal naar binnen.}
+    \label{fig:veldlijnen_puntlading}
+\end{figure}
+%---------------------------
+
+
+
+\subsection{Elektrisch veld van twee bronladingen}
+\subsubsection{Dipoolveld}
+Een dipool bestaat uit een positieve en een negatieve lading van exact dezelfde grootte op een kleine afstand van elkaar en maakt een dipoolveld, zoals te zien in figuur \ref{fig:veldlijnen_dipool}. Het aantal lijnen dat bij de positieve lading vertrekt, is gelijk aan het aantal lijnen dat op de negatieve lading toekomt. Tussen de ladingen in is de dichtheid van de lijnen hoog, wat wijst op een sterk veld.
+
+%---------------------------
+% AFBEELDING: Figuur 23.20 (Veldlijnen dipool)
+\begin{figure}[ht!]
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
+        \includegraphics[width=0.5\textwidth]{pic5/elektriciteit/veld/veldlijnen_dipool.png}
+        % TIP: Gebruik hier Figure 23.20 (a)
+    \end{center}
+    \caption{Het elektrische veldlijnenpatroon van een dipool. De veldlijnen vertrekken bij de positieve lading en eindigen op de negatieve lading.}
+    \label{fig:veldlijnen_dipool}
+\end{figure}
+%---------------------------
+
+
+\subsubsection{Tussen twee gelijksoortige ladingen}
+Bij twee identieke positieve ladingen vertrekken uit beide bronnen evenveel veldlijnen, zoals te zien op figuur \ref{fig:veldlijnen_gelijk}. Tussen de ladingen in 'botsen' de velden en buigen ze af naar boven en onder. Exact in het midden tussen de ladingen heffen de velden elkaar op en bevindt zich een punt waar het resulterende veld nul is.
+
+%---------------------------
+% AFBEELDING: Figuur 23.21 (Veldlijnen 2 positieve ladingen)
+\begin{figure}[ht!]
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
+        \includegraphics[width=0.5\textwidth]{pic5/elektriciteit/veld/veldlijnen_gelijk.png}
+        % TIP: Gebruik hier Figure 23.21 (a)
+    \end{center}
+    \caption{Veldlijnen van twee gelijke positieve ladingen. In het exacte midden is het veld nul. (De plekken $A$, $B$ en $C$ worden gebruikt in de vraag \ref{v:veld2ladingen}.)}
+    \label{fig:veldlijnen_gelijk}
+\end{figure}
+%---------------------------
+%———————————————————————————————————————
+% VRAAG: groote van elektrisch veld op absis van veldlijnen
+\begin{question}\label{v:veld2ladingen}
+    Rangschik de grootte van het elektrisch veld in punten $A$, $B$ en $C$ van figuur \ref{fig:veldlijnen_gelijk} (grootste eerst).\\
+    \begin{onlineOnly}
+        Rankschikking elektrische velden van groot naar klein:
+        \wordChoice{\choice[correct]{A}\choice{B}\choice{C}}\qquad\wordChoice{\choice{A}\choice[correct]{B}\choice{C}}\qquad\wordChoice{\choice{A}\choice{B}\choice[correct]{C}}
+
+        \begin{hint}
+            Hoe dichter veldlijnen op elkaar staan, hoe groter het veld op die locatie is.
+        \end{hint}
+
+        \begin{solution}\nl
+            De dichtheid van de veldlijnen is het grootste bij punt $A$, hier is dus het elektrisch veld het grootste. In punt $C$, wat net tussen de twee positieve ladingen ligt, ontbreken de veldlijnen; hier is het totale elektrisch veld gelijk aan nul. Dus $E_A > E_B > E_C$.
+        \end{solution}
+    \end{onlineOnly}
+\end{question}
+%———————————————————————————————————————
+\subsection{Homogeen veld}
+\begin{theorem}[foldable]
+Een homogeen veld is een veld waarbij de veldvector overal identiek is. Dit betekent:
+\begin{enumerate}
+    \item zelfde grootte;
+    \item zelfde richting;
+    \item zelfde zin.
+\end{enumerate}
+\end{theorem}
+Om veldlijnen te tekenen met een zelfde richting en zin, moeten ze evenwijdig zijn met elkaar en alle pijlpunten naar de zelfde kant wijzen. Om de grootte van het veld overal even groot te krijgen, moeten alle veldlijnen even ver van elkaar staan, zoals te zien op figuur \ref{fig:homogeen_elektrisch_veld}.
+\begin{remark}[expandable]
+Een homogeen elektrisch veld wordt gemaakt door twee parallelle platen met een verschillende lading.
+\end{remark}
+%---------------------------
+% AFBEELDING: Homogeen elektrisch veld tussen twee platen (pijlen in het midden)
+\begin{figure}[ht!]
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
+        \begin{tikzpicture}[scale=1.2]
+            
+            % Stijlen voor de platen en veldlijnen
+            \tikzset{
+                posplate/.style={fill=orange!40, draw=orange!90!red, thick},
+                negplate/.style={fill=cyan!40, draw=cyan!90!blue, thick},
+                fieldline/.style={thick, orange!80!black}
+            }
+
+            % --- PLATEN TEKENEN ---
+            % Linkerplaat (Positief)
+            \draw[posplate] (-2.5, -2.5) rectangle (-2.1, 2.5);
+            
+            % Rechterplaat (Negatief)
+            \draw[negplate] (2.1, -2.5) rectangle (2.5, 2.5);
+
+            % --- LADINGEN (PLUS EN MIN) TOEVOEGEN ---
+            \foreach \y in {-2, -1, 0, 1, 2} {
+                \node[font=\large] at (-2.3, \y) {$+$};
+                \node[font=\large] at (2.3, \y) {$-$};
+            }
+
+            % --- VELDLIJNEN TEKENEN ---
+            % Evenwijdige lijnen op gelijke afstand van elkaar
+            \foreach \y in {-2, -1, 0, 1, 2} {
+                % Deel 1: Van linkerplaat tot halverwege met een pijl
+                \draw[fieldline, ->, >=latex] (-2.1, \y) -- (0, \y);
+                % Deel 2: Vanaf halverwege tot aan de rechterplaat
+                \draw[fieldline] (0, \y) -- (2.1, \y);
+            }
+
+            % --- LABEL VOOR HET ELEKTRISCH VELD ---
+            % We zetten de E-vector netjes bovenaan, iets boven de bovenste veldlijn
+            \node[above, font=\Large] at (0, 2.1) {$\vec{E}$};
+
+        \end{tikzpicture}
+    \end{center}
+    \caption{Een homogeen elektrisch veld $\vec{E}$ tussen twee evenwijdige geladen platen. De veldlijnen lopen evenwijdig en op gelijke afstand van elkaar, wat aangeeft dat het veld overal even sterk is.}
+    \label{fig:homogeen_elektrisch_veld}
+\end{figure}
+%---------------------------
+
+\end{document}

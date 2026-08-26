@@ -1,0 +1,78 @@
+\documentclass{ximera}
+%nagekeken 26 augustus 2026
+\title{Het Elektrisch Veld}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+    De definitie van het elektrisch veld, testladingen en de veldsterkte van puntladingen.
+\end{abstract}
+\maketitle
+
+\section{Het concept van een elektrisch veld}
+
+We zeggen dat er een \textbf{elektrisch veld} bestaat in de ruimte rondom een geladen voorwerp (de \textit{bronlading}). Wanneer een ander geladen voorwerp (de \textit{testlading}) in dit veld wordt geplaatst, zal het veld een elektrische kracht uitoefenen op deze testlading, zoals te zien op figuur\ref{fig:testlading_bronlading}. 
+
+\begin{definition}[title={Het Elektrisch Veld}]\nl
+    De elektrische veldvector $\vec{E}$ in een bepaald punt in de ruimte is gedefinieerd als de elektrische kracht $\vec{F}_e$ die inwerkt op een positieve testlading $Q_t$ in dat punt, gedeeld door de grootte van die testlading:
+    $$ \vec{E} \equiv \frac{\vec{F}_e}{Q_t} $$
+    De SI-eenheid van het elektrisch veld is de \textbf{newton per coulomb (N/C)}.
+\end{definition}
+%---------------------------
+% AFBEELDING: Figuur 23.10 (Testlading bij bronlading)
+\begin{figure}[ht!]
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
+        \includegraphics[height=8cm,width=12cm, keepaspectratio]{pic5/elektriciteit/veld/testlading_bronlading.png}
+        % TIP: Gebruik hier de afbeelding van Figure 23.10 uit het boek
+    \end{center}
+    \caption{Een kleine positieve testlading $Q_t$ geplaatst in de buurt van een grotere positieve bronlading $Q$ ondervindt een elektrisch veld $\vec{E}$.}
+    \label{fig:testlading_bronlading}
+\end{figure}
+%---------------------------
+\begin{theorem}[foldable=true,title={Eigenschappen van het elektrisch veld}]\nl
+    \begin{itemize}
+        \item Het veld $\vec{E}$ wordt gecreëerd door de bronlading(en), \textbf{niet} door de testlading zelf\footnote{De testlading zelf maakt ook een elektrisch veld, maar heeft geen invloed in dat punt zelf.}.
+        \item Het veld bestaat in de ruimte rondom de bronlading, ongeacht of er effectief een testlading aanwezig is om het veld te detecteren.
+        \item Als we de formule omvormen, kunnen we de kracht op elke willekeurige lading $Q$ in een gekend veld eenvoudig berekenen via $\vec{F}_e = Q\cdot \vec{E}$. Bij een positieve lading wijzen de kracht en het veld in dezelfde richting; bij een negatieve lading wijzen ze in tegengestelde zin.
+    \end{itemize}
+\end{theorem}
+
+
+
+\section{Elektrisch veld van een puntlading}
+\subsection{Formule elektrisch veld van een puntlading}
+
+We kunnen de grootte van het elektrisch veld van één enkele puntlading afleiden door de wet van Coulomb in onze velddefinitie te stoppen. De kracht die bronlading $Q_b$ uitoefent op testlading $Q_t$ op afstand $r$ is:
+$$ F_e = k_e \frac{|Q_b| \cdot |Q_t|}{r^2} $$
+
+Als we dit delen door $Q_t$, bekomen we de grootte van het elektrisch veld veroorzaakt door $Q_b$:
+
+\begin{definition}[title={Formule radiaal veld}]\nl
+    $$E = k_e \frac{|Q_b|}{r^2}$$
+\end{definition}
+
+\begin{theorem}[foldable=true,title={De \textbf{richting en zin} van het elektrisch veld}]\nl
+    \begin{itemize}
+        \item Is de bronlading \textbf{positief}, dan wijst de veldvector \textbf{radiaal weg}\footnote{Het elektrisch veld van een puntlading wordt een radiaal veld genoemd, zie sectie \ref{s:radiaalveld}.} van de lading (omdat een positieve testlading zou worden afgestoten).
+        \item Is de bronlading \textbf{negatief}, dan wijst de veldvector \textbf{radiaal naar de lading toe} (omdat een positieve testlading zou worden aangetrokken).
+    \end{itemize}
+
+    %---------------------------
+    % AFBEELDING: Figuur 23.11 (Veldvectoren rond puntlading)
+    \begin{center}
+        \captionsetup{width=0.85\textwidth}
+        \includegraphics[height=10cm,width=14cm,keepaspectratio]{pic5/elektriciteit/veld/veld_puntlading.png}
+        % TIP: Gebruik hier Figure 23.11 uit het boek (a, b, c, d)
+        \captionof{figure}{Een testlading $q_0$ in punt \textit{P} bevindt zich op een afstand $r$ van een puntlading $q$. (a) Als $q$ positief is, is de kracht op de testlading weg van $q$ gericht. (b) Bij een positieve bronlading wijst het elektrisch veld in \textit{P} radiaal weg van $q$. (c) Als $q$ negatief is, is de kracht op de testlading naar $q$ toe gericht. (d) Bij een negatieve bronlading wijst het elektrisch veld in \textit{P} radiaal naar $q$ toe.}
+        \label{fig:veld_puntlading}
+    \end{center}
+    %---------------------------
+\end{theorem}
+
+\subsection{Superpositiebeginsel}
+Wanneer er meerdere puntladingen aanwezig zijn, bereken je het totale elektrisch veld in een willekeurig punt \textit{P} door de veldvectoren van elke bronlading afzonderlijk te berekenen, en deze vervolgens \textbf{vectorieel op te tellen}\footnote{Zie bijlage \ref{s:vectoren_optellen}.}. 
+
+$$ \vec{E}_{tot} = \vec{E}_1 + \vec{E}_2 + \vec{E}_3 + \dots $$
+
+\end{document}

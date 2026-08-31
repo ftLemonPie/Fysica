@@ -204,9 +204,24 @@
 % Dit commando toont een tcolorbox in de PDF en een definition in de HTML!
 \newcommand{\samenbox}[2]{
 	\ifdefined\HCode %Href werkt niet?
-	    \begin{conclusion}[foldable=true,nonumbered,title={#1}]\nl
-            #2
-        \end{conclusion}
+        \bgroup   % simulate 'environment'
+        \HCode{
+          <section>
+          <details
+             class="theorem-like problem-environment conclusion"
+          >
+        }
+        \HCode{<summary class="summary-conclusion">}%
+        \HCode{<h3}
+        \HCode{ class="summary-header">}%
+          #1
+        \HCode{</h3>}
+        %
+        \HCode{</summary>}   
+        #2
+        \HCode{</details>}   
+        \HCode{</section>}   
+        \egroup     
 	\else
         \begin{tcolorbox}[title={#1},colback=white,colframe=black,sharp corners]
             #2
@@ -616,7 +631,7 @@
     \def\PH@Command{#1}% Use PH@Command to hold the content and be a target for "\expandafter" to expand once.
 
     \begin{trivlist}% Begin the trivlist to use formating of the label.
-    \item[\hskip \labelsep\small\bfseries \nlen{Uitwerking}{Elaboration}: \hspace{2ex}]\small
+    \item[\hskip \labelsep\small\bfseries Uitwerking: \hspace{2ex}]\small
     \BODY
     \end{trivlist}
     }
@@ -627,7 +642,7 @@
     \def\PH@Command{#1}% Use PH@Command to hold the content and be a target for "\expandafter" to expand once.
 
     \begin{trivlist}% Begin the trivlist to use formating of the "Feedback" label.
-    \item[\hskip \labelsep\small\bfseries \nlen{Uitwerking}{Elaboration}: \hspace{2ex}]\small
+    \item[\hskip \labelsep\small\bfseries Uitwerking: \hspace{2ex}]\small
     \BODY
     \end{trivlist}
     }
@@ -636,9 +651,30 @@
 
 \fi
 
+% mmm, waarom is dit nodig ...? To check!
+\newcounter{question}
+\newcounter{hint}
+
 % reset counters for question/hints 
 \AtBeginEnvironment{warning}{\setcounter{question}{0}\setcounter{hint}{0}}
 \AtBeginEnvironment{exercise}{\setcounter{question}{0}\setcounter{hint}{0}}
 % always print solutions in example 
 \AtBeginEnvironment{example}{\setcounter{question}{0}\setcounter{hint}{0}\handoutfalse}    % print oplossingen in voorbeelden
 
+\makeatletter
+\fancypagestyle{main}{%  op de eerste pagina BOLD titel in BLAUW
+    % \renewcommand{\headrulewidth}{0pt}
+    \fancyhead[R]{Fysica}
+    \fancyhead[C]{}
+    \fancyhead[L]{%
+         {\selectfont\bfseries\color{black}\textsc{\@title}}
+    } 
+    
+    \fancyfoot[RE,LO]{\textsc{Sint-Ursula Instituut}}
+    \fancyfoot[C]{}
+    \fancyfoot[LE,RO]{\thepage}
+}
+
+
+
+\makeatother

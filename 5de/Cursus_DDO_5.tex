@@ -1,4 +1,10 @@
-\documentclass{xourse}
+\documentclass[nonewpage]{xourse}
+
+
+% Start \part op een nieuwe pagina (Ximera doet dat niet per default)
+\xpretocmd{\part}{\clearpage}{}{}
+
+% \documentclass{xourse}
 %in
 %\title{\includegraphics[width=0.7\textwidth]{pic5/elektromagnetisme.jpg}\\[2cm]Fysica 5de jaar - Wetenschappen}
 \title{Fysica 5de jaar - Wetenschappen}

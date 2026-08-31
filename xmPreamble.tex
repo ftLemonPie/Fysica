@@ -592,3 +592,17 @@
 %\title{Boek template}
 %\author{Daan Lipkens}
 %\date{Sint-Ursula Instituut \today}
+
+
+
+
+%% Fix 'solution' 
+\ifdefined\HCode%
+    \renewenvironment{solution}[1][onzichtbaar]
+   {%
+       \begin{expandable}{xmoplossing}{}\par   %% without \part tikz-error with \begin{oplossing}\tikz{...} !!!!
+   }
+   {%
+   	   \end{expandable}
+   } 
+\fi

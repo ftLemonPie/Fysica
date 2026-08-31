@@ -9,100 +9,126 @@
  *   - become (almost) empty by default, because the ximeraServer default settings will becom English again
  */ 
  
+
+.xmhint, .xmoplossing, .xmuitkomst  {
+	background-color: #1D8DB0 !important;
+	color: white;
+	font-family: sans-serif;
+	font-weight: normal;
+	font-size: smaller;
+	margin: 1px !important;
+	margin-left: auto !important;
+	display: block;
+	/* max-width: max-content; */
+	max-width: 10em !important;
+	line-height: 1;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	user-select: none;
+	border: 1px solid transparent;
+	padding: 0px !important;
+	font-size: 1rem;
+	transition: all 0.2s ease-in-out;
+	counter-increment: hint_number;
+}
+
+/* increase specificity with double classes ;) */
+div.xmhint-content.ui-accordion-content {
+	background-color: #00000000; /* transparent; overwrites .ui-widget-content ... */
+	border: 1px solid #005000;
+	border-top: 1px solid #005000 !important;
+	border-left: 3px solid #005000;
+	color:   #005000;
+	margin-top: 0rem;
+	padding: 2px 3rem;
+}
+
+div.xmhint-content::before {
+	 content: "Hint: ";
+	 font-weight: bold;
+	 margin-left: -3rem;    /* Hack, see padding above ... */
+ }
  
+
+
+div.xmoplossing-content.ui-accordion-content, div.xmuitkomst-content.ui-accordion-content {
+	background-color: #00000000; /* transparent; overwrites .ui-widget-content ... */
+	background-color: white;
+	border: 1px solid black;
+	border-left: 3px solid black;
+	color:  black;
+	margin-top: 0rem;
+	padding: 5px;
+}
+
+@counter-style notfirst {
+	system: alphabetic;
+	symbols: " " "2" "3" "4" "5" "6" "7" "8" "9" "0";
+}
+  
 .xmhint::before {
-    content: "Show hint" counter(hint_number, notfirst);
+    content: "Toon hint " counter(hint_number, notfirst);
 }
   
 .xmhint.ui-state-active::before {
-    content: "Hide hint " counter(hint_number, notfirst);
+    content: "Verberg hint " counter(hint_number, notfirst);
 }
   
 .xmoplossing::before {
-    content: "Show solution";
+    content: "Toon uitwerking";
 }
 
 .xmoplossing.ui-state-active::before {
-    content: "Hide solution";
+    content: "Verberg uitwerking";
 }
 
 .xmoplossing-content::before {
-    content: "Solution: ";
+    content: "Uitwerking: ";
 	font-weight: bold;
 }
 
 .xmuitkomst::before {
-    content: "Show answer";
+    content: "Toon uitkomst";
 }
 
 .xmuitkomst.ui-state-active::before {
-    content: "Hide answer";
+    content: "Verberg uitkomst";
 }
 
 .xmuitkomst-content::before {
-    content: "Answer: ";
+    content: "Antwoord: ";
 	font-weight: bold;
 }
 
 
-/* Overwrite labels */ 
-span.hint-text {
- display: none;
-}
-
-button.btn-reveal-hint::after {
- content: "Show hint";
-}
-button.btn-reveal-hint.oplossing::after {
- content: "Show solution";
-}
-
-.xmerase a span.xmhidden-small {
-  display: none;
-}
-
-.xmerase a::after {
- content: "Clear";
-}
-
-span.show-check-text {
-  display: none !important;
-}
-
-button.btn-ximera-check::after {
-  content: "Check answer";
-}
-
-span.show-answer-text {
-  display: none !important;
-}
-
-span.show-answer-large button.btn-ximera-show-answer::after {
-  content: "Reveal answer";
-}
-
-#math-edit-button span {
-  display: none;
-}
-
-button#math-edit-button::before {
-  content: "Math Editor";
+.example, .exercise, .question {
+    counter-reset: hint_number;
 }
 
 
-/* Vorige/volgende */
-a.next-activity::before {
-  content: "Next";
+
+/* no decorations for questions-in-hints */
+.xmhint-content .question {
+    background-color: initial;
+    border: initial;
+    border-left: initial;
+	padding-left: 0;
+    margin-top: 0;
+    padding-bottom: 0;
 }
-span#next-activity-label {
-  display: none;
+
+
+/* \choice popups should not be clipped, but extend over/outside question-div */
+.ui-accordion .ui-accordion-content {
+	overflow: initial;
 }
-a.prev-activity::after {
-  content: "Previous";
+
+
+div.xmhint-content.ui-accordion-content .question {
+	color: unset;
 }
-span#prev-activity-label {
-  display: none;
-}
+
 
 /* reset base.css settings in the server */
 details.theorem-like:has( .summary-header)::before,

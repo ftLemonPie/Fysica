@@ -605,4 +605,40 @@
    {%
    	   \end{expandable}
    } 
+\else
+% Evalueer \ifhandout PER INSTANCE van de environment
+%
+\RenewEnviron{solution}[1][onzichtbaar]%
+{%
+\ifhandout%
+    \ifthenelse{\equal{\detokenize{#1}}{\detokenize{show}}}
+    {
+    \def\PH@Command{#1}% Use PH@Command to hold the content and be a target for "\expandafter" to expand once.
+
+    \begin{trivlist}% Begin the trivlist to use formating of the label.
+    \item[\hskip \labelsep\small\bfseries \nlen{Uitwerking}{Elaboration}: \hspace{2ex}]\small
+    \BODY
+    \end{trivlist}
+    }
+    {  % \begin{feedback}[solution]   \BODY     \end{feedback}  }
+    }
+\else
+    {
+    \def\PH@Command{#1}% Use PH@Command to hold the content and be a target for "\expandafter" to expand once.
+
+    \begin{trivlist}% Begin the trivlist to use formating of the "Feedback" label.
+    \item[\hskip \labelsep\small\bfseries \nlen{Uitwerking}{Elaboration}: \hspace{2ex}]\small
+    \BODY
+    \end{trivlist}
+    }
 \fi
+}    
+
+\fi
+
+% reset counters for question/hints 
+\AtBeginEnvironment{warning}{\setcounter{question}{0}\setcounter{hint}{0}}
+\AtBeginEnvironment{exercise}{\setcounter{question}{0}\setcounter{hint}{0}}
+% always print solutions in example 
+\AtBeginEnvironment{example}{\setcounter{question}{0}\setcounter{hint}{0}\handoutfalse}    % print oplossingen in voorbeelden
+

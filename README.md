@@ -164,19 +164,13 @@ Omdat YouTube-video's online mooi kunnen afspelen, maar in een geprinte PDF gewo
 
 # TODO
 ## te doen volgende keer
-- [ ] verwijzingen nakijken.
-- [ ] ref laat label zien in html
-- [ ] solution klapt niet toe
-- [ ] download pdf zonder antwoorden --> ?
-- [ ] beter manier afbeelding in title
-- [ ] hoe afval bestandjes kuisen? (map op pc komt vol te zitten)
+
 - [ ] oefeningen elektrisch veld
 - [ ] Eveld en materie
 
 
 
 ## Errors
-- [ ] in lading.tex: \youtube link werkt niet in html
 - [ ] \mylink: doet nog niet wat het zou moeten doen. QR met onderschrift in pdf en een klikbare hyperlink online. --> beter oplossing zoeken
     - [x] \mylink geeft in html geen klikbare link
     - [x] onderschrift QRcode lukt niet goed
@@ -187,6 +181,11 @@ Omdat YouTube-video's online mooi kunnen afspelen, maar in een geprinte PDF gewo
 
 
 ## toekomst
+- [ ] verwijzingen nakijken.
+- [ ] ref laat label zien in html
+- [ ] download pdf zonder antwoorden --> ?
+- [ ] beter manier afbeelding in title
+- [ ] hoe afval bestandjes kuisen? (map op pc komt vol te zitten)
 - [ ] logo aanpassen site
 - [ ] kleuren voor vectoren vast leggen? of zo laten --> zo laten. Te veel werk, te veel kans om eens te vergissen en leerlingen moeten ook altijd 
 vectoren benoemen.

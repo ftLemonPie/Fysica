@@ -181,6 +181,8 @@ Omdat YouTube-video's online mooi kunnen afspelen, maar in een geprinte PDF gewo
 
 
 ## toekomst
+- [ ] fooder kijken hoe ik het wil
+- [ ] Appendix nummering herstarten romeins.
 - [ ] verwijzingen nakijken.
 - [ ] ref laat label zien in html
 - [ ] download pdf zonder antwoorden --> ?

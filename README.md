@@ -1,3 +1,6 @@
+# Veel voorkomende errors
+- na herstart: in terminal: "podman machine start" dan op extra klikken voor start server
+
 # Templates
 Hier is je "Ximera Fysica Toolkit". Je kan deze blokken code gewoon kopiëren, plakken en invullen!
 

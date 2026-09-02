@@ -1,5 +1,5 @@
 \documentclass{ximera}
-
+%herschreven 2 september 2026
 \title{Elektrische Veldlijnen}
 \author{Daan Lipkens}
 
@@ -11,11 +11,11 @@
 
 \section{Veldlijnen tekenen}
 
-Om de wiskundige vectoren van een elektrisch veld inzichtelijk te maken, gebruiken we een grafische voorstelling: \textbf{elektrische veldlijnen} (een concept dat eveneens bedacht werd door Faraday). 
+Om de wiskundige vectoren van een elektrisch veld inzichtelijk te maken, gebruiken we een grafische voorstelling: \textbf{elektrische veldlijnen} (een concept dat eveneens bedacht werd door Faraday).
 
 Deze veldlijnen geven ons snel een kwalitatief beeld van hoe het veld zich in de ruimte gedraagt en volgen enkele strikte regels:
 
-\begin{theorem}[foldable,title={Regels voor elektrische veldlijnen}]\nl
+\begin{theorem}[foldable=true,title={Regels voor elektrische veldlijnen}]\nl
     \begin{enumerate}
         \item De elektrische veldvector $\vec{E}$ is in elk punt \textbf{raaklijnig} aan de veldlijn. De pijl op de veldlijn geeft de zin van het veld aan (de richting waarin een positieve testlading weggeduwd zou worden).
         \item De \textbf{dichtheid van de lijnen} (het aantal lijnen per oppervlakte-eenheid) is evenredig met de grootte van de veldsterkte. Veldlijnen die dicht bij elkaar liggen, duiden op een sterk elektrisch veld; lijnen die ver uit elkaar liggen, duiden op een zwak veld.
@@ -42,7 +42,7 @@ Bij een enkele positieve lading wijzen de veldlijnen radiaal naar buiten, zoals 
     \captionsetup{width=0.85\textwidth}
     \begin{center}
         \begin{tikzpicture}[scale=1.2]
-            
+
             % Stijlen
             \tikzset{
                 poscharge/.style={circle, draw=orange!80!red, fill=orange!30, thick, inner sep=0pt, minimum size=8mm, font=\large},
@@ -52,40 +52,40 @@ Bij een enkele positieve lading wijzen de veldlijnen radiaal naar buiten, zoals 
 
             % --- DEEL (a): Positieve lading ---
             \coordinate (O1) at (0,0);
-            
+
             \foreach \angle in {0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330} {
                 % Deel 1: Vanuit het centrum tot halverwege met een pijl naar buiten
                 \draw[fieldline, ->, >=latex] (O1) -- ++(\angle:1.4);
                 % Deel 2: Vanaf halverwege tot het einde
                 \draw[fieldline] (O1) ++(\angle:1.4) -- ++(\angle:1.1);
             }
-            
+
             % Lading (als laatste getekend zodat deze de start van de lijnen netjes afdekt)
             \node[poscharge] at (O1) {$+$};
-            
+
             % Label q
             \node[above] at (1.4, 0.05) {$q$};
-            
+
             % Bijschrift (a)
             \node at (0, -2.8) {(a)};
 
 
             % --- DEEL (b): Negatieve lading ---
             \coordinate (O2) at (6.5,0);
-            
+
             \foreach \angle in {0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330} {
                 % Deel 1: Vanuit het centrum tot halverwege zonder pijl
                 \draw[fieldline] (O2) -- ++(\angle:1.4);
                 % Deel 2: Vanaf halverwege tot het einde, met een pijl gericht naar het centrum (<-)
                 \draw[fieldline, <-, >=latex] (O2) ++(\angle:1.4) -- ++(\angle:1.1);
             }
-            
+
             % Lading
             \node[negcharge] at (O2) {$-$};
-            
+
             % Label -q
             \node[above] at (7.9, 0.05) {$-q$};
-            
+
             % Bijschrift (b)
             \node at (6.5, -2.8) {(b)};
 
@@ -150,7 +150,7 @@ Bij twee identieke positieve ladingen vertrekken uit beide bronnen evenveel veld
 \end{question}
 %———————————————————————————————————————
 \subsection{Homogeen veld}
-\begin{theorem}[foldable]
+\begin{theorem}[foldable=true]
 Een homogeen veld is een veld waarbij de veldvector overal identiek is. Dit betekent:
 \begin{enumerate}
     \item zelfde grootte;
@@ -159,7 +159,7 @@ Een homogeen veld is een veld waarbij de veldvector overal identiek is. Dit bete
 \end{enumerate}
 \end{theorem}
 Om veldlijnen te tekenen met een zelfde richting en zin, moeten ze evenwijdig zijn met elkaar en alle pijlpunten naar de zelfde kant wijzen. Om de grootte van het veld overal even groot te krijgen, moeten alle veldlijnen even ver van elkaar staan, zoals te zien op figuur \ref{fig:homogeen_elektrisch_veld}.
-\begin{remark}[expandable]
+\begin{remark}[expandable=true]
 Een homogeen elektrisch veld wordt gemaakt door twee parallelle platen met een verschillende lading.
 \end{remark}
 %---------------------------
@@ -168,7 +168,7 @@ Een homogeen elektrisch veld wordt gemaakt door twee parallelle platen met een v
     \captionsetup{width=0.85\textwidth}
     \begin{center}
         \begin{tikzpicture}[scale=1.2]
-            
+
             % Stijlen voor de platen en veldlijnen
             \tikzset{
                 posplate/.style={fill=orange!40, draw=orange!90!red, thick},
@@ -179,7 +179,7 @@ Een homogeen elektrisch veld wordt gemaakt door twee parallelle platen met een v
             % --- PLATEN TEKENEN ---
             % Linkerplaat (Positief)
             \draw[posplate] (-2.5, -2.5) rectangle (-2.1, 2.5);
-            
+
             % Rechterplaat (Negatief)
             \draw[negplate] (2.1, -2.5) rectangle (2.5, 2.5);
 

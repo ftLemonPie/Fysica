@@ -1,5 +1,6 @@
 # Veel voorkomende errors
 - na herstart: in terminal: "podman machine start" dan op extra klikken voor start server
+- in ximera.4ht staat html code, in ximera.cls regels rond pdf
 
 # Templates
 Hier is je "Ximera Fysica Toolkit". Je kan deze blokken code gewoon kopiëren, plakken en invullen!

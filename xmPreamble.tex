@@ -186,7 +186,12 @@
 
 		\fi	
  }
-
+% % om youtube aan te passen voor mijn cursus
+% \ifdefined\HCode
+%  \renewcommand{\youtube}[1]{\ifvmode \IgnorePar\fi \EndP\HCode{<iframe class="xmyoutube" src="https://www.youtube-nocookie.com/embed/#1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>}}
+%  \else
+%  \renewcommand{\youtube}[1]{YouTube link: \url{https://www.youtube.com/watch?v=#1}}
+% \fi
 
  % hack om na hoofding van definition/proposition/... als dan niet op een nieuwe lijn te starten
 % soms is dat goed en mooi, en soms niet; en in HTML is het nu (2/2020) anders dan in pdf

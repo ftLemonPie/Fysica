@@ -115,7 +115,8 @@ else
         LOCAL_IP=$(set -- $(hostname -I); echo "$1")
         [[ -n "$DEBUG" ]] && echo "Setting LOCAL_IP=$LOCAL_IP"
     fi
-
+    
+    #DOCKER=docker #om te zorgen om docker te gebruiken ipv podman
     # Determine program to start the docker container (unless already set) 
     if [[ -z "$DOCKER" ]]
     then

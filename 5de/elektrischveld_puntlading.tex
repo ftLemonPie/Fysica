@@ -1,6 +1,6 @@
 \documentclass{ximera}
-%nagekeken 26 augustus 2026
-\title{Het Elektrisch Veld}
+%herschreven 2 september 2026
+\title{Het elektrisch veld van een puntlading}
 \author{Daan Lipkens}
 
 \begin{document}
@@ -11,7 +11,7 @@
 
 \section{Het concept van een elektrisch veld}
 
-We zeggen dat er een \textbf{elektrisch veld} bestaat in de ruimte rondom een geladen voorwerp (de \textit{bronlading}). Wanneer een ander geladen voorwerp (de \textit{testlading}) in dit veld wordt geplaatst, zal het veld een elektrische kracht uitoefenen op deze testlading, zoals te zien op figuur\ref{fig:testlading_bronlading}. 
+We zeggen dat er een \textbf{elektrisch veld} bestaat in de ruimte rondom een geladen voorwerp (de \textit{bronlading}). Wanneer een ander geladen voorwerp (de \textit{testlading}) in dit veld wordt geplaatst, zal het veld een elektrische kracht uitoefenen op deze testlading, zoals te zien op figuur~\ref{fig:testlading_bronlading}.
 
 \begin{definition}[title={Het Elektrisch Veld}]\nl
     De elektrische veldvector $\vec{E}$ in een bepaald punt in de ruimte is gedefinieerd als de elektrische kracht $\vec{F}_e$ die inwerkt op een positieve testlading $Q_t$ in dat punt, gedeeld door de grootte van die testlading:
@@ -73,8 +73,8 @@ Als we dit delen door $Q_t$, bekomen we de grootte van het elektrisch veld veroo
 %———————————————————————————————————————
 % VRAAG: Quick Quiz 23.4
 \begin{question}
-    Een positieve testlading van $+3\mu\mathrm{C}$ wordt geplaatst in punt \textit{P} in de ruimte. Deze ondervindt een extern elektrisch veld dat naar rechts is gericht met een grootte van $4 \cdot 10^6\mathrm{ N/C}$. Stel dat we deze testlading weghalen, en vervangen door een nieuwe testlading van $-3\mu\mathrm{C}$. Wat gebeurt er dan met het externe elektrisch veld in punt \textit{P}?
-    
+    Een positieve testlading van $+3{,}0 \, \mu\mathrm{C}$ wordt geplaatst in punt \textit{P} in de ruimte. Deze ondervindt een extern elektrisch veld dat naar rechts is gericht met een grootte van $4{,}0 \cdot 10^{6} \, \mathrm{N/C}$. Stel dat we deze testlading weghalen, en vervangen door een nieuwe testlading van $-3{,}0 \, \mu\mathrm{C}$. Wat gebeurt er dan met het externe elektrisch veld in punt \textit{P}?
+
     \begin{onlineOnly}
         \begin{multipleChoice}
             \choice[correct]{Het veld blijft ongewijzigd.}
@@ -94,28 +94,38 @@ Als we dit delen door $Q_t$, bekomen we de grootte van het elektrisch veld veroo
 %———————————————————————————————————————
 
 \subsection{Superpositiebeginsel}
-Wanneer er meerdere puntladingen aanwezig zijn, bereken je het totale elektrisch veld in een willekeurig punt \textit{P} door de veldvectoren van elke bronlading afzonderlijk te berekenen, en deze vervolgens \textbf{vectorieel op te tellen}\footnote{Zie bijlage \ref{s:vectoren_optellen}.}. 
+Wanneer er meerdere puntladingen aanwezig zijn, bereken je het totale elektrisch veld in een willekeurig punt \textit{P} door de veldvectoren van elke bronlading afzonderlijk te berekenen, en deze vervolgens \textbf{vectorieel op te tellen}\footnote{Zie bijlage \ref{s:vectoren_optellen}.}.
 
 $$ \vec{E}_{tot} = \vec{E}_1 + \vec{E}_2 + \vec{E}_3 + \dots $$
 
+Wanneer de bronladingen zich op één rechte lijn bevinden, samen met het punt \textit{P} waar we het veld willen kennen, vereenvoudigt deze vectoriële optelling tot een gewone algebraïsche optelling: we kiezen een positieve zin langs de lijn en tellen de (positieve of negatieve) bijdragen van elke bronlading gewoon bij elkaar op.
 
+%---------------------------
+% VOORBEELD: superpositie op een lijn
+\begin{example}[foldable=true,title={Superpositie van twee puntladingen op een lijn}]\nl
+    Twee puntladingen bevinden zich op de $x$-as: $Q_{1}=+5{,}0 \cdot 10^{-6} \, \mathrm{C}$ bij $x=0{,}00 \, \mathrm{m}$ en $Q_{2}=-2{,}0 \cdot 10^{-6} \, \mathrm{C}$ bij $x=0{,}40 \, \mathrm{m}$. Bereken het resulterende elektrisch veld in punt $P$ op $x=0{,}60 \, \mathrm{m}$.
+    \begin{solution}\nl
+        We berekenen eerst de grootte van elk afzonderlijk veld met de formule voor het radiaal veld van een puntlading.
 
-% \begin{example}\label{vb:elektrisch_veld_2ladingen}
-%     Ladingen $q_1$ en $q_2$ liggen op de x-as, respectievelijk op een afstand $a$ en $b$ van het nulpunt; zoals te zien op figuur \ref{fig:elektrisch_veld_2ladingen}.
-%     \begin{center}
-%         \captionsetup{width=0.85\textwidth}
-%         \includegraphics[width=0.6\textwidth]{pic5/elektriciteit/veld/vb_elektrisch_veld_driehoek.png}
-%         % TIP: Gebruik Figure P23.12 uit de bijlage.
-%         \captionof{figure}{(Oefening \ref{vb:elektrisch_veld_2ladingen}) Het totaal elektrisch veld $\vec{E}$ in punt \textit{P} is de vector som $\vec{E_1}+\vec{E_2}
-%         $, waar $\vec{E_1}$ het elektrisch veld is van de positieve lading $q_1$ en $\vec{E_2}$ het veld is door de negatieve lading $q_2$ }
-%         \label{fig:elektrisch_veld_2ladingen}
-%     \end{center}
-%     \begin{question}
-%     Vind the componenten
-%     \end{question}
-%     \begin{solution}
-        
-%     \end{solution}
-% \end{example}
+        Veld van $Q_{1}$ in $P$ (afstand $r_{1}=0{,}60 \, \mathrm{m}$):
+        \[
+            E_{1}=k_{e}\frac{|Q_{1}|}{r_{1}^{2}}=\frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 5{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}60 \, \mathrm{m})^{2}}=1{,}2 \cdot 10^{5} \, \mathrm{N/C}
+        \]
+        Omdat $Q_{1}$ positief is, wijst $\vec{E}_{1}$ in $P$ weg van $Q_{1}$: naar rechts (de $+x$-richting).
+
+        Veld van $Q_{2}$ in $P$ (afstand $r_{2}=0{,}20 \, \mathrm{m}$):
+        \[
+            E_{2}=k_{e}\frac{|Q_{2}|}{r_{2}^{2}}=\frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 2{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}20 \, \mathrm{m})^{2}}=4{,}5 \cdot 10^{5} \, \mathrm{N/C}
+        \]
+        Omdat $Q_{2}$ negatief is, wijst $\vec{E}_{2}$ in $P$ naar $Q_{2}$ toe: naar links (de $-x$-richting).
+
+        Beide velden liggen op dezelfde lijn, dus tellen we ze algebraïsch op (rechts is positief):
+        \[
+            E_{\text{net}}=E_{1}-E_{2}=1{,}2 \cdot 10^{5} \, \mathrm{N/C} - 4{,}5 \cdot 10^{5} \, \mathrm{N/C} = -3{,}2 \cdot 10^{5} \, \mathrm{N/C}
+        \]
+        Het resulterende veld heeft een grootte van $3{,}2 \cdot 10^{5} \, \mathrm{N/C}$ en wijst naar links (de $-x$-richting), dus naar de ladingen toe.
+    \end{solution}
+\end{example}
+%---------------------------
 
 \end{document}

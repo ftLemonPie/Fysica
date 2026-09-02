@@ -1,0 +1,467 @@
+\documentclass{ximera}
+%verbeterd 22 augustus 2026
+\title{Coulombkracht}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+    Elektrische krachtwerking of de coulombkracht tussen ladingen.
+\end{abstract}
+\maketitle
+% -----------------------------------------
+%   SECTIE: Coulombkracht
+% --------------------------------------------
+
+\section{Elektrische Kracht}
+
+In figuur \ref{fig:coulombkracht} is te zien dat ladingen met hetzelfde teken elkaar afstoten, terwijl ladingen met een verschillend teken elkaar aantrekken. De kracht die dit veroorzaakt, noemen we de coulombkracht. De krachten $\vec{F}_{12}$ en $\vec{F}_{21}$ tussen twee ladingen zijn altijd even groot.
+
+% --------------------
+%   UITKLAPBARE REMARK - geschiedenis coulomb
+% ------------------
+\begin{remark}[expandable=true,title={Geschiedenis: Charles-Augustin de Coulomb}]\nl
+    \begin{center}
+        \includegraphics[width=5cm]{pic5/elektriciteit/coulomb/charles.jpg}
+    \end{center}
+    \textbf{Charles-Augustin de Coulomb (1736–1806)}\\
+    Coulomb was een Franse natuurkundige die vooral bekendstaat om zijn onderzoek naar elektrische en magnetische krachten. Hij formuleerde de wet die het verband beschrijft tussen de kracht, de grootte van de ladingen en hun onderlinge afstand: de wet van Coulomb. Naast zijn werk in de natuurkunde deed hij ook onderzoek naar de stevigheid van materialen en naar ergonomie, waarbij hij bestudeerde hoe mensen en dieren zo efficiënt mogelijk kunnen werken.
+\end{remark}
+
+\subsection{Richting en zin van de kracht}
+%begin conventie kracht
+\begin{definition}[title={Notatie krachtvector}]\nl
+    $\vec{F}_{ab}$ is de krachtvector van lading $a$ op lading $b$.
+\end{definition}
+
+%--- figuur met krachten bij alle situaties (Tabular methode - HTML safe)
+\begin{figure}[ht!]
+    \begin{center}
+        \tikzset{
+            % Veilige definitie van de nodes, inclusief cirkel-vorm
+            charge+/.style={circle, thin, draw=black!50, top color=red!50, bottom color=red!90!black, shading angle=20, inner sep=0pt, minimum size=6mm},
+            charge-/.style={circle, thin, draw=black!50, top color=blue!50, bottom color=blue!80, shading angle=20, inner sep=0pt, minimum size=6mm},
+            force/.style={->, very thick, orange!80!black}
+        }
+        \begin{tabular}{cc}
+            % (a) + +
+            \begin{tikzpicture} 
+                \node[charge+] (Q1) at (-1.4,0) {\tiny$+$};
+                \node[charge+] (Q2) at (1.4,0) {\tiny$+$};
+                \node[above, yshift=1mm] at (Q1.north) {$Q_1$};
+                \node[above, yshift=1mm] at (Q2.north) {$Q_2$};
+                
+                \draw[force] (Q1.west) -- ++(-0.8,0) node[above] {$\vec{\mathbf{F}}_{21}$};
+                \draw[force] (Q2.east) -- ++(0.8,0) node[above] {$\vec{\mathbf{F}}_{12}$};
+                
+                \draw[<->] (-1.4,-0.6) -- (1.4,-0.6) node[midway, fill=white, inner sep=1pt] {$r$};
+                \draw[dashed, gray] (Q1.south) -- (-1.4,-0.6);
+                \draw[dashed, gray] (Q2.south) -- (1.4,-0.6);
+            \end{tikzpicture} &
+            % (b) + -
+            \begin{tikzpicture} 
+                \node[charge+] (Q1) at (-1.4,0) {\tiny$+$};
+                \node[charge-] (Q2) at (1.4,0) {\tiny$-$};
+                \node[above, yshift=1mm] at (Q1.north) {$Q_1$};
+                \node[above, yshift=1mm] at (Q2.north) {$Q_2$};
+                
+                \draw[force] (Q1.east) -- ++(0.8,0) node[above] {$\vec{\mathbf{F}}_{21}$};
+                \draw[force] (Q2.west) -- ++(-0.8,0) node[above] {$\vec{\mathbf{F}}_{12}$};
+                
+                \draw[<->] (-1.4,-0.6) -- (1.4,-0.6) node[midway, fill=white, inner sep=1pt] {$r$};
+                \draw[dashed, gray] (Q1.south) -- (-1.4,-0.6);
+                \draw[dashed, gray] (Q2.south) -- (1.4,-0.6);
+            \end{tikzpicture} \\
+            (a) & (b) \\[3ex]
+            % (c) - +
+            \begin{tikzpicture} 
+                \node[charge-] (Q1) at (-1.4,0) {\tiny$-$};
+                \node[charge+] (Q2) at (1.4,0) {\tiny$+$};
+                \node[above, yshift=1mm] at (Q1.north) {$Q_1$};
+                \node[above, yshift=1mm] at (Q2.north) {$Q_2$};
+                
+                \draw[force] (Q1.east) -- ++(0.8,0) node[above] {$\vec{\mathbf{F}}_{21}$};
+                \draw[force] (Q2.west) -- ++(-0.8,0) node[above] {$\vec{\mathbf{F}}_{12}$};
+                
+                \draw[<->] (-1.4,-0.6) -- (1.4,-0.6) node[midway, fill=white, inner sep=1pt] {$r$};
+                \draw[dashed, gray] (Q1.south) -- (-1.4,-0.6);
+                \draw[dashed, gray] (Q2.south) -- (1.4,-0.6);
+            \end{tikzpicture} &
+            % (d) - -
+            \begin{tikzpicture} 
+                \node[charge-] (Q1) at (-1.4,0) {\tiny$-$};
+                \node[charge-] (Q2) at (1.4,0) {\tiny$-$};
+                \node[above, yshift=1mm] at (Q1.north) {$Q_1$};
+                \node[above, yshift=1mm] at (Q2.north) {$Q_2$};
+                
+                \draw[force] (Q1.west) -- ++(-0.8,0) node[above] {$\vec{\mathbf{F}}_{21}$};
+                \draw[force] (Q2.east) -- ++(0.8,0) node[above] {$\vec{\mathbf{F}}_{12}$};
+                
+                \draw[<->] (-1.4,-0.6) -- (1.4,-0.6) node[midway, fill=white, inner sep=1pt] {$r$};
+                \draw[dashed, gray] (Q1.south) -- (-1.4,-0.6);
+                \draw[dashed, gray] (Q2.south) -- (1.4,-0.6);
+            \end{tikzpicture} \\
+            (c) & (d)
+        \end{tabular}
+    \end{center}
+    \caption{De coulombkracht tussen twee ladingen. (a) Tussen twee positieve ladingen. (b) en (c) Tussen een positieve en negatieve lading. (d) Tussen twee negatieve ladingen.}
+    \label{fig:coulombkracht}
+\end{figure}
+% einde figuur alle situaties
+
+
+%------------------------------------------------------------
+%--- wet van Coulomb formule
+%---------------------------------------------------------------
+\subsection{Grootte van de kracht}
+Coulomb onderzocht de grootte $F$ van de kracht die ladingen $Q_{1}$ en $Q_{2}$ op een afstand $r$ op elkaar uitoefenen en vond:
+
+\begin{align*}
+F &\propto \lvert Q_{1}\rvert\\
+F &\propto \lvert Q_{2}\rvert\\
+F &\propto \frac{1}{r^{2}}
+\end{align*}
+
+Hieruit volgt dat:
+$$F \propto \frac{\lvert Q_{1}\rvert\cdot \lvert Q_{2}\rvert}{r^{2}} \quad \text{en dus} \quad F=k \cdot \frac{\lvert Q_{1}\rvert\cdot \lvert Q_{2}\rvert}{r^{2}}$$
+
+Deze constante, de coulombconstante, is afhankelijk van de stof die zich tussen de ladingen bevindt. Men stelt deze voor door $k$.
+
+% BEGIN WET COULOMB
+\begin{theorem}[title={Wet van Coulomb}]\nl
+    Ladingen oefenen op elkaar de elektrische kracht of coulombkracht uit. Gelijksoortige ladingen stoten elkaar af. Ongelijksoortige ladingen trekken elkaar aan. Voor twee puntladingen $Q_{1}$ en $Q_{2}$ op een afstand $r$ van elkaar is de grootte van de kracht:
+    \begin{equation}\label{eq:coulombkracht}
+    F = k \cdot \frac{\lvert Q_{1}\rvert\cdot \lvert Q_{2}\rvert}{r^{2}}
+    \end{equation}
+    Voor vacuüm of lucht is $k = 8{,}99 \cdot 10^9 \, \mathrm{\frac{N\cdot m^2}{C^2}}$.
+\end{theorem}
+
+%------------------------------
+% QUIZ 4: FORMULE LADING Q
+%\vspace{2mm}
+\begin{question}\label{q:formule coulomb}
+    Welke grootheden beïnvloeden de grootte van de coulombkracht volgens de wet van Coulomb? (a) enkel de ladingen (b) enkel de onderlinge afstand (c) de grootte van de ladingen en de afstand (d) de grootte van de ladingen, de afstand én de aard van het medium.
+    \begin{onlineOnly}
+        \begin{multipleChoice}
+            \choice{Enkel de grootte van de ladingen.}
+            \choice{Enkel de onderlinge afstand.}
+            \choice{De grootte van de ladingen en de afstand.}
+            \choice[correct]{De grootte van de ladingen, de afstand én de aard van het medium.}
+        \end{multipleChoice}
+        \begin{solution}
+            De coulombkracht is afhankelijk van de grootte van beide ladingen ($Q_1$ en $Q_2$), het kwadraat van de afstand ($r^2$) en de aard van het medium (via de constante $k$).
+        \end{solution}
+    \end{onlineOnly}
+\end{question}
+%---------------------------------
+
+
+\section{Voorbeeldoefeningen}
+\subsection{Kracht tussen twee ladingen}
+%---------------------------------------------------------------------------
+%---voorbeeld oefening basis met align
+%------------------------------------------------------------------------
+\begin{example}[foldable=true,title={Voorbeeld: De kracht tussen twee geladen systemen}]\nl
+    Een elektron en een positief geladen bol met een ladingshoeveelheid van $+1{,}45 \, \mathrm{\mu C}$ liggen $12{,}9 \, \mathrm{cm}$ uit elkaar. Bereken de kracht tussen de twee ladingen.
+    
+    \begin{hint}
+        Denk eraan dat een elektron een vaste, negatieve elementaire lading heeft ($Q_1 = -1{,}60 \cdot 10^{-19} \, \mathrm{C}$). Vergeet ook niet om alle eenheden eerst om te zetten naar de standaard SI-eenheden (meter en coulomb) voordat je de wet van Coulomb invult!
+    \end{hint}
+
+    \begin{solution}\nl
+        Eerst zetten we alle gegevens met hun juiste symbool in de S.I.-eenheden.\\[1ex]
+        
+        \underline{Gegevens:}\\
+        $Q_{1} = -1{,}60 \cdot 10^{-19} \, \mathrm{C}$ \quad (lading van een elektron)\\
+        $Q_{2} = 1{,}45 \, \mathrm{\mu C} = 1{,}45 \cdot 10^{-6} \, \mathrm{C}$\\
+        $r = 12{,}9 \, \mathrm{cm} = 12{,}9 \cdot 10^{-2} \, \mathrm{m}$
+        
+        \vspace{2ex}
+        \underline{Gevraagd:}\\
+        $F_{c}$
+        
+        \vspace{2ex}
+        \underline{Oplossing:}\\
+        Er zijn 2 ladingen en we zoeken de kracht, we gebruiken dus de \textbf{wet van Coulomb}.
+        
+        \begin{align*}
+            F_{c} &= F_{12} = F_{21} \\
+            &= k \cdot \frac{\lvert Q_{1}\rvert \cdot \lvert Q_{2}\rvert}{r^{2}} && \text{(wet van Coulomb)} \\
+            &= 8{,}99 \cdot 10^9 \, \mathrm{\frac{N\cdot m^2}{C^2}} \cdot \frac{\lvert -1{,}60 \cdot 10^{-19} \, \mathrm{C}\rvert \cdot \lvert +1{,}45 \cdot 10^{-6} \, \mathrm{C}\rvert}{(12{,}9 \cdot 10^{-2} \, \mathrm{m})^{2}} && \text{(gegevens invullen)} \\
+            &= 1{,}2533 \cdot 10^{-13} \, \mathrm{N} \simeq 1{,}25 \cdot 10^{-13} \, \mathrm{N} && \text{(uitrekenen)}
+        \end{align*}
+    \end{solution}
+\end{example}
+% EINDE OEFENING BASIS
+%-----------------------------------------------------------------------
+
+Bij twee ladingen zijn de oefeningen vrij eenvoudig. De grootste moeilijkheden liggen meestal in het omzetten van eenheden en het juist herschrijven van de formule. Zodra er meer ladingen in het spel komen, ontstaan er echter nieuwe uitdagingen.
+
+%------------------------------------------------
+%QUIZ 5: REKENEN MET VECTOREN
+%\vspace{2mm}
+\begin{question}\label{q:actiereactie}\nl
+    Object A heeft een lading van $+2 \, \mathrm{mC}$ en object B heeft een lading van $+6 \, \mathrm{mC}$. Welke van de volgende uitspraken over de elektrische kracht tussen deze twee objecten is correct?\\[1ex]
+    (a) $\vec{F}_{AB} = -3\vec{F}_{BA}$ \quad
+    (b) $\vec{F}_{AB} = -\vec{F}_{BA}$ \quad
+    (c) $3\vec{F}_{AB} = -\vec{F}_{BA}$ \\
+    (d) $3\vec{F}_{AB} = \vec{F}_{BA}$ \quad
+    (e) $\vec{F}_{AB} = \vec{F}_{BA}$ \quad
+    (f) $\vec{F}_{AB} = 3\vec{F}_{BA}$
+    
+    \begin{hint}
+        Vectoren die dezelfde zin hebben als een gekozen as, worden positief voorgesteld. Vectoren die een tegengestelde zin hebben ten opzichte van die as, worden negatief voorgesteld. Denk daarnaast aan de derde wet van Newton (actiekracht = -reactiekracht)!
+    \end{hint}
+
+    \begin{onlineOnly}
+        \begin{multipleChoice}
+            \choice{$\vec{F}_{AB} = -3\vec{F}_{BA}$}
+            \choice[correct]{$\vec{F}_{AB} = -\vec{F}_{BA}$}
+            \choice{$3\vec{F}_{AB} = -\vec{F}_{BA}$}
+            \choice{$3\vec{F}_{AB} = \vec{F}_{BA}$}
+            \choice{$\vec{F}_{AB} = \vec{F}_{BA}$}
+            \choice{$\vec{F}_{AB} = 3\vec{F}_{BA}$}
+        \end{multipleChoice}
+        
+        \begin{solution}\nl
+            Volgens de derde wet van Newton oefenen beide ladingen een even grote, maar tegengesteld gerichte kracht op elkaar uit (actie en reactie). Dit principe staat volledig los van de specifieke grootte van de individuele ladingen. In vectornotatie schrijven we dit correct als $\vec{F}_{AB} = -\vec{F}_{BA}$.
+        \end{solution}
+    \end{onlineOnly}
+\end{question}
+%---------------------------------------------------
+
+
+\subsection{Drie ladingen op één lijn of de kracht op een lading tussen twee andere ladingen}
+Een eerste uitbreiding is het geval waarbij drie ladingen op één lijn liggen. Dan kunnen we het vectoriële karakter van de kracht nog overzichtelijk houden. We kunnen bijvoorbeeld berekenen wat de resulterende kracht is op één van de ladingen door de krachten per lading in kaart te brengen en vervolgens op te tellen.
+
+Een andere interessante vraag is waar een derde lading tussen twee andere ladingen in evenwicht kan blijven.
+
+%---------------------------------------------------------------------------
+%---voorbeeld: 3 ladingen op 1 lijn
+%------------------------------------------------------------------
+\begin{example}[foldable=true,title={Voorbeeld: Drie ladingen op één lijn of lading in evenwicht}]\nl
+    Tussen twee ladingen $Q_{1} = 10 \, \mathrm{\mu C}$ en $Q_{2} = 5 \, \mathrm{\mu C}$ op $0{,}20 \, \mathrm{m}$ van elkaar bevindt zich een lading $Q_{3} = 2{,}0 \, \mathrm{\mu C}$. In welk punt kan lading $Q_{3}$ in rust blijven?
+    
+    \begin{hint}
+        Denk aan alle afspraken voor het tekenen van vectoren: teken eerst een schets van de situatie, benoem alle krachten en gebruik een lat!
+    \end{hint}
+    
+    \begin{solution}\nl
+        Eerst zetten we alle gegevens met hun juiste symbool in de S.I.-eenheden.\\[1ex]
+        
+        \underline{Gegevens:}\\
+        We kiezen ervoor om $r_{13}$ als onbekende te nemen ($x$). Omdat $r_{12} = r_{13} + r_{23}$, is $r_{23} = r_{12} - x$.\\[1ex]
+        $Q_{1} = 10 \, \mathrm{\mu C} = 10 \cdot 10^{-6} \, \mathrm{C}$\\
+        $Q_{2} = 5 \, \mathrm{\mu C} = 5 \cdot 10^{-6} \, \mathrm{C}$\\
+        $r_{12} = 0{,}20 \, \mathrm{m}$\\
+        $r_{13} = x$
+        
+        \vspace{2ex}
+        \underline{Gevraagd:}\\
+        $r_{13}$ (of $r_{23}$)
+        
+        \vspace{2ex}
+        \underline{Oplossing:}\\
+        Er zijn verschillende ladingen, we gebruiken dus de \textbf{wet van Coulomb}. In dit geval staan er 3 ladingen op een rij. Dit betekent dat de resulterende kracht op een lading makkelijk te vinden is door de deelkrachten op te tellen (als ze dezelfde zin hebben) of af te trekken (als ze een tegengestelde zin hebben).
+        
+        Om meer inzicht te krijgen in het probleem gaan we de situatie tekenen. We zoeken de plek waar lading $Q_{3}$ in rust blijft. In rust blijven betekent dat de resulterende kracht op lading $Q_{3}$ gelijk aan 0 moet zijn. Dit kan dus enkel gebeuren als $\vec{F}_{13}$ en $\vec{F}_{23}$ een tegengestelde zin hebben. 
+        
+        Ladingen $Q_{1}$ en $Q_{3}$ zijn beide positief, $\vec{F}_{13}$ zal dus wegwijzen van lading $Q_1$. Ladingen $Q_{2}$ en $Q_{3}$ zijn ook beide positief, $\vec{F}_{23}$ zal dus wegwijzen van lading $Q_{2}$. Hieruit kan je al besluiten dat $Q_{3}$ enkel tussen ladingen $Q_{1}$ en $Q_{2}$ kan zitten. Als je dit niet meteen ziet, teken dan alle mogelijkheden ($Q_{3}$ links van $Q_{1}$, tussen $Q_{1}$ en $Q_{2}$, en rechts van $Q_{2}$).
+        
+       % tekening voorbeeldoefening: lading in rust
+        \begin{center}
+            \tikzset{
+                charge+/.style={circle, draw=red, fill=red!20, inner sep=0pt, minimum size=6mm, font=\small},
+                force/.style={->, very thick, orange!80!black}
+            }
+            \begin{tikzpicture}
+              \coordinate (L) at (-6,0);
+              \coordinate (C) at (-1,0);
+              \coordinate (R) at (+6,0);
+              
+              % FORCES
+              \draw[force] (C) ++ (-0.3,0) --++ (-1.6,0) node[above] {$\vec{\mathbf{F}}_{23}$};
+              \draw[force] (C) ++ (+0.3,0) --++ (+1.6,0) node[above] {$\vec{\mathbf{F}}_{13}$};
+              
+              % CHARGES
+              \node[charge+] (Q1) at (L) {$+$};
+              \node[charge+] (Q2) at (R) {$+$};
+              \node[charge+] (Q3) at (C) {$+$};
+              
+              % AFSTANDEN
+              \draw[<->] (-6,-0.8) -- (6,-0.8) node[midway, fill=white, inner sep=1pt] {$r_{12}$};
+              \draw[<->] (-6,-1.6) -- (-1,-1.6) node[midway, fill=white, inner sep=1pt] {$r_{13}$};
+              
+              % HULPLIJNTJES
+              \draw[dashed, gray] (Q1.south) -- (-6,-1.6);
+              \draw[dashed, gray] (Q3.south) -- (-1,-1.6);
+              \draw[dashed, gray] (Q2.south) -- (6,-0.8);
+              
+              % LABELS
+              \node[above, yshift=1mm] at (Q1.north) {$Q_1$};
+              \node[above, yshift=1mm] at (Q2.north) {$Q_2$};
+              \node[above, yshift=1mm] at (Q3.north) {$Q_3$};
+            \end{tikzpicture}
+        \end{center}
+        % ---------------------------------------------
+        
+        We zien zo dat als $Q_{3}$ tussen $Q_{1}$ en $Q_{2}$ staat, de krachten $\vec{F}_{13}$ en $\vec{F}_{23}$ een tegengestelde zin hebben.
+        
+        \begin{align*}
+            F_{\text{res}} &= 0 && \text{(voorwaarde voor rust)} \\
+            \Leftrightarrow F_{\text{res}} &= F_{13} - F_{23} && \text{(vectoren op één lijn optellen)} \\
+            \Leftrightarrow F_{23} &= F_{13} \\
+            \Leftrightarrow k \cdot \frac{\lvert Q_{2}\rvert \cdot \lvert Q_{3}\rvert}{r_{23}^{2}} &= k \cdot \frac{\lvert Q_{1}\rvert \cdot \lvert Q_{3}\rvert}{r_{13}^{2}} && \text{(wet van Coulomb invullen)} \\
+            \Leftrightarrow \frac{\lvert Q_{2}\rvert}{(r_{12}-x)^{2}} &= \frac{\lvert Q_{1}\rvert}{x^{2}} && \text{($k$ en $Q_3$ wegdelen)} \\
+            \Leftrightarrow \lvert Q_{2}\rvert \cdot x^{2} &= \lvert Q_{1}\rvert \cdot (r_{12}-x)^{2} && \text{(kruislings vermenigvuldigen)} \\
+            \Leftrightarrow \sqrt{\lvert Q_{2}\rvert} \cdot x &= \sqrt{\lvert Q_{1}\rvert} \cdot (r_{12}-x) && \text{(worteltrekken beiderzijds)} \\
+            \Leftrightarrow \sqrt{\lvert Q_{2}\rvert} \cdot x + \sqrt{\lvert Q_{1}\rvert} \cdot x &= \sqrt{\lvert Q_{1}\rvert} \cdot r_{12} \\
+            \Leftrightarrow (\sqrt{\lvert Q_{2}\rvert} + \sqrt{\lvert Q_{1}\rvert}) \cdot x &= \sqrt{\lvert Q_{1}\rvert} \cdot r_{12} && \text{($x$ afzonderen)} \\
+            \Leftrightarrow x &= \frac{\sqrt{\lvert Q_{1}\rvert} \cdot r_{12}}{\sqrt{\lvert Q_{2}\rvert} + \sqrt{\lvert Q_{1}\rvert}} \\
+            &= \frac{\sqrt{10 \cdot 10^{-6} \, \mathrm{C}}}{\sqrt{5 \cdot 10^{-6} \, \mathrm{C}} + \sqrt{10 \cdot 10^{-6} \, \mathrm{C}}} \cdot 0{,}20 \, \mathrm{m} \\
+            &= 0{,}1171 \, \mathrm{m} \simeq 1{,}2 \cdot 10^{-1} \, \mathrm{m}
+        \end{align*}
+        
+        Dus lading $Q_{3}$ ligt tussen $Q_{1}$ en $Q_{2}$ en op $12 \, \mathrm{cm}$ van lading $Q_{1}$ (of $8 \, \mathrm{cm}$ van lading $Q_{2}$).
+        
+        \begin{hint}
+            Het tekenen van de situatie is essentieel om inzicht te verkrijgen in het probleem. De grootte en het teken van $Q_{3}$ zijn hierbij niet van belang, zolang er sprake is van een lading. Bij complexere oefeningen kunnen het teken en de grootte van $Q_{3}$ dan ook achterwege gelaten worden, zonder dat dit invloed heeft op de gevolgde werkwijze.
+        \end{hint}
+    \end{solution}
+\end{example}
+% EINDE OEFENING 1 LIJN
+%------------------------------------------------------------------------------------
+\subsection{Drie ladingen in een driehoek}
+Tot nu toe vormde het vectoriële karakter van de kracht geen groot probleem, omdat de ladingen op één lijn lagen. Zodra de ladingen echter een andere configuratie aannemen, zoals in een driehoek, kan de resulterende kracht enkel worden bepaald door de deelkrachten vectorieel op te tellen. Dit kan grafisch (door vectoren kop-aan-staart te leggen) en algebraïsch (met een berekening).
+
+Wanneer in een opgave enkel gevraagd wordt om de krachten te tekenen, volstaat de grafische methode. Indien we de grootte van de resulterende kracht willen berekenen, moeten we goed kijken naar de oriëntatie van de krachten. 
+
+In dit hoofdstuk beperken we ons tot situaties waarbij de krachten \textbf{loodrecht op elkaar} inwerken. Wanneer we deze loodrechte vectoren optellen in een krachtenparallellogram, ontstaat er een rechthoekige driehoek. Dit maakt de berekening eenvoudig: we kunnen de grootte van de resulterende vector direct berekenen met behulp van de \textbf{stelling van Pythagoras} ($c^{2} = a^{2} + b^{2}$).
+
+\begin{remark}[title={Stappenplan bij vectoren in 2D}]\nl
+Teken altijd eerst de afzonderlijke krachten op de gevraagde lading. Bepaal aan de hand van de tekening of de hoek tussen deze krachten $90^\circ$ is. Pas dan pas Pythagoras toe met de groottes van de berekende krachten.
+\end{remark}
+
+% ------------------------------------------------------------------------------------------
+%---voorbeeld: Pythagoras
+%---------------------------------------------------------------------------------------
+\begin{example}[foldable=true,title={Voorbeeld: Loodrechte krachten in een driehoek}]\label{vb:driehoek}\nl
+    Drie ladingen bevinden zich op de hoeken van een rechthoekige driehoek, zoals te zien in de figuur hieronder.            
+    
+    % TEKEN DRIEHOEK OPGAVE
+    \begin{center}
+        \tikzset{
+            charge+/.style={circle, draw=red, fill=red!20, inner sep=0pt, minimum size=6mm, font=\small},
+            charge-/.style={circle, draw=blue, fill=blue!20, inner sep=0pt, minimum size=6mm, font=\small}
+        }
+        \begin{tikzpicture}[scale=1.2]
+            % Definieer de punten van de rechthoekige driehoek
+            \tkzDefPoint(0,3){A}
+            \tkzDefPoint(0,0){B}
+            \tkzDefPoint(4,0){C}
+            
+            % Teken de driehoek
+            \tkzDrawPolygon(A,B,C)
+            \tkzMarkRightAngle[size=0.3](A,B,C)
+            
+            % BENOEMEN VAN LADINGEN
+            \tkzLabelPoint[left, above=4pt](A){$Q_{1}=+4{,}00 \, \mu\mathrm{C}$}
+            \tkzLabelPoint[left, below=4pt](B){$Q_{2}=-2{,}00 \, \mu\mathrm{C}$}
+            \tkzLabelPoint[right, below=4pt](C){$Q_{3}=+5{,}00 \, \mu\mathrm{C}$}
+            
+            % DE AFSTANDEN BIJ DE LIJNEN
+            \tkzLabelSegment[left](A,B){$r_{12}=3{,}0 \, \mathrm{cm}$}
+            \tkzLabelSegment[below](B,C){$r_{32}=4{,}0 \, \mathrm{cm}$}
+            
+            % LADING SYMBOOL TEKENEN
+            \node[charge+] at (A) {$+$};
+            \node[charge-] at (B) {$-$};
+            \node[charge+] at (C) {$+$};
+        \end{tikzpicture}
+    \end{center}
+    
+    Bereken en maak een schets van de resulterende elektrische kracht op lading $Q_{2}$. 
+
+    \begin{solution}\nl
+        Eerst zetten we alle gegevens met hun juiste symbool in de S.I.-eenheden en maken we een schets van de krachten. Zo kunnen we de richting en zin van de deelkrachten bepalen.\\[1ex]
+        
+        \underline{Gegevens:}\\
+        \
+        $Q_{1} = +4{,}00 \, \mu\mathrm{C} = 4{,}00 \cdot 10^{-6} \, \mathrm{C}$\\
+        $Q_{2} = -2{,}00 \, \mu\mathrm{C} = -2{,}00 \cdot 10^{-6} \, \mathrm{C}$\\
+        $Q_{3} = +5{,}00 \, \mu\mathrm{C} = 5{,}00 \cdot 10^{-6} \, \mathrm{C}$\\
+        $r_{12} = 3{,}0 \, \mathrm{cm} = 3{,}0 \cdot 10^{-2} \, \mathrm{m}$\\
+        $r_{32} = 4{,}0 \, \mathrm{cm} = 4{,}0 \cdot 10^{-2} \, \mathrm{m}$
+        
+        \vspace{2ex}
+        \underline{Gevraagd:}\\
+        $F_{\text{res}}$ op $Q_2$
+        
+        \vspace{2ex}
+        \underline{Oplossing:}\\[1ex]
+        \textsc{Schets:} We kijken naar de kracht op $Q_2$. Lading $Q_1$ is positief en $Q_2$ is negatief, dus $Q_1$ trekt $Q_2$ \textbf{naar boven} aan ($\vec{F}_{12}$). Lading $Q_3$ is positief en $Q_2$ is negatief, dus $Q_3$ trekt $Q_2$ \textbf{naar rechts} aan ($\vec{F}_{32}$). 
+        
+        \begin{center}
+            \tikzset{
+                charge+/.style={circle, draw=red, fill=red!20, inner sep=0pt, minimum size=6mm, font=\small},
+                charge-/.style={circle, draw=blue, fill=blue!20, inner sep=0pt, minimum size=6mm, font=\small},
+                force/.style={->, very thick, orange!80!black}
+            }
+            \begin{tikzpicture}[scale=0.8]
+                % Enkel de as-posities voor het parallellogram
+                \tkzDefPoint(0,3){A}
+                \tkzDefPoint(0,0){B}
+                \tkzDefPoint(4,0){C}
+                
+                % LADING SYMBOOL TEKENEN
+                \node[charge+, scale=0.8] at (A) {$+$};
+                \node[charge-, scale=0.8] at (B) {$-$};
+                \node[charge+, scale=0.8] at (C) {$+$};
+                
+                % KRACHTEN
+                % F12 is verticaal, we geven het een gepaste tekenlengte (bv. 2.5)
+                \draw[force] (B) -- (0, 2.5) node[left] {$\vec{F}_{12}$};
+                % F32 is horizontaal, gepaste tekenlengte (bv. 1.8)
+                \draw[force] (B) -- (1.8, 0) node[below] {$\vec{F}_{32}$};
+                
+                % HULP PARALLELLOGRAM (rechthoek)
+                \draw[dashed, gray] (0, 2.5) -- (1.8, 2.5) -- (1.8, 0);
+                
+                % RES KRACHT
+                \draw[force, red] (B) -- (1.8, 2.5) node[above right]{$\vec{F}_{\text{res}}$};
+                
+                % Rechte hoek aanduiden tussen de krachten
+                \tkzMarkRightAngle[size=0.3](C,B,A)
+            \end{tikzpicture}
+        \end{center}
+        
+        Eerst berekenen we de grootte van de twee deelkrachten $F_{12}$ en $F_{32}$ met de wet van Coulomb:
+        \begin{align*}
+            F_{12} &= k_e \cdot \frac{\lvert Q_{1}\rvert \cdot \lvert Q_{2}\rvert}{r^{2}_{12}} \\
+            &= 8{,}99 \cdot 10^9 \, \mathrm{\frac{N\cdot m^2}{C^2}} \cdot \frac{\lvert 4{,}00 \cdot 10^{-6} \, \mathrm{C} \rvert \cdot \lvert -2{,}00 \cdot 10^{-6} \, \mathrm{C}\rvert}{(3{,}0 \cdot 10^{-2} \, \mathrm{m})^{2}} \\
+            &= 8{,}99 \cdot 10^9 \cdot \frac{8{,}00 \cdot 10^{-12}}{0{,}00090} \\
+            &= 79{,}9 \, \mathrm{N}
+        \end{align*}    
+        \begin{align*}
+            F_{32} &= k_e \cdot \frac{\lvert Q_{3}\rvert \cdot \lvert Q_{2}\rvert}{r^{2}_{32}} \\
+            &= 8{,}99 \cdot 10^9 \, \mathrm{\frac{N\cdot m^2}{C^2}} \cdot \frac{\lvert 5{,}00 \cdot 10^{-6} \, \mathrm{C}\rvert \cdot \lvert -2{,}00 \cdot 10^{-6} \, \mathrm{C}\rvert}{(4{,}0 \cdot 10^{-2} \, \mathrm{m})^{2}} \\
+            &= 8{,}99 \cdot 10^9 \cdot \frac{10{,}0 \cdot 10^{-12}}{0{,}0016} \\
+            &= 56{,}2 \, \mathrm{N}
+        \end{align*}    
+        
+        Uit onze schets blijkt heel duidelijk dat $\vec{F}_{12}$ en $\vec{F}_{32}$ loodrecht op elkaar inwerken. Ze vormen de twee rechthoekszijden van een rechthoekige driehoek, met $\vec{F}_{\text{res}}$ als schuine zijde. We kunnen de resulterende kracht dus eenvoudig berekenen met de stelling van Pythagoras:
+        
+        \begin{align*}
+            F^{2}_{\text{res}} &= F^{2}_{12} + F^{2}_{32} \\
+            F_{\text{res}} &= \sqrt{(79{,}9 \, \mathrm{N})^{2} + (56{,}2 \, \mathrm{N})^{2}} \\
+            &= \sqrt{6384 \, \mathrm{N}^2 + 3158 \, \mathrm{N}^2} \\
+            &= \sqrt{9542 \, \mathrm{N}^2} \\
+            &= 97{,}7 \, \mathrm{N}
+        \end{align*}
+        
+    \end{solution}
+\end{example}
+%   EINDE OEFENING DRIEHOEK
+% ------------------------------------------------------------------------------------------
+
+We zien dat deze oefening dankzij de stelling van Pythagoras zeer vlot op te lossen is. Het is hierbij telkens cruciaal om \textbf{eerst een goede schets} te maken. Pas wanneer je uit de tekening kan afleiden dat de krachten een hoek van $90^\circ$ maken, weet je met zekerheid dat je de eenvoudige stelling van Pythagoras mag toepassen.
+\end{document}

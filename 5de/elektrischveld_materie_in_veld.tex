@@ -1,0 +1,127 @@
+\documentclass{ximera}
+%nieuw 2 september 2026
+\title{Materie in een elektrisch veld}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+    Het gedrag van isolatoren en geleiders in een elektrisch veld, en elektrische schermwerking.
+\end{abstract}
+\maketitle
+
+\section{Een isolator in een elektrisch veld}
+
+In hoofdstuk~\ref{hoofdstuk:elektrische_krachtwerking} zagen we al dat een isolator kan \textbf{polariseren} wanneer er een geladen voorwerp in de buurt komt: de atomen in de isolator vervormen lichtjes, waardoor één zijde van het voorwerp een beetje positiever en de andere zijde een beetje negatiever wordt. We kunnen dit nu herformuleren in termen van het veldbegrip.
+
+\begin{definition}[title={Polarisatie}]\nl
+    Wanneer een isolator zich in een elektrisch veld $\vec{E}$ bevindt, ondervinden de positieve kernen en de negatieve elektronenwolken van de atomen een kleine kracht in tegengestelde zin. Hierdoor treedt een zeer kleine verschuiving van lading op: het voorwerp \textbf{polariseert}.
+\end{definition}
+
+Deze polarisatie is de reden waarom een neutrale papiersnipper toch aangetrokken wordt door een geladen voorwerp: de zijde van de snipper die het dichtst bij de bronlading ligt, krijgt een lichte tegengestelde lading, terwijl de verder gelegen zijde een lichte gelijknamige lading krijgt. Omdat de aantrekkende zijde dichter bij de bronlading ligt, is de aantrekkingskracht groter dan de afstotingskracht, en is het netto effect een aantrekkende kracht.
+
+\begin{remark}
+    Deze eigenschap wordt gebruikt om elektrische velden \textit{zichtbaar} te maken: als je kleine, langwerpige korreltjes (zoals griesmeel) in een elektrisch veld brengt, polariseren ze zich allemaal in dezelfde richting en gaan ze zich uitlijnen volgens de veldlijnen.
+\end{remark}
+
+
+\section{Een geleider in een elektrisch veld}
+
+Een geleider bevat, zoals je in hoofdstuk~\ref{hoofdstuk:elektrische_krachtwerking} leerde, vrije elektronen die zich ongehinderd door het materiaal kunnen verplaatsen. Wanneer een geleider in een extern elektrisch veld wordt geplaatst, verplaatsen deze vrije elektronen zich onder invloed van de coulombkracht totdat een nieuw evenwicht is bereikt.
+
+\begin{theorem}[foldable=true,title={Elektrostatisch evenwicht in een geleider}]\nl
+    Wanneer de vrije elektronen in een geleider niet langer netto verschuiven, spreekt men van \textbf{elektrostatisch evenwicht}, zoals te zien is op figuur~\ref{fig:geleider_extern_veld}. In dat evenwicht geldt steeds:
+    \begin{enumerate}
+        \item Het elektrisch veld is overal \textbf{binnenin} de geleider gelijk aan \textbf{nul}.
+        \item De elektrische veldlijnen staan \textbf{loodrecht} op het oppervlak van de geleider.
+    \end{enumerate}
+\end{theorem}
+
+\begin{remark}
+    Zou het veld binnenin de geleider niet nul zijn, dan zouden de nog aanwezige vrije elektronen een kracht ondervinden en zich verder verplaatsen: er zou dus nog geen evenwicht zijn. Zou een veldlijn niet loodrecht op het oppervlak staan, dan zou er een component van het veld \textbf{langs} het oppervlak bestaan; ook dan zouden de vrije elektronen zich nog verder langs het oppervlak verplaatsen.
+\end{remark}
+
+%---------------------------
+% AFBEELDING: Veldlijnen rond een geleidende bol in extern veld
+\begin{figure}[ht!]
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
+        \includegraphics[height=7cm,width=10cm,keepaspectratio]{pic5/elektriciteit/veld/geleider_extern_veld.jpg}
+    \end{center}
+    \caption{Een geleidende bol in een extern, homogeen elektrisch veld. De vrije elektronen verplaatsen zich naar één zijde van de bol, waardoor er binnenin de bol geen elektrisch veld meer aanwezig is. De veldlijnen aan het oppervlak staan loodrecht op de bol.}
+    \label{fig:geleider_extern_veld}
+\end{figure}
+%---------------------------
+
+\subsection{Elektrische schermwerking}
+
+Een rechtstreeks gevolg van bovenstaande eigenschap is dat een \textbf{holle} geleider zijn binnenkant volledig afschermt van externe elektrische velden, zelfs als de geleider zelf niet volledig gesloten is (bijvoorbeeld een rooster of vlechtwerk van metaaldraad).
+
+\begin{definition}[title={Elektrische schermwerking}]\nl
+    Een holle geleider beschermt de ruimte binnenin tegen externe elektrische velden. Deze eigenschap noemt men \textbf{elektrische schermwerking}, en een dergelijke geleider noemt men een \textbf{kooi van Faraday}.
+\end{definition}
+
+\begin{example}[foldable=true,title={Toepassing: coaxkabel of coaxiale kabel}]\nl
+    \textbf{Coaxkabels}: de buitenkant van een coaxkabel, zie figuur~\ref{vb:coaxkabel}, bestaat uit gevlochten metaaldraad. Deze schermt het signaal in de kern van de kabel af van storende externe elektrische velden.
+    \begin{center}
+        \includegraphics[height=5cm,width=7cm,keepaspectratio]{pic5/elektriciteit/veld/coaxkabel.jpg}
+        \captionof{figure}{Een coaxkabel. A: plastic omhulsel om de buitenste mantel te isoleren. B: koperen mantel die het signaal in de kern afschermt van externe elektrische velden. C: binnenste isolator zodat er geen elektrisch contact ontstaat tussen de mantel en de kern. D: koperen kern waarlangs het signaal loopt.}
+        \label{vb:coaxkabel}
+    \end{center}
+\end{example}
+%-----------------------------------------------
+
+% auto tijdens onweer---------------------------------------
+\begin{example}[foldable=true,title={Toepassing: kooi van Faraday}]\nl
+    \begin{itemize}
+        \item \textbf{Een auto tijdens onweer}: de metalen carrosserie van een auto gedraagt zich als een kooi van Faraday. Wordt de auto getroffen door de bliksem, dan verspreidt de lading zich over de buitenkant van de carrosserie. Binnenin de auto blijft het elektrisch veld nul, en ben je dus relatief veilig.
+        \item \textbf{Radio- en telefoonsignaal in een tunnel}: tunnels zijn vaak verstevigd met metalen staven (in het gewapend beton). Deze metalen staven werken als een kooi van Faraday en zorgen dat externe elektromagnetische velden, zoals het signaal van de radio, gsm, gps, enz., niet of nauwelijks tot in de auto kunnen doordringen.
+    \end{itemize}
+\end{example}
+%-------------------------------------------------------
+
+% toepassing gevoelige elektronic-----------------------
+\begin{example}[foldable=true,title={Toepassing: Afschermen elektronica}]\nl
+    \begin{itemize}
+        \item \textbf{Gevoelige elektronica}: apparatuur die gevoelig is voor externe elektrische storingen (zoals medische toestellen) wordt vaak afgeschermd door een metalen behuizing.
+        \item \textbf{RFID-blokkerende portefeuille}: tegenwoordig is contactloos betalen de norm. In een RFID-blokkerende portefeuille, zie figuur~\ref{vb:RFID_portefeuille}, zit een dunne laag metaal die de RFID-chip in je bankkaart afschermt van externe velden, zodat andere mensen buiten jouw weten om geen contactloze betalingen kunnen uitvoeren.
+            \begin{center}
+                \includegraphics[height=5cm,width=7cm,keepaspectratio]{pic5/elektriciteit/veld/RFID_portefeuille.jpg}
+                \captionof{figure}{Een RFID-blokkerende portefeuille. De dunne metalen laag in de portefeuille schermt de RFID-chip in je bankkaart af van externe velden.}
+                \label{vb:RFID_portefeuille}
+            \end{center}
+        \item \textbf{Hoesjes voor contactloze sleutels}: sommige auto's kunnen worden geopend met een contactloze sleutel. Als je zo'n sleutel in een metalen hoesje steekt, kan de auto de sleutel niet meer detecteren, omdat het hoesje het signaal van de sleutel afschermt. Dit is nuttig omdat dieven van buiten je huis met de juiste apparatuur het signaal van je sleutel kunnen overnemen en zo je auto ontgrendelen en zelfs starten, zoals te zien is in het onderstaande filmpje.
+            % --------------------
+            % Video autostelen
+            \begin{onlineOnly}
+                Link naar video van Mark Rober hoe ze een auto stelen en hoe er tegen te beschermen: \youtube{h0EGCnBjTVk?si=rg1mvhnWjRW-pEAX}
+            \end{onlineOnly}
+            \pdfOnly{\mylink{https://youtu.be/h0EGCnBjTVk?si=rg1mvhnWjRW-pEAX}{Link naar video van Mark Rober hoe ze een auto stelen en hoe er tegen te beschermen.}}
+            % -----------------------------------
+    \end{itemize}
+\end{example}
+%---------------------------------------
+
+%———————————————————————————————————————
+% VRAAG: kooi van faraday
+\begin{question}
+    Waarom ben je relatief veilig binnenin een auto tijdens een onweer, ook al kan de auto zelf wel degelijk getroffen worden door de bliksem?
+
+    
+        \begin{multipleChoice}
+            \choice{Rubberen banden isoleren de auto volledig van de grond.}
+            \choice[correct]{De metalen carrosserie werkt als een kooi van Faraday: de lading verspreidt zich over de buitenkant, en het veld binnenin blijft nul.}
+            \choice{De lucht binnenin de auto is een goede isolator.}
+        \end{multipleChoice}
+\begin{onlineOnly}
+        \begin{hint}
+            Denk aan het elektrisch veld binnenin een geleider in elektrostatisch evenwicht.
+        \end{hint}
+
+        \begin{solution}\nl
+            De metalen carrosserie van de auto is een (min of meer gesloten) geleider. Wanneer de bliksem de auto treft, verspreidt de lading zich over het \textbf{buitenoppervlak} van de carrosserie. Binnenin een geleider in elektrostatisch evenwicht is het elektrisch veld steeds nul, dus blijft het interieur van de auto afgeschermd van het elektrisch veld. De rubberen banden spelen hierbij geen rol van betekenis.
+        \end{solution}
+    \end{onlineOnly}
+\end{question}
+%———————————————————————————————————————
+
+\end{document}

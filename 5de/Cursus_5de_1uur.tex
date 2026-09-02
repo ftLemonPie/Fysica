@@ -1,0 +1,144 @@
+\documentclass[nonewpage]{xourse}
+
+
+% Start \part op een nieuwe pagina (Ximera doet dat niet per default)
+\xpretocmd{\part}{\clearpage}{}{}
+
+% \documentclass{xourse}
+%in
+%\title{\includegraphics[width=0.7\textwidth]{pic5/elektromagnetisme.jpg}\\[2cm]Fysica 5de jaar - Wetenschappen}
+\title{Fysica 5de jaar - Niet wetenschappen}
+\author{Daan Lipkens}
+\begin{document}
+\begin{abstract}
+    Cursus Fysica 5de jaar niet wetenschappelijke richting.
+\end{abstract}
+\maketitle
+%HOE MAAK IK DIT IN TITLE BLAD 
+%\begin{figure}[h]
+% \begin{center}
+% \includegraphics[width=0.85\textwidth]{pic5/elektromagnetisme.jpg}
+% \caption{De Joint European Torus (JET) is het grootste kernfusie-experiment ter wereld. Met behulp van krachtige elektromagnetische velden houdt deze tokamak het extreem hete plasma op zijn plaats, zodat de wandmaterialen niet smelten.}
+% \end{center}
+% \end{figure}
+%\xmtitle{Fysica 5de jaar - Wetenschappen}{}
+% \part voor delen
+%\chapterstyle voor hoofdstukken >> \activity{hoofdstuk ....}
+%\sectionstyle voor delen in het hoofdstuk >> \activity{met onderdelen}
+% Inleiding, informatie, ...
+
+
+% INFO
+% toepassingen onder \begin{example}
+% Quizjes als \question met \begin{selectAll}
+% voorbeeld oefeningen met align x &= berekening && (uitleg)
+% komma's met {,} in math mode
+
+%\frontmatter
+\part{Inleiding}
+\sectionstyle
+\activity{praktische_richtlijnen.tex}
+\activity{hoe_fysica_te_studeren_5.tex}
+
+%\mainmatter
+%--------ELEKTRICITEIT----------------
+\part{Elektrische krachtwerking} %parts nog aanpassen
+%COULOMBKRACHT of ELEKTRISCHE KRACHTWERKING
+%picture path: pic5/elektriciteit/coulomb/
+
+\chapterstyle
+
+\activity{elektrische_krachtwerking_inleiding.tex} %inleiding hoofdstuk coulombkracht
+
+\sectionstyle
+
+\activity{elektrische_krachtwerking_lading.tex} %ladingen en soorten ladingen
+%\activity{elektrische_krachtwerking_tribo-elekrisch_effect.tex} %tribo-elektrisch effect --> extra
+\activity{elektrische_krachtwerking_coulombkracht_1uur.tex} %coulombkracht zonder cosinus regel
+\activity{elektrische_krachtwerking_materialen_en_geleiding.tex}
+\activity{elektrische_krachtwerking_aantrekken_ongeladen_deeltjes.tex}
+\activity{elektrische_krachtwerking_elektroscoop.tex}
+\activity{elektrische_krachtwerking_opladen_inductie.tex}
+\activity{elektrische_krachtwerking_samenvatting.tex}
+%oefeningen
+\chapterstyle
+\activity{elektrische_krachtwerkingoef_inleiding.tex}
+\sectionstyle
+\activity{elektrische_krachtwerkingoef_vragen.tex}
+\activity{elektrische_krachtwerkingoef_basis.tex}
+\activity{elektrische_krachtwerkingoef_1lijn.tex}
+\activity{elektrische_krachtwerkingoef_driehoek.tex}
+
+
+
+\part{Elektrisch veld}
+%ELEKTRISCH VELD
+%picture path: pic5/elektriciteit/veld/
+
+\chapterstyle
+\activity{elektrischveld_inleiding.tex}
+
+
+\sectionstyle
+\activity{elektrischveld_puntlading.tex}
+\activity{elektrischveld_veldlijnen.tex}
+
+%oefeningen
+
+
+
+\part{Potentiële elektrische energie bij homogeen veld en spanning}
+%POTENTIËLE ELEKTRISCHE ENERGIE BIJ HOMOGEEN VELD EN SPANNING
+%picture path: /pic5/elektriciteit/energie/
+% \chapterstyle
+
+% \sectionstyle
+
+%--------MAGNETISME----------------
+\part{Elektromagnetisme}
+\part{Lorentzkracht}
+\part{Inductiespanning}
+
+\newpage
+%--------KERNFYSICA----------------
+\part{Deeltjesfysica}\label{h:deeltjesfysica}
+\part{De atoomkern} %deeltjesfysica apart deel?
+\part{Radioactiviteit}
+\part{Radioactiviteit en de mens}
+
+
+%---------APPENDIX---------------
+%\appendix
+\part{Appendix} %nummering anders
+
+\chapterstyle
+\activity{vectoren_inleiding.tex}
+
+\sectionstyle
+\activity{vectoren_scalar.tex}
+\activity{vectoren_component.tex}
+\activity{vectoren_som.tex}
+\activity{vectoren_verschil.tex}
+\activity{vectoren_scalaire_vermenigvuldiging.tex}
+\activity{vectoren_vectorieel_product.tex}
+
+
+\chapterstyle
+\activity{standaardvorm_inleiding.tex}\label{hoofdstuk:standaardvorm}
+
+\sectionstyle
+\activity{standaardvorm_si.tex}
+\activity{standaardvorm_bc.tex}
+\activity{standaardvorm_oefeningen.tex}
+
+%Vector rekenen
+    %vectoren
+    %cosinus regel
+
+%nuclide tabel
+%standaard vorm
+%logaritme en exponentiële functies
+%---------Bibliografie
+\part{Bibliografie}
+
+\end{document}

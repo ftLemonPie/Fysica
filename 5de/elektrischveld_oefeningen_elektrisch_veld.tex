@@ -1,0 +1,79 @@
+\documentclass{ximera}
+
+\title{Oefeningen Elektrisch Veld}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+    Test je inzicht in en rekenvaardigheid over het elektrisch veld.
+\end{abstract}
+\maketitle
+
+
+
+\section{Vraagstukken}
+
+%———————————————————————————————————————
+% VRAAG: Problem 12 vertaald
+\begin{exercise}\label{vb:elektrisch_veld_2ladingen}
+    Twee ladingen, $Q_1 = -2,50 \,\mu\mathrm{C}$ en $Q_2 = 6,00 \,\mu\mathrm{C}$, bevinden zich op een horizontale as, gescheiden door een afstand van $1,00\,\mathrm{ m}$. Bepaal het punt op de as (anders dan het oneindige) waar het netto elektrisch veld precies nul is.
+    
+
+        \begin{hint}
+            Tussen de twee ladingen in wijzen de velden van beide ladingen in dezelfde richting. Het veld kan daar dus nooit nul worden. Het punt moet aan de \textit{buitenkant} liggen.
+        \end{hint}
+        \begin{hint}
+            Het nulpunt ligt altijd aan de buitenkant, aan de zijde van de lading met de \textit{kleinste absolute waarde}. Dat is in dit geval $Q_1$ ($-2,50\,\mu\mathrm{C}$).
+        \end{hint}
+        \begin{solution}\nl
+            Noem de afstand vanaf de lading $q_1$ tot het nulpunt $d$. De afstand tot $q_2$ is dan $(d + 1,00\,\mathrm{m})$. We stellen de grootte van de velden aan elkaar gelijk:
+            $$ E_1 = E_2 $$
+            $$ k_e \frac{|Q_1|}{d^2} = k_e \frac{|Q_2|}{(d + 1,00 \,\mathrm{m})^2} $$
+            Deelt we $k_e$ en de $\mu C$-factor weg en nemen we vierkantswortels, dan krijgen we:
+            $$ \frac{\sqrt{2,50}}{d} = \frac{\sqrt{6,00}}{d + 1,00\,\mathrm{m}} $$
+            Na wiskundige omvorming levert dit een afstand op van $d = 1,82\,\mathrm{m}$ aan de linkerkant van de lading $Q_1$.
+        \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+% %———————————————————————————————————————
+% % VRAAG: Problem 36 vertaald
+% \begin{exercise}
+%     Een proton wordt op tijdstip $t = 0\text{ s}$ horizontaal (in de positieve x-richting) afgeschoten in een homogeen elektrisch veld met veldvector $\vec{E} = -6,00 \cdot 10^5 \cdot \hat{i}\text{ N/C}$. Het proton legt een afstand van $7,00\text{ cm}$ af vooraleer het volledig tot stilstand komt.
+    
+%     Gegeven: $m_p = 1,67 \cdot 10^{-27}\text{ kg}$ en $q_p = 1,60 \cdot 10^{-19}\text{ C}$.
+    
+%     Bereken:
+%     \begin{enumerate}
+%         \item De \textbf{versnelling} van het proton.
+%         \item De \textbf{beginsnelheid} van het proton.
+%         \item Het \textbf{tijdsinterval} tot stilstand.
+%     \end{enumerate}
+    
+    
+%         \begin{hint}
+%             Gebruik de tweede wet van Newton $\vec{F}_e = m\vec{a}$ waarbij $\vec{F}_e = q\vec{E}$.
+%         \end{hint}
+%         \begin{hint}
+%             Omdat het veld constant is, mag je voor de kinematica de formules voor een eenparig veranderlijke rechtlijnige beweging (EVRB) gebruiken. Let erop dat het veld in de \textit{negatieve} zin werkt, dus het proton ondervindt een remmende kracht!
+%         \end{hint}
+%         \begin{solution}\nl
+%             \textbf{1. De versnelling:}
+%             $$ a = \frac{qE}{m} = \frac{(1,60 \cdot 10^{-19}\text{ C}) \cdot (-6,00 \cdot 10^5\text{ N/C})}{1,67 \cdot 10^{-27}\text{ kg}} = -5,75 \cdot 10^{13}\text{ m/s}^2 $$
+%             De versnelling is negatief en werkt dus remmend.
+            
+%             \textbf{2. De beginsnelheid:}
+%             Met EVRB-formule (zonder tijd): $v_f^2 = v_i^2 + 2a\Delta x$
+%             $$ 0 = v_i^2 + 2(-5,75 \cdot 10^{13}\text{ m/s}^2)(0,0700\text{ m}) $$
+%             $$ v_i = 2,84 \cdot 10^6\text{ m/s} $$
+            
+%             \textbf{3. De tijd:}
+%             Met EVRB-formule: $v_f = v_i + at$
+%             $$ 0 = 2,84 \cdot 10^6\text{ m/s} + (-5,75 \cdot 10^{13}\text{ m/s}^2)t $$
+%             $$ t = 4,94 \cdot 10^{-8}\text{ s} $$
+%         \end{solution}
+    
+% \end{exercise}
+% %———————————————————————————————————————
+
+\end{document}

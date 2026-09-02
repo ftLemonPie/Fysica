@@ -219,9 +219,9 @@ if [[ -d .ximera_local ]]; then
     echo "USING .ximera_local from local repo"
     mv /root/texmf/tex/latex/ximeraLatex /root/ximeraLatex.ORI
     # mkdir /root/texmf/tex/latex/ximeraLatex
-    ln -s $(pwd)/.ximera_local/ /root/texmf/tex/latex/ximeraLatex
+    ln -sf $(pwd)/.ximera_local/ /root/texmf/tex/latex/ximeraLatex
     if [[ -f .ximera_local/xmScripts/xmlatex ]]; then
-       PATH=.ximera_local/xmScripts/:$PATH
+       PATH=$(pwd)/.ximera_local/xmScripts/:$PATH
        echo "USING local xmlatex script ($(type xmlatex))"
        # THIS CAN NOT POSSIBLY WORK for xmLatex itself: the script is running already !!!
     fi

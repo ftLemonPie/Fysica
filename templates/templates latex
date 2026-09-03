@@ -215,21 +215,19 @@ Ideaal voor theorievragen of kleine quizjes tussendoor.
 % VRAAG: [Korte beschrijving]
 \begin{question}
     [Typ hier je vraag. Bijvoorbeeld: Wat gebeurt er als we de afstand verdubbelen?]
-    \begin{onlineOnly}
-        \begin{multipleChoice}
-            \choice{Dit is een fout antwoord.}
-            \choice[correct]{Dit is het juiste antwoord.}
-            \choice{Dit is nog een fout antwoord.}
-        \end{multipleChoice}
+    \begin{multipleChoice}
+        \choice{Dit is een fout antwoord.}
+        \choice[correct]{Dit is het juiste antwoord.}
+        \choice{Dit is nog een fout antwoord.}
+    \end{multipleChoice}
 
-        \begin{hint}
-            Geef een tip over de theorie (bv. evenredigheden).
-        \end{hint}
+    \begin{hint}
+        Geef een tip over de theorie (bv. evenredigheden).
+    \end{hint}
 
-        \begin{solution}\nl
-            [Geef hier de verklaring waarom het juiste antwoord klopt.]
-        \end{solution}
-    \end{onlineOnly}
+    \begin{solution}\nl
+        [Geef hier de verklaring waarom het juiste antwoord klopt.]
+    \end{solution}
 \end{question}
 %———————————————————————————————————————
 

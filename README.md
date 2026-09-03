@@ -167,7 +167,7 @@ Omdat YouTube-video's online mooi kunnen afspelen, maar in een geprinte PDF gewo
 ## te doen volgende keer
 
 - [ ] oefeningen elektrisch veld
-- [ ] Eveld en materie
+- [ ] 5.1 aanpassen
 
 
 

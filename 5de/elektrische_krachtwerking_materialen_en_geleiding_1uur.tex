@@ -1,0 +1,179 @@
+\documentclass{ximera}
+
+\title{Materialen en geleiding}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+    Geleiders, isolatoren en hun reactie op nabijgelegen ladingen.
+\end{abstract}
+\maketitle
+
+%----------------------
+% Herhaling aarding
+\begin{remark}[expandable=true,title={Herhaling: aarding}]\nl
+    Aarding is het geleidend verbinden van een voorwerp met de aarde. Hierdoor kan een teveel aan elektronen gecompenseerd worden door elektronen naar de aarde te sturen, of kunnen er bij een tekort aan elektronen juist elektronen aan de aarde onttrokken worden.
+    
+    %--------
+    % afbeelding symbool aarding
+    \begin{center}
+        \begin{circuitikz}
+            \draw (0,0) node[ground, scale=4] {};
+        \end{circuitikz}
+        \captionof{figure}{Symbool voor aarding.}
+        \label{fig:aarding_symbool}
+    \end{center}    
+    %---------
+    
+    %---------
+    % afbeelding aarding
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
+        \includegraphics[width=0.45\textwidth]{pic5/elektriciteit/coulomb/aarding_kabels.jpg}
+    \end{center}
+    \captionof{figure}{De kleur van de aardingsdraad in kabels is geel-groen.}
+    \label{fig:aarding}
+    %--------    
+\end{remark}
+%------------------
+
+
+% SUBSECTION: geleiders
+\section{Geleiders}
+Metalen zijn goede geleiders. In de chemie heb je al kennisgemaakt met het metaalrooster. Metaalatomen bezitten elektronen die gemakkelijk loskomen van het atoom: de zogenaamde valentie-elektronen. Deze elektronen bewegen 'vrij' door het rooster van positieve metaalionen (zie figuur~\ref{fig:metaal_vrij}).
+
+%-----------------------------
+%   afbeelding 1 elektronen rond geleider
+\begin{figure}[ht!]
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
+        \includegraphics[width=9cm]{pic5/elektriciteit/coulomb/metaal1.png}
+    \end{center}
+    \caption{De valentie-elektronen komen los van de atomen en kunnen vrij bewegen tussen de metaalionen. De overige elektronen blijven gebonden aan de atoomkern.}
+    \label{fig:metaal_vrij}
+\end{figure}
+% ------------------------------
+
+De vrije elektronen botsen voortdurend met de roosterionen (zie figuur~\ref{fig:metaal_botsing}), waardoor hun bewegingsrichting en bewegingszin steeds veranderen. Hun gemiddelde snelheid is daardoor nul. Toch kunnen de vrije elektronen zich binnen het metaal verplaatsen, en ook van het ene metaal naar het andere wanneer ze in contact staan. Dankzij het grote aantal vrije elektronen zijn metalen uitstekende geleiders.
+
+%-----------------------------
+%   afbeelding 2 botsingen geleider
+\begin{figure}[ht!]
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
+        \includegraphics[width=9cm]{pic5/elektriciteit/coulomb/metaal2.png}
+    \end{center}
+    \caption{De 'vrije' elektronen veranderen voortdurend van richting en zin door botsingen met de roosterionen.}
+    \label{fig:metaal_botsing}
+\end{figure}
+% ------------------------------
+
+% --------------------
+% Video beweging elektronen geleider en isolator
+\begin{onlineOnly}
+    Link naar video met de beweging van elektronen in geleiders en isolatoren: \youtube{gm5cepGTDKo}
+\end{onlineOnly}
+\pdfOnly{\mylink{https://youtu.be/gm5cepGTDKo}{Link naar video met de beweging van elektronen in geleiders en isolatoren.}}
+
+% -----------------------------------
+
+% ---------------------
+%   geleiders
+% -------------------
+\begin{theorem}
+Een metaal in vaste toestand bevat vrije (negatieve) elektronen en vaste (positieve) roosterionen.
+\end{theorem}
+
+\begin{remark}
+    Let op: In het onderstaande voorbeeld worden elektronen aan de staaf onttrokken. Er zouden evengoed elektronen op de metalen staaf gezet kunnen worden om deze negatief te laden.
+\end{remark}
+
+\begin{figure}[ht!]
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
+        \begin{tabular}{cc}
+            \includegraphics[width=2.5cm]{pic5/elektriciteit/coulomb/metalen_staaf 1.jpg} &
+            \includegraphics[width=2.5cm]{pic5/elektriciteit/coulomb/metalen_staaf 2.jpg} \\
+            (a) & (b) \\[2ex]
+            \includegraphics[width=2.5cm]{pic5/elektriciteit/coulomb/metalen_staaf 3.jpg} &
+            \includegraphics[width=2.5cm]{pic5/elektriciteit/coulomb/metalen_staaf 4.jpg} \\
+            (c) & (d)
+        \end{tabular}
+    \end{center}
+    \caption{(a) Een neutrale metalen staaf. Deze bevat evenveel positieve als negatieve ladingen. (b) Wanneer er elektronen aan de metalen staaf worden onttrokken, krijgt de staaf een positieve lading. Omdat metaal een goede geleider is, wordt het tekort aan elektronen gelijkmatig over de hele staaf verdeeld. (c) De positief geladen staaf wordt verbonden met de aarding. (d) Via de aarding kunnen nieuwe elektronen worden aangevoerd. Omdat metaal een goede geleider is, zullen deze elektronen zich gelijkmatig over de staaf verdelen.}
+    \label{fig:metalen_staaf}
+\end{figure}
+
+Een metalen staaf kan positief geladen worden door elektronen af te geven (zie figuur~\ref{fig:metalen_staaf}b). Aangezien de elektronen zich vrij kunnen bewegen, zal het tekort aan elektronen zich gelijkmatig verspreiden over het hele oppervlak aan de buitenkant van de staaf en zo ver mogelijk van elkaar. Voor een positief geladen staaf is er op de buitenkant van de staaf een tekort aan vrije elektronen.
+
+Als je de staaf met de aarde verbindt door middel van een isolator, dan gebeurt er niets (zie figuur~\ref{fig:metalen_staaf}c). Verbind je de staaf met de aarde door middel van een geleider, dan gaan er via de aarding elektronen van de aarde naar de staaf en wordt de staaf weer neutraal (zie figuur~\ref{fig:metalen_staaf}d).
+
+Een metalen staaf kan negatief geladen worden door elektronen op te nemen. Omdat de elektronen zich vrij kunnen bewegen, verspreiden ze zich gelijkmatig over het hele oppervlak aan de buitenkant van de staaf, zo ver mogelijk van elkaar. Voor een negatief geladen staaf betekent dit dat er een overschot aan vrije elektronen aanwezig is aan de buitenzijde.
+
+% --------------------
+% Video ladingen bij geleider
+\begin{onlineOnly}
+    Link naar video waar ladingen naderen bij een geleider: \youtube{bfw8XaQExqc}
+\end{onlineOnly}
+\pdfOnly{\nl Link naar video waar ladingen naderen bij een geleider: \mylink{https://youtu.be/bfw8XaQExqc}{Bekijk de video op YouTube}}
+% -----------------------------------
+
+\begin{remark}
+Positieve roosterionen kunnen zich niet verplaatsen: zij hebben een vaste positie in het metaalrooster.
+\end{remark}
+
+% --------------
+%   Influentie
+% ---------------
+\begin{definition}[expandable=true,title={Influentie of elektrostatische inductie}]\nl
+    \textbf{Influentie of elektrostatische inductie} is het scheiden van ladingen in een geleider wanneer deze in de nabijheid komt van een geladen voorwerp.
+    Een geaarde geleider wordt geladen wanneer een geladen voorwerp in de buurt wordt gebracht. De lading van de geleider zal steeds tegengesteld zijn aan de lading van het voorwerp.
+\end{definition}
+
+% ----------------------
+%   SUBSECTION: Isolator
+% ----------------------
+\section{Isolatoren}
+
+Atomen uit groep 15, 16 of 17 van het periodiek systeem staan geen elektronen af. In een vaste stof vormen ze bindingen met andere atomen en gedragen ze zich als isolatoren. Voor wrijvingsproeven gebruik je daarom isolatoren: de aangebrachte ladingen verplaatsen zich niet. De elektronen blijven zitten waar ze zijn aangebracht (zie figuur~\ref{fig:isolator_staaf}b), zelfs wanneer je een geleidende verbinding maakt met de aarde (zie figuur~\ref{fig:isolator_staaf}c). De lading verdwijnt enkel door contact met een tegengesteld geladen voorwerp of door interactie met moleculen in de lucht (ionisatie).
+
+% --------------------
+% Video ladingen bij isolator
+\begin{onlineOnly}
+    Link naar video waar ladingen naderen bij een isolator: \youtube{nDSWiCz8ba8}
+\end{onlineOnly}
+\pdfOnly{\mylink{https://youtu.be/nDSWiCz8ba8}{Link naar video waar ladingen naderen bij een isolator.}}
+% -----------------------------------
+
+% -----------
+%   polarisatie
+% -------------
+De elektronen die rond hun kern gebonden zijn, kunnen slechts een beetje \textit{opschuiven}. Wanneer een externe lading nadert, verschuift daardoor de gemiddelde negatieve lading (de elektronenwolk). Omdat deze niet langer volledig samenvalt met de positieve kern, spreken we van \textbf{polarisatie}. Hierdoor wordt elk atoom tijdelijk een dipool.
+
+\begin{remark}
+    Ook hier geldt: er zouden evengoed elektronen van de isolerende staaf genomen kunnen worden.
+\end{remark}
+
+\begin{figure}[ht!]
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
+        \begin{tabular}{ccc}
+            \includegraphics[width=2.5cm]{pic5/elektriciteit/coulomb/isolator staaf 1.jpg} &
+            \includegraphics[width=2.5cm]{pic5/elektriciteit/coulomb/isolator staaf 2.jpg} &
+            \includegraphics[width=2.5cm]{pic5/elektriciteit/coulomb/isolator staaf 3.jpg} \\
+            (a) & (b) & (c)
+        \end{tabular}
+    \end{center}
+    \caption{(a) Een neutrale staaf van een isolerend materiaal. De staaf bevat evenveel positieve als negatieve ladingen. (b) Wanneer er elektronen op de isolator worden geplaatst, krijgt de staaf lokaal een negatieve lading. Omdat de elektronen in een isolator gebonden zijn aan hun kern, blijft het teveel aan elektronen lokaal aanwezig. (c) De negatief geladen staaf wordt verbonden met de aarding. Omdat de elektronen in een isolator gebonden zijn, kunnen de overtollige elektronen niet via de aarding weg, en blijft de staaf negatief geladen.}
+    \label{fig:isolator_staaf}
+\end{figure}
+
+\begin{definition}\nl
+    Materialen waarin ladingen vrij kunnen bewegen, zijn \textbf{geleiders}.\\
+    Materialen waarin ladingen niet vrij kunnen bewegen, maar gebonden zijn aan hun kern, zijn \textbf{isolatoren}.
+\end{definition}
+
+% Applet link
+\mylink{https://javalab.org/en/conductor_and_insulator_en/}{Applet over het gedrag van elektronen in geleiders en isolatoren bij een nabije lading.}
+
+\end{document}

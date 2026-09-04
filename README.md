@@ -166,8 +166,9 @@ Omdat YouTube-video's online mooi kunnen afspelen, maar in een geprinte PDF gewo
 # TODO
 ## te doen volgende keer
 
-- [ ] oefeningen elektrisch veld
-- [ ] 5.1 aanpassen
+- [ ] oefeningen elektrisch veld nakijken en extra maken
+- [ ] 5.1 aanpassingen nakijken eerste 2 hoofdstukken
+- [ ] starten H3
 
 
 

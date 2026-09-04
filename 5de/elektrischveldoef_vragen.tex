@@ -1,0 +1,99 @@
+\documentclass{ximera}
+%nieuw 2 september 2026
+\title{Vraagstukken elektrisch veld: conceptuele vragen}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+    Conceptuele vragen op het elektrisch veld.
+\end{abstract}
+\maketitle
+
+%———————————————————————————————————————
+% VRAAG 1: testlading verdubbelen
+\begin{question}
+    Je meet het elektrisch veld in een punt \textit{P} met een testlading $Q_t$. Vervolgens vervang je deze testlading door een nieuwe testlading met dubbel zo grote lading, $2Q_t$. Wat gebeurt er met de gemeten grootte van het elektrisch veld $E$ in punt \textit{P}?
+
+    \begin{multipleChoice}
+        \choice{$E$ wordt twee keer zo groot.}
+        \choice{$E$ wordt twee keer zo klein.}
+        \choice[correct]{$E$ blijft ongewijzigd.}
+    \end{multipleChoice}
+
+    \begin{hint}
+        De kracht op de testlading verandert wel, maar wat gebeurt er als je die kracht deelt door de (grotere) testlading?
+    \end{hint}
+
+    \begin{solution}\nl
+        Het elektrisch veld $E$ wordt volledig bepaald door de \textbf{bronlading}, niet door de testlading. Een grotere testlading ondervindt weliswaar een grotere kracht, maar deze kracht is exact evenredig groter, waardoor de verhouding $E = F_e/Q_t$ (en dus de gemeten veldsterkte) ongewijzigd blijft.
+    \end{solution}
+\end{question}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% VRAAG 2: nulpunt tussen 2 gelijke ladingen
+\begin{question}
+    Twee identieke positieve puntladingen bevinden zich op een onderlinge afstand $d$ van elkaar. Op welke plaats tussen de twee ladingen is het totale elektrisch veld gelijk aan nul? Verklaar waarom net op die plaats.
+
+    \begin{hint}
+        Beide ladingen zijn identiek en creëren dus, op gelijke afstand, een even groot veld.
+    \end{hint}
+
+    \begin{solution}\nl
+        Exact in het \textbf{midden} tussen de twee ladingen, op een afstand $d/2$ van elk van beide. Omdat de ladingen identiek zijn en zich op gelijke afstand van dat punt bevinden, zijn de twee afzonderlijke velden even groot. Beide ladingen zijn bovendien positief, waardoor beide velden in dat middelpunt van elkaar wegwijzen (elk veld wijst immers weg van zijn eigen bronlading): de twee velden zijn dus exact tegengesteld gericht en heffen elkaar op.
+    \end{solution}
+\end{question}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% VRAAG 3: veldlijnen snijden elkaar niet
+\begin{question}
+    Leg uit waarom twee elektrische veldlijnen elkaar nooit kunnen snijden.
+
+    \begin{hint}
+        Wat stelt de richting van een veldlijn in een bepaald punt precies voor?
+    \end{hint}
+
+    \begin{solution}\nl
+        In elk punt van de ruimte is er precies \textbf{één} elektrische veldvector $\vec{E}$: het totale veld in dat punt heeft een unieke grootte, richting en zin. Een veldlijn is raaklijnig aan die veldvector. Zouden twee veldlijnen elkaar in een punt snijden, dan zou dat betekenen dat het veld in dat punt tegelijk twee verschillende richtingen zou hebben, wat onmogelijk is.
+    \end{solution}
+\end{question}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% VRAAG 4: veld binnenin geleidende bol
+\begin{question}
+    Een massieve, neutrale metalen bol wordt in een uniform extern elektrisch veld geplaatst. Leg uit waarom het elektrisch veld binnenin de bol gelijk aan nul is, ook al is het externe veld dat niet.
+
+    \begin{hint}
+        Wat zou er gebeuren met de vrije elektronen in de bol als het veld binnenin niet nul zou zijn?
+    \end{hint}
+
+    \begin{solution}\nl
+        De metalen bol bevat vrije elektronen. Zolang er binnenin de bol een elektrisch veld aanwezig is, ondervinden deze vrije elektronen een kracht en verplaatsen ze zich. Deze verplaatsing gaat door totdat het extra veld van de herverdeelde ladingen het externe veld precies compenseert: pas dan heerst er elektrostatisch evenwicht en stopt de verplaatsing van de elektronen. In dat evenwicht is het totale veld binnenin de geleider dus steeds nul.
+    \end{solution}
+\end{question}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% VRAAG 5: kooi van faraday vs. isolator
+\begin{question}
+    Zou een holle isolator (bijvoorbeeld een plastic doosje) even goed werken als afscherming tegen externe elektrische velden als een holle geleider? Verklaar.
+
+    \begin{multipleChoice}
+        \choice[correct]{Nee, want een isolator heeft geen vrije ladingen die zich kunnen herschikken om het externe veld te compenseren.}
+        \choice{Ja, want elk materiaal polariseert in een elektrisch veld.}
+        \choice{Ja, want isolatoren geleiden geen elektrische stroom.}
+    \end{multipleChoice}
+
+    \begin{hint}
+        Elektrische schermwerking berust op de \textbf{verplaatsing van vrije ladingen}.
+    \end{hint}
+
+    \begin{solution}\nl
+        Nee. Elektrische schermwerking (de kooi van Faraday) werkt doordat de \textbf{vrije elektronen} in een geleider zich herschikken tot het veld binnenin exact nul wordt. Een isolator bevat geen vrije ladingen: de atomen kunnen wel lichtjes polariseren, maar deze verschuiving is veel te klein om het externe veld volledig te compenseren. Een holle isolator biedt dus geen bruikbare afscherming.
+    \end{solution}
+\end{question}
+%———————————————————————————————————————
+
+\end{document}

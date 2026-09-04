@@ -1,0 +1,153 @@
+\documentclass{ximera}
+%nieuw 2 september 2026
+\title{Vraagstukken elektrisch veld: goniometrische figuren}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+    Oefeningen op het elektrisch veld met ladingen in rechthoekige driehoeksconfiguraties.
+\end{abstract}
+\maketitle
+
+%———————————————————————————————————————
+% OEF DRIEHOEK 1: velden loodrecht op elkaar (Pythagoras)
+\begin{exercise}
+    Twee puntladingen $Q_{1} = +3{,}0 \cdot 10^{-6} \, \mathrm{C}$ en $Q_{2} = +6{,}0 \cdot 10^{-6} \, \mathrm{C}$ bevinden zich respectievelijk op de $x$-as en de $y$-as ten opzichte van punt \textit{P}, zoals aangegeven op de tekening. $Q_1$ bevindt zich op $0{,}25 \, \mathrm{m}$ van $P$, en $Q_2$ op $0{,}40 \, \mathrm{m}$ van $P$.
+
+    \begin{center}
+        \begin{tikzpicture}[scale=1]
+            \tkzDefPoint(0,0){P}
+            \tkzDefPoint(2.5,0){Q1}
+            \tkzDefPoint(0,4){Q2}
+            \draw[gray,thick] (P) -- (Q1);
+            \draw[gray,thick] (P) -- (Q2);
+            \tkzFillAngle[fill=blue!20,opacity=0.5](Q1,P,Q2)
+            \tkzLabelAngle[pos=0.6](Q1,P,Q2){$90^\circ$}
+            \tkzLabelPoint[below](P){$P$}
+            \tkzLabelPoint[below](Q1){$Q_1$}
+            \tkzLabelPoint[left](Q2){$Q_2$}
+            \draw[charge+] (Q1) circle (\R) node[scale=0.5]{$+$};
+            \draw[charge+] (Q2) circle (\R) node[scale=0.5]{$+$};
+            \filldraw (P) circle (1.2pt);
+        \end{tikzpicture}
+    \end{center}
+
+    Bereken de grootte van het totale elektrisch veld in punt \textit{P}.
+
+    \[ E_{\text{res}} = \answer[tolerance=0.05,onlineshowanswerbutton]{5.5} \cdot 10^{5} \, \mathrm{N/C} \]
+
+    \begin{hint}
+        Bereken eerst de grootte van $E_1$ en $E_2$ afzonderlijk met de formule voor het radiaal veld.
+    \end{hint}
+    \begin{hint}
+        Omdat $Q_1$ op de $x$-as en $Q_2$ op de $y$-as ligt (een rechte hoek in $P$), staan $\vec{E}_1$ en $\vec{E}_2$ loodrecht op elkaar. Je kan de resultante dan rechtstreeks berekenen met de stelling van Pythagoras.
+    \end{hint}
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & Q_{1} = +3{,}0 \cdot 10^{-6} \, \mathrm{C} & & Q_{2} = +6{,}0 \cdot 10^{-6} \, \mathrm{C} \\
+            & r_{1} = 0{,}25 \, \mathrm{m} & & r_{2} = 0{,}40 \, \mathrm{m}
+        \end{align*}
+
+        \underline{Gevraagd:} $E_{\text{res}}$ in $P$\\
+
+        \underline{Oplossing:}\\
+        \textbf{Stap 1: Grootte van de afzonderlijke velden}
+        \begin{align*}
+            E_{1} &= k_e \frac{|Q_{1}|}{r_{1}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 3{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}25 \, \mathrm{m})^{2}} = 4{,}3 \cdot 10^{5} \, \mathrm{N/C} \\
+            E_{2} &= k_e \frac{|Q_{2}|}{r_{2}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 6{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}40 \, \mathrm{m})^{2}} = 3{,}4 \cdot 10^{5} \, \mathrm{N/C}
+        \end{align*}
+        Beide ladingen zijn positief, dus wijst $\vec{E}_1$ weg van $Q_1$ (langs de $x$-as) en $\vec{E}_2$ weg van $Q_2$ (langs de $y$-as). Deze twee vectoren staan dus loodrecht op elkaar.
+
+        \textbf{Stap 2: Stelling van Pythagoras toepassen}
+        \begin{align*}
+            E_{\text{res}} &= \sqrt{E_1^{2} + E_2^{2}} \\
+                            &= \sqrt{(4{,}3 \cdot 10^{5} \, \mathrm{N/C})^{2} + (3{,}4 \cdot 10^{5} \, \mathrm{N/C})^{2}} \\
+                            &\simeq 5{,}5 \cdot 10^{5} \, \mathrm{N/C}
+        \end{align*}
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% OEF DRIEHOEK 2: rechthoekige driehoek, cosinusregel
+\begin{exercise}
+    Twee puntladingen $Q_{A} = -5{,}0 \cdot 10^{-6} \, \mathrm{C}$ en $Q_{B} = -2{,}0 \cdot 10^{-6} \, \mathrm{C}$ bevinden zich in de hoekpunten van een rechthoekige driehoek, zoals te zien op de tekening. De rechte hoek bevindt zich bij $Q_A$. De afstand tussen $Q_A$ en $P$ is $0{,}30 \, \mathrm{m}$, en de afstand tussen $Q_A$ en $Q_B$ is $0{,}40 \, \mathrm{m}$.
+
+    \begin{center}
+        \begin{tikzpicture}[scale=0.5]
+            \useasboundingbox (-1.5, -1.5) rectangle (5.5, 4.5);
+            \tkzDefPoint(0,0){A}
+            \begin{scope}[shift=(A)]
+                \tkzDefPoint(0:4){B}
+                \tkzDefPoint(90:3){C}
+            \end{scope}
+            \tkzDrawPolygon(A,B,C)
+
+            \tkzLabelPoint[left, below=4pt](A){$Q_{A}$}
+            \tkzLabelPoint[right, below=4pt](B){$Q_{B}$}
+            \tkzLabelPoint[above=4pt](C){$P$}
+
+            \draw[charge-] (A) circle (\R) node[scale=0.5] {$-$};
+            \draw[charge-] (B) circle (\R) node[scale=0.5] {$-$};
+            \filldraw (C) circle (2pt);
+        \end{tikzpicture}
+    \end{center}
+
+    Bereken de grootte van het totale elektrisch veld in punt \textit{P}, veroorzaakt door $Q_A$ en $Q_B$.
+
+    \[ E_{\text{res}} = \answer[tolerance=0.1,onlineshowanswerbutton]{5.5} \cdot 10^{5} \, \mathrm{N/C} \]
+
+    \begin{hint}
+        Bereken eerst de afstand $r_{BP}$ met de stelling van Pythagoras in de rechthoekige driehoek.
+    \end{hint}
+    \begin{hint}
+        Bereken de grootte van de twee afzonderlijke velden $E_A$ en $E_B$ in $P$ met de formule van het radiaal veld.
+    \end{hint}
+    \begin{hint}
+        Beide bronladingen zijn negatief: beide velden wijzen dus van $P$ naar hun eigen bronlading toe. De hoek tussen $\vec{E}_A$ en $\vec{E}_B$ is daardoor gelijk aan de hoek van de driehoek in $P$. Bepaal deze hoek met goniometrie ($\tan\theta = \dfrac{\text{overstaande}}{\text{aanliggende}}$), en gebruik vervolgens de cosinusregel met de \textbf{overstaande hoek} in het veldenparallellogram om de resultante te vinden.
+    \end{hint}
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & Q_{A} = -5{,}0 \cdot 10^{-6} \, \mathrm{C} & & Q_{B} = -2{,}0 \cdot 10^{-6} \, \mathrm{C} \\
+            & r_{AP} = 0{,}30 \, \mathrm{m} & & r_{AB} = 0{,}40 \, \mathrm{m}
+        \end{align*}
+
+        \underline{Gevraagd:} $E_{\text{res}}$ in $P$\\
+
+        \underline{Oplossing:}\\
+        \textbf{Stap 1: Ontbrekende afstand berekenen}\\
+        Met de stelling van Pythagoras in de rechthoekige driehoek ($90^\circ$ bij $Q_A$):
+        \begin{align*}
+            r_{BP} &= \sqrt{r_{AP}^{2} + r_{AB}^{2}} = \sqrt{(0{,}30 \, \mathrm{m})^{2} + (0{,}40 \, \mathrm{m})^{2}} = 0{,}50 \, \mathrm{m}
+        \end{align*}
+
+        \textbf{Stap 2: Grootte berekenen}
+        \begin{align*}
+            E_{A} &= k_e \frac{|Q_{A}|}{r_{AP}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 5{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}30 \, \mathrm{m})^{2}} = 5{,}0 \cdot 10^{5} \, \mathrm{N/C} \\
+            E_{B} &= k_e \frac{|Q_{B}|}{r_{BP}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 2{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}50 \, \mathrm{m})^{2}} = 7{,}2 \cdot 10^{4} \, \mathrm{N/C}
+        \end{align*}
+
+        \textbf{Stap 3: Hoek bepalen}\\
+        Omdat $Q_A$ en $Q_B$ beide negatief zijn, wijst $\vec{E}_A$ in $P$ naar $Q_A$ toe, en $\vec{E}_B$ naar $Q_B$ toe. De hoek tussen deze twee veldvectoren is dan gelijk aan de hoek van de driehoek bij $P$:
+        \begin{align*}
+            \tan(\theta) &= \frac{\text{overstaande}}{\text{aanliggende}} = \frac{r_{AB}}{r_{AP}} = \frac{0{,}40 \, \mathrm{m}}{0{,}30 \, \mathrm{m}} \\
+            \theta &= 53{,}1^\circ
+        \end{align*}
+        De overstaande hoek in het parallellogram is dan $180^\circ - 53{,}1^\circ = 126{,}9^\circ$.
+
+        \textbf{Stap 4: Cosinusregel toepassen}
+        \begin{align*}
+            E_{\text{res}} &= \sqrt{E_A^{2} + E_B^{2} - 2 \cdot E_A \cdot E_B \cdot \cos(126{,}9^\circ)} \\
+                            &= \sqrt{(5{,}0 \cdot 10^{5})^{2} + (7{,}2 \cdot 10^{4})^{2} - 2 \cdot 5{,}0 \cdot 10^{5} \cdot 7{,}2 \cdot 10^{4} \cdot \cos(126{,}9^\circ)} \, \mathrm{N/C} \\
+                            &\simeq 5{,}5 \cdot 10^{5} \, \mathrm{N/C}
+        \end{align*}
+        Het resulterende elektrisch veld in $P$ heeft dus een grootte van ongeveer $5{,}5 \cdot 10^{5} \, \mathrm{N/C}$.
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+\end{document}

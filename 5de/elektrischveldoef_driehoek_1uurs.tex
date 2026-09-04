@@ -1,0 +1,74 @@
+\documentclass{ximera}
+%nieuw 2 september 2026
+\title{Vraagstukken elektrisch veld: goniometrische figuren}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+    Oefeningen op het elektrisch veld met ladingen in rechthoekige driehoeksconfiguraties.
+\end{abstract}
+\maketitle
+
+%———————————————————————————————————————
+% OEF DRIEHOEK 1: velden loodrecht op elkaar (Pythagoras)
+\begin{exercise}
+    Twee puntladingen $Q_{1} = +3{,}0 \cdot 10^{-6} \, \mathrm{C}$ en $Q_{2} = +6{,}0 \cdot 10^{-6} \, \mathrm{C}$ bevinden zich respectievelijk op de $x$-as en de $y$-as ten opzichte van punt \textit{P}, zoals aangegeven op de tekening. $Q_1$ bevindt zich op $0{,}25 \, \mathrm{m}$ van $P$, en $Q_2$ op $0{,}40 \, \mathrm{m}$ van $P$.
+
+    \begin{center}
+        \begin{tikzpicture}[scale=1]
+            \tkzDefPoint(0,0){P}
+            \tkzDefPoint(2.5,0){Q1}
+            \tkzDefPoint(0,4){Q2}
+            \draw[gray,thick] (P) -- (Q1);
+            \draw[gray,thick] (P) -- (Q2);
+            \tkzFillAngle[fill=blue!20,opacity=0.5](Q1,P,Q2)
+            \tkzLabelAngle[pos=0.6](Q1,P,Q2){$90^\circ$}
+            \tkzLabelPoint[below](P){$P$}
+            \tkzLabelPoint[below](Q1){$Q_1$}
+            \tkzLabelPoint[left](Q2){$Q_2$}
+            \draw[charge+] (Q1) circle (\R) node[scale=0.5]{$+$};
+            \draw[charge+] (Q2) circle (\R) node[scale=0.5]{$+$};
+            \filldraw (P) circle (1.2pt);
+        \end{tikzpicture}
+    \end{center}
+
+    Bereken de grootte van het totale elektrisch veld in punt \textit{P}.
+
+    \[ E_{\text{res}} = \answer[tolerance=0.05,onlineshowanswerbutton]{5.5} \cdot 10^{5} \, \mathrm{N/C} \]
+
+    \begin{hint}
+        Bereken eerst de grootte van $E_1$ en $E_2$ afzonderlijk met de formule voor het radiaal veld.
+    \end{hint}
+    \begin{hint}
+        Omdat $Q_1$ op de $x$-as en $Q_2$ op de $y$-as ligt (een rechte hoek in $P$), staan $\vec{E}_1$ en $\vec{E}_2$ loodrecht op elkaar. Je kan de resultante dan rechtstreeks berekenen met de stelling van Pythagoras.
+    \end{hint}
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & Q_{1} = +3{,}0 \cdot 10^{-6} \, \mathrm{C} & & Q_{2} = +6{,}0 \cdot 10^{-6} \, \mathrm{C} \\
+            & r_{1} = 0{,}25 \, \mathrm{m} & & r_{2} = 0{,}40 \, \mathrm{m}
+        \end{align*}
+
+        \underline{Gevraagd:} $E_{\text{res}}$ in $P$\\
+
+        \underline{Oplossing:}\\
+        \textbf{Stap 1: Grootte van de afzonderlijke velden}
+        \begin{align*}
+            E_{1} &= k_e \frac{|Q_{1}|}{r_{1}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 3{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}25 \, \mathrm{m})^{2}} = 4{,}3 \cdot 10^{5} \, \mathrm{N/C} \\
+            E_{2} &= k_e \frac{|Q_{2}|}{r_{2}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 6{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}40 \, \mathrm{m})^{2}} = 3{,}4 \cdot 10^{5} \, \mathrm{N/C}
+        \end{align*}
+        Beide ladingen zijn positief, dus wijst $\vec{E}_1$ weg van $Q_1$ (langs de $x$-as) en $\vec{E}_2$ weg van $Q_2$ (langs de $y$-as). Deze twee vectoren staan dus loodrecht op elkaar.
+
+        \textbf{Stap 2: Stelling van Pythagoras toepassen}
+        \begin{align*}
+            E_{\text{res}} &= \sqrt{E_1^{2} + E_2^{2}} \\
+                            &= \sqrt{(4{,}3 \cdot 10^{5} \, \mathrm{N/C})^{2} + (3{,}4 \cdot 10^{5} \, \mathrm{N/C})^{2}} \\
+                            &\simeq 5{,}5 \cdot 10^{5} \, \mathrm{N/C}
+        \end{align*}
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+
+\end{document}

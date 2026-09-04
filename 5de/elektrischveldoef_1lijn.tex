@@ -1,0 +1,171 @@
+\documentclass{ximera}
+%nieuw 2 september 2026
+\title{Vraagstukken elektrisch veld: ladingen op een lijn}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+    Oefeningen op de superpositie van elektrische velden van puntladingen die zich op één rechte lijn bevinden.
+\end{abstract}
+\maketitle
+
+%———————————————————————————————————————
+% OEF LIJN 1: netto veld buiten twee tegengestelde ladingen
+\begin{exercise}
+    Twee puntladingen bevinden zich op de $x$-as: $Q_{1}=+4{,}0 \cdot 10^{-6} \, \mathrm{C}$ bij $x=0{,}00 \, \mathrm{m}$ en $Q_{2}=-4{,}0 \cdot 10^{-6} \, \mathrm{C}$ bij $x=0{,}60 \, \mathrm{m}$.
+
+    \begin{center}
+        \begin{tikzpicture}[scale=1]
+            \draw[gray, thick] (-0.5,0) -- (4.5,0);
+            \draw[charge+] (0,0) circle (\R) node[scale=0.5]{$+$};
+            \draw[charge-] (3,0) circle (\R) node[scale=0.5]{$-$};
+            \filldraw (4,0) circle (1.2pt);
+            \node[below] at (0,-0.15) {$Q_1$};
+            \node[below] at (3,-0.15) {$Q_2$};
+            \node[below] at (4,-0.15) {$P$};
+            \node[above] at (1.5,0.1) {$0{,}60\,\mathrm{m}$};
+            \node[above] at (3.5,0.1) {$0{,}30\,\mathrm{m}$};
+        \end{tikzpicture}
+    \end{center}
+
+    Bereken de grootte en richting van het totale elektrisch veld in punt \textit{P} op $x = 0{,}90 \, \mathrm{m}$.
+
+    \[ E_{\text{net}} = \answer[tolerance=0.05,onlineshowanswerbutton]{3.6} \cdot 10^{5} \, \mathrm{N/C} \]
+
+    \begin{hint}
+        Bereken eerst de velden $E_1$ en $E_2$ afzonderlijk, elk met hun eigen afstand tot $P$.
+    \end{hint}
+    \begin{hint}
+        Bepaal voor elk veld apart de zin (denk aan het teken van de bronlading), en tel daarna algebraïsch op: alle ladingen en $P$ liggen immers op dezelfde lijn.
+    \end{hint}
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & Q_{1} = +4{,}0 \cdot 10^{-6} \, \mathrm{C} & & Q_{2} = -4{,}0 \cdot 10^{-6} \, \mathrm{C} \\
+            & r_{1} = 0{,}90 \, \mathrm{m} & & r_{2} = 0{,}30 \, \mathrm{m}
+        \end{align*}
+
+        \underline{Gevraagd:} $E_{\text{net}}$ in $P$\\
+
+        \underline{Oplossing:}\\
+        \textbf{Stap 1: Grootte van de afzonderlijke velden}
+        \begin{align*}
+            E_{1} &= k_e \frac{|Q_{1}|}{r_{1}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 4{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}90 \, \mathrm{m})^{2}} = 4{,}4 \cdot 10^{4} \, \mathrm{N/C} \\
+            E_{2} &= k_e \frac{|Q_{2}|}{r_{2}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 4{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}30 \, \mathrm{m})^{2}} = 4{,}0 \cdot 10^{5} \, \mathrm{N/C}
+        \end{align*}
+
+        \textbf{Stap 2: Zin van de velden bepalen}\\
+        We kiezen de x-as naar rechts. Vectoren die naar rechts wijzen, zijn positief. Vectoren die naar links wijzen, zijn negatief.
+        $Q_1$ is positief: $\vec{E}_1$ wijst in $P$ weg van $Q_1$, dus naar rechts ($+x$).\\
+        $Q_2$ is negatief: $\vec{E}_2$ wijst in $P$ naar $Q_2$ toe, dus naar links ($-x$).
+
+        \textbf{Stap 3: Algebraïsch optellen} (rechts is positief)
+        \begin{align*}
+            E_{\text{net}} &= E_1 - E_2 \\
+                            &= 4{,}4 \cdot 10^{4} \, \mathrm{N/C} - 4{,}0 \cdot 10^{5} \, \mathrm{N/C} \\
+                            &= -3{,}6 \cdot 10^{5} \, \mathrm{N/C}
+        \end{align*}
+        Het resulterende veld heeft een grootte van $3{,}6 \cdot 10^{5} \, \mathrm{N/C}$ en wijst naar \textbf{links} ($-x$-richting): dus naar de ladingen toe.
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% OEF LIJN 2: nulpunt tussen 2 positieve ladingen
+\begin{exercise}
+    Twee positieve puntladingen bevinden zich op de $x$-as: $Q_{1}=+2{,}0 \cdot 10^{-6} \, \mathrm{C}$ bij $x=0{,}00 \, \mathrm{m}$ en $Q_{3}=+8{,}0 \cdot 10^{-6} \, \mathrm{C}$ bij $x=1{,}20 \, \mathrm{m}$.
+
+    Op welke plaats tussen de twee ladingen is het totale elektrisch veld gelijk aan nul? Geef je antwoord als de afstand $x$ vanaf $Q_1$.
+
+    \[ x = \answer[tolerance=0.02,onlineshowanswerbutton]{0.40} \, \mathrm{m} \]
+
+    \begin{hint}
+        $Q_2$ heb je niet nodig.
+    \end{hint}
+
+    \begin{hint}
+        Noem de afstand tot $Q_1$ gelijk aan $x$, dan is de afstand tot $Q_3$ gelijk aan $(1{,}20 \, \mathrm{m} - x)$.
+    \end{hint}
+    \begin{hint}
+        Op de gezochte plaats moeten de velden van $Q_1$ en $Q_3$ exact even groot zijn (en tegengesteld gericht). Stel $E_1 = E_3$.
+    \end{hint}
+
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & Q_{1} = +2{,}0 \cdot 10^{-6} \, \mathrm{C} & & Q_{3} = +8{,}0 \cdot 10^{-6} \, \mathrm{C} & & d = 1{,}20 \, \mathrm{m}
+        \end{align*}
+
+        \underline{Gevraagd:} $x$, de afstand vanaf $Q_1$ waar $E_{\text{net}} = 0$\\
+
+        \underline{Oplossing:}\\
+        Omdat beide ladingen positief zijn, wijzen hun velden tussen de ladingen in tegengestelde richtingen: het is dus mogelijk dat ze elkaar opheffen. In het gezochte punt geldt $E_1 = E_3$.
+        Met $E_1=k_e \frac{Q_1}{r_1^{2}}=k_e \frac{Q_1}{x^{2}}$ en $E_3=k_e \frac{Q_3}{r_3^{2}}=k_e \frac{Q_3}{(d-x)^{2}}$. Hieruit volgt:
+        \begin{align*}
+            k_e \frac{Q_1}{x^{2}} &= k_e \frac{Q_3}{(d-x)^{2}} \\
+            \frac{Q_1}{x^{2}} &= \frac{Q_3}{(d-x)^{2}} \\
+            \left(\frac{d-x}{x}\right)^{2} &= \frac{Q_3}{Q_1} = \frac{8{,}0 \cdot 10^{-6} \, \mathrm{C}}{2{,}0 \cdot 10^{-6} \, \mathrm{C}} = 4 \\
+            \frac{d-x}{x} &= 2
+        \end{align*}
+        Hieruit volgt $d - x = 2x$, dus $d = 3x$, en
+        \[
+            x = \frac{d}{3} = \frac{1{,}20 \, \mathrm{m}}{3} = 0{,}40 \, \mathrm{m}
+        \]
+        Het gezocht punt ligt dus op $0{,}40 \, \mathrm{m}$ van $Q_1$ (en dus $0{,}80 \, \mathrm{m}$ van $Q_3$), zoals verwacht dichter bij de kleinste lading.
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% OEF LIJN 3: onbekende lading vinden (multi-question)
+\begin{exercise}
+    Op de $x$-as bevindt zich een puntlading $Q_{1}=+8{,}0 \cdot 10^{-6} \, \mathrm{C}$ bij $x=0{,}00 \, \mathrm{m}$. Een tweede, onbekende puntlading $Q_{2}$ bevindt zich bij $x=0{,}60 \, \mathrm{m}$. In punt \textit{P} op $x=0{,}20 \, \mathrm{m}$ blijkt het totale elektrisch veld gelijk aan nul te zijn.
+
+    \begin{question}
+        Welk teken moet $Q_2$ hebben opdat het veld in $P$ nul kan zijn?
+
+        \wordChoice{\choice[correct]{Positief}\choice{Negatief}}
+
+        \begin{hint}
+            Het veld van $Q_1$ in $P$ wijst naar rechts (weg van $Q_1$). Het veld van $Q_2$ in $P$ moet dus naar links wijzen. Punt $P$ ligt links van $Q_2$: in welke richting wijst het veld van een positieve lading, gezien vanaf een punt links ervan?
+        \end{hint}
+
+        \begin{solution}\nl
+            $Q_1$ is positief, dus wijst $\vec{E}_1$ in $P$ weg van $Q_1$: naar rechts. Om dit te compenseren, moet $\vec{E}_2$ in $P$ naar links wijzen. Punt $P$ ligt links van $Q_2$; een veld dat daar naar links (dus weg van $Q_2$) wijst, hoort bij een \textbf{positieve} lading $Q_2$.
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken de grootte van $Q_2$.
+
+        \[ Q_2 = \answer[tolerance=1,onlineshowanswerbutton]{32} \cdot 10^{-6} \, \mathrm{C} \]
+
+        \begin{hint}
+            In $P$ moet gelden $E_1 = E_2$. De afstand van $Q_1$ tot $P$ is $0{,}20 \, \mathrm{m}$; de afstand van $Q_2$ tot $P$ is $0{,}40 \, \mathrm{m}$.
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & Q_1 = +8{,}0 \cdot 10^{-6} \, \mathrm{C} & & r_1 = 0{,}20 \, \mathrm{m} & & r_2 = 0{,}40 \, \mathrm{m}
+            \end{align*}
+
+            \underline{Gevraagd:} $|Q_2|$\\
+
+            \underline{Oplossing:}\\
+            Opdat $E_{\text{net}}(P) = 0$, moet gelden $E_1 = E_2$:
+            \begin{align*}
+                k_e \frac{Q_1}{r_1^{2}} &= k_e \frac{Q_2}{r_2^{2}} \\
+                Q_2 &= Q_1 \cdot \left(\frac{r_2}{r_1}\right)^{2} \\
+                    &= 8{,}0 \cdot 10^{-6} \, \mathrm{C} \cdot \left(\frac{0{,}40 \, \mathrm{m}}{0{,}20 \, \mathrm{m}}\right)^{2} \\
+                    &= 8{,}0 \cdot 10^{-6} \, \mathrm{C} \cdot 4 \\
+                    &= 32 \cdot 10^{-6} \, \mathrm{C}
+            \end{align*}
+        \end{solution}
+    \end{question}
+\end{exercise}
+%———————————————————————————————————————
+
+\end{document}

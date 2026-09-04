@@ -18,6 +18,7 @@ We zeggen dat er een \textbf{elektrisch veld} bestaat in de ruimte rondom een ge
     $$ \vec{E} \equiv \frac{\vec{F}_e}{Q_t} $$
     De SI-eenheid van het elektrisch veld is de \textbf{newton per coulomb (N/C)}.
 \end{definition}
+
 %---------------------------
 % AFBEELDING: Figuur 23.10 (Testlading bij bronlading)
 \begin{figure}[ht!]
@@ -30,6 +31,54 @@ We zeggen dat er een \textbf{elektrisch veld} bestaat in de ruimte rondom een ge
     \label{fig:testlading_bronlading}
 \end{figure}
 %---------------------------
+
+%---------------------------
+% ANALOGIE ZWAARTEKRACHT
+\begin{remark}[expandable, title={Analogie met het zwaarteveld}]\nl
+    De definitie van het elektrisch veld lijkt heel sterk op iets wat we al kennen: het zwaarteveld! %Als veldkracht, een kracht dat geen contact nodig heeft om een invloed uit te oefenen, is er een bijhorend veld. Denk terug aan de zwaartekracht en het zwaarteveld.
+    Net zoals een voorwerp met massa $m$ een zwaartekracht $\vec{F}_g$ ondervindt in het zwaarteveld $\vec{g}$ van de aarde, ondervindt een lading $Q_t$ een elektrische kracht $\vec{F}_e$ in een elektrisch veld $\vec{E}$.
+    
+    \begin{itemize}
+        \item \textbf{Zwaarteveld:} $\vec{g} = \frac{\vec{F}_g}{m} \implies \vec{F}_g = m\cdot\vec{g}$
+        \item \textbf{Elektrisch veld:} $\vec{E} = \frac{\vec{F}_e}{Q_t} \implies \vec{F}_e = Q_t\cdot\vec{E}$
+    \end{itemize}
+
+    \begin{center}
+        \begin{tikzpicture}[scale=1]
+            % --- ZWAARTEVELD (Links) ---
+            \node[above, font=\bfseries] at (0, 2) {Zwaarteveld $\vec{g}$};
+            
+            % Veldlijnen g (blauw)
+            \foreach \x in {-1.5, -0.5, 0.5, 1.5} {
+                \draw[->, thick, blue!60] (\x, 1.5) -- (\x, -2);
+            }
+            \node[blue!80!black, right, font=\large] at (1.5, -1) {$\vec{g}$};
+            
+            % Massa
+            \node[circle, draw=black, fill=gray!30, thick, minimum size=9mm, font=\large] (m) at (0,0) {$m$};
+            
+            % Zwaartekracht
+            \draw[->, very thick, red] (m) -- (0,-1.6) node[right, font=\large] {$\vec{F}_g$};
+
+            % --- ELEKTRISCH VELD (Rechts) ---
+            \node[above, font=\bfseries] at (6, 2) {Elektrisch veld $\vec{E}$};
+            
+            % Veldlijnen E (oranje)
+            \foreach \x in {4.5, 5.5, 6.5, 7.5} {
+                \draw[->, thick, orange!70!black] (\x, 1.5) -- (\x, -2);
+            }
+            \node[orange!80!black, right, font=\large] at (7.5, -1) {$\vec{E}$};
+            
+            % Lading
+            \node[circle, draw=orange!90!red, fill=orange!40, thick, minimum size=9mm, font=\large] (q) at (6,0) {$+Q_t$};
+            
+            % Elektrische kracht
+            \draw[->, very thick, red] (q) -- (6,-1.6) node[right, font=\large] {$\vec{F}_e$};
+        \end{tikzpicture}
+    \end{center}
+\end{remark}
+%---------------------------
+
 \begin{theorem}[foldable=true,title={Eigenschappen van het elektrisch veld}]\nl
     \begin{itemize}
         \item Het veld $\vec{E}$ wordt gecreëerd door de bronlading(en), \textbf{niet} door de testlading zelf\footnote{De testlading zelf maakt ook een elektrisch veld, maar heeft geen invloed in dat punt zelf.}.

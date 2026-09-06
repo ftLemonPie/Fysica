@@ -96,4 +96,268 @@
 \end{question}
 %———————————————————————————————————————
 
+%———————————————————————————————————————
+% CONCEPT OEF VIERKANT 1: schaakbordpatroon, symmetrie geeft NUL veld
+\begin{exercise}
+    Vier puntladingen met dezelfde grootte $|Q|$ bevinden zich op de hoekpunten van een vierkant, zoals aangegeven op de tekening. Punt $P$ ligt in het midden van het vierkant.
+
+    \begin{center}
+        \begin{tikzpicture}[scale=0.9]
+            \tkzDefPoint(0,4){A}
+            \tkzDefPoint(4,4){B}
+            \tkzDefPoint(4,0){C}
+            \tkzDefPoint(0,0){D}
+            \tkzDefPoint(2,2){P}
+            \tkzDrawPolygon(A,B,C,D)
+            \tkzLabelPoint[above=1.5mm](A){$+Q$}
+            \tkzLabelPoint[above=1.5mm](B){$-Q$}
+            \tkzLabelPoint[below=1.5mm](C){$+Q$}
+            \tkzLabelPoint[below=1.5mm](D){$-Q$}
+            \tkzLabelPoint[below=1.5mm](P){$P$}
+            \draw[charge+] (A) circle (\R) node[scale=0.5]{$+$};
+            \draw[charge-] (B) circle (\R) node[scale=0.5]{$-$};
+            \draw[charge+] (C) circle (\R) node[scale=0.5]{$+$};
+            \draw[charge-] (D) circle (\R) node[scale=0.5]{$-$};
+            \filldraw (P) circle (1.5pt);
+        \end{tikzpicture}
+    \end{center}
+
+    Naar waar wijst het resulterende elektrisch veld in punt $P$?
+
+    \begin{multipleChoice}
+        \choice{Naar boven.}
+        \choice{Naar rechts.}
+        \choice{Diagonaal, van de negatieve naar de positieve ladingen.}
+        \choice[correct]{Het elektrisch veld is nul in $P$.}
+    \end{multipleChoice}
+
+    \begin{hint}
+        Kijk naar de ladingen die \emph{diagonaal} tegenover elkaar liggen. Ze bevinden zich op dezelfde afstand van $P$ en hebben hetzelfde teken en dezelfde grootte.
+    \end{hint}
+
+    \begin{solution}\nl
+        De ladingen op de twee uiteinden van eenzelfde diagonaal ($A$ en $C$, beide $+Q$; $B$ en $D$, beide $-Q$) liggen op exact dezelfde afstand van $P$ en hebben dezelfde grootte en hetzelfde teken. Het veld van $A$ in $P$ wijst dan precies tegengesteld aan het veld van $C$ in $P$, waardoor deze twee elkaar volledig opheffen. Hetzelfde geldt voor $B$ en $D$. Het resulterende veld in $P$ is dus \textbf{nul}.
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% CONCEPT OEF VIERKANT 2: boven +, onder -, homogeen-achtig veld
+\begin{exercise}
+    Vier puntladingen met dezelfde grootte $|Q|$ bevinden zich op de hoekpunten van een rechthoek, zoals aangegeven op de tekening. Punt $P$ ligt in het midden van de rechthoek.
+
+    \begin{center}
+        \begin{tikzpicture}[scale=0.9]
+            \tkzDefPoint(0,3){A}
+            \tkzDefPoint(5,3){B}
+            \tkzDefPoint(5,0){C}
+            \tkzDefPoint(0,0){D}
+            \tkzDefPoint(2.5,1.5){P}
+            \tkzDrawPolygon(A,B,C,D)
+            \tkzLabelPoint[above=1.5mm](A){$+Q$}
+            \tkzLabelPoint[above=1.5mm](B){$+Q$}
+            \tkzLabelPoint[below=1.5mm](C){$-Q$}
+            \tkzLabelPoint[below=1.5mm](D){$-Q$}
+            \tkzLabelPoint[right=1.5mm](P){$P$}
+            \draw[charge+] (A) circle (\R) node[scale=0.5]{$+$};
+            \draw[charge+] (B) circle (\R) node[scale=0.5]{$+$};
+            \draw[charge-] (C) circle (\R) node[scale=0.5]{$-$};
+            \draw[charge-] (D) circle (\R) node[scale=0.5]{$-$};
+            \filldraw (P) circle (1.5pt);
+        \end{tikzpicture}
+    \end{center}
+
+    Naar waar wijst het resulterende elektrisch veld in punt $P$?
+
+    \begin{multipleChoice}
+        \choice{Naar boven, richting de positieve ladingen.}
+        \choice[correct]{Naar onder, richting de negatieve ladingen.}
+        \choice{Naar links of naar rechts.}
+        \choice{Het elektrisch veld is nul in $P$.}
+    \end{multipleChoice}
+
+    \begin{hint}
+        Denk aan de horizontale en de verticale bijdrage van elke lading apart. Welke component (horizontaal of verticaal) valt weg door de symmetrie, en welke component versterkt net?
+    \end{hint}
+
+    \begin{solution}\nl
+        Door de links-rechtssymmetrie van de figuur heffen de horizontale bijdragen van elk paar ladingen elkaar telkens op. Enkel de verticale bijdragen blijven over. De bovenste, positieve ladingen duwen $P$ weg van zichzelf, dus naar onder. De onderste, negatieve ladingen trekken $P$ naar zichzelf toe, eveneens naar onder. Alle verticale bijdragen werken dus in dezelfde zin en het resulterende veld in $P$ wijst \textbf{recht naar onder}, van de positieve naar de negatieve ladingen — vergelijkbaar met het homogene veld tussen twee geladen platen.
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% CONCEPT OEF VIERKANT 3: ongelijke ladingen op de diagonaal
+\begin{exercise}
+    Vier puntladingen bevinden zich op de hoekpunten van een vierkant, zoals aangegeven op de tekening. Twee van de ladingen zijn gelijk in grootte en teken ($-Q$), maar op de andere diagonaal is één lading twee keer zo groot als de andere. Punt $P$ ligt in het midden van het vierkant.
+
+    \begin{center}
+        \begin{tikzpicture}[scale=0.9]
+            \tkzDefPoint(0,4){A}
+            \tkzDefPoint(4,4){B}
+            \tkzDefPoint(4,0){C}
+            \tkzDefPoint(0,0){D}
+            \tkzDefPoint(2,2){P}
+            \tkzDrawPolygon(A,B,C,D)
+            \tkzLabelPoint[above=1.5mm](A){$+2Q$}
+            \tkzLabelPoint[above=1.5mm](B){$-Q$}
+            \tkzLabelPoint[below=1.5mm](C){$+Q$}
+            \tkzLabelPoint[below=1.5mm](D){$-Q$}
+            \tkzLabelPoint[below=1.5mm](P){$P$}
+            \draw[charge+] (A) circle (\R) node[scale=0.5]{$+$};
+            \draw[charge-] (B) circle (\R) node[scale=0.5]{$-$};
+            \draw[charge+] (C) circle (\R) node[scale=0.5]{$+$};
+            \draw[charge-] (D) circle (\R) node[scale=0.5]{$-$};
+            \filldraw (P) circle (1.5pt);
+        \end{tikzpicture}
+    \end{center}
+
+    Naar waar wijst het resulterende elektrisch veld in punt $P$?
+
+    \begin{multipleChoice}
+        \choice{Diagonaal, richting $A$ (de sterkste lading).}
+        \choice[correct]{Diagonaal, richting $C$ (weg van de sterkste lading).}
+        \choice{Horizontaal, van $D$ naar $C$.}
+        \choice{Het elektrisch veld is nul in $P$.}
+    \end{multipleChoice}
+
+    \begin{hint}
+        Ladingen $B$ en $D$ heffen elkaar volledig op (zelfde grootte, zelfde teken, diagonaal tegenover elkaar). Wat blijft er dan nog over?
+    \end{hint}
+
+    \begin{solution}\nl
+        De ladingen $B$ en $D$ zijn identiek ($-Q$) en liggen diagonaal tegenover elkaar op dezelfde afstand van $P$: hun bijdragen heffen elkaar volledig op, net als in de eerste oefening van deze reeks.
+
+        Wat overblijft, is de bijdrage van $A$ ($+2Q$) en $C$ ($+Q$), eveneens diagonaal tegenover elkaar op gelijke afstand van $P$, maar nu met een \emph{ongelijke} grootte. Beide zijn positief, dus duwen ze $P$ weg van zichzelf. Omdat $A$ twee keer zo sterk is als $C$, wint de bijdrage van $A$ het pleit. Het resulterende veld in $P$ wijst dus diagonaal, \textbf{weg van $A$ en richting $C$}.
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% CONCEPT OEF 2 LADINGEN 1: tegengesteld teken, GELIJKE grootte (dipool) -> geen nulpunt
+\begin{exercise}
+    Twee tegengestelde puntladingen $+Q$ en $-Q$, met exact dezelfde grootte, bevinden zich op een rechte lijn.
+
+    \begin{center}
+        \begin{tikzpicture}[scale=1]
+            \tkzDefPoint(0,0){Q1}
+            \tkzDefPoint(6,0){Q2}
+            \draw[gray,thick] (Q1) -- (Q2);
+            \tkzLabelPoint[below=1.5mm](Q1){$+Q$}
+            \tkzLabelPoint[below=1.5mm](Q2){$-Q$}
+            \draw[charge+] (Q1) circle (\R) node[scale=0.5]{$+$};
+            \draw[charge-] (Q2) circle (\R) node[scale=0.5]{$-$};
+        \end{tikzpicture}
+    \end{center}
+
+    Is er op de lijn door beide ladingen een plaats waar het elektrisch veld nul is? Verklaar.
+
+    \begin{multipleChoice}
+        \choice{Ja, ergens tussen de twee ladingen.}
+        \choice{Ja, links van $+Q$.}
+        \choice{Ja, rechts van $-Q$.}
+        \choice[correct]{Nee, nergens op een eindige afstand (enkel op oneindige afstand nadert het veld nul).}
+    \end{multipleChoice}
+
+    \begin{hint}
+        Ga voor elk van de drie gebieden (links, tussen, rechts) na of de twee velden elkaar ergens tegenwerken.
+    \end{hint}
+    \begin{hint}
+        Vergelijk deze situatie met de vorige oefening: wat was daar de reden dat er wél een nulpunt bestond? Is die reden hier ook aanwezig?
+    \end{hint}
+
+    \begin{solution}\nl
+        \emph{Tussen} de twee ladingen wijzen beide velden in dezelfde zin (weg van $+Q$, richting $-Q$): ze werken elkaar dus nooit tegen en tellen enkel op.
+
+        \emph{Links van $+Q$ of rechts van $-Q$} wijzen de twee velden wel in tegengestelde zin. Maar omdat beide ladingen exact even groot zijn, is de lading die het dichtst bij ligt altijd dominant: op elke eindige afstand is de bijdrage van de dichtstbijzijnde lading sterker dan die van de verder gelegen lading (met dezelfde grootte). De twee velden kunnen elkaar dus nooit precies opheffen.
+
+        In tegenstelling tot de vorige oefening (ongelijke ladingen) bestaat hier dus \textbf{geen enkel punt op eindige afstand} waar het elektrisch veld nul is. Enkel oneindig ver van beide ladingen nadert het veld naar nul.
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% CONCEPT OEF 2 LADINGEN 2: zelfde teken, ongelijke grootte -> nulpunt TUSSEN
+\begin{exercise}
+    Twee positieve puntladingen $Q_{1}$ en $Q_{2}$ bevinden zich op een rechte lijn, met $Q_{1} < Q_{2}$ (dus $Q_2$ is de sterkste lading).
+
+    \begin{center}
+        \begin{tikzpicture}[scale=1]
+            \tkzDefPoint(0,0){Q1}
+            \tkzDefPoint(6,0){Q2}
+            \draw[gray,thick] (Q1) -- (Q2);
+            \tkzLabelPoint[below=1.5mm](Q1){$Q_1$}
+            \tkzLabelPoint[below=1.5mm](Q2){$Q_2$}
+            \draw[charge+] (Q1) circle (\R) node[scale=0.5]{$+$};
+            \draw[charge+] (Q2) circle (\R) node[scale=0.6]{$+$};
+        \end{tikzpicture}
+    \end{center}
+
+    Is er op de lijn door beide ladingen een plaats waar het elektrisch veld nul is? Zo ja, waar ligt die plaats ongeveer?
+
+    \begin{multipleChoice}
+        \choice{Nee, er is nergens een punt waar het veld nul is.}
+        \choice{Ja, tussen de ladingen, dichter bij de sterkste lading $Q_2$.}
+        \choice[correct]{Ja, tussen de ladingen, dichter bij de zwakste lading $Q_1$.}
+        \choice{Ja, maar buiten het gebied tussen de twee ladingen, het korste bij lading $Q_1$.}
+        \choice{Ja, maar buiten het gebied tussen de twee ladingen, het korste bij lading $Q_2$.}
+    \end{multipleChoice}
+
+    \begin{hint}
+        Bekijk eerst de zin van het veld in de drie gebieden (links van $Q_1$, tussen $Q_1$ en $Q_2$, rechts van $Q_2$). In welk gebied wijzen de twee bijdragen elkaar tegen?
+    \end{hint}
+    \begin{hint}
+        Om dezelfde veldsterkte te bekomen met een kleinere lading, moet je dichter bij die lading staan.
+    \end{hint}
+
+    \begin{solution}\nl
+        Omdat beide ladingen positief zijn, wijzen hun velden in het gebied \emph{tussen} $Q_1$ en $Q_2$ in tegengestelde zin naar elkaar toe (weg van elk van beide ladingen). Links van $Q_1$ of rechts van $Q_2$ wijzen beide velden juist in dezelfde zin en kunnen ze nooit nul worden. Het nulpunt ligt dus ergens tussen de twee ladingen.
+
+        Om het veld van de zwakkere lading $Q_1$ even groot te maken als dat van de sterkere lading $Q_2$, moet je dichter bij $Q_1$ staan (kleinere afstand compenseert de kleinere lading). Het nulpunt ligt dus tussen de ladingen, \textbf{dichter bij de zwakste lading $Q_1$}.
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% CONCEPT OEF 2 LADINGEN 3: verschillend teken, ongelijke grootte -> nulpunt TUSSEN
+\begin{exercise}
+    Twee puntladingen $Q_{1}$ en $Q_{2}$ bevinden zich op een rechte lijn, met $Q_{1} < 0$ en $Q_{2} > 0$, en $|Q_{1}| < |Q_{2}|$ (dus $Q_1$ is de zwakkere negatieve lading en $Q_2$ is de sterkere positieve lading).
+
+    \begin{center}
+        \begin{tikzpicture}[scale=1]
+            \tkzDefPoint(0,0){Q1}
+            \tkzDefPoint(6,0){Q2}
+            \draw[gray,thick] (Q1) -- (Q2);
+            \tkzLabelPoint[below=1.5mm](Q1){$Q_1$}
+            \tkzLabelPoint[below=1.5mm](Q2){$Q_2$}
+            \draw[charge-] (Q1) circle (\R) node[scale=0.5]{$-$};
+            \draw[charge+] (Q2) circle (\R) node[scale=0.6]{$+$};
+        \end{tikzpicture}
+    \end{center}
+
+    Is er op de lijn door beide ladingen een plaats waar het elektrisch veld nul is? Zo ja, waar ligt die plaats ongeveer?
+
+    \begin{multipleChoice}
+        \choice{Nee, er is nergens een punt waar het veld nul is.}
+        \choice{Ja, tussen de ladingen, dichter bij de sterkste lading $Q_2$.}
+        \choice{Ja, tussen de ladingen, dichter bij de zwakste lading $Q_1$.}
+        \choice[correct]{Ja, maar buiten het gebied tussen de twee ladingen, het korste bij lading $Q_1$.}
+        \choice{Ja, maar buiten het gebied tussen de twee ladingen, het korste bij lading $Q_2$.}
+    \end{multipleChoice}
+
+    \begin{hint}
+        Bekijk eerst de zin van het veld in de drie gebieden (links van $Q_1$, tussen $Q_1$ en $Q_2$, rechts van $Q_2$). In welk gebied wijzen de twee bijdragen elkaar tegen?
+    \end{hint}
+    \begin{hint}
+        Om dezelfde veldsterkte te bekomen met een kleinere lading, moet je dichter bij die lading staan.
+    \end{hint}
+
+    \begin{solution}\nl
+        Omdat beide ladingen verschillend zijn, wijzen hun velden in het gebied \emph{buiten} $Q_1$ en $Q_2$ in tegengestelde zin naar elkaar toe (weg van de positieve lading $Q_2$ en naar de negatieve lading $Q_1$).
+
+        Om het veld van de zwakkere lading $Q_1$ even groot te maken als dat van de sterkere lading $Q_2$, moet je dichter bij $Q_1$ staan (kleinere afstand compenseert de kleinere lading). Het nulpunt ligt dus links van lading $Q_1$, of dus buiten de twee ladingen het korste bij de kleinse lading $Q_1$.
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
 \end{document}

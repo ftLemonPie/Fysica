@@ -23,9 +23,9 @@
             \draw[gray,thick] (P) -- (Q2);
             \tkzFillAngle[fill=blue!20,opacity=0.5](Q1,P,Q2)
             \tkzLabelAngle[pos=0.6](Q1,P,Q2){$90^\circ$}
-            \tkzLabelPoint[below](P){$P$}
-            \tkzLabelPoint[below](Q1){$Q_1$}
-            \tkzLabelPoint[left](Q2){$Q_2$}
+            \tkzLabelPoint[below=1.5mm](P){$P$}
+            \tkzLabelPoint[below=1.5mm](Q1){$Q_1$}
+            \tkzLabelPoint[left=1.5mm](Q2){$Q_2$}
             \draw[charge+] (Q1) circle (\R) node[scale=0.5]{$+$};
             \draw[charge+] (Q2) circle (\R) node[scale=0.5]{$+$};
             \filldraw (P) circle (1.2pt);
@@ -71,7 +71,213 @@
 %———————————————————————————————————————
 
 %———————————————————————————————————————
-% OEF DRIEHOEK 2: rechthoekige driehoek, cosinusregel
+%  OEF DRIEHOEK PYTH 2: eenvoudigste geval, 2 positieve ladingen
+\begin{exercise}
+    Twee positieve puntladingen $Q_{1} = +2{,}0 \cdot 10^{-6} \, \mathrm{C}$ en $Q_{2} = +5{,}0 \cdot 10^{-6} \, \mathrm{C}$ bevinden zich zoals aangegeven op de tekening, met een rechte hoek in punt \textit{P}. De afstand van $Q_1$ tot $P$ is $0{,}20 \, \mathrm{m}$, en de afstand van $Q_2$ tot $P$ is $0{,}30 \, \mathrm{m}$.
+ 
+    \begin{center}
+        \begin{tikzpicture}[scale=1]
+            \tkzDefPoint(0,0){P}
+            \tkzDefPoint(2.0,0){Q1}
+            \tkzDefPoint(0,3.0){Q2}
+            \draw[gray,thick] (P) -- (Q1) node[midway,below]{$0{,}20\,\mathrm{m}$};
+            \draw[gray,thick] (P) -- (Q2) node[midway,left]{$0{,}30\,\mathrm{m}$};
+            \tkzMarkRightAngle[size=0.3](Q1,P,Q2)
+            \tkzLabelPoint[below=1.5mm](P){$P$}
+            \tkzLabelPoint[below=1.5mm](Q1){$Q_1$}
+            \tkzLabelPoint[left=1.5mm](Q2){$Q_2$}
+            \draw[charge+] (Q1) circle (\R) node[scale=0.5]{$+$};
+            \draw[charge+] (Q2) circle (\R) node[scale=0.5]{$+$};
+            \filldraw (P) circle (1.2pt);
+        \end{tikzpicture}
+    \end{center}
+ 
+    Bereken de grootte van het totale elektrisch veld in punt \textit{P}.
+ 
+    \[ E_{\text{res}} = \answer[tolerance=0.1,onlineshowanswerbutton]{6.7} \cdot 10^{5} \, \mathrm{N/C} \]
+
+ 
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & Q_{1} = +2{,}0 \cdot 10^{-6} \, \mathrm{C} & & Q_{2} = +5{,}0 \cdot 10^{-6} \, \mathrm{C} \\
+            & r_{1} = 0{,}20 \, \mathrm{m} & & r_{2} = 0{,}30 \, \mathrm{m}
+        \end{align*}
+ 
+        \underline{Gevraagd:} $E_{\text{res}}$ in $P$\\
+ 
+        \underline{Oplossing:}\\
+        \textbf{Stap 1: Grootte van de afzonderlijke velden}
+        \begin{align*}
+            E_{1} &= k_e \frac{|Q_{1}|}{r_{1}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 2{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}20 \, \mathrm{m})^{2}} = 4{,}5 \cdot 10^{5} \, \mathrm{N/C} \\
+            E_{2} &= k_e \frac{|Q_{2}|}{r_{2}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 5{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}30 \, \mathrm{m})^{2}} = 5{,}0 \cdot 10^{5} \, \mathrm{N/C}
+        \end{align*}
+        Beide ladingen zijn positief, dus wijst $\vec{E}_1$ weg van $Q_1$ en $\vec{E}_2$ weg van $Q_2$. Omdat de rechte hoek in $P$ ligt, staan deze twee vectoren loodrecht op elkaar.
+ 
+        \textbf{Stap 2: Stelling van Pythagoras toepassen}
+        \begin{align*}
+            E_{\text{res}} &= \sqrt{E_1^{2} + E_2^{2}} \\
+                            &= \sqrt{(4{,}5 \cdot 10^{5} \, \mathrm{N/C})^{2} + (5{,}0 \cdot 10^{5} \, \mathrm{N/C})^{2}} \\
+                            &\simeq 6{,}7 \cdot 10^{5} \, \mathrm{N/C}
+        \end{align*}
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+ 
+%———————————————————————————————————————
+% OEF DRIEHOEK PYTH 3: rechte hoek in P, gemengde tekens
+\begin{exercise}
+    Een positieve puntlading $Q_{1} = +3{,}0 \cdot 10^{-6} \, \mathrm{C}$ en een negatieve puntlading $Q_{3} = -4{,}0 \cdot 10^{-6} \, \mathrm{C}$ bevinden zich zoals aangegeven op de tekening, met een rechte hoek in punt \textit{P}. De afstand van $Q_1$ tot $P$ is $0{,}15 \, \mathrm{m}$, en de afstand van $Q_3$ tot $P$ is $0{,}25 \, \mathrm{m}$.
+ 
+    \begin{center}
+        \begin{tikzpicture}[scale=1.4]
+            \tkzDefPoint(0,0){P}
+            \tkzDefPoint(1.5,0){Q1}
+            \tkzDefPoint(0,2.5){Q3}
+            \draw[gray,thick] (P) -- (Q1) node[midway,below]{$0{,}15\,\mathrm{m}$};
+            \draw[gray,thick] (P) -- (Q3) node[midway,left]{$0{,}25\,\mathrm{m}$};
+            \tkzMarkRightAngle[size=0.25](Q1,P,Q3)
+            \tkzLabelPoint[below=1.5mm](P){$P$}
+            \tkzLabelPoint[below=1.5mm](Q1){$Q_1$}
+            \tkzLabelPoint[left=1.5mm](Q3){$Q_3$}
+            \draw[charge+] (Q1) circle (\R) node[scale=0.5]{$+$};
+            \draw[charge-] (Q3) circle (\R) node[scale=0.5]{$-$};
+            \filldraw (P) circle (1.2pt);
+        \end{tikzpicture}
+    \end{center}
+ 
+    \begin{question}
+        Maak een schets van $\vec{E}_1$ en $\vec{E}_3$ in punt $P$. Welke bewering klopt?
+ 
+        \begin{multipleChoice}
+            \choice{$\vec{E}_1$ en $\vec{E}_3$ wijzen beide van $P$ weg, in dezelfde zin.}
+            \choice[correct]{$\vec{E}_1$ wijst van $P$ weg (langs de lijn naar $Q_1$), $\vec{E}_3$ wijst van $P$ naar $Q_3$ toe. Ze staan nog steeds loodrecht op elkaar.}
+            \choice{Omdat de ladingen een verschillend teken hebben, kan je de stelling van Pythagoras hier niet gebruiken.}
+        \end{multipleChoice}
+ 
+        \begin{hint}
+            Kijk naar het teken van elke lading afzonderlijk om de zin van elk veld te bepalen. De hoek tussen de twee \textit{lijnstukken} $PQ_1$ en $PQ_3$ verandert niet door het teken van de ladingen.
+        \end{hint}
+    \end{question}
+ 
+    \begin{question}
+        Bereken de grootte van het totale elektrisch veld in punt \textit{P} als daar een lading $Q_2 = +2{,}0 \cdot 10^{-6} \, \mathrm{C}$ is geplaatst?
+ 
+        \[ E_{\text{res}} = \answer[tolerance=0.05,onlineshowanswerbutton]{1.3} \cdot 10^{6} \, \mathrm{N/C} \]
+ 
+        \begin{hint}
+            $Q_2$ staat in punt \textit{P} en heeft dus geen invloed op het elektrisch veld in punt \textit{P} zelf. Deze lading heb je dus niet nodig.
+        \end{hint}
+ 
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & Q_{1} = +3{,}0 \cdot 10^{-6} \, \mathrm{C} & & Q_{3} = -4{,}0 \cdot 10^{-6} \, \mathrm{C} \\
+                & r_{1} = 0{,}15 \, \mathrm{m} & & r_{3} = 0{,}25 \, \mathrm{m}
+            \end{align*}
+ 
+            \underline{Gevraagd:} $E_{\text{res}}$ in $P$\\
+ 
+            \underline{Oplossing:}\\
+            \textbf{Stap 1: Grootte van de afzonderlijke velden}
+            \begin{align*}
+                E_{1} &= k_e \frac{|Q_{1}|}{r_{1}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 3{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}15 \, \mathrm{m})^{2}} = 1{,}2 \cdot 10^{6} \, \mathrm{N/C} \\
+                E_{3} &= k_e \frac{|Q_{3}|}{r_{3}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 4{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}25 \, \mathrm{m})^{2}} = 5{,}8 \cdot 10^{5} \, \mathrm{N/C}
+            \end{align*}
+            $Q_1$ is positief: $\vec{E}_1$ wijst van $P$ weg (langs $PQ_1$). $Q_3$ is negatief: $\vec{E}_3$ wijst van $P$ naar $Q_3$ toe (langs $PQ_3$). Beide lijnstukken $PQ_1$ en $PQ_3$ staan loodrecht op elkaar, dus staan ook $\vec{E}_1$ en $\vec{E}_3$ loodrecht op elkaar.
+ 
+            \textbf{Stap 2: Stelling van Pythagoras toepassen}
+            \begin{align*}
+                E_{\text{res}} &= \sqrt{E_1^{2} + E_3^{2}} \\
+                                &= \sqrt{(1{,}2 \cdot 10^{6} \, \mathrm{N/C})^{2} + (5{,}8 \cdot 10^{5} \, \mathrm{N/C})^{2}} \\
+                                &\simeq 1{,}3 \cdot 10^{6} \, \mathrm{N/C}
+            \end{align*}
+        \end{solution}
+    \end{question}
+\end{exercise}
+%———————————————————————————————————————
+ 
+%———————————————————————————————————————
+% OEF DRIEHOEK PYTH 4: rechte hoek in P, ontbrekende afstand via Pythagoras
+\begin{exercise}
+    Twee puntladingen $Q_{1} = +6{,}0 \cdot 10^{-6} \, \mathrm{C}$ en $Q_{2} = -8{,}0 \cdot 10^{-6} \, \mathrm{C}$ bevinden zich zoals aangegeven op de tekening, met een rechte hoek in punt \textit{P}. De afstand van $Q_1$ tot $P$ is $0{,}30 \, \mathrm{m}$. De afstand tussen $Q_1$ en $Q_2$ zelf (dus niet tot $P$) bedraagt $0{,}50 \, \mathrm{m}$.
+ 
+    \begin{center}
+        \begin{tikzpicture}[scale=1.2]
+            \tkzDefPoint(0,0){P}
+            \tkzDefPoint(3.0,0){Q1}
+            \tkzDefPoint(0,4.0){Q2}
+            \draw[gray,thick] (P) -- (Q1) node[midway,below]{$0{,}30\,\mathrm{m}$};
+            \draw[gray,dashed] (P) -- (Q2) node[midway,left]{$?$};
+            \draw[gray,thick] (Q1) -- (Q2) node[midway,above right]{$0{,}50\,\mathrm{m}$};
+            \tkzMarkRightAngle[size=0.3](Q1,P,Q2)
+            \tkzLabelPoint[below=1.5mm](P){$P$}
+            \tkzLabelPoint[below=1.5mm](Q1){$Q_1$}
+            \tkzLabelPoint[left=1.5mm](Q2){$Q_2$}
+            \draw[charge+] (Q1) circle (\R) node[scale=0.5]{$+$};
+            \draw[charge-] (Q2) circle (\R) node[scale=0.5]{$-$};
+            \filldraw (P) circle (1.2pt);
+        \end{tikzpicture}
+    \end{center}
+ 
+    \begin{question}
+        Bereken eerst de afstand van $Q_2$ tot $P$.
+ 
+        \[ r_{2} = \answer[tolerance=0.01,onlineshowanswerbutton]{0.40} \, \mathrm{m} \]
+ 
+        \begin{hint}
+            De driehoek gevormd door $P$, $Q_1$ en $Q_2$ is rechthoekig, met de rechte hoek in $P$. De gegeven afstand van $0{,}50 \, \mathrm{m}$ tussen $Q_1$ en $Q_2$ is dus de schuine zijde van die driehoek.
+        \end{hint}
+ 
+        \begin{solution}\nl
+            De driehoek $PQ_1Q_2$ is rechthoekig met de rechte hoek in $P$. De zijde $Q_1Q_2 = 0{,}50 \, \mathrm{m}$ is dan de schuine zijde. Met de stelling van Pythagoras:
+            \begin{align*}
+                r_{2} &= \sqrt{(Q_1Q_2)^{2} - r_{1}^{2}} \\
+                      &= \sqrt{(0{,}50 \, \mathrm{m})^{2} - (0{,}30 \, \mathrm{m})^{2}} \\
+                      &= 0{,}40 \, \mathrm{m}
+            \end{align*}
+        \end{solution}
+    \end{question}
+ 
+    \begin{question}
+        Bereken nu de grootte van het totale elektrisch veld in punt \textit{P}.
+ 
+        \[ E_{\text{res}} = \answer[tolerance=0.05,onlineshowanswerbutton]{7.5} \cdot 10^{5} \, \mathrm{N/C} \]
+ 
+        \begin{hint}
+            Bereken $E_1$ en $E_2$ met de afstanden $r_1 = 0{,}30 \, \mathrm{m}$ en $r_2 = 0{,}40 \, \mathrm{m}$. Omdat de rechte hoek zich in $P$ bevindt, staan de twee veldvectoren loodrecht op elkaar.
+        \end{hint}
+ 
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & Q_{1} = +6{,}0 \cdot 10^{-6} \, \mathrm{C} & & Q_{2} = -8{,}0 \cdot 10^{-6} \, \mathrm{C} \\
+                & r_{1} = 0{,}30 \, \mathrm{m} & & r_{2} = 0{,}40 \, \mathrm{m}
+            \end{align*}
+ 
+            \underline{Gevraagd:} $E_{\text{res}}$ in $P$\\
+ 
+            \underline{Oplossing:}\\
+            \textbf{Stap 1: Grootte van de afzonderlijke velden}
+            \begin{align*}
+                E_{1} &= k_e \frac{|Q_{1}|}{r_{1}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 6{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}30 \, \mathrm{m})^{2}} = 6{,}0 \cdot 10^{5} \, \mathrm{N/C} \\
+                E_{2} &= k_e \frac{|Q_{2}|}{r_{2}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 8{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}40 \, \mathrm{m})^{2}} = 4{,}5 \cdot 10^{5} \, \mathrm{N/C}
+            \end{align*}
+            $Q_1$ is positief: $\vec{E}_1$ wijst van $P$ weg. $Q_2$ is negatief: $\vec{E}_2$ wijst van $P$ naar $Q_2$ toe. Omdat de rechte hoek in $P$ ligt, staan beide vectoren loodrecht op elkaar.
+ 
+            \textbf{Stap 2: Stelling van Pythagoras toepassen}
+            \begin{align*}
+                E_{\text{res}} &= \sqrt{E_1^{2} + E_2^{2}} \\
+                                &= \sqrt{(6{,}0 \cdot 10^{5} \, \mathrm{N/C})^{2} + (4{,}5 \cdot 10^{5} \, \mathrm{N/C})^{2}} \\
+                                &\simeq 7{,}5 \cdot 10^{5} \, \mathrm{N/C}
+            \end{align*}
+        \end{solution}
+    \end{question}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% OEF DRIEHOEK 5: rechthoekige driehoek, cosinusregel
 \begin{exercise}
     Twee puntladingen $Q_{A} = -5{,}0 \cdot 10^{-6} \, \mathrm{C}$ en $Q_{B} = -2{,}0 \cdot 10^{-6} \, \mathrm{C}$ bevinden zich in de hoekpunten van een rechthoekige driehoek, zoals te zien op de tekening. De rechte hoek bevindt zich bij $Q_A$. De afstand tussen $Q_A$ en $P$ is $0{,}30 \, \mathrm{m}$, en de afstand tussen $Q_A$ en $Q_B$ is $0{,}40 \, \mathrm{m}$.
 
@@ -146,6 +352,262 @@
                             &\simeq 5{,}5 \cdot 10^{5} \, \mathrm{N/C}
         \end{align*}
         Het resulterende elektrisch veld in $P$ heeft dus een grootte van ongeveer $5{,}5 \cdot 10^{5} \, \mathrm{N/C}$.
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% OEF DRIEHOEK COS 6: hoek in P gegeven, beide ladingen positief
+\begin{exercise}
+    Twee positieve puntladingen $Q_{1} = +4{,}0 \cdot 10^{-6} \, \mathrm{C}$ en $Q_{2} = +2{,}0 \cdot 10^{-6} \, \mathrm{C}$ bevinden zich zoals aangegeven op de tekening. De afstand van $Q_1$ tot $P$ is $0{,}25 \, \mathrm{m}$, de afstand van $Q_2$ tot $P$ is $0{,}40 \, \mathrm{m}$, en de hoek tussen beide lijnstukken in $P$ is $70^\circ$.
+
+    \begin{center}
+        \begin{tikzpicture}[scale=1]
+            \tkzDefPoint(0,0){P}
+            \tkzDefPoint(2.5,0){Q1}
+            \tkzDefPoint(1.368,3.759){Q2}
+            \draw[gray,thick] (P) -- (Q1) node[midway,below]{$0{,}25\,\mathrm{m}$};
+            \draw[gray,thick] (P) -- (Q2) node[midway,left]{$0{,}40\,\mathrm{m}$};
+            \tkzFillAngle[fill=blue!20,opacity=0.5](Q1,P,Q2)
+            \tkzLabelAngle[pos=1.0](Q1,P,Q2){$70^\circ$}
+            \tkzLabelPoint[below=1.5mm](P){$P$}
+            \tkzLabelPoint[below=1.5mm](Q1){$Q_1$}
+            \tkzLabelPoint[above=1.5mm](Q2){$Q_2$}
+            \draw[charge+] (Q1) circle (\R) node[scale=0.5]{$+$};
+            \draw[charge+] (Q2) circle (\R) node[scale=0.5]{$+$};
+            \filldraw (P) circle (1.2pt);
+        \end{tikzpicture}
+    \end{center}
+
+    Bereken de grootte van het totale elektrisch veld in punt \textit{P}.
+
+    \[ E_{\text{res}} = \answer[tolerance=0.05,onlineshowanswerbutton]{6.2} \cdot 10^{5} \, \mathrm{N/C} \]
+
+    \begin{hint}
+        Omdat beide ladingen positief zijn, is de hoek tussen $\vec{E}_1$ en $\vec{E}_2$ gelijk aan de gegeven hoek van $70^\circ$. De overstaande hoek die je in de cosinusregel invult, is dan $180^\circ - 70^\circ$.
+    \end{hint}
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & Q_{1} = +4{,}0 \cdot 10^{-6} \, \mathrm{C} & & Q_{2} = +2{,}0 \cdot 10^{-6} \, \mathrm{C} \\
+            & r_{1} = 0{,}25 \, \mathrm{m} & & r_{2} = 0{,}40 \, \mathrm{m}
+        \end{align*}
+
+        \underline{Gevraagd:} $E_{\text{res}}$ in $P$\\
+
+        \underline{Oplossing:}\\
+        \textbf{Stap 1: Grootte berekenen}
+        \begin{align*}
+            E_{1} &= k_e \frac{|Q_{1}|}{r_{1}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 4{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}25 \, \mathrm{m})^{2}} = 5{,}8 \cdot 10^{5} \, \mathrm{N/C} \\
+            E_{2} &= k_e \frac{|Q_{2}|}{r_{2}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 2{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}40 \, \mathrm{m})^{2}} = 1{,}1 \cdot 10^{5} \, \mathrm{N/C}
+        \end{align*}
+        Beide ladingen zijn positief, dus wijzen $\vec{E}_1$ en $\vec{E}_2$ elk weg van hun eigen lading. De hoek tussen deze twee vectoren is dus gelijk aan de gegeven hoek van $70^\circ$. De overstaande hoek in het krachtenparallellogram is $180^\circ - 70^\circ = 110^\circ$.
+
+        \textbf{Stap 2: Cosinusregel toepassen}
+        \begin{align*}
+            E_{\text{res}} &= \sqrt{E_1^{2} + E_2^{2} - 2 \cdot E_1 \cdot E_2 \cdot \cos(110^\circ)} \\
+                            &\simeq 6{,}2 \cdot 10^{5} \, \mathrm{N/C}
+        \end{align*}
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% OEF DRIEHOEK COS 7: hoek in P gegeven, tegengesteld teken
+\begin{exercise}
+    Een positieve puntlading $Q_{1} = +5{,}0 \cdot 10^{-6} \, \mathrm{C}$ en een negatieve puntlading $Q_{3} = -3{,}0 \cdot 10^{-6} \, \mathrm{C}$ bevinden zich zoals aangegeven op de tekening. De afstand van $Q_1$ tot $P$ is $0{,}20 \, \mathrm{m}$, de afstand van $Q_3$ tot $P$ is $0{,}30 \, \mathrm{m}$, en de hoek tussen beide lijnstukken in $P$ is $65^\circ$.
+
+    \begin{center}
+        \begin{tikzpicture}[scale=1.3]
+            \tkzDefPoint(0,0){P}
+            \tkzDefPoint(2.0,0){Q1}
+            \tkzDefPoint(1.268,2.719){Q3}
+            \draw[gray,thick] (P) -- (Q1) node[midway,below]{$0{,}20\,\mathrm{m}$};
+            \draw[gray,thick] (P) -- (Q3) node[midway,left]{$0{,}30\,\mathrm{m}$};
+            \tkzFillAngle[fill=blue!20,opacity=0.5](Q1,P,Q3)
+            \tkzLabelAngle[pos=1.0](Q1,P,Q3){$65^\circ$}
+            \tkzLabelPoint[below=1.5mm](P){$P$}
+            \tkzLabelPoint[below=1.5mm](Q1){$Q_1$}
+            \tkzLabelPoint[above=1.5mm](Q3){$Q_3$}
+            \draw[charge+] (Q1) circle (\R) node[scale=0.5]{$+$};
+            \draw[charge-] (Q3) circle (\R) node[scale=0.5]{$-$};
+            \filldraw (P) circle (1.2pt);
+        \end{tikzpicture}
+    \end{center}
+
+    Bereken de grootte van het totale elektrisch veld in punt \textit{P}.
+
+    \[ E_{\text{res}} = \answer[tolerance=0.05,onlineshowanswerbutton]{1.0} \cdot 10^{6} \, \mathrm{N/C} \]
+
+    \begin{hint}
+        Schets $\vec{E}_1$ (weg van $Q_1$) en $\vec{E}_3$ (naar $Q_3$ toe). Omdat de ladingen nu een verschillend teken hebben, is de hoek tussen de vectoren zelf niet meer $65^\circ$ — maar de overstaande hoek die je uiteindelijk in de cosinusregel gebruikt, blijkt dan net wél gelijk te zijn aan de gegeven hoek van $65^\circ$.
+    \end{hint}
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & Q_{1} = +5{,}0 \cdot 10^{-6} \, \mathrm{C} & & Q_{3} = -3{,}0 \cdot 10^{-6} \, \mathrm{C} \\
+            & r_{1} = 0{,}20 \, \mathrm{m} & & r_{3} = 0{,}30 \, \mathrm{m}
+        \end{align*}
+
+        \underline{Gevraagd:} $E_{\text{res}}$ in $P$\\
+
+        \underline{Oplossing:}\\
+        \textbf{Stap 1: Grootte berekenen}
+        \begin{align*}
+            E_{1} &= k_e \frac{|Q_{1}|}{r_{1}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 5{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}20 \, \mathrm{m})^{2}} = 1{,}1 \cdot 10^{6} \, \mathrm{N/C} \\
+            E_{3} &= k_e \frac{|Q_{3}|}{r_{3}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 3{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}30 \, \mathrm{m})^{2}} = 3{,}0 \cdot 10^{5} \, \mathrm{N/C}
+        \end{align*}
+        $\vec{E}_1$ wijst van $P$ weg (langs $PQ_1$), $\vec{E}_3$ wijst van $P$ naar $Q_3$ toe (langs $PQ_3$). Doordat één vector "weg" en de andere "naar toe" wijst, is de overstaande hoek die je in de cosinusregel gebruikt hier gelijk aan de driehoekshoek zelf, dus $65^\circ$ (in plaats van $180^\circ-65^\circ$ zoals bij twee gelijknamige ladingen).
+
+        \textbf{Stap 2: Cosinusregel toepassen}
+        \begin{align*}
+            E_{\text{res}} &= \sqrt{E_1^{2} + E_3^{2} - 2 \cdot E_1 \cdot E_3 \cdot \cos(65^\circ)} \\
+                            &\simeq 1{,}0 \cdot 10^{6} \, \mathrm{N/C}
+        \end{align*}
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% OEF DRIEHOEK COS 8: rechthoekige driehoek, rechte hoek NIET in P
+\begin{exercise}
+    Twee puntladingen $Q_{A} = +6{,}0 \cdot 10^{-6} \, \mathrm{C}$ en $Q_{B} = -3{,}0 \cdot 10^{-6} \, \mathrm{C}$ bevinden zich in de hoekpunten van een rechthoekige driehoek, met de rechte hoek bij $Q_A$. De afstand tussen $Q_A$ en $P$ is $0{,}24 \, \mathrm{m}$, en de afstand tussen $Q_A$ en $Q_B$ is $0{,}32 \, \mathrm{m}$.
+
+    \begin{center}
+        \begin{tikzpicture}[scale=0.6]
+            \useasboundingbox (-1.5, -1.5) rectangle (5.5, 4.5);
+            \tkzDefPoint(0,0){A}
+            \begin{scope}[shift=(A)]
+                \tkzDefPoint(0:3){P}
+                \tkzDefPoint(90:4){B}
+            \end{scope}
+            \tkzDrawPolygon(A,P,B)
+            \tkzMarkRightAngle[size=0.3](P,A,B)
+
+            \tkzLabelPoint[below=1.5mm](A){$Q_{A}$}
+            \tkzLabelPoint[below=1.5mm](P){$P$}
+            \tkzLabelPoint[above=1.5mm](B){$Q_{B}$}
+
+            \draw[charge+] (A) circle (\R) node[scale=0.5] {$+$};
+            \draw[charge-] (B) circle (\R) node[scale=0.5] {$-$};
+            \filldraw (P) circle (2pt);
+        \end{tikzpicture}
+    \end{center}
+
+    Bereken de grootte van het totale elektrisch veld in punt \textit{P}, veroorzaakt door $Q_A$ en $Q_B$.
+
+    \[ E_{\text{res}} = \answer[tolerance=0.1,onlineshowanswerbutton]{8.5} \cdot 10^{5} \, \mathrm{N/C} \]
+
+    \begin{hint}
+        Bereken eerst de afstand $r_{BP}$ met de stelling van Pythagoras, en vervolgens de hoek in $P$ met $\tan\theta = \dfrac{\text{overstaande}}{\text{aanliggende}}$.
+    \end{hint}
+    \begin{hint}
+        $Q_A$ is positief en $Q_B$ is negatief — net als in een vorige oefening betekent dit dat de overstaande hoek in de cosinusregel gelijk is aan de hoek van de driehoek zelf.
+    \end{hint}
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & Q_{A} = +6{,}0 \cdot 10^{-6} \, \mathrm{C} & & Q_{B} = -3{,}0 \cdot 10^{-6} \, \mathrm{C} \\
+            & r_{AP} = 0{,}24 \, \mathrm{m} & & r_{AB} = 0{,}32 \, \mathrm{m}
+        \end{align*}
+
+        \underline{Gevraagd:} $E_{\text{res}}$ in $P$\\
+
+        \underline{Oplossing:}\\
+        \textbf{Stap 1: Ontbrekende afstand}\\
+        Met de stelling van Pythagoras in de rechthoekige driehoek ($90^\circ$ bij $Q_A$):
+        \begin{align*}
+            r_{BP} &= \sqrt{r_{AP}^{2} + r_{AB}^{2}} = \sqrt{(0{,}24 \, \mathrm{m})^{2} + (0{,}32 \, \mathrm{m})^{2}} = 0{,}40 \, \mathrm{m}
+        \end{align*}
+
+        \textbf{Stap 2: Grootte berekenen}
+        \begin{align*}
+            E_{A} &= k_e \frac{|Q_{A}|}{r_{AP}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 6{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}24 \, \mathrm{m})^{2}} = 9{,}4 \cdot 10^{5} \, \mathrm{N/C} \\
+            E_{B} &= k_e \frac{|Q_{B}|}{r_{BP}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 3{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}40 \, \mathrm{m})^{2}} = 1{,}7 \cdot 10^{5} \, \mathrm{N/C}
+        \end{align*}
+
+        \textbf{Stap 3: Hoek bepalen}
+        \begin{align*}
+            \tan(\theta) &= \frac{r_{AB}}{r_{AP}} = \frac{0{,}32 \, \mathrm{m}}{0{,}24 \, \mathrm{m}} \quad\Rightarrow\quad \theta = 53{,}1^\circ
+        \end{align*}
+        $Q_A$ is positief ($\vec{E}_A$ wijst weg van $Q_A$) en $Q_B$ is negatief ($\vec{E}_B$ wijst naar $Q_B$ toe): de overstaande hoek in de cosinusregel is dan gelijk aan de driehoekshoek zelf, $53{,}1^\circ$.
+
+        \textbf{Stap 4: Cosinusregel toepassen}
+        \begin{align*}
+            E_{\text{res}} &= \sqrt{E_A^{2} + E_B^{2} - 2 \cdot E_A \cdot E_B \cdot \cos(53{,}1^\circ)} \\
+                            &\simeq 8{,}5 \cdot 10^{5} \, \mathrm{N/C}
+        \end{align*}
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% OEF DRIEHOEK COS 9: willekeurige driehoek, hoek via cosinusregel uit 3 zijden
+\begin{exercise}
+    Twee puntladingen $Q_{1} = +7{,}0 \cdot 10^{-6} \, \mathrm{C}$ en $Q_{2} = -5{,}0 \cdot 10^{-6} \, \mathrm{C}$ bevinden zich in twee hoekpunten van een driehoek met punt $P$, zoals aangegeven op de tekening. De afstand van $Q_1$ tot $P$ is $0{,}15 \, \mathrm{m}$, de afstand van $Q_2$ tot $P$ is $0{,}20 \, \mathrm{m}$, en de afstand tussen $Q_1$ en $Q_2$ onderling is $0{,}30 \, \mathrm{m}$.
+
+    \begin{center}
+        \begin{tikzpicture}[scale=1.3]
+            \tkzDefPoint(0,0){P}
+            \tkzDefPoint(1.5,0){Q1}
+            \tkzDefPoint(-0.917,1.778){Q2}
+            \tkzDrawPolygon(P,Q1,Q2)
+            \tkzLabelSegment[below=1.5mm](P,Q1){$0{,}15\,\mathrm{m}$}
+            \tkzLabelSegment[above=1.5mm](P,Q2){$0{,}20\,\mathrm{m}$}
+            \tkzLabelSegment[right=1.5mm](Q1,Q2){$0{,}30\,\mathrm{m}$}
+            \tkzLabelPoint[below=1.5mm](P){$P$}
+            \tkzLabelPoint[right=1.5mm](Q1){$Q_1$}
+            \tkzLabelPoint[above=1.5mm](Q2){$Q_2$}
+            \draw[charge+] (Q1) circle (\R) node[scale=0.5]{$+$};
+            \draw[charge-] (Q2) circle (\R) node[scale=0.5]{$-$};
+            \filldraw (P) circle (1.2pt);
+        \end{tikzpicture}
+    \end{center}
+
+    Bereken de grootte van het totale elektrisch veld in punt \textit{P}.
+
+    \[ E_{\text{res}} = \answer[tolerance=0.1,onlineshowanswerbutton]{3.5} \cdot 10^{6} \, \mathrm{N/C} \]
+
+    \begin{hint}
+        Deze keer is geen enkele hoek rechtstreeks gegeven, en de driehoek is niet rechthoekig. Bereken eerst de hoek in $P$ met de cosinusregel, toegepast op de \textbf{driehoek van de afstanden} (met de drie gegeven zijden).
+    \end{hint}
+    \begin{hint}
+        Zodra je de hoek in $P$ kent, kan je op dezelfde manier als in de vorige oefeningen verder werken om de overstaande hoek en vervolgens $E_{\text{res}}$ te bepalen.
+    \end{hint}
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & Q_{1} = +7{,}0 \cdot 10^{-6} \, \mathrm{C} & & Q_{2} = -5{,}0 \cdot 10^{-6} \, \mathrm{C} \\
+            & r_{1} = 0{,}15 \, \mathrm{m} & & r_{2} = 0{,}20 \, \mathrm{m} & & r_{12} = 0{,}30 \, \mathrm{m}
+        \end{align*}
+
+        \underline{Gevraagd:} $E_{\text{res}}$ in $P$\\
+
+        \underline{Oplossing:}\\
+        \textbf{Stap 1: Hoek in $P$ bepalen met de cosinusregel}\\
+        We passen de cosinusregel toe op de driehoek van de afstanden, met $r_{12}$ als de zijde tegenover de hoek in $P$:
+        \begin{align*}
+            r_{12}^{2} &= r_{1}^{2} + r_{2}^{2} - 2 \cdot r_{1} \cdot r_{2} \cdot \cos(P) \\
+            \cos(P) &= \frac{r_{1}^{2} + r_{2}^{2} - r_{12}^{2}}{2 \cdot r_{1} \cdot r_{2}} = \frac{(0{,}15)^{2} + (0{,}20)^{2} - (0{,}30)^{2}}{2 \cdot 0{,}15 \cdot 0{,}20} = -0{,}458 \\
+            P &= 117{,}3^\circ
+        \end{align*}
+
+        \textbf{Stap 2: Grootte van de velden berekenen}
+        \begin{align*}
+            E_{1} &= k_e \frac{|Q_{1}|}{r_{1}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 7{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}15 \, \mathrm{m})^{2}} = 2{,}8 \cdot 10^{6} \, \mathrm{N/C} \\
+            E_{2} &= k_e \frac{|Q_{2}|}{r_{2}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 5{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}20 \, \mathrm{m})^{2}} = 1{,}1 \cdot 10^{6} \, \mathrm{N/C}
+        \end{align*}
+
+        \textbf{Stap 3: Overstaande hoek en cosinusregel}\\
+        $Q_1$ is positief ($\vec{E}_1$ wijst weg van $Q_1$) en $Q_2$ is negatief ($\vec{E}_2$ wijst naar $Q_2$ toe): net als in de vorige oefeningen is de overstaande hoek in de cosinusregel dan gelijk aan de hoek $P$ zelf, dus $117{,}3^\circ$.
+        \begin{align*}
+            E_{\text{res}} &= \sqrt{E_1^{2} + E_2^{2} - 2 \cdot E_1 \cdot E_2 \cdot \cos(117{,}3^\circ)} \\
+                            &\simeq 3{,}5 \cdot 10^{6} \, \mathrm{N/C}
+        \end{align*}
     \end{solution}
 \end{exercise}
 %———————————————————————————————————————

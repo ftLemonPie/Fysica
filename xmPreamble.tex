@@ -668,18 +668,20 @@
 
 \makeatletter
 \fancypagestyle{main}{%  op de eerste pagina BOLD titel in BLAUW
+
     % \renewcommand{\headrulewidth}{0pt}
-    \fancyhead[R]{Fysica}
-    \fancyhead[C]{}
-    \fancyhead[L]{%
-         {\selectfont\bfseries\color{black}\textsc{\@title}}
+    \fancyhead[L]{Fysica}
+    \fancyhead[R]{\textsc{SUI}}
+    \fancyhead[C]{%
+         {\selectfont\bfseries\color{black}\textsc{\@title}} % moet later weg, doet lastig met oefeningen
     } 
     
-    \fancyfoot[RE,LO]{\textsc{Sint-Ursula Instituut}}
-    \fancyfoot[C]{}
+    \fancyfoot[RE,LO]{\author}
+    \fancyfoot[C]{\rightmark}
     \fancyfoot[LE,RO]{\thepage}
 }
-
+% toekomst header: partnaam (hoofdstuk naam), \rightmark voor section naam, SUI logo
+% toekomst fooder: auteurs per deel, datum, pagina nummer met hoofdstukken in
 
 
 \makeatother

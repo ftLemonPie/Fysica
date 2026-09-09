@@ -10,7 +10,7 @@
 \maketitle
 
 \begin{quote}
-\textit{"De natuurkunde leer je niet door ze te lezen, maar door ze te doen."}
+  \textit{De natuurkunde leer je niet door ze te lezen, maar door ze te doen.}
 \end{quote}
 
 Welkom in de derde graad, waar fysica je uitdaagt om de wereld op een dieper niveau te begrijpen.  
@@ -98,16 +98,21 @@ Wees kritisch voor alle tussenstappen en controleer of de eenheden overal kloppe
     \item Fouten maken is \textbf{goed}. Ze laten zien wat je nog moet leren.
 \end{itemize}
 
-\begin{example}[foldable=true,title={Stappenplan voor fysica-problemen}]\nl
-\begin{enumerate}
-    \item \textbf{Lees zorgvuldig}: Wat wordt gevraagd? Markeer dit in het rood. Welke gegevens heb je? Markeer dit in het groen. Zet alle gegevens nu al om naar hun SI-eenheid.
-    \item \textbf{Teken een schets}: Vrijlichaamsdiagram, circuit, situatie, \dots
+\begin{algorithm}[foldable=true,title={Stappenplan voor fysica-problemen}]\nl
+\begin{enumerate}%[label=\Roman*]
+    \item \textbf{Analyseer de opgave} \begin{itemize}
+      \item \textbf{Lees zorgvuldig}: Wat wordt gevraagd? Markeer dit in het rood. Welke gegevens heb je? Markeer dit in het groen.
+      \item \textbf{Gegeven en Gevraagd:} Noteer je gegevens en gevraagde met de correcte symbolen en eenheden. Zet alle gegevens nu al om naar hun SI-eenheid.
+      \item \textbf{Teken een schets}: Vrijlichaamsdiagram, circuit, situatie, \dots
+    \end{itemize}
     \item \textbf{Kies de juiste wet/formule}: Bv. behoud van energie, \(E_\text{kin1} + E_\text{pot1} = E_\text{kin2} + E_\text{pot2}\).
-    \item \textbf{Substitueer waarden}: Vervang symbolen door getallen + eenheden.
-    \item \textbf{Reken uit}: Let op de eenheden en beduidende cijfers! Zet je antwoord in de wetenschappelijke notatie (standaardvorm).
-    \item \textbf{Controleer}: Is het antwoord redelijk? (Bv. een auto van $1000 \mathrm{\, kg}$ versnelt niet met $500 \mathrm{\, m/s^2}$!)
+    \item \textbf{De wiskundige uitwerking} \begin{itemize}
+      \item \textbf{Substitueer waarden}: Vervang symbolen door getallen + eenheden.
+      \item \textbf{Reken uit}: Let op de eenheden en beduidende cijfers! Zet je antwoord in de wetenschappelijke notatie (standaardvorm).
+  \end{itemize}
+      \item \textbf{Controleer}: Is het antwoord redelijk? (Bv. een auto van $1000 \mathrm{\, kg}$ versnelt niet met $500 \mathrm{\, m/s^2}$!)
 \end{enumerate}
-\end{example}
+\end{algorithm}
 
 \subsection*{Stap 1 - Analyseer de opgave}
 Neem eerst de tijd om de situatie te begrijpen.
@@ -117,7 +122,7 @@ Neem eerst de tijd om de situatie te begrijpen.
   Teken de ladingen en schets de elektrische veldlijnen of krachtvectoren. Trekken de ladingen elkaar aan of stoten ze elkaar af? Bij magnetisme: gebruik een schets om de richting van het magnetisch veld $\vec{B}$ en de lorentzkracht $\vec{F}_L$ te bepalen.
 \end{itemize}
 
-\subsection*{Stap 2 - Kies je hulpmiddelen}
+\subsection*{Stap 2 - Kies de juiste wet en formules}
 Bepaal welke wetten of principes van toepassing zijn.
 \begin{itemize}
   \item Gaat het over de kracht tussen twee statische ladingen? $\rightarrow$ gebruik de wet van Coulomb: $F_C = k \cdot \frac{|q_1 \cdot q_2|}{r^2}$.
@@ -129,15 +134,16 @@ Bepaal welke wetten of principes van toepassing zijn.
 \begin{itemize}
   \item \textbf{Zet eenheden om naar SI-basiseenheden:} dit is cruciaal bij elektriciteit en kernfysica! Zet microcoulomb ($\mathrm{\mu C}$) altijd om naar coulomb ($\mathrm{C}$) en centimeters ($\mathrm{cm}$) naar meters ($\mathrm{m}$) voordat je begint te rekenen.
   \item \textbf{Schrijf elke stap op:} noteer eerst de formule in symbolen, vul daarna pas de gegevens in. Vergeet de eenheden niet in je tussenstappen!
-  \item \textbf{Controleer je antwoord:}  
-  Heeft je resultaat fysisch zin? Een berekende snelheid van een elektron na een kernreactie kan bijvoorbeeld nooit groter zijn dan de lichtsnelheid ($c \approx 3,00 \cdot 10^8 \mathrm{\, m/s}$). Een kritische blik toont dat je begrijpt wat je doet.
 \end{itemize}
+\subsection*{Stap 4 - Controleer je antwoord}
+
+  Heeft je resultaat fysisch zin? Een berekende snelheid van een elektron na een kernreactie kan bijvoorbeeld nooit groter zijn dan de lichtsnelheid ($c \approx 3,00 \cdot 10^8 \mathrm{\, m/s}$). Een kritische blik toont dat je begrijpt wat je doet.
 
 \section*{Praktische tips voor succes}
 
 \begin{itemize}
   \item \textbf{Studeer actief, niet passief:}  
-  Lees niet enkel de theorie, maar werk voorbeelden opnieuw uit zonder naar de oplossing te kijken.  
+  Lees niet enkel de theorie, maar werk voorbeelden opnieuw uit \textit{zonder} naar de oplossing te kijken.  
   Pas na het vergelijken leer je écht.
 
   \item \textbf{Werk samen:}  
@@ -174,10 +180,10 @@ Bepaal welke wetten of principes van toepassing zijn.
 
   \item \textbf{Bereid je toetsen slim voor:}  
   Herhaal niet enkel oude oefeningen, maar maak varianten. Of beter nog: verzin zelf eens een oefening. Bedenk hoe je een vraag zo uitdagend mogelijk kunt maken met de gegeven leerstof. Door zelf de opbouw van een opgave te ontwerpen, krijg je meer inzicht in hoe andere oefeningen in elkaar zitten en hoe je ze moet oplossen.
-  Vraag jezelf af: “Wat als de kracht dubbel zo groot was?” of “Wat als het object zich nu op een helling bevindt?”
+  Vraag jezelf af: “Wat als de kracht dubbel zo groot is?” of “Wat als het object zich nu op een helling bevindt?”
 \end{itemize}
 
 \section*{Disclaimer}
-Ik heb dyslexie en heb deze cursus zelf geschreven; er zal dus hier en daar een tikfoutje opduiken. Zie je iets? Stuur dan zeker een berichtje of meld het me voor of na de les.
+Ik heb dyslexie en heb deze cursus zelf geschreven. Er zal dus hier en daar een tikfoutje opduiken. Zie je iets? Stuur dan zeker een berichtje of meld het me voor of na de les.
 
 \end{document}

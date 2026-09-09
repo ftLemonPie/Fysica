@@ -1,5 +1,5 @@
 \documentclass{ximera}
-%verbeterd 22 augustus 2026
+%verbeterd 9/9/26
 \title{Coulombkracht}
 \author{Daan Lipkens}
 
@@ -13,9 +13,6 @@
 % --------------------------------------------
 
 \section{Elektrische Kracht}
-
-In figuur \ref{fig:coulombkracht_1} is te zien dat ladingen met hetzelfde teken elkaar afstoten, terwijl ladingen met een verschillend teken elkaar aantrekken. De kracht die dit veroorzaakt, noemen we de coulombkracht. De krachten $\vec{F}_{12}$ en $\vec{F}_{21}$ tussen twee ladingen zijn altijd even groot.
-
 % --------------------
 %   UITKLAPBARE REMARK - geschiedenis coulomb
 % ------------------
@@ -23,11 +20,14 @@ In figuur \ref{fig:coulombkracht_1} is te zien dat ladingen met hetzelfde teken 
     \begin{center}
         \includegraphics[width=5cm]{pic5/elektriciteit/coulomb/charles.jpg}
     \end{center}
-    \textbf{Charles-Augustin de Coulomb (1736–1806)}\\
+    \textbf{Charles-Augustin de Coulomb (1736-1806)}\\
     Coulomb was een Franse natuurkundige die vooral bekendstaat om zijn onderzoek naar elektrische en magnetische krachten. Hij formuleerde de wet die het verband beschrijft tussen de kracht, de grootte van de ladingen en hun onderlinge afstand: de wet van Coulomb. Naast zijn werk in de natuurkunde deed hij ook onderzoek naar de stevigheid van materialen en naar ergonomie, waarbij hij bestudeerde hoe mensen en dieren zo efficiënt mogelijk kunnen werken.
 \end{remark}
 
 \subsection{Richting en zin van de kracht}
+
+In figuur \ref{fig:coulombkracht} is te zien dat ladingen met hetzelfde teken elkaar afstoten, terwijl ladingen met een verschillend teken elkaar aantrekken. De kracht die dit veroorzaakt, noemen we de coulombkracht. De krachten $\vec{F}_{12}$ en $\vec{F}_{21}$ tussen twee ladingen zijn altijd even groot.
+
 %begin conventie kracht
 \begin{definition}[title={Notatie krachtvector}]\nl
     $\vec{F}_{ab}$ is de krachtvector van lading $a$ op lading $b$.
@@ -104,7 +104,7 @@ In figuur \ref{fig:coulombkracht_1} is te zien dat ladingen met hetzelfde teken 
         \end{tabular}
     \end{center}
     \caption{De coulombkracht tussen twee ladingen. (a) Tussen twee positieve ladingen. (b) en (c) Tussen een positieve en negatieve lading. (d) Tussen twee negatieve ladingen.}
-    \label{fig:coulombkracht_1}
+    \label{fig:coulombkracht}
 \end{figure}
 % einde figuur alle situaties
 
@@ -130,7 +130,7 @@ Deze constante, de coulombconstante, is afhankelijk van de stof die zich tussen 
 \begin{proposition}[title={Wet van Coulomb}]\nl
     Ladingen oefenen op elkaar de elektrische kracht of coulombkracht uit. Gelijksoortige ladingen stoten elkaar af. Ongelijksoortige ladingen trekken elkaar aan. Voor twee puntladingen $Q_{1}$ en $Q_{2}$ op een afstand $r$ van elkaar is de grootte van de kracht:
     \begin{equation}\label{eq:coulombkracht}
-    F = k \cdot \frac{\lvert Q_{1}\rvert\cdot \lvert Q_{2}\rvert}{r^{2}}
+    F_{12} = k \cdot \frac{\lvert Q_{1}\rvert\cdot \lvert Q_{2}\rvert}{r^{2}}
     \end{equation}
     Voor vacuüm of lucht is $k = 8{,}99 \cdot 10^9 \, \mathrm{\frac{N\cdot m^2}{C^2}}$.
 \end{proposition}
@@ -139,7 +139,7 @@ Deze constante, de coulombconstante, is afhankelijk van de stof die zich tussen 
 % QUIZ 4: FORMULE LADING Q
 %\vspace{2mm}
 \begin{question}\label{q:formule coulomb}
-    Welke grootheden beïnvloeden de grootte van de coulombkracht volgens de wet van Coulomb? (a) enkel de ladingen (b) enkel de onderlinge afstand (c) de grootte van de ladingen en de afstand (d) de grootte van de ladingen, de afstand én de aard van het medium.
+    Welke grootheden beïnvloeden de grootte van de coulombkracht? (a) enkel de ladingen (b) enkel de onderlinge afstand (c) de grootte van de ladingen en de afstand (d) de grootte van de ladingen, de afstand én de aard van het medium.
         \begin{multipleChoice}
             \choice{Enkel de grootte van de ladingen.}
             \choice{Enkel de onderlinge afstand.}
@@ -162,15 +162,15 @@ Deze constante, de coulombconstante, is afhankelijk van de stof die zich tussen 
     Een elektron en een positief geladen bol met een ladingshoeveelheid van $+1{,}45 \, \mathrm{\mu C}$ liggen $12{,}9 \, \mathrm{cm}$ uit elkaar. Bereken de kracht tussen de twee ladingen.
     
     \begin{hint}
-        Denk eraan dat een elektron een vaste, negatieve elementaire lading heeft ($Q_1 = -1{,}60 \cdot 10^{-19} \, \mathrm{C}$). Vergeet ook niet om alle eenheden eerst om te zetten naar de standaard SI-eenheden (meter en coulomb) voordat je de wet van Coulomb invult!
+        Denk eraan dat een elektron een vaste, negatieve elementaire lading heeft ($e = -1{,}60 \cdot 10^{-19} \, \mathrm{C}$). Vergeet ook niet om alle eenheden eerst om te zetten naar de standaard SI-eenheden (meter en coulomb) voordat je de wet van Coulomb invult!
     \end{hint}
 
     \begin{solution}\nl
         Eerst zetten we alle gegevens met hun juiste symbool in de S.I.-eenheden.\\[1ex]
         
         \underline{Gegevens:}\\
-        $Q_{1} = -1{,}60 \cdot 10^{-19} \, \mathrm{C}$ \quad (lading van een elektron)\\
-        $Q_{2} = 1{,}45 \, \mathrm{\mu C} = 1{,}45 \cdot 10^{-6} \, \mathrm{C}$\\
+        $e = -1{,}60 \cdot 10^{-19} \, \mathrm{C}$ \quad (lading van een elektron)\\
+        $Q = 1{,}45 \, \mathrm{\mu C} = 1{,}45 \cdot 10^{-6} \, \mathrm{C}$\\
         $r = 12{,}9 \, \mathrm{cm} = 12{,}9 \cdot 10^{-2} \, \mathrm{m}$
         
         \vspace{2ex}
@@ -182,8 +182,8 @@ Deze constante, de coulombconstante, is afhankelijk van de stof die zich tussen 
         Er zijn 2 ladingen en we zoeken de kracht, we gebruiken dus de \textbf{wet van Coulomb}.
         
         \begin{align*}
-            F_{c} &= F_{12} = F_{21} \\
-            &= k \cdot \frac{\lvert Q_{1}\rvert \cdot \lvert Q_{2}\rvert}{r^{2}} && \text{(wet van Coulomb)} \\
+            F_{c} &= F_{e,Q} = F_{Q,e} \\
+            &= k \cdot \frac{\lvert e\rvert \cdot \lvert Q\rvert}{r^{2}} && \text{(wet van Coulomb)} \\
             &= 8{,}99 \cdot 10^9 \, \mathrm{\frac{N\cdot m^2}{C^2}} \cdot \frac{\lvert -1{,}60 \cdot 10^{-19} \, \mathrm{C}\rvert \cdot \lvert +1{,}45 \cdot 10^{-6} \, \mathrm{C}\rvert}{(12{,}9 \cdot 10^{-2} \, \mathrm{m})^{2}} && \text{(gegevens invullen)} \\
             &= 1{,}2533 \cdot 10^{-13} \, \mathrm{N} \simeq 1{,}25 \cdot 10^{-13} \, \mathrm{N} && \text{(uitrekenen)}
         \end{align*}
@@ -207,26 +207,27 @@ Bij twee ladingen zijn de oefeningen vrij eenvoudig. De grootste moeilijkheden l
     (f) $\vec{F}_{AB} = 3\vec{F}_{BA}$
     
     \begin{hint}
-        Vectoren die dezelfde zin hebben als een gekozen as, worden positief voorgesteld. Vectoren die een tegengestelde zin hebben ten opzichte van die as, worden negatief voorgesteld. Denk daarnaast aan de derde wet van Newton (actiekracht = -reactiekracht)!
+        Vectoren die dezelfde zin hebben als een gekozen as, worden positief voorgesteld. Vectoren die een tegengestelde zin hebben ten opzichte van die as, worden negatief voorgesteld.
     \end{hint}
-        \begin{multipleChoice}
-            \choice{$\vec{F}_{AB} = -3\vec{F}_{BA}$}
-            \choice[correct]{$\vec{F}_{AB} = -\vec{F}_{BA}$}
-            \choice{$3\vec{F}_{AB} = -\vec{F}_{BA}$}
-            \choice{$3\vec{F}_{AB} = \vec{F}_{BA}$}
-            \choice{$\vec{F}_{AB} = \vec{F}_{BA}$}
-            \choice{$\vec{F}_{AB} = 3\vec{F}_{BA}$}
-        \end{multipleChoice}
+
+    \begin{multipleChoice}
+        \choice{$\vec{F}_{AB} = -3\vec{F}_{BA}$}
+        \choice[correct]{$\vec{F}_{AB} = -\vec{F}_{BA}$}
+        \choice{$3\vec{F}_{AB} = -\vec{F}_{BA}$}
+        \choice{$3\vec{F}_{AB} = \vec{F}_{BA}$}
+        \choice{$\vec{F}_{AB} = \vec{F}_{BA}$}
+        \choice{$\vec{F}_{AB} = 3\vec{F}_{BA}$}
+    \end{multipleChoice}
         
-        \begin{solution}\nl
-            Volgens de derde wet van Newton oefenen beide ladingen een even grote, maar tegengesteld gerichte kracht op elkaar uit (actie en reactie). Dit principe staat volledig los van de specifieke grootte van de individuele ladingen. In vectornotatie schrijven we dit correct als $\vec{F}_{AB} = -\vec{F}_{BA}$.
-        \end{solution}
+    \begin{solution}\nl
+        $F_{12}=k \cdot \frac{\lvert Q_1\rvert \cdot \lvert Q_2\rvert}{r^{2}}=k \cdot \frac{\lvert Q_2\rvert \cdot \lvert Q_1\rvert}{r^{2}}=F_{21}$. Dus de grootte van de krachten is hetzelfde. Het enige wat verschilt, is de zin van beide krachten. Een tegengestelde zin wordt voorgesteld door een minteken. Zo bekomen we antwoord (b).
+    \end{solution}
 \end{question}
 %---------------------------------------------------
 
 
 \subsection{Drie ladingen op één lijn of de kracht op een lading tussen twee andere ladingen}
-Een eerste uitbreiding is het geval waarbij drie ladingen op één lijn liggen. Dan kunnen we het vectoriële karakter van de kracht nog overzichtelijk houden. We kunnen bijvoorbeeld berekenen wat de resulterende kracht is op één van de ladingen door de krachten per lading in kaart te brengen en vervolgens op te tellen.
+Een eerste uitbreiding is het geval waarbij drie ladingen op één lijn liggen. Dan kunnen we het vectoriële karakter van de kracht nog overzichtelijk houden. We kunnen bijvoorbeeld berekenen wat de resulterende kracht is op één van de ladingen door de krachten per lading in kaart te brengen en vervolgens op te tellen.\footnote{Denk aan de regels rond het optellen van vectoren.}
 
 Een andere interessante vraag is waar een derde lading tussen twee andere ladingen in evenwicht kan blijven.
 
@@ -280,12 +281,13 @@ Een andere interessante vraag is waar een derde lading tussen twee andere lading
               % CHARGES
               \node[charge+] (Q1) at (L) {$+$};
               \node[charge+] (Q2) at (R) {$+$};
-              \node[charge+] (Q3) at (C) {$+$};
+              \node[charge+] (Q3) at (C) {$+$}; 
               
               % AFSTANDEN
               \draw[<->] (-6,-0.8) -- (6,-0.8) node[midway, fill=white, inner sep=1pt] {$r_{12}$};
-              \draw[<->] (-6,-1.6) -- (-1,-1.6) node[midway, fill=white, inner sep=1pt] {$r_{13}$};
-              
+              \draw[<->] (-6,-1.6) -- (-1,-1.6) node[midway, fill=white, inner sep=1pt] {$r_{13}=x$};
+              \draw[<->] (-1,-1.6) -- (6,-1.6) node[midway, fill=white, inner sep=1pt] {$r_{12}-x$};
+
               % HULPLIJNTJES
               \draw[dashed, gray] (Q1.south) -- (-6,-1.6);
               \draw[dashed, gray] (Q3.south) -- (-1,-1.6);
@@ -325,6 +327,7 @@ Een andere interessante vraag is waar een derde lading tussen twee andere lading
 \end{example}
 % EINDE OEFENING 1 LIJN
 %------------------------------------------------------------------------------------
+
 \subsection{Drie ladingen in een driehoek}
 Tot nu toe vormde het vectoriële karakter van de kracht geen groot probleem, omdat de ladingen op één lijn lagen. Zodra de ladingen echter een andere configuratie aannemen, zoals in een driehoek, kan de resulterende kracht enkel worden bepaald door de deelkrachten vectorieel op te tellen. Dit kan grafisch (door vectoren kop-aan-staart te leggen) en algebraïsch (met een berekening).
 

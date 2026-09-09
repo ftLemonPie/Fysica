@@ -7,7 +7,7 @@
 \begin{abstract}
 \end{abstract}
 \maketitle
-
+\section{Oefeningen coulombkracht op 1 lijn}
 %———————————————————————————————————————
 %: OEFENINGEN 1 LIJN
 %———————————————————————————————————————
@@ -31,9 +31,9 @@
             \draw[charge-] (C) circle (\R) node[scale=1.2] {$-$};
             \draw[transform canvas={yshift=-7.0pt},dashed, gray, |<->|] (A) -- (B) node[midway,above] {$0{,}50 \, \mathrm{m}$};
             \draw[transform canvas={yshift=-14.0pt},dashed, darkgray, |<->|] (A) -- (C) node[midway,below] {$1{,}00 \, \mathrm{m}$};
-            \node[above] at (0,\R) {$Q_1= +2{,}0 \cdot 10^{-6} \, \mathrm{C}$};
-            \node[above, xshift=-0.8cm, yshift=0.1cm] at (5,\R) {$Q_2= +3{,}0 \cdot 10^{-6} \, \mathrm{C}$};
-            \node[above] at (10,\R) {$Q_3= -4{,}0 \cdot 10^{-6} \, \mathrm{C}$};
+            \node[above] at (0,\R) {$Q_1= +2{,}0  \, \mathrm{\mu C}$};
+            \node[above, xshift=-0.8cm, yshift=0.1cm] at (5,\R) {$Q_2= +3{,}0  \, \mathrm{\mu C}$};
+            \node[above] at (10,\R) {$Q_3= -4{,}0 \cdot  \, \mathrm{\mu C}$};
         \end{tikzpicture}
     \end{center}
 
@@ -124,7 +124,7 @@
 %———————————————————————————————————————
 % OEF LIJN2: EVENWICHT
 \begin{exercise}
-    Twee positieve puntladingen $Q_{1}= +4{,}0 \cdot 10^{-6} \, \mathrm{C}$ bij $x= 0{,}00 \, \mathrm{m}$ en $Q_{3}= +1{,}0 \cdot 10^{-6} \, \mathrm{C}$ bij $x= 0{,}80 \, \mathrm{m}$.  
+    Twee positieve puntladingen $Q_{1}= +4{,}0  \, \mathrm{\mu C}$ bij $x= 0{,}00 \, \mathrm{m}$ en $Q_{3}= +1{,}0  \, \mathrm{\mu C}$ bij $x= 0{,}80 \, \mathrm{m}$.  
     Bepaal de positie \(x\) (tussen de ladingen) waar een positieve testlading in evenwicht zou kunnen staan (netto kracht = 0).
     
     \[ x = \answer[tolerance=0.02,onlineshowanswerbutton]{0.53} \, \mathrm{m} \]
@@ -159,7 +159,7 @@
   
                 % FORCES on q (absolute coördinaten om Ximera te helpen)
                 \draw[force, transform canvas={yshift=+2.0pt}] (B) -- (7.13,0) node[above right] {$\vec{\mathbf{F}}_{1q}$};
-                \draw[force, transform canvas={yshift=-2.0pt}] (B) -- (3.53,0) node[below left] {$\vec{\mathbf{F}}_{3q}$};  
+                \draw[force, transform canvas={yshift=-2.0pt}] (B) -- (3.53,0) node[above left] {$\vec{\mathbf{F}}_{3q}$};  
   
                 % CHARGES
                 \draw[charge+] (A) circle (\R) node[scale=1.2] {$+$};
@@ -172,7 +172,7 @@
                 
                 % LABELS
                 \node[above] at (0,\R) {$Q_1$};
-                \node[above] at (5.33,\R) {testlading $q$};
+                \node[above] at (5.33,\R) {$q$};
                 \node[above] at (8,\R) {$Q_3$};
             \end{tikzpicture}
         \end{center}
@@ -180,10 +180,10 @@
         
         Krachten op \(q\):
         \[
-            F_{1q}=k\frac{Q_{1}q}{(x-0 \, \mathrm{m})^{2}}\quad\text{(naar +x als \(q\) tussen de ladingen ligt)},
+            F_{1q}=k\cdot \frac{\lvert Q_{1}\rvert \cdot \lvert q \rvert}{(x-0 \, \mathrm{m})^{2}}\quad\text{(naar +x als \(q\) tussen de ladingen ligt)},
         \]
         \[
-            F_{3q}=k\frac{Q_{3}q}{(0{,}80 \, \mathrm{m}-x)^{2}}\quad\text{(naar -x als \(q\) tussen de ladingen ligt)}.
+            F_{3q}=k\cdot \frac{\lvert Q_{3}\rvert \cdot \lvert q \rvert}{(0{,}80 \, \mathrm{m}-x)^{2}}\quad\text{(naar -x als \(q\) tussen de ladingen ligt)}.
         \]
         Voor evenwicht geldt \(F_{1q}=F_{3q}\). De testlading \(q\) en de constante \(k\) vallen weg:
         \[
@@ -200,10 +200,10 @@
         \]
         Dus \(0{,}80 \, \mathrm{m} = \tfrac{3}{2}x\) en we lossen op voor $x$:
         \[
-            x=\frac{0{,}80 \, \mathrm{m}}{1{,}5}= 0{,}53333 \, \mathrm{m}.
+            x=\frac{0{,}80 \, \mathrm{m}}{1{,}5}= 0{,}53333 \, \mathrm{m}\simeq 5,3\cdot 10^{-1} \, \mathrm{m}.
         \]
 
-        Conclusie: de positieve testlading staat in evenwicht op \(x \approx 0{,}533 \, \mathrm{m}\), gerekend vanaf \(Q_{1}\).
+        Conclusie: de positieve testlading staat in evenwicht op \(x \approx 5,3\cdot 10^{-1} \, \mathrm{m}\), gerekend vanaf \(Q_{1}\).
     \end{solution}
 \end{exercise}
 %———————————————————————————————————————
@@ -211,7 +211,7 @@
 %———————————————————————————————————————
 % OEF 3-4 (evenwicht: bepaal Q3 voor evenwicht van Q2)
 \begin{exercise}
-    Drie ladingen op één lijn: $Q_{1}= +8{,}0 \cdot 10^{-6} \, \mathrm{C}$ bij $x=0{,}00 \, \mathrm{m}$, $Q_{2}= +2{,}0 \cdot 10^{-6} \, \mathrm{C}$ bij $x=0{,}20 \, \mathrm{m}$, en $Q_{3}$ bij $x=0{,}60 \, \mathrm{m}$.  
+    Drie ladingen op één lijn: $Q_{1}= +8{,}0  \, \mathrm{nC}$ bij $x=0{,}00 \, \mathrm{m}$, $Q_{2}= +2{,}0  \, \mathrm{nC}$ bij $x=20 \, \mathrm{cm}$, en $Q_{3}$ bij $x=60 \, \mathrm{cm}$.  
     Bepaal de grootte en het teken van \(Q_{3}\) zodat de netto kracht op \(Q_{2}\) gelijk is aan nul.
     
     \begin{question}
@@ -266,7 +266,7 @@
         Bereken nu de grootte van de lading \(Q_{3}\).
         
         Grootte van lading 3:
-        \[ \lvert Q_{3} \rvert = \answer[tolerance=0.5,onlineshowanswerbutton]{32} \cdot 10^{-6} \, \mathrm{C} \]
+        \[ \lvert Q_{3} \rvert = \answer[tolerance=0.5,onlineshowanswerbutton]{3.2} \cdot 10^{-8} \, \mathrm{C} \]
 
         \begin{hint}
             Voor een evenwicht stel je de groottes van beide krachten aan elkaar gelijk: $F_{12} = F_{32}$. Gebruik hiervoor de wet van Coulomb.
@@ -275,8 +275,8 @@
         \begin{solution}\nl
             \underline{Gegevens:}
             \begin{align*}
-                & Q_{1} = +8{,}0 \cdot 10^{-6} \, \mathrm{C} & & x_{1} = 0{,}00 \, \mathrm{m}\\
-                & Q_{2} = +2{,}0 \cdot 10^{-6} \, \mathrm{C} & & x_{2} = 0{,}20 \, \mathrm{m}\\
+                & Q_{1} = +8{,}0  \, \mathrm{nC}= +8{,}0 \cdot 10^{-9} \, \mathrm{C} & & x_{1} = 0{,}00 \, \mathrm{m}\\
+                & Q_{2} = +2{,}0  \, \mathrm{nC}= +2{,}0 \cdot 10^{-9} \, \mathrm{C} & & x_{2} = 0{,}20 \, \mathrm{m}\\
                 & x_{3} = 0{,}60 \, \mathrm{m} & & k = 8{,}99 \cdot 10^9 \, \mathrm{\frac{N \cdot m^2}{C^2}}
             \end{align*}
     
@@ -298,14 +298,14 @@
             We vormen de vergelijking om naar de onbekende grootte van \(Q_{3}\):
             \[
                 \lvert Q_{3} \rvert = \lvert Q_{1} \rvert \cdot \frac{r_{32}^{2}}{r_{12}^{2}}
-                = (8{,}0 \cdot 10^{-6} \, \mathrm{C}) \cdot \frac{(0{,}40 \, \mathrm{m})^{2}}{(0{,}20 \, \mathrm{m})^{2}}.
+                = (8{,}0 \cdot 10^{-9} \, \mathrm{C}) \cdot \frac{(0{,}40 \, \mathrm{m})^{2}}{(0{,}20 \, \mathrm{m})^{2}}.
             \]
             Berekening: \((0{,}40 \, \mathrm{m})^{2}=0{,}16 \, \mathrm{m^2}\) en \((0{,}20 \, \mathrm{m})^{2}=0{,}04 \, \mathrm{m^2}\), dus de verhouding is \(=0{,}16/0{,}04=4\).
             \[
-                \lvert Q_{3} \rvert = (8{,}0 \cdot 10^{-6} \, \mathrm{C}) \cdot 4 = 32{,}0 \cdot 10^{-6} \, \mathrm{C}.
+                \lvert Q_{3} \rvert = (8{,}0 \cdot 10^{-9} \, \mathrm{C}) \cdot 4 = 3{,}2 \cdot 10^{-8} \, \mathrm{C}.
             \]
     
-            Conclusie: Gezien we eerder hebben beredeneerd dat het teken positief is, is de lading $Q_{3} = +32{,}0 \cdot 10^{-6} \, \mathrm{C}$ om \(Q_{2}\) in evenwicht te houden.
+            Conclusie: Gezien we eerder hebben beredeneerd dat het teken positief is, is de lading $Q_{3} = +3{,}2 \cdot 10^{-8} \, \mathrm{C}$ om \(Q_{2}\) in evenwicht te houden.
         \end{solution}
     \end{question}
 \end{exercise}
@@ -464,7 +464,7 @@
                     \coordinate (A) at (0,0);
                     \coordinate (B) at (6,0);
       
-                    % FORCES on q (absolute coordinaten om Ximera te helpen, testlading op -3)
+                    % FORCES on q (absolute coördinaten om Ximera te helpen, testlading op -3)
                     \draw[force, transform canvas={yshift=+2.0pt}] (Q) -- (-1.5,0) node[above right] {$\vec{\mathbf{F}}_{1q}$};
                     \draw[force, transform canvas={yshift=-2.0pt}] (Q) -- (-4.5,0) node[below left] {$\vec{\mathbf{F}}_{2q}$};  
       
@@ -486,7 +486,7 @@
             
             Voor evenwicht geldt \(F_{1q}=F_{2q}\):
             \[
-                k\frac{\lvert Q_{1} \rvert q}{d^{2}} = k\frac{\lvert Q_{2} \rvert q}{(0{,}60 \, \mathrm{m} + d)^{2}}
+                k\cdot \frac{\lvert Q_{1} \rvert \cdot  \lvert q\rvert}{d^{2}} = k\cdot \frac{\lvert Q_{2} \rvert \cdot \lvert q\rvert}{(0{,}60 \, \mathrm{m} + d)^{2}}
             \]
             De testlading \(q\) en constante \(k\) vallen weg:
             \[
@@ -505,7 +505,7 @@
                 0{,}60 \, \mathrm{m} + d = 2d
             \]
             \[
-                d = 0{,}60 \, \mathrm{m}
+                d = 0{,}60 \, \mathrm{m}= 6,0\cdot 10^{-1} \, \mathrm{m}
             \]
             
             Conclusie: De afstand tot de oorsprong is $0{,}60 \, \mathrm{m}$. Omdat we wisten dat het punt links van de oorsprong ligt, is de correcte coördinaat $x = -0{,}60 \, \mathrm{m}$.
@@ -516,7 +516,7 @@
 %———————————————————————————————————————
 % BASIS OEFENING 13: KRACHT OP Q3 (ChatGPT)
 \begin{exercise}
-    Drie puntladingen liggen op één lijn. Lading $Q_1 = -50 \cdot 10^{-6} \, \mathrm{C}$ ligt uiterst links. Op een afstand van $0{,}400 \, \mathrm{m}$ rechts van $Q_1$ bevindt zich lading $Q_3 = -20 \cdot 10^{-6} \, \mathrm{C}$. Nog eens $0{,}200 \, \mathrm{m}$ verder naar rechts ligt lading $Q_2 = +100 \cdot 10^{-6} \, \mathrm{C}$. 
+    Drie puntladingen liggen op één lijn. Lading $Q_1 = -50  \, \mathrm{mC}$ ligt uiterst links. Op een afstand van $0{,}400 \, \mathrm{m}$ rechts van $Q_1$ bevindt zich lading $Q_3 = -20 \, \mathrm{mC}$. Nog eens $0{,}200 \, \mathrm{m}$ verder naar rechts ligt lading $Q_2 = +100 \cdot 10^{-6} \, \mathrm{C}$. 
     
     De opstelling ziet er als volgt uit:
     \begin{center}
@@ -561,9 +561,9 @@
     \begin{solution}\nl
         \underline{Gegevens:}
         \begin{align*}
-            & Q_{1} = -50 \cdot 10^{-6} \, \mathrm{C} & & r_{13} = 0{,}400 \, \mathrm{m}\\
+            & Q_{1} = -50 \cdot 10^{-3} \, \mathrm{C} & & r_{13} = 0{,}400 \, \mathrm{m}\\
             & Q_{2} = +100 \cdot 10^{-6} \, \mathrm{C} & & r_{32} = 0{,}200 \, \mathrm{m}\\
-            & Q_{3} = -20 \cdot 10^{-6} \, \mathrm{C} & & k = 8{,}99 \cdot 10^9 \, \mathrm{\frac{N \cdot m^2}{C^2}}
+            & Q_{3} = -20 \cdot 10^{-3} \, \mathrm{C} & & k = 8{,}99 \cdot 10^9 \, \mathrm{\frac{N \cdot m^2}{C^2}}
         \end{align*}
 
         \underline{Gevraagd:} $\vec{F}_{\text{res}}$ op \(Q_{3}\) \\
@@ -574,22 +574,22 @@
         De kracht door $Q_1$:
         \begin{align*}
             F_{13}&= \frac{k\cdot \lvert Q_{1}\rvert\cdot \lvert Q_{3}\rvert}{r_{13}^{2}}\\
-            &= \frac{8{,}99 \cdot 10^9 \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 50 \cdot 10^{-6} \, \mathrm{C} \cdot 20 \cdot 10^{-6} \, \mathrm{C}}{(0{,}400 \, \mathrm{m})^2} \\
-            &= 56{,}1875 \, \mathrm{N} \simeq 56{,}2 \, \mathrm{N}
+            &= \frac{8{,}99 \cdot 10^9 \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 50 \cdot 10^{-3} \, \mathrm{C} \cdot 20 \cdot 10^{-3} \, \mathrm{C}}{(0{,}400 \, \mathrm{m})^2} \\
+            &= 56187500 \, \mathrm{N} \simeq 5{,}6\cdot 10^{7} \, \mathrm{N}
         \end{align*}
         Omdat $Q_1$ en $Q_3$ beide negatief zijn, stoten ze elkaar af. Deze vector wijst dus \textbf{naar rechts}.
         
         De kracht door $Q_2$:
         \begin{align*}
             F_{23}&= \frac{k\cdot \lvert Q_{2}\rvert\cdot \lvert Q_{3}\rvert}{r_{32}^{2}}\\
-            &= \frac{8{,}99 \cdot 10^9 \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 100 \cdot 10^{-6} \, \mathrm{C} \cdot 20 \cdot 10^{-6} \, \mathrm{C}}{(0{,}200 \, \mathrm{m})^2} \\
-            &= 449{,}5 \, \mathrm{N}
+            &= \frac{8{,}99 \cdot 10^9 \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 100 \cdot 10^{-6} \, \mathrm{C} \cdot 20 \cdot 10^{-3} \, \mathrm{C}}{(0{,}200 \, \mathrm{m})^2} \\
+            &= 449500 \, \mathrm{N}\simeq 4{,}5\cdot 10^{5} \, \mathrm{N}
         \end{align*}
         Omdat $Q_2$ (positief) en $Q_3$ (negatief) een verschillend teken hebben, trekken ze elkaar aan. Ook deze vector wijst dus \textbf{naar rechts}.
         
         Omdat beide krachten in exact dezelfde richting werken, tellen we ze op:
         \[
-            F_{\text{res}} = F_{13} + F_{23} = 56{,}2 \, \mathrm{N} + 449{,}5 \, \mathrm{N} = 505{,}7 \, \mathrm{N} \simeq 506 \, \mathrm{N}
+            F_{\text{res}} = F_{13} + F_{23} = 56187500 \, \mathrm{N} + 449500 \, \mathrm{N} = 56637000 \, \mathrm{N} \simeq 5,7\cdot 10^{7} \, \mathrm{N}
         \]
         
         Conclusie: De totale resulterende kracht is $506 \, \mathrm{N}$ gericht naar rechts.

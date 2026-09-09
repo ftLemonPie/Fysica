@@ -8,6 +8,7 @@
     Oefeningen op coulombkracht met goniometrische figuren.
 \end{abstract}
 \maketitle
+\section{Oefeningen coulombkracht met goniometrische figuren}
 
 %———————————————————————————————————————
 %: OEFENINGEN GONIOMETRISCHE FIGUREN
@@ -17,7 +18,7 @@
 %———————————————————————————————————————
 % OEFENING RECHTHOEKIGEDRIEHOEK 1
 \begin{exercise}
-    Drie puntladingen $Q_{1}= +1{,}5 \cdot 10^{-6} \, \mathrm{C}$, $Q_{2}= +1{,}5 \cdot 10^{-6} \, \mathrm{C}$ en $Q_{3}= -2{,}0 \cdot 10^{-6} \, \mathrm{C}$ bevinden zich in de hoekpunten van een rechthoekige driehoek zoals te zien op de tekening. $Q_{1}$ en $Q_{3}$ liggen $0{,}30 \, \mathrm{m}$ uit elkaar en $Q_{1}$ en $Q_{2}$ liggen $0{,}40 \, \mathrm{m}$ uit elkaar. 
+    Drie puntladingen $Q_{1}= +1{,}5  \, \mathrm{\mu C}$, $Q_{2}= +1{,}5  \, \mathrm{\mu C}$ en $Q_{3}= -2{,}0  \, \mathrm{\mu C}$ bevinden zich in de hoekpunten van een rechthoekige driehoek zoals te zien op de tekening. $Q_{1}$ en $Q_{3}$ liggen $3{,}0 \, \mathrm{dm}$ uit elkaar en $Q_{1}$ en $Q_{2}$ liggen $4{,}0 \, \mathrm{dm}$ uit elkaar. 
     
     Bereken de grootte van de resulterende kracht op $Q_{3}$.
 
@@ -57,8 +58,8 @@
         \underline{Gegevens:}
         \begin{align*}
             & Q_{1} = +1{,}5 \cdot 10^{-6} \, \mathrm{C} & & Q_{2} = +1{,}5 \cdot 10^{-6} \, \mathrm{C} \\
-            & Q_{3} = -2{,}0 \cdot 10^{-6} \, \mathrm{C} & & r_{12} = 0{,}40 \, \mathrm{m}\\
-            & r_{13} = 0{,}30 \, \mathrm{m} & & 
+            & Q_{3} = -2{,}0 \cdot 10^{-6} \, \mathrm{C} & & r_{12} =4{,}0\mathrm{dm} = 0{,}40 \, \mathrm{m}\\
+            & r_{13} =3{,}0\mathrm{dm}= 0{,}30 \, \mathrm{m} & & 
         \end{align*}
 
         \underline{Gevraagd:} $ F_{\text{res},3}$\\ 
@@ -88,7 +89,7 @@
             &= 0{,}10788 \, \mathrm{N} 
         \end{align*}
 
-        \textbf{Stap 2: Krachten op $Q_{3}$ tekenen}  
+        \textbf{Stap 2: Hoe staan de krachten op $Q_{3}$}  
 
         %------------------------------------------------
         % TEKEN DRIEHOEK MET DEELKRACHTEN
@@ -122,6 +123,8 @@
                 \draw[charge-] (C) circle (\R) node[scale=0.5] {$-$};
             \end{tikzpicture}
         \end{center}
+
+        $Q_3$ heeft een ander soort lading dan $Q_1$ en $Q_2$, dus de krachten wijzen naar $Q_1$ en $Q_2$.
 %----------------------------------------------------------------
 
     \textbf{Stap 3: Overstaande hoek}\\
@@ -132,17 +135,7 @@
         \end{align*}
         De hoek tussen $F_{13}$ en $F_{23}$ is dus $53^\circ$. De overstaande hoek van $\vec{\mathbf{F}}_{\text{res}}$ in het parallellogram is $180^\circ - 53{,}1^\circ = 126{,}9^\circ \simeq 127^\circ$.
 
-    \textbf{Stap 4: Cosinusregel gebruiken}  
-        \begin{align*}
-            F_{\text{res},3} &= \sqrt{F_{13}^{2} + F_{23}^{2} - 2 \cdot F_{13} \cdot F_{23}\cdot \cos(127^\circ)}\\
-            &= \sqrt{(0{,}29966 \, \mathrm{N})^{2}+(0{,}10788 \, \mathrm{N})^{2}-2\cdot 0{,}29966 \, \mathrm{N} \cdot 0{,}10788 \, \mathrm{N} \cdot \cos(127^\circ)}\\
-            &\simeq 0{,}37 \, \mathrm{N}
-        \end{align*}
-        De resulterende kracht op lading $Q_{3}$ is ongeveer $3{,}7 \cdot 10^{-1} \, \mathrm{N}$.
-
-    \textbf{Stap 5: Krachten tekenen (optioneel: enkel de grootte is gevraagd.)}
-
-        %------------------------------------------------
+                %------------------------------------------------
         % TEKEN DRIEHOEK MET RESULTERENDE KRACHT
         % -----------------------------------------------
         \begin{center}
@@ -183,6 +176,16 @@
             \end{tikzpicture}
         \end{center}
 %----------------------------------------------------------------
+
+    \textbf{Stap 4: Cosinusregel gebruiken}  
+        \begin{align*}
+            F_{\text{res},3} &= \sqrt{F_{13}^{2} + F_{23}^{2} - 2 \cdot F_{13} \cdot F_{23}\cdot \cos(127^\circ)}\\
+            &= \sqrt{(0{,}29966 \, \mathrm{N})^{2}+(0{,}10788 \, \mathrm{N})^{2}-2\cdot 0{,}29966 \, \mathrm{N} \cdot 0{,}10788 \, \mathrm{N} \cdot \cos(127^\circ)}\\
+            &\simeq 0{,}37 \, \mathrm{N}
+        \end{align*}
+        De resulterende kracht op lading $Q_{3}$ is ongeveer $3{,}7 \cdot 10^{-1} \, \mathrm{N}$.
+
+
 
     \end{solution}
 \end{exercise}
@@ -342,8 +345,8 @@
         \begin{align*}
             F_{\text{res},1} &= \sqrt{F_{21}^{2} + F_{31}^{2}} \\
             &= \sqrt{(1{,}1238 \, \mathrm{N})^{2} + (1{,}4983 \, \mathrm{N})^{2}} \\
-            &= \sqrt{1{,}2628 + 2{,}2450} \\
-            &= \sqrt{3{,}5078} \\
+            &= \sqrt{1{,}2628\, \mathrm{N}^2 + 2{,}2450\, \mathrm{N}^2} \\
+            &= \sqrt{3{,}5078\, \mathrm{N}^2} \\
             &= 1{,}8729 \, \mathrm{N} \simeq 1{,}9 \, \mathrm{N}
         \end{align*}
         De resulterende kracht is ongeveer $1{,}9 \, \mathrm{N}$ groot.
@@ -358,8 +361,10 @@
     Lading $Q_{1} = +2{,}0 \cdot 10^{-6} \, \mathrm{C}$ bevindt zich linksonder. Lading $Q_{2} = -2{,}0 \cdot 10^{-6} \, \mathrm{C}$ bevindt zich rechtsonder. Lading $Q_{3} = +2{,}0 \cdot 10^{-6} \, \mathrm{C}$ bevindt zich rechtsboven. Lading $Q_{4} = -2{,}0 \cdot 10^{-6} \, \mathrm{C}$ bevindt zich linksboven.
     
     \begin{question}
-        Maak eerst een snelle tekening van de drie afzonderlijke krachten die op $Q_{1}$ inwerken ($\vec{\mathbf{F}}_{21}$, $\vec{\mathbf{F}}_{31}$ en $\vec{\mathbf{F}}_{41}$). Hoe liggen deze drie krachten ten opzichte van elkaar?
-        
+        Hoe liggen deze drie krachten ten opzichte van elkaar?
+        \begin{hint}
+            Maak eerst een snelle tekening van de drie afzonderlijke krachten die op $Q_{1}$ inwerken ($\vec{\mathbf{F}}_{21}$, $\vec{\mathbf{F}}_{31}$ en $\vec{\mathbf{F}}_{41}$).    
+        \end{hint}
         \begin{multipleChoice}
             \choice{Ze wijzen alle drie naar rechtsboven.}
             \choice[correct]{Twee krachten staan loodrecht op elkaar, de derde ligt exact op dezelfde as (diagonaal) als hun resulterende kracht.}
@@ -380,7 +385,7 @@
             Stap 1: Bereken $F_{21}$ en $F_{41}$ met de wet van Coulomb. Omdat ze loodrecht op elkaar staan, kan je hiervan eenvoudig een eerste resultante $\vec{\mathbf{F}}_{24}$ berekenen met Pythagoras.
         \end{hint}
         \begin{hint}
-            Stap 2: Bereken $F_{31}$. Let op: de afstand tot $Q_3$ is de diagonaal van het vierkant. Deze diagonaal bereken je met Pythagoras: $r_{13} = \sqrt{(0{,}20)^2 + (0{,}20)^2}$.
+            Stap 2: Bereken $F_{31}$. Let op: de afstand tot $Q_3$ is de diagonaal van het vierkant. Deze diagonaal bereken je met Pythagoras: $r_{13} = \sqrt{(0{,}20\,\mathrm{m})^2 + (0{,}20\,\mathrm{m})^2}$.
         \end{hint}
         \begin{hint}
             Stap 3: $\vec{\mathbf{F}}_{24}$ trekt $Q_1$ naar het midden van het vierkant. $\vec{\mathbf{F}}_{31}$ duwt $Q_1$ weg van het midden (afstoting). Omdat deze vectoren op perfect dezelfde as (de diagonaal) liggen, mag je ze wiskundig gewoon van elkaar aftrekken!
@@ -401,21 +406,21 @@
             \textbf{Stap 1: De krachten langs de randen}\\
             De ladingen $Q_2$ en $Q_4$ zijn negatief. Zij trekken het positieve $Q_1$ aan met krachten $\vec{\mathbf{F}}_{21}$ en $\vec{\mathbf{F}}_{41}$. Omdat afstanden en ladingen identiek zijn, zijn deze krachten even groot:
             \[
-                F_{21} = F_{41} = \frac{8{,}99 \cdot 10^9 \cdot (2{,}0 \cdot 10^{-6}) \cdot (2{,}0 \cdot 10^{-6})}{(0{,}20)^2} = 0{,}899 \, \mathrm{N}
+                F_{21} = F_{41} = \frac{8{,}99  \cdot 10^9 \, \mathrm{\frac{N \cdot m^2}{C^2}}\cdot (2{,}0 \cdot 10^{-6})\,\mathrm{C} \cdot (2{,}0 \cdot 10^{-6}\,\mathrm{C})}{(0{,}20\,\mathrm{m})^2} = 0{,}899 \, \mathrm{N}
             \]
             We bundelen deze twee loodrechte vectoren met de stelling van Pythagoras tot één resulterende 'trekkracht' ($\vec{\mathbf{F}}_{24}$) in de richting van het midden van het vierkant:
             \[
-                F_{24} = \sqrt{(0{,}899)^2 + (0{,}899)^2} = \sqrt{2} \cdot 0{,}899 \simeq 1{,}271 \, \mathrm{N}
+                F_{24} = \sqrt{(0{,}899\,\mathrm{N})^2 + (0{,}899\,\mathrm{N})^2} = \sqrt{2} \cdot 0{,}899\,\mathrm{N} \simeq 1{,}271 \, \mathrm{N}
             \]
             
             \textbf{Stap 2: De afstotende diagonale kracht}\\
             Lading $Q_3$ bevindt zich op de diagonaal. We berekenen eerst de afstand $r_{13}$ (de lengte van de diagonaal):
             \[
-                r_{13} = \sqrt{(0{,}20)^2 + (0{,}20)^2} = \sqrt{0{,}08} \simeq 0{,}2828 \, \mathrm{m}
+                r_{13} = \sqrt{(0{,}20\,\mathrm{m})^2 + (0{,}20\,\mathrm{m})^2} = \sqrt{0{,}08} \simeq 0{,}2828 \, \mathrm{m}
             \]
             Beide ladingen zijn positief, dus $Q_3$ stoot $Q_1$ af, weg van het centrum van het vierkant:
             \[
-                F_{31} = \frac{8{,}99 \cdot 10^9 \cdot (2{,}0 \cdot 10^{-6}) \cdot (2{,}0 \cdot 10^{-6})}{(\sqrt{0{,}08})^2} = \frac{0{,}03596}{0{,}08} = 0{,}4495 \, \mathrm{N}
+                F_{31} = \frac{8{,}99 \cdot 10^9\, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot (2{,}0 \cdot 10^{-6}\,\mathrm{C}) \cdot (2{,}0 \cdot 10^{-6}\,\mathrm{C})}{(\sqrt{0{,}08}\,\mathrm{m})^2} = \frac{0{,}03596}{0{,}08}\,\mathrm{N} = 0{,}4495 \, \mathrm{N}
             \]
 
             \textbf{Stap 3: Alles samenbrengen}\\

@@ -8,7 +8,7 @@
     De definitie van het elektrisch veld, testladingen en de veldsterkte van puntladingen.
 \end{abstract}
 \maketitle
-
+% stuk rond hoe kracht staat bij negatieve test lading.
 \section{Het concept van een elektrisch veld}
 
 We zeggen dat er een \textbf{elektrisch veld} bestaat in de ruimte rondom een geladen voorwerp (de \textit{bronlading}). Wanneer een ander geladen voorwerp (de \textit{testlading}) in dit veld wordt geplaatst, zal het veld een elektrische kracht uitoefenen op deze testlading, zoals te zien op figuur~\ref{fig:testlading_bronlading}.
@@ -87,6 +87,54 @@ We zeggen dat er een \textbf{elektrisch veld} bestaat in de ruimte rondom een ge
     \end{itemize}
 \end{proposition}
 
+
+\begin{proposition}[foldable=true,title={Elektrische kracht op een lading in een elektrisch veld}]\nl
+    De grootte van de kracht die op een lading $Q$ inwerkt in een elektrisch veld $E$ wordt gegeven door $F=Q\cdot E$. De richting van deze kracht is steeds evenwijdig met het elektrisch veld (zie figuur~\ref{fig:kracht_lading_in_veld}). De zin hangt af van het teken van de lading: bij een \textbf{positieve} lading heeft de kracht dezelfde zin als het elektrisch veld; bij een \textbf{negatieve} lading is de zin van de kracht net \textbf{tegengesteld} aan die van het elektrisch veld.
+    %---------------------------------
+% FIGUUR: kracht op lading in homogeen veld
+\begin{center}
+    \centering
+    \begin{tikzpicture}[scale=1]
+        % ----- PANEEL (a): positieve lading -----
+        \begin{scope}
+            % homogeen veld: evenwijdige veldlijnen naar rechts
+            \foreach \y in {0, 1.2, 2.4}{
+                \draw[vector] (0,\y) -- (3.4,\y);
+            }
+            \node[above] at (1.7,2.5) {$\vec{E}$};
+
+            % lading tussen twee veldlijnen (geen overlap met de pijlen)
+            \coordinate (Qpos) at (1.4,0.6);
+            \draw[charge+] (Qpos) circle (2*\R) node[scale=1.3] {$+$};
+
+            % kracht: zelfde zin als het veld
+            \draw[force] (Qpos) ++ (2*\R+0.1,0) -- ++(1.1,0) node[right] {$\vec{F}$};
+
+            \node[below] at (1.7,-0.5) {(a) positieve lading};
+        \end{scope}
+
+        % ----- PANEEL (b): negatieve lading -----
+        \begin{scope}[xshift=6cm]
+            \foreach \y in {0, 1.2, 2.4}{
+                \draw[vector] (0,\y) -- (3.4,\y);
+            }
+            \node[above] at (1.7,2.5) {$\vec{E}$};
+
+            \coordinate (Qneg) at (2.0,0.6);
+            \draw[charge-] (Qneg) circle (2*\R) node[scale=1.3] {$-$};
+
+            % kracht: tegengestelde zin aan het veld
+            \draw[force] (Qneg) ++ (-2*\R-0.1,0) -- ++(-1.1,0) node[left] {$\vec{F}$};
+
+            \node[below] at (1.7,-0.5) {(b) negatieve lading};
+        \end{scope}
+    \end{tikzpicture}
+    \captionof{figure}{De kracht op een lading in een homogeen elektrisch veld. (a) Op een positieve lading werkt de kracht in dezelfde zin als het veld. (b) Op een negatieve lading werkt de kracht in de tegengestelde zin.}
+    \label{fig:kracht_lading_in_veld}
+\end{center}
+%---------------------------------
+
+\end{proposition}
 
 
 \section{Elektrisch veld van een puntlading}

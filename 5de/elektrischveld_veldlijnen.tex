@@ -17,8 +17,8 @@ Deze veldlijnen geven ons snel een kwalitatief beeld van hoe het veld zich in de
 
 \begin{proposition}[foldable=true,title={Regels voor elektrische veldlijnen}]\nl
     \begin{enumerate}
-        \item De elektrische veldvector $\vec{E}$ is in elk punt \textbf{raaklijnig} aan de veldlijn. De pijl op de veldlijn geeft de zin van het veld aan (de richting waarin een positieve testlading weggeduwd zou worden).
-        \item De \textbf{dichtheid van de lijnen} (het aantal lijnen per oppervlakte-eenheid) is evenredig met de grootte van de veldsterkte. Veldlijnen die dicht bij elkaar liggen, duiden op een sterk elektrisch veld; lijnen die ver uit elkaar liggen, duiden op een zwak veld.
+        \item De elektrische veldvector $\vec{E}$ is in elk punt volgt de \textbf{raaklijn} aan de veldlijn in dat punt. De pijl op de veldlijn geeft de zin van het veld aan (de richting waarin een positieve testlading weggeduwd zou worden).
+        \item De \textbf{dichtheid van de lijnen} (het aantal lijnen per oppervlakte-eenheid) is evenredig met de grootte van de veldsterkte. Veldlijnen die dicht bij elkaar liggen, duiden op een sterk elektrisch veld. Lijnen die ver uit elkaar liggen, duiden op een zwak veld.
         \item Veldlijnen \textbf{vertrekken altijd vanuit een positieve lading} en \textbf{eindigen op een negatieve lading} (of in het oneindige als er geen tegengestelde lading in de buurt is).
         \item Het aantal veldlijnen dat uit een positieve lading vertrekt, of op een negatieve lading toekomt, is \textbf{evenredig met de grootte van die lading}.
         \item Twee elektrische veldlijnen kunnen \textbf{nooit} elkaar snijden!
@@ -31,9 +31,9 @@ Deze veldlijnen geven ons snel een kwalitatief beeld van hoe het veld zich in de
 
 \section{Patronen van veldlijnen}
 
-We bekijken de drie meest voorkomende situaties: de veldlijnen van een puntlading of radiaalveld, de veldlijnen van twee puntladingen en een homogeen veld.
+We bekijken de drie meest voorkomende situaties: de veldlijnen van een puntlading of radiaal veld, de veldlijnen van twee puntladingen en een homogeen veld.
 
-\subsection{Elektrisch radiaalveld}\label{s:radiaalveld}
+\subsection{Elektrisch radiaal veld}\label{s:radiaal_veld}
 Bij een enkele positieve lading wijzen de veldlijnen radiaal naar buiten, zoals te zien op figuur \ref{fig:veldlijnen_puntlading}(a). Bij een negatieve lading wijzen ze radiaal naar binnen, zoals te zien op figuur \ref{fig:veldlijnen_puntlading}(b). Omdat de lijnen in 3D uitwaaieren, wordt de dichtheid van de lijnen kleiner naarmate je verder van de bron weggaat, wat overeenkomt met de afname in veldsterkte ($E \propto 1/r^2$).
 
 %---------------------------
@@ -132,7 +132,7 @@ Bij twee identieke positieve ladingen vertrekken uit beide bronnen evenveel veld
 \end{figure}
 %---------------------------
 %———————————————————————————————————————
-% VRAAG: groote van elektrisch veld op absis van veldlijnen
+% VRAAG: grootte van elektrisch veld op basis van veldlijnen
 \begin{question}\label{v:veld2ladingen}
     Rangschik de grootte van het elektrisch veld in punten $A$, $B$ en $C$ van figuur \ref{fig:veldlijnen_gelijk} (grootste eerst).\\
 
@@ -144,7 +144,7 @@ Bij twee identieke positieve ladingen vertrekken uit beide bronnen evenveel veld
     \end{hint}
 
     \begin{solution}\nl
-        De dichtheid van de veldlijnen is het grootste bij punt $A$, hier is dus het elektrisch veld het grootste. In punt $C$, wat net tussen de twee positieve ladingen ligt, ontbreken de veldlijnen; hier is het totale elektrisch veld gelijk aan nul. Dus $E_A > E_B > E_C$.
+        De dichtheid van de veldlijnen is het grootste bij punt $A$, hier is dus het elektrisch veld het grootste. In punt $C$, wat net tussen de twee positieve ladingen ligt, ontbreken de veldlijnen. Hier is het totale elektrisch veld gelijk aan nul. Dus $E_A > E_B > E_C$.
     \end{solution}
 \end{question}
 %———————————————————————————————————————
@@ -179,7 +179,7 @@ Een homogeen elektrisch veld wordt gemaakt door twee parallelle platen met een v
             % Linkerplaat (Positief)
             \draw[posplate] (-2.5, -2.5) rectangle (-2.1, 2.5);
 
-            % Rechterplaat (Negatief)
+            % Rechter plaat (Negatief)
             \draw[negplate] (2.1, -2.5) rectangle (2.5, 2.5);
 
             % --- LADINGEN (PLUS EN MIN) TOEVOEGEN ---
@@ -193,7 +193,7 @@ Een homogeen elektrisch veld wordt gemaakt door twee parallelle platen met een v
             \foreach \y in {-2, -1, 0, 1, 2} {
                 % Deel 1: Van linkerplaat tot halverwege met een pijl
                 \draw[fieldline, ->, >=latex] (-2.1, \y) -- (0, \y);
-                % Deel 2: Vanaf halverwege tot aan de rechterplaat
+                % Deel 2: Vanaf halverwege tot aan de rechter plaat
                 \draw[fieldline] (0, \y) -- (2.1, \y);
             }
 

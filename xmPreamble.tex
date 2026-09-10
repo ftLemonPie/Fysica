@@ -670,15 +670,15 @@
 \fancypagestyle{main}{%  op de eerste pagina BOLD titel in BLAUW
 
     % \renewcommand{\headrulewidth}{0pt}
-    \fancyhead[L]{Fysica}
-    \fancyhead[R]{\textsc{SUI}}
+    \fancyhead[RE,LO]{Fysica}
     \fancyhead[C]{%
          {\selectfont\bfseries\color{black}\textsc{\@title}} % moet later weg, doet lastig met oefeningen
     } 
+    \fancyhead[LE,RO]{\rightmark}
     
-    \fancyfoot[RE,LO]{\author}
-    \fancyfoot[C]{\rightmark}
-    \fancyfoot[LE,RO]{\thepage}
+    \fancyfoot[RE,LO]{D. Lipkens}
+    \fancyfoot[C]{\thepage}
+    \fancyfoot[LE,RO]{\textsc{SUI}}
 }
 % toekomst header: partnaam (hoofdstuk naam), \rightmark voor section naam, SUI logo
 % toekomst fooder: auteurs per deel, datum, pagina nummer met hoofdstukken in

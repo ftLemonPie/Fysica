@@ -166,14 +166,12 @@ Omdat YouTube-video's online mooi kunnen afspelen, maar in een geprinte PDF gewo
 # TODO
 ## te doen volgende keer
 
-- [ ] Denk oefeningen 4kant/rechthoek met hoe het veld staat
-- [ ] Reken oefeningen vierkanten (2)
-- [ ] extra oefenignen 1 lijn
-- [ ] extra basis oefeningen
-- [ ] extra denk oefeningen
+
 - [ ] oefeningen elektrisch veld nakijken en extra maken
 - [ ] 5.1 aanpassingen nakijken eerste 2 hoofdstukken
+- [ ] extra oefeningen H2 pythagoras en basis oefeningen
 - [ ] starten H3 --> vragen voor prompt in nieuwe chat
+- [ ] gemengde schakelingen
 
 
 

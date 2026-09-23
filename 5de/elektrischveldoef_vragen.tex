@@ -1,5 +1,5 @@
 \documentclass{ximera}
-%nieuw 2 september 2026
+%nieuw 23 september 2026
 \title{Vraagstukken elektrisch veld: conceptuele vragen}
 \author{Daan Lipkens}
 
@@ -98,7 +98,7 @@
 
 %———————————————————————————————————————
 % CONCEPT OEF VIERKANT 1: schaakbordpatroon, symmetrie geeft NUL veld
-\begin{exercise}
+\begin{question}
     Vier puntladingen met dezelfde grootte $|Q|$ bevinden zich op de hoekpunten van een vierkant, zoals aangegeven op de tekening. Punt $P$ ligt in het midden van het vierkant.
 
     \begin{center}
@@ -114,10 +114,10 @@
             \tkzLabelPoint[below=1.5mm](C){$+Q$}
             \tkzLabelPoint[below=1.5mm](D){$-Q$}
             \tkzLabelPoint[below=1.5mm](P){$P$}
-            \draw[charge+] (A) circle (\R) node[scale=0.5]{$+$};
-            \draw[charge-] (B) circle (\R) node[scale=0.5]{$-$};
-            \draw[charge+] (C) circle (\R) node[scale=0.5]{$+$};
-            \draw[charge-] (D) circle (\R) node[scale=0.5]{$-$};
+            \node[poslading] at (A) {$+$};
+            \node[neglading] at (B) {$-$};
+            \node[poslading] at (C) {$+$};
+            \node[neglading] at (D) {$-$};
             \filldraw (P) circle (1.5pt);
         \end{tikzpicture}
     \end{center}
@@ -138,12 +138,12 @@
     \begin{solution}\nl
         De ladingen op de twee uiteinden van eenzelfde diagonaal ($A$ en $C$, beide $+Q$; $B$ en $D$, beide $-Q$) liggen op exact dezelfde afstand van $P$ en hebben dezelfde grootte en hetzelfde teken. Het veld van $A$ in $P$ wijst dan precies tegengesteld aan het veld van $C$ in $P$, waardoor deze twee elkaar volledig opheffen. Hetzelfde geldt voor $B$ en $D$. Het resulterende veld in $P$ is dus \textbf{nul}.
     \end{solution}
-\end{exercise}
+\end{question}
 %———————————————————————————————————————
 
 %———————————————————————————————————————
 % CONCEPT OEF VIERKANT 2: boven +, onder -, homogeen-achtig veld
-\begin{exercise}
+\begin{question}
     Vier puntladingen met dezelfde grootte $|Q|$ bevinden zich op de hoekpunten van een rechthoek, zoals aangegeven op de tekening. Punt $P$ ligt in het midden van de rechthoek.
 
     \begin{center}
@@ -159,10 +159,10 @@
             \tkzLabelPoint[below=1.5mm](C){$-Q$}
             \tkzLabelPoint[below=1.5mm](D){$-Q$}
             \tkzLabelPoint[right=1.5mm](P){$P$}
-            \draw[charge+] (A) circle (\R) node[scale=0.5]{$+$};
-            \draw[charge+] (B) circle (\R) node[scale=0.5]{$+$};
-            \draw[charge-] (C) circle (\R) node[scale=0.5]{$-$};
-            \draw[charge-] (D) circle (\R) node[scale=0.5]{$-$};
+            \node[poslading] at (A) {$+$};
+            \node[poslading] at (B) {$+$};
+            \node[neglading] at (C) {$-$};
+            \node[neglading] at (D) {$-$};
             \filldraw (P) circle (1.5pt);
         \end{tikzpicture}
     \end{center}
@@ -183,12 +183,12 @@
     \begin{solution}\nl
         Door de links-rechtssymmetrie van de figuur heffen de horizontale bijdragen van elk paar ladingen elkaar telkens op. Enkel de verticale bijdragen blijven over. De bovenste, positieve ladingen duwen $P$ weg van zichzelf, dus naar onder. De onderste, negatieve ladingen trekken $P$ naar zichzelf toe, eveneens naar onder. Alle verticale bijdragen werken dus in dezelfde zin en het resulterende veld in $P$ wijst \textbf{recht naar onder}, van de positieve naar de negatieve ladingen, vergelijkbaar met het homogene veld tussen twee geladen platen.
     \end{solution}
-\end{exercise}
+\end{question}
 %———————————————————————————————————————
 
 %———————————————————————————————————————
 % CONCEPT OEF VIERKANT 3: ongelijke ladingen op de diagonaal
-\begin{exercise}
+\begin{question}
     Vier puntladingen bevinden zich op de hoekpunten van een vierkant, zoals aangegeven op de tekening. Twee van de ladingen zijn gelijk in grootte en teken ($-Q$), maar op de andere diagonaal is één lading twee keer zo groot als de andere. Punt $P$ ligt in het midden van het vierkant.
 
     \begin{center}
@@ -204,10 +204,10 @@
             \tkzLabelPoint[below=1.5mm](C){$+Q$}
             \tkzLabelPoint[below=1.5mm](D){$-Q$}
             \tkzLabelPoint[below=1.5mm](P){$P$}
-            \draw[charge+] (A) circle (\R) node[scale=0.5]{$+$};
-            \draw[charge-] (B) circle (\R) node[scale=0.5]{$-$};
-            \draw[charge+] (C) circle (\R) node[scale=0.5]{$+$};
-            \draw[charge-] (D) circle (\R) node[scale=0.5]{$-$};
+            \node[poslading] at (A) {$+$};
+            \node[neglading] at (B) {$-$};
+            \node[poslading] at (C) {$+$};
+            \node[neglading] at (D) {$-$};
             \filldraw (P) circle (1.5pt);
         \end{tikzpicture}
     \end{center}
@@ -230,12 +230,12 @@
 
         Wat overblijft, is de bijdrage van $A$ ($+2Q$) en $C$ ($+Q$), eveneens diagonaal tegenover elkaar op gelijke afstand van $P$, maar nu met een \emph{ongelijke} grootte. Beide zijn positief, dus duwen ze $P$ weg van zichzelf. Omdat $A$ twee keer zo sterk is als $C$, wint de bijdrage van $A$ het pleit. Het resulterende veld in $P$ wijst dus diagonaal, \textbf{weg van $A$ en richting $C$}.
     \end{solution}
-\end{exercise}
+\end{question}
 %———————————————————————————————————————
 
 %———————————————————————————————————————
 % CONCEPT OEF 2 LADINGEN 1: tegengesteld teken, GELIJKE grootte (dipool) -> geen nulpunt
-\begin{exercise}
+\begin{question}
     Twee tegengestelde puntladingen $+Q$ en $-Q$, met exact dezelfde grootte, bevinden zich op een rechte lijn.
 
     \begin{center}
@@ -245,8 +245,8 @@
             \draw[gray,thick] (Q1) -- (Q2);
             \tkzLabelPoint[below=1.5mm](Q1){$+Q$}
             \tkzLabelPoint[below=1.5mm](Q2){$-Q$}
-            \draw[charge+] (Q1) circle (\R) node[scale=0.5]{$+$};
-            \draw[charge-] (Q2) circle (\R) node[scale=0.5]{$-$};
+            \node[poslading] at (Q1) {$+$};
+            \node[neglading] at (Q2) {$-$};
         \end{tikzpicture}
     \end{center}
 
@@ -273,12 +273,12 @@
 
         In tegenstelling tot de vorige oefening (ongelijke ladingen) bestaat hier dus \textbf{geen enkel punt op eindige afstand} waar het elektrisch veld nul is. Enkel oneindig ver van beide ladingen nadert het veld naar nul.
     \end{solution}
-\end{exercise}
+\end{question}
 %———————————————————————————————————————
 
 %———————————————————————————————————————
 % CONCEPT OEF 2 LADINGEN 2: zelfde teken, ongelijke grootte -> nulpunt TUSSEN
-\begin{exercise}
+\begin{question}
     Twee positieve puntladingen $Q_{1}$ en $Q_{2}$ bevinden zich op een rechte lijn, met $Q_{1} < Q_{2}$ (dus $Q_2$ is de sterkste lading).
 
     \begin{center}
@@ -288,8 +288,8 @@
             \draw[gray,thick] (Q1) -- (Q2);
             \tkzLabelPoint[below=1.5mm](Q1){$Q_1$}
             \tkzLabelPoint[below=1.5mm](Q2){$Q_2$}
-            \draw[charge+] (Q1) circle (\R) node[scale=0.5]{$+$};
-            \draw[charge+] (Q2) circle (\R) node[scale=0.6]{$+$};
+            \node[poslading] at (Q1) {$+$};
+            \node[poslading] at (Q2) {$+$};
         \end{tikzpicture}
     \end{center}
 
@@ -315,12 +315,12 @@
 
         Om het veld van de zwakkere lading $Q_1$ even groot te maken als dat van de sterkere lading $Q_2$, moet je dichter bij $Q_1$ staan (kleinere afstand compenseert de kleinere lading). Het nulpunt ligt dus tussen de ladingen, \textbf{dichter bij de zwakste lading $Q_1$}.
     \end{solution}
-\end{exercise}
+\end{question}
 %———————————————————————————————————————
 
 %———————————————————————————————————————
 % CONCEPT OEF 2 LADINGEN 3: verschillend teken, ongelijke grootte -> nulpunt TUSSEN
-\begin{exercise}
+\begin{question}
     Twee puntladingen $Q_{1}$ en $Q_{2}$ bevinden zich op een rechte lijn, met $Q_{1} < 0$ en $Q_{2} > 0$, en $|Q_{1}| < |Q_{2}|$ (dus $Q_1$ is de zwakkere negatieve lading en $Q_2$ is de sterkere positieve lading).
 
     \begin{center}
@@ -330,8 +330,8 @@
             \draw[gray,thick] (Q1) -- (Q2);
             \tkzLabelPoint[below=1.5mm](Q1){$Q_1$}
             \tkzLabelPoint[below=1.5mm](Q2){$Q_2$}
-            \draw[charge-] (Q1) circle (\R) node[scale=0.5]{$-$};
-            \draw[charge+] (Q2) circle (\R) node[scale=0.6]{$+$};
+            \node[neglading] at (Q1) {$-$};
+            \node[poslading] at (Q2) {$+$};
         \end{tikzpicture}
     \end{center}
 
@@ -357,7 +357,7 @@
 
         Om het veld van de zwakkere lading $Q_1$ even groot te maken als dat van de sterkere lading $Q_2$, moet je dichter bij $Q_1$ staan (kleinere afstand compenseert de kleinere lading). Het nulpunt ligt dus links van lading $Q_1$, of dus buiten de twee ladingen het korste bij de kleinse lading $Q_1$.
     \end{solution}
-\end{exercise}
+\end{question}
 %———————————————————————————————————————
 
 \end{document}

@@ -1,0 +1,219 @@
+\documentclass{ximera}
+%nieuw 21/9/26
+\title{Toepassingen van het elektrisch veld}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+    Elektroforese en het capacitieve aanraakscherm als toepassingen van het elektrisch veld.
+\end{abstract}
+\maketitle
+
+
+%------------------------------------------------
+% ELEKTROFORESE
+%------------------------------------------------
+\begin{example}[foldable=true,title={Toepassing: Elektroforese}]\nl
+   In een homogeen elektrisch veld ondervindt elk geladen deeltje een kracht $F=Q\cdot E$. Positieve deeltjes worden in de zin van het veld geduwd, negatieve deeltjes in de tegengestelde zin. Dit principe wordt in biochemische laboratoria dagelijks gebruikt om moleculen te scheiden. 
+
+   \textbf{Elektroforese} is de verplaatsing van geladen deeltjes in een vloeistof of gel onder invloed van een elektrisch veld. Positief geladen deeltjes bewegen naar de negatieve elektrode, negatief geladen deeltjes naar de positieve elektrode.
+
+    Een bekende vorm is \textbf{gelelektroforese}. Hierbij wordt een gel, een soort dun gelei met een fijn netwerk van draadjes, tussen twee elektroden geplaatst. Tussen die elektroden ontstaat een homogeen elektrisch veld. Het mengsel dat je wilt onderzoeken, bijvoorbeeld stukjes DNA van verschillende lengte, breng je aan in kleine putjes aan de kant van de negatieve elektrode.
+
+    %---------------------------
+    % AFBEELDING: gelelektroforese
+    
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
+        \begin{tikzpicture}[scale=0.9]
+            % elektroden
+            \fill[blue!70] (-0.3,-0.2) rectangle (0,3.4);
+            \fill[red!80] (9.0,-0.2) rectangle (9.3,3.4);
+            \node[blue!70, font=\Large\bfseries] at (-0.15,3.75) {$-$};
+            \node[red!80, font=\Large\bfseries] at (9.15,3.75) {$+$};
+
+            % gel en putjes
+            \draw[fill=gray!15, draw=gray] (0,0) rectangle (9,3.2);
+            \foreach \y in {0.4,1.6,2.8}{
+                \draw[fill=white, draw=gray!70] (0.5,\y-0.2) rectangle (0.8,\y+0.2);
+            }
+
+            % banden: drie sporen met fragmenten van verschillende grootte
+            \foreach \y/\a/\b/\c in {0.4/2.0/4.4/6.6, 1.6/1.6/3.3/5.2, 2.8/3.0/5.5/7.8}{
+                \foreach \x in {\a,\b,\c}{
+                    \draw[line width=3pt, blue!60!black] (\x,\y-0.15) -- (\x,\y+0.15);
+                }
+            }
+
+            % veld en kracht
+            \draw[vector] (8.7,3.6) -- (0.4,3.6);
+            \node[above] at (4.5,3.6) {$\vec{E}$};
+            \draw[force] (1.0,2.2) -- (2.4,2.2);
+            \node[above, font=\small] at (1.7,2.2) {$\vec{F}$};
+
+            % labels
+            \node[below, font=\small] at (0.65,-0.1) {start};
+            \node[below, font=\small, align=center] at (2.5,-0.1) {grote fragmenten};
+            \node[below, font=\small, align=center] at (7.0,-0.1) {kleine fragmenten};
+        \end{tikzpicture}
+    \end{center}
+    \captionof{figure}{Gelelektroforese van negatief geladen DNA. De fragmenten vertrekken uit de putjes aan de negatieve elektrode. De kracht $\vec{F}$ op de negatieve fragmenten is tegengesteld aan het veld $\vec{E}$. Kleine fragmenten leggen in dezelfde tijd een grotere afstand af dan grote fragmenten.}
+    \label{fig:gelelektroforese}
+    %---------------------------
+
+    DNA is negatief geladen. Onder invloed van het veld trekken de stukjes DNA dus in de richting van de positieve elektrode, zoals te zien is op figuur~\ref{fig:gelelektroforese}. Onderweg botsen de stukjes tegen het netwerk van de gel en worden ze afgeremd. Kleine fragmenten glippen makkelijk door de mazen van het netwerk, grote fragmenten worden veel sterker afgeremd. Na een bepaalde tijd schakel je het veld uit: de fragmenten zijn dan gesorteerd volgens grootte en vormen aparte banden in de gel.
+
+
+    \begin{remark}[expandable=true,title={Waarom scheiden de fragmenten volgens grootte?}]\nl
+        Een langer stuk DNA bevat meer geladen groepen en ondervindt dus ook een grotere elektrische kracht. Toch beweegt het trager: het wordt door het netwerk van de gel sterker afgeremd dan een kort stuk. Het resultaat is dat kleine fragmenten sneller vooruitgaan dan grote.
+    \end{remark}
+
+\begin{example}[foldable=true,title={Voorbeeld: De kracht op een eiwit in een gel}]\nl
+    Een eiwit in een gel heeft een netto lading van $-4$ elementaire ladingen. Het homogene elektrische veld in de gel bedraagt $6{,}0 \cdot 10^{2} \, \mathrm{N/C}$. Bereken de grootte van de elektrische kracht op het eiwit en bepaal naar welke elektrode het eiwit beweegt.
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & Q = -4 \cdot 1{,}60 \cdot 10^{-19} \, \mathrm{C} = -6{,}40 \cdot 10^{-19} \, \mathrm{C} & & E = 6{,}0 \cdot 10^{2} \, \mathrm{N/C}
+        \end{align*}
+
+        \underline{Gevraagd:} $F$ en de elektrode waarnaar het eiwit beweegt\\
+
+        \underline{Oplossing:}\\
+        We zoeken de kracht op een lading in een gekend veld, dus we gebruiken $F = \lvert Q \rvert \cdot E$.
+        \begin{align*}
+            F &= \lvert Q \rvert \cdot E\\
+            &= 6{,}40 \cdot 10^{-19} \, \mathrm{C} \cdot 6{,}0 \cdot 10^{2} \, \mathrm{N/C}\\
+            &= 3{,}84 \cdot 10^{-16} \, \mathrm{N} \simeq 3{,}8 \cdot 10^{-16} \, \mathrm{N}
+        \end{align*}
+        Het eiwit is negatief geladen, dus de kracht heeft een zin die tegengesteld is aan het veld. Het eiwit beweegt naar de \textbf{positieve elektrode}.
+    \end{solution}
+\end{example}
+
+\begin{example}[foldable=true,title={Toepassingen van elektroforese}]\nl
+    \begin{itemize}
+        \item \textbf{Genetische vingerafdruk}: in de forensische wetenschap worden DNA-monsters van een plaats delict en van verdachten via gelelektroforese vergeleken. Een gelijk bandenpatroon wijst op gelijk DNA.
+        \item \textbf{Vaderschapstesten en afstammingsonderzoek}: het bandenpatroon van een kind bevat banden van beide ouders.
+        \item \textbf{Eiwitanalyse}: in laboratoria en ziekenhuizen worden eiwitten uit bloed of andere lichaamsvloeistoffen gescheiden om afwijkingen op te sporen.
+        \item \textbf{Controle van DNA-fragmenten}: na het knippen of vermenigvuldigen van DNA controleert men met een gel of de fragmenten de verwachte grootte hebben.
+    \end{itemize}
+\end{example}
+
+%———————————————————————————————————————
+% VRAAG: richting DNA
+\begin{question}
+    In een gelelektroforese wordt het negatief geladen DNA in putjes aan de negatieve elektrode geplaatst. Wat zal er gebeuren wanneer je het elektrisch veld aanschakelt?
+
+    \begin{multipleChoice}
+        \choice{Het DNA blijft in de putjes zitten.}
+        \choice[correct]{Het DNA beweegt door de gel naar de positieve elektrode.}
+        \choice{Het DNA beweegt naar de negatieve elektrode.}
+        \choice{Alleen de grote fragmenten bewegen, de kleine niet.}
+    \end{multipleChoice}
+
+    \begin{solution}\nl
+        DNA is negatief geladen. Op een negatieve lading werkt een kracht met een zin die tegengesteld is aan het elektrisch veld. Het veld wijst van de positieve naar de negatieve elektrode, dus beweegt het DNA naar de \textbf{positieve elektrode}. Zowel kleine als grote fragmenten bewegen, maar de kleine gaan sneller.
+    \end{solution}
+\end{question}
+%———————————————————————————————————————
+\end{example}
+%------------------------------------------------
+% AANRAAKSCHERM
+%------------------------------------------------
+\section{Capacitief aanraakscherm}\label{sec:aanraakscherm}
+
+Bijna elke smartphone en tablet heeft een \textbf{capacitief aanraakscherm}. Het scherm voelt niet aan hoe hard je duwt, maar merkt dat je vinger een elektrisch veld verstoort. Daarom reageert het scherm wel op een vinger, maar niet op een gewone pen of een dikke handschoen.
+
+\subsection{Bouw van het scherm}
+
+Boven het beeldscherm zit een laagje met een rooster van rijen en kolommen. Dit rooster bestaat uit een dunne, doorzichtige geleider, zodat je het beeldscherm er nog doorheen ziet. De geleidende strookjes vormen samen een heleboel \textbf{elektroden}. Bovenop ligt een beschermende glazen plaat, die een isolator is, zie figuur~\ref{fig:aanraakscherm}.
+
+Het toestel zorgt ervoor dat er rond elke elektrode een klein elektrisch veld aanwezig is. De schakeling in het toestel meet voortdurend hoe dat veld er rond elk punt van het rooster uitziet.
+
+%---------------------------
+% AFBEELDING: doorsnede aanraakscherm
+\begin{figure}[h!]
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
+        \begin{tikzpicture}[scale=0.9]
+            % beschermend glas
+            \fill[blue!10] (0,2.7) rectangle (9,3.7);
+            \draw (0,2.7) rectangle (9,3.7);
+            \node[font=\small, anchor=west] at (0.2,3.2) {beschermend glas (isolator)};
+
+            % elektroden
+            \foreach \x in {0.6,1.6,...,8.6}{
+                \fill[teal!50] (\x,2.0) rectangle (\x+0.6,2.5);
+                \draw[teal!70!black] (\x,2.0) rectangle (\x+0.6,2.5);
+            }
+            \node[font=\small, anchor=west] at (9.2,2.25) {elektroden};
+
+            % beeldscherm
+            \fill[gray!20] (0,1.2) rectangle (9,1.9);
+            \draw (0,1.2) rectangle (9,1.9);
+            \node[font=\small] at (4.5,1.55) {beeldscherm};
+
+            % vinger
+            \draw[fill=orange!30, rounded corners=10pt] (3.3,5.4) -- (3.3,3.7) -- (6.3,3.7) -- (6.3,5.4) -- cycle;
+            \node at (4.8,4.6) {vinger};
+
+            % veldlijnen naar de vinger
+            \draw[vector] (3.9,2.55) to[out=90,in=250] (4.1,3.65);
+            \draw[vector] (4.8,2.55) -- (4.8,3.65);
+            \draw[vector] (5.7,2.55) to[out=90,in=290] (5.5,3.65);
+
+            % veldlijnen tussen naburige elektroden
+            \foreach \x in {0.9,1.9,6.9,7.9}{
+                \draw[vector, dashed, thick] (\x+0.3,2.55) to[bend left=70] (\x+0.7,2.55);
+            }
+        \end{tikzpicture}
+    \end{center}
+    \caption{Doorsnede van een capacitief aanraakscherm (schematisch). Onder de vinger lopen er veldlijnen van de elektroden naar de vinger, ver van de vinger blijven de veldlijnen tussen naburige elektroden lopen. De schakeling meet waar het veld verandert.}
+    \label{fig:aanraakscherm}
+\end{figure}
+%---------------------------
+
+\subsection{Werking}
+
+Het menselijk lichaam bestaat grotendeels uit water met opgeloste zouten en is daardoor een redelijk goede geleider. Wanneer je vinger het scherm nadert, gebeurt er het volgende:
+\begin{enumerate}
+    \item Je vinger is een geleider in het elektrisch veld van de elektroden. Zoals je bij influentie hebt gezien, verschuiven de vrije ladingen in je vinger en eindigen er veldlijnen op je vinger.
+    \item Hierdoor verandert het veld rond de elektroden die het dichtst bij je vinger liggen. Verder weg van je vinger blijft het veld ongewijzigd.
+    \item De schakeling in het toestel merkt in welke rijen en kolommen het veld verandert, en berekent zo op welk punt je het scherm aanraakt.
+\end{enumerate}
+
+Het scherm heeft dus geen lading nodig die van je vinger naar het scherm stroomt. Het glas is een isolator en de lading blijft waar ze is. Het scherm merkt enkel dat er een geleider in de buurt is.
+
+\begin{remark}[title={Capacitief}]\nl
+    De naam \textit{capacitief} komt van \textit{capaciteit}, een grootheid die aangeeft hoeveel lading een geleider kan opslaan bij een bepaalde spanning. Wat het scherm precies meet, is de verandering van de capaciteit van de elektroden wanneer je vinger dichtbij komt. Deze grootheid zie je pas in een later hoofdstuk. Voor nu volstaat het idee dat je vinger het veld verstoort.
+\end{remark}
+
+\begin{example}[foldable=true,title={Waarom werkt een aanraakscherm niet met handschoenen?}]\nl
+    Gewone handschoenen zijn gemaakt van isolerend materiaal zoals wol, katoen of leer. Ze vergroten de afstand tussen je vinger en de elektroden en zorgen dat je vinger het veld nauwelijks nog kan verstoren. Het scherm merkt dan niets.
+
+    \textbf{Touchscreenhandschoenen} hebben in de vingertoppen geleidende draadjes. Die geleiden het effect van je vinger door naar het scherm. Hetzelfde geldt voor een speciale stylus met een geleidende punt. Ook een stuk fruit of een worstje werkt op een aanraakscherm, omdat ze veel water met opgeloste zouten bevatten en dus geleiden.
+\end{example}
+
+%———————————————————————————————————————
+% VRAAG: handschoen
+\begin{question}
+    Waarom reageert een capacitief aanraakscherm niet op een plastic balpen?
+
+    \begin{multipleChoice}
+        \choice{Een balpen is te licht om het scherm in te drukken.}
+        \choice[correct]{Plastic is een isolator en verstoort het elektrisch veld van de elektroden nauwelijks.}
+        \choice{Plastic is een geleider en sluit het scherm kort.}
+        \choice{Een balpen bevat geen water.}
+    \end{multipleChoice}
+
+    \begin{hint}
+        Waarom verstoort een vinger het veld wel? Denk aan wat er in een geleider gebeurt wanneer je die in een elektrisch veld brengt.
+    \end{hint}
+
+    \begin{solution}\nl
+        Het scherm reageert op de verstoring van het elektrisch veld door een geleider in de buurt. In een geleider verschuiven de vrije ladingen, in een isolator zoals plastic bijna niet. Een plastic pen verstoort het veld dus nauwelijks. De kracht waarmee je duwt speelt geen rol.
+    \end{solution}
+\end{question}
+%———————————————————————————————————————
+
+\end{document}

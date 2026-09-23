@@ -197,9 +197,284 @@
     \end{question}
 \end{exercise}
 %———————————————————————————————————————
- 
+
 %———————————————————————————————————————
-% EXTRA OEF DRIEHOEK PYTH 3: rechte hoek in P, ontbrekende afstand via Pythagoras
+% OEF VELD PYTH 3: basis, twee positieve ladingen
+\begin{exercise}
+    Twee positieve puntladingen $Q_{1} = +3{,}0 \, \mathrm{\mu C}$ en $Q_{2} = +4{,}0 \, \mathrm{\mu C}$ bevinden zich zoals aangegeven op de tekening, met een rechte hoek in punt \textit{P}. De afstand van $Q_1$ tot $P$ is $15 \, \mathrm{cm}$, en de afstand van $Q_2$ tot $P$ is $20 \, \mathrm{cm}$.
+
+    \begin{center}
+        \begin{tikzpicture}[scale=1]
+            \tkzDefPoint(0,0){P}
+            \tkzDefPoint(1.5,0){Q1}
+            \tkzDefPoint(0,2.0){Q2}
+            \draw[gray,thick] (P) -- (Q1) node[midway,below]{$15\,\mathrm{cm}$};
+            \draw[gray,thick] (P) -- (Q2) node[midway,left]{$20\,\mathrm{cm}$};
+            \tkzMarkRightAngle[size=0.25](Q1,P,Q2)
+            \tkzLabelPoint[below=1.5mm](P){$P$}
+            \tkzLabelPoint[below=1.5mm](Q1){$Q_1$}
+            \tkzLabelPoint[left=1.5mm](Q2){$Q_2$}
+            \draw[charge+] (Q1) circle (\R) node[scale=0.5]{$+$};
+            \draw[charge+] (Q2) circle (\R) node[scale=0.5]{$+$};
+            \filldraw (P) circle (1.2pt);
+        \end{tikzpicture}
+    \end{center}
+
+    Bereken de grootte van het totale elektrisch veld in punt \textit{P}.
+
+    \[ E_{\text{res}} = \answer[tolerance=0.05,onlineshowanswerbutton]{1.5} \cdot 10^{6} \, \mathrm{N/C} \]
+
+    \begin{hint}
+        Omdat de rechte hoek in $P$ ligt, staan de twee veldvectoren loodrecht op elkaar.
+    \end{hint}
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & Q_{1} = +3{,}0 \, \mathrm{\mu C} = 3{,}0 \cdot 10^{-6} \, \mathrm{C} & & Q_{2} = +4{,}0 \, \mathrm{\mu C} = 4{,}0 \cdot 10^{-6} \, \mathrm{C} \\
+            & r_{1} = 15 \, \mathrm{cm} = 0{,}15 \, \mathrm{m} & & r_{2} = 20 \, \mathrm{cm} = 0{,}20 \, \mathrm{m}
+        \end{align*}
+
+        \underline{Gevraagd:} $E_{\text{res}}$ in $P$\\
+
+        \underline{Oplossing:}\\
+        \begin{align*}
+            E_{1} &= k_e \frac{|Q_{1}|}{r_{1}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 3{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}15 \, \mathrm{m})^{2}} = 1{,}2 \cdot 10^{6} \, \mathrm{N/C} \\
+            E_{2} &= k_e \frac{|Q_{2}|}{r_{2}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 4{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}20 \, \mathrm{m})^{2}} = 9{,}0 \cdot 10^{5} \, \mathrm{N/C}
+        \end{align*}
+        Beide ladingen zijn positief, dus wijzen $\vec{E}_1$ en $\vec{E}_2$ elk weg van hun eigen lading; de rechte hoek in $P$ zorgt ervoor dat ze loodrecht op elkaar staan.
+        \begin{align*}
+            E_{\text{res}} &= \sqrt{E_1^{2} + E_2^{2}} \simeq 1{,}5 \cdot 10^{6} \, \mathrm{N/C}
+        \end{align*}
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% OEF VELD PYTH 4: tegengesteld teken, nC en mm-schaal
+\begin{exercise}
+    Een positieve puntlading $Q_{1} = +800 \, \mathrm{nC}$ en een negatieve puntlading $Q_{3} = -500 \, \mathrm{nC}$ bevinden zich zoals aangegeven op de tekening, met een rechte hoek in punt \textit{P}. De afstand van $Q_1$ tot $P$ is $80 \, \mathrm{mm}$, en de afstand van $Q_3$ tot $P$ is $12 \, \mathrm{cm}$.
+
+    \begin{center}
+        \begin{tikzpicture}[scale=1.3]
+            \tkzDefPoint(0,0){P}
+            \tkzDefPoint(1.6,0){Q1}
+            \tkzDefPoint(0,2.4){Q3}
+            \draw[gray,thick] (P) -- (Q1) node[midway,below]{$80\,\mathrm{mm}$};
+            \draw[gray,thick] (P) -- (Q3) node[midway,left]{$12\,\mathrm{cm}$};
+            \tkzMarkRightAngle[size=0.2](Q1,P,Q3)
+            \tkzLabelPoint[below=1.5mm](P){$P$}
+            \tkzLabelPoint[below=1.5mm](Q1){$Q_1$}
+            \tkzLabelPoint[left=1.5mm](Q3){$Q_3$}
+            \draw[charge+] (Q1) circle (\R) node[scale=0.5]{$+$};
+            \draw[charge-] (Q3) circle (\R) node[scale=0.5]{$-$};
+            \filldraw (P) circle (1.2pt);
+        \end{tikzpicture}
+    \end{center}
+
+    Bereken de grootte van het totale elektrisch veld in punt \textit{P}.
+
+    \[ E_{\text{res}} = \answer[tolerance=0.05,onlineshowanswerbutton]{1.2} \cdot 10^{6} \, \mathrm{N/C} \]
+
+    \begin{hint}
+        Ondanks het verschil in teken staan $\vec{E}_1$ en $\vec{E}_3$ nog steeds loodrecht op elkaar, omdat de rechte hoek in $P$ ligt.
+    \end{hint}
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & Q_{1} = +800 \, \mathrm{nC} = 8{,}0 \cdot 10^{-7} \, \mathrm{C} & & Q_{3} = -500 \, \mathrm{nC} = 5{,}0 \cdot 10^{-7} \, \mathrm{C} \\
+            & r_{1} = 80 \, \mathrm{mm} = 0{,}080 \, \mathrm{m} & & r_{3} = 12 \, \mathrm{cm} = 0{,}12 \, \mathrm{m}
+        \end{align*}
+
+        \underline{Gevraagd:} $E_{\text{res}}$ in $P$\\
+
+        \underline{Oplossing:}\\
+        \begin{align*}
+            E_{1} &= k_e \frac{|Q_{1}|}{r_{1}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 8{,}0 \cdot 10^{-7} \, \mathrm{C}}{(0{,}080 \, \mathrm{m})^{2}} = 1{,}1 \cdot 10^{6} \, \mathrm{N/C} \\
+            E_{3} &= k_e \frac{|Q_{3}|}{r_{3}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 5{,}0 \cdot 10^{-7} \, \mathrm{C}}{(0{,}12 \, \mathrm{m})^{2}} = 3{,}1 \cdot 10^{5} \, \mathrm{N/C}
+        \end{align*}
+        $\vec{E}_1$ wijst weg van $Q_1$, $\vec{E}_3$ wijst naar $Q_3$ toe — de rechte hoek in $P$ zorgt er wel voor dat ze loodrecht op elkaar blijven staan.
+        \begin{align*}
+            E_{\text{res}} &= \sqrt{E_1^{2} + E_3^{2}} \simeq 1{,}2 \cdot 10^{6} \, \mathrm{N/C}
+        \end{align*}
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% OEF VELD PYTH 5: rechthoek, P in een hoekpunt
+\begin{exercise}
+    Twee puntladingen $Q_{A} = +5{,}0 \, \mathrm{\mu C}$ en $Q_{B} = -6{,}0 \, \mathrm{\mu C}$ bevinden zich in twee hoekpunten van een rechthoek, aangrenzend aan hoekpunt \textit{P}. De zijde $PQ_A$ is $18 \, \mathrm{cm}$ lang, de zijde $PQ_B$ is $24 \, \mathrm{cm}$ lang.
+
+    \begin{center}
+        \begin{tikzpicture}[scale=0.7]
+            \tkzDefPoint(0,0){P}
+            \tkzDefPoint(3.6,0){A}
+            \tkzDefPoint(0,4.8){B}
+            \tkzDefPoint(3.6,4.8){C}
+            \tkzDrawPolygon(P,A,C,B)
+            \tkzMarkRightAngle[size=0.3](A,P,B)
+            \tkzLabelPoint[below=1.5mm](P){$P$}
+            \tkzLabelPoint[below=1.5mm](A){$Q_A$}
+            \tkzLabelPoint[left=1.5mm](B){$Q_B$}
+            \draw[charge+] (A) circle (\R) node[scale=0.5]{$+$};
+            \draw[charge-] (B) circle (\R) node[scale=0.5]{$-$};
+            \filldraw (P) circle (1.5pt);
+        \end{tikzpicture}
+    \end{center}
+
+    Bereken de grootte van het totale elektrisch veld in punt \textit{P}, veroorzaakt door $Q_A$ en $Q_B$.
+
+    \[ E_{\text{res}} = \answer[tolerance=0.05,onlineshowanswerbutton]{1.7} \cdot 10^{6} \, \mathrm{N/C} \]
+
+    \begin{hint}
+        De zijden van een rechthoek staan loodrecht op elkaar, dus doet zich hier hetzelfde voor als in de vorige oefeningen.
+    \end{hint}
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & Q_{A} = +5{,}0 \, \mathrm{\mu C} = 5{,}0 \cdot 10^{-6} \, \mathrm{C} & & Q_{B} = -6{,}0 \, \mathrm{\mu C} = 6{,}0 \cdot 10^{-6} \, \mathrm{C} \\
+            & r_{A} = 18 \, \mathrm{cm} = 0{,}18 \, \mathrm{m} & & r_{B} = 24 \, \mathrm{cm} = 0{,}24 \, \mathrm{m}
+        \end{align*}
+
+        \underline{Gevraagd:} $E_{\text{res}}$ in $P$\\
+
+        \underline{Oplossing:}\\
+        \begin{align*}
+            E_{A} &= k_e \frac{|Q_{A}|}{r_{A}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 5{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}18 \, \mathrm{m})^{2}} = 1{,}4 \cdot 10^{6} \, \mathrm{N/C} \\
+            E_{B} &= k_e \frac{|Q_{B}|}{r_{B}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 6{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}24 \, \mathrm{m})^{2}} = 9{,}4 \cdot 10^{5} \, \mathrm{N/C}
+        \end{align*}
+        De zijden $PQ_A$ en $PQ_B$ van de rechthoek staan loodrecht op elkaar, dus ook $\vec{E}_A$ en $\vec{E}_B$.
+        \begin{align*}
+            E_{\text{res}} &= \sqrt{E_A^{2} + E_B^{2}} \simeq 1{,}7 \cdot 10^{6} \, \mathrm{N/C}
+        \end{align*}
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% OEF VELD PYTH 6: vierkant, gelijke afstanden
+\begin{exercise}
+    Twee puntladingen $Q_{1} = +2{,}0 \, \mathrm{\mu C}$ en $Q_{2} = -9{,}0 \, \mathrm{\mu C}$ bevinden zich in twee hoekpunten van een vierkant met zijde $25 \, \mathrm{cm}$, aangrenzend aan hoekpunt \textit{P}.
+
+    \begin{center}
+        \begin{tikzpicture}[scale=0.5]
+            \tkzDefPoint(0,0){P}
+            \tkzDefPoint(5,0){Q1}
+            \tkzDefPoint(0,5){Q2}
+            \tkzDefPoint(5,5){C}
+            \tkzDrawPolygon(P,Q1,C,Q2)
+            \tkzMarkRightAngle[size=0.4](Q1,P,Q2)
+            \tkzLabelPoint[below=1.5mm](P){$P$}
+            \tkzLabelPoint[below=1.5mm](Q1){$Q_1$}
+            \tkzLabelPoint[left=1.5mm](Q2){$Q_2$}
+            \draw[charge+] (Q1) circle (\R) node[scale=0.5]{$+$};
+            \draw[charge-] (Q2) circle (\R) node[scale=0.5]{$-$};
+            \filldraw (P) circle (1.5pt);
+        \end{tikzpicture}
+    \end{center}
+
+    Bereken de grootte van het totale elektrisch veld in punt \textit{P}.
+
+    \[ E_{\text{res}} = \answer[tolerance=0.05,onlineshowanswerbutton]{1.3} \cdot 10^{6} \, \mathrm{N/C} \]
+
+    \begin{hint}
+        Bij een vierkant zijn beide afstanden tot $P$ gelijk, maar de ladingen zelf zijn dat niet: reken beide velden apart uit.
+    \end{hint}
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & Q_{1} = +2{,}0 \, \mathrm{\mu C} = 2{,}0 \cdot 10^{-6} \, \mathrm{C} & & Q_{2} = -9{,}0 \, \mathrm{\mu C} = 9{,}0 \cdot 10^{-6} \, \mathrm{C} \\
+            & r_{1} = r_{2} = 25 \, \mathrm{cm} = 0{,}25 \, \mathrm{m} & &
+        \end{align*}
+
+        \underline{Gevraagd:} $E_{\text{res}}$ in $P$\\
+
+        \underline{Oplossing:}\\
+        \begin{align*}
+            E_{1} &= k_e \frac{|Q_{1}|}{r_{1}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 2{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}25 \, \mathrm{m})^{2}} = 2{,}9 \cdot 10^{5} \, \mathrm{N/C} \\
+            E_{2} &= k_e \frac{|Q_{2}|}{r_{2}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 9{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}25 \, \mathrm{m})^{2}} = 1{,}3 \cdot 10^{6} \, \mathrm{N/C}
+        \end{align*}
+        De zijden van het vierkant die in $P$ samenkomen, staan loodrecht op elkaar, dus ook $\vec{E}_1$ en $\vec{E}_2$.
+        \begin{align*}
+            E_{\text{res}} &= \sqrt{E_1^{2} + E_2^{2}} \simeq 1{,}3 \cdot 10^{6} \, \mathrm{N/C}
+        \end{align*}
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% OEF VELD PYTH 7: ontbrekende afstand via Pythagoras, meerdelig
+\begin{exercise}
+    Twee puntladingen $Q_{1} = +7{,}0 \, \mathrm{\mu C}$ en $Q_{2} = -25 \, \mathrm{\mu C}$ bevinden zich zoals aangegeven op de tekening, met een rechte hoek in punt \textit{P}. De afstand van $Q_1$ tot $P$ is $18 \, \mathrm{cm}$. De afstand tussen $Q_1$ en $Q_2$ zelf (dus niet tot $P$) bedraagt $30 \, \mathrm{cm}$.
+
+    \begin{center}
+        \begin{tikzpicture}[scale=1]
+            \tkzDefPoint(0,0){P}
+            \tkzDefPoint(1.8,0){Q1}
+            \tkzDefPoint(0,2.4){Q2}
+            \draw[gray,thick] (P) -- (Q1) node[midway,below]{$18\,\mathrm{cm}$};
+            \draw[gray,dashed] (P) -- (Q2) node[midway,left]{$?$};
+            \draw[gray,thick] (Q1) -- (Q2) node[midway,above right]{$30\,\mathrm{cm}$};
+            \tkzMarkRightAngle[size=0.25](Q1,P,Q2)
+            \tkzLabelPoint[below=1.5mm](P){$P$}
+            \tkzLabelPoint[below=1.5mm](Q1){$Q_1$}
+            \tkzLabelPoint[left=1.5mm](Q2){$Q_2$}
+            \draw[charge+] (Q1) circle (\R) node[scale=0.5]{$+$};
+            \draw[charge-] (Q2) circle (\R) node[scale=0.5]{$-$};
+            \filldraw (P) circle (1.2pt);
+        \end{tikzpicture}
+    \end{center}
+
+    \begin{question}
+        Bereken eerst de afstand van $Q_2$ tot $P$.
+
+        \[ r_{2} = \answer[tolerance=0.01,onlineshowanswerbutton]{0.24} \, \mathrm{m} \]
+
+        \begin{hint}
+            De gegeven afstand van $30 \, \mathrm{cm}$ tussen $Q_1$ en $Q_2$ is de schuine zijde van de rechthoekige driehoek $PQ_1Q_2$.
+        \end{hint}
+
+        \begin{solution}\nl
+            \begin{align*}
+                r_{2} &= \sqrt{(0{,}30 \, \mathrm{m})^{2} - (0{,}18 \, \mathrm{m})^{2}} = 0{,}24 \, \mathrm{m}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken nu de grootte van het totale elektrisch veld in punt \textit{P}.
+
+        \[ E_{\text{res}} = \answer[tolerance=0.1,onlineshowanswerbutton]{4.4} \cdot 10^{6} \, \mathrm{N/C} \]
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & Q_{1} = +7{,}0 \, \mathrm{\mu C} = 7{,}0 \cdot 10^{-6} \, \mathrm{C} & & Q_{2} = -25 \, \mathrm{\mu C} = 2{,}5 \cdot 10^{-5} \, \mathrm{C} \\
+                & r_{1} = 0{,}18 \, \mathrm{m} & & r_{2} = 0{,}24 \, \mathrm{m}
+            \end{align*}
+
+            \underline{Gevraagd:} $E_{\text{res}}$ in $P$\\
+
+            \underline{Oplossing:}\\
+            \begin{align*}
+                E_{1} &= k_e \frac{|Q_{1}|}{r_{1}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 7{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}18 \, \mathrm{m})^{2}} = 1{,}9 \cdot 10^{6} \, \mathrm{N/C} \\
+                E_{2} &= k_e \frac{|Q_{2}|}{r_{2}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 2{,}5 \cdot 10^{-5} \, \mathrm{C}}{(0{,}24 \, \mathrm{m})^{2}} = 3{,}9 \cdot 10^{6} \, \mathrm{N/C}
+            \end{align*}
+            De rechte hoek in $P$ zorgt ervoor dat $\vec{E}_1$ en $\vec{E}_2$ loodrecht op elkaar staan.
+            \begin{align*}
+                E_{\text{res}} &= \sqrt{E_1^{2} + E_2^{2}} \simeq 4{,}4 \cdot 10^{6} \, \mathrm{N/C}
+            \end{align*}
+        \end{solution}
+    \end{question}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% EXTRA OEF DRIEHOEK PYTH 8: rechte hoek in P, ontbrekende afstand via Pythagoras
 \begin{exercise}
     Twee puntladingen $Q_{1} = +6{,}0 \cdot 10^{-6} \, \mathrm{C}$ en $Q_{2} = -8{,}0 \cdot 10^{-6} \, \mathrm{C}$ bevinden zich zoals aangegeven op de tekening, met een rechte hoek in punt \textit{P}. De afstand van $Q_1$ tot $P$ is $0{,}30 \, \mathrm{m}$. De afstand tussen $Q_1$ en $Q_2$ zelf (dus niet tot $P$) bedraagt $0{,}50 \, \mathrm{m}$.
  

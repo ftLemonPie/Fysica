@@ -1,5 +1,5 @@
 \documentclass{ximera}
-%herschreven 2 september 2026
+%herschreven 23 september 2026
 \title{Het elektrisch veld van een puntlading}
 \author{Daan Lipkens}
 
@@ -61,6 +61,67 @@ Als we dit delen door $Q_t$, bekomen we de grootte van het elektrisch veld veroo
     \end{solution}
 \end{question}
 %———————————————————————————————————————
+
+\section{Veldlijnen van een radiaal veld}\label{s:radiaal_veld}
+
+Bij een enkele positieve puntlading wijzen de veldlijnen radiaal naar buiten, zoals te zien op figuur \ref{fig:veldlijnen_puntlading}(a). Bij een negatieve puntlading wijzen ze radiaal naar binnen, zoals te zien op figuur \ref{fig:veldlijnen_puntlading}(b). Omdat de lijnen in 3D uitwaaieren, wordt de dichtheid van de lijnen kleiner naarmate je verder van de bron weggaat, wat overeenkomt met de afname in veldsterkte ($E \propto 1/r^2$).
+
+%---------------------------
+% AFBEELDING: Figuur 23.19 (Veldlijnen 1 puntlading)
+\begin{figure}[ht!]
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
+        \begin{tikzpicture}[scale=1.2]
+
+            % --- DEEL (a): Positieve lading ---
+            \coordinate (O1) at (0,0);
+
+            \foreach \angle in {0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330} {
+                % Pad van binnen naar buiten -> gecentreerde pijl wijst naar buiten
+                \draw[Eveldlijn] (O1) -- ++(\angle:2.5);
+            }
+
+            % Lading (als laatste getekend zodat deze de start van de lijnen netjes afdekt)
+            \node[poslading] at (O1) {$+$};
+
+            % Label q
+            \node[above] at (0.7, 0.0) {$q$};
+            
+            %Label E
+            \node[below] at (1.4, -0.05) {\textcolor{orange}{$E$}};
+
+            % Bijschrift (a)
+            \node at (0, -2.8) {(a)};
+
+
+            % --- DEEL (b): Negatieve lading ---
+            \coordinate (O2) at (6.5,0);
+
+            \foreach \angle in {0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330} {
+                % Pad van buiten naar binnen -> gecentreerde pijl wijst naar binnen
+                \draw[Eveldlijn] ($(O2)+(\angle:2.5)$) -- (O2);
+            }
+            
+
+            % Lading
+            \node[neglading] at (O2) {$-$};
+
+            % Label -q
+            \node[above] at (7.2, 0.0) {$-q$};
+            
+            %E label
+            \node[below] at (7.9, -0.05) {\textcolor{orange}{$E$}};
+            
+            % Bijschrift (b)
+            \node at (6.5, -2.8) {(b)};
+
+        \end{tikzpicture}
+    \end{center}
+    \caption{Elektrische veldlijnen voor een puntlading. (a) Voor een positieve puntlading wijzen de lijnen radiaal naar buiten. (b) Voor een negatieve puntlading wijzen de lijnen radiaal naar binnen.}
+    \label{fig:veldlijnen_puntlading}
+\end{figure}
+%---------------------------
+
 
 \section{Superpositiebeginsel}
 Wanneer er meerdere puntladingen aanwezig zijn, bereken je het totale elektrisch veld in een willekeurig punt \textit{P} door de veldvectoren van elke bronlading afzonderlijk te berekenen, en deze vervolgens \textbf{vectorieel op te tellen}\footnote{Zie bijlage \ref{s:vectoren_optellen}.}.

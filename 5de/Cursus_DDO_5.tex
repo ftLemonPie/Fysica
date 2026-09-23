@@ -4,6 +4,7 @@
 % Start \part op een nieuwe pagina (Ximera doet dat niet per default)
 \xpretocmd{\part}{\clearpage}{}{}
 
+\newcommand{\richting}{Wetenschappen 5de jaar}%De klas/richting --> hoofding header
 % \documentclass{xourse}
 %in
 %\title{\includegraphics[width=0.7\textwidth]{pic5/elektromagnetisme.jpg}\\[2cm]Fysica 5de jaar - Wetenschappen}
@@ -35,12 +36,13 @@
 % komma's met {,} in math mode
 
 
-\part{Inleiding}
+\part*{Inleiding}
 \chapterstyle
-\activity{stand_52.tex}
+\activity{inleiding_stand_52.tex}
 \sectionstyle
-\activity{praktische_richtlijnen_52.tex}
-\activity{hoe_fysica_te_studeren_5.tex}
+\activity{inleiding_praktische_richtlijnen_52.tex}
+\activity{inleiding_hoe_fysica_te_studeren_5.tex}
+\activity{inleiding_vectorkleuren.tex}
 
 
 %--------ELEKTRICITEIT----------------
@@ -82,9 +84,12 @@
  
 \sectionstyle
 \activity{elektrischveld_concept.tex} %wat is E-veld, analogie zwaarte kracht en hoe kracht staat op een lading in een veld
-\activity{elektrischveld_puntlading.tex} % E-veld van puntlading
 \activity{elektrischveld_veldlijnen.tex} % veldlijnen en soorten velden
+\activity{elektrischveld_puntlading.tex} % E-veld van puntlading
+\activity{elektrischveld_dipool.tex} %E-veld tussen 2 ladingen
+\activity{elektrischveld_homogeen_veld.tex} % homogeen veld
 \activity{elektrischveld_materie_in_veld.tex} % geleider en isolator in veld, elektrische schermwerking + toepassingen
+\activity{elektrischveld_toepassingen.tex}
 \activity{elektrischveld_samenvatting.tex} %todo
  
 % %oefeningen

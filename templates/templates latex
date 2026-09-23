@@ -294,7 +294,15 @@ Dit is de veiligste manier om afbeeldingen in te voegen, zodat ze zowel in de PD
 
 ```
 
-### 6. Video's integreren
+### 6. Tikz figuren met vectoren
+```latex
+    \neglading[wat in de cirkel]{label}{1.5,2}         %negatieve lading: "wat in de cirkel" op positie (1.5,2), label naam q3
+    \poslading[wat in de cirkel]{label}{1.5,2}         %positieve lading: "wat in de cirkel" op positie (1.5,2), label naam q3
+    \drawvector[stijl]{startlabel}{doellabel}{lengte in cm}{label} %stijlen: positie, snelheid, snelheidcomponent, kracht, krachtcomponent, versnelling, versnellingcomponent, Evector, Evectorcomponent, Eveldlijn, Mvector, Mvectorcomponent, Eveldlijn
+    \drawvector{q1}{(q1)+(60:1)}{2}{$\vec{E}$}          % tekent een vector van Q1 60° t.o.v. horizontale as
+```
+
+### 7. Video's integreren
 
 Omdat YouTube-video's online mooi kunnen afspelen, maar in een geprinte PDF gewoon verdwijnen, gebruiken we deze combinatie om beide weergaven perfect te maken.
 

@@ -1,0 +1,57 @@
+\documentclass{ximera}
+\title{Overzicht van notaties: vectoren, ladingen en veldlijnen}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+    Grafische vector conventies gebruikt in de cursus.
+\end{abstract}
+\maketitle
+
+Doorheen deze cursus gebruiken we telkens dezelfde kleuren en stijlen om vectoren, ladingen en veldlijnen visueel van elkaar te onderscheiden. Onderstaande tabel geeft een overzicht van deze notaties.
+
+% ----------------------------------------------------------
+% Hulpcommando's voor de voorbeeldjes in de tabel
+\newcommand{\vecsample}[1]{%
+    \begin{tikzpicture}[baseline=-0.5ex]
+        \draw[#1] (0,0) -- (1.2,0);
+    \end{tikzpicture}%
+}
+\newcommand{\lijnsample}[1]{%
+    \begin{tikzpicture}[baseline=-0.5ex]
+        \draw[#1] (0,0) -- (1.2,0);
+    \end{tikzpicture}%
+}
+\newcommand{\ladingsample}[2]{%
+    \begin{tikzpicture}[baseline=-0.6ex]
+        \node[#1] at (0,0) {$#2$};
+    \end{tikzpicture}%
+}
+% ----------------------------------------------------------
+
+\begin{table}[h!]
+    \caption{Overzicht van de gebruikte vector- en symboolnotaties.}
+    \label{tab:notatie_overzicht}
+    \centering
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabular}{@{}llll@{}}
+        \toprule
+        \multicolumn{4}{@{}l}{\textbf{Mechanica}} \\
+        \midrule
+        Positievector ($\vec{r}$) & \vecsample{positie} & Krachtvector ($\vec{F}$) & \vecsample{kracht} \\
+        Snelheidsvector ($\vec{v}$) & \vecsample{snelheid} & Krachtcomponent ($\vec{F}_x$) & \vecsample{krachtcomponent} \\
+        Snelheidscomponent ($\vec{v}_x$) & \vecsample{snelheidcomponent} & Resulterende kracht ($\vec{F}_\text{res}$) & \vecsample{resulterendekracht} \\
+        Versnellingsvector ($\vec{a}$) & \vecsample{versnelling} & &\\
+        Versnellingscomponent ($\vec{a}_x$) & \vecsample{versnellingcomponent} & & \\
+        \midrule
+        \multicolumn{4}{@{}l}{\textbf{Elektriciteit en magnetisme}} \\
+        \midrule
+        Positieve lading & \ladingsample{poslading}{+} & Negatieve lading & \ladingsample{neglading}{-} \\[0.5ex]
+        Elektrisch veldvector ($\vec{E}$) & \vecsample{Evector} & Magnetisch veldvector ($\vec{B}$) & \vecsample{Mvector} \\
+        Elektrisch veldcomponent ($\vec{E}_x$) & \vecsample{Evectorcomponent} & Magnetisch veldcomponent ($\vec{B}_x$) & \vecsample{Mvectorcomponent} \\
+        Elektrische veldlijn ($E$) & \lijnsample{Eveldlijn} & Magnetische veldlijn ($B$) & \lijnsample{Mveldlijn} \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\end{document}

@@ -19,9 +19,11 @@
     \begin{center}
         \begin{tikzpicture}[scale=1]
             \useasboundingbox (-1.5, -1.5) rectangle (5.5, 4.5);
-            \coordinate (A) at (0,0);
-            \coordinate (B) at (4,0);
-            \coordinate (C) at (0,3);
+
+            % Ladingen tekenen
+            \neglading{A}{0,0}
+            \poslading{B}{4,0}
+            \poslading{C}{0,3}
 
             % Driehoek en assen tekenen
             \draw[dashed, gray] (A) -- (B) node[midway,below] {$0{,}40 \, \mathrm{m}$};
@@ -32,11 +34,6 @@
             \tkzLabelPoint[below left](A){$Q_{1}$}
             \tkzLabelPoint[below right](B){$Q_{2}$}
             \tkzLabelPoint[above left](C){$Q_{3}$}
-
-            % Ladingen tekenen
-            \draw[charge-] (A) circle (\R) node[scale=1] {$-$};
-            \draw[charge+] (B) circle (\R) node[scale=1] {$+$};
-            \draw[charge+] (C) circle (\R) node[scale=1] {$+$};
         \end{tikzpicture}
     \end{center}
 

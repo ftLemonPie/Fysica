@@ -24,8 +24,41 @@
 \XmTheoremDefaults{box}{expandable=true,nonumbered}
 % \XmTheoremDefaults{box}{expandable=true,nonumbered, noprint}
 
-% \def\xmDebug{true}
+\begin{tikzpicture}
+  \draw[teal!70!black, postaction={decorate},
+    decoration={markings, mark=at position 0.5 with {\gecentreerdepijl[3mm]}}]
+    (0,0) -- (3,0);
+\end{tikzpicture}
 
+% \def\xmDebug{true}
+\begin{tikzpicture}
+   \poslading[Q_1]{q1}{0,0}
+   \neglading[Q_2]{q2}{3,1.5}
+   \drawvector[positie]{q1}{q2}{2}{$r_{12}$}
+   \drawvector[snelheid]{q1}{30:1}{1.2}{$\vec{v}$}
+   \drawvector[snelheidcomponent]{q1}{90:1}{1}{$\vec{v}_x$}
+   \drawvector[kracht]{q1}{0:1}{1.2}{$\vec{F}$}
+   \drawvector[krachtcomponent]{q1}{10:1}{1.2}{$\vec{F}_x$}
+   \drawvector[versnelling]{q1}{-10:1}{1.2}{$\vec{a}$}
+   \drawvector[versnellingcomponent]{q1}{-20:1}{1.2}{$\vec{a}_x$}
+   \drawvector[Evector]{q1}{-30:1}{1.2}{$\vec{E}$}
+   \drawvector[Evectorcomponent]{q1}{-40:1}{1.2}{$\vec{E}_x$}
+   \drawvector[Eveldlijn]{q1}{-50:1}{2}{$E$}
+   \drawvector[Mvector]{q1}{-60:1}{1.2}{$\vec{M}$}
+   \drawvector[Mvectorcomponent]{q1}{-70:1}{1.2}{$\vec{M}_x$}
+   \drawvector[Eveldlijn]{q1}{-80:1}{2}{$M$}
+\end{tikzpicture}
+
+
+% \begin{tikzpicture}
+%    \node[charge] (Q1) at (0,0) {+};
+%    %\node[charge+] (Q2) at (2,0) {charge+};
+%    %\node[charge-] (Q3) at (4,0) {charge-};
+%    \node(Q4) at (0,-2);
+%    \poslading(Q4);
+%    \draw[vector] (Q1) -- ++(0.8,0) node[above, midway]{$\vec{F}$};
+%    \draw[vectorcomponent] (Q1) -- ++(0,-0.8) node[left, midway]{$\vec{F_x}$};
+% \end{tikzpicture}
 \section{Keuze van de chef}
 \subsection{theorie}
 \begin{definition}[foldable=true,title={Titel van definitie}]\nl

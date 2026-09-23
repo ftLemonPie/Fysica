@@ -21,14 +21,12 @@
     \begin{center}
         \begin{tikzpicture}
             \useasboundingbox (-1, -1.0) rectangle (11, 1.5);
-            \coordinate (A) at (0,0);
-            \coordinate (B) at (5,0);
-            \coordinate (C) at (10,0);
-        
+
             % CHARGES
-            \draw[charge+] (A) circle (\R) node[scale=1.2] {$+$};
-            \draw[charge+] (B) circle (\R) node[scale=1.2] {$+$};
-            \draw[charge-] (C) circle (\R) node[scale=1.2] {$-$};
+            \poslading{A}{0,0}
+            \poslading{B}{5,0}
+            \neglading{C}{10,0}
+
             \draw[transform canvas={yshift=-7.0pt},dashed, gray, |<->|] (A) -- (B) node[midway,above] {$0{,}50 \, \mathrm{m}$};
             \draw[transform canvas={yshift=-14.0pt},dashed, darkgray, |<->|] (A) -- (C) node[midway,below] {$1{,}00 \, \mathrm{m}$};
             \node[above] at (0,\R) {$Q_1= +2{,}0  \, \mathrm{\mu C}$};
@@ -89,19 +87,17 @@
         \begin{center}
             \begin{tikzpicture}
                \useasboundingbox (-1, -1.0) rectangle (11, 1.5);
-                \coordinate (A) at (0,0);
-                \coordinate (B) at (5,0);
-                \coordinate (C) at (10,0);
-  
-                %  % FORCES
-                \draw[force, transform canvas={yshift=+2.0pt}] (B) --  (5+2.1/2,0)node[above right] {$\vec{\mathbf{F}}_{12}$};
-                \draw[force, transform canvas={yshift=-2.0pt}] (B) -- (5+4.3/2,0)node[below left] {$\vec{\mathbf{F}}_{32}$};  
-                \draw[force, red] (B) -- (5+6.4/2,0)node[right] {$\vec{\mathbf{F}}_{\text{res}}$};  
-  
+
                 % CHARGES
-                \draw[charge+] (A) circle (\R) node[scale=1.2] {$+$};
-                \draw[charge+] (B) circle (\R) node[scale=1.2] {$+$};
-                \draw[charge-] (C) circle (\R) node[scale=1.2] {$-$};
+                \poslading{A}{0,0}
+                \poslading{B}{5,0}
+                \neglading{C}{10,0}
+
+                % FORCES
+                \draw[kracht, transform canvas={yshift=+2.0pt}] (B) -- (5+2.1/2,0) node[above right] {$\vec{\mathbf{F}}_{12}$};
+                \draw[kracht, transform canvas={yshift=-2.0pt}] (B) -- (5+4.3/2,0) node[below left] {$\vec{\mathbf{F}}_{32}$};
+                \draw[resulterendekracht] (B) -- (5+6.4/2,0) node[right] {$\vec{\mathbf{F}}_{\text{res}}$};
+
                 \draw[transform canvas={yshift=-7.0pt},dashed, gray, |<->|] (A) -- (B) node[midway,above] {$0{,}50 \, \mathrm{m}$};
                 \draw[transform canvas={yshift=-14.0pt},dashed, darkgray, |<->|] (A) -- (C) node[midway,below] {$1{,}00 \, \mathrm{m}$};
                 \node[above] at (0,\R) {$Q_1=+2{,}0 \cdot 10^{-6} \, \mathrm{C}$};
@@ -153,18 +149,15 @@
         \begin{center}
             \begin{tikzpicture}
                \useasboundingbox (-1, -1.5) rectangle (9, 2.0);
-                \coordinate (A) at (0,0);
-                \coordinate (B) at (5.33,0);
-                \coordinate (C) at (8,0);
-  
-                % FORCES on q (absolute coördinaten om Ximera te helpen)
-                \draw[force, transform canvas={yshift=+2.0pt}] (B) -- (7.13,0) node[above right] {$\vec{\mathbf{F}}_{1q}$};
-                \draw[force, transform canvas={yshift=-2.0pt}] (B) -- (3.53,0) node[above left] {$\vec{\mathbf{F}}_{3q}$};  
-  
+
                 % CHARGES
-                \draw[charge+] (A) circle (\R) node[scale=1.2] {$+$};
-                \draw[charge+] (B) circle (\R) node[scale=1.2] {$+$};
-                \draw[charge+] (C) circle (\R) node[scale=1.2] {$+$};
+                \poslading{A}{0,0}
+                \poslading{B}{5.33,0}
+                \poslading{C}{8,0}
+
+                % FORCES on q (absolute coördinaten om Ximera te helpen)
+                \draw[kracht, transform canvas={yshift=+2.0pt}] (B) -- (7.13,0) node[above right] {$\vec{\mathbf{F}}_{1q}$};
+                \draw[kracht, transform canvas={yshift=-2.0pt}] (B) -- (3.53,0) node[above left] {$\vec{\mathbf{F}}_{3q}$};
 
                 % AFSTANDEN
                 \draw[transform canvas={yshift=-7.0pt},dashed, gray, |<->|] (A) -- (B) node[midway,below] {$x$};
@@ -236,19 +229,16 @@
             \begin{center}
                 \begin{tikzpicture}
                    \useasboundingbox (-1, -1.5) rectangle (7, 2.0);
-                    \coordinate (A) at (0,0);
-                    \coordinate (B) at (2,0);
-                    \coordinate (C) at (6,0);
-      
-                    % FORCES on Q2 (absolute coördinaten)
-                    \draw[force, transform canvas={yshift=+2.0pt}] (B) -- (3.5,0) node[above right] {$\vec{\mathbf{F}}_{12}$};
-                    \draw[force, transform canvas={yshift=-2.0pt}] (B) -- (0.5,0) node[below left] {$\vec{\mathbf{F}}_{32}$};  
-      
+
                     % CHARGES
-                    \draw[charge+] (A) circle (\R) node[scale=1.2] {$+$};
-                    \draw[charge+] (B) circle (\R) node[scale=1.2] {$+$};
-                    \draw[charge+] (C) circle (\R) node[scale=1.2] {$+$};
-    
+                    \poslading{A}{0,0}
+                    \poslading{B}{2,0}
+                    \poslading{C}{6,0}
+
+                    % FORCES on Q2 (absolute coördinaten)
+                    \draw[kracht, transform canvas={yshift=+2.0pt}] (B) -- (3.5,0) node[above right] {$\vec{\mathbf{F}}_{12}$};
+                    \draw[kracht, transform canvas={yshift=-2.0pt}] (B) -- (0.5,0) node[below left] {$\vec{\mathbf{F}}_{32}$};
+
                     % AFSTANDEN
                     \draw[transform canvas={yshift=-7.0pt},dashed, gray, |<->|] (A) -- (B) node[midway,below] {$0{,}20 \, \mathrm{m}$};
                     \draw[transform canvas={yshift=-14.0pt},dashed, darkgray, |<->|] (B) -- (C) node[midway,below] {$0{,}40 \, \mathrm{m}$};
@@ -382,19 +372,17 @@
             \begin{center}
                 \begin{tikzpicture}
                    \useasboundingbox (-1, -1.0) rectangle (9, 1.5);
-                    \coordinate (A) at (0,0);
-                    \coordinate (B) at (3,0);
-                    \coordinate (C) at (7,0);
-      
-                    % FORCES on Q3 (absolute coördinaten)
-                    \draw[force, transform canvas={yshift=+2.0pt}] (C) -- (4.5,0) node[above left] {$\vec{\mathbf{F}}_{23}$};
-                    \draw[force, transform canvas={yshift=-2.0pt}] (C) -- (8.0,0) node[below right] {$\vec{\mathbf{F}}_{13}$};  
-                    \draw[force, red] (C) -- (5.5,0) node[below] {$\vec{\mathbf{F}}_{\text{res}}$};  
-      
+
                     % CHARGES
-                    \draw[charge-] (A) circle (\R) node[scale=1.2] {$-$};
-                    \draw[charge+] (B) circle (\R) node[scale=1.2] {$+$};
-                    \draw[charge-] (C) circle (\R) node[scale=1.2] {$-$};
+                    \neglading{A}{0,0}
+                    \poslading{B}{3,0}
+                    \neglading{C}{7,0}
+
+                    % FORCES on Q3 (absolute coördinaten)
+                    \draw[kracht, transform canvas={yshift=+2.0pt}] (C) -- (4.5,0) node[above left] {$\vec{\mathbf{F}}_{23}$};
+                    \draw[kracht, transform canvas={yshift=-2.0pt}] (C) -- (8.0,0) node[below right] {$\vec{\mathbf{F}}_{13}$};
+                    \draw[resulterendekracht] (C) -- (5.5,0) node[below] {$\vec{\mathbf{F}}_{\text{res}}$};
+
                     \draw[transform canvas={yshift=-7.0pt},dashed, gray, |<->|] (A) -- (B) node[midway,below] {$0{,}30 \, \mathrm{m}$};
                     \draw[transform canvas={yshift=-14.0pt},dashed, darkgray, |<->|] (B) -- (C) node[midway,below] {$0{,}40 \, \mathrm{m}$};
                     
@@ -460,19 +448,16 @@
             \begin{center}
                 \begin{tikzpicture}
                    \useasboundingbox (-5.5, -1.5) rectangle (7.5, 2.0);
-                    \coordinate (Q) at (-3,0);
-                    \coordinate (A) at (0,0);
-                    \coordinate (B) at (6,0);
-      
-                    % FORCES on q (absolute coördinaten om Ximera te helpen, testlading op -3)
-                    \draw[force, transform canvas={yshift=+2.0pt}] (Q) -- (-1.5,0) node[above right] {$\vec{\mathbf{F}}_{1q}$};
-                    \draw[force, transform canvas={yshift=-2.0pt}] (Q) -- (-4.5,0) node[below left] {$\vec{\mathbf{F}}_{2q}$};  
-      
+
                     % CHARGES
-                    \draw[charge+] (Q) circle (\R) node[scale=1.2] {$+$};
-                    \draw[charge-] (A) circle (\R) node[scale=1.2] {$-$};
-                    \draw[charge+] (B) circle (\R) node[scale=1.2] {$+$};
-    
+                    \poslading{Q}{-3,0}
+                    \neglading{A}{0,0}
+                    \poslading{B}{6,0}
+
+                    % FORCES on q (absolute coördinaten om Ximera te helpen, testlading op -3)
+                    \draw[kracht, transform canvas={yshift=+2.0pt}] (Q) -- (-1.5,0) node[above right] {$\vec{\mathbf{F}}_{1q}$};
+                    \draw[kracht, transform canvas={yshift=-2.0pt}] (Q) -- (-4.5,0) node[below left] {$\vec{\mathbf{F}}_{2q}$};
+
                     % AFSTANDEN
                     \draw[transform canvas={yshift=-7.0pt},dashed, gray, |<->|] (Q) -- (A) node[midway,below] {$d$};
                     \draw[transform canvas={yshift=-14.0pt},dashed, darkgray, |<->|] (A) -- (B) node[midway,below] {$0{,}60 \, \mathrm{m}$};
@@ -522,14 +507,11 @@
     \begin{center}
         \begin{tikzpicture}
             \useasboundingbox (-1, -1.0) rectangle (7, 1.5);
-            \coordinate (A) at (0,0);
-            \coordinate (B) at (4,0);
-            \coordinate (C) at (6,0);
-            
+
             % CHARGES
-            \draw[charge-] (A) circle (\R) node[scale=1.2] {$-$};
-            \draw[charge-] (B) circle (\R) node[scale=1.2] {$-$};
-            \draw[charge+] (C) circle (\R) node[scale=1.2] {$+$};
+            \neglading{A}{0,0}
+            \neglading{B}{4,0}
+            \poslading{C}{6,0}
             
             % DISTANCES
             \draw[transform canvas={yshift=-7.0pt},dashed, gray, |<->|] (A) -- (B) node[midway,below] {$0{,}400 \, \mathrm{m}$};

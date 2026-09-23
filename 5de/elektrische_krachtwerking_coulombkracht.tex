@@ -36,22 +36,16 @@ In figuur \ref{fig:coulombkracht} is te zien dat ladingen met hetzelfde teken el
 %--- figuur met krachten bij alle situaties (Tabular methode - HTML safe)
 \begin{figure}[ht!]
     \begin{center}
-        \tikzset{
-            % Veilige definitie van de nodes, inclusief cirkel-vorm
-            charge+/.style={circle, thin, draw=black!50, top color=red!50, bottom color=red!90!black, shading angle=20, inner sep=0pt, minimum size=6mm},
-            charge-/.style={circle, thin, draw=black!50, top color=blue!50, bottom color=blue!80, shading angle=20, inner sep=0pt, minimum size=6mm},
-            force/.style={->, very thick, orange!80!black}
-        }
         \begin{tabular}{cc}
             % (a) + +
             \begin{tikzpicture} 
-                \node[charge+] (Q1) at (-1.4,0) {\tiny$+$};
-                \node[charge+] (Q2) at (1.4,0) {\tiny$+$};
+                \poslading{Q1}{-1.4,0}
+                \poslading{Q2}{1.4,0}
                 \node[above, yshift=1mm] at (Q1.north) {$Q_1$};
                 \node[above, yshift=1mm] at (Q2.north) {$Q_2$};
                 
-                \draw[force] (Q1.west) -- ++(-0.8,0) node[above] {$\vec{\mathbf{F}}_{21}$};
-                \draw[force] (Q2.east) -- ++(0.8,0) node[above] {$\vec{\mathbf{F}}_{12}$};
+                \drawvector[kracht]{Q1.west}{Q2}{-0.8}{$\vec{F}_{21}$}
+                \drawvector[kracht]{Q2.east}{Q1}{-0.8}{$\vec{F}_{12}$}
                 
                 \draw[<->] (-1.4,-0.6) -- (1.4,-0.6) node[midway, fill=white, inner sep=1pt] {$r$};
                 \draw[dashed, gray] (Q1.south) -- (-1.4,-0.6);
@@ -59,13 +53,13 @@ In figuur \ref{fig:coulombkracht} is te zien dat ladingen met hetzelfde teken el
             \end{tikzpicture} &
             % (b) + -
             \begin{tikzpicture} 
-                \node[charge+] (Q1) at (-1.4,0) {\tiny$+$};
-                \node[charge-] (Q2) at (1.4,0) {\tiny$-$};
+                \poslading{Q1}{-1.4,0}
+                \neglading{Q2}{1.4,0}
                 \node[above, yshift=1mm] at (Q1.north) {$Q_1$};
                 \node[above, yshift=1mm] at (Q2.north) {$Q_2$};
                 
-                \draw[force] (Q1.east) -- ++(0.8,0) node[above] {$\vec{\mathbf{F}}_{21}$};
-                \draw[force] (Q2.west) -- ++(-0.8,0) node[above] {$\vec{\mathbf{F}}_{12}$};
+                \drawvector[kracht]{Q1.east}{Q2}{0.8}{$\vec{F}_{21}$}
+                \drawvector[kracht]{Q2.west}{Q1}{0.8}{$\vec{F}_{12}$}
                 
                 \draw[<->] (-1.4,-0.6) -- (1.4,-0.6) node[midway, fill=white, inner sep=1pt] {$r$};
                 \draw[dashed, gray] (Q1.south) -- (-1.4,-0.6);
@@ -74,13 +68,13 @@ In figuur \ref{fig:coulombkracht} is te zien dat ladingen met hetzelfde teken el
             (a) & (b) \\[3ex]
             % (c) - +
             \begin{tikzpicture} 
-                \node[charge-] (Q1) at (-1.4,0) {\tiny$-$};
-                \node[charge+] (Q2) at (1.4,0) {\tiny$+$};
+                \neglading{Q1}{-1.4,0}
+                \poslading{Q2}{1.4,0}
                 \node[above, yshift=1mm] at (Q1.north) {$Q_1$};
                 \node[above, yshift=1mm] at (Q2.north) {$Q_2$};
                 
-                \draw[force] (Q1.east) -- ++(0.8,0) node[above] {$\vec{\mathbf{F}}_{21}$};
-                \draw[force] (Q2.west) -- ++(-0.8,0) node[above] {$\vec{\mathbf{F}}_{12}$};
+                \drawvector[kracht]{Q1.east}{Q2}{0.8}{$\vec{F}_{21}$}
+                \drawvector[kracht]{Q2.west}{Q1}{0.8}{$\vec{F}_{12}$}
                 
                 \draw[<->] (-1.4,-0.6) -- (1.4,-0.6) node[midway, fill=white, inner sep=1pt] {$r$};
                 \draw[dashed, gray] (Q1.south) -- (-1.4,-0.6);
@@ -88,13 +82,13 @@ In figuur \ref{fig:coulombkracht} is te zien dat ladingen met hetzelfde teken el
             \end{tikzpicture} &
             % (d) - -
             \begin{tikzpicture} 
-                \node[charge-] (Q1) at (-1.4,0) {\tiny$-$};
-                \node[charge-] (Q2) at (1.4,0) {\tiny$-$};
+                \neglading{Q1}{-1.4,0}
+                \neglading{Q2}{1.4,0}
                 \node[above, yshift=1mm] at (Q1.north) {$Q_1$};
                 \node[above, yshift=1mm] at (Q2.north) {$Q_2$};
                 
-                \draw[force] (Q1.west) -- ++(-0.8,0) node[above] {$\vec{\mathbf{F}}_{21}$};
-                \draw[force] (Q2.east) -- ++(0.8,0) node[above] {$\vec{\mathbf{F}}_{12}$};
+                \drawvector[kracht]{Q1.west}{Q2}{-0.8}{$\vec{F}_{21}$}
+                \drawvector[kracht]{Q2.east}{Q1}{-0.8}{$\vec{F}_{12}$}
                 
                 \draw[<->] (-1.4,-0.6) -- (1.4,-0.6) node[midway, fill=white, inner sep=1pt] {$r$};
                 \draw[dashed, gray] (Q1.south) -- (-1.4,-0.6);
@@ -265,40 +259,36 @@ Een andere interessante vraag is waar een derde lading tussen twee andere lading
         
        % tekening voorbeeldoefening: lading in rust
         \begin{center}
-            \tikzset{
-                charge+/.style={circle, draw=red, fill=red!20, inner sep=0pt, minimum size=6mm, font=\small},
-                force/.style={->, very thick, orange!80!black}
-            }
             \begin{tikzpicture}
-              \coordinate (L) at (-6,0);
-              \coordinate (C) at (-1,0);
-              \coordinate (R) at (+6,0);
-              
-              % FORCES
-              \draw[force] (C) ++ (-0.3,0) --++ (-1.6,0) node[above] {$\vec{\mathbf{F}}_{23}$};
-              \draw[force] (C) ++ (+0.3,0) --++ (+1.6,0) node[above] {$\vec{\mathbf{F}}_{13}$};
-              
-              % CHARGES
-              \node[charge+] (Q1) at (L) {$+$};
-              \node[charge+] (Q2) at (R) {$+$};
-              \node[charge+] (Q3) at (C) {$+$}; 
-              
-              % AFSTANDEN
-              \draw[<->] (-6,-0.8) -- (6,-0.8) node[midway, fill=white, inner sep=1pt] {$r_{12}$};
-              \draw[<->] (-6,-1.6) -- (-1,-1.6) node[midway, fill=white, inner sep=1pt] {$r_{13}=x$};
-              \draw[<->] (-1,-1.6) -- (6,-1.6) node[midway, fill=white, inner sep=1pt] {$r_{12}-x$};
+                \coordinate (L) at (-6,0);
+                \coordinate (C) at (-1,0);
+                \coordinate (R) at (+6,0);
 
-              % HULPLIJNTJES
-              \draw[dashed, gray] (Q1.south) -- (-6,-1.6);
-              \draw[dashed, gray] (Q3.south) -- (-1,-1.6);
-              \draw[dashed, gray] (Q2.south) -- (6,-0.8);
-              
-              % LABELS
-              \node[above, yshift=1mm] at (Q1.north) {$Q_1$};
-              \node[above, yshift=1mm] at (Q2.north) {$Q_2$};
-              \node[above, yshift=1mm] at (Q3.north) {$Q_3$};
-            \end{tikzpicture}
-        \end{center}
+                % CHARGES
+                    \poslading{Q1}{L}
+                    \poslading{Q2}{R}
+                    \poslading{Q3}{C}
+
+                % FORCES
+                    \drawvector[kracht]{Q3.west}{Q1}{1.6}{$\vec{F}_{23}$}
+                    \drawvector[kracht]{Q3.east}{Q2}{1.6}{$\vec{F}_{13}$}
+
+                % AFSTANDEN
+                    \draw[<->] (-6,-0.8) -- (6,-0.8) node[midway, fill=white, inner sep=1pt] {$r_{12}$};
+                    \draw[<->] (-6,-1.6) -- (-1,-1.6) node[midway, fill=white, inner sep=1pt] {$r_{13}=x$};
+                    \draw[<->] (-1,-1.6) -- (6,-1.6) node[midway, fill=white, inner sep=1pt] {$r_{12}-x$};
+
+                % HULPLIJNTJES
+                    \draw[dashed, gray] (Q1.south) -- (-6,-1.6);
+                    \draw[dashed, gray] (Q3.south) -- (-1,-1.6);
+                    \draw[dashed, gray] (Q2.south) -- (6,-0.8);
+
+                % LABELS
+                    \node[above, yshift=1mm] at (Q1.north) {$Q_1$};
+                    \node[above, yshift=1mm] at (Q2.north) {$Q_2$};
+                    \node[above, yshift=1mm] at (Q3.north) {$Q_3$};
+                \end{tikzpicture}
+            \end{center}
         % ---------------------------------------------
         
         We zien zo dat als $Q_{3}$ tussen $Q_{1}$ en $Q_{2}$ staat, de krachten $\vec{F}_{13}$ en $\vec{F}_{23}$ een tegengestelde zin hebben.
@@ -348,40 +338,36 @@ In dit geval zijn $A$, $B$ en $C$ de \textbf{groottes van de vectoren} en betref
     Drie ladingen bevinden zich op de hoeken van een driehoek, zoals te zien in de figuur~\ref{fig:vb_driehoek}.            
     
     % TEKEN DRIEHOEK OPGAVE
-    \begin{center}
-        \tikzset{
-            charge+/.style={circle, draw=red, fill=red!20, inner sep=0pt, minimum size=6mm, font=\small},
-            charge-/.style={circle, draw=blue, fill=blue!20, inner sep=0pt, minimum size=6mm, font=\small}
-        }
-        \begin{tikzpicture}[scale=1]
-            \tkzDefPoint(0,0){A}
-            \begin{scope}[shift=(A)]
-                \tkzDefPoint(0:10){B}
-                \tkzDefPoint(65:7.5){C}
-            \end{scope}
-            \tkzDrawPolygon(A,B,C)
-            
-            % BENOEMEN VAN LADINGEN
-            \tkzLabelPoint[left, below=7pt](A){$Q_{1}=0{,}542 \, \mathrm{mC}$}
-            \tkzLabelPoint[right, below=7pt](B){$Q_{2}=12{,}76 \, \mathrm{\mu C}$}
-            \tkzLabelPoint[above=5pt](C){$Q_{3}=-765{,}2 \, \mathrm{\mu C}$}
-            
-            % DE AFSTANDEN BIJ DE LIJNEN
-            \tkzLabelSegments[above, left](A,C){$r_{13}=7{,}5 \, \mathrm{cm}$}
-            \tkzLabelSegments[below](A,B){$r_{12}=10 \, \mathrm{cm}$}
-            
-            % LABEL VAN HOEKEN
-            \tkzFillAngle[fill=blue!20, opacity=0.5](B,A,C)
-            \tkzLabelAngle[pos=1.5](B,A,C){$65^\circ$}
-            
-            % LADING SYMBOOL TEKENEN
-            \node[charge+] at (A) {$+$};
-            \node[charge+] at (B) {$+$};
-            \node[charge-] at (C) {$-$};
-        \end{tikzpicture}
-        \captionof{figure}{Opgaven voorbeeld: drie ladingen in een driehoek.}
-        \label{fig:vb_driehoek}
-    \end{center}
+        \begin{center}
+            \begin{tikzpicture}[scale=1]
+                \tkzDefPoint(0,0){A}
+                \begin{scope}[shift=(A)]
+                    \tkzDefPoint(0:10){B}
+                    \tkzDefPoint(65:7.5){C}
+                \end{scope}
+                \tkzDrawPolygon(A,B,C)
+        
+                % BENOEMEN VAN LADINGEN
+                    \tkzLabelPoint[left, below=7pt](A){$Q_{1}=0{,}542 \, \mathrm{mC}$}
+                    \tkzLabelPoint[right, below=7pt](B){$Q_{2}=12{,}76 \, \mathrm{\mu C}$}
+                    \tkzLabelPoint[above=5pt](C){$Q_{3}=-765{,}2 \, \mathrm{\mu C}$}
+        
+                % DE AFSTANDEN BIJ DE LIJNEN
+                    \tkzLabelSegments[above, left](A,C){$r_{13}=7{,}5 \, \mathrm{cm}$}
+                    \tkzLabelSegments[below](A,B){$r_{12}=10 \, \mathrm{cm}$}
+        
+                % LABEL VAN HOEKEN
+                    \tkzFillAngle[fill=blue!20, opacity=0.5](B,A,C)
+                    \tkzLabelAngle[pos=1.5](B,A,C){$65^\circ$}
+        
+                % LADING SYMBOOL TEKENEN
+                    \node[poslading] at (A) {$+$};
+                    \node[poslading] at (B) {$+$};
+                    \node[neglading] at (C) {$-$};
+            \end{tikzpicture}
+            \captionof{figure}{Opgaven voorbeeld: drie ladingen in een driehoek.}
+            \label{fig:vb_driehoek}
+        \end{center}
     
     Bereken en maak een schets van de resulterende kracht op lading $Q_{2}$. 
 
@@ -403,62 +389,58 @@ In dit geval zijn $A$, $B$ en $C$ de \textbf{groottes van de vectoren} en betref
         \vspace{2ex}
         \underline{Oplossing:}\\[1ex]
         \textsc{Schets:}
-        \begin{center}
-            \tikzset{
-                charge+/.style={circle, draw=red, fill=red!20, inner sep=0pt, minimum size=6mm, font=\small},
-                charge-/.style={circle, draw=blue, fill=blue!20, inner sep=0pt, minimum size=6mm, font=\small},
-                force/.style={->, very thick, orange!80!black}
-            }
-            \begin{tikzpicture}[scale=0.5]
-                \tkzDefPoint(0,0){A}
-                \begin{scope}[shift=(A)]
-                    \tkzDefPoint(0:10){B}
-                    \tkzDefPoint(65:7.5){C}
-                \end{scope}
-                \tkzDrawPolygon(A,B,C)
-                
-                % BENOEMEN VAN LADINGEN
-                \tkzLabelPoint[left, below=4pt](A){$Q_{1}$}
-                \tkzLabelPoint[right, below=4pt](B){$Q_{2}$}
-                \tkzLabelPoint[above=4pt](C){$Q_{3}$}
-                
-                % DE AFSTANDEN BIJ DE LIJNEN
-                \tkzLabelSegments[above, left](A,C){$r_{13}$}
-                \tkzLabelSegments[below](A,B){$r_{12}$}
-                
-                % LABEL VAN HOEKEN
-                \tkzFillAngle[fill=blue!20, opacity=0.5](B,A,C)
-                \tkzLabelAngle[pos=1.5](B,A,C){$65^\circ$}
-                
-                % HULP PARALLELLOGRAM
-                \begin{scope}[shift=(B)]
-                    \tkzDefPoint(0:3){D}
-                \end{scope}
-                \tkzDefGoldenRatio(B,C) \tkzGetPoint{E}
-                \tkzDefPointBy[translation= from B to D](E) \tkzGetPoint{F}
-                \tkzDrawPolygon[dashed](B,D,F,E)
-                
-                % HOEKEN
-                \tkzFillAngle[fill=orange!20, opacity=0.5](B,E,F)
-                \tkzLabelAngle[pos=1.2](B,E,F){$\theta$}
-                \tkzFillAngle[fill=orange!20, opacity=0.5](D,B,E)
-                \tkzLabelAngle[pos=1.2](D,B,E){$\beta$}
-                \tkzFillAngle[fill=green!40, opacity=0.5](C,B,A)
-                \tkzLabelAngle[pos=1.2](C,B,A){$\alpha$}
-                
-                % KRACHTEN
-                \draw[force] (B) -- (E) node[above] {$\vec{\mathbf{F}}_{32}$};
-                \draw[force] (B) -- (D) node[right] {$\vec{\mathbf{F}}_{12}$};
-                
-                % RES KRACHT
-                \draw[force, red] (B) -- (F) node[above, right]{$\vec{F}_{\text{res}}$};
-                
-                % LADING SYMBOOL TEKENEN
-                \node[charge+, scale=0.8] at (A) {$+$};
-                \node[charge+, scale=0.8] at (B) {$+$};
-                \node[charge-, scale=0.8] at (C) {$-$};
-            \end{tikzpicture}
-        \end{center}
+        %tekening oplossing
+            \begin{center}
+                \begin{tikzpicture}[scale=0.5]
+                    \tkzDefPoint(0,0){A}
+                    \begin{scope}[shift=(A)]
+                        \tkzDefPoint(0:10){B}
+                        \tkzDefPoint(65:7.5){C}
+                    \end{scope}
+                    \tkzDrawPolygon(A,B,C)
+        
+                    % BENOEMEN VAN LADINGEN
+                        \tkzLabelPoint[left, below=4pt](A){$Q_{1}$}
+                        \tkzLabelPoint[right, below=4pt](B){$Q_{2}$}
+                        \tkzLabelPoint[above=4pt](C){$Q_{3}$}
+        
+                    % DE AFSTANDEN BIJ DE LIJNEN
+                        \tkzLabelSegments[above, left](A,C){$r_{13}$}
+                        \tkzLabelSegments[below](A,B){$r_{12}$}
+        
+                    % LABEL VAN HOEKEN
+                        \tkzFillAngle[fill=blue!20, opacity=0.5](B,A,C)
+                        \tkzLabelAngle[pos=1.5](B,A,C){$65^\circ$}
+        
+                    % HULP PARALLELLOGRAM
+                        \begin{scope}[shift=(B)]
+                            \tkzDefPoint(0:3){D}
+                        \end{scope}
+                        \tkzDefGoldenRatio(B,C) \tkzGetPoint{E}
+                        \tkzDefPointBy[translation= from B to D](E) \tkzGetPoint{F}
+                        \tkzDrawPolygon[dashed](B,D,F,E)
+        
+                    % HOEKEN
+                        \tkzFillAngle[fill=orange!20, opacity=0.5](B,E,F)
+                        \tkzLabelAngle[pos=1.2](B,E,F){$\theta$}
+                        \tkzFillAngle[fill=orange!20, opacity=0.5](D,B,E)
+                        \tkzLabelAngle[pos=1.2](D,B,E){$\beta$}
+                        \tkzFillAngle[fill=green!40, opacity=0.5](C,B,A)
+                        \tkzLabelAngle[pos=1.2](C,B,A){$\alpha$}
+        
+                    % KRACHTEN
+                        \draw[kracht] (B) -- (E) node[above] {$\vec{F}_{32}$};
+                        \draw[kracht] (B) -- (D) node[right] {$\vec{F}_{12}$};
+        
+                    % RES KRACHT
+                        \draw[resulterendekracht] (B) -- (F) node[above, right]{$\vec{F}_{\text{res}}$};
+        
+                    % LADING SYMBOOL TEKENEN
+                        \node[poslading, scale=0.8] at (A) {$+$};
+                        \node[poslading, scale=0.8] at (B) {$+$};
+                        \node[neglading, scale=0.8] at (C) {$-$};
+                \end{tikzpicture}
+            \end{center}
         
         Eerst berekenen we de twee deelkrachten $F_{12}$ en $F_{32}$:
         \begin{align*}

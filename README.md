@@ -162,6 +162,23 @@ Omdat YouTube-video's online mooi kunnen afspelen, maar in een geprinte PDF gewo
 }
 %---------------------------
 
+# Kleuren vectoren nog aanpassen
+Nog in een soort kleuren kaart zetten (zoals serway)
+- verplaatsings vector: zwart
+- snelheid
+    - totaal: vol rood
+    - componten: licht rood
+- Kracht
+    - totaal: vol blauw
+    - component: licht blauw
+- versnelling
+    - totaal; vol paars
+    - compontenten licht paars
+- elektrisch veld: oranje
+- magnetisch veld: groen
+- positieve lading:
+- negatieve lading: 
+
 
 # TODO
 ## te doen volgende keer

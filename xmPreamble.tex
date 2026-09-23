@@ -55,7 +55,9 @@
 \usepackage{l3keys2e}
 %\usepackage{changepage}
 % -- nodig voor env en andere zaken
-\usepackage{fancyhdr,geometry}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+%\usepackage[left=2cm, right=2.5cm, top=3cm, bottom=3cm]{geometry}
 % \usepackage[usenames,dvipsnames]{xcolor}
  %\usepackage[many]{tcolorbox}
 %\usepackage{varwidth}
@@ -71,7 +73,7 @@
 \usepackage{setspace,multicol}                      % Text Presets
 \usepackage{tikz,physics}                           % Physics Presets
 \usepackage{tkz-euclide}
-\usetikzlibrary{arrows.meta, positioning}
+\usetikzlibrary{arrows.meta, positioning, calc, decorations.markings}
 \usepackage{circuitikz}
 \usepackage{xcolor}						%text kleur
 \usepackage{colortbl}
@@ -113,13 +115,235 @@
 \setcounter{tocdepth}{1} %om subsections niet in inhoudstafel te krijgen
 
 
-% tekening ladingen
-% tikz
-\tikzstyle{charge}=[thin,top color=red!50,bottom color=red!70,shading angle=20]
-\tikzstyle{charge+}=[thin,top color=red!50,bottom color=red!90!black,shading angle=20]
-\tikzstyle{charge-}=[thin,top color=blue!50,bottom color=blue!80,shading angle=20]
-\tikzstyle{force}=[->,very thick,orange!80!black]
-\tikzstyle{vector}=[->,very thick,green!45!black]
+% ----------------------------------------------------------
+% tikz vectoren en ladingen
+    % Ladingen
+        \tikzstyle{poslading}=[circle, thin, draw=black!50, top color=red!50, bottom color=red!90!black, shading angle=20, inner sep=0pt, minimum size=6mm]
+        \tikzstyle{neglading}=[circle, thin, draw=black!50, top color=blue!50, bottom color=blue!90!black, shading angle=20, inner sep=0pt, minimum size=6mm]
+        \newcommand{\poslading}[3][+]{\node[poslading] (#2) at (#3) {$#1$};}
+        \newcommand{\neglading}[3][-]{\node[neglading] (#2) at (#3) {$#1$};}
+            %\poslading{q1}{0,0}              % "+" op positie (0,0), genaamd q1
+            %\neglading{q2}{3,0}            % "-" op positie (3,0), genaamd q2
+            %\poslading[2e]{q3}{1.5,2}         % "2e" op positie (1.5,2), genaamd q3
+
+    %Vectoren
+        \newcommand{\drawvector}[5][vector]{% \drawvector[stijl]{startlabel}{doellabel}{lengte in cm}{label}
+            \draw[#1] (#2) -- ($(#2)!#4 cm!(#3)$) node[midway, above] {#5};
+        }
+        \newcommand{\gecentreerdepijl}[1][3mm]{%
+            \pgfmathsetlengthmacro{\halflen}{0.5*#1}
+            \arrow[xshift=\halflen]{Latex[length=#1]}
+        }
+        \newcommand{\addvectors}[5][resulterendekracht]{% \addvectors[stijl]{oorsprong}{eindpunt1}{eindpunt2}{label}
+           \coordinate (resultante-tmp) at ($(#3)+(#4)-(#2)$);
+            \draw[gray, dashed, thin] (#3) -- (resultante-tmp);
+            \draw[gray, dashed, thin] (#4) -- (resultante-tmp);
+            \draw[#1] (#2) -- (resultante-tmp) node[above] {#5};
+        }
+        %Stijlen
+            %sjabloon
+                %------------------------------
+                %vector 1 kleur en deelvectoren lichter
+                \tikzstyle{vector}=[
+                    -{Latex[length=3mm]},
+                    line width=0.8pt,
+                    draw=blue!70!black,
+                    text=blue!70!black,
+                    fill=blue!70!black,
+                    opacity=1
+                ]
+                % component
+                \tikzstyle{vectorcomponent}=[
+                    -{Latex[length=3mm]},
+                    line width=0.8pt,
+                    draw=blue!70!black,
+                    text=blue!70!black,
+                    fill=blue!70!black,
+                    fill opacity=0.35,
+                    draw opacity=0.35,
+                    text opacity=0.8
+                ]
+                %veldlijn
+                \tikzstyle{veldlijn}=[
+                   line width=0.8pt,
+                    draw=blue!70!black,
+                    text=blue!70!black,
+                    fill=blue!70!black,
+                    opacity=1,
+                    postaction={decorate},
+                    decoration={
+                        markings,
+                        mark=at position 0.5 with {\gecentreerdepijl[3mm]}
+                    }
+                ]
+                %------------
+            %positie
+                \tikzstyle{positie}=[
+                    -{Latex[length=3mm]},
+                    line width=0.8pt,
+                    draw=black,
+                    text=black,
+                    opacity=1
+                ]
+            %snelheid
+                %------------------------------
+                %vector 1 kleur en deelvectoren lichter
+                \tikzstyle{snelheid}=[
+                    -{Latex[length=3mm]},
+                    line width=0.8pt,
+                    draw=red!100!black,
+                    text=red!100!black,
+                    fill=red!100!black,
+                    opacity=1
+                ]
+                % component
+                \tikzstyle{snelheidcomponent}=[
+                    -{Latex[length=3mm]},
+                    line width=0.8pt,
+                    draw=red!100!black,
+                    text=red!100!black,
+                    fill=red!100!black,
+                    fill opacity=0.4,
+                    draw opacity=0.4,
+                    text opacity=0.8
+                ]
+                %------------
+            %kracht
+                %------------------------------
+                %vector 1 kleur en deelvectoren lichter
+                \tikzstyle{kracht}=[
+                    -{Latex[length=3mm]},
+                    line width=0.8pt,
+                    draw=blue!100!black,
+                    text=blue!100!black,
+                    fill=blue!100!black,
+                    opacity=1
+                ]
+                % component
+                \tikzstyle{krachtcomponent}=[
+                    -{Latex[length=3mm]},
+                    line width=0.8pt,
+                    draw=blue!100!black,
+                    text=blue!100!black,
+                    fill=blue!100!black,
+                    fill opacity=0.4,
+                    draw opacity=0.4,
+                    text opacity=0.8
+                ]
+                %resulterende kracht
+                \tikzstyle{resulterendekracht}=[
+                    -{Latex[length=3.5mm]},
+                    line width=1.1pt,
+                    draw=blue!65!black,
+                    text=blue!65!black,
+                    fill=blue!65!black,
+                    opacity=1
+                ]
+                %------------
+            %versnelling
+                %------------------------------
+                %vector 1 kleur en deelvectoren lichter
+                \tikzstyle{versnelling}=[
+                    -{Latex[length=3mm]},
+                    line width=0.8pt,
+                    draw=violet!100!black,
+                    text=violet!100!black,
+                    fill=violet!100!black,
+                    opacity=1
+                ]
+                % component
+                \tikzstyle{versnellingcomponent}=[
+                    -{Latex[length=3mm]},
+                    line width=0.8pt,
+                    draw=violet!100!black,
+                    text=violet!100!black,
+                    fill=violet!100!black,
+                    fill opacity=0.4,
+                    draw opacity=0.4,
+                    text opacity=0.8
+                ]
+                %------------
+            %Elektrisch veld
+                %------------------------------
+                %vector 1 kleur en deelvectoren lichter
+                \tikzstyle{Evector}=[
+                    -{Latex[length=3mm]},
+                    line width=0.8pt,
+                    draw=orange!100!black,
+                    text=orange!100!black,
+                    fill=orange!100!black,
+                    opacity=1
+                ]
+                % component
+                \tikzstyle{Evectorcomponent}=[
+                    -{Latex[length=3mm]},
+                    line width=0.8pt,
+                    draw=orange!100!black,
+                    text=orange!100!black,
+                    fill=orange!100!black,
+                    fill opacity=0.4,
+                    draw opacity=0.4,
+                    text opacity=0.8
+                ]
+                % veldlijn
+                \tikzstyle{Eveldlijn}=[
+                   line width=0.8pt,
+                    draw=orange!100!black,
+                    text=orange!100!black,
+                    fill=orange!100!black,
+                    opacity=1,
+                    postaction={decorate},
+                    decoration={
+                        markings,
+                        mark=at position 0.5 with {\gecentreerdepijl[3mm]}
+                    }
+                ]                
+                %------------
+            %Magnetisch veld
+                %------------------------------
+                %vector 1 kleur en deelvectoren lichter
+                \tikzstyle{Mvector}=[
+                    -{Latex[length=3mm]},
+                    line width=0.8pt,
+                    draw=teal!100!black,
+                    text=teal!100!black,
+                    fill=teal!100!black,
+                    opacity=1
+                ]
+                % component
+                \tikzstyle{Mvectorcomponent}=[
+                    -{Latex[length=3mm]},
+                    line width=0.8pt,
+                    draw=teal!100!black,
+                    text=teal!100!black,
+                    fill=teal!100!black,
+                    fill opacity=0.40,
+                    draw opacity=0.40,
+                    text opacity=0.8
+                ]
+                % veldlijn
+                \tikzstyle{Mveldlijn}=[
+                   line width=0.8pt,
+                    draw=teal!100!black,
+                    text=teal!100!black,
+                    fill=teal!100!black,
+                    opacity=1,
+                    postaction={decorate},
+                    decoration={
+                        markings,
+                        mark=at position 0.5 with {\gecentreerdepijl[3mm]}
+                    }
+                ]   
+                %------------
+
+    %oude
+    \tikzstyle{charge}=[circle, thin, draw=black!50, top color=red!50, bottom color=red!90!black, shading angle=20, inner sep=0pt, minimum size=6mm]
+    \tikzstyle{charge+}=[circle,thin,top color=red!50,bottom color=red!90!black,shading angle=20]
+    \tikzstyle{charge-}=[circle,thin,top color=blue!50,bottom color=blue!80,shading angle=20]
+    \tikzstyle{force}=[->,very thick,orange!80!black]
+    \tikzstyle{forcepart}=[->,very thick,orange!80!black, fill opacity=0.8]
+
+%\tikzstyle{vector}=[->,very thick,green!45!black]
 \def\a{1.4}
 \def\R{0.15}
 \def\F{0.8}
@@ -674,10 +898,10 @@
     \fancyhead[C]{%
          {\selectfont\bfseries\color{black}\textsc{\@title}} % moet later weg, doet lastig met oefeningen
     } 
-    \fancyhead[LE,RO]{\rightmark}
+    \fancyhead[LE,RO]{\thepage}
     
     \fancyfoot[RE,LO]{D. Lipkens}
-    \fancyfoot[C]{\thepage}
+    \fancyfoot[C]{\richting}
     \fancyfoot[LE,RO]{\textsc{SUI}}
 }
 % toekomst header: partnaam (hoofdstuk naam), \rightmark voor section naam, SUI logo

@@ -23,7 +23,7 @@
     Bereken de grootte van de resulterende kracht op $Q_{3}$.
 
     \begin{center}
-        \begin{tikzpicture}[scale=0.5]
+        \begin{tikzpicture}[scale=0.5, transform shape]
             \useasboundingbox (-1.5, -1.5) rectangle (5.5, 4.5);
             \tkzDefPoint(0,0){A}            
             \begin{scope}[shift=(A)]
@@ -36,9 +36,9 @@
             \tkzLabelPoint[right, below=4pt](B){$Q_{2}$}
             \tkzLabelPoint[above=4pt](C){$Q_{3}$}
         
-            \draw[charge+] (A) circle (\R) node[scale=0.5] {$+$};       
-            \draw[charge+] (B) circle (\R) node[scale=0.5] {$+$};
-            \draw[charge-] (C) circle (\R) node[scale=0.5] {$-$};
+            \node[poslading] at (A) {$+$};
+            \node[poslading] at (B) {$+$};
+            \node[neglading] at (C) {$-$};
         \end{tikzpicture}
     \end{center}
     
@@ -95,7 +95,7 @@
         % TEKEN DRIEHOEK MET DEELKRACHTEN
         % -----------------------------------------------
         \begin{center}
-            \begin{tikzpicture}[scale=0.5]
+            \begin{tikzpicture}[scale=0.5, transform shape]
                 \useasboundingbox (-1.5, -1.5) rectangle (5.5, 4.5);
                 \tkzDefPoint(0,0){A}            
                 \begin{scope}[shift=(A)]
@@ -118,9 +118,9 @@
                 \tkzLabelAngle[pos=1.5](A,C,B){$\theta$}
 
                 % LADING SYMBOOL TEKENEN
-                \draw[charge+] (A) circle (\R) node[scale=0.5] {$+$};       
-                \draw[charge+] (B) circle (\R) node[scale=0.5] {$+$};
-                \draw[charge-] (C) circle (\R) node[scale=0.5] {$-$};
+                \node[poslading] at (A) {$+$};
+                \node[poslading] at (B) {$+$};
+                \node[neglading] at (C) {$-$};
             \end{tikzpicture}
         \end{center}
 
@@ -139,7 +139,7 @@
         % TEKEN DRIEHOEK MET RESULTERENDE KRACHT
         % -----------------------------------------------
         \begin{center}
-            \begin{tikzpicture}[scale=0.8] 
+            \begin{tikzpicture}[scale=0.8, transform shape] 
                 \useasboundingbox (-1.5, -1.5) rectangle (6, 5);
                 \tkzDefPoint(0,0){A}            
                 \begin{scope}[shift=(A)]
@@ -165,14 +165,14 @@
                 \tkzLabelAngle[pos=0.5](C,E,F){$127^\circ$}
 
                 % LADING SYMBOOL TEKENEN
-                \draw[charge+] (A) circle (\R) node[scale=1] {$+$};     
-                \draw[charge+] (B) circle (\R) node[scale=1] {$+$};
-                \draw[charge-] (C) circle (\R) node[scale=1] {$-$};
+                \node[poslading] at (A) {$+$};
+                \node[poslading] at (B) {$+$};
+                \node[neglading] at (C) {$-$};
 
                 % KRACHTEN
-                \draw[force] (C)--(D) node[left] {$\vec{\mathbf{F}}_{12}$};
-                \draw[force] (C) -- (E) node[above, right] {$\vec{\mathbf{F}}_{13}$};
-                \draw[force,red] (C) -- (F) node[right] {$\vec{\mathbf{F}}_{\text{res}}$};
+                \draw[kracht] (C)--(D) node[left] {$\vec{\mathbf{F}}_{12}$};
+                \draw[kracht] (C) -- (E) node[above, right] {$\vec{\mathbf{F}}_{13}$};
+                \draw[resulterendekracht] (C) -- (F) node[right] {$\vec{\mathbf{F}}_{\text{res}}$};
             \end{tikzpicture}
         \end{center}
 %----------------------------------------------------------------
@@ -282,10 +282,12 @@
     \begin{center}
         \begin{tikzpicture}[scale=1]
             \useasboundingbox (-1.5, -1.5) rectangle (5.5, 4.5);
-            \coordinate (A) at (0,0);
-            \coordinate (B) at (4,0);
-            \coordinate (C) at (0,3);
-            
+
+            % Ladingen tekenen
+            \neglading{A}{0,0}
+            \poslading{B}{4,0}
+            \poslading{C}{0,3}
+
             % Driehoek en assen tekenen
             \draw[dashed, gray] (A) -- (B) node[midway,below] {$0{,}40 \, \mathrm{m}$};
             \draw[dashed, gray] (A) -- (C) node[midway,left] {$0{,}30 \, \mathrm{m}$};
@@ -295,11 +297,6 @@
             \tkzLabelPoint[below left](A){$Q_{1}$}
             \tkzLabelPoint[below right](B){$Q_{2}$}
             \tkzLabelPoint[above left](C){$Q_{3}$}
-        
-            % Ladingen tekenen
-            \draw[charge-] (A) circle (\R) node[scale=1] {$-$};       
-            \draw[charge+] (B) circle (\R) node[scale=1] {$+$};
-            \draw[charge+] (C) circle (\R) node[scale=1] {$+$};
         \end{tikzpicture}
     \end{center}
     

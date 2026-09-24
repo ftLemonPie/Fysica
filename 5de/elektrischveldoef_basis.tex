@@ -1,5 +1,5 @@
 \documentclass{ximera}
-%nieuw 2 september 2026
+%verbeterd 24 september 2026
 \title{Vraagstukken elektrisch veld: basis}
 \author{Daan Lipkens}
 
@@ -27,7 +27,8 @@
 
         \underline{Oplossing:}\\
         \begin{align*}
-            F_e &= Q_t \cdot E \\
+            E &= \frac{F_e}{Q_t} \\
+            \Leftrightarrow F_e &= Q_t \cdot E \\
                 &= 5{,}0 \cdot 10^{-8} \, \mathrm{C} \cdot 2{,}0 \cdot 10^{3} \, \mathrm{N/C} \\
                 &= 1{,}0 \cdot 10^{-4} \, \mathrm{N} 
         \end{align*}
@@ -85,7 +86,8 @@
 
         \underline{Oplossing:}\\
         \begin{align*}
-            Q_t &= \frac{F_e}{E} \\
+            E &= \frac{F_e}{Q_t} \\
+            \Leftrightarrow Q_t &= \frac{F_e}{E} \\
                 &= \frac{4{,}5 \cdot 10^{-2} \, \mathrm{N}}{1{,}5 \cdot 10^{5} \, \mathrm{N/C}} \\
                 &= 3{,}0 \cdot 10^{-7} \, \mathrm{C}
         \end{align*}
@@ -104,8 +106,20 @@
         \[ F_e = \answer[tolerance=0.01,onlineshowanswerbutton]{0.10} \, \mathrm{N} \]
 
         \begin{solution}\nl
+            \underline{Gegevens:}
             \begin{align*}
-                F_e = |Q| \cdot E = 4{,}0 \cdot 10^{-6} \, \mathrm{C} \cdot 2{,}5 \cdot 10^{4} \, \mathrm{N/C} = 0{,}10 \, \mathrm{N} = 1{,}0\cdot 10^{-1} \, \mathrm{N}
+                & Q = -4{,}0 \, \mathrm{\mu C} = -4{,}0 \cdot 10^{-6} \, \mathrm{C} & & E = 2{,}5 \cdot 10^{4} \, \mathrm{N/C}
+        \end{align*}
+
+        \underline{Gevraagd:} $F_e$\\
+
+        \underline{Oplossing:}\\            
+            \begin{align*}
+             E &= \frac{F_e}{Q_t} \\
+            \Leftrightarrow F_e &= |Q| \cdot E \\
+            &= 4{,}0 \cdot 10^{-6} \, \mathrm{C} \cdot 2{,}5 \cdot 10^{4} \, \mathrm{N/C} \\
+            &= 0{,}10 \, \mathrm{N}\\
+            & = 1{,}0\cdot 10^{-1} \, \mathrm{N}
             \end{align*}
         \end{solution}
     \end{question}
@@ -160,7 +174,8 @@
 
             \underline{Oplossing:}\\
             \begin{align*}
-                |Q| &= \frac{F_e}{E} \\
+             E &= \frac{F_e}{Q_t} \\
+            \Leftrightarrow |Q| &= \frac{F_e}{E} \\
                     &= \frac{1{,}6 \cdot 10^{-2} \, \mathrm{N}}{8{,}0 \cdot 10^{3} \, \mathrm{N/C}} \\
                     &= 2{,}0 \cdot 10^{-6} \, \mathrm{C}
             \end{align*}
@@ -273,9 +288,10 @@
 
         \underline{Oplossing:}\\
         \begin{align*}
-            F_e &= Q \cdot E \\
+             E &= \frac{F_e}{Q_t} \\
+            \Leftrightarrow F_e &= Q \cdot E \\
                 &= 5{,}0 \cdot 10^{-6} \, \mathrm{C} \cdot 4{,}0 \cdot 10^{4} \, \mathrm{N/C} \\
-                &= 0{,}20 \, \mathrm{N}
+                &= 0{,}20 \, \mathrm{N}= 2{,}0\cdot 10^{-1} \, \mathrm{N}
         \end{align*}
         Omdat $Q$ positief is, heeft $F_e$ dezelfde richting en zin als $\vec{E}$.
     \end{solution}
@@ -305,7 +321,7 @@
         \begin{align*}
             E &= k_e \frac{|Q|}{r^{2}} \\
             r^{2} &= k_e \frac{|Q|}{E} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 8{,}0 \cdot 10^{-6} \, \mathrm{C}}{2{,}0 \cdot 10^{5} \, \mathrm{N/C}} = 0{,}36 \, \mathrm{m^2}\\
-            r &= 0{,}60 \, \mathrm{m}
+            r &= 0{,}60 \, \mathrm{m} = 6{,}0\cdot 10^{-1} \mathrm{m}
         \end{align*}
     \end{solution}
 \end{exercise}

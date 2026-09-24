@@ -49,6 +49,19 @@
    \drawvector[Eveldlijn]{q1}{-80:1}{2}{$M$}
 \end{tikzpicture}
 
+            \begin{tikzpicture}
+                \coordinate (O) at (0,0);
+                \coordinate (Ftop) at (0,-3);
+
+                % Assen onder 30° (evenwijdig/loodrecht met het hellend vlak)
+                    \tekenassen[2.5]{O}{60}
+
+                % De volledige zwaartekracht
+                    \drawvector[kracht]{O}{Ftop}{3}{$\vec{F}_z$}
+
+                % Ontbinden volgens de assen van het hellend vlak (hoek van de x-as: -60°)
+                    \ontbindvector[krachtcomponent]{O}{Ftop}{-60}{$F_{z,x}$}{$F_{z,y}$}
+            \end{tikzpicture}
 
 % \begin{tikzpicture}
 %    \node[charge] (Q1) at (0,0) {+};

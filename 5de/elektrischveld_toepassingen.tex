@@ -5,7 +5,7 @@
 
 \begin{document}
 \begin{abstract}
-    Elektroforese en het capacitieve aanraakscherm als toepassingen van het elektrisch veld.
+    %Elektroforese en het capacitieve aanraakscherm als toepassingen van het elektrisch veld.
 \end{abstract}
 \maketitle
 
@@ -13,7 +13,7 @@
 %------------------------------------------------
 % ELEKTROFORESE
 %------------------------------------------------
-\begin{example}[foldable=true,title={Toepassing: Elektroforese}]\nl
+\section{Toepassing: Elektroforese}
    In een homogeen elektrisch veld ondervindt elk geladen deeltje een kracht $F=Q\cdot E$. Positieve deeltjes worden in de zin van het veld geduwd, negatieve deeltjes in de tegengestelde zin. Dit principe wordt in biochemische laboratoria dagelijks gebruikt om moleculen te scheiden. 
 
    \textbf{Elektroforese} is de verplaatsing van geladen deeltjes in een vloeistof of gel onder invloed van een elektrisch veld. Positief geladen deeltjes bewegen naar de negatieve elektrode, negatief geladen deeltjes naar de positieve elektrode.
@@ -57,7 +57,7 @@
             \node[below, font=\small, align=center] at (7.0,-0.1) {kleine fragmenten};
         \end{tikzpicture}
     \end{center}
-    \captionof{figure}{Gelelektroforese van negatief geladen DNA. De fragmenten vertrekken uit de putjes aan de negatieve elektrode. De kracht $\vec{F}$ op de negatieve fragmenten is tegengesteld aan het veld $\vec{E}$. Kleine fragmenten leggen in dezelfde tijd een grotere afstand af dan grote fragmenten.}
+    \captionof{figure}{Gelelektroforese van negatief geladen DNA. De fragmenten vertrekken uit de putjes aan de negatieve elektrode. De kracht $\vec{F}$ op de negatieve fragmenten is tegengesteld aan het veld $\vec{E}$. Kleine fragmenten leggen in dezelfde tijd een grotere afstand af dan grote fragmenten.\\{}}
     \label{fig:gelelektroforese}
     %---------------------------
 
@@ -68,26 +68,26 @@
         Een langer stuk DNA bevat meer geladen groepen en ondervindt dus ook een grotere elektrische kracht. Toch beweegt het trager: het wordt door het netwerk van de gel sterker afgeremd dan een kort stuk. Het resultaat is dat kleine fragmenten sneller vooruitgaan dan grote.
     \end{remark}
 
-\begin{example}[foldable=true,title={Voorbeeld: De kracht op een eiwit in een gel}]\nl
-    Een eiwit in een gel heeft een netto lading van $-4$ elementaire ladingen. Het homogene elektrische veld in de gel bedraagt $6{,}0 \cdot 10^{2} \, \mathrm{N/C}$. Bereken de grootte van de elektrische kracht op het eiwit en bepaal naar welke elektrode het eiwit beweegt.
+    \begin{example}[foldable=true,title={Voorbeeld: De kracht op een eiwit in een gel}]\nl
+        Een eiwit in een gel heeft een netto lading van $-4$ elementaire ladingen. Het homogene elektrische veld in de gel bedraagt $6{,}0 \cdot 10^{2} \, \mathrm{N/C}$. Bereken de grootte van de elektrische kracht op het eiwit en bepaal naar welke elektrode het eiwit beweegt.
 
-    \begin{solution}\nl
-        \underline{Gegevens:}
-        \begin{align*}
-            & Q = -4 \cdot 1{,}60 \cdot 10^{-19} \, \mathrm{C} = -6{,}40 \cdot 10^{-19} \, \mathrm{C} & & E = 6{,}0 \cdot 10^{2} \, \mathrm{N/C}
-        \end{align*}
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & Q = -4 \cdot 1{,}60 \cdot 10^{-19} \, \mathrm{C} = -6{,}40 \cdot 10^{-19} \, \mathrm{C} & & E = 6{,}0 \cdot 10^{2} \, \mathrm{N/C}
+            \end{align*}
 
-        \underline{Gevraagd:} $F$ en de elektrode waarnaar het eiwit beweegt\\
+            \underline{Gevraagd:} $F$ en de elektrode waarnaar het eiwit beweegt\\
 
-        \underline{Oplossing:}\\
-        We zoeken de kracht op een lading in een gekend veld, dus we gebruiken $F = \lvert Q \rvert \cdot E$.
-        \begin{align*}
-            F &= \lvert Q \rvert \cdot E\\
-            &= 6{,}40 \cdot 10^{-19} \, \mathrm{C} \cdot 6{,}0 \cdot 10^{2} \, \mathrm{N/C}\\
-            &= 3{,}84 \cdot 10^{-16} \, \mathrm{N} \simeq 3{,}8 \cdot 10^{-16} \, \mathrm{N}
-        \end{align*}
-        Het eiwit is negatief geladen, dus de kracht heeft een zin die tegengesteld is aan het veld. Het eiwit beweegt naar de \textbf{positieve elektrode}.
-    \end{solution}
+            \underline{Oplossing:}\\
+            We zoeken de kracht op een lading in een gekend veld, dus we gebruiken $F = \lvert Q \rvert \cdot E$.
+            \begin{align*}
+                F &= \lvert Q \rvert \cdot E\\
+                &= 6{,}40 \cdot 10^{-19} \, \mathrm{C} \cdot 6{,}0 \cdot 10^{2} \, \mathrm{N/C}\\
+                &= 3{,}84 \cdot 10^{-16} \, \mathrm{N} \simeq 3{,}8 \cdot 10^{-16} \, \mathrm{N}
+            \end{align*}
+            Het eiwit is negatief geladen, dus de kracht heeft een zin die tegengesteld is aan het veld. Het eiwit beweegt naar de \textbf{positieve elektrode}.
+        \end{solution}
 \end{example}
 
 \begin{example}[foldable=true,title={Toepassingen van elektroforese}]\nl
@@ -102,27 +102,27 @@
 %———————————————————————————————————————
 % VRAAG: richting DNA
 \begin{question}
-    In een gelelektroforese wordt het negatief geladen DNA in putjes aan de negatieve elektrode geplaatst. Wat zal er gebeuren wanneer je het elektrisch veld aanschakelt?
+    In een gelelektroforese wordt het negatief geladen DNA in putjes aan de positieve elektrode geplaatst. Wat zal er gebeuren wanneer je het elektrisch veld aanschakelt?
 
     \begin{multipleChoice}
-        \choice{Het DNA blijft in de putjes zitten.}
-        \choice[correct]{Het DNA beweegt door de gel naar de positieve elektrode.}
+        \choice[correct]{Het DNA blijft in de putjes zitten.}
+        \choice{Het DNA beweegt door de gel naar de positieve elektrode.}
         \choice{Het DNA beweegt naar de negatieve elektrode.}
         \choice{Alleen de grote fragmenten bewegen, de kleine niet.}
     \end{multipleChoice}
 
     \begin{solution}\nl
-        DNA is negatief geladen. Op een negatieve lading werkt een kracht met een zin die tegengesteld is aan het elektrisch veld. Het veld wijst van de positieve naar de negatieve elektrode, dus beweegt het DNA naar de \textbf{positieve elektrode}. Zowel kleine als grote fragmenten bewegen, maar de kleine gaan sneller.
+        DNA is negatief geladen. Op een negatieve lading werkt een kracht met een zin die tegengesteld is aan het elektrisch veld. Het veld wijst van de positieve naar de negatieve elektrode, dus beweegt het DNA naar de \textbf{positieve elektrode}. Het stukje DNA zal dus niet meer bewegen en op de positieve elektrode blijven.
     \end{solution}
 \end{question}
 %———————————————————————————————————————
-\end{example}
+
 %------------------------------------------------
 % AANRAAKSCHERM
 %------------------------------------------------
 \section{Capacitief aanraakscherm}\label{sec:aanraakscherm}
 
-Bijna elke smartphone en tablet heeft een \textbf{capacitief aanraakscherm}. Het scherm voelt niet aan hoe hard je duwt, maar merkt dat je vinger een elektrisch veld verstoort. Daarom reageert het scherm wel op een vinger, maar niet op een gewone pen of een dikke handschoen.
+Bijna elke smartphone en tablet heeft een \textbf{capacitief}\footnote{De naam \textit{capacitief} komt van \textit{capaciteit}, een grootheid die aangeeft hoeveel lading een geleider kan opslaan bij een bepaalde spanning. Wat het scherm precies meet, is de verandering van de capaciteit van de elektroden wanneer je vinger dichtbij komt. Deze grootheid zie je pas in een later hoofdstuk. Voor nu volstaat het idee dat je vinger het veld verstoort.} \textbf{aanraakscherm}. Het scherm voelt niet aan hoe hard je duwt, maar merkt dat je vinger een elektrisch veld verstoort. Daarom reageert het scherm wel op een vinger, maar niet op een gewone pen of een dikke handschoen.
 
 \subsection{Bouw van het scherm}
 
@@ -184,15 +184,11 @@ Het menselijk lichaam bestaat grotendeels uit water met opgeloste zouten en is d
 
 Het scherm heeft dus geen lading nodig die van je vinger naar het scherm stroomt. Het glas is een isolator en de lading blijft waar ze is. Het scherm merkt enkel dat er een geleider in de buurt is.
 
-\begin{remark}[title={Capacitief}]\nl
-    De naam \textit{capacitief} komt van \textit{capaciteit}, een grootheid die aangeeft hoeveel lading een geleider kan opslaan bij een bepaalde spanning. Wat het scherm precies meet, is de verandering van de capaciteit van de elektroden wanneer je vinger dichtbij komt. Deze grootheid zie je pas in een later hoofdstuk. Voor nu volstaat het idee dat je vinger het veld verstoort.
-\end{remark}
-
-\begin{example}[foldable=true,title={Waarom werkt een aanraakscherm niet met handschoenen?}]\nl
+\begin{remark}[foldable=true,title={Waarom werkt een aanraakscherm niet met handschoenen?}]\nl
     Gewone handschoenen zijn gemaakt van isolerend materiaal zoals wol, katoen of leer. Ze vergroten de afstand tussen je vinger en de elektroden en zorgen dat je vinger het veld nauwelijks nog kan verstoren. Het scherm merkt dan niets.
 
     \textbf{Touchscreenhandschoenen} hebben in de vingertoppen geleidende draadjes. Die geleiden het effect van je vinger door naar het scherm. Hetzelfde geldt voor een speciale stylus met een geleidende punt. Ook een stuk fruit of een worstje werkt op een aanraakscherm, omdat ze veel water met opgeloste zouten bevatten en dus geleiden.
-\end{example}
+\end{remark}
 
 %———————————————————————————————————————
 % VRAAG: handschoen

@@ -139,7 +139,7 @@
             \draw[gray, dashed, thin] (#3) -- (resultante-tmp);
             \draw[gray, dashed, thin] (#4) -- (resultante-tmp);
             \draw[#1] (#2) -- (resultante-tmp) node[above] {#5};
-        }
+        }     
         %Stijlen
             %sjabloon
                 %------------------------------
@@ -335,6 +335,59 @@
                     }
                 ]   
                 %------------
+ % assenstelsels
+        % Assenstelsel tekenen op een gegeven punt, met de x-as onder een gekozen hoek
+            \newcommand{\tekenassen}[3][2]{% \tekenassen[lengte in cm]{oorsprong}{hoek van de x-as in graden}
+                \draw[positie] (#2) -- ++(#3:#1 cm) node[right] {$x$};
+                \draw[positie] (#2) -- ++(#3+90:#1 cm) node[above] {$y$};
+            }
+
+        % Variant: geef de rechte op via twee bestaande punten i.p.v. een hoek
+            \newcommand{\tekenassenoplijn}[3][2]{% \tekenassenoplijn[lengte in cm]{puntA}{puntB}
+                \pgfmathanglebetweenpoints{\pgfpointanchor{#2}{center}}{\pgfpointanchor{#3}{center}}
+                \tekenassen[#1]{#2}{\pgfmathresult}
+            }
+        %gebruik:
+            %\tekenassen{O}{0}          % standaard horizontale/verticale assen op punt O
+            %\tekenassen[3]{O}{25}      % assen onder 25°, met lengte 3cm (bv. voor een hellend vlak)
+            %\tekenassenoplijn{A}{B}    % assen uitgelijnd met de rechte door A en B
+        
+    %splitsen in componenten
+        \newcommand{\ontbindvector}[6][vectorcomponent]{% \ontbindvector[stijl]{oorsprong}{eindpunt}{hoek x-as}{label x-comp}{label y-comp}
+            \path let 
+                \p1 = ($(#3)-(#2)$),
+                \n1 = {veclen(\x1,\y1)},
+                \n2 = {atan2(\y1,\x1)},
+                \n3 = {\n1*cos(\n2-#4)},
+                \n4 = {\n1*cos(\n2-#4-90)}
+            in
+            coordinate (ontbind-X) at ($(#2)+(#4:\n3)$)
+            coordinate (ontbind-Y) at ($(#2)+(#4+90:\n4)$);
+
+        % Projectiestippellijnen (vanaf de top van de vector naar elke as) !! nog niet getest
+            \draw[gray, dashed, thin] (#3) -- (ontbind-X);
+            \draw[gray, dashed, thin] (#3) -- (ontbind-Y);
+
+        % Componentvectoren
+            \draw[#1] (#2) -- (ontbind-X) node[midway, below] {#5};
+            \draw[#1] (#2) -- (ontbind-Y) node[midway, left] {#6};
+        }    
+        % voorbeeld
+            % \begin{tikzpicture}
+            %     \coordinate (O) at (0,0);
+            %     \coordinate (Ftop) at (0,-3);
+
+            %     % Assen onder 30° (evenwijdig/loodrecht met het hellend vlak)
+            %         \tekenassen[2.5]{O}{-60}
+
+            %     % De volledige zwaartekracht
+            %         \drawvector[kracht]{O}{Ftop}{3}{$\vec{F}_z$}
+
+            %     % Ontbinden volgens de assen van het hellend vlak (hoek van de x-as: -60°)
+            %         \ontbindvector[krachtcomponent]{O}{Ftop}{-60}{$F_{z,x}$}{$F_{z,y}$}
+            % \end{tikzpicture}
+
+
 
     %oude
     \tikzstyle{charge}=[circle, thin, draw=black!50, top color=red!50, bottom color=red!90!black, shading angle=20, inner sep=0pt, minimum size=6mm]
@@ -460,128 +513,6 @@
 }
 % ----------------------------------
 
-
-
-% % ----------------------------------------------------------------------
-% %           User Created Environments --> alles in commentaar gezet, gaan proberen zonder dit te doen
-% % ----------------------------------------------------------------------
-% % marginnotes voor theorie, samenvatting, bewijs, oefeningen, voorbeeld, oefenmoment.
-% % sidenote voor herhaling, oplossing, opmerking en toepassing.
-% %
-% %kleuren:		theorie - rood
-% %			samenvatting - goudgeel
-% %			definitie - groen geel
-% %			bewijs - blauw
-% Oude commands:
-% % --- toepassing --> springt niet in enzo...
-% \theoremstyle{claim}
-% \newtheorem{toepassing}{Toepassing}%[chapter]%<-----------------chapter
-% \tcolorboxenvironment{toepassing}{
-%   boxrule=0pt,
-%   boxsep=0pt,
-%   blanker,
-%   borderline west={1.5pt}{0pt}{black},
-%   sharp corners,
-%   before skip=10pt,
-%   after skip=10pt,
-%   left=5pt,
-%   right=5pt,
-%   breakable,
-% }
-
-
-% \tcolorboxenvironment{theorem}{
-%   boxrule=0pt,
-%   boxsep=0pt,
-%   colback={White!90!Red},
-%   enhanced jigsaw, 
-%   borderline west={1pt}{0pt}{Red},
-%   sharp corners,
-%   before skip=10pt,
-%   after skip=10pt,
-%   left=5pt,
-%   right=5pt,
-%   breakable,
-% }
-% % --- theorie kader
-% \theoremstyle{theorem}
-% \newtheorem{theorie}{\colorbox{White!90!Red}{Theorie}}%%%[chapter] %<-----------------chapter
-% \tcolorboxenvironment{theorie}{
-%   boxrule=0pt,
-%   boxsep=0pt,
-%   colback={White!90!Red},
-%   enhanced jigsaw, 
-%   borderline west={1.5pt}{0pt}{Red},
-%   borderline east={0.5pt}{0pt}{Red},
-%   borderline north={0.5pt}{0pt}{Red},
-%   borderline south={0.5pt}{0pt}{Red},  
-%   sharp corners,
-%   before skip=10pt,
-%   after skip=10pt,
-%   left=5pt,
-%   right=5pt,
-%   breakable,
-% }
-
-
-% %\declaretheorem[style=theorem]{theorie}
-
-% % \let\proof\relax
-% % \let\endproof\relax
-
-% % \declaretheoremstyle[
-% %     headfont={\small\scshape},
-% %     notefont={\normalfont},
-% %     bodyfont={\normalfont},
-% %     headpunct={\relax},
-% %     headformat={%
-% %         \makebox[0pt][r]{\NAME\ \NUMBER\hspace{\marginparsep}}\hskip-\spacelength{\NOTE}},
-% % ]{proof}
-% % --- Samenvatting
-% \theoremstyle{theorem}
-% \newtheorem{samenvatting}{\colorbox{White!90!Goldenrod}{Samenvatting}}[chapter]%<-----------------chapter
-
-
-% \tcolorboxenvironment{samenvatting}{
-%   boxrule=0pt,
-%   boxsep=0pt,
-%   colback={White!90!Goldenrod},
-%   enhanced jigsaw, 
-%   borderline west={1.5pt}{0pt}{Goldenrod},
-%   borderline east={0.5pt}{0pt}{Goldenrod},
-%   borderline north={0.5pt}{0pt}{Goldenrod},
-%   borderline south={0.5pt}{0pt}{Goldenrod},
-%   sharp corners,
-%   before skip=10pt,
-%   after skip=10pt,
-%   left=5pt,
-%   right=5pt,
-%   breakable,
-% }
-% % --- definitie
-% \theoremstyle{theorem}
-% \newtheorem{definitie}{\colorbox{White!90!GreenYellow}{Definitie}}[chapter]%<-----------------chapter
-
-
-% \tcolorboxenvironment{definitie}{
-%   boxrule=0pt,
-%   boxsep=0pt,
-%   colback={White!90!GreenYellow},
-%   enhanced jigsaw, 
-%   borderline west={1.5pt}{0pt}{GreenYellow},
-%   borderline east={0.5pt}{0pt}{GreenYellow},
-%   borderline north={0.5pt}{0pt}{GreenYellow},
-%   borderline south={0.5pt}{0pt}{GreenYellow},
-%   sharp corners,
-%   before skip=10pt,
-%   after skip=10pt,
-%   left=5pt,
-%   right=5pt,
-%   breakable,
-% }
-% % --- definitie
-% \theoremstyle{theorem}
-% \newtheorem{wet}{\colorbox{White!90!Green}{Wet}}[chapter]%<-----------------chapter
 
 
 % \tcolorboxenvironment{wet}{

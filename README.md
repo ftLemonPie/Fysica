@@ -162,31 +162,14 @@ Omdat YouTube-video's online mooi kunnen afspelen, maar in een geprinte PDF gewo
 }
 %---------------------------
 
-# Kleuren vectoren nog aanpassen
-Nog in een soort kleuren kaart zetten (zoals serway)
-- verplaatsings vector: zwart
-- snelheid
-    - totaal: vol rood
-    - componten: licht rood
-- Kracht
-    - totaal: vol blauw
-    - component: licht blauw
-- versnelling
-    - totaal; vol paars
-    - compontenten licht paars
-- elektrisch veld: oranje
-- magnetisch veld: groen
-- positieve lading:
-- negatieve lading: 
-
 
 # TODO
 ## te doen volgende keer
 
-
-- [ ] oefeningen elektrisch veld nakijken en extra maken
-- [ ] 5.1 aanpassingen nakijken eerste 2 hoofdstukken
-- [ ] extra oefeningen H2 pythagoras en basis oefeningen
+- [ ] style md aanpassen
+- [ ] driehoeken 2uurs E-veld aanpassen
+- [ ] oefeningen elektrisch veld nakijken
+- [ ] 5.1 aanpassingen nakijken H2
 - [ ] starten H3 --> vragen voor prompt in nieuwe chat
 - [ ] gemengde schakelingen
 
@@ -203,7 +186,9 @@ Nog in een soort kleuren kaart zetten (zoals serway)
 
 
 ## toekomst
-- [ ] fooder kijken hoe ik het wil
+- [ ] AI prompts voor oefenignen
+- [ ] Herhalignsoefeningen per H en per deel
+- [ ] oefeningen toelatingsproeven
 - [ ] Appendix nummering herstarten romeins.
 - [ ] verwijzingen nakijken.
 - [ ] ref laat label zien in html

@@ -1,5 +1,5 @@
 \documentclass{ximera}
-%nieuw 2 september 2026
+%verbeterd 27 september 2026
 \title{Vraagstukken elektrisch veld: goniometrische figuren}
 \author{Daan Lipkens}
 
@@ -23,9 +23,9 @@
             \draw[gray,thick] (P) -- (Q2);
             \tkzFillAngle[fill=blue!20,opacity=0.5](Q2,P,Q1)
             \tkzLabelAngle[pos=0.6](Q2,P,Q1){$90^\circ$}
-            \tkzLabelPoint[below](P){$P$}
-            \tkzLabelPoint[left](Q1){$Q_1$}
-            \tkzLabelPoint[below](Q2){$Q_2$}
+            \tkzLabelPoint[below left=](P){$P$}
+            \tkzLabelPoint[left=2.5mm](Q1){$Q_1$}
+            \tkzLabelPoint[below=2.5mm](Q2){$Q_2$}
             \node[poslading] at (Q1) {$+$};
             \node[poslading] at (Q2) {$+$};
             \filldraw (P) circle (1.2pt);
@@ -71,7 +71,7 @@
 
 
 %———————————————————————————————————————
-% EXTRA OEF DRIEHOEK PYTH 1: eenvoudigste geval, 2 positieve ladingen
+% EXTRA OEF DRIEHOEK PYTH 2: eenvoudigste geval, 2 positieve ladingen
 \begin{exercise}
     Twee positieve puntladingen $Q_{1} = +2{,}0 \cdot 10^{-6} \, \mathrm{C}$ en $Q_{2} = +5{,}0 \cdot 10^{-6} \, \mathrm{C}$ bevinden zich zoals aangegeven op de tekening, met een rechte hoek in punt \textit{P}. De afstand van $Q_1$ tot $P$ is $0{,}20 \, \mathrm{m}$, en de afstand van $Q_2$ tot $P$ is $0{,}30 \, \mathrm{m}$.
  
@@ -83,9 +83,9 @@
             \draw[gray,thick] (P) -- (Q1) node[midway,left]{$0{,}20\,\mathrm{m}$};
             \draw[gray,thick] (P) -- (Q2) node[midway,below]{$0{,}30\,\mathrm{m}$};
             \tkzMarkRightAngle[size=0.3](Q2,P,Q1)
-            \tkzLabelPoint[below](P){$P$}
-            \tkzLabelPoint[left](Q1){$Q_1$}
-            \tkzLabelPoint[below](Q2){$Q_2$}
+            \tkzLabelPoint[below left](P){$P$}
+            \tkzLabelPoint[left=2.5mm](Q1){$Q_1$}
+            \tkzLabelPoint[below=2.5mm](Q2){$Q_2$}
             \node[poslading] at (Q1) {$+$};
             \node[poslading] at (Q2) {$+$};
             \filldraw (P) circle (1.2pt);
@@ -125,7 +125,7 @@
 %———————————————————————————————————————
  
 %———————————————————————————————————————
-% EXTRA OEF DRIEHOEK PYTH 2: rechte hoek in P, gemengde tekens
+% EXTRA OEF DRIEHOEK PYTH 3: rechte hoek in P, gemengde tekens
 \begin{exercise}
     Een positieve puntlading $Q_{1} = +3{,}0 \cdot 10^{-6} \, \mathrm{C}$ en een negatieve puntlading $Q_{3} = -4{,}0 \cdot 10^{-6} \, \mathrm{C}$ bevinden zich zoals aangegeven op de tekening, met een rechte hoek in punt \textit{P}. De afstand van $Q_1$ tot $P$ is $0{,}15 \, \mathrm{m}$, en de afstand van $Q_3$ tot $P$ is $0{,}25 \, \mathrm{m}$.
  
@@ -137,9 +137,9 @@
             \draw[gray,thick] (P) -- (Q1) node[midway,left]{$0{,}15\,\mathrm{m}$};
             \draw[gray,thick] (P) -- (Q3) node[midway,below]{$0{,}25\,\mathrm{m}$};
             \tkzMarkRightAngle[size=0.25](Q3,P,Q1)
-            \tkzLabelPoint[below](P){$P$}
-            \tkzLabelPoint[left](Q1){$Q_1$}
-            \tkzLabelPoint[below](Q3){$Q_3$}
+            \tkzLabelPoint[below left](P){$P$}
+            \tkzLabelPoint[left=2.5mm](Q1){$Q_1$}
+            \tkzLabelPoint[below=2.5mm](Q3){$Q_3$}
             \node[poslading] at (Q1) {$+$};
             \node[neglading] at (Q3) {$-$};
             \filldraw (P) circle (1.2pt);
@@ -198,7 +198,7 @@
 %———————————————————————————————————————
 
 %———————————————————————————————————————
-% OEF VELD PYTH 3: basis, twee positieve ladingen
+% OEF VELD PYTH 4: basis, twee positieve ladingen
 \begin{exercise}
     Twee positieve puntladingen $Q_{1} = +3{,}0 \, \mathrm{\mu C}$ en $Q_{2} = +4{,}0 \, \mathrm{\mu C}$ bevinden zich zoals aangegeven op de tekening, met een rechte hoek in punt \textit{P}. De afstand van $Q_1$ tot $P$ is $15 \, \mathrm{cm}$, en de afstand van $Q_2$ tot $P$ is $20 \, \mathrm{cm}$.
 
@@ -210,9 +210,9 @@
             \draw[gray,thick] (P) -- (Q1) node[midway,left]{$15\,\mathrm{cm}$};
             \draw[gray,thick] (P) -- (Q2) node[midway,below]{$20\,\mathrm{cm}$};
             \tkzMarkRightAngle[size=0.25](Q2,P,Q1)
-            \tkzLabelPoint[below=1.5mm](P){$P$}
-            \tkzLabelPoint[left=1.5mm](Q1){$Q_1$}
-            \tkzLabelPoint[below=1.5mm](Q2){$Q_2$}
+            \tkzLabelPoint[below left](P){$P$}
+            \tkzLabelPoint[left=2.5mm](Q1){$Q_1$}
+            \tkzLabelPoint[below=2.5mm](Q2){$Q_2$}
             \node[poslading] at (Q1) {$+$};
             \node[poslading] at (Q2) {$+$};
             \filldraw (P) circle (1.2pt);
@@ -250,7 +250,7 @@
 %———————————————————————————————————————
 
 %———————————————————————————————————————
-% OEF VELD PYTH 4: tegengesteld teken, nC en mm-schaal
+% OEF VELD PYTH 5: tegengesteld teken, nC en mm-schaal
 \begin{exercise}
     Een positieve puntlading $Q_{1} = +800 \, \mathrm{nC}$ en een negatieve puntlading $Q_{3} = -500 \, \mathrm{nC}$ bevinden zich zoals aangegeven op de tekening, met een rechte hoek in punt \textit{P}. De afstand van $Q_1$ tot $P$ is $80 \, \mathrm{mm}$, en de afstand van $Q_3$ tot $P$ is $12 \, \mathrm{cm}$.
 
@@ -262,9 +262,9 @@
             \draw[gray,thick] (P) -- (Q1) node[midway,left]{$80\,\mathrm{mm}$};
             \draw[gray,thick] (P) -- (Q3) node[midway,below]{$12\,\mathrm{cm}$};
             \tkzMarkRightAngle[size=0.2](Q3,P,Q1)
-            \tkzLabelPoint[below=1.5mm](P){$P$}
-            \tkzLabelPoint[left=1.5mm](Q1){$Q_1$}
-            \tkzLabelPoint[below=1.5mm](Q3){$Q_3$}
+            \tkzLabelPoint[below left](P){$P$}
+            \tkzLabelPoint[left=2.5mm](Q1){$Q_1$}
+            \tkzLabelPoint[below=2.5mm](Q3){$Q_3$}
             \node[poslading] at (Q1) {$+$};
             \node[neglading] at (Q3) {$-$};
             \filldraw (P) circle (1.2pt);
@@ -302,7 +302,7 @@
 %———————————————————————————————————————
 
 %———————————————————————————————————————
-% OEF VELD PYTH 5: rechthoek, P in een hoekpunt
+% OEF VELD PYTH 6: rechthoek, P in een hoekpunt
 \begin{exercise}
     Twee puntladingen $Q_{A} = +5{,}0 \, \mathrm{\mu C}$ en $Q_{B} = -6{,}0 \, \mathrm{\mu C}$ bevinden zich in twee hoekpunten van een rechthoek, aangrenzend aan hoekpunt \textit{P}. De zijde $PQ_A$ is $18 \, \mathrm{cm}$ lang, de zijde $PQ_B$ is $24 \, \mathrm{cm}$ lang.
 
@@ -314,9 +314,9 @@
             \tkzDefPoint(4.8,3.6){C}
             \tkzDrawPolygon(P,A,C,B)
             \tkzMarkRightAngle[size=0.3](B,P,A)
-            \tkzLabelPoint[below=1.5mm](P){$P$}
-            \tkzLabelPoint[left=1.5mm](A){$Q_A$}
-            \tkzLabelPoint[below=1.5mm](B){$Q_B$}
+            \tkzLabelPoint[below left](P){$P$}
+            \tkzLabelPoint[left=2.5mm](A){$Q_A$}
+            \tkzLabelPoint[below=2.5mm](B){$Q_B$}
             \node[poslading] at (A) {$+$};
             \node[neglading] at (B) {$-$};
             \filldraw (P) circle (1.5pt);
@@ -354,7 +354,7 @@
 %———————————————————————————————————————
 
 %———————————————————————————————————————
-% OEF VELD PYTH 6: vierkant, gelijke afstanden
+% OEF VELD PYTH 7: vierkant, gelijke afstanden
 \begin{exercise}
     Twee puntladingen $Q_{1} = +2{,}0 \, \mathrm{\mu C}$ en $Q_{2} = -9{,}0 \, \mathrm{\mu C}$ bevinden zich in twee hoekpunten van een vierkant met zijde $25 \, \mathrm{cm}$, aangrenzend aan hoekpunt \textit{P}.
 
@@ -366,9 +366,9 @@
             \tkzDefPoint(5,5){C}
             \tkzDrawPolygon(P,Q1,C,Q2)
             \tkzMarkRightAngle[size=0.4](Q1,P,Q2)
-            \tkzLabelPoint[below=1.5mm](P){$P$}
-            \tkzLabelPoint[below=1.5mm](Q1){$Q_1$}
-            \tkzLabelPoint[left=1.5mm](Q2){$Q_2$}
+            \tkzLabelPoint[below left](P){$P$}
+            \tkzLabelPoint[below=2.5mm](Q1){$Q_1$}
+            \tkzLabelPoint[left=2.5mm](Q2){$Q_2$}
             \node[poslading] at (Q1) {$+$};
             \node[neglading] at (Q2) {$-$};
             \filldraw (P) circle (1.5pt);
@@ -406,7 +406,7 @@
 %———————————————————————————————————————
 
 %———————————————————————————————————————
-% OEF VELD PYTH 7: ontbrekende afstand via Pythagoras, meerdelig
+% OEF VELD PYTH 8: ontbrekende afstand via Pythagoras, meerdelig
 \begin{exercise}
     Twee puntladingen $Q_{1} = +7{,}0 \, \mathrm{\mu C}$ en $Q_{2} = -25 \, \mathrm{\mu C}$ bevinden zich zoals aangegeven op de tekening, met een rechte hoek in punt \textit{P}. De afstand van $Q_1$ tot $P$ is $18 \, \mathrm{cm}$. De afstand tussen $Q_1$ en $Q_2$ zelf (dus niet tot $P$) bedraagt $30 \, \mathrm{cm}$.
 
@@ -419,9 +419,9 @@
             \draw[gray,dashed] (P) -- (Q2) node[midway,below]{$?$};
             \draw[gray,thick] (Q1) -- (Q2) node[midway,above right]{$30\,\mathrm{cm}$};
             \tkzMarkRightAngle[size=0.25](Q2,P,Q1)
-            \tkzLabelPoint[below=1.5mm](P){$P$}
-            \tkzLabelPoint[left=1.5mm](Q1){$Q_1$}
-            \tkzLabelPoint[below=1.5mm](Q2){$Q_2$}
+            \tkzLabelPoint[below left](P){$P$}
+            \tkzLabelPoint[left=2.5mm](Q1){$Q_1$}
+            \tkzLabelPoint[below=2.5mm](Q2){$Q_2$}
             \node[poslading] at (Q1) {$+$};
             \node[neglading] at (Q2) {$-$};
             \filldraw (P) circle (1.2pt);
@@ -473,7 +473,7 @@
 %———————————————————————————————————————
 
 %———————————————————————————————————————
-% EXTRA OEF DRIEHOEK PYTH 8: rechte hoek in P, ontbrekende afstand via Pythagoras
+% EXTRA OEF DRIEHOEK PYTH 9: rechte hoek in P, ontbrekende afstand via Pythagoras
 \begin{exercise}
     Twee puntladingen $Q_{1} = +6{,}0 \cdot 10^{-6} \, \mathrm{C}$ en $Q_{2} = -8{,}0 \cdot 10^{-6} \, \mathrm{C}$ bevinden zich zoals aangegeven op de tekening, met een rechte hoek in punt \textit{P}. De afstand van $Q_1$ tot $P$ is $0{,}30 \, \mathrm{m}$. De afstand tussen $Q_1$ en $Q_2$ zelf (dus niet tot $P$) bedraagt $0{,}50 \, \mathrm{m}$.
  
@@ -486,9 +486,9 @@
             \draw[gray,dashed] (P) -- (Q2) node[midway,below]{$?$};
             \draw[gray,thick] (Q1) -- (Q2) node[midway,above right]{$0{,}50\,\mathrm{m}$};
             \tkzMarkRightAngle[size=0.3](Q2,P,Q1)
-            \tkzLabelPoint[below](P){$P$}
-            \tkzLabelPoint[left](Q1){$Q_1$}
-            \tkzLabelPoint[below](Q2){$Q_2$}
+            \tkzLabelPoint[below left](P){$P$}
+            \tkzLabelPoint[left=2.5mm](Q1){$Q_1$}
+            \tkzLabelPoint[below=2.5mm](Q2){$Q_2$}
             \node[poslading] at (Q1) {$+$};
             \node[neglading] at (Q2) {$-$};
             \filldraw (P) circle (1.2pt);

@@ -34,16 +34,13 @@ Ook een lading die zich in een elektrisch veld bevindt, bezit energie: \textbf{p
                 \node[right] at (5.1,\y) {$+$};
             }
         
-            % Veldlijnen met de pijl in het midden (op x = 2.5)
+            % Veldlijnen met de pijl automatisch in het midden
             \foreach \y in {-1,-0.5,0,0.5,1} {
-                % Deel 1: Van de positieve rechterplaat tot halverwege met pijlpunt
-                \draw[gray, ->, >=latex] (4.7,\y) -- (2.5,\y);
-                % Deel 2: Vanaf halverwege verder naar de negatieve linkerplaat
-                \draw[gray] (2.5,\y) -- (0.3,\y);
+                \draw[Eveldlijn] (4.7,\y) -- (0.3,\y);
             }
         
             % De puntlading en overige aanduidingen
-            \draw[charge+] (3,0) circle (\R) node[scale=1] {$+$};
+            \node[poslading] at (3,0) {$+$};
             \node[above] at (3,\R) {$Q$};
             \draw[<->, dashed] (0,-1.8) -- (3,-1.8) node[midway, below] {$d$};
             \node[below] at (0,-1.5) {RP};

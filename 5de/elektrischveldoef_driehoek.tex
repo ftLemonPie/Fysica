@@ -1,5 +1,5 @@
 \documentclass{ximera}
-%nieuw 2 september 2026
+%herschreven 25 september 2026
 \title{Vraagstukken elektrisch veld: goniometrische figuren}
 \author{Daan Lipkens}
 
@@ -17,16 +17,16 @@
     \begin{center}
         \begin{tikzpicture}[scale=1]
             \tkzDefPoint(0,0){P}
-            \tkzDefPoint(1.5,0){Q1}
-            \tkzDefPoint(0,2.0){Q2}
-            \draw[gray,thick] (P) -- (Q1) node[midway,below]{$15\,\mathrm{cm}$};
-            \draw[gray,thick] (P) -- (Q2) node[midway,left]{$20\,\mathrm{cm}$};
-            \tkzMarkRightAngle[size=0.25](Q1,P,Q2)
-            \tkzLabelPoint[below=1.5mm](P){$P$}
-            \tkzLabelPoint[below=1.5mm](Q1){$Q_1$}
-            \tkzLabelPoint[left=1.5mm](Q2){$Q_2$}
-            \draw[charge+] (Q1) circle (\R) node[scale=0.5]{$+$};
-            \draw[charge+] (Q2) circle (\R) node[scale=0.5]{$+$};
+            \tkzDefPoint(0,1.5){Q1}
+            \tkzDefPoint(2.0,0){Q2}
+            \draw[gray,thick] (P) -- (Q1) node[midway,left]{$15\,\mathrm{cm}$};
+            \draw[gray,thick] (P) -- (Q2) node[midway,below]{$20\,\mathrm{cm}$};
+            \tkzMarkRightAngle[size=0.25](Q2,P,Q1)
+            \tkzLabelPoint[below left](P){$P$}
+            \tkzLabelPoint[left=2.5mm](Q1){$Q_1$}
+            \tkzLabelPoint[below=2.5mm](Q2){$Q_2$}
+            \node[poslading] at (Q1) {$+$};
+            \node[poslading] at (Q2) {$+$};
             \filldraw (P) circle (1.2pt);
         \end{tikzpicture}
     \end{center}
@@ -64,22 +64,22 @@
 %———————————————————————————————————————
 % OEF DRIEHOEK 2: velden loodrecht op elkaar (Pythagoras)
 \begin{exercise}
-    Twee puntladingen $Q_{1} = +3{,}0 \cdot 10^{-6} \, \mathrm{C}$ en $Q_{2} = +6{,}0 \cdot 10^{-6} \, \mathrm{C}$ bevinden zich respectievelijk op de $x$-as en de $y$-as ten opzichte van punt \textit{P}, zoals aangegeven op de tekening. $Q_1$ bevindt zich op $0{,}25 \, \mathrm{m}$ van $P$, en $Q_2$ op $0{,}40 \, \mathrm{m}$ van $P$.
+    Twee puntladingen $Q_{1} = +3{,}0 \cdot 10^{-6} \, \mathrm{C}$ en $Q_{2} = +6{,}0 \cdot 10^{-6} \, \mathrm{C}$ bevinden zich respectievelijk op de $y$-as en de $x$-as ten opzichte van punt \textit{P}, zoals aangegeven op de tekening. $Q_1$ bevindt zich op $0{,}25 \, \mathrm{m}$ van $P$, en $Q_2$ op $0{,}40 \, \mathrm{m}$ van $P$.
 
     \begin{center}
         \begin{tikzpicture}[scale=1]
             \tkzDefPoint(0,0){P}
-            \tkzDefPoint(2.5,0){Q1}
-            \tkzDefPoint(0,4){Q2}
+            \tkzDefPoint(0,2.5){Q1}
+            \tkzDefPoint(4,0){Q2}
             \draw[gray,thick] (P) -- (Q1);
             \draw[gray,thick] (P) -- (Q2);
-            \tkzFillAngle[fill=blue!20,opacity=0.5](Q1,P,Q2)
-            \tkzLabelAngle[pos=0.6](Q1,P,Q2){$90^\circ$}
-            \tkzLabelPoint[below=1.5mm](P){$P$}
-            \tkzLabelPoint[below=1.5mm](Q1){$Q_1$}
-            \tkzLabelPoint[left=1.5mm](Q2){$Q_2$}
-            \draw[charge+] (Q1) circle (\R) node[scale=0.5]{$+$};
-            \draw[charge+] (Q2) circle (\R) node[scale=0.5]{$+$};
+            \tkzFillAngle[fill=blue!20,opacity=0.5](Q2,P,Q1)
+            \tkzLabelAngle[pos=0.6](Q2,P,Q1){$90^\circ$}
+            \tkzLabelPoint[below left](P){$P$}
+            \tkzLabelPoint[left=2.5mm](Q1){$Q_1$}
+            \tkzLabelPoint[below=2.5mm](Q2){$Q_2$}
+            \node[poslading] at (Q1) {$+$};
+            \node[poslading] at (Q2) {$+$};
             \filldraw (P) circle (1.2pt);
         \end{tikzpicture}
     \end{center}
@@ -92,7 +92,7 @@
         Bereken eerst de grootte van $E_1$ en $E_2$ afzonderlijk met de formule voor het radiaal veld.
     \end{hint}
     \begin{hint}
-        Omdat $Q_1$ op de $x$-as en $Q_2$ op de $y$-as ligt (een rechte hoek in $P$), staan $\vec{E}_1$ en $\vec{E}_2$ loodrecht op elkaar. Je kan de resultante dan rechtstreeks berekenen met de stelling van Pythagoras.
+        Omdat $Q_2$ op de $x$-as en $Q_1$ op de $y$-as ligt (een rechte hoek in $P$), staan $\vec{E}_1$ en $\vec{E}_2$ loodrecht op elkaar. Je kan de resultante dan rechtstreeks berekenen met de stelling van Pythagoras.
     \end{hint}
 
     \begin{solution}\nl
@@ -110,7 +110,7 @@
             E_{1} &= k_e \frac{|Q_{1}|}{r_{1}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 3{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}25 \, \mathrm{m})^{2}} = 4{,}3 \cdot 10^{5} \, \mathrm{N/C} \\
             E_{2} &= k_e \frac{|Q_{2}|}{r_{2}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 6{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}40 \, \mathrm{m})^{2}} = 3{,}4 \cdot 10^{5} \, \mathrm{N/C}
         \end{align*}
-        Beide ladingen zijn positief, dus wijst $\vec{E}_1$ weg van $Q_1$ (langs de $x$-as) en $\vec{E}_2$ weg van $Q_2$ (langs de $y$-as). Deze twee vectoren staan dus loodrecht op elkaar.
+        Beide ladingen zijn positief, dus wijst $\vec{E}_1$ weg van $Q_1$ (langs de $y$-as) en $\vec{E}_2$ weg van $Q_2$ (langs de $x$-as). Deze twee vectoren staan dus loodrecht op elkaar.
 
         \textbf{Stap 2: Stelling van Pythagoras toepassen}
         \begin{align*}
@@ -130,16 +130,16 @@
     \begin{center}
         \begin{tikzpicture}[scale=1]
             \tkzDefPoint(0,0){P}
-            \tkzDefPoint(2.0,0){Q1}
-            \tkzDefPoint(0,3.0){Q2}
-            \draw[gray,thick] (P) -- (Q1) node[midway,below]{$0{,}20\,\mathrm{m}$};
-            \draw[gray,thick] (P) -- (Q2) node[midway,left]{$0{,}30\,\mathrm{m}$};
-            \tkzMarkRightAngle[size=0.3](Q1,P,Q2)
-            \tkzLabelPoint[below=1.5mm](P){$P$}
-            \tkzLabelPoint[below=1.5mm](Q1){$Q_1$}
-            \tkzLabelPoint[left=1.5mm](Q2){$Q_2$}
-            \draw[charge+] (Q1) circle (\R) node[scale=0.5]{$+$};
-            \draw[charge+] (Q2) circle (\R) node[scale=0.5]{$+$};
+            \tkzDefPoint(0,2.0){Q1}
+            \tkzDefPoint(3.0,0){Q2}
+            \draw[gray,thick] (P) -- (Q1) node[midway,left]{$0{,}20\,\mathrm{m}$};
+            \draw[gray,thick] (P) -- (Q2) node[midway,below]{$0{,}30\,\mathrm{m}$};
+            \tkzMarkRightAngle[size=0.3](Q2,P,Q1)
+            \tkzLabelPoint[below left](P){$P$}
+            \tkzLabelPoint[left=2.5mm](Q1){$Q_1$}
+            \tkzLabelPoint[below=2.5mm](Q2){$Q_2$}
+            \node[poslading] at (Q1) {$+$};
+            \node[poslading] at (Q2) {$+$};
             \filldraw (P) circle (1.2pt);
         \end{tikzpicture}
     \end{center}
@@ -184,16 +184,16 @@
     \begin{center}
         \begin{tikzpicture}[scale=1.4]
             \tkzDefPoint(0,0){P}
-            \tkzDefPoint(1.5,0){Q1}
-            \tkzDefPoint(0,2.5){Q3}
-            \draw[gray,thick] (P) -- (Q1) node[midway,below]{$0{,}15\,\mathrm{m}$};
-            \draw[gray,thick] (P) -- (Q3) node[midway,left]{$0{,}25\,\mathrm{m}$};
-            \tkzMarkRightAngle[size=0.25](Q1,P,Q3)
-            \tkzLabelPoint[below=1.5mm](P){$P$}
-            \tkzLabelPoint[below=1.5mm](Q1){$Q_1$}
-            \tkzLabelPoint[left=1.5mm](Q3){$Q_3$}
-            \draw[charge+] (Q1) circle (\R) node[scale=0.5]{$+$};
-            \draw[charge-] (Q3) circle (\R) node[scale=0.5]{$-$};
+            \tkzDefPoint(0,1.5){Q1}
+            \tkzDefPoint(2.5,0){Q3}
+            \draw[gray,thick] (P) -- (Q1) node[midway,left]{$0{,}15\,\mathrm{m}$};
+            \draw[gray,thick] (P) -- (Q3) node[midway,below]{$0{,}25\,\mathrm{m}$};
+            \tkzMarkRightAngle[size=0.25](Q3,P,Q1)
+            \tkzLabelPoint[below left](P){$P$}
+            \tkzLabelPoint[left=2.5mm](Q1){$Q_1$}
+            \tkzLabelPoint[below=2.5mm](Q3){$Q_3$}
+            \node[poslading] at (Q1) {$+$};
+            \node[neglading] at (Q3) {$-$};
             \filldraw (P) circle (1.2pt);
         \end{tikzpicture}
     \end{center}
@@ -257,17 +257,17 @@
     \begin{center}
         \begin{tikzpicture}[scale=1.2]
             \tkzDefPoint(0,0){P}
-            \tkzDefPoint(3.0,0){Q1}
-            \tkzDefPoint(0,4.0){Q2}
-            \draw[gray,thick] (P) -- (Q1) node[midway,below]{$0{,}30\,\mathrm{m}$};
-            \draw[gray,dashed] (P) -- (Q2) node[midway,left]{$?$};
+            \tkzDefPoint(0,3.0){Q1}
+            \tkzDefPoint(4.0,0){Q2}
+            \draw[gray,thick] (P) -- (Q1) node[midway,left]{$0{,}30\,\mathrm{m}$};
+            \draw[gray,dashed] (P) -- (Q2) node[midway,below]{$?$};
             \draw[gray,thick] (Q1) -- (Q2) node[midway,above right]{$0{,}50\,\mathrm{m}$};
-            \tkzMarkRightAngle[size=0.3](Q1,P,Q2)
-            \tkzLabelPoint[below=1.5mm](P){$P$}
-            \tkzLabelPoint[below=1.5mm](Q1){$Q_1$}
-            \tkzLabelPoint[left=1.5mm](Q2){$Q_2$}
-            \draw[charge+] (Q1) circle (\R) node[scale=0.5]{$+$};
-            \draw[charge-] (Q2) circle (\R) node[scale=0.5]{$-$};
+            \tkzMarkRightAngle[size=0.3](Q2,P,Q1)
+            \tkzLabelPoint[below left](P){$P$}
+            \tkzLabelPoint[left=2.5mm](Q1){$Q_1$}
+            \tkzLabelPoint[below=2.5mm](Q2){$Q_2$}
+            \node[poslading] at (Q1) {$+$};
+            \node[neglading] at (Q2) {$-$};
             \filldraw (P) circle (1.2pt);
         \end{tikzpicture}
     \end{center}
@@ -336,16 +336,16 @@
     \begin{center}
         \begin{tikzpicture}[scale=1]
             \tkzDefPoint(0,0){P}
-            \tkzDefPoint(1.5,0){Q1}
-            \tkzDefPoint(0,2.0){Q2}
-            \draw[gray,thick] (P) -- (Q1) node[midway,below]{$15\,\mathrm{cm}$};
-            \draw[gray,thick] (P) -- (Q2) node[midway,left]{$20\,\mathrm{cm}$};
-            \tkzMarkRightAngle[size=0.25](Q1,P,Q2)
-            \tkzLabelPoint[below=1.5mm](P){$P$}
-            \tkzLabelPoint[below=1.5mm](Q1){$Q_1$}
-            \tkzLabelPoint[left=1.5mm](Q2){$Q_2$}
-            \draw[charge+] (Q1) circle (\R) node[scale=0.5]{$+$};
-            \draw[charge+] (Q2) circle (\R) node[scale=0.5]{$+$};
+            \tkzDefPoint(0,1.5){Q1}
+            \tkzDefPoint(2.0,0){Q2}
+            \draw[gray,thick] (P) -- (Q1) node[midway,left]{$15\,\mathrm{cm}$};
+            \draw[gray,thick] (P) -- (Q2) node[midway,below]{$20\,\mathrm{cm}$};
+            \tkzMarkRightAngle[size=0.25](Q2,P,Q1)
+            \tkzLabelPoint[below left](P){$P$}
+            \tkzLabelPoint[left=2.5mm](Q1){$Q_1$}
+            \tkzLabelPoint[below=2.5mm](Q2){$Q_2$}
+            \node[poslading] at (Q1) {$+$};
+            \node[poslading] at (Q2) {$+$};
             \filldraw (P) circle (1.2pt);
         \end{tikzpicture}
     \end{center}
@@ -381,23 +381,23 @@
 %———————————————————————————————————————
 
 %———————————————————————————————————————
-% OEF VELD PYTH 2: tegengesteld teken, nC en mm-schaal
+% OEF VELD PYTH 7: tegengesteld teken, nC en mm-schaal
 \begin{exercise}
     Een positieve puntlading $Q_{1} = +800 \, \mathrm{nC}$ en een negatieve puntlading $Q_{3} = -500 \, \mathrm{nC}$ bevinden zich zoals aangegeven op de tekening, met een rechte hoek in punt \textit{P}. De afstand van $Q_1$ tot $P$ is $80 \, \mathrm{mm}$, en de afstand van $Q_3$ tot $P$ is $12 \, \mathrm{cm}$.
 
     \begin{center}
         \begin{tikzpicture}[scale=1.3]
             \tkzDefPoint(0,0){P}
-            \tkzDefPoint(1.6,0){Q1}
-            \tkzDefPoint(0,2.4){Q3}
-            \draw[gray,thick] (P) -- (Q1) node[midway,below]{$80\,\mathrm{mm}$};
-            \draw[gray,thick] (P) -- (Q3) node[midway,left]{$12\,\mathrm{cm}$};
-            \tkzMarkRightAngle[size=0.2](Q1,P,Q3)
-            \tkzLabelPoint[below=1.5mm](P){$P$}
-            \tkzLabelPoint[below=1.5mm](Q1){$Q_1$}
-            \tkzLabelPoint[left=1.5mm](Q3){$Q_3$}
-            \draw[charge+] (Q1) circle (\R) node[scale=0.5]{$+$};
-            \draw[charge-] (Q3) circle (\R) node[scale=0.5]{$-$};
+            \tkzDefPoint(0,1.6){Q1}
+            \tkzDefPoint(2.4,0){Q3}
+            \draw[gray,thick] (P) -- (Q1) node[midway,left]{$80\,\mathrm{mm}$};
+            \draw[gray,thick] (P) -- (Q3) node[midway,below]{$12\,\mathrm{cm}$};
+            \tkzMarkRightAngle[size=0.2](Q3,P,Q1)
+            \tkzLabelPoint[below left](P){$P$}
+            \tkzLabelPoint[left=2.5mm](Q1){$Q_1$}
+            \tkzLabelPoint[below=2.5mm](Q3){$Q_3$}
+            \node[poslading] at (Q1) {$+$};
+            \node[neglading] at (Q3) {$-$};
             \filldraw (P) circle (1.2pt);
         \end{tikzpicture}
     \end{center}
@@ -433,23 +433,23 @@
 %———————————————————————————————————————
 
 %———————————————————————————————————————
-% OEF VELD PYTH 3: rechthoek, P in een hoekpunt
+% OEF VELD PYTH 8: rechthoek, P in een hoekpunt
 \begin{exercise}
     Twee puntladingen $Q_{A} = +5{,}0 \, \mathrm{\mu C}$ en $Q_{B} = -6{,}0 \, \mathrm{\mu C}$ bevinden zich in twee hoekpunten van een rechthoek, aangrenzend aan hoekpunt \textit{P}. De zijde $PQ_A$ is $18 \, \mathrm{cm}$ lang, de zijde $PQ_B$ is $24 \, \mathrm{cm}$ lang.
 
     \begin{center}
         \begin{tikzpicture}[scale=0.7]
             \tkzDefPoint(0,0){P}
-            \tkzDefPoint(3.6,0){A}
-            \tkzDefPoint(0,4.8){B}
-            \tkzDefPoint(3.6,4.8){C}
+            \tkzDefPoint(0,3.6){A}
+            \tkzDefPoint(4.8,0){B}
+            \tkzDefPoint(4.8,3.6){C}
             \tkzDrawPolygon(P,A,C,B)
-            \tkzMarkRightAngle[size=0.3](A,P,B)
-            \tkzLabelPoint[below=1.5mm](P){$P$}
-            \tkzLabelPoint[below=1.5mm](A){$Q_A$}
-            \tkzLabelPoint[left=1.5mm](B){$Q_B$}
-            \draw[charge+] (A) circle (\R) node[scale=0.5]{$+$};
-            \draw[charge-] (B) circle (\R) node[scale=0.5]{$-$};
+            \tkzMarkRightAngle[size=0.3](B,P,A)
+            \tkzLabelPoint[below left](P){$P$}
+            \tkzLabelPoint[left=2.5mm](A){$Q_A$}
+            \tkzLabelPoint[below=2.5mm](B){$Q_B$}
+            \node[poslading] at (A) {$+$};
+            \node[neglading] at (B) {$-$};
             \filldraw (P) circle (1.5pt);
         \end{tikzpicture}
     \end{center}
@@ -485,7 +485,7 @@
 %———————————————————————————————————————
 
 %———————————————————————————————————————
-% OEF VELD PYTH 4: vierkant, gelijke afstanden
+% OEF VELD PYTH 9: vierkant, gelijke afstanden
 \begin{exercise}
     Twee puntladingen $Q_{1} = +2{,}0 \, \mathrm{\mu C}$ en $Q_{2} = -9{,}0 \, \mathrm{\mu C}$ bevinden zich in twee hoekpunten van een vierkant met zijde $25 \, \mathrm{cm}$, aangrenzend aan hoekpunt \textit{P}.
 
@@ -497,11 +497,11 @@
             \tkzDefPoint(5,5){C}
             \tkzDrawPolygon(P,Q1,C,Q2)
             \tkzMarkRightAngle[size=0.4](Q1,P,Q2)
-            \tkzLabelPoint[below=1.5mm](P){$P$}
-            \tkzLabelPoint[below=1.5mm](Q1){$Q_1$}
-            \tkzLabelPoint[left=1.5mm](Q2){$Q_2$}
-            \draw[charge+] (Q1) circle (\R) node[scale=0.5]{$+$};
-            \draw[charge-] (Q2) circle (\R) node[scale=0.5]{$-$};
+            \tkzLabelPoint[below left](P){$P$}
+            \tkzLabelPoint[below=2.5mm](Q1){$Q_1$}
+            \tkzLabelPoint[left=2.5mm](Q2){$Q_2$}
+            \node[poslading] at (Q1) {$+$};
+            \node[neglading] at (Q2) {$-$};
             \filldraw (P) circle (1.5pt);
         \end{tikzpicture}
     \end{center}
@@ -537,24 +537,24 @@
 %———————————————————————————————————————
 
 %———————————————————————————————————————
-% OEF VELD PYTH 5: ontbrekende afstand via Pythagoras, meerdelig
+% OEF VELD PYTH 10: ontbrekende afstand via Pythagoras, meerdelig
 \begin{exercise}
     Twee puntladingen $Q_{1} = +7{,}0 \, \mathrm{\mu C}$ en $Q_{2} = -25 \, \mathrm{\mu C}$ bevinden zich zoals aangegeven op de tekening, met een rechte hoek in punt \textit{P}. De afstand van $Q_1$ tot $P$ is $18 \, \mathrm{cm}$. De afstand tussen $Q_1$ en $Q_2$ zelf (dus niet tot $P$) bedraagt $30 \, \mathrm{cm}$.
 
     \begin{center}
         \begin{tikzpicture}[scale=1]
             \tkzDefPoint(0,0){P}
-            \tkzDefPoint(1.8,0){Q1}
-            \tkzDefPoint(0,2.4){Q2}
-            \draw[gray,thick] (P) -- (Q1) node[midway,below]{$18\,\mathrm{cm}$};
-            \draw[gray,dashed] (P) -- (Q2) node[midway,left]{$?$};
+            \tkzDefPoint(0,1.8){Q1}
+            \tkzDefPoint(2.4,0){Q2}
+            \draw[gray,thick] (P) -- (Q1) node[midway,left]{$18\,\mathrm{cm}$};
+            \draw[gray,dashed] (P) -- (Q2) node[midway,below]{$?$};
             \draw[gray,thick] (Q1) -- (Q2) node[midway,above right]{$30\,\mathrm{cm}$};
-            \tkzMarkRightAngle[size=0.25](Q1,P,Q2)
-            \tkzLabelPoint[below=1.5mm](P){$P$}
-            \tkzLabelPoint[below=1.5mm](Q1){$Q_1$}
-            \tkzLabelPoint[left=1.5mm](Q2){$Q_2$}
-            \draw[charge+] (Q1) circle (\R) node[scale=0.5]{$+$};
-            \draw[charge-] (Q2) circle (\R) node[scale=0.5]{$-$};
+            \tkzMarkRightAngle[size=0.25](Q2,P,Q1)
+            \tkzLabelPoint[below left](P){$P$}
+            \tkzLabelPoint[left=2.5mm](Q1){$Q_1$}
+            \tkzLabelPoint[below=2.5mm](Q2){$Q_2$}
+            \node[poslading] at (Q1) {$+$};
+            \node[neglading] at (Q2) {$-$};
             \filldraw (P) circle (1.2pt);
         \end{tikzpicture}
     \end{center}
@@ -604,7 +604,7 @@
 %———————————————————————————————————————
 
 %———————————————————————————————————————
-% OEF DRIEHOEK 5: rechthoekige driehoek, cosinusregel
+% OEF DRIEHOEK 11: rechthoekige driehoek, cosinusregel
 \begin{exercise}
     Twee puntladingen $Q_{A} = -5{,}0 \cdot 10^{-6} \, \mathrm{C}$ en $Q_{B} = -2{,}0 \cdot 10^{-6} \, \mathrm{C}$ bevinden zich in de hoekpunten van een rechthoekige driehoek, zoals te zien op de tekening. De rechte hoek bevindt zich bij $Q_A$. De afstand tussen $Q_A$ en $P$ is $0{,}30 \, \mathrm{m}$, en de afstand tussen $Q_A$ en $Q_B$ is $0{,}40 \, \mathrm{m}$.
 
@@ -618,12 +618,12 @@
             \end{scope}
             \tkzDrawPolygon(A,B,C)
 
-            \tkzLabelPoint[left, below=4pt](A){$Q_{A}$}
-            \tkzLabelPoint[right, below=4pt](B){$Q_{B}$}
-            \tkzLabelPoint[above=4pt](C){$P$}
+            \tkzLabelPoint[left, below=6pt](A){$Q_{A}$}
+            \tkzLabelPoint[right, below=6pt](B){$Q_{B}$}
+            \tkzLabelPoint[above=2pt](C){$P$}
 
-            \draw[charge-] (A) circle (\R) node[scale=0.5] {$-$};
-            \draw[charge-] (B) circle (\R) node[scale=0.5] {$-$};
+            \node[neglading] at (A) {$-$};
+            \node[neglading] at (B) {$-$};
             \filldraw (C) circle (2pt);
         \end{tikzpicture}
     \end{center}
@@ -684,7 +684,7 @@
 %———————————————————————————————————————
 
 %———————————————————————————————————————
-% OEF DRIEHOEK COS 6: hoek in P gegeven, beide ladingen positief
+% OEF DRIEHOEK COS 12: hoek in P gegeven, beide ladingen positief
 \begin{exercise}
     Twee positieve puntladingen $Q_{1} = +4{,}0 \cdot 10^{-6} \, \mathrm{C}$ en $Q_{2} = +2{,}0 \cdot 10^{-6} \, \mathrm{C}$ bevinden zich zoals aangegeven op de tekening. De afstand van $Q_1$ tot $P$ is $0{,}25 \, \mathrm{m}$, de afstand van $Q_2$ tot $P$ is $0{,}40 \, \mathrm{m}$, en de hoek tussen beide lijnstukken in $P$ is $70^\circ$.
 
@@ -697,11 +697,11 @@
             \draw[gray,thick] (P) -- (Q2) node[midway,left]{$0{,}40\,\mathrm{m}$};
             \tkzFillAngle[fill=blue!20,opacity=0.5](Q1,P,Q2)
             \tkzLabelAngle[pos=1.0](Q1,P,Q2){$70^\circ$}
-            \tkzLabelPoint[below=1.5mm](P){$P$}
-            \tkzLabelPoint[below=1.5mm](Q1){$Q_1$}
-            \tkzLabelPoint[above=1.5mm](Q2){$Q_2$}
-            \draw[charge+] (Q1) circle (\R) node[scale=0.5]{$+$};
-            \draw[charge+] (Q2) circle (\R) node[scale=0.5]{$+$};
+            \tkzLabelPoint[below left](P){$P$}
+            \tkzLabelPoint[below=2.5mm](Q1){$Q_1$}
+            \tkzLabelPoint[above=2.5mm](Q2){$Q_2$}
+            \node[poslading] at (Q1) {$+$};
+            \node[poslading] at (Q2) {$+$};
             \filldraw (P) circle (1.2pt);
         \end{tikzpicture}
     \end{center}
@@ -741,7 +741,7 @@
 %———————————————————————————————————————
 
 %———————————————————————————————————————
-% OEF DRIEHOEK COS 7: hoek in P gegeven, tegengesteld teken
+% OEF DRIEHOEK COS 13: hoek in P gegeven, tegengesteld teken
 \begin{exercise}
     Een positieve puntlading $Q_{1} = +5{,}0 \cdot 10^{-6} \, \mathrm{C}$ en een negatieve puntlading $Q_{3} = -3{,}0 \cdot 10^{-6} \, \mathrm{C}$ bevinden zich zoals aangegeven op de tekening. De afstand van $Q_1$ tot $P$ is $0{,}20 \, \mathrm{m}$, de afstand van $Q_3$ tot $P$ is $0{,}30 \, \mathrm{m}$, en de hoek tussen beide lijnstukken in $P$ is $65^\circ$.
 
@@ -754,11 +754,11 @@
             \draw[gray,thick] (P) -- (Q3) node[midway,left]{$0{,}30\,\mathrm{m}$};
             \tkzFillAngle[fill=blue!20,opacity=0.5](Q1,P,Q3)
             \tkzLabelAngle[pos=1.0](Q1,P,Q3){$65^\circ$}
-            \tkzLabelPoint[below=1.5mm](P){$P$}
-            \tkzLabelPoint[below=1.5mm](Q1){$Q_1$}
-            \tkzLabelPoint[above=1.5mm](Q3){$Q_3$}
-            \draw[charge+] (Q1) circle (\R) node[scale=0.5]{$+$};
-            \draw[charge-] (Q3) circle (\R) node[scale=0.5]{$-$};
+            \tkzLabelPoint[below left](P){$P$}
+            \tkzLabelPoint[below=2.5mm](Q1){$Q_1$}
+            \tkzLabelPoint[above=2.5mm](Q3){$Q_3$}
+            \node[poslading] at (Q1) {$+$};
+            \node[neglading] at (Q3) {$-$};
             \filldraw (P) circle (1.2pt);
         \end{tikzpicture}
     \end{center}
@@ -798,7 +798,7 @@
 %———————————————————————————————————————
 
 %———————————————————————————————————————
-% OEF DRIEHOEK COS 8: rechthoekige driehoek, rechte hoek NIET in P
+% OEF DRIEHOEK COS 14: rechthoekige driehoek, rechte hoek NIET in P
 \begin{exercise}
     Twee puntladingen $Q_{A} = +6{,}0 \cdot 10^{-6} \, \mathrm{C}$ en $Q_{B} = -3{,}0 \cdot 10^{-6} \, \mathrm{C}$ bevinden zich in de hoekpunten van een rechthoekige driehoek, met de rechte hoek bij $Q_A$. De afstand tussen $Q_A$ en $P$ is $0{,}24 \, \mathrm{m}$, en de afstand tussen $Q_A$ en $Q_B$ is $0{,}32 \, \mathrm{m}$.
 
@@ -807,18 +807,18 @@
             \useasboundingbox (-1.5, -1.5) rectangle (5.5, 4.5);
             \tkzDefPoint(0,0){A}
             \begin{scope}[shift=(A)]
-                \tkzDefPoint(0:3){P}
-                \tkzDefPoint(90:4){B}
+                \tkzDefPoint(90:3){P}
+                \tkzDefPoint(0:4){B}
             \end{scope}
             \tkzDrawPolygon(A,P,B)
-            \tkzMarkRightAngle[size=0.3](P,A,B)
+            \tkzMarkRightAngle[size=0.3](B,A,P)
 
-            \tkzLabelPoint[below=1.5mm](A){$Q_{A}$}
-            \tkzLabelPoint[below=1.5mm](P){$P$}
-            \tkzLabelPoint[above=1.5mm](B){$Q_{B}$}
+            \tkzLabelPoint[below=2.5mm](A){$Q_{A}$}
+            \tkzLabelPoint[above](P){$P$}
+            \tkzLabelPoint[below=2.5mm](B){$Q_{B}$}
 
-            \draw[charge+] (A) circle (\R) node[scale=0.5] {$+$};
-            \draw[charge-] (B) circle (\R) node[scale=0.5] {$-$};
+            \node[poslading] at (A) {$+$};
+            \node[neglading] at (B) {$-$};
             \filldraw (P) circle (2pt);
         \end{tikzpicture}
     \end{center}
@@ -872,7 +872,7 @@
 %———————————————————————————————————————
 
 %———————————————————————————————————————
-% OEF DRIEHOEK COS 9: willekeurige driehoek, hoek via cosinusregel uit 3 zijden
+% OEF DRIEHOEK COS 15: willekeurige driehoek, hoek via cosinusregel uit 3 zijden
 \begin{exercise}
     Twee puntladingen $Q_{1} = +7{,}0 \cdot 10^{-6} \, \mathrm{C}$ en $Q_{2} = -5{,}0 \cdot 10^{-6} \, \mathrm{C}$ bevinden zich in twee hoekpunten van een driehoek met punt $P$, zoals aangegeven op de tekening. De afstand van $Q_1$ tot $P$ is $0{,}15 \, \mathrm{m}$, de afstand van $Q_2$ tot $P$ is $0{,}20 \, \mathrm{m}$, en de afstand tussen $Q_1$ en $Q_2$ onderling is $0{,}30 \, \mathrm{m}$.
 
@@ -885,11 +885,11 @@
             \tkzLabelSegment[below=1.5mm](P,Q1){$0{,}15\,\mathrm{m}$}
             \tkzLabelSegment[above=1.5mm](P,Q2){$0{,}20\,\mathrm{m}$}
             \tkzLabelSegment[right=1.5mm](Q1,Q2){$0{,}30\,\mathrm{m}$}
-            \tkzLabelPoint[below=1.5mm](P){$P$}
-            \tkzLabelPoint[right=1.5mm](Q1){$Q_1$}
-            \tkzLabelPoint[above=1.5mm](Q2){$Q_2$}
-            \draw[charge+] (Q1) circle (\R) node[scale=0.5]{$+$};
-            \draw[charge-] (Q2) circle (\R) node[scale=0.5]{$-$};
+            \tkzLabelPoint[below left](P){$P$}
+            \tkzLabelPoint[right=2.5mm](Q1){$Q_1$}
+            \tkzLabelPoint[above=2.5mm](Q2){$Q_2$}
+            \node[poslading] at (Q1) {$+$};
+            \node[neglading] at (Q2) {$-$};
             \filldraw (P) circle (1.2pt);
         \end{tikzpicture}
     \end{center}
@@ -940,7 +940,7 @@
 %———————————————————————————————————————
 
 %———————————————————————————————————————
-% OEF VELD COS 6: hoek gegeven, beide ladingen positief (nC en µC)
+% OEF VELD COS 16: hoek gegeven, beide ladingen positief (nC en µC)
 \begin{exercise}
     Twee positieve puntladingen $Q_{1} = +600 \, \mathrm{nC}$ en $Q_{2} = +1{,}5 \, \mathrm{\mu C}$ bevinden zich zoals aangegeven op de tekening. De afstand van $Q_1$ tot $P$ is $12 \, \mathrm{cm}$, de afstand van $Q_2$ tot $P$ is $18 \, \mathrm{cm}$, en de hoek tussen beide lijnstukken in $P$ is $60^\circ$.
 
@@ -953,11 +953,11 @@
             \draw[gray,thick] (P) -- (Q2) node[midway,left]{$18\,\mathrm{cm}$};
             \tkzFillAngle[fill=blue!20,opacity=0.5](Q1,P,Q2)
             \tkzLabelAngle[pos=1.0](Q1,P,Q2){$60^\circ$}
-            \tkzLabelPoint[below=1.5mm](P){$P$}
-            \tkzLabelPoint[below=1.5mm](Q1){$Q_1$}
-            \tkzLabelPoint[above=1.5mm](Q2){$Q_2$}
-            \draw[charge+] (Q1) circle (\R) node[scale=0.5]{$+$};
-            \draw[charge+] (Q2) circle (\R) node[scale=0.5]{$+$};
+            \tkzLabelPoint[below left](P){$P$}
+            \tkzLabelPoint[below=2.5mm](Q1){$Q_1$}
+            \tkzLabelPoint[above=2.5mm](Q2){$Q_2$}
+            \node[poslading] at (Q1) {$+$};
+            \node[poslading] at (Q2) {$+$};
             \filldraw (P) circle (1.2pt);
         \end{tikzpicture}
     \end{center}
@@ -993,31 +993,31 @@
 %———————————————————————————————————————
 
 %———————————————————————————————————————
-% OEF VELD COS 7: hoek gegeven, tegengesteld teken (nC, mm)
+% OEF VELD COS 17: hoek gegeven, tegengesteld teken (nC, mm)
 \begin{exercise}
     Een positieve puntlading $Q_{1} = +40 \, \mathrm{nC}$ en een negatieve puntlading $Q_{3} = -90 \, \mathrm{nC}$ bevinden zich zoals aangegeven op de tekening. De afstand van $Q_1$ tot $P$ is $60 \, \mathrm{mm}$, de afstand van $Q_3$ tot $P$ is $90 \, \mathrm{mm}$, en de hoek tussen beide lijnstukken in $P$ is $75^\circ$.
 
     \begin{center}
-        \begin{tikzpicture}[scale=1.6]
+        \begin{tikzpicture}[scale=1]
             \tkzDefPoint(0,0){P}
-            \tkzDefPoint(0.6,0){Q1}
-            \tkzDefPoint(0.233,0.869){Q3}
+            \tkzDefPoint(1.8,0){Q1}
+            \tkzDefPoint(0.466,2.738){Q3}
             \draw[gray,thick] (P) -- (Q1) node[midway,below]{$60\,\mathrm{mm}$};
             \draw[gray,thick] (P) -- (Q3) node[midway,left]{$90\,\mathrm{mm}$};
             \tkzFillAngle[fill=blue!20,opacity=0.5](Q1,P,Q3)
             \tkzLabelAngle[pos=1.0](Q1,P,Q3){$75^\circ$}
-            \tkzLabelPoint[below=1.5mm](P){$P$}
-            \tkzLabelPoint[below=1.5mm](Q1){$Q_1$}
-            \tkzLabelPoint[above=1.5mm](Q3){$Q_3$}
-            \draw[charge+] (Q1) circle (\R) node[scale=0.5]{$+$};
-            \draw[charge-] (Q3) circle (\R) node[scale=0.5]{$-$};
+            \tkzLabelPoint[below left](P){$P$}
+            \tkzLabelPoint[below=2.5mm](Q1){$Q_1$}
+            \tkzLabelPoint[above=2.5mm](Q3){$Q_3$}
+            \node[poslading] at (Q1) {$+$};
+            \node[neglading] at (Q3) {$-$};
             \filldraw (P) circle (1.2pt);
         \end{tikzpicture}
     \end{center}
 
     Bereken de grootte van het totale elektrisch veld in punt \textit{P}.
 
-    \[ E_{\text{res}} = \answer[tolerance=0.01,onlineshowanswerbutton]{1.2} \cdot 10^{5} \, \mathrm{N/C} \]
+    \[ E_{\text{res}} = \answer[tolerance=0.05,onlineshowanswerbutton]{1.2} \cdot 10^{5} \, \mathrm{N/C} \]
 
     \begin{hint}
         Verschillend teken: de overstaande hoek in de cosinusregel is hier gelijk aan de gegeven hoek zelf, dus $75^\circ$.
@@ -1046,7 +1046,7 @@
 %———————————————————————————————————————
 
 %———————————————————————————————————————
-% OEF VELD COS 8: rechthoekige driehoek, niet in P, beide ladingen positief
+% OEF VELD COS 18: rechthoekige driehoek, niet in P, beide ladingen positief
 \begin{exercise}
     Twee positieve puntladingen $Q_{A} = +3{,}0 \, \mathrm{\mu C}$ en $Q_{B} = +4{,}0 \, \mathrm{\mu C}$ bevinden zich in de hoekpunten van een rechthoekige driehoek, met de rechte hoek bij $Q_A$. De afstand tussen $Q_A$ en $P$ is $9{,}0 \, \mathrm{cm}$, en de afstand tussen $Q_A$ en $Q_B$ is $12 \, \mathrm{cm}$.
 
@@ -1055,16 +1055,16 @@
             \useasboundingbox (-1.5, -1.5) rectangle (5.5, 4.5);
             \tkzDefPoint(0,0){A}
             \begin{scope}[shift=(A)]
-                \tkzDefPoint(0:3){P}
-                \tkzDefPoint(90:4){B}
+                \tkzDefPoint(90:3){P}
+                \tkzDefPoint(0:4){B}
             \end{scope}
             \tkzDrawPolygon(A,P,B)
-            \tkzMarkRightAngle[size=0.3](P,A,B)
-            \tkzLabelPoint[below=1.5mm](A){$Q_{A}$}
-            \tkzLabelPoint[below=1.5mm](P){$P$}
-            \tkzLabelPoint[above=1.5mm](B){$Q_{B}$}
-            \draw[charge+] (A) circle (\R) node[scale=0.5] {$+$};
-            \draw[charge+] (B) circle (\R) node[scale=0.5] {$+$};
+            \tkzMarkRightAngle[size=0.3](B,A,P)
+            \tkzLabelPoint[below=2.5mm](A){$Q_{A}$}
+            \tkzLabelPoint[above](P){$P$}
+            \tkzLabelPoint[below=2.5mm](B){$Q_{B}$}
+            \node[poslading] at (A) {$+$};
+            \node[poslading] at (B) {$+$};
             \filldraw (P) circle (2pt);
         \end{tikzpicture}
     \end{center}
@@ -1108,7 +1108,7 @@
 %———————————————————————————————————————
 
 %———————————————————————————————————————
-% OEF VELD COS 9: rechthoekige driehoek niet in P, beide negatief, grote onderlinge afstand
+% OEF VELD COS 19: rechthoekige driehoek niet in P, beide negatief, grote onderlinge afstand
 \begin{exercise}
     Twee negatieve puntladingen $Q_{A} = -8{,}0 \, \mathrm{\mu C}$ en $Q_{B} = -5{,}0 \, \mathrm{\mu C}$ bevinden zich in de hoekpunten van een rechthoekige driehoek, met de rechte hoek bij $Q_A$. De afstand tussen $Q_A$ en $P$ is $14 \, \mathrm{cm}$, en de afstand tussen $Q_A$ en $Q_B$ zelf is $50 \, \mathrm{cm}$.
 
@@ -1117,16 +1117,16 @@
             \useasboundingbox (-5, -5) rectangle (55, 55);
             \tkzDefPoint(0,0){A}
             \begin{scope}[shift=(A)]
-                \tkzDefPoint(0:14){P}
-                \tkzDefPoint(90:48){B}
+                \tkzDefPoint(90:14){P}
+                \tkzDefPoint(0:48){B}
             \end{scope}
             \tkzDrawPolygon(A,P,B)
-            \tkzMarkRightAngle[size=4](P,A,B)
-            \tkzLabelPoint[below=1.5mm](A){$Q_{A}$}
-            \tkzLabelPoint[below=1.5mm](P){$P$}
-            \tkzLabelPoint[above=1.5mm](B){$Q_{B}$}
-            \draw[charge-] (A) circle (2.2) node[scale=1.3] {$-$};
-            \draw[charge-] (B) circle (2.2) node[scale=1.3] {$-$};
+            \tkzMarkRightAngle[size=4](B,A,P)
+            \tkzLabelPoint[below=2.5mm](A){$Q_{A}$}
+            \tkzLabelPoint[left=1.5mm](P){$P$}
+            \tkzLabelPoint[below=2.5mm](B){$Q_{B}$}
+            \node[neglading] at (A) {$-$};
+            \node[neglading] at (B) {$-$};
             \filldraw (P) circle (0.8);
         \end{tikzpicture}
     \end{center}
@@ -1174,7 +1174,7 @@
 %———————————————————————————————————————
 
 %———————————————————————————————————————
-% OEF VELD COS 10: willekeurige driehoek, hoek via cosinusregel, beide positief
+% OEF VELD COS 20: willekeurige driehoek, hoek via cosinusregel, beide positief
 \begin{exercise}
     Twee positieve puntladingen $Q_{1} = +6{,}0 \, \mathrm{\mu C}$ en $Q_{2} = +2{,}5 \, \mathrm{\mu C}$ bevinden zich in twee hoekpunten van een driehoek met punt $P$. De afstand van $Q_1$ tot $P$ is $10 \, \mathrm{cm}$, de afstand van $Q_2$ tot $P$ is $14 \, \mathrm{cm}$, en de afstand tussen $Q_1$ en $Q_2$ onderling is $20 \, \mathrm{cm}$.
 
@@ -1187,11 +1187,11 @@
             \tkzLabelSegment[below=1.5mm](P,Q1){$10\,\mathrm{cm}$}
             \tkzLabelSegment[above=1.5mm](P,Q2){$14\,\mathrm{cm}$}
             \tkzLabelSegment[right=1.5mm](Q1,Q2){$20\,\mathrm{cm}$}
-            \tkzLabelPoint[below=1.5mm](P){$P$}
-            \tkzLabelPoint[right=1.5mm](Q1){$Q_1$}
-            \tkzLabelPoint[above=1.5mm](Q2){$Q_2$}
-            \draw[charge+] (Q1) circle (\R) node[scale=0.5]{$+$};
-            \draw[charge+] (Q2) circle (\R) node[scale=0.5]{$+$};
+            \tkzLabelPoint[below left](P){$P$}
+            \tkzLabelPoint[right=2.5mm](Q1){$Q_1$}
+            \tkzLabelPoint[above=2.5mm](Q2){$Q_2$}
+            \node[poslading] at (Q1) {$+$};
+            \node[poslading] at (Q2) {$+$};
             \filldraw (P) circle (1.2pt);
         \end{tikzpicture}
     \end{center}

@@ -97,7 +97,7 @@
 %———————————————————————————————————————
 
 %———————————————————————————————————————
-% CONCEPT OEF VIERKANT 1: schaakbordpatroon, symmetrie geeft NUL veld
+% Vraag 6: CONCEPT OEF VIERKANT 1: schaakbordpatroon, symmetrie geeft NUL veld
 \begin{question}
     Vier puntladingen met dezelfde grootte $|Q|$ bevinden zich op de hoekpunten van een vierkant, zoals aangegeven op de tekening. Punt $P$ ligt in het midden van het vierkant.
 
@@ -109,10 +109,10 @@
             \tkzDefPoint(0,0){D}
             \tkzDefPoint(2,2){P}
             \tkzDrawPolygon(A,B,C,D)
-            \tkzLabelPoint[above left=2.5mm](A){$+Q$}
-            \tkzLabelPoint[above right=2.5mm](B){$-Q$}
-            \tkzLabelPoint[below right=2.5mm](C){$+Q$}
-            \tkzLabelPoint[below left=2.5mm](D){$-Q$}
+            \tkzLabelPoint[above=2.5mm](A){$+Q$}
+            \tkzLabelPoint[above=2.5mm](B){$-Q$}
+            \tkzLabelPoint[below=2.5mm](C){$+Q$}
+            \tkzLabelPoint[below=2.5mm](D){$-Q$}
             \tkzLabelPoint[below=1.5mm](P){$P$}
             \node[poslading] at (A) {$+$};
             \node[neglading] at (B) {$-$};
@@ -142,7 +142,7 @@
 %———————————————————————————————————————
 
 %———————————————————————————————————————
-% CONCEPT OEF VIERKANT 2: boven +, onder -, homogeen-achtig veld
+% Vraag 7: CONCEPT OEF VIERKANT 2: boven +, onder -, homogeen-achtig veld
 \begin{question}
     Vier puntladingen met dezelfde grootte $|Q|$ bevinden zich op de hoekpunten van een rechthoek, zoals aangegeven op de tekening. Punt $P$ ligt in het midden van de rechthoek.
 
@@ -154,10 +154,10 @@
             \tkzDefPoint(0,0){D}
             \tkzDefPoint(2.5,1.5){P}
             \tkzDrawPolygon(A,B,C,D)
-            \tkzLabelPoint[above left=2.5mm](A){$+Q$}
-            \tkzLabelPoint[above right=2.5mm](B){$+Q$}
-            \tkzLabelPoint[below left=2.5mm](C){$-Q$}
-            \tkzLabelPoint[below left=2.5mm](D){$-Q$}
+            \tkzLabelPoint[above=2.5mm](A){$+Q$}
+            \tkzLabelPoint[above=2.5mm](B){$+Q$}
+            \tkzLabelPoint[below=2.5mm](C){$-Q$}
+            \tkzLabelPoint[below=2.5mm](D){$-Q$}
             \tkzLabelPoint[right=1.5mm](P){$P$}
             \node[poslading] at (A) {$+$};
             \node[poslading] at (B) {$+$};
@@ -187,7 +187,7 @@
 %———————————————————————————————————————
 
 %———————————————————————————————————————
-% CONCEPT OEF VIERKANT 3: ongelijke ladingen op de diagonaal
+% Vraag 8: CONCEPT OEF VIERKANT 3: ongelijke ladingen op de diagonaal
 \begin{question}
     Vier puntladingen bevinden zich op de hoekpunten van een vierkant, zoals aangegeven op de tekening. Twee van de ladingen zijn gelijk in grootte en teken ($-Q$), maar op de andere diagonaal is één lading twee keer zo groot als de andere. Punt $P$ ligt in het midden van het vierkant.
 
@@ -199,10 +199,10 @@
             \tkzDefPoint(0,0){D}
             \tkzDefPoint(2,2){P}
             \tkzDrawPolygon(A,B,C,D)
-            \tkzLabelPoint[above left=2.5mm](A){$+2Q$}
-            \tkzLabelPoint[above right=2.5mm](B){$-Q$}
-            \tkzLabelPoint[below right=2.5mm](C){$+Q$}
-            \tkzLabelPoint[below left=2.5mm](D){$-Q$}
+            \tkzLabelPoint[above=2.5mm](A){$+2Q$}
+            \tkzLabelPoint[above=2.5mm](B){$-Q$}
+            \tkzLabelPoint[below=2.5mm](C){$+Q$}
+            \tkzLabelPoint[below=2.5mm](D){$-Q$}
             \tkzLabelPoint[below=1.5mm](P){$P$}
             \node[poslading] at (A) {$+$};
             \node[neglading] at (B) {$-$};
@@ -234,7 +234,7 @@
 %———————————————————————————————————————
 
 %———————————————————————————————————————
-% CONCEPT OEF 2 LADINGEN 1: tegengesteld teken, GELIJKE grootte (dipool) -> geen nulpunt
+% Vraag 9: CONCEPT OEF 2 LADINGEN 1: tegengesteld teken, GELIJKE grootte (dipool) -> geen nulpunt
 \begin{question}
     Twee tegengestelde puntladingen $+Q$ en $-Q$, met exact dezelfde grootte, bevinden zich op een rechte lijn.
 
@@ -277,7 +277,7 @@
 %———————————————————————————————————————
 
 %———————————————————————————————————————
-% CONCEPT OEF 2 LADINGEN 2: zelfde teken, ongelijke grootte -> nulpunt TUSSEN
+% Vraag 10: CONCEPT OEF 2 LADINGEN 2: zelfde teken, ongelijke grootte -> nulpunt TUSSEN
 \begin{question}
     Twee positieve puntladingen $Q_{1}$ en $Q_{2}$ bevinden zich op een rechte lijn, met $Q_{1} < Q_{2}$ (dus $Q_2$ is de sterkste lading).
 
@@ -299,8 +299,8 @@
         \choice{Nee, er is nergens een punt waar het veld nul is.}
         \choice{Ja, tussen de ladingen, dichter bij de sterkste lading $Q_2$.}
         \choice[correct]{Ja, tussen de ladingen, dichter bij de zwakste lading $Q_1$.}
-        \choice{Ja, maar buiten het gebied tussen de twee ladingen, het kotrste bij lading $Q_1$.}
-        \choice{Ja, maar buiten het gebied tussen de twee ladingen, het kotrste bij lading $Q_2$.}
+        \choice{Ja, maar buiten het gebied tussen de twee ladingen, het dichtst bij lading $Q_1$.}
+        \choice{Ja, maar buiten het gebied tussen de twee ladingen, het dichtst bij lading $Q_2$.}
     \end{multipleChoice}
 
     \begin{hint}
@@ -319,7 +319,7 @@
 %———————————————————————————————————————
 
 %———————————————————————————————————————
-% CONCEPT OEF 2 LADINGEN 3: verschillend teken, ongelijke grootte -> nulpunt TUSSEN
+% Vraag 11: CONCEPT OEF 2 LADINGEN 3: verschillend teken, ongelijke grootte -> nulpunt BUITEN
 \begin{question}
     Twee puntladingen $Q_{1}$ en $Q_{2}$ bevinden zich op een rechte lijn, met $Q_{1} < 0$ en $Q_{2} > 0$, en $|Q_{1}| < |Q_{2}|$ (dus $Q_1$ is de zwakkere negatieve lading en $Q_2$ is de sterkere positieve lading).
 
@@ -341,8 +341,8 @@
         \choice{Nee, er is nergens een punt waar het veld nul is.}
         \choice{Ja, tussen de ladingen, dichter bij de sterkste lading $Q_2$.}
         \choice{Ja, tussen de ladingen, dichter bij de zwakste lading $Q_1$.}
-        \choice[correct]{Ja, maar buiten het gebied tussen de twee ladingen, het kortste bij lading $Q_1$.}
-        \choice{Ja, maar buiten het gebied tussen de twee ladingen, het kortste bij lading $Q_2$.}
+        \choice[correct]{Ja, maar buiten het gebied tussen de twee ladingen, het dichtst bij lading $Q_1$.}
+        \choice{Ja, maar buiten het gebied tussen de twee ladingen, het dichtst bij lading $Q_2$.}
     \end{multipleChoice}
 
     \begin{hint}
@@ -353,9 +353,11 @@
     \end{hint}
 
     \begin{solution}\nl
-        Omdat beide ladingen verschillend zijn, wijzen hun velden in het gebied \emph{buiten} $Q_1$ en $Q_2$ in tegengestelde zin naar elkaar toe (weg van de positieve lading $Q_2$ en naar de negatieve lading $Q_1$).
+        Tussen $Q_1$ en $Q_2$ wijzen beide velden in dezelfde zin (weg van de positieve lading $Q_2$, en dus ook naar de negatieve lading $Q_1$ toe): daar kunnen ze elkaar dus nooit opheffen.
 
-        Om het veld van de zwakkere lading $Q_1$ even groot te maken als dat van de sterkere lading $Q_2$, moet je dichter bij $Q_1$ staan (kleinere afstand compenseert de kleinere lading). Het nulpunt ligt dus links van lading $Q_1$, of dus buiten de twee ladingen het kotrste bij de kleinse lading $Q_1$.
+        Links van $Q_1$ wijst het veld van $Q_1$ naar $Q_1$ toe (dus naar rechts) en het veld van $Q_2$ weg van $Q_2$ (dus naar links): daar staan de velden wel tegenover elkaar. Rechts van $Q_2$ geldt hetzelfde in de andere richting, maar omdat $Q_2$ daar de dichtstbijzijnde (en bovendien sterkste) lading is, kan de verder gelegen, zwakkere $Q_1$ nooit een even groot veld leveren: enkel links van $Q_1$ ligt dus een echt nulpunt.
+
+        Om het veld van de zwakkere lading $Q_1$ even groot te maken als dat van de sterkere lading $Q_2$, moet je immers dichter bij $Q_1$ staan (kleinere afstand compenseert de kleinere lading). Het nulpunt ligt dus buiten het gebied tussen de twee ladingen, \textbf{het dichtst bij de zwakste lading $Q_1$}.
     \end{solution}
 \end{question}
 %———————————————————————————————————————

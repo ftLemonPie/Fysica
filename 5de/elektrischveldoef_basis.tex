@@ -1,5 +1,5 @@
 \documentclass{ximera}
-%verbeterd 24 september 2026
+%verbeterd 28/9/26
 \title{Vraagstukken elektrisch veld: basis}
 \author{Daan Lipkens}
 
@@ -15,7 +15,7 @@
 
     Bereken de grootte van de elektrische kracht op de testlading.
 
-    \[ F_e = \answer[tolerance=0.005,onlineshowanswerbutton]{1.0}\cdot 10^{-4} \, \mathrm{N} \]
+    \[ F_e = \answer[tolerance=0.005,onlineshowanswerbutton]{1.0} \cdot 10^{-4} \, \mathrm{N} \]
 
     \begin{solution}\nl
         \underline{Gegevens:}
@@ -70,7 +70,7 @@
 
     Bereken de grootte van de testlading $Q_t$.
 
-    \[ Q_t = \answer[tolerance=0.01,onlineshowanswerbutton]{3.0}\cdot 10^{-7} \, \mathrm{\mu C} \]
+    \[ Q_t = \answer[tolerance=0.01,onlineshowanswerbutton]{3.0} \cdot 10^{-7} \, \mathrm{C} \]
 
     \begin{hint}
         Herschrijf $E = F_e/Q_t$ naar $Q_t$.
@@ -109,17 +109,16 @@
             \underline{Gegevens:}
             \begin{align*}
                 & Q = -4{,}0 \, \mathrm{\mu C} = -4{,}0 \cdot 10^{-6} \, \mathrm{C} & & E = 2{,}5 \cdot 10^{4} \, \mathrm{N/C}
-        \end{align*}
+            \end{align*}
 
-        \underline{Gevraagd:} $F_e$\\
+            \underline{Gevraagd:} $F_e$\\
 
-        \underline{Oplossing:}\\            
+            \underline{Oplossing:}\\
             \begin{align*}
-             E &= \frac{F_e}{Q_t} \\
-            \Leftrightarrow F_e &= |Q| \cdot E \\
-            &= 4{,}0 \cdot 10^{-6} \, \mathrm{C} \cdot 2{,}5 \cdot 10^{4} \, \mathrm{N/C} \\
-            &= 0{,}10 \, \mathrm{N}\\
-            & = 1{,}0\cdot 10^{-1} \, \mathrm{N}
+                E &= \frac{F_e}{Q} \\
+                \Leftrightarrow F_e &= |Q| \cdot E \\
+                    &= 4{,}0 \cdot 10^{-6} \, \mathrm{C} \cdot 2{,}5 \cdot 10^{4} \, \mathrm{N/C} \\
+                    &= 0{,}10 \, \mathrm{N} = 1{,}0 \cdot 10^{-1} \, \mathrm{N}
             \end{align*}
         \end{solution}
     \end{question}
@@ -162,7 +161,7 @@
     \begin{question}
         Bereken de grootte van de lading.
 
-        \[ |Q| = \answer[tolerance=0.1,onlineshowanswerbutton]{2.0}\cdot 10^{-6} \, \mathrm{C} \]
+        \[ |Q| = \answer[tolerance=0.1,onlineshowanswerbutton]{2.0} \cdot 10^{-6} \, \mathrm{C} \]
 
         \begin{solution}\nl
             \underline{Gegevens:}
@@ -174,10 +173,10 @@
 
             \underline{Oplossing:}\\
             \begin{align*}
-             E &= \frac{F_e}{Q_t} \\
-            \Leftrightarrow |Q| &= \frac{F_e}{E} \\
-                    &= \frac{1{,}6 \cdot 10^{-2} \, \mathrm{N}}{8{,}0 \cdot 10^{3} \, \mathrm{N/C}} \\
-                    &= 2{,}0 \cdot 10^{-6} \, \mathrm{C}
+                E &= \frac{F_e}{Q} \\
+                \Leftrightarrow |Q| &= \frac{F_e}{E} \\
+                        &= \frac{1{,}6 \cdot 10^{-2} \, \mathrm{N}}{8{,}0 \cdot 10^{3} \, \mathrm{N/C}} \\
+                        &= 2{,}0 \cdot 10^{-6} \, \mathrm{C}
             \end{align*}
         \end{solution}
     \end{question}
@@ -219,9 +218,19 @@
         \[ E = \answer[tolerance=0.05,onlineshowanswerbutton]{6.7} \cdot 10^{5} \, \mathrm{N/C} \]
 
         \begin{solution}\nl
-            \[
-                E = k_e \frac{|Q|}{r^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 3{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}20 \, \mathrm{m})^{2}} = 6{,}7 \cdot 10^{5} \, \mathrm{N/C}
-            \]
+            \underline{Gegevens:}
+            \begin{align*}
+                & Q = -3{,}0 \cdot 10^{-6} \, \mathrm{C} & & r = 0{,}20 \, \mathrm{m}
+            \end{align*}
+
+            \underline{Gevraagd:} $E$\\
+
+            \underline{Oplossing:}\\
+            \begin{align*}
+                E &= k_e \frac{|Q|}{r^{2}} \\
+                  &= \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 3{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}20 \, \mathrm{m})^{2}} \\
+                  &= 6{,}7 \cdot 10^{5} \, \mathrm{N/C}
+            \end{align*}
         \end{solution}
     \end{question}
 
@@ -229,11 +238,9 @@
         Wat is de richting en zin van het elektrisch veld in punt \textit{P}?
 
         \wordChoice{\choice{Van de lading weg}\choice[correct]{Naar de lading toe}}
-        \begin{onlineOnly}
-            \begin{hint}
-                Wat is het teken van de bronlading?
-            \end{hint}
-        \end{onlineOnly}
+        \begin{hint}
+            Wat is het teken van de bronlading?
+        \end{hint}
         \begin{solution}\nl
             De bronlading is \textbf{negatief}, dus wijst het elektrisch veld radiaal \textbf{naar de lading toe}.
         \end{solution}
@@ -246,8 +253,7 @@
 \begin{exercise}
     Een testlading $Q_t = +2{,}0 \cdot 10^{-6} \, \mathrm{C}$ ondervindt in een bepaald punt een elektrische kracht van $0{,}015 \, \mathrm{N}$. Bereken de grootte van het elektrisch veld in dat punt.
 
-    \[ E = \answer[tolerance=100,onlineshowanswerbutton]{7500} \, \mathrm{N/C} \]
-
+    \[ E = \answer[tolerance=0.1,onlineshowanswerbutton]{7.5} \cdot 10^{3} \, \mathrm{N/C} \]
 
     \begin{solution}\nl
         \underline{Gegevens:}
@@ -288,10 +294,10 @@
 
         \underline{Oplossing:}\\
         \begin{align*}
-             E &= \frac{F_e}{Q_t} \\
+            E &= \frac{F_e}{Q} \\
             \Leftrightarrow F_e &= Q \cdot E \\
                 &= 5{,}0 \cdot 10^{-6} \, \mathrm{C} \cdot 4{,}0 \cdot 10^{4} \, \mathrm{N/C} \\
-                &= 0{,}20 \, \mathrm{N}= 2{,}0\cdot 10^{-1} \, \mathrm{N}
+                &= 0{,}20 \, \mathrm{N} = 2{,}0 \cdot 10^{-1} \, \mathrm{N}
         \end{align*}
         Omdat $Q$ positief is, heeft $F_e$ dezelfde richting en zin als $\vec{E}$.
     \end{solution}
@@ -321,7 +327,7 @@
         \begin{align*}
             E &= k_e \frac{|Q|}{r^{2}} \\
             r^{2} &= k_e \frac{|Q|}{E} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 8{,}0 \cdot 10^{-6} \, \mathrm{C}}{2{,}0 \cdot 10^{5} \, \mathrm{N/C}} = 0{,}36 \, \mathrm{m^2}\\
-            r &= 0{,}60 \, \mathrm{m} = 6{,}0\cdot 10^{-1} \mathrm{m}
+            r &= 0{,}60 \, \mathrm{m} = 6{,}0 \cdot 10^{-1} \, \mathrm{m}
         \end{align*}
     \end{solution}
 \end{exercise}

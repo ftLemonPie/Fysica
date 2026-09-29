@@ -1,5 +1,5 @@
 \documentclass{ximera}
-%nieuw 2 september 2026
+%verbeterd 29/9/26
 \title{Vraagstukken elektrisch veld: ladingen op een lijn}
 \author{Daan Lipkens}
 
@@ -81,10 +81,6 @@
     \[ x = \answer[tolerance=0.02,onlineshowanswerbutton]{0.40} \, \mathrm{m} \]
 
     \begin{hint}
-        $Q_2$ heb je niet nodig.
-    \end{hint}
-
-    \begin{hint}
         Noem de afstand tot $Q_1$ gelijk aan $x$, dan is de afstand tot $Q_3$ gelijk aan $(1{,}20 \, \mathrm{m} - x)$.
     \end{hint}
     \begin{hint}
@@ -113,7 +109,7 @@
         \[
             x = \frac{d}{3} = \frac{1{,}20 \, \mathrm{m}}{3} = 0{,}40 \, \mathrm{m} = 4{,}0\cdot 10^{-1} \, \mathrm{m}
         \]
-        Het gezocht punt ligt dus op $4{,}0\cdot 10^{-1} \, \mathrm{m}$ van $Q_1$ (en dus $0{,}80 \, \mathrm{m}$ van $Q_3$), zoals verwacht dichter bij de kleinste lading.
+        Het gezochte punt ligt dus op $4{,}0\cdot 10^{-1} \, \mathrm{m}$ van $Q_1$ (en dus $0{,}80 \, \mathrm{m}$ van $Q_3$), zoals verwacht dichter bij de kleinste lading.
     \end{solution}
 \end{exercise}
 %———————————————————————————————————————
@@ -202,7 +198,7 @@
             & r_{1} = 0{,}30 \, \mathrm{m} & & r_{2} = 0{,}50 \, \mathrm{m}
         \end{align*}
 
-        \underline{Gevraagd:} $E_{\text{res}}$ in $P$\\
+        \underline{Gevraagd:} $E_{\text{net}}$ in $P$\\
 
         \underline{Oplossing:}\\
         \textbf{Stap 1: Grootte van de afzonderlijke velden}
@@ -219,7 +215,7 @@
         \begin{align*}
             E_{\text{net}} &= E_1 - E_2 = 3{,}0 \cdot 10^{5} \, \mathrm{N/C} - 2{,}5 \cdot 10^{5} \, \mathrm{N/C} = 4{,}8 \cdot 10^{4} \, \mathrm{N/C}
         \end{align*}
-        Het resulterende veld wijst naar \textbf{rechts} ($+x$-richting), naar de sterkste lading $Q_2$ toe.
+        $E_1$ is groter dan $E_2$: hoewel $Q_1$ de zwakste lading is, ligt ze dichter bij $P$ en overheerst daardoor haar bijdrage. Het resulterende veld wijst dus naar \textbf{rechts} ($+x$-richting), in de zin van $\vec{E}_1$.
     \end{solution}
 \end{exercise}
 %———————————————————————————————————————
@@ -282,13 +278,12 @@
 
     Bereken de grootte en richting van het totale elektrisch veld in punt \textit{P} op $x = -0{,}20 \, \mathrm{m}$.
 
-    \[ E_{\text{net}} = \answer[tolerance=0.1,onlineshowanswerbutton]{3.4} \cdot 10^{5} \, \mathrm{N/C} \] en staat naar  \wordChoice{    
-                \choice[correct]{links}  
-                \choice{rechts}  
+    \[ E_{\text{net}} = \answer[tolerance=0.1,onlineshowanswerbutton]{3.4} \cdot 10^{5} \, \mathrm{N/C} \] en staat naar \wordChoice{
+                \choice[correct]{links}
+                \choice{rechts}
                 \choice{boven}
-                \choice{onder}  
-                }  
-    
+                \choice{onder}
+                }
 
     \begin{hint}
         $P$ ligt links van beide ladingen: $\vec{E}_1$ wijst dan weg van $Q_1$ (dus naar links), terwijl $\vec{E}_2$ naar de negatieve lading $Q_2$ toe wijst (dus naar rechts).
@@ -393,7 +388,7 @@
         \end{hint}
 
         \begin{solution}\nl
-            Tussen de ladingen wijzen beide velden in dezelfde zin (van $Q_1$ weg, naar $Q_2$ toe): daar kunnen ze elkaar dus nooit opheffen. Rechts van $Q_2$ is $Q_2$ altijd het dichtst en het sterkst, dus domineert dat veld daar volledig. Enkel links van $Q_1$, aan de kant van de zwakste lading, kan de kleinere lading $Q_1$ - dankzij de kleinere afstand - hetzelfde veld opwekken als de grotere, verder gelegen lading $Q_2$.
+            Tussen de ladingen wijzen beide velden in dezelfde zin (van $Q_1$ weg, naar $Q_2$ toe): daar kunnen ze elkaar dus nooit opheffen. Rechts van $Q_2$ is $Q_2$ altijd het dichtst en het sterkst, dus domineert dat veld daar volledig. Enkel links van $Q_1$, aan de kant van de zwakste lading, kan de kleinere lading $Q_1$, dankzij de kleinere afstand, hetzelfde veld opwekken als de grotere, verder gelegen lading $Q_2$.
         \end{solution}
     \end{question}
 

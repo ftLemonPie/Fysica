@@ -1,15 +1,15 @@
 \documentclass{ximera}
-%verbeterd 27/9/26
+%verbeterd 8/10/26
 \title{Vraagstukken elektrische krachtwerking: goniometrische figuren}
 \author{Daan Lipkens}
 
 \begin{document}
 \begin{abstract}
-    Oefeningen op coulombkracht met goniometrische figuren (enkel Pythagoras), van makkelijk naar moeilijk.
+    Oefeningen op coulombkracht met goniometrische figuren (enkel Pythagoras, sinus, cosinus en tangens in rechthoekige driehoeken), van makkelijk naar moeilijk.
 \end{abstract}
 \maketitle
+\section{Oefeningen coulombkracht met goniometrische figuren}
 
-%———————————————————————————————————————
 % OEFENING 1 (makkelijkst): rechthoekige driehoek, loodrechte krachten (Pythagoras)
 \begin{exercise}
     Drie puntladingen bevinden zich in een assenstelsel. Lading $Q_{1} = -5{,}0 \cdot 10^{-6} \, \mathrm{C}$ ligt in de oorsprong $(0{,}00 \, \mathrm{m} ; 0{,}00 \, \mathrm{m})$. Lading $Q_{2} = +4{,}0 \cdot 10^{-6} \, \mathrm{C}$ ligt op de $x$-as op een afstand van $0{,}40 \, \mathrm{m}$ van de oorsprong. Lading $Q_{3} = +3{,}0 \cdot 10^{-6} \, \mathrm{C}$ ligt op de $y$-as op een afstand van $0{,}30 \, \mathrm{m}$ van de oorsprong.
@@ -79,8 +79,8 @@
         \begin{align*}
             F_{\text{res},1} &= \sqrt{F_{21}^{2} + F_{31}^{2}} \\
             &= \sqrt{(1{,}1238 \, \mathrm{N})^{2} + (1{,}4983 \, \mathrm{N})^{2}} \\
-            &= \sqrt{1{,}2628 + 2{,}2450} \\
-            &= \sqrt{3{,}5078} \\
+            &= \sqrt{1{,}2628\, \mathrm{N}^2 + 2{,}2450\, \mathrm{N}^2} \\
+            &= \sqrt{3{,}5078\, \mathrm{N}^2} \\
             &= 1{,}8729 \, \mathrm{N} \simeq 1{,}9 \, \mathrm{N}
         \end{align*}
         De resulterende kracht is ongeveer $1{,}9 \, \mathrm{N}$ groot.
@@ -90,7 +90,88 @@
 
 
 %———————————————————————————————————————
-% OEFENING EXTRA 2: Vierkant (Complexe Vectoriële Optelling)
+
+
+%———————————————————————————————————————
+% OEFENING 2: kracht op de lading in de rechte hoek, met richting (Pythagoras + tan)
+\begin{exercise}
+    Drie puntladingen liggen in de hoekpunten van een rechthoekige driehoek. Lading $Q_{1} = +3{,}0 \, \mathrm{\mu C}$ zit in de rechte hoek. Lading $Q_{2} = +2{,}0 \, \mathrm{\mu C}$ ligt $20 \, \mathrm{cm}$ rechts van $Q_{1}$ en lading $Q_{3} = -4{,}0 \, \mathrm{\mu C}$ ligt $30 \, \mathrm{cm}$ boven $Q_{1}$.
+
+    \begin{center}
+        \begin{tikzpicture}
+            \useasboundingbox (-1.5, -1.5) rectangle (4.5, 4.5);
+            \poslading{A}{0,0}
+            \poslading{B}{2,0}
+            \neglading{C}{0,3}
+
+            \draw[dashed, gray] (A) -- (B) node[midway,below=4pt] {$20 \, \mathrm{cm}$};
+            \draw[dashed, gray] (A) -- (C) node[midway,left=4pt] {$30 \, \mathrm{cm}$};
+            \draw[dashed, lightgray] (C) -- (B);
+
+            \tkzLabelPoint[below left=2.5mm](A){$Q_{1}$}
+            \tkzLabelPoint[below right=2.5mm](B){$Q_{2}$}
+            \tkzLabelPoint[above left=2.5mm](C){$Q_{3}$}
+        \end{tikzpicture}
+    \end{center}
+
+    \begin{question}
+        Bereken de grootte van de resulterende kracht op $Q_{1}$.
+
+        \[ F_{\text{res},1} = \answer[tolerance=0.05,onlineshowanswerbutton]{1.8} \, \mathrm{N} \]
+
+        \begin{hint}
+            Teken de twee krachten op $Q_1$. Staan ze in dezelfde zin, tegengesteld, of loodrecht op elkaar?
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & Q_{1} = +3{,}0 \cdot 10^{-6} \, \mathrm{C} & & Q_{2} = +2{,}0 \cdot 10^{-6} \, \mathrm{C} \\
+                & Q_{3} = -4{,}0 \cdot 10^{-6} \, \mathrm{C} & & r_{12} = 0{,}20 \, \mathrm{m} \\
+                & r_{13} = 0{,}30 \, \mathrm{m} & &
+            \end{align*}
+
+            \underline{Gevraagd:} $F_{\text{res},1}$\\
+
+            \underline{Oplossing:}\\
+            $Q_2$ is positief en stoot $Q_1$ af: $\vec{\mathbf{F}}_{21}$ wijst naar links. $Q_3$ is negatief en trekt $Q_1$ aan: $\vec{\mathbf{F}}_{31}$ wijst naar boven. Beide krachten staan dus loodrecht op elkaar.
+            \begin{align*}
+                F_{21} &= \frac{k\cdot\lvert Q_{2}\rvert\cdot\lvert Q_{1}\rvert}{r_{12}^{2}}
+                = \frac{8{,}99 \cdot 10^9 \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 2{,}0 \cdot 10^{-6} \, \mathrm{C} \cdot 3{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}20 \, \mathrm{m})^{2}} = 1{,}3485 \, \mathrm{N} \\
+                F_{31} &= \frac{k\cdot\lvert Q_{3}\rvert\cdot\lvert Q_{1}\rvert}{r_{13}^{2}}
+                = \frac{8{,}99 \cdot 10^9 \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 4{,}0 \cdot 10^{-6} \, \mathrm{C} \cdot 3{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}30 \, \mathrm{m})^{2}} = 1{,}1987 \, \mathrm{N}
+            \end{align*}
+            \begin{align*}
+                F_{\text{res},1} &= \sqrt{F_{21}^{2} + F_{31}^{2}} \\
+                &= \sqrt{(1{,}3485 \, \mathrm{N})^{2} + (1{,}1987 \, \mathrm{N})^{2}} \\
+                &= \sqrt{3{,}2553 \, \mathrm{N}^2} = 1{,}8042 \, \mathrm{N} \simeq 1{,}8 \, \mathrm{N}
+            \end{align*}
+            De resulterende kracht is ongeveer $1{,}8 \, \mathrm{N}$ groot.
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Welke hoek maakt de resulterende kracht met de negatieve $x$-as (de richting van $\vec{\mathbf{F}}_{21}$)?
+
+        \[ \theta = \answer[tolerance=0.05,onlineshowanswerbutton]{41.6}^\circ \]
+
+        \begin{hint}
+            $\vec{\mathbf{F}}_{21}$, $\vec{\mathbf{F}}_{31}$ en $\vec{\mathbf{F}}_{\text{res}}$ vormen samen een rechthoekige driehoek. Welke zijde ligt aanliggend aan de gevraagde hoek en welke ligt overstaand?
+        \end{hint}
+
+        \begin{solution}\nl
+            In de rechthoekige driehoek van de krachten ligt $F_{21}$ aanliggend aan $\theta$ en $F_{31}$ overstaand:
+            \[
+                \tan(\theta) = \frac{F_{31}}{F_{21}} = \frac{1{,}1987 \, \mathrm{N}}{1{,}3485 \, \mathrm{N}}
+                \quad\Rightarrow\quad \theta = \tan^{-1}\left(\frac{1{,}1987 \, \mathrm{N}}{1{,}3485 \, \mathrm{N}}\right) = 41{,}6^\circ
+            \]
+            De resulterende kracht wijst dus schuin naar linksboven, $41{,}6^\circ$ boven de negatieve $x$-as.
+        \end{solution}
+    \end{question}
+\end{exercise}
+%———————————————————————————————————————
+
+% OEFENING 3: Vierkant (loodrechte krachten + diagonaal, symmetrie)
 \begin{exercise}
     Vier puntladingen bevinden zich op de hoekpunten van een vierkant met zijde $0{,}20 \, \mathrm{m}$.  
     Lading $Q_{1} = +2{,}0 \cdot 10^{-6} \, \mathrm{C}$ bevindt zich linksonder. Lading $Q_{2} = -2{,}0 \cdot 10^{-6} \, \mathrm{C}$ bevindt zich rechtsonder. Lading $Q_{3} = +2{,}0 \cdot 10^{-6} \, \mathrm{C}$ bevindt zich rechtsboven. Lading $Q_{4} = -2{,}0 \cdot 10^{-6} \, \mathrm{C}$ bevindt zich linksboven.
@@ -166,6 +247,243 @@
                 F_{\text{res}} = F_{24} - F_{31} = 1{,}271 \, \mathrm{N} - 0{,}4495 \, \mathrm{N} = 0{,}8215 \, \mathrm{N} \simeq 8{,}2 \cdot 10^{-1} \, \mathrm{N}
             \]
             De netto kracht trekt lading $Q_1$ schuin naar het centrum van het vierkant.
+        \end{solution}
+    \end{question}
+\end{exercise}
+%———————————————————————————————————————
+
+
+%———————————————————————————————————————
+% OEFENING 4: kracht op een scherpe hoek, ontbinden met sin en cos
+\begin{exercise}
+    Drie puntladingen liggen in de hoekpunten van een rechthoekige driehoek. Lading $Q_{1} = +4{,}0 \, \mathrm{\mu C}$ zit in de rechte hoek, lading $Q_{2} = +3{,}0 \, \mathrm{\mu C}$ ligt $0{,}40 \, \mathrm{m}$ rechts van $Q_{1}$ en lading $Q_{3} = -5{,}0 \, \mathrm{\mu C}$ ligt $0{,}30 \, \mathrm{m}$ boven $Q_{1}$.
+
+    Je zoekt de resulterende kracht op $Q_{2}$. Let op: de kracht van $Q_{3}$ op $Q_{2}$ staat nu \emph{niet} loodrecht op die van $Q_{1}$.
+
+    \begin{center}
+        \begin{tikzpicture}
+            \useasboundingbox (-1.5, -1.5) rectangle (5.5, 4.5);
+            \poslading{A}{0,0}
+            \poslading{B}{4,0}
+            \neglading{C}{0,3}
+
+            \draw[dashed, gray] (A) -- (B) node[midway,below=4pt] {$0{,}40 \, \mathrm{m}$};
+            \draw[dashed, gray] (A) -- (C) node[midway,left=4pt] {$0{,}30 \, \mathrm{m}$};
+            \draw[dashed, gray] (C) -- (B);
+
+            \tkzLabelPoint[below left=2.5mm](A){$Q_{1}$}
+            \tkzLabelPoint[below right=2.5mm](B){$Q_{2}$}
+            \tkzLabelPoint[above left=2.5mm](C){$Q_{3}$}
+        \end{tikzpicture}
+    \end{center}
+
+    \begin{question}
+        Bereken de groottes van de krachten $F_{12}$ en $F_{32}$ op $Q_{2}$.
+
+        \[ F_{12} = \answer[tolerance=0.05,onlineshowanswerbutton]{0.67} \, \mathrm{N} \qquad F_{32} = \answer[tolerance=0.05,onlineshowanswerbutton]{0.54} \, \mathrm{N} \]
+
+        \begin{hint}
+            Je kent de afstand $r_{23}$ nog niet. Welke zijde van de driehoek is dit, en hoe vind je haar?
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & Q_{1} = +4{,}0 \cdot 10^{-6} \, \mathrm{C} & & Q_{2} = +3{,}0 \cdot 10^{-6} \, \mathrm{C} \\
+                & Q_{3} = -5{,}0 \cdot 10^{-6} \, \mathrm{C} & & r_{12} = 0{,}40 \, \mathrm{m} \\
+                & r_{13} = 0{,}30 \, \mathrm{m} & &
+            \end{align*}
+
+            \underline{Gevraagd:} $F_{12}$ en $F_{32}$\\
+
+            \underline{Oplossing:}\\
+            De afstand $r_{23}$ is de schuine zijde van de rechthoekige driehoek:
+            \[
+                r_{23} = \sqrt{r_{12}^{2} + r_{13}^{2}} = \sqrt{(0{,}40 \, \mathrm{m})^{2} + (0{,}30 \, \mathrm{m})^{2}} = 0{,}50 \, \mathrm{m}
+            \]
+            \begin{align*}
+                F_{12} &= \frac{8{,}99 \cdot 10^9 \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 4{,}0 \cdot 10^{-6} \, \mathrm{C} \cdot 3{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}40 \, \mathrm{m})^{2}} = 0{,}67425 \, \mathrm{N} \simeq 0{,}67 \, \mathrm{N} \\
+                F_{32} &= \frac{8{,}99 \cdot 10^9 \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 5{,}0 \cdot 10^{-6} \, \mathrm{C} \cdot 3{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}50 \, \mathrm{m})^{2}} = 0{,}5394 \, \mathrm{N} \simeq 0{,}54 \, \mathrm{N}
+            \end{align*}
+            $Q_1$ en $Q_2$ zijn beide positief: $\vec{\mathbf{F}}_{12}$ is een afstoting en wijst naar rechts. $Q_3$ is negatief: $\vec{\mathbf{F}}_{32}$ is een aantrekking en wijst langs de schuine zijde naar linksboven.
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Ontbind $\vec{\mathbf{F}}_{32}$ in een horizontale en een verticale component.
+
+        \[ F_{32,x} = \answer[tolerance=0.05,onlineshowanswerbutton]{0.43} \, \mathrm{N} \qquad F_{32,y} = \answer[tolerance=0.05,onlineshowanswerbutton]{0.32} \, \mathrm{N} \]
+
+        \begin{hint}
+            Bepaal eerst de hoek die $\vec{\mathbf{F}}_{32}$ met de horizontale maakt. Die hoek zit ook in de driehoek $Q_1 Q_2 Q_3$ bij $Q_2$.
+        \end{hint}
+        \begin{hint}
+            De krachtvector is de schuine zijde van een rechthoekige driehoek waarvan de componenten de rechthoekszijden zijn.
+        \end{hint}
+
+        \begin{solution}\nl
+            De hoek $\alpha$ bij $Q_2$ in de driehoek $Q_1 Q_2 Q_3$:
+            \[
+                \tan(\alpha) = \frac{r_{13}}{r_{12}} = \frac{0{,}30 \, \mathrm{m}}{0{,}40 \, \mathrm{m}} \quad\Rightarrow\quad \alpha = 36{,}87^\circ
+            \]
+            \begin{center}
+                \begin{tikzpicture}
+                    \useasboundingbox (-1.5, -1.5) rectangle (6, 4.5);
+                    \poslading{A}{0,0}
+                    \poslading{B}{4,0}
+                    \neglading{C}{0,3}
+                    \draw[dashed, gray] (A) -- (B);
+                    \draw[dashed, gray] (A) -- (C);
+                    \draw[dashed, gray] (C) -- (B);
+
+                    \draw[kracht] (B) -- ++(1.2,0) node[above] {$\vec{\mathbf{F}}_{12}$};
+                    \draw[kracht] (B) -- ++(-1.6,1.2) node[above] {$\vec{\mathbf{F}}_{32}$};
+                    \draw[krachtcomponent] (B) -- ++(-1.6,0) node[below] {$F_{32,x}$};
+                    \draw[krachtcomponent] (B) -- ++(0,1.2) node[right] {$F_{32,y}$};
+                    \draw[gray, dashed, thin] (2.4,0) -- (2.4,1.2);
+                    \draw[gray, dashed, thin] (4,1.2) -- (2.4,1.2);
+
+                    \tkzLabelPoint[below left=2.5mm](A){$Q_{1}$}
+                    \tkzLabelPoint[below right=2.5mm](B){$Q_{2}$}
+                    \tkzLabelPoint[above left=2.5mm](C){$Q_{3}$}
+                \end{tikzpicture}
+            \end{center}
+            \begin{align*}
+                F_{32,x} &= F_{32}\cdot\cos(\alpha) = 0{,}5394 \, \mathrm{N} \cdot \cos(36{,}87^\circ) = 0{,}4315 \, \mathrm{N} \simeq 0{,}43 \, \mathrm{N} \\
+                F_{32,y} &= F_{32}\cdot\sin(\alpha) = 0{,}5394 \, \mathrm{N} \cdot \sin(36{,}87^\circ) = 0{,}3236 \, \mathrm{N} \simeq 0{,}32 \, \mathrm{N}
+            \end{align*}
+            $F_{32,x}$ wijst naar links, $F_{32,y}$ wijst naar boven.
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken de grootte van de resulterende kracht op $Q_{2}$.
+
+        \[ F_{\text{res},2} = \answer[tolerance=0.05,onlineshowanswerbutton]{0.40} \, \mathrm{N} \]
+
+        \begin{hint}
+            Tel eerst alle horizontale componenten op en daarna alle verticale. Let op de zin van elke component: naar rechts en naar links hebben een tegengesteld teken.
+        \end{hint}
+
+        \begin{solution}\nl
+            Kies rechts en boven als positieve zin.
+            \begin{align*}
+                F_{x} &= F_{12} - F_{32,x} = 0{,}67425 \, \mathrm{N} - 0{,}4315 \, \mathrm{N} = 0{,}2427 \, \mathrm{N} \\
+                F_{y} &= F_{32,y} = 0{,}3236 \, \mathrm{N}
+            \end{align*}
+            De twee netto componenten staan loodrecht op elkaar:
+            \begin{align*}
+                F_{\text{res},2} &= \sqrt{F_{x}^{2} + F_{y}^{2}} \\
+                &= \sqrt{(0{,}2427 \, \mathrm{N})^{2} + (0{,}3236 \, \mathrm{N})^{2}} \\
+                &= \sqrt{0{,}1637 \, \mathrm{N}^2} = 0{,}4046 \, \mathrm{N} \simeq 4{,}0 \cdot 10^{-1} \, \mathrm{N}
+            \end{align*}
+            De resulterende kracht op $Q_2$ wijst schuin naar rechtsboven en is ongeveer $0{,}40 \, \mathrm{N}$ groot.
+        \end{solution}
+    \end{question}
+\end{exercise}
+%———————————————————————————————————————
+
+
+%———————————————————————————————————————
+% OEFENING 5 (moeilijkst): rechthoek, drie krachten waaronder een diagonaal, zonder symmetrie
+\begin{exercise}
+    Vier puntladingen liggen in de hoekpunten van een rechthoek van $4{,}0 \, \mathrm{dm}$ bij $3{,}0 \, \mathrm{dm}$. Lading $Q_{1} = +2{,}0 \, \mathrm{\mu C}$ zit linksonder, $Q_{2} = +3{,}0 \, \mathrm{\mu C}$ rechtsonder, $Q_{3} = -1{,}5 \, \mathrm{\mu C}$ linksboven en $Q_{4} = -4{,}0 \, \mathrm{\mu C}$ rechtsboven. Je zoekt de resulterende kracht op $Q_{1}$.
+
+    \begin{center}
+        \begin{tikzpicture}
+            \useasboundingbox (-1.5, -1.5) rectangle (5.5, 4.5);
+            \poslading{A}{0,0}
+            \poslading{B}{4,0}
+            \neglading{C}{0,3}
+            \neglading{D}{4,3}
+
+            \draw[dashed, gray] (A) -- (B) node[midway,below=4pt] {$4{,}0 \, \mathrm{dm}$};
+            \draw[dashed, gray] (A) -- (C) node[midway,left=4pt] {$3{,}0 \, \mathrm{dm}$};
+            \draw[dashed, lightgray] (C) -- (D) -- (B);
+
+            \tkzLabelPoint[below left=2.5mm](A){$Q_{1}$}
+            \tkzLabelPoint[below right=2.5mm](B){$Q_{2}$}
+            \tkzLabelPoint[above left=2.5mm](C){$Q_{3}$}
+            \tkzLabelPoint[above right=2.5mm](D){$Q_{4}$}
+        \end{tikzpicture}
+    \end{center}
+
+    \begin{question}
+        Bereken de groottes van de drie krachten op $Q_{1}$.
+
+        \[ F_{21} = \answer[tolerance=0.05,onlineshowanswerbutton]{0.34} \, \mathrm{N} \qquad F_{31} = \answer[tolerance=0.05,onlineshowanswerbutton]{0.30} \, \mathrm{N} \qquad F_{41} = \answer[tolerance=0.05,onlineshowanswerbutton]{0.29} \, \mathrm{N} \]
+
+        \begin{hint}
+            Maak een schets met de drie krachten op $Q_1$. Welke afstand ontbreekt nog en hoe vind je die in de rechthoek?
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & Q_{1} = +2{,}0 \cdot 10^{-6} \, \mathrm{C} & & Q_{2} = +3{,}0 \cdot 10^{-6} \, \mathrm{C} \\
+                & Q_{3} = -1{,}5 \cdot 10^{-6} \, \mathrm{C} & & Q_{4} = -4{,}0 \cdot 10^{-6} \, \mathrm{C} \\
+                & r_{12} = 0{,}40 \, \mathrm{m} & & r_{13} = 0{,}30 \, \mathrm{m}
+            \end{align*}
+
+            \underline{Gevraagd:} $F_{21}$, $F_{31}$ en $F_{41}$\\
+
+            \underline{Oplossing:}\\
+            De afstand tot $Q_4$ is de diagonaal van de rechthoek:
+            \[
+                r_{14} = \sqrt{(0{,}40 \, \mathrm{m})^{2} + (0{,}30 \, \mathrm{m})^{2}} = 0{,}50 \, \mathrm{m}
+            \]
+            \begin{align*}
+                F_{21} &= \frac{8{,}99 \cdot 10^9 \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 3{,}0 \cdot 10^{-6} \, \mathrm{C} \cdot 2{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}40 \, \mathrm{m})^{2}} = 0{,}3371 \, \mathrm{N} \\
+                F_{31} &= \frac{8{,}99 \cdot 10^9 \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 1{,}5 \cdot 10^{-6} \, \mathrm{C} \cdot 2{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}30 \, \mathrm{m})^{2}} = 0{,}2997 \, \mathrm{N} \\
+                F_{41} &= \frac{8{,}99 \cdot 10^9 \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 4{,}0 \cdot 10^{-6} \, \mathrm{C} \cdot 2{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}50 \, \mathrm{m})^{2}} = 0{,}2877 \, \mathrm{N}
+            \end{align*}
+            $Q_2$ stoot $Q_1$ af: $\vec{\mathbf{F}}_{21}$ wijst naar links. $Q_3$ trekt $Q_1$ aan: $\vec{\mathbf{F}}_{31}$ wijst naar boven. $Q_4$ trekt $Q_1$ aan: $\vec{\mathbf{F}}_{41}$ wijst langs de diagonaal naar rechtsboven.
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Ontbind $\vec{\mathbf{F}}_{41}$ in een horizontale en een verticale component.
+
+        \[ F_{41,x} = \answer[tolerance=0.05,onlineshowanswerbutton]{0.23} \, \mathrm{N} \qquad F_{41,y} = \answer[tolerance=0.05,onlineshowanswerbutton]{0.17} \, \mathrm{N} \]
+
+        \begin{hint}
+            Welke hoek maakt de diagonaal met de onderste zijde van de rechthoek? Je kent twee zijden van de rechthoekige driehoek waarin die hoek zit.
+        \end{hint}
+
+        \begin{solution}\nl
+            De hoek $\alpha$ tussen de diagonaal en de onderste zijde:
+            \[
+                \tan(\alpha) = \frac{0{,}30 \, \mathrm{m}}{0{,}40 \, \mathrm{m}} \quad\Rightarrow\quad \alpha = 36{,}87^\circ
+            \]
+            \begin{align*}
+                F_{41,x} &= F_{41}\cdot\cos(\alpha) = 0{,}2877 \, \mathrm{N} \cdot \cos(36{,}87^\circ) = 0{,}2301 \, \mathrm{N} \simeq 0{,}23 \, \mathrm{N} \\
+                F_{41,y} &= F_{41}\cdot\sin(\alpha) = 0{,}2877 \, \mathrm{N} \cdot \sin(36{,}87^\circ) = 0{,}1726 \, \mathrm{N} \simeq 0{,}17 \, \mathrm{N}
+            \end{align*}
+            Beide componenten wijzen naar rechts, respectievelijk naar boven.
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken de grootte van de resulterende kracht op $Q_{1}$.
+
+        \[ F_{\text{res},1} = \answer[tolerance=0.05,onlineshowanswerbutton]{0.48} \, \mathrm{N} \]
+
+        \begin{hint}
+            Tel alle horizontale componenten bij elkaar op en doe hetzelfde voor de verticale. Welke krachten wijzen naar links en welke naar rechts?
+        \end{hint}
+
+        \begin{solution}\nl
+            Kies rechts en boven als positieve zin.
+            \begin{align*}
+                F_{x} &= -F_{21} + F_{41,x} = -0{,}3371 \, \mathrm{N} + 0{,}2301 \, \mathrm{N} = -0{,}1070 \, \mathrm{N} \\
+                F_{y} &= F_{31} + F_{41,y} = 0{,}2997 \, \mathrm{N} + 0{,}1726 \, \mathrm{N} = 0{,}4723 \, \mathrm{N}
+            \end{align*}
+            \begin{align*}
+                F_{\text{res},1} &= \sqrt{F_{x}^{2} + F_{y}^{2}} \\
+                &= \sqrt{(-0{,}1070 \, \mathrm{N})^{2} + (0{,}4723 \, \mathrm{N})^{2}} \\
+                &= \sqrt{0{,}2345 \, \mathrm{N}^2} = 0{,}4843 \, \mathrm{N} \simeq 4{,}8 \cdot 10^{-1} \, \mathrm{N}
+            \end{align*}
+            De resulterende kracht wijst schuin naar linksboven (bijna verticaal) en is ongeveer $0{,}48 \, \mathrm{N}$ groot.
         \end{solution}
     \end{question}
 \end{exercise}

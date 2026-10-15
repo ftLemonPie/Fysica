@@ -28,7 +28,7 @@ In een homogeen veld zijn de equipotentiaaloppervlakken vlakken die evenwijdig l
             \node[right] at (5.25,\y) {$+$};
         }
         \foreach \y in {-1,-0.5,0,0.5,1} {
-            \draw[->, gray] (4.7,\y) -- (0.3,\y);
+            \draw[Eveldlijn] (4.85,\y) -- (0.15,\y);
         }
         \foreach \x in {1.25,2.5,3.75} {
             \draw[dashed, purple!70!black, thick] (\x,-1.4) -- (\x,1.4);
@@ -43,9 +43,24 @@ In een homogeen veld zijn de equipotentiaaloppervlakken vlakken die evenwijdig l
 De veldlijnen staan steeds \textbf{loodrecht} op de equipotentiaaloppervlakken. Dit geldt niet enkel voor een homogeen veld, maar voor \emph{elk} elektrisch veld.
 \end{remark}
 
-\begin{hint}
+\begin{remark}[title={Vergelijking met hoogtelijnen}]\nl
     Je kan equipotentiaallijnen vergelijken met hoogtelijnen op een stafkaart: elke lijn verbindt punten op dezelfde hoogte, en het pad van sterkste stijging (de helling) staat er steeds loodrecht op — net zoals veldlijnen loodrecht staan op de equipotentiaaloppervlakken.
-\end{hint}
+\end{remark}
+
+\begin{question}
+    Welke uitspraken over equipotentiaaloppervlakken in een homogeen elektrisch veld zijn juist?
+
+    \begin{selectAll}
+        \choice[correct]{Ze lopen evenwijdig met de platen.}
+        \choice{Ze lopen evenwijdig met de veldlijnen.}
+        \choice[correct]{Ze staan loodrecht op de veldlijnen.}
+        \choice{De potentiaal verandert als je langs een equipotentiaaloppervlak beweegt.}
+    \end{selectAll}
+
+    \begin{solution}\nl
+        Alle punten met dezelfde afstand tot de negatieve plaat hebben dezelfde potentiaal ($V = E \cdot d$): de equipotentiaaloppervlakken zijn vlakken evenwijdig met de platen, en dus loodrecht op de veldlijnen. Per definitie is de potentiaal constant langs een equipotentiaaloppervlak.
+    \end{solution}
+\end{question}
 
 \section{Potentiaal bepalen in een punt}
 Om de potentiaal in een willekeurig punt van een veld te bepalen, plaats je een (proef)lading $Q$ in dat punt en bereken je de verhouding $E_{\text{pot}}/Q$. Zoals eerder vermeld hangt deze verhouding niet af van de gekozen testlading $Q$ zelf, maar enkel van het veld en de plaats van het punt in dat veld.

@@ -1,0 +1,83 @@
+\documentclass{ximera}
+\title{Spanning, arbeid en energie}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+    Het verband tussen spanning en de arbeid die het elektrisch veld op een lading verricht.
+\end{abstract}
+\maketitle
+
+\section{Spanning als energie per lading}
+Beschouw een lading $Q$ die van punt $1$ naar punt $2$ beweegt onder invloed van een elektrisch veld. De spanning tussen deze twee punten is
+\[
+    U_{12} = V(1) - V(2) = \frac{E_{\text{pot}}(1)}{Q} - \frac{E_{\text{pot}}(2)}{Q} = \frac{E_{\text{pot}}(1) - E_{\text{pot}}(2)}{Q}
+\]
+
+Uit de wet van behoud van energie weten we dat $E_{\text{pot}}(1) + E_{\text{kin}}(1) = E_{\text{pot}}(2) + E_{\text{kin}}(2)$, en dus $E_{\text{pot}}(1) - E_{\text{pot}}(2) = E_{\text{kin}}(2) - E_{\text{kin}}(1)$.
+
+\begin{theorem}[title={Betekenis van de spanning}]\nl
+De spanning $U_{12}$ tussen twee punten $1$ en $2$ geeft de verandering van de kinetische energie per eenheid van lading, voor een lading die van $1$ naar $2$ beweegt:
+\begin{equation}\label{eq:spanning_energie}
+    U_{12} = \frac{\Delta E_{\text{kin}, 1 \to 2}}{Q}
+\end{equation}
+Ofwel, gebruik makend van $W = \Delta E_{\text{kin}}$ (arbeid-energiestelling):
+\begin{equation}\label{eq:arbeid_spanning}
+    W = Q \cdot U_{12}
+\end{equation}
+\end{theorem}
+
+\begin{example}[foldable=true,title={Voorbeeld: energie geleverd door een batterij}]\nl
+Een batterij van $12 \, \mathrm{V}$ verplaatst een lading van $1 \, \mathrm{C}$ van de ene pool naar de andere. Hoeveel energie komt daarbij vrij?
+
+\begin{solution}\nl
+\underline{Gegevens:}
+\begin{align*}
+    & U = 12 \, \mathrm{V} & & Q = 1 \, \mathrm{C}
+\end{align*}
+
+\underline{Gevraagd:} $W$
+
+\underline{Oplossing:}
+\begin{align*}
+    W = Q \cdot U = 1 \, \mathrm{C} \cdot 12 \, \mathrm{V} = 12 \, \mathrm{J}
+\end{align*}
+Er komt dus $12 \, \mathrm{J}$ energie vrij per coulomb lading die van de ene pool naar de andere beweegt.
+\end{solution}
+\end{example}
+
+\begin{remark}[title={In de praktijk}]\nl
+In een echte geleider botsen de vrije elektronen voortdurend tegen de roosterionen. Hierdoor wordt de kinetische energie die de elektronen winnen, grotendeels omgezet in warmte, in plaats van dat de elektronen steeds sneller blijven bewegen.
+\end{remark}
+
+\begin{question}
+    Een lading van $2{,}0 \, \mathrm{C}$ doorloopt een spanningsverschil van $6{,}0 \, \mathrm{V}$. Hoeveel arbeid verricht het elektrisch veld op deze lading?
+
+    \begin{multipleChoice}
+        \choice{$3{,}0 \, \mathrm{J}$}
+        \choice{$8{,}0 \, \mathrm{J}$}
+        \choice[correct]{$12 \, \mathrm{J}$}
+        \choice{$0{,}33 \, \mathrm{J}$}
+    \end{multipleChoice}
+
+    \begin{solution}\nl
+        $W = Q \cdot U = 2{,}0 \, \mathrm{C} \cdot 6{,}0 \, \mathrm{V} = 12 \, \mathrm{J}$.
+    \end{solution}
+\end{question}
+
+\begin{question}
+    Een positieve en een negatieve lading worden beide in rust losgelaten in hetzelfde homogene elektrische veld tussen twee platen. Welke uitspraken zijn juist?
+
+    \begin{selectAll}
+        \choice[correct]{Beide ladingen winnen kinetische energie.}
+        \choice[correct]{De positieve lading beweegt in de zin van de veldlijnen, de negatieve lading in de tegengestelde zin.}
+        \choice[correct]{De potentiële energie van beide ladingen daalt.}
+        \choice{De negatieve lading verliest kinetische energie.}
+    \end{selectAll}
+
+    \begin{solution}\nl
+        Op beide ladingen werkt een elektrische kracht in de richting van hun verplaatsing: het veld verricht positieve arbeid. Daardoor versnellen ze allebei, en volgens de wet van behoud van energie daalt hun potentiële energie.
+    \end{solution}
+\end{question}
+
+\end{document}

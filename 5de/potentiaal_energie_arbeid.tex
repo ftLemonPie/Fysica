@@ -1,0 +1,169 @@
+\documentclass{ximera}
+\title{Spanning, arbeid en energie}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+    Het verband tussen spanning en de arbeid die het elektrisch veld op een lading verricht, en de proef van Millikan als toepassing.
+\end{abstract}
+\maketitle
+
+\section{Spanning als energie per lading}
+Beschouw een lading $Q$ die van punt $1$ naar punt $2$ beweegt onder invloed van een elektrisch veld. De spanning tussen deze twee punten is
+\[
+    U_{12} = V(1) - V(2) = \frac{E_{\text{pot}}(1)}{Q} - \frac{E_{\text{pot}}(2)}{Q} = \frac{E_{\text{pot}}(1) - E_{\text{pot}}(2)}{Q}
+\]
+
+Uit de wet van behoud van energie weten we dat $E_{\text{pot}}(1) + E_{\text{kin}}(1) = E_{\text{pot}}(2) + E_{\text{kin}}(2)$, en dus $E_{\text{pot}}(1) - E_{\text{pot}}(2) = E_{\text{kin}}(2) - E_{\text{kin}}(1)$.
+
+\begin{theorem}[title={Betekenis van de spanning}]\nl
+De spanning $U_{12}$ tussen twee punten $1$ en $2$ geeft de verandering van de kinetische energie per eenheid van lading, voor een lading die van $1$ naar $2$ beweegt:
+\begin{equation}\label{eq:spanning_energie}
+    U_{12} = \frac{\Delta E_{\text{kin}, 1 \to 2}}{Q}
+\end{equation}
+Ofwel, gebruik makend van $W = \Delta E_{\text{kin}}$ (arbeid-energiestelling):
+\begin{equation}\label{eq:arbeid_spanning}
+    W = Q \cdot U_{12}
+\end{equation}
+\end{theorem}
+
+\begin{example}[foldable=true,title={Voorbeeld: energie geleverd door een batterij}]\nl
+Een batterij van $12 \, \mathrm{V}$ verplaatst een lading van $1 \, \mathrm{C}$ van de ene pool naar de andere. Hoeveel energie komt daarbij vrij?
+
+\begin{solution}\nl
+\underline{Gegevens:}
+\begin{align*}
+    & U = 12 \, \mathrm{V} & & Q = 1 \, \mathrm{C}
+\end{align*}
+
+\underline{Gevraagd:} $W$
+
+\underline{Oplossing:}
+\begin{align*}
+    W = Q \cdot U = 1 \, \mathrm{C} \cdot 12 \, \mathrm{V} = 12 \, \mathrm{J}
+\end{align*}
+Er komt dus $12 \, \mathrm{J}$ energie vrij per coulomb lading die van de ene pool naar de andere beweegt.
+\end{solution}
+\end{example}
+
+\begin{remark}[title={In de praktijk}]\nl
+In een echte geleider botsen de vrije elektronen voortdurend tegen de roosterionen. Hierdoor wordt de kinetische energie die de elektronen winnen, grotendeels omgezet in warmte, in plaats van dat de elektronen steeds sneller blijven bewegen.
+\end{remark}
+
+\begin{question}
+    Een lading van $2{,}0 \, \mathrm{C}$ doorloopt een spanningsverschil van $6{,}0 \, \mathrm{V}$. Hoeveel arbeid verricht het elektrisch veld op deze lading?
+
+    \begin{multipleChoice}
+        \choice{$3{,}0 \, \mathrm{J}$}
+        \choice{$8{,}0 \, \mathrm{J}$}
+        \choice[correct]{$12 \, \mathrm{J}$}
+        \choice{$0{,}33 \, \mathrm{J}$}
+    \end{multipleChoice}
+
+    \begin{solution}\nl
+        $W = Q \cdot U = 2{,}0 \, \mathrm{C} \cdot 6{,}0 \, \mathrm{V} = 12 \, \mathrm{J}$.
+    \end{solution}
+\end{question}
+
+\section{Toepassing: een geladen deeltje versnellen}
+\begin{example}[foldable=true,title={Voorbeeld: elektron versneld door een spanningsverschil}]\nl
+Een elektron, aanvankelijk in rust, wordt versneld door een spanningsverschil van $200 \, \mathrm{V}$. Bereken de snelheid van het elektron nadat het deze spanning heeft doorlopen.
+
+\begin{hint}
+    Gebruik de arbeid-energiestelling: $W = \Delta E_{\text{kin}}$. Het elektron start in rust, dus $E_{\text{kin,begin}} = 0 \, \mathrm{J}$.
+\end{hint}
+
+\begin{solution}\nl
+\underline{Gegevens:}
+\begin{align*}
+    & U = 200 \, \mathrm{V} & & Q = e = 1{,}60 \cdot 10^{-19} \, \mathrm{C} \\
+    & m_{e} = 9{,}11 \cdot 10^{-31} \, \mathrm{kg} & & v_{\text{begin}} = 0 \, \mathrm{m/s}
+\end{align*}
+
+\underline{Gevraagd:} $v$
+
+\underline{Oplossing:}\\
+De arbeid die het veld op het elektron verricht, wordt volledig omgezet in kinetische energie:
+\begin{align*}
+    W &= Q \cdot U = \tfrac{1}{2} m_{e} v^{2} \\
+    1{,}60 \cdot 10^{-19} \, \mathrm{C} \cdot 200 \, \mathrm{V} &= \tfrac{1}{2} \cdot 9{,}11 \cdot 10^{-31} \, \mathrm{kg} \cdot v^{2} \\
+    v &= \sqrt{\frac{2 \cdot 3{,}20 \cdot 10^{-17} \, \mathrm{J}}{9{,}11 \cdot 10^{-31} \, \mathrm{kg}}} \\
+    &= 8{,}38 \cdot 10^{6} \, \mathrm{m/s}
+\end{align*}
+\end{solution}
+\end{example}
+
+\begin{question}
+    Een positieve en een negatieve lading worden beide in rust losgelaten in hetzelfde homogene elektrische veld tussen twee platen. Welke uitspraken zijn juist?
+
+    \begin{selectAll}
+        \choice[correct]{Beide ladingen winnen kinetische energie.}
+        \choice[correct]{De positieve lading beweegt in de zin van de veldlijnen, de negatieve lading in de tegengestelde zin.}
+        \choice[correct]{De potentiële energie van beide ladingen daalt.}
+        \choice{De negatieve lading verliest kinetische energie.}
+    \end{selectAll}
+
+    \begin{solution}\nl
+        Op beide ladingen werkt een elektrische kracht in de richting van hun verplaatsing: het veld verricht positieve arbeid. Daardoor versnellen ze allebei, en volgens de wet van behoud van energie daalt hun potentiële energie.
+    \end{solution}
+\end{question}
+
+\section{Toepassing: de proef van Millikan}
+Robert Millikan voerde tussen 1909 en 1913 een beroemde reeks experimenten uit waarmee hij de \textbf{elementaire lading} $e$ bepaalde en aantoonde dat lading gekwantiseerd is.
+
+\begin{remark}[expandable=true,title={Opstelling van Millikan}]\nl
+Met een verstuiver worden fijne oliedruppeltjes tussen twee horizontale platen gebracht. Door wrijving met de sproeier worden de druppeltjes elektrisch geladen. Tussen de platen heerst een instelbaar homogeen elektrisch veld. Door de spanning tussen de platen zo te regelen dat een druppeltje precies blijft \emph{zweven}, is de opwaartse elektrische kracht exact gelijk aan de neerwaartse zwaartekracht. Millikan vond dat de lading van een druppeltje steeds een veelvoud is van $1{,}60 \cdot 10^{-19} \, \mathrm{C}$: de lading van één elektron.
+\end{remark}
+
+\begin{question}
+    Waarom blijft een geladen oliedruppeltje in de proef van Millikan precies zweven?
+
+    \begin{multipleChoice}
+        \choice{De elektrische kracht is groter dan de zwaartekracht.}
+        \choice[correct]{De elektrische kracht is even groot als de zwaartekracht en tegengesteld gericht.}
+        \choice{Het elektrisch veld heft de zwaartekracht op de olie op.}
+    \end{multipleChoice}
+
+    \begin{solution}\nl
+        Een druppeltje blijft in rust (of beweegt met constante snelheid) als de resulterende kracht nul is. De opwaartse elektrische kracht moet dus even groot zijn als de neerwaartse zwaartekracht.
+    \end{solution}
+\end{question}
+
+\begin{example}[foldable=true,title={Voorbeeld: lading van een oliedruppeltje}]\nl
+Een oliedruppeltje met massa $3{,}30 \cdot 10^{-15} \, \mathrm{kg}$ bevindt zich tussen twee horizontale platen op $5{,}00 \cdot 10^{-3} \, \mathrm{m}$ van elkaar. Bij een spanning van $170 \, \mathrm{V}$ blijft het druppeltje juist zweven. Bepaal de grootte van de lading op het druppeltje, en hoeveel elektronen het heeft opgenomen.
+
+\begin{hint}
+    Stel de grootte van de zwaartekracht gelijk aan de grootte van de elektrische kracht ($F_{z} = F_{e}$), en gebruik $U = E \cdot d$ om het elektrisch veld tussen de platen te vinden.
+\end{hint}
+
+\begin{solution}\nl
+\underline{Gegevens:}
+\begin{align*}
+    & m = 3{,}30 \cdot 10^{-15} \, \mathrm{kg} & & d = 5{,}00 \cdot 10^{-3} \, \mathrm{m} \\
+    & U = 170 \, \mathrm{V} & & g = 9{,}81 \, \mathrm{N/kg}
+\end{align*}
+
+\underline{Gevraagd:} $\lvert Q \rvert$, aantal elektronen
+
+\underline{Oplossing:}\\
+De grootte van de zwaartekracht op het druppeltje:
+\begin{align*}
+    F_{z} = m \cdot g = 3{,}30 \cdot 10^{-15} \, \mathrm{kg} \cdot 9{,}81 \, \mathrm{N/kg} = 3{,}24 \cdot 10^{-14} \, \mathrm{N}
+\end{align*}
+De grootte van het elektrisch veld tussen de platen:
+\begin{align*}
+    E = \frac{U}{d} = \frac{170 \, \mathrm{V}}{5{,}00 \cdot 10^{-3} \, \mathrm{m}} = 3{,}40 \cdot 10^{4} \, \mathrm{N/C}
+\end{align*}
+Omdat het druppeltje zweeft, is de resulterende kracht nul: $F_{z} = F_{e} = E \cdot \lvert Q \rvert$.
+\begin{align*}
+    \lvert Q \rvert = \frac{F_{z}}{E} = \frac{3{,}24 \cdot 10^{-14} \, \mathrm{N}}{3{,}40 \cdot 10^{4} \, \mathrm{N/C}} = 9{,}52 \cdot 10^{-19} \, \mathrm{C}
+\end{align*}
+We delen door de elementaire lading om het aantal elektronen te vinden:
+\begin{align*}
+    n = \frac{9{,}52 \cdot 10^{-19} \, \mathrm{C}}{1{,}60 \cdot 10^{-19} \, \mathrm{C}} \approx 6
+\end{align*}
+Het druppeltje heeft dus $6$ elektronen opgenomen, en heeft een (afgeronde) lading van $\lvert Q \rvert = 6 \cdot 1{,}60 \cdot 10^{-19} \, \mathrm{C} = 9{,}6 \cdot 10^{-19} \, \mathrm{C}$.
+\end{solution}
+\end{example}
+
+\end{document}

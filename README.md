@@ -167,11 +167,9 @@ Omdat YouTube-video's online mooi kunnen afspelen, maar in een geprinte PDF gewo
 ## te doen volgende keer
 
 - [ ] style md aanpassen
-- [ ] driehoeken 2uurs E-veld aanpassen
-- [ ] oefeningen elektrisch veld nakijken
-- [ ] 5.1 aanpassingen nakijken H2
-- [ ] starten H3 --> vragen voor prompt in nieuwe chat
+- [ ] oefeningen H3 nakijken en extra maken
 - [ ] gemengde schakelingen
+- [ ] extra quiskes in H2, extra oefeningen H1
 
 
 

@@ -1,0 +1,217 @@
+\documentclass{ximera}
+
+\title{Vragen potentiële energie, potentiaal en spanning}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+\label{vragen:potentiaal}
+\section{Vragen potentiële energie, potentiaal en spanning}
+
+%———————————————————————————————————————
+% VRAAG 1: TEKEN VAN Epot BIJ VERPLAATSING
+\begin{question}
+    Een negatieve lading beweegt in een homogeen elektrisch veld van de negatieve naar de positieve plaat. Wat gebeurt er met haar potentiële elektrische energie?
+
+    \begin{multipleChoice}
+        \choice{Ze stijgt.}
+        \choice[correct]{Ze daalt.}
+        \choice{Ze blijft gelijk.}
+    \end{multipleChoice}
+
+    \begin{solution}\nl
+        Een negatieve lading wordt aangetrokken door de positieve plaat, dus de elektrische kracht werkt in de richting van de verplaatsing. De lading versnelt, haar kinetische energie neemt toe, en volgens de wet van behoud van energie moet haar potentiële energie dan dalen.
+    \end{solution}
+\end{question}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% VRAAG 2: RICO E_pot(d)-GRAFIEK
+\begin{question}
+    De grafiek van $E_{\text{pot}}$ in functie van $d$ voor een lading $Q$ in een homogeen veld is een \textbf{dalende} rechte door de oorsprong. Wat kan je hieruit besluiten over het teken van $Q$?
+
+    \begin{multipleChoice}
+        \choice[correct]{$Q$ is negatief.}
+        \choice{$Q$ is positief.}
+        \choice{Er zijn te weinig gegevens om dit te bepalen.}
+    \end{multipleChoice}
+
+    \begin{hint}
+        De richtingscoëfficiënt van de rechte $E_{\text{pot}}(d)$ is gelijk aan $Q \cdot E$. Het elektrisch veld $E$ is per definitie altijd positief.
+    \end{hint}
+
+    \begin{solution}\nl
+        De richtingscoëfficiënt van de rechte $E_{\text{pot}}(d)$ is $Q \cdot E$. Omdat $E$ steeds positief is, kan een dalende (negatieve) richtingscoëfficiënt enkel ontstaan als $Q$ negatief is.
+    \end{solution}
+\end{question}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% VRAAG 3: VERGELIJKEN VAN TWEE PUNTEN OP EEN VELDLIJN
+\begin{question}
+    Twee punten $1$ en $2$ liggen op eenzelfde veldlijn van een homogeen elektrisch veld, waarbij punt $2$ dichter bij de positieve plaat ligt dan punt $1$. Vergelijk de potentiaal in beide punten.
+
+    \begin{multipleChoice}
+        \choice{$V(1) > V(2)$}
+        \choice[correct]{$V(1) < V(2)$}
+        \choice{$V(1) = V(2)$}
+    \end{multipleChoice}
+
+    \begin{solution}\nl
+        De potentiaal in een homogeen veld is $V = E \cdot d$, met $d$ de afstand tot de negatieve plaat. Omdat punt $2$ dichter bij de positieve plaat ligt, is $d_2 > d_1$ en dus ook $V(2) > V(1)$.
+    \end{solution}
+\end{question}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% VRAAG 4: SPANNINGSPIJL EN VELDLIJNEN
+\begin{question}
+    Hoe verhoudt de zin van de spanningspijl tussen twee punten van een elektrisch veld zich tot de zin van de veldlijnen?
+
+    \begin{multipleChoice}
+        \choice{Ze wijzen altijd in dezelfde zin.}
+        \choice[correct]{Ze wijzen altijd in tegengestelde zin.}
+        \choice{Er is geen vast verband tussen beide.}
+    \end{multipleChoice}
+
+    \begin{solution}\nl
+        Veldlijnen wijzen steeds van hoge naar lage potentiaal (van de positieve naar de negatieve plaat), terwijl de spanningspijl per definitie naar het punt met de \emph{hoogste} potentiaal wijst. Beide staan dus altijd in tegengestelde zin.
+    \end{solution}
+\end{question}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% VRAAG 5: LADING OP EEN EQUIPOTENTIAALLIJN
+\begin{question}
+    Een lading beweegt langs een equipotentiaaloppervlak van een elektrisch veld. Verricht de elektrische kracht hierbij arbeid op de lading? Verklaar.
+
+    \begin{solution}\nl
+        Neen. Omdat alle punten op een equipotentiaaloppervlak dezelfde potentiaal hebben, is de spanning tussen het beginpunt en het eindpunt van de verplaatsing gelijk aan $0 \, \mathrm{V}$. Uit $W = Q \cdot U$ volgt dan dat de verrichte arbeid ook $0 \, \mathrm{J}$ is. Dit is ook logisch, aangezien veldlijnen loodrecht op equipotentiaaloppervlakken staan: de elektrische kracht (evenwijdig met de veldlijnen) staat dan loodrecht op de verplaatsing, waardoor ze geen arbeid verricht.
+    \end{solution}
+\end{question}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% VRAAG 6: ENERGIE-EENHEID VERBAND MET SPANNING
+\begin{question}
+    Toon aan, vertrekkend van de definities van spanning en arbeid, dat de eenheid volt (V) gelijk is aan joule per coulomb (J/C).
+
+    \begin{solution}\nl
+        Uit $W = Q \cdot U$ volgt dat $U = W/Q$. De eenheid van arbeid $W$ is joule (J), en de eenheid van lading $Q$ is coulomb (C). Bijgevolg is de eenheid van spanning (en dus van potentiaal) $\mathrm{J/C}$, wat per definitie gelijk is aan $1 \, \mathrm{V}$.
+    \end{solution}
+\end{question}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% VRAAG 7: PUNTLADING, POTENTIAAL VERGELIJKEN (enkel redeneren)
+\begin{question}
+    De tekening toont de veldlijnen rond een positieve puntlading. De punten $A$ en $B$ liggen op dezelfde veldlijn.
+
+    \begin{center}
+        \begin{tikzpicture}
+            \poslading{P}{0,0}
+            \foreach \a in {22.5,67.5,112.5,157.5,202.5,247.5,292.5,337.5} {
+                \draw[Eveldlijn] ([shift={(\a:0.3)}]P) -- ++(\a:1.9);
+            }
+            \fill ([shift={(22.5:1.4)}]P) circle (1.5pt) node[above right=1pt] {$A$};
+            \fill ([shift={(22.5:2.3)}]P) circle (1.5pt) node[above right=1pt] {$B$};
+        \end{tikzpicture}
+    \end{center}
+
+    In welk punt is de potentiaal het grootst?
+
+    \begin{multipleChoice}
+        \choice[correct]{In punt $A$.}
+        \choice{In punt $B$.}
+        \choice{In beide punten is de potentiaal even groot.}
+    \end{multipleChoice}
+
+    \begin{solution}\nl
+        Veldlijnen wijzen steeds van hoge naar lage potentiaal. Volgens de pijlen op de veldlijn gaat men van $A$ naar $B$ in de richting van de veldlijn, dus de potentiaal daalt van $A$ naar $B$: $V(A) > V(B)$. Dit geldt voor elk elektrisch veld, ook als het niet homogeen is.
+    \end{solution}
+\end{question}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% VRAAG 8: PUNTLADING, POSITIEVE PROEFLADING VERPLAATSEN
+\begin{question}
+    Bekijk opnieuw de veldlijnen van de positieve puntlading uit de vorige vraag. Een positieve proeflading wordt van $B$ naar $A$ gebracht. Wat gebeurt er met haar potentiële elektrische energie, en wie moet er arbeid verrichten?
+
+    \begin{multipleChoice}
+        \choice[correct]{Ze stijgt; een externe kracht moet arbeid verrichten tegen het elektrisch veld in.}
+        \choice{Ze stijgt; het elektrisch veld verricht zelf de arbeid.}
+        \choice{Ze daalt; een externe kracht moet arbeid verrichten.}
+        \choice{Ze daalt; het elektrisch veld verricht zelf de arbeid.}
+    \end{multipleChoice}
+
+    \begin{solution}\nl
+        De puntlading en de proeflading zijn beide positief en stoten elkaar af. Van $B$ naar $A$ gaat de proeflading dus \emph{tegen} de veldlijnen in, naar het punt met de hogere potentiaal. Haar potentiële energie stijgt ($E_{\text{pot}} = Q \cdot V$ met $Q > 0$ en $V(A) > V(B)$), en een externe kracht moet de nodige arbeid leveren om de lading tegen de elektrische kracht in te verplaatsen.
+    \end{solution}
+\end{question}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% VRAAG 9: DIPOOL, ELEKTRON LOSLATEN
+\begin{question}
+    De tekening toont de veldlijnen tussen een positieve en een negatieve lading. Punt $A$ ligt op de middelste veldlijn. Een elektron wordt in $A$ in rust losgelaten.
+
+    \begin{center}
+        \begin{tikzpicture}
+            \poslading{P}{-1.5,0}
+            \neglading{N}{1.5,0}
+            \foreach \a in {0,40,-40,75,-75} {
+                \draw[Eveldlijn,fill=none] ($(P)+(\a:0.3)$) to[out=\a,in={180-\a},looseness=1.2] ($(N)+({180-\a}:0.3)$);
+            }
+            \fill (-0.5,0) circle (1.5pt) node[above] {$A$};
+        \end{tikzpicture}
+    \end{center}
+
+    Wat gebeurt er met het elektron?
+
+    \begin{multipleChoice}
+        \choice{Het beweegt naar rechts, naar de negatieve lading. Zijn potentiële energie daalt.}
+        \choice[correct]{Het beweegt naar links, naar de positieve lading. Zijn potentiële energie daalt.}
+        \choice{Het beweegt naar links, naar de positieve lading. Zijn potentiële energie stijgt.}
+        \choice{Het blijft in rust.}
+    \end{multipleChoice}
+
+    \begin{hint}
+        In welke zin wijst het elektrisch veld in $A$? En in welke zin werkt de kracht op een \emph{negatieve} lading ten opzichte van het veld?
+    \end{hint}
+
+    \begin{solution}\nl
+        Het veld in $A$ wijst naar rechts (van $+$ naar $-$). Op een negatieve lading werkt de kracht in de tegengestelde zin: naar links. Het elektron wordt dus aangetrokken door de positieve lading en versnelt in die richting. Zijn kinetische energie neemt toe, dus zijn potentiële energie moet dalen.
+    \end{solution}
+\end{question}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% VRAAG 10: HOMOGEEN VELD, TWEE PUNTEN OP DEZELFDE AFSTAND VAN DE PLAAT
+\begin{question}
+    In een homogeen elektrisch veld tussen twee platen liggen de punten $A$ en $B$ op dezelfde afstand van de negatieve plaat, maar op een verschillende hoogte.
+
+    \begin{center}
+        \begin{tikzpicture}
+            \draw[thick] (0,-1.5) -- (0,1.5);
+            \draw[thick] (4,-1.5) -- (4,1.5);
+            \foreach \y in {-1.2,-0.6,0,0.6,1.2} {
+                \node[left] at (-0.1,\y) {$-$};
+                \node[right] at (4.1,\y) {$+$};
+                \draw[Eveldlijn] (4,\y) -- (0,\y);
+            }
+            \fill (2,0.9) circle (1.5pt) node[above right=1pt] {$A$};
+            \fill (2,-0.8) circle (1.5pt) node[below right=1pt] {$B$};
+        \end{tikzpicture}
+    \end{center}
+
+    Wat is de spanning $U_{AB}$ tussen deze twee punten? Verklaar.
+
+    \begin{solution}\nl
+        De spanning is $0 \, \mathrm{V}$. In een homogeen veld geldt $V = E \cdot d$, met $d$ de afstand tot de negatieve plaat. Omdat $A$ en $B$ even ver van de negatieve plaat liggen, is $V(A) = V(B)$ en dus $U_{AB} = V(A) - V(B) = 0 \, \mathrm{V}$. Verplaats je een lading van $A$ naar $B$, dan verricht het veld geen arbeid.
+    \end{solution}
+\end{question}
+%———————————————————————————————————————
+
+\end{document}

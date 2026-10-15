@@ -1,0 +1,145 @@
+\documentclass{ximera}
+\title{Elektrische spanning}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+    Spanning als potentiaalverschil tussen twee punten, de spanningspijl, het meten van spanning en spanning over een geleider in een homogeen veld.
+\end{abstract}
+\maketitle
+
+\section{Definitie}
+Elektrische veldsterkte en potentiaal zijn vrij abstracte begrippen. \textbf{Spanning} daarentegen is een grootheid die je uit het dagelijks leven kent: denk aan de spanning van een batterij ($1{,}5 \, \mathrm{V}$ voor een AA-batterij) of aan de netspanning ($230 \, \mathrm{V}$ in België).
+
+\begin{definition}[title={Spanning}]\nl
+De \textbf{spanning} $U_{12}$ tussen twee punten $1$ en $2$ in een elektrisch veld is het verschil in potentiaal tussen die twee punten:
+\begin{equation}\label{eq:spanning_definitie}
+    U_{12} = V(1) - V(2)
+\end{equation}
+Spanning wordt, net als potentiaal, uitgedrukt in \textbf{volt} (V).
+\end{definition}
+
+\begin{remark}[title={Spanning is een verschil}]\nl
+Spanning is een verschil en kan dus zowel positief als negatief zijn, afhankelijk van welke twee punten je met elkaar vergelijkt en in welke volgorde.
+\end{remark}
+
+\begin{question}
+    Punt $1$ heeft een potentiaal van $12 \, \mathrm{V}$ en punt $2$ een potentiaal van $5 \, \mathrm{V}$. Hoeveel bedraagt de spanning $U_{12}$?
+
+    \begin{multipleChoice}
+        \choice[correct]{$+7 \, \mathrm{V}$}
+        \choice{$-7 \, \mathrm{V}$}
+        \choice{$+17 \, \mathrm{V}$}
+        \choice{$+2{,}4 \, \mathrm{V}$}
+    \end{multipleChoice}
+
+    \begin{solution}\nl
+        $U_{12} = V(1) - V(2) = 12 \, \mathrm{V} - 5 \, \mathrm{V} = +7 \, \mathrm{V}$. Spanning is een verschil van potentialen, geen som en geen quotiënt.
+    \end{solution}
+\end{question}
+
+\subsection{De spanningspijl}
+Om aan te geven welk van de twee punten de hoogste potentiaal heeft, gebruiken we een \textbf{spanningspijl}.
+
+\begin{definition}[title={Spanningspijl}]\nl
+De \textbf{spanningspijl} wijst naar het punt met de \textbf{hoogste} potentiaal.
+\end{definition}
+
+\begin{center}
+    \begin{tikzpicture}[scale=0.9]
+        \draw[thick] (0,-1.5) -- (0,1.5);
+        \draw[thick] (5,-1.5) -- (5,1.5);
+        \foreach \y in {-1.2,-0.6,0,0.6,1.2} {
+            \draw[thick] (-0.15,\y) -- (0.15,\y);
+            \node[left] at (-0.25,\y) {$-$};
+            \draw[thick] (4.85,\y+0.3) -- (5.15,\y-0.3);
+            \node[right] at (5.25,\y) {$+$};
+        }
+        \foreach \y in {-1,-0.5,0,0.5,1} {
+            \draw[Eveldlijn] (4.85,\y) -- (0.15,\y);
+        }
+        \node[below] at (1,-1.6) {$1$};
+        \node[below] at (4,-1.6) {$2$};
+        \fill (1,0) circle (1.5pt);
+        \fill (4,0) circle (1.5pt);
+        \draw[-{Latex[length=3mm]}, line width=0.8pt, red!70!black] (1,0.9) -- (4,0.9) node[midway, above] {$U$};
+    \end{tikzpicture}
+\end{center}
+
+We bekijken het homogeen veld tussen twee platen. Punten dicht bij de positieve plaat (punt 2) hebben de hoogste potentiaal, dus de spanningspijl $U$ wijst naar punt $2$.
+
+\begin{remark}[title={Spanningspijl en veldlijnen}]\nl
+De spanningspijl is \textbf{tegengesteld} aan de zin van de veldlijnen. Dit geldt algemeen: veldlijnen wijzen steeds van hoge naar lage potentiaal.
+\end{remark}
+
+\section{Meten van spanning}
+De spanning tussen twee punten meten we met een \textbf{voltmeter} (V-meter). Een voltmeter heeft twee aansluitpunten: de plus-aansluiting en de min- of COM-aansluiting.
+
+\begin{remark}[expandable=true,title={Correct aansluiten van een voltmeter}]\nl
+Een digitale voltmeter is correct aangesloten als hij een \textbf{positieve} spanning aangeeft. Bij een correct aangesloten voltmeter heeft het punt verbonden met de plusaansluiting de hoogste potentiaal, en wijst de spanningspijl dus naar dat punt. Geeft de voltmeter een negatieve waarde aan, dan wijst de spanningspijl naar het punt verbonden met de \emph{min}-aansluiting.
+\end{remark}
+
+\begin{question}
+    Een digitale voltmeter geeft $-4{,}5 \, \mathrm{V}$ aan. Wat kan je hieruit besluiten?
+
+    \begin{multipleChoice}
+        \choice{Het punt aan de plusaansluiting heeft de hoogste potentiaal.}
+        \choice[correct]{Het punt aan de COM-aansluiting heeft de hoogste potentiaal.}
+        \choice{De voltmeter is defect.}
+    \end{multipleChoice}
+
+    \begin{solution}\nl
+        De voltmeter geeft de potentiaal van het punt aan de plusaansluiting min die van het punt aan de COM-aansluiting. Een negatieve waarde betekent dat het punt aan de COM-aansluiting de hoogste potentiaal heeft: de spanningspijl wijst naar dat punt. De meter is dus niet defect, enkel `omgekeerd' aangesloten.
+    \end{solution}
+\end{question}
+
+\section{Spanningsbronnen}
+Een \textbf{spanningsbron} (bijvoorbeeld een batterij) onderhoudt de spanning tussen zijn twee polen. Bij een \textbf{gelijkspanningsbron} is deze spanning constant in de tijd; de pluspool is de pool met de hoogste potentiaal. Bij een \textbf{wisselspanningsbron} (zoals de netspanning) wisselen de polen voortdurend van teken; in Europa gebeurt dit $50$ keer per seconde ($50 \, \mathrm{Hz}$).
+
+\section{Spanning over een geleider}
+Beschouw opnieuw het homogeen veld tussen twee platen, met veldsterkte $E$. Een punt $P$ op een afstand $x$ van de negatieve plaat heeft potentiaal $V(P) = E \cdot x$.
+
+\begin{proposition}[title={Spanning over een geleider}]\nl
+Voor de spanning $U$ over een geleider met lengte $\ell$, waarin een homogeen elektrisch veld met grootte $E$ heerst, geldt:
+\begin{equation}\label{eq:spanning_geleider}
+    U = E \cdot \ell
+\end{equation}
+\end{proposition}
+
+\begin{example}[foldable=true,title={Voorbeeld: spanning over een geleider}]\nl
+In een geleider met lengte $0{,}20 \, \mathrm{m}$ heerst een homogeen elektrisch veld met grootte $250 \, \mathrm{N/C}$. Bereken de spanning over de geleider.
+
+\begin{solution}\nl
+\underline{Gegevens:}
+\begin{align*}
+    & E = 250 \, \mathrm{N/C} & & \ell = 0{,}20 \, \mathrm{m}
+\end{align*}
+
+\underline{Gevraagd:} $U$
+
+\underline{Oplossing:}
+\begin{align*}
+    U = E \cdot \ell = 250 \, \mathrm{N/C} \cdot 0{,}20 \, \mathrm{m} = 50 \, \mathrm{V}
+\end{align*}
+\end{solution}
+\end{example}
+
+\begin{remark}[title={Veldsterkte uit spanning}]\nl
+Uit $U = E \cdot \ell$ volgt ook $E = U/\ell$: hoe groter de opgelegde spanning over een geleider met vaste lengte, hoe groter het elektrisch veld erin.
+\end{remark}
+
+\begin{question}
+    Een spanningsbron van $12 \, \mathrm{V}$ blijft aangesloten op twee evenwijdige platen. Je schuift de platen dichter naar elkaar toe, zodat hun onderlinge afstand halveert. Wat gebeurt er met de grootte van het elektrisch veld tussen de platen?
+
+    \begin{multipleChoice}
+        \choice{Ze halveert.}
+        \choice{Ze blijft gelijk.}
+        \choice[correct]{Ze verdubbelt.}
+    \end{multipleChoice}
+
+    \begin{solution}\nl
+        De spanning $U$ blijft $12 \, \mathrm{V}$ omdat de bron aangesloten blijft. Uit $E = U/\ell$ volgt dat het veld verdubbelt wanneer de afstand $\ell$ halveert.
+    \end{solution}
+\end{question}
+
+\end{document}

@@ -1,0 +1,116 @@
+\documentclass{ximera}
+
+\title{Vraagstukken potentiële energie, potentiaal en spanning: spanning en arbeid}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+    Oefeningen op het verband tussen spanning en arbeid ($W = Q \cdot U$), van makkelijk naar moeilijk.
+\end{abstract}
+\maketitle
+
+\section{Oefeningen spanning en arbeid}
+
+%———————————————————————————————————————
+% OEF 1: W = Q*U
+\begin{exercise}
+    Een lading $Q = 2{,}0 \cdot 10^{-6} \, \mathrm{C}$ doorloopt een spanningsverschil van $500 \, \mathrm{V}$. Bereken de arbeid die het elektrisch veld op de lading verricht.
+
+    \[ W = \answer[tolerance=0.01,onlineshowanswerbutton]{1.0} \cdot 10^{-3} \, \mathrm{J} \]
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & Q = 2{,}0 \cdot 10^{-6} \, \mathrm{C} & & U = 500 \, \mathrm{V}
+        \end{align*}
+
+        \underline{Gevraagd:} $W$
+
+        \underline{Oplossing:}
+        \begin{align*}
+            W = Q \cdot U = 2{,}0 \cdot 10^{-6} \, \mathrm{C} \cdot 500 \, \mathrm{V} = 1{,}0 \cdot 10^{-3} \, \mathrm{J}
+        \end{align*}
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% OEF 2: U = W/Q
+\begin{exercise}
+    Het elektrisch veld verricht een arbeid van $2{,}0 \cdot 10^{-3} \, \mathrm{J}$ op een lading $Q = +5{,}0 \cdot 10^{-6} \, \mathrm{C}$ die van punt $1$ naar punt $2$ beweegt. Bereken de spanning $U_{12}$ tussen die twee punten.
+
+    \[ U_{12} = \answer[tolerance=1,onlineshowanswerbutton]{400} \, \mathrm{V} \]
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & W = 2{,}0 \cdot 10^{-3} \, \mathrm{J} & & Q = +5{,}0 \cdot 10^{-6} \, \mathrm{C}
+        \end{align*}
+
+        \underline{Gevraagd:} $U_{12}$
+
+        \underline{Oplossing:}
+        \begin{align*}
+            U_{12} = \frac{W}{Q} = \frac{2{,}0 \cdot 10^{-3} \, \mathrm{J}}{5{,}0 \cdot 10^{-6} \, \mathrm{C}} = 4{,}0 \cdot 10^{2} \, \mathrm{V}
+        \end{align*}
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% OEF 3: Q = W/U (autobatterij)
+\begin{exercise}
+    Een autobatterij van $12 \, \mathrm{V}$ levert een energie van $3{,}6 \cdot 10^{3} \, \mathrm{J}$. Hoeveel lading is daarbij van de ene pool naar de andere verplaatst?
+
+    \[ Q = \answer[tolerance=1,onlineshowanswerbutton]{300} \, \mathrm{C} \]
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & U = 12 \, \mathrm{V} & & W = 3{,}6 \cdot 10^{3} \, \mathrm{J}
+        \end{align*}
+
+        \underline{Gevraagd:} $Q$
+
+        \underline{Oplossing:}
+        \begin{align*}
+            Q = \frac{W}{U} = \frac{3{,}6 \cdot 10^{3} \, \mathrm{J}}{12 \, \mathrm{V}} = 3{,}0 \cdot 10^{2} \, \mathrm{C}
+        \end{align*}
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% OEF 4 (moeilijkst): negatieve lading, teken van W
+\begin{exercise}
+    Een elektron beweegt van punt $1$ naar punt $2$ in een elektrisch veld. De spanning tussen die punten is $U_{12} = +80 \, \mathrm{V}$. Bereken de verandering van de kinetische energie van het elektron.
+
+    \[ \Delta E_{\text{kin}} = \answer[tolerance=0.02,onlineshowanswerbutton]{-1.28} \cdot 10^{-17} \, \mathrm{J} \]
+
+    Het elektron wordt: \wordChoice{
+        \choice{versneld}
+        \choice[correct]{afgeremd}
+    }
+
+    \begin{hint}
+        Houd rekening met het teken van de lading van een elektron.
+    \end{hint}
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & Q = -e = -1{,}60 \cdot 10^{-19} \, \mathrm{C} & & U_{12} = +80 \, \mathrm{V}
+        \end{align*}
+
+        \underline{Gevraagd:} $\Delta E_{\text{kin}}$
+
+        \underline{Oplossing:}
+        \begin{align*}
+            \Delta E_{\text{kin}} = W = Q \cdot U_{12} = (-1{,}60 \cdot 10^{-19} \, \mathrm{C}) \cdot 80 \, \mathrm{V} = -1{,}28 \cdot 10^{-17} \, \mathrm{J}
+        \end{align*}
+        De verandering van de kinetische energie is negatief: het elektron wordt afgeremd. Dit is logisch: het elektron beweegt naar een punt met een lagere potentiaal, terwijl negatieve ladingen net naar een hogere potentiaal worden aangetrokken.
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+\end{document}

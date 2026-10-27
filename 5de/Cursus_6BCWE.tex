@@ -1,0 +1,99 @@
+\documentclass[nonewpage]{xourse}
+
+
+% Start \part op een nieuwe pagina (Ximera doet dat niet per default)
+\xpretocmd{\part}{\clearpage}{}{}
+
+\newcommand{\richting}{Wetenschappen 5de jaar}%De klas/richting --> hoofding header
+% \documentclass{xourse}
+%in
+%\title{\includegraphics[width=0.7\textwidth]{pic5/elektromagnetisme.jpg}\\[2cm]Fysica 5de jaar - Wetenschappen}
+\title{Fysica 6de jaar - BCWE}
+\author{Daan Lipkens}
+\begin{document}
+\begin{abstract}
+    Cursus Fysica 6de jaar BCWE domeingebonden doorstroom.
+\end{abstract}
+\maketitle
+%HOE MAAK IK DIT IN TITLE BLAD 
+%\begin{figure}[h]
+% \begin{center}
+% \includegraphics[width=0.85\textwidth]{pic5/elektromagnetisme.jpg}
+% \caption{De Joint European Torus (JET) is het grootste kernfusie-experiment ter wereld. Met behulp van krachtige elektromagnetische velden houdt deze tokamak het extreem hete plasma op zijn plaats, zodat de wandmaterialen niet smelten.}
+% \end{center}
+% \end{figure}
+%\xmtitle{Fysica 5de jaar - Wetenschappen}{}
+% \part voor delen
+%\chapterstyle voor hoofdstukken >> \activity{hoofdstuk ....}
+%\sectionstyle voor delen in het hoofdstuk >> \activity{met onderdelen}
+% Inleiding, informatie, ...
+
+
+% INFO
+% toepassingen onder \begin{example}
+% Quizjes als \question met \begin{selectAll}
+% voorbeeld oefeningen met align x &= berekening && (uitleg)
+% komma's met {,} in math mode
+
+
+% \part{Inleiding}
+% \chapterstyle
+% \activity{inleiding_stand_52.tex}
+% \sectionstyle
+% \activity{inleiding_praktische_richtlijnen_52.tex}
+% \activity{inleiding_hoe_fysica_te_studeren_5.tex}
+% \activity{inleiding_vectorkleuren.tex}
+
+
+%--------ELEKTRICITEIT----------------
+\part{Kracht en beweging} %parts nog aanpassen
+%COULOMBKRACHT of ELEKTRISCHE KRACHTWERKING
+%picture path: pic5/elektriciteit/coulomb/
+
+\activity{wetten_van_newton_oef_uitdaging.tex}
+
+% %--------MAGNETISME----------------
+% \part{Elektromagnetisme}
+% \part{Lorentzkracht}
+% \part{Inductiespanning}
+
+% \newpage
+% %--------KERNFYSICA----------------
+
+
+
+%---------APPENDIX---------------
+
+\part{Appendix} %nummering anders
+
+\chapterstyle
+\activity{vectoren_inleiding.tex}
+
+\sectionstyle
+\activity{vectoren_scalar.tex}
+\activity{vectoren_component.tex}
+\activity{vectoren_som.tex}
+\activity{vectoren_verschil.tex}
+\activity{vectoren_scalaire_vermenigvuldiging.tex}
+\activity{vectoren_vectorieel_product.tex}
+
+
+\chapterstyle
+\activity{standaardvorm_inleiding.tex}
+
+\sectionstyle
+\activity{standaardvorm_si.tex}
+\activity{standaardvorm_bc.tex}
+\activity{standaardvorm_oefeningen.tex}
+
+%Vector rekenen
+    %vectoren
+    %cosinus regel
+
+%nuclide tabel
+%standaard vorm
+%logaritme en exponentiële functies
+%---------Bibliografie
+\part{Bibliografie}
+
+\end{document}

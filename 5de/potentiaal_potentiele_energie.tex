@@ -18,7 +18,7 @@ Een massa $m$ die zich op een hoogte $h$ boven het aardoppervlak bevindt, bezit 
 Hierbij is het aardoppervlak het gekozen referentiepunt (RP), waar $E_{\text{pot}} = 0 \, \mathrm{J}$.
 \end{remark}
 
-Ook een lading die zich in een elektrisch veld bevindt, bezit energie: \textbf{potentiële elektrische energie}. Om deze energie te kunnen berekenen, moeten we net als bij het zwaarteveld een referentiepunt kiezen. Bij een \textbf{homogeen} elektrisch veld (tussen twee evenwijdige platen) kiezen we het referentiepunt op de \textbf{negatieve plaat}, zoals te zien op figuur~\ref{fig:rust_potentiaal}.
+Ook een lading die zich in een elektrisch veld bevindt, bezit energie: \textbf{potentiële elektrische energie}. Om deze energie te kunnen berekenen, moeten we net als bij het zwaarteveld een referentiepunt kiezen. Bij een \textbf{homogeen} elektrisch veld (tussen twee evenwijdige platen) kiezen we het referentiepunt op de \textbf{negatieve plaat}, zoals te zien op figuur~\ref{fig:rust_potentiaal}. Er wordt dan gezegd dat de rust potentiaal (RP) op de negatieve plaat ligt.
 
 \begin{figure}[h]
     \captionsetup{width=0.85\textwidth}
@@ -41,8 +41,8 @@ Ook een lading die zich in een elektrisch veld bevindt, bezit energie: \textbf{p
         
             % De puntlading en overige aanduidingen
             \node[poslading] at (3,0) {$+$};
-            \node[above] at (3,\R) {$Q$};
-            \draw[<->, dashed] (0,-1.8) -- (3,-1.8) node[midway, below] {$d$};
+            \node[above] at (3.5,0) {$Q$};
+            \draw[<->, dashed] (0,-1.4) -- (3,-1.4) node[midway, below] {$d$};
             \node[below] at (0,-1.5) {RP};
         \end{tikzpicture}
     \end{center}
@@ -50,7 +50,7 @@ Ook een lading die zich in een elektrisch veld bevindt, bezit energie: \textbf{p
     \label{fig:rust_potentiaal}
 \end{figure}
 
-De potentiële elektrische energie van een lading $Q$ in een punt \textit{P} is de arbeid die de elektrische kracht verricht wanneer de lading van dat punt \textit{P} naar het referentiepunt (de negatieve plaat) beweegt.
+De potentiële elektrische energie van een lading $Q$ in een punt \textit{P} is de arbeid die de elektrische kracht verricht wanneer de lading van dat punt \textit{P} naar het referentiepunt (de negatieve plaat) beweegt. % AANPASSEN RP
 
 \subsection{Afleiding van de formule}
 In een homogeen veld met veldsterkte $E$ is de grootte van de elektrische kracht op een lading $Q$ gelijk aan $F = \lvert Q \rvert \cdot E$ (zie vorig hoofdstuk). Deze kracht is constant, dus de arbeid die deze kracht verricht over een verplaatsing $d$ is eenvoudig te berekenen.
@@ -63,7 +63,7 @@ In een homogeen veld met veldsterkte $E$ is de grootte van de elektrische kracht
     Deze formule geldt voor zowel positieve als negatieve ladingen $Q$ (met behoud van teken).
 \end{proposition}
 
-\begin{remark}[title={Vergelijking met het zwaarteveld}]\nl
+\begin{remark}[expandable=true,title={Vergelijking met het zwaarteveld}]\nl
 \begin{center}
 \begin{tabular}{ccc}
     $m \to Q$ & $g \to E$ & $h \to d$
@@ -123,6 +123,7 @@ Voor een \textbf{negatieve} lading die zich in dezelfde richting verplaatst (dus
 \subsection{Het $E_{\text{pot}}(d)$-diagram}
 Omdat $E_{\text{pot}} = Q \cdot E \cdot d$, is $E_{\text{pot}}$ recht evenredig met $d$: de grafiek van $E_{\text{pot}}$ in functie van $d$ is een rechte door de oorsprong, met richtingscoëfficiënt $Q \cdot E$.
 
+% INVOEGEN TIKZ picture
 \begin{itemize}
     \item Is $Q > 0$, dan is de richtingscoëfficiënt positief: de rechte is \textbf{stijgend}.
     \item Is $Q < 0$, dan is de richtingscoëfficiënt negatief: de rechte is \textbf{dalend}.
@@ -133,3 +134,4 @@ Omdat $E_{\text{pot}} = Q \cdot E \cdot d$, is $E_{\text{pot}}$ recht evenredig 
 \end{hint}
 
 \end{document}
+%iets rond spontane bewegingen en geforceerde bewegingen

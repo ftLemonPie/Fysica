@@ -1,0 +1,130 @@
+\documentclass{ximera}
+%verbeterd 30/10/26
+\title{Herhaling: stroom, spanning en weerstand}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+    Herhaling van de belangrijkste grootheden in een schakeling en de wet van Ohm.
+\end{abstract}
+\maketitle
+
+\section{Stroom, spanning en weerstand}\label{sec:herhaling-ohm}
+In een schakeling met een spanningsbron komen drie grootheden voortdurend terug: de stroomsterkte, de spanning en de weerstand.
+
+\begin{definition}[foldable=true,title={Stroomsterkte}]\nl
+    De \textbf{stroomsterkte} $I$ is de lading $\Delta Q$ die per tijdseenheid $\Delta t$ door een doorsnede van de geleider stroomt:
+    \begin{equation*}
+        I = \frac{\Delta Q}{\Delta t}
+    \end{equation*}
+    De eenheid van stroomsterkte is de ampère: $1\,\mathrm{A} = 1\,\mathrm{C/s}$.
+\end{definition}
+
+\begin{remark}[foldable=true,title={Conventionele stroomzin}]\nl
+    Buiten de bron wijst de \textbf{conventionele stroomzin} van de pluspool naar de minpool. In metalen bewegen in werkelijkheid de (negatieve) elektronen in de omgekeerde zin.
+\end{remark}
+
+\begin{definition}[foldable=true,title={Spanning}]\nl
+    De \textbf{spanning} $U$ is het potentiaalverschil tussen twee punten van de schakeling. De spanningsbron houdt een spanning in stand tussen haar polen en zorgt zo dat er lading in beweging komt. De eenheid is de volt ($\mathrm{V}$).
+\end{definition}
+
+\begin{definition}[foldable=true,title={Weerstand}]\nl
+    De \textbf{weerstand} $R$ van een component geeft aan hoe sterk dit component de stroom tegenwerkt. De eenheid is de ohm ($\mathrm{\Omega}$).
+\end{definition}
+
+\begin{proposition}[title={Wet van Ohm}]\nl
+    Voor een ohmse weerstand $R$ is de spanning $U$ over de weerstand recht evenredig met de stroomsterkte $I$ door de weerstand:
+    \begin{equation*}
+        U = R \cdot I
+    \end{equation*}
+    Hierbij is $R$ constant.
+\end{proposition}
+
+\begin{example}[foldable=true,title={Voorbeeld: Wet van Ohm}]\nl
+    Een lampje met een weerstand van $60\,\mathrm{\Omega}$ wordt aangesloten op een spanning van $6{,}0\,\mathrm{V}$. Bereken de stroomsterkte door het lampje en de lading die in $2{,}0\,\mathrm{min}$ door het lampje stroomt.
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & R = 60\,\mathrm{\Omega} & & U = 6{,}0\,\mathrm{V} \\
+            & \Delta t = 2{,}0\,\mathrm{min} = 120\,\mathrm{s} & &
+        \end{align*}
+
+        \underline{Gevraagd:} $I$ en $\Delta Q$ \\
+
+        \underline{Oplossing:}\\
+        We kennen de spanning en de weerstand en zoeken de stroomsterkte, dus gebruiken we de \textbf{wet van Ohm}:
+        \begin{align*}
+            I &= \frac{U}{R} = \frac{6{,}0\,\mathrm{V}}{60\,\mathrm{\Omega}} = 0{,}10\,\mathrm{A}
+        \end{align*}
+        De lading volgt uit de definitie van stroomsterkte:
+        \begin{align*}
+            \Delta Q &= I \cdot \Delta t = 0{,}10\,\mathrm{A} \cdot 120\,\mathrm{s} = 12\,\mathrm{C}
+        \end{align*}
+    \end{solution}
+\end{example}
+
+\section{Schakelsymbolen en meettoestellen}\label{sec:symbolen}
+Schakelingen tekenen we met vaste symbolen, zie figuur~\ref{fig:schakelsymbolen}.
+
+\begin{figure}[ht!]
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
+        \begin{circuitikz}[european]
+            \draw (0,0) to[battery1] (1.8,0); \node at (0.9,-0.9) {spanningsbron};
+            \draw (4,0) to[R] (5.8,0); \node at (4.9,-0.9) {weerstand};
+            \draw (8,0) to[lamp] (9.8,0); \node at (8.9,-0.9) {lamp};
+            \draw (0,-2.5) to[ospst] (1.8,-2.5); \node at (0.9,-3.4) {open schakelaar};
+            \draw (4,-2.5) to[ammeter] (5.8,-2.5); \node at (4.9,-3.4) {ampèremeter};
+            \draw (8,-2.5) to[voltmeter] (9.8,-2.5); \node at (8.9,-3.4) {voltmeter};
+        \end{circuitikz}
+    \end{center}
+    \caption{De symbolen die we in dit hoofdstuk gebruiken. Bij het symbool van de spanningsbron is de lange streep de pluspool.}
+    \label{fig:schakelsymbolen}
+\end{figure}
+
+De stroomsterkte meet je met een \textbf{ampèremeter}. Die schakel je \emph{in serie}: de stroom die je wil meten moet er helemaal doorheen. De spanning over een component meet je met een \textbf{voltmeter}. Die schakel je \emph{parallel} over dat component, zie figuur~\ref{fig:meters}.
+
+\begin{figure}[ht!]
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
+        \begin{circuitikz}[european]
+            \draw (0,3) to[battery1, l=$U$] (0,0) -- (6,0) -- (6,3);
+            \draw (0,3) to[ammeter] (2,3) to[R, l=$R$] (6,3);
+            \draw (2,3) to[short, *-] (2,4.2) to[voltmeter] (6,4.2) to[short, -*] (6,3);
+        \end{circuitikz}
+    \end{center}
+    \caption{De ampèremeter staat in serie met de weerstand, de voltmeter staat parallel over de weerstand.}
+    \label{fig:meters}
+\end{figure}
+
+%---------------
+% QUIZ: METERS
+\begin{question}
+    Hoe sluit je een ampèremeter en een voltmeter aan om de stroom door en de spanning over een weerstand te meten?
+    \begin{multipleChoice}
+        \choice{Beide in serie met de weerstand.}
+        \choice{Beide parallel met de weerstand.}
+        \choice[correct]{De ampèremeter in serie en de voltmeter parallel met de weerstand.}
+        \choice{De ampèremeter parallel en de voltmeter in serie met de weerstand.}
+    \end{multipleChoice}
+    \begin{solution}
+        De stroom moet door de ampèremeter lopen, dus staat die in serie. De voltmeter meet een spanningsverschil tussen twee punten, dus staat die parallel over het component.
+    \end{solution}
+\end{question}
+%---------------
+% QUIZ: OHM
+\begin{question}
+    Je verdubbelt de spanning over een ohmse weerstand. Wat gebeurt er met de stroomsterkte door de weerstand?
+    \begin{multipleChoice}
+        \choice{Ze wordt twee keer kleiner.}
+        \choice[correct]{Ze wordt twee keer groter.}
+        \choice{Ze blijft gelijk.}
+        \choice{Ze wordt vier keer groter.}
+    \end{multipleChoice}
+    \begin{solution}
+        De weerstand $R$ is constant en $U = R \cdot I$. Dus $U$ en $I$ zijn recht evenredig: als $U$ verdubbelt, verdubbelt ook $I$.
+    \end{solution}
+\end{question}
+
+\end{document}

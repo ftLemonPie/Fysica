@@ -1,0 +1,59 @@
+\documentclass{ximera}
+%verbeterd 30/10/26
+\title{Samenvatting gemengde schakelingen}
+%\author{Daan Lipkens}
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\begin{onlineOnly}
+\maketitle
+\end{onlineOnly}
+% pagestyle aanpassen zodat er meer op 1 blad kan
+\newgeometry{left=3cm,bottom=0.1cm}
+\pagestyle{empty}
+
+\begin{conclusion}[title={Samenvatting}]\nl
+
+    \samenbox{Grootheden en wet van Ohm}{
+        De stroomsterkte $I = \frac{\Delta Q}{\Delta t}$ meet je in ampère ($\mathrm{A}$), de spanning $U$ in volt ($\mathrm{V}$) en de weerstand $R$ in ohm ($\mathrm{\Omega}$). Voor een ohmse weerstand geldt de wet van Ohm:
+        \begin{equation*}
+            U = R \cdot I
+        \end{equation*}
+        Een ampèremeter schakel je in serie, een voltmeter parallel.
+    }
+
+    \samenbox{Serieschakeling}{
+        Eén pad, geen vertakkingen.
+        \begin{itemize}
+            \item Stroom overal gelijk: $I = I_1 = I_2 = \dots$
+            \item Spanningen tellen op: $U = U_1 + U_2 + \dots$
+            \item Vervangingsweerstand: $R_{\text{s}} = R_1 + R_2 + \dots$
+        \end{itemize}
+        De grootste weerstand krijgt de grootste spanning.
+    }
+
+    \samenbox{Parallelschakeling}{
+        Meerdere paden met vertakkingspunten.
+        \begin{itemize}
+            \item Spanning over elke tak gelijk: $U = U_1 = U_2 = \dots$
+            \item Stromen tellen op: $I = I_1 + I_2 + \dots$
+            \item Vervangingsweerstand: $\frac{1}{R_{\text{p}}} = \frac{1}{R_1} + \frac{1}{R_2} + \dots$
+        \end{itemize}
+        $R_{\text{p}}$ is kleiner dan de kleinste weerstand. De kleinste weerstand krijgt de grootste stroom.
+    }
+
+    \samenbox{Gemengde schakeling}{
+        \begin{enumerate}
+            \item Vervang groepen in serie of parallel door één vervangingsweerstand, tot er $R_{\text{tot}}$ overblijft.
+            \item Bereken $I = \frac{U}{R_{\text{tot}}}$.
+            \item Werk terug: in serie dezelfde stroom, in parallel dezelfde spanning.
+            \item Controleer met de som van spanningen of stromen.
+        \end{enumerate}
+    }
+
+\end{conclusion}
+
+% restore pagestyle
+\pagestyle{plain}
+\restoregeometry
+\end{document}

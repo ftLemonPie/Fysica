@@ -1,0 +1,114 @@
+\documentclass{ximera}
+%verbeterd 30/10/26
+\title{Gemengde schakelingen}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+    Schakelingen met weerstanden in serie én in parallel, aangesloten op één spanningsbron.
+\end{abstract}
+\maketitle
+
+\section{Gemengde schakelingen}\label{sec:gemengde-schakeling}
+\begin{definition}[title={Gemengde schakeling}]\nl
+    Een \textbf{gemengde schakeling} bevat zowel componenten die in serie staan als componenten die in parallel staan.
+\end{definition}
+
+Het geheim van gemengde schakelingen is dat je ze \emph{stap voor stap vereenvoudigt}. Elke groep weerstanden die in serie of in parallel staat, vervang je door één vervangingsweerstand. Zo blijft er uiteindelijk één weerstand over. Daarna werk je terug om de stroom en de spanning bij elke weerstand te vinden.
+
+\begin{remark}[title={Stappenplan gemengde schakeling}]\nl
+    \begin{enumerate}
+        \item Zoek een groep weerstanden die duidelijk in serie of in parallel staat. Begin bij de groep die het verst van de bron verwijderd is.
+        \item Vervang die groep door één vervangingsweerstand en teken de vereenvoudigde schakeling. Herhaal tot er één weerstand $R_{\text{tot}}$ overblijft.
+        \item Bereken de stroom door de bron met de wet van Ohm en $R_{\text{tot}}$.
+        \item Werk terug naar de oorspronkelijke schakeling. In een serieschakeling is de stroom overal gelijk, in een parallelschakeling is de spanning overal gelijk.
+        \item Controleer: de spanningen in serie tellen op tot de bronspanning, de stromen in parallel tellen op tot de stroom voor de vertakking.
+    \end{enumerate}
+\end{remark}
+
+%---------------------------------------------------------------------------
+% VOORBEELD GEMENGD
+\begin{example}[foldable=true,title={Voorbeeld: Een weerstand in serie met twee parallelle weerstanden}]\nl
+    Drie weerstanden $R_1 = 8{,}0\,\mathrm{\Omega}$, $R_2 = 20\,\mathrm{\Omega}$ en $R_3 = 30\,\mathrm{\Omega}$ zijn geschakeld zoals in de figuur. De bron levert $12\,\mathrm{V}$. Bereken de stroom en de spanning bij elke weerstand.
+
+    \begin{center}
+        \begin{circuitikz}[european]
+            \draw (0,3) to[battery1, l=$U$] (0,0) -- (6,0);
+            \draw (0,3) to[R, l=$R_1$] (3,3) -- (6,3);
+            \draw (3,3) to[R, l=$R_2$, *-*] (3,0);
+            \draw (6,3) to[R, l=$R_3$, *-*] (6,0);
+        \end{circuitikz}
+    \end{center}
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & R_1 = 8{,}0\,\mathrm{\Omega} & & R_2 = 20\,\mathrm{\Omega} \\
+            & R_3 = 30\,\mathrm{\Omega} & & U = 12\,\mathrm{V}
+        \end{align*}
+
+        \underline{Gevraagd:} $I_1$, $I_2$, $I_3$, $U_1$, $U_2$ en $U_3$ \\
+
+        \underline{Oplossing:}\\
+        $R_2$ en $R_3$ staan in parallel. Die groep staat in serie met $R_1$.
+
+        \textbf{Stap 1: Parallelle groep vervangen}
+        \begin{align*}
+            \frac{1}{R_{23}} &= \frac{1}{20\,\mathrm{\Omega}} + \frac{1}{30\,\mathrm{\Omega}} = \frac{1}{12\,\mathrm{\Omega}} \\
+            R_{23} &= 12\,\mathrm{\Omega}
+        \end{align*}
+        \begin{center}
+            \begin{circuitikz}[european]
+                \draw (0,3) to[battery1, l=$U$] (0,0) -- (6,0) -- (6,3);
+                \draw (0,3) to[R, l=$R_1$] (3,3) to[R, l=$R_{23}$] (6,3);
+            \end{circuitikz}
+        \end{center}
+
+        \textbf{Stap 2: Totale weerstand}
+        \begin{align*}
+            R_{\text{tot}} &= R_1 + R_{23} = 8{,}0\,\mathrm{\Omega} + 12\,\mathrm{\Omega} = 20\,\mathrm{\Omega}
+        \end{align*}
+
+        \textbf{Stap 3: Stroom door de bron}
+        \begin{align*}
+            I &= \frac{U}{R_{\text{tot}}} = \frac{12\,\mathrm{V}}{20\,\mathrm{\Omega}} = 0{,}60\,\mathrm{A}
+        \end{align*}
+
+        \textbf{Stap 4: Terugwerken}\\
+        $R_1$ staat in serie met de rest, dus $I_1 = I = 0{,}60\,\mathrm{A}$. Dezelfde stroom loopt door $R_{23}$.
+        \begin{align*}
+            U_1 &= R_1 \cdot I_1 = 8{,}0\,\mathrm{\Omega} \cdot 0{,}60\,\mathrm{A} = 4{,}8\,\mathrm{V} \\
+            U_{23} &= R_{23} \cdot I = 12\,\mathrm{\Omega} \cdot 0{,}60\,\mathrm{A} = 7{,}2\,\mathrm{V}
+        \end{align*}
+        $R_2$ en $R_3$ staan in parallel, dus over beide staat $U_{23}$:
+        \begin{align*}
+            U_2 &= U_3 = 7{,}2\,\mathrm{V} \\
+            I_2 &= \frac{U_2}{R_2} = \frac{7{,}2\,\mathrm{V}}{20\,\mathrm{\Omega}} = 0{,}36\,\mathrm{A} \\
+            I_3 &= \frac{U_3}{R_3} = \frac{7{,}2\,\mathrm{V}}{30\,\mathrm{\Omega}} = 0{,}24\,\mathrm{A}
+        \end{align*}
+
+        \textbf{Stap 5: Controle}
+        \begin{align*}
+            U_1 + U_{23} &= 4{,}8\,\mathrm{V} + 7{,}2\,\mathrm{V} = 12\,\mathrm{V} = U \\
+            I_2 + I_3 &= 0{,}36\,\mathrm{A} + 0{,}24\,\mathrm{A} = 0{,}60\,\mathrm{A} = I
+        \end{align*}
+    \end{solution}
+\end{example}
+%---------------------------------------------------------------------------
+
+%---------------
+% QUIZ: HERKENNEN
+\begin{question}
+    In de schakeling van het voorbeeld staat $R_1$ in serie met de parallelle groep van $R_2$ en $R_3$. Welke uitspraak is correct?
+    \begin{multipleChoice}
+        \choice{De stroom door $R_2$ is gelijk aan de stroom door $R_1$.}
+        \choice[correct]{De spanning over $R_2$ is gelijk aan de spanning over $R_3$.}
+        \choice{De spanning over $R_1$ is gelijk aan de spanning over $R_2$.}
+        \choice{De stroom door $R_3$ is gelijk aan de stroom door $R_1$.}
+    \end{multipleChoice}
+    \begin{solution}
+        $R_2$ en $R_3$ staan in parallel, dus over beide staat dezelfde spanning. De stroom door $R_1$ splitst zich over $R_2$ en $R_3$, dus is die groter dan elk van beide deelstromen.
+    \end{solution}
+\end{question}
+
+\end{document}

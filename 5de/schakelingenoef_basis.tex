@@ -1,0 +1,304 @@
+\documentclass{ximera}
+%verbeterd 30/10/26
+\title{Vraagstukken gemengde schakelingen: Basisoefeningen}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+    Basisoefeningen op de wet van Ohm, serieschakelingen en parallelschakelingen.
+\end{abstract}
+\maketitle
+
+\section{Basisoefeningen schakelingen}
+
+%———————————————————————————————————————
+% BASIS 1: STROOMSTERKTE
+\begin{exercise}
+    Door een verbindingsdraad stroomt in $2{,}0\,\mathrm{min}$ een lading van $36\,\mathrm{C}$. Bereken de stroomsterkte.
+
+    \[ I = \answer[tolerance=0.05,onlineshowanswerbutton]{0.30} \, \mathrm{A} \]
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & \Delta Q = 36\,\mathrm{C} & & \Delta t = 2{,}0\,\mathrm{min} = 120\,\mathrm{s}
+        \end{align*}
+
+        \underline{Gevraagd:} $I$ \\
+
+        \underline{Oplossing:}
+        \begin{align*}
+            I &= \frac{\Delta Q}{\Delta t} = \frac{36\,\mathrm{C}}{120\,\mathrm{s}} = 0{,}30\,\mathrm{A}
+        \end{align*}
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% BASIS 2: OHM, STROOM
+\begin{exercise}
+    Een weerstand van $0{,}45\,\mathrm{k\Omega}$ wordt aangesloten op een spanning van $9{,}0\,\mathrm{V}$. Bereken de stroomsterkte in $\mathrm{mA}$.
+
+    \[ I = \answer[tolerance=0.05,onlineshowanswerbutton]{20} \, \mathrm{mA} \]
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & R = 0{,}45\,\mathrm{k\Omega} = 450\,\mathrm{\Omega} & & U = 9{,}0\,\mathrm{V}
+        \end{align*}
+
+        \underline{Gevraagd:} $I$ \\
+
+        \underline{Oplossing:}
+        \begin{align*}
+            I &= \frac{U}{R} = \frac{9{,}0\,\mathrm{V}}{450\,\mathrm{\Omega}} = 0{,}020\,\mathrm{A} = 20\,\mathrm{mA}
+        \end{align*}
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% BASIS 3: OHM, SPANNING
+\begin{exercise}
+    Door een weerstand van $48\,\mathrm{\Omega}$ loopt een stroom van $250\,\mathrm{mA}$. Bereken de spanning over de weerstand.
+
+    \[ U = \answer[tolerance=0.05,onlineshowanswerbutton]{12} \, \mathrm{V} \]
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & R = 48\,\mathrm{\Omega} & & I = 250\,\mathrm{mA} = 0{,}250\,\mathrm{A}
+        \end{align*}
+
+        \underline{Gevraagd:} $U$ \\
+
+        \underline{Oplossing:}
+        \begin{align*}
+            U &= R \cdot I = 48\,\mathrm{\Omega} \cdot 0{,}250\,\mathrm{A} = 12\,\mathrm{V}
+        \end{align*}
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% BASIS 4: OHM, WEERSTAND
+\begin{exercise}
+    Het verwarmingselement van een strijkijzer is aangesloten op $230\,\mathrm{V}$ en neemt een stroom van $0{,}46\,\mathrm{A}$ op. Bereken de weerstand van het element.
+
+    \[ R = \answer[tolerance=0.05,onlineshowanswerbutton]{5.0} \cdot 10^{2} \, \mathrm{\Omega} \]
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & U = 230\,\mathrm{V} & & I = 0{,}46\,\mathrm{A}
+        \end{align*}
+
+        \underline{Gevraagd:} $R$ \\
+
+        \underline{Oplossing:}
+        \begin{align*}
+            R &= \frac{U}{I} = \frac{230\,\mathrm{V}}{0{,}46\,\mathrm{A}} = 5{,}0 \cdot 10^{2}\,\mathrm{\Omega}
+        \end{align*}
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% BASIS 5: SERIE
+\begin{exercise}
+    Drie weerstanden $R_1 = 12\,\mathrm{\Omega}$, $R_2 = 18\,\mathrm{\Omega}$ en $R_3 = 30\,\mathrm{\Omega}$ staan in serie, aangesloten op een bron van $12\,\mathrm{V}$.
+
+    \begin{center}
+        \begin{circuitikz}[european]
+            \draw (0,3) to[battery1, l=$U$] (0,0) -- (9,0) -- (9,3);
+            \draw (0,3) to[R, l=$R_1$] (3,3) to[R, l=$R_2$] (6,3) to[R, l=$R_3$] (9,3);
+        \end{circuitikz}
+    \end{center}
+
+    \begin{question}
+        Bereken de vervangingsweerstand van de schakeling.
+
+        \[ R_{\text{s}} = \answer[tolerance=0.05,onlineshowanswerbutton]{60} \, \mathrm{\Omega} \]
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & R_1 = 12\,\mathrm{\Omega} & & R_2 = 18\,\mathrm{\Omega} \\
+                & R_3 = 30\,\mathrm{\Omega} & & U = 12\,\mathrm{V}
+            \end{align*}
+
+            \underline{Gevraagd:} $R_{\text{s}}$ \\
+
+            \underline{Oplossing:}
+            \begin{align*}
+                R_{\text{s}} &= R_1 + R_2 + R_3 = 12\,\mathrm{\Omega} + 18\,\mathrm{\Omega} + 30\,\mathrm{\Omega} = 60\,\mathrm{\Omega}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken de stroomsterkte door de bron.
+
+        \[ I = \answer[tolerance=0.05,onlineshowanswerbutton]{0.20} \, \mathrm{A} \]
+
+        \begin{solution}\nl
+            \underline{Gevraagd:} $I$ \\
+
+            \underline{Oplossing:}
+            \begin{align*}
+                I &= \frac{U}{R_{\text{s}}} = \frac{12\,\mathrm{V}}{60\,\mathrm{\Omega}} = 0{,}20\,\mathrm{A}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken de spanning over $R_2$.
+
+        \[ U_2 = \answer[tolerance=0.05,onlineshowanswerbutton]{3.6} \, \mathrm{V} \]
+
+        \begin{hint}
+            Wat weet je over de stroom door elke weerstand in een serieschakeling?
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gevraagd:} $U_2$ \\
+
+            \underline{Oplossing:}\\
+            Door $R_2$ loopt dezelfde stroom als door de bron.
+            \begin{align*}
+                U_2 &= R_2 \cdot I = 18\,\mathrm{\Omega} \cdot 0{,}20\,\mathrm{A} = 3{,}6\,\mathrm{V}
+            \end{align*}
+        \end{solution}
+    \end{question}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% BASIS 6: IDENTIEKE WEERSTANDEN PARALLEL
+\begin{exercise}
+    Vier identieke weerstanden van $1{,}2\,\mathrm{k\Omega}$ staan in parallel. Bereken de vervangingsweerstand.
+
+    \[ R_{\text{p}} = \answer[tolerance=0.05,onlineshowanswerbutton]{3.0} \cdot 10^{2} \, \mathrm{\Omega} \]
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & R = 1{,}2\,\mathrm{k\Omega} = 1200\,\mathrm{\Omega} & & n = 4
+        \end{align*}
+
+        \underline{Gevraagd:} $R_{\text{p}}$ \\
+
+        \underline{Oplossing:}
+        \begin{align*}
+            \frac{1}{R_{\text{p}}} &= 4 \cdot \frac{1}{1200\,\mathrm{\Omega}} = \frac{1}{300\,\mathrm{\Omega}} \\
+            R_{\text{p}} &= 300\,\mathrm{\Omega} = 3{,}0 \cdot 10^{2}\,\mathrm{\Omega}
+        \end{align*}
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% BASIS 7: PARALLEL
+\begin{exercise}
+    Twee weerstanden $R_1 = 30\,\mathrm{\Omega}$ en $R_2 = 60\,\mathrm{\Omega}$ staan in parallel, aangesloten op een bron van $12\,\mathrm{V}$.
+
+    \begin{center}
+        \begin{circuitikz}[european]
+            \draw (0,3) to[battery1, l=$U$] (0,0) -- (5,0);
+            \draw (0,3) -- (5,3);
+            \draw (2,3) to[R, l=$R_1$, *-*] (2,0);
+            \draw (5,3) to[R, l=$R_2$, *-*] (5,0);
+        \end{circuitikz}
+    \end{center}
+
+    \begin{question}
+        Bereken de vervangingsweerstand van de schakeling.
+
+        \[ R_{\text{p}} = \answer[tolerance=0.05,onlineshowanswerbutton]{20} \, \mathrm{\Omega} \]
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & R_1 = 30\,\mathrm{\Omega} & & R_2 = 60\,\mathrm{\Omega} \\
+                & U = 12\,\mathrm{V} & &
+            \end{align*}
+
+            \underline{Gevraagd:} $R_{\text{p}}$ \\
+
+            \underline{Oplossing:}
+            \begin{align*}
+                \frac{1}{R_{\text{p}}} &= \frac{1}{30\,\mathrm{\Omega}} + \frac{1}{60\,\mathrm{\Omega}} = \frac{2 + 1}{60\,\mathrm{\Omega}} = \frac{1}{20\,\mathrm{\Omega}} \\
+                R_{\text{p}} &= 20\,\mathrm{\Omega}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken de stroom door elke weerstand.
+
+        \[ I_1 = \answer[tolerance=0.05,onlineshowanswerbutton]{0.40} \, \mathrm{A} \qquad I_2 = \answer[tolerance=0.05,onlineshowanswerbutton]{0.20} \, \mathrm{A} \]
+
+        \begin{hint}
+            Wat weet je over de spanning over elke tak in een parallelschakeling?
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gevraagd:} $I_1$ en $I_2$ \\
+
+            \underline{Oplossing:}\\
+            Over beide weerstanden staat de bronspanning.
+            \begin{align*}
+                I_1 &= \frac{U}{R_1} = \frac{12\,\mathrm{V}}{30\,\mathrm{\Omega}} = 0{,}40\,\mathrm{A} \\
+                I_2 &= \frac{U}{R_2} = \frac{12\,\mathrm{V}}{60\,\mathrm{\Omega}} = 0{,}20\,\mathrm{A}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken de stroom door de bron.
+
+        \[ I = \answer[tolerance=0.05,onlineshowanswerbutton]{0.60} \, \mathrm{A} \]
+
+        \begin{solution}\nl
+            \underline{Gevraagd:} $I$ \\
+
+            \underline{Oplossing:}
+            \begin{align*}
+                I &= I_1 + I_2 = 0{,}40\,\mathrm{A} + 0{,}20\,\mathrm{A} = 0{,}60\,\mathrm{A}
+            \end{align*}
+            Controle: $\frac{U}{R_{\text{p}}} = \frac{12\,\mathrm{V}}{20\,\mathrm{\Omega}} = 0{,}60\,\mathrm{A}$.
+        \end{solution}
+    \end{question}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% BASIS 8: ONBEKENDE WEERSTAND PARALLEL
+\begin{exercise}
+    Een weerstand $R_1 = 30\,\mathrm{\Omega}$ staat in parallel met een onbekende weerstand $R_2$. De vervangingsweerstand van beide samen is $12\,\mathrm{\Omega}$. Bereken $R_2$.
+
+    \[ R_2 = \answer[tolerance=0.05,onlineshowanswerbutton]{20} \, \mathrm{\Omega} \]
+
+    \begin{hint}
+        Schrijf eerst de vergelijking voor de vervangingsweerstand op met $R_2$ als onbekende. Welk deel kan je al invullen?
+    \end{hint}
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & R_1 = 30\,\mathrm{\Omega} & & R_{\text{p}} = 12\,\mathrm{\Omega}
+        \end{align*}
+
+        \underline{Gevraagd:} $R_2$ \\
+
+        \underline{Oplossing:}
+        \begin{align*}
+            \frac{1}{R_{\text{p}}} &= \frac{1}{R_1} + \frac{1}{R_2} \\
+            \frac{1}{R_2} &= \frac{1}{R_{\text{p}}} - \frac{1}{R_1} = \frac{1}{12\,\mathrm{\Omega}} - \frac{1}{30\,\mathrm{\Omega}} = \frac{5 - 2}{60\,\mathrm{\Omega}} = \frac{1}{20\,\mathrm{\Omega}} \\
+            R_2 &= 20\,\mathrm{\Omega}
+        \end{align*}
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+\end{document}

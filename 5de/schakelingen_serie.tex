@@ -1,0 +1,117 @@
+\documentclass{ximera}
+%verbeterd 30/10/26
+\title{Serieschakeling}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+    Eigenschappen van een serieschakeling en de vervangingsweerstand in serie.
+\end{abstract}
+\maketitle
+
+\section{Serieschakeling}\label{sec:serieschakeling}
+\begin{definition}[title={Serieschakeling}]\nl
+    In een \textbf{serieschakeling} staan de componenten achter elkaar: er is slechts één pad voor de stroom en er zijn geen vertakkingen.
+\end{definition}
+
+\begin{figure}[ht!]
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
+        \begin{circuitikz}[european]
+            \draw (0,3) to[battery1, l=$U$] (0,0) -- (6,0) -- (6,3);
+            \draw (0,3) to[R, l=$R_1$] (3,3) to[R, l=$R_2$] (6,3);
+        \end{circuitikz}
+    \end{center}
+    \caption{Twee weerstanden in serie, aangesloten op een spanningsbron.}
+    \label{fig:serie}
+\end{figure}
+
+\subsection{Stroomsterkte en spanning}
+Omdat er geen vertakkingen zijn, kan er geen lading verdwijnen of bijkomen onderweg. Door elke weerstand in figuur~\ref{fig:serie} stroomt dus evenveel lading per seconde. De spanning van de bron wordt verdeeld over de weerstanden.
+
+\begin{proposition}[title={Serieschakeling: stroom en spanning}]\nl
+    In een serieschakeling is de stroomsterkte overal gelijk:
+    \begin{equation*}
+        I = I_1 = I_2 = \dots
+    \end{equation*}
+    De spanning van de bron is de som van de spanningen over de componenten:
+    \begin{equation*}
+        U = U_1 + U_2 + \dots
+    \end{equation*}
+\end{proposition}
+
+\begin{remark}[foldable=true,title={Grootste weerstand, grootste spanning}]\nl
+    Door alle weerstanden loopt dezelfde stroom $I$. Uit $U = R \cdot I$ volgt dan dat de weerstand met de grootste waarde ook de grootste spanning krijgt. Een weerstand die twee keer zo groot is, krijgt twee keer zoveel spanning.
+\end{remark}
+
+\subsection{Vervangingsweerstand in serie}
+We kunnen alle weerstanden in een serieschakeling vervangen door één weerstand, zonder dat de stroom door de bron verandert. Dit noemen we de \textbf{vervangingsweerstand}.
+
+\begin{proposition}[title={Vervangingsweerstand in serie}]\nl
+    Voor weerstanden in serie is de vervangingsweerstand $R_{\text{s}}$ de som van de weerstanden:
+    \begin{equation*}
+        R_{\text{s}} = R_1 + R_2 + \dots
+    \end{equation*}
+\end{proposition}
+
+\begin{remark}[foldable=true,title={Afleiding voor twee weerstanden}]\nl
+    Door beide weerstanden loopt dezelfde stroom $I$, en de bronspanning is de som van beide spanningen:
+    \begin{align*}
+        U &= U_1 + U_2 \\
+        &= R_1 \cdot I + R_2 \cdot I \\
+        &= (R_1 + R_2) \cdot I
+    \end{align*}
+    Een enkele weerstand $R_{\text{s}}$ die dezelfde stroom $I$ geeft bij dezelfde spanning $U$, moet dus voldoen aan $R_{\text{s}} = R_1 + R_2$.
+\end{remark}
+
+%---------------------------------------------------------------------------
+% VOORBEELD SERIE
+\begin{example}[foldable=true,title={Voorbeeld: Twee weerstanden in serie}]\nl
+    Een weerstand $R_1 = 10\,\mathrm{\Omega}$ en een weerstand $R_2 = 20\,\mathrm{\Omega}$ staan in serie, aangesloten op een bron van $12\,\mathrm{V}$. Bereken de stroomsterkte en de spanning over elke weerstand.
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & R_1 = 10\,\mathrm{\Omega} & & R_2 = 20\,\mathrm{\Omega} \\
+            & U = 12\,\mathrm{V} & &
+        \end{align*}
+
+        \underline{Gevraagd:} $I$, $U_1$ en $U_2$ \\
+
+        \underline{Oplossing:}\\
+        \textbf{Stap 1: Vervangingsweerstand}\\
+        \begin{align*}
+            R_{\text{s}} &= R_1 + R_2 = 10\,\mathrm{\Omega} + 20\,\mathrm{\Omega} = 30\,\mathrm{\Omega}
+        \end{align*}
+        \textbf{Stap 2: Stroomsterkte}\\
+        De stroom door de bron is de stroom door de vervangingsweerstand:
+        \begin{align*}
+            I &= \frac{U}{R_{\text{s}}} = \frac{12\,\mathrm{V}}{30\,\mathrm{\Omega}} = 0{,}40\,\mathrm{A}
+        \end{align*}
+        \textbf{Stap 3: Spanning over elke weerstand}\\
+        Dezelfde stroom loopt door beide weerstanden:
+        \begin{align*}
+            U_1 &= R_1 \cdot I = 10\,\mathrm{\Omega} \cdot 0{,}40\,\mathrm{A} = 4{,}0\,\mathrm{V} \\
+            U_2 &= R_2 \cdot I = 20\,\mathrm{\Omega} \cdot 0{,}40\,\mathrm{A} = 8{,}0\,\mathrm{V}
+        \end{align*}
+        Controle: $U_1 + U_2 = 4{,}0\,\mathrm{V} + 8{,}0\,\mathrm{V} = 12\,\mathrm{V} = U$.
+    \end{solution}
+\end{example}
+%---------------------------------------------------------------------------
+
+%---------------
+% QUIZ: KERSTVERLICHTING
+\begin{question}
+    Een oud kerstlichtsnoer bestaat uit lampjes in serie. Wat gebeurt er als één lampje doorbrandt?
+    \begin{multipleChoice}
+        \choice{Enkel dat lampje gaat uit.}
+        \choice[correct]{Alle lampjes gaan uit.}
+        \choice{De andere lampjes branden feller.}
+        \choice{De andere lampjes branden zwakker, maar blijven aan.}
+    \end{multipleChoice}
+    \begin{solution}
+        Een doorgebrand lampje onderbreekt het enige pad voor de stroom. Er kan nergens nog stroom vloeien, dus alle lampjes gaan uit.
+    \end{solution}
+\end{question}
+
+\end{document}

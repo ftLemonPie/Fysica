@@ -1,0 +1,127 @@
+\documentclass{ximera}
+%verbeterd 30/10/26
+\title{Parallelschakeling}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+    Eigenschappen van een parallelschakeling en de vervangingsweerstand in parallel.
+\end{abstract}
+\maketitle
+
+\section{Parallelschakeling}\label{sec:parallelschakeling}
+\begin{definition}[title={Parallelschakeling}]\nl
+    In een \textbf{parallelschakeling} zijn de componenten naast elkaar geschakeld: de stroom kan zich bij een vertakkingspunt verdelen over meerdere paden die daarna weer samenkomen.
+\end{definition}
+
+\begin{figure}[ht!]
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
+        \begin{circuitikz}[european]
+            \draw (0,3) to[battery1, l=$U$] (0,0) -- (5,0);
+            \draw (0,3) -- (5,3);
+            \draw (2,3) to[R, l=$R_1$, *-*] (2,0);
+            \draw (5,3) to[R, l=$R_2$, *-*] (5,0);
+        \end{circuitikz}
+    \end{center}
+    \caption{Twee weerstanden in parallel, aangesloten op een spanningsbron. De punten zijn de vertakkingspunten.}
+    \label{fig:parallel}
+\end{figure}
+
+\subsection{Stroomsterkte en spanning}
+Elke weerstand in figuur~\ref{fig:parallel} is rechtstreeks verbonden met beide polen van de bron. Daardoor staat over elke weerstand dezelfde spanning. De stroom van de bron splitst bij het vertakkingspunt, en omdat er geen lading verloren gaat, komt de som van de deelstromen weer samen.
+
+\begin{proposition}[title={Parallelschakeling: stroom en spanning}]\nl
+    In een parallelschakeling is de spanning over elke tak gelijk:
+    \begin{equation*}
+        U = U_1 = U_2 = \dots
+    \end{equation*}
+    De totale stroomsterkte is de som van de stroomsterkten in de takken:
+    \begin{equation*}
+        I = I_1 + I_2 + \dots
+    \end{equation*}
+\end{proposition}
+
+\begin{remark}[foldable=true,title={Kleinste weerstand, grootste stroom}]\nl
+    Over elke tak staat dezelfde spanning $U$. Uit $U = R \cdot I$ volgt dan dat de tak met de kleinste weerstand de grootste stroom krijgt.
+\end{remark}
+
+\subsection{Vervangingsweerstand in parallel}
+\begin{proposition}[title={Vervangingsweerstand in parallel}]\nl
+    Voor weerstanden in parallel voldoet de vervangingsweerstand $R_{\text{p}}$ aan:
+    \begin{equation*}
+        \frac{1}{R_{\text{p}}} = \frac{1}{R_1} + \frac{1}{R_2} + \dots
+    \end{equation*}
+    De vervangingsweerstand in parallel is altijd kleiner dan de kleinste weerstand in de schakeling.
+\end{proposition}
+
+\begin{remark}[foldable=true,title={Afleiding voor twee weerstanden}]\nl
+    Over beide weerstanden staat dezelfde spanning $U$ en de totale stroom is de som van de deelstromen:
+    \begin{align*}
+        I &= I_1 + I_2 \\
+        &= \frac{U}{R_1} + \frac{U}{R_2} \\
+        &= U \cdot \left(\frac{1}{R_1} + \frac{1}{R_2}\right)
+    \end{align*}
+    Een enkele weerstand $R_{\text{p}}$ die bij dezelfde spanning $U$ dezelfde stroom $I = \frac{U}{R_{\text{p}}}$ geeft, moet dus voldoen aan $\frac{1}{R_{\text{p}}} = \frac{1}{R_1} + \frac{1}{R_2}$.
+\end{remark}
+
+\begin{remark}[foldable=true,title={Twee bijzondere gevallen}]\nl
+    Voor $n$ identieke weerstanden $R$ in parallel is $R_{\text{p}} = \frac{R}{n}$. Voor twee weerstanden kan je het ook schrijven als $R_{\text{p}} = \frac{R_1 \cdot R_2}{R_1 + R_2}$.
+\end{remark}
+
+%---------------------------------------------------------------------------
+% VOORBEELD PARALLEL
+\begin{example}[foldable=true,title={Voorbeeld: Twee weerstanden in parallel}]\nl
+    Een weerstand $R_1 = 20\,\mathrm{\Omega}$ en een weerstand $R_2 = 30\,\mathrm{\Omega}$ staan in parallel, aangesloten op een bron van $12\,\mathrm{V}$. Bereken de vervangingsweerstand, de stroom door elke weerstand en de totale stroom.
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & R_1 = 20\,\mathrm{\Omega} & & R_2 = 30\,\mathrm{\Omega} \\
+            & U = 12\,\mathrm{V} & &
+        \end{align*}
+
+        \underline{Gevraagd:} $R_{\text{p}}$, $I_1$, $I_2$ en $I$ \\
+
+        \underline{Oplossing:}\\
+        \textbf{Stap 1: Vervangingsweerstand}\\
+        \begin{align*}
+            \frac{1}{R_{\text{p}}} &= \frac{1}{R_1} + \frac{1}{R_2} = \frac{1}{20\,\mathrm{\Omega}} + \frac{1}{30\,\mathrm{\Omega}} = \frac{3 + 2}{60\,\mathrm{\Omega}} = \frac{1}{12\,\mathrm{\Omega}} \\
+            R_{\text{p}} &= 12\,\mathrm{\Omega}
+        \end{align*}
+        Dit is kleiner dan de kleinste weerstand ($20\,\mathrm{\Omega}$), zoals verwacht.\\
+        \textbf{Stap 2: Stroom door elke weerstand}\\
+        Over beide weerstanden staat de bronspanning:
+        \begin{align*}
+            I_1 &= \frac{U}{R_1} = \frac{12\,\mathrm{V}}{20\,\mathrm{\Omega}} = 0{,}60\,\mathrm{A} \\
+            I_2 &= \frac{U}{R_2} = \frac{12\,\mathrm{V}}{30\,\mathrm{\Omega}} = 0{,}40\,\mathrm{A}
+        \end{align*}
+        \textbf{Stap 3: Totale stroom}\\
+        \begin{align*}
+            I &= I_1 + I_2 = 0{,}60\,\mathrm{A} + 0{,}40\,\mathrm{A} = 1{,}0\,\mathrm{A}
+        \end{align*}
+        Controle: $\frac{U}{R_{\text{p}}} = \frac{12\,\mathrm{V}}{12\,\mathrm{\Omega}} = 1{,}0\,\mathrm{A}$.
+    \end{solution}
+\end{example}
+%---------------------------------------------------------------------------
+
+%---------------
+% QUIZ: EXTRA TAK
+\begin{question}
+    Je schakelt een extra weerstand parallel bij een weerstand die al op een bron is aangesloten. Wat gebeurt er met de totale weerstand en met de stroom door de bron?
+    \begin{multipleChoice}
+        \choice{De totale weerstand wordt groter en de stroom door de bron wordt kleiner.}
+        \choice[correct]{De totale weerstand wordt kleiner en de stroom door de bron wordt groter.}
+        \choice{De totale weerstand blijft gelijk en de stroom door de bron blijft gelijk.}
+        \choice{De totale weerstand wordt kleiner en de stroom door de bron wordt kleiner.}
+    \end{multipleChoice}
+    \begin{solution}
+        Een extra tak geeft de stroom een extra pad. De vervangingsweerstand in parallel is kleiner dan de kleinste weerstand, dus de totale weerstand daalt. De bronspanning blijft gelijk, dus de stroom door de bron stijgt.
+    \end{solution}
+\end{question}
+
+\begin{example}[foldable=true,title={Toepassing: de huisinstallatie}]\nl
+    Alle toestellen in een woning zijn \emph{parallel} aangesloten op het net. Daardoor staat over elk toestel dezelfde netspanning en kan je elk toestel afzonderlijk aan- of uitzetten zonder dat de andere toestellen beïnvloed worden. Hoe meer toestellen je tegelijk gebruikt, hoe groter de totale stroom door de hoofdleiding.
+\end{example}
+
+\end{document}

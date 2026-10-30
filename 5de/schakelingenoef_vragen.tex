@@ -1,0 +1,94 @@
+\documentclass{ximera}
+%verbeterd 30/10/26
+\title{Vragen gemengde schakelingen}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+\label{vragen:schakelingen}
+\section{Vragen gemengde schakelingen}
+%———————————————————————————————————————
+% VRAAG 1: HUISINSTALLATIE
+\begin{question}
+    Waarom zijn de toestellen in een woning parallel en niet in serie geschakeld?
+
+    \begin{solution}\nl
+        In een parallelschakeling staat over elke tak dezelfde spanning, namelijk de netspanning. Elk toestel krijgt dus de spanning waarvoor het gemaakt is. Bovendien heeft elk toestel een eigen pad voor de stroom: je kan het afzonderlijk uitschakelen zonder dat de andere stoppen. In een serieschakeling zou de spanning verdeeld worden over de toestellen en zou elk toestel uitvallen zodra één toestel onderbroken wordt.
+    \end{solution}
+\end{question}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% VRAAG 2: SPANNINGSVERDELING
+\begin{question}
+    Twee weerstanden $R$ en $2R$ staan in serie op een bron. Welke uitspraak is correct?
+    \begin{multipleChoice}
+        \choice{Over beide weerstanden staat dezelfde spanning.}
+        \choice{Over $R$ staat twee keer zoveel spanning als over $2R$.}
+        \choice[correct]{Over $2R$ staat twee keer zoveel spanning als over $R$.}
+        \choice{Door $2R$ loopt twee keer zoveel stroom als door $R$.}
+    \end{multipleChoice}
+
+    \begin{solution}\nl
+        In een serieschakeling is de stroom door beide weerstanden gelijk. Uit $U = R \cdot I$ volgt dat de spanning evenredig is met de weerstand: over $2R$ staat dus twee keer zoveel spanning als over $R$.
+    \end{solution}
+\end{question}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% VRAAG 3: VERVANGINGSWEERSTAND PARALLEL
+\begin{question}
+    Twee weerstanden van $10\,\mathrm{\Omega}$ en $40\,\mathrm{\Omega}$ staan in parallel. De vervangingsweerstand is \wordChoice{
+        \choice{groter dan $40\,\mathrm{\Omega}$}
+        \choice{gelijk aan $50\,\mathrm{\Omega}$}
+        \choice[correct]{kleiner dan $10\,\mathrm{\Omega}$}
+        \choice{precies $25\,\mathrm{\Omega}$}
+    }.
+
+    \begin{hint}
+        Denk aan wat een extra tak doet met het aantal paden voor de stroom.
+    \end{hint}
+
+    \begin{solution}\nl
+        Een parallelle tak biedt de stroom een extra pad. De vervangingsweerstand is daardoor altijd kleiner dan de kleinste weerstand, hier dus kleiner dan $10\,\mathrm{\Omega}$ (het is $8{,}0\,\mathrm{\Omega}$).
+    \end{solution}
+\end{question}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% VRAAG 4: LAMPJE LOSSCHROEVEN
+\begin{question}
+    Drie identieke lampen $A$, $B$ en $C$ zijn geschakeld zoals in de figuur. Lamp $A$ staat in serie met de parallelle groep van $B$ en $C$.
+
+    \begin{center}
+        \begin{circuitikz}[european]
+            \draw (0,3) to[battery1, l=$U$] (0,0) -- (6,0);
+            \draw (0,3) to[lamp, l=$A$] (3,3) -- (6,3);
+            \draw (3,3) to[lamp, l=$B$, *-*] (3,0);
+            \draw (6,3) to[lamp, l=$C$, *-*] (6,0);
+        \end{circuitikz}
+    \end{center}
+
+    Je schroeft lamp $B$ los. Wat gebeurt er met de helderheid van de lampen $A$ en $C$?
+    \begin{multipleChoice}
+        \choice{Beide lampen branden even fel als voorheen.}
+        \choice{Lamp $A$ brandt zwakker en lamp $C$ brandt zwakker.}
+        \choice{Lamp $A$ brandt feller en lamp $C$ brandt zwakker.}
+        \choice[correct]{Lamp $A$ brandt zwakker en lamp $C$ brandt feller.}
+    \end{multipleChoice}
+
+    \begin{hint}
+        Wat gebeurt er met de totale weerstand van de schakeling als $B$ wegvalt? En wat betekent dat voor de stroom door de bron en dus voor de spanning over $A$?
+    \end{hint}
+
+    \begin{solution}\nl
+        Noem de weerstand van elke lamp $R$. Met $B$ erbij is $R_{\text{tot}} = R + \frac{R}{2} = 1{,}5\,R$. Zonder $B$ is $R_{\text{tot}} = R + R = 2\,R$. De totale weerstand stijgt, dus daalt de stroom door de bron.
+
+        Lamp $A$ staat in serie met de bron en krijgt dus minder stroom: ze brandt zwakker. Over $A$ staat nu minder spanning, dus blijft er meer van de bronspanning over voor de parallelle groep. Lamp $C$ is nu alleen in die groep: de stroom loopt niet meer verdeeld, en over $C$ staat een grotere spanning dan voordien. Lamp $C$ brandt dus feller.
+    \end{solution}
+\end{question}
+%———————————————————————————————————————
+
+\end{document}

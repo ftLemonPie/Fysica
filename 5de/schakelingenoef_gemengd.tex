@@ -1,0 +1,558 @@
+\documentclass{ximera}
+%verbeterd 30/10/26
+\title{Vraagstukken gemengde schakelingen}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+    Oefeningen op gemengde schakelingen met één spanningsbron, van makkelijk naar moeilijk.
+\end{abstract}
+\maketitle
+
+\section{Oefeningen gemengde schakelingen}
+
+%———————————————————————————————————————
+% GEMENGD 1: R1 IN SERIE MET TWEE GELIJKE PARALLELLE
+\begin{exercise}
+    In de schakeling is $R_1 = 6{,}0\,\mathrm{\Omega}$ en zijn $R_2 = R_3 = 12\,\mathrm{\Omega}$. De bron levert $18\,\mathrm{V}$.
+
+    \begin{center}
+        \begin{circuitikz}[european]
+            \draw (0,3) to[battery1, l=$U$] (0,0) -- (6,0);
+            \draw (0,3) to[R, l=$R_1$] (3,3) -- (6,3);
+            \draw (3,3) to[R, l=$R_2$, *-*] (3,0);
+            \draw (6,3) to[R, l=$R_3$, *-*] (6,0);
+        \end{circuitikz}
+    \end{center}
+
+    \begin{question}
+        Bereken de totale weerstand van de schakeling.
+
+        \[ R_{\text{tot}} = \answer[tolerance=0.05,onlineshowanswerbutton]{12} \, \mathrm{\Omega} \]
+
+        \begin{hint}
+            Welke twee weerstanden kan je als eerste samenvoegen tot één vervangingsweerstand?
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & R_1 = 6{,}0\,\mathrm{\Omega} & & R_2 = R_3 = 12\,\mathrm{\Omega} \\
+                & U = 18\,\mathrm{V} & &
+            \end{align*}
+
+            \underline{Gevraagd:} $R_{\text{tot}}$ \\
+
+            \underline{Oplossing:}\\
+            $R_2$ en $R_3$ staan in parallel en zijn gelijk:
+            \begin{align*}
+                R_{23} &= \frac{12\,\mathrm{\Omega}}{2} = 6{,}0\,\mathrm{\Omega}
+            \end{align*}
+            Deze groep staat in serie met $R_1$:
+            \begin{align*}
+                R_{\text{tot}} &= R_1 + R_{23} = 6{,}0\,\mathrm{\Omega} + 6{,}0\,\mathrm{\Omega} = 12\,\mathrm{\Omega}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken de stroom door de bron.
+
+        \[ I = \answer[tolerance=0.05,onlineshowanswerbutton]{1.5} \, \mathrm{A} \]
+
+        \begin{solution}\nl
+            \underline{Gevraagd:} $I$ \\
+
+            \underline{Oplossing:}
+            \begin{align*}
+                I &= \frac{U}{R_{\text{tot}}} = \frac{18\,\mathrm{V}}{12\,\mathrm{\Omega}} = 1{,}5\,\mathrm{A}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken de spanning over de parallelle groep van $R_2$ en $R_3$.
+
+        \[ U_{23} = \answer[tolerance=0.05,onlineshowanswerbutton]{9.0} \, \mathrm{V} \]
+
+        \begin{solution}\nl
+            \underline{Gevraagd:} $U_{23}$ \\
+
+            \underline{Oplossing:}\\
+            De stroom door de bron loopt ook door de vervangingsweerstand $R_{23}$:
+            \begin{align*}
+                U_{23} &= R_{23} \cdot I = 6{,}0\,\mathrm{\Omega} \cdot 1{,}5\,\mathrm{A} = 9{,}0\,\mathrm{V}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken de stroom door $R_3$.
+
+        \[ I_3 = \answer[tolerance=0.05,onlineshowanswerbutton]{0.75} \, \mathrm{A} \]
+
+        \begin{solution}\nl
+            \underline{Gevraagd:} $I_3$ \\
+
+            \underline{Oplossing:}\\
+            Over $R_3$ staat dezelfde spanning als over de hele groep:
+            \begin{align*}
+                I_3 &= \frac{U_{23}}{R_3} = \frac{9{,}0\,\mathrm{V}}{12\,\mathrm{\Omega}} = 0{,}75\,\mathrm{A}
+            \end{align*}
+        \end{solution}
+    \end{question}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% GEMENGD 2: (R1 + R2) PARALLEL MET R3
+\begin{exercise}
+    In de schakeling is $R_1 = 20\,\mathrm{\Omega}$, $R_2 = 40\,\mathrm{\Omega}$ en $R_3 = 30\,\mathrm{\Omega}$. De bron levert $12\,\mathrm{V}$. $R_1$ en $R_2$ staan samen in één tak, $R_3$ staat in een tweede tak.
+
+    \begin{center}
+        \begin{circuitikz}[european]
+            \draw (0,3) to[battery1, l=$U$] (0,0) -- (8,0);
+            \draw (0,3) -- (2,3);
+            \draw (2,3) to[R, l=$R_1$] (5,3) to[R, l=$R_2$] (8,3) -- (8,0);
+            \draw (2,3) to[R, l=$R_3$, *-*] (2,0);
+        \end{circuitikz}
+    \end{center}
+
+    \begin{question}
+        Bereken de totale weerstand van de schakeling.
+
+        \[ R_{\text{tot}} = \answer[tolerance=0.05,onlineshowanswerbutton]{20} \, \mathrm{\Omega} \]
+
+        \begin{hint}
+            Welke weerstanden staan rechtstreeks achter elkaar, zonder vertakking ertussen? Vervang die eerst.
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & R_1 = 20\,\mathrm{\Omega} & & R_2 = 40\,\mathrm{\Omega} \\
+                & R_3 = 30\,\mathrm{\Omega} & & U = 12\,\mathrm{V}
+            \end{align*}
+
+            \underline{Gevraagd:} $R_{\text{tot}}$ \\
+
+            \underline{Oplossing:}\\
+            $R_1$ en $R_2$ staan in serie:
+            \begin{align*}
+                R_{12} &= R_1 + R_2 = 20\,\mathrm{\Omega} + 40\,\mathrm{\Omega} = 60\,\mathrm{\Omega}
+            \end{align*}
+            Die tak staat in parallel met $R_3$:
+            \begin{align*}
+                \frac{1}{R_{\text{tot}}} &= \frac{1}{60\,\mathrm{\Omega}} + \frac{1}{30\,\mathrm{\Omega}} = \frac{1 + 2}{60\,\mathrm{\Omega}} = \frac{1}{20\,\mathrm{\Omega}} \\
+                R_{\text{tot}} &= 20\,\mathrm{\Omega}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken de stroom door de bron.
+
+        \[ I = \answer[tolerance=0.05,onlineshowanswerbutton]{0.60} \, \mathrm{A} \]
+
+        \begin{solution}\nl
+            \underline{Gevraagd:} $I$ \\
+
+            \underline{Oplossing:}
+            \begin{align*}
+                I &= \frac{U}{R_{\text{tot}}} = \frac{12\,\mathrm{V}}{20\,\mathrm{\Omega}} = 0{,}60\,\mathrm{A}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken de stroom door $R_1$.
+
+        \[ I_1 = \answer[tolerance=0.05,onlineshowanswerbutton]{0.20} \, \mathrm{A} \]
+
+        \begin{hint}
+            Welke spanning staat er over de tak met $R_1$ en $R_2$?
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gevraagd:} $I_1$ \\
+
+            \underline{Oplossing:}\\
+            De tak van $R_1$ en $R_2$ staat in parallel met de bron, dus over de tak staat $12\,\mathrm{V}$. De stroom in die tak is dezelfde door $R_1$ en $R_2$:
+            \begin{align*}
+                I_1 &= \frac{U}{R_{12}} = \frac{12\,\mathrm{V}}{60\,\mathrm{\Omega}} = 0{,}20\,\mathrm{A}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken de spanning over $R_2$.
+
+        \[ U_2 = \answer[tolerance=0.05,onlineshowanswerbutton]{8.0} \, \mathrm{V} \]
+
+        \begin{solution}\nl
+            \underline{Gevraagd:} $U_2$ \\
+
+            \underline{Oplossing:}
+            \begin{align*}
+                U_2 &= R_2 \cdot I_1 = 40\,\mathrm{\Omega} \cdot 0{,}20\,\mathrm{A} = 8{,}0\,\mathrm{V}
+            \end{align*}
+            Controle: $U_1 = 20\,\mathrm{\Omega} \cdot 0{,}20\,\mathrm{A} = 4{,}0\,\mathrm{V}$ en $U_1 + U_2 = 12\,\mathrm{V} = U$.
+        \end{solution}
+    \end{question}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% GEMENGD 3: R4 EN R1 IN SERIE MET PARALLELLE GROEP
+\begin{exercise}
+    In de schakeling is $R_1 = 4{,}0\,\mathrm{\Omega}$, $R_2 = 12\,\mathrm{\Omega}$, $R_3 = 6{,}0\,\mathrm{\Omega}$ en $R_4 = 8{,}0\,\mathrm{\Omega}$. De bron levert $24\,\mathrm{V}$.
+
+    \begin{center}
+        \begin{circuitikz}[european]
+            \draw (0,3) to[battery1, l=$U$] (0,0) to[R, l_=$R_4$] (3,0) -- (6,0);
+            \draw (0,3) to[R, l=$R_1$] (3,3) -- (6,3);
+            \draw (3,3) to[R, l=$R_2$, *-*] (3,0);
+            \draw (6,3) to[R, l=$R_3$, *-*] (6,0);
+        \end{circuitikz}
+    \end{center}
+
+    \begin{question}
+        Bereken de totale weerstand van de schakeling.
+
+        \[ R_{\text{tot}} = \answer[tolerance=0.05,onlineshowanswerbutton]{16} \, \mathrm{\Omega} \]
+
+        \begin{hint}
+            Welke twee weerstanden zijn de enige die in parallel staan? Begin daar.
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & R_1 = 4{,}0\,\mathrm{\Omega} & & R_2 = 12\,\mathrm{\Omega} \\
+                & R_3 = 6{,}0\,\mathrm{\Omega} & & R_4 = 8{,}0\,\mathrm{\Omega} \\
+                & U = 24\,\mathrm{V} & &
+            \end{align*}
+
+            \underline{Gevraagd:} $R_{\text{tot}}$ \\
+
+            \underline{Oplossing:}\\
+            $R_2$ en $R_3$ staan in parallel:
+            \begin{align*}
+                \frac{1}{R_{23}} &= \frac{1}{12\,\mathrm{\Omega}} + \frac{1}{6{,}0\,\mathrm{\Omega}} = \frac{1 + 2}{12\,\mathrm{\Omega}} = \frac{1}{4{,}0\,\mathrm{\Omega}} \\
+                R_{23} &= 4{,}0\,\mathrm{\Omega}
+            \end{align*}
+            $R_1$, $R_{23}$ en $R_4$ staan in serie:
+            \begin{align*}
+                R_{\text{tot}} &= R_1 + R_{23} + R_4 = 4{,}0\,\mathrm{\Omega} + 4{,}0\,\mathrm{\Omega} + 8{,}0\,\mathrm{\Omega} = 16\,\mathrm{\Omega}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken de stroom door de bron.
+
+        \[ I = \answer[tolerance=0.05,onlineshowanswerbutton]{1.5} \, \mathrm{A} \]
+
+        \begin{solution}\nl
+            \underline{Gevraagd:} $I$ \\
+
+            \underline{Oplossing:}
+            \begin{align*}
+                I &= \frac{U}{R_{\text{tot}}} = \frac{24\,\mathrm{V}}{16\,\mathrm{\Omega}} = 1{,}5\,\mathrm{A}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken de stroom door $R_3$.
+
+        \[ I_3 = \answer[tolerance=0.05,onlineshowanswerbutton]{1.0} \, \mathrm{A} \]
+
+        \begin{hint}
+            Welke spanning staat er over de parallelle groep van $R_2$ en $R_3$? Gebruik daarvoor de stroom die door de hele groep loopt.
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gevraagd:} $I_3$ \\
+
+            \underline{Oplossing:}\\
+            De stroom door de bron loopt door $R_{23}$:
+            \begin{align*}
+                U_{23} &= R_{23} \cdot I = 4{,}0\,\mathrm{\Omega} \cdot 1{,}5\,\mathrm{A} = 6{,}0\,\mathrm{V} \\
+                I_3 &= \frac{U_{23}}{R_3} = \frac{6{,}0\,\mathrm{V}}{6{,}0\,\mathrm{\Omega}} = 1{,}0\,\mathrm{A}
+            \end{align*}
+            Controle: $I_2 = \frac{6{,}0\,\mathrm{V}}{12\,\mathrm{\Omega}} = 0{,}50\,\mathrm{A}$ en $I_2 + I_3 = 1{,}5\,\mathrm{A} = I$.
+        \end{solution}
+    \end{question}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% GEMENGD 4: TWEE PARALLELLE GROEPEN IN SERIE
+\begin{exercise}
+    In de schakeling is $R_1 = 20\,\mathrm{\Omega}$, $R_2 = 30\,\mathrm{\Omega}$, $R_3 = 15\,\mathrm{\Omega}$ en $R_4 = 10\,\mathrm{\Omega}$. De bron levert $9{,}0\,\mathrm{V}$. $R_1$ en $R_2$ staan samen in parallel, en $R_3$ en $R_4$ staan samen in parallel.
+
+    \begin{center}
+        \begin{circuitikz}[european]
+            \draw (0,4) to[battery1, l=$U$] (0,0) -- (4,0);
+            \draw (0,4) -- (4,4);
+            \draw (1.5,4) to[R, l=$R_1$, *-*] (1.5,2);
+            \draw (4,4) to[R, l=$R_2$, *-*] (4,2);
+            \draw (1.5,2) -- (4,2);
+            \draw (1.5,2) to[R, l=$R_3$, *-*] (1.5,0);
+            \draw (4,2) to[R, l=$R_4$, *-*] (4,0);
+        \end{circuitikz}
+    \end{center}
+
+    \begin{question}
+        Bereken de totale weerstand van de schakeling.
+
+        \[ R_{\text{tot}} = \answer[tolerance=0.05,onlineshowanswerbutton]{18} \, \mathrm{\Omega} \]
+
+        \begin{hint}
+            Je kan de schakeling opsplitsen in twee groepen. Hoe staan die twee groepen ten opzichte van elkaar?
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & R_1 = 20\,\mathrm{\Omega} & & R_2 = 30\,\mathrm{\Omega} \\
+                & R_3 = 15\,\mathrm{\Omega} & & R_4 = 10\,\mathrm{\Omega} \\
+                & U = 9{,}0\,\mathrm{V} & &
+            \end{align*}
+
+            \underline{Gevraagd:} $R_{\text{tot}}$ \\
+
+            \underline{Oplossing:}
+            \begin{align*}
+                \frac{1}{R_{12}} &= \frac{1}{20\,\mathrm{\Omega}} + \frac{1}{30\,\mathrm{\Omega}} = \frac{3 + 2}{60\,\mathrm{\Omega}} = \frac{1}{12\,\mathrm{\Omega}} \\
+                R_{12} &= 12\,\mathrm{\Omega} \\
+                \frac{1}{R_{34}} &= \frac{1}{15\,\mathrm{\Omega}} + \frac{1}{10\,\mathrm{\Omega}} = \frac{2 + 3}{30\,\mathrm{\Omega}} = \frac{1}{6{,}0\,\mathrm{\Omega}} \\
+                R_{34} &= 6{,}0\,\mathrm{\Omega}
+            \end{align*}
+            De twee groepen staan in serie:
+            \begin{align*}
+                R_{\text{tot}} &= R_{12} + R_{34} = 12\,\mathrm{\Omega} + 6{,}0\,\mathrm{\Omega} = 18\,\mathrm{\Omega}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken de stroom door de bron.
+
+        \[ I = \answer[tolerance=0.05,onlineshowanswerbutton]{0.50} \, \mathrm{A} \]
+
+        \begin{solution}\nl
+            \underline{Gevraagd:} $I$ \\
+
+            \underline{Oplossing:}
+            \begin{align*}
+                I &= \frac{U}{R_{\text{tot}}} = \frac{9{,}0\,\mathrm{V}}{18\,\mathrm{\Omega}} = 0{,}50\,\mathrm{A}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken de spanning over de groep van $R_1$ en $R_2$.
+
+        \[ U_{12} = \answer[tolerance=0.05,onlineshowanswerbutton]{6.0} \, \mathrm{V} \]
+
+        \begin{solution}\nl
+            \underline{Gevraagd:} $U_{12}$ \\
+
+            \underline{Oplossing:}
+            \begin{align*}
+                U_{12} &= R_{12} \cdot I = 12\,\mathrm{\Omega} \cdot 0{,}50\,\mathrm{A} = 6{,}0\,\mathrm{V}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken de stroom door $R_4$.
+
+        \[ I_4 = \answer[tolerance=0.05,onlineshowanswerbutton]{0.30} \, \mathrm{A} \]
+
+        \begin{hint}
+            Hoeveel spanning blijft er over voor de groep van $R_3$ en $R_4$?
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gevraagd:} $I_4$ \\
+
+            \underline{Oplossing:}\\
+            Samen staan beide groepen over de bron, dus
+            \begin{align*}
+                U_{34} &= U - U_{12} = 9{,}0\,\mathrm{V} - 6{,}0\,\mathrm{V} = 3{,}0\,\mathrm{V} \\
+                I_4 &= \frac{U_{34}}{R_4} = \frac{3{,}0\,\mathrm{V}}{10\,\mathrm{\Omega}} = 0{,}30\,\mathrm{A}
+            \end{align*}
+        \end{solution}
+    \end{question}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% GEMENGD 5: ONBEKENDE WEERSTAND
+\begin{exercise}
+    In de schakeling is $R_1 = 10\,\mathrm{\Omega}$ en $R_2 = 30\,\mathrm{\Omega}$. De weerstand $R_3$ is onbekend. De bron levert $20\,\mathrm{V}$ en de ampèremeter in de hoofdtak toont $1{,}0\,\mathrm{A}$.
+
+    \begin{center}
+        \begin{circuitikz}[european]
+            \draw (0,3) to[battery1, l=$U$] (0,0) -- (7.5,0);
+            \draw (0,3) to[ammeter] (1.8,3) to[R, l=$R_1$] (4.8,3) -- (7.5,3);
+            \draw (4.8,3) to[R, l=$R_2$, *-*] (4.8,0);
+            \draw (7.5,3) to[R, l=$R_3$, *-*] (7.5,0);
+        \end{circuitikz}
+    \end{center}
+
+    \begin{question}
+        Bereken de totale weerstand van de schakeling.
+
+        \[ R_{\text{tot}} = \answer[tolerance=0.05,onlineshowanswerbutton]{20} \, \mathrm{\Omega} \]
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & R_1 = 10\,\mathrm{\Omega} & & R_2 = 30\,\mathrm{\Omega} \\
+                & U = 20\,\mathrm{V} & & I = 1{,}0\,\mathrm{A}
+            \end{align*}
+
+            \underline{Gevraagd:} $R_{\text{tot}}$ en $R_3$ \\
+
+            \underline{Oplossing:}
+            \begin{align*}
+                R_{\text{tot}} &= \frac{U}{I} = \frac{20\,\mathrm{V}}{1{,}0\,\mathrm{A}} = 20\,\mathrm{\Omega}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken de vervangingsweerstand van de parallelle groep van $R_2$ en $R_3$.
+
+        \[ R_{23} = \answer[tolerance=0.05,onlineshowanswerbutton]{10} \, \mathrm{\Omega} \]
+
+        \begin{hint}
+            Hoe hangen $R_{\text{tot}}$, $R_1$ en de vervangingsweerstand van de parallelle groep samen?
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gevraagd:} $R_{23}$ \\
+
+            \underline{Oplossing:}\\
+            $R_1$ staat in serie met de parallelle groep:
+            \begin{align*}
+                R_{23} &= R_{\text{tot}} - R_1 = 20\,\mathrm{\Omega} - 10\,\mathrm{\Omega} = 10\,\mathrm{\Omega}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken de onbekende weerstand $R_3$.
+
+        \[ R_3 = \answer[tolerance=0.05,onlineshowanswerbutton]{15} \, \mathrm{\Omega} \]
+
+        \begin{solution}\nl
+            \underline{Gevraagd:} $R_3$ \\
+
+            \underline{Oplossing:}
+            \begin{align*}
+                \frac{1}{R_3} &= \frac{1}{R_{23}} - \frac{1}{R_2} = \frac{1}{10\,\mathrm{\Omega}} - \frac{1}{30\,\mathrm{\Omega}} = \frac{3 - 1}{30\,\mathrm{\Omega}} = \frac{1}{15\,\mathrm{\Omega}} \\
+                R_3 &= 15\,\mathrm{\Omega}
+            \end{align*}
+        \end{solution}
+    \end{question}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% GEMENGD 6: SCHAKELAAR
+\begin{exercise}
+    In de schakeling is $R_1 = 10\,\mathrm{\Omega}$ en $R_2 = R_3 = 20\,\mathrm{\Omega}$. De bron levert $12\,\mathrm{V}$. Eerst is de schakelaar $S$ open. Daarna sluit je de schakelaar.
+
+    \begin{center}
+        \begin{circuitikz}[european]
+            \draw (0,3) to[battery1, l=$U$] (0,0) -- (6,0);
+            \draw (0,3) to[R, l=$R_1$] (3,3) -- (6,3);
+            \draw (3,3) to[R, l=$R_2$, *-*] (3,0);
+            \draw (6,3) to[ospst, l=$S$, *-] (6,1.5) to[R, l=$R_3$, -*] (6,0);
+        \end{circuitikz}
+    \end{center}
+
+    \begin{question}
+        Bereken de stroom door $R_1$ als de schakelaar open is.
+
+        \[ I_{\text{open}} = \answer[tolerance=0.05,onlineshowanswerbutton]{0.40} \, \mathrm{A} \]
+
+        \begin{hint}
+            Welke takken voeren stroom als de schakelaar open is?
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & R_1 = 10\,\mathrm{\Omega} & & R_2 = R_3 = 20\,\mathrm{\Omega} \\
+                & U = 12\,\mathrm{V} & &
+            \end{align*}
+
+            \underline{Gevraagd:} $I_{\text{open}}$ en $I_{\text{dicht}}$ \\
+
+            \underline{Oplossing:}\\
+            Bij een open schakelaar loopt er geen stroom door $R_3$. Enkel $R_1$ en $R_2$ staan in serie:
+            \begin{align*}
+                R_{\text{tot}} &= R_1 + R_2 = 10\,\mathrm{\Omega} + 20\,\mathrm{\Omega} = 30\,\mathrm{\Omega} \\
+                I_{\text{open}} &= \frac{U}{R_{\text{tot}}} = \frac{12\,\mathrm{V}}{30\,\mathrm{\Omega}} = 0{,}40\,\mathrm{A}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken de stroom door $R_1$ als de schakelaar gesloten is.
+
+        \[ I_{\text{dicht}} = \answer[tolerance=0.05,onlineshowanswerbutton]{0.60} \, \mathrm{A} \]
+
+        \begin{solution}\nl
+            \underline{Gevraagd:} $I_{\text{dicht}}$ \\
+
+            \underline{Oplossing:}\\
+            Nu staan $R_2$ en $R_3$ in parallel, in serie met $R_1$:
+            \begin{align*}
+                R_{23} &= \frac{20\,\mathrm{\Omega}}{2} = 10\,\mathrm{\Omega} \\
+                R_{\text{tot}} &= R_1 + R_{23} = 10\,\mathrm{\Omega} + 10\,\mathrm{\Omega} = 20\,\mathrm{\Omega} \\
+                I_{\text{dicht}} &= \frac{U}{R_{\text{tot}}} = \frac{12\,\mathrm{V}}{20\,\mathrm{\Omega}} = 0{,}60\,\mathrm{A}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Wat gebeurt er met de spanning over $R_2$ als je de schakelaar sluit?
+
+        De spanning over $R_2$ wordt: \wordChoice{
+            \choice{groter}
+            \choice[correct]{kleiner}
+            \choice{niet anders}
+        }
+
+        \begin{hint}
+            Vergelijk de spanning over $R_1$ in beide toestanden. Hoeveel blijft er dan over voor $R_2$?
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gevraagd:} verandering van $U_2$ \\
+
+            \underline{Oplossing:}\\
+            Open schakelaar:
+            \begin{align*}
+                U_1 &= R_1 \cdot I_{\text{open}} = 10\,\mathrm{\Omega} \cdot 0{,}40\,\mathrm{A} = 4{,}0\,\mathrm{V} \\
+                U_2 &= U - U_1 = 12\,\mathrm{V} - 4{,}0\,\mathrm{V} = 8{,}0\,\mathrm{V}
+            \end{align*}
+            Gesloten schakelaar:
+            \begin{align*}
+                U_1 &= R_1 \cdot I_{\text{dicht}} = 10\,\mathrm{\Omega} \cdot 0{,}60\,\mathrm{A} = 6{,}0\,\mathrm{V} \\
+                U_2 &= U - U_1 = 12\,\mathrm{V} - 6{,}0\,\mathrm{V} = 6{,}0\,\mathrm{V}
+            \end{align*}
+            De spanning over $R_2$ daalt van $8{,}0\,\mathrm{V}$ naar $6{,}0\,\mathrm{V}$: ze wordt kleiner.
+        \end{solution}
+    \end{question}
+\end{exercise}
+%———————————————————————————————————————
+
+\end{document}

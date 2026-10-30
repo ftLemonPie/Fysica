@@ -5,11 +5,11 @@
 
 \begin{document}
 \begin{abstract}
-    Moeilijkere oefeningen over positie, snelheid en versnelling bij rechtlijnige en kromlijnige bewegingen, van makkelijk naar moeilijk.
+    Moeilijkere oefeningen over positie, snelheid en versnelling, verdeeld per type en telkens van makkelijk naar moeilijk. Je gebruikt afgeleiden en hellingen; integralen zijn niet nodig.
 \end{abstract}
 \maketitle
 
-\section{Moeilijke oefeningen: positie, snelheid en versnelling}
+\section{Verplaatsing, afgelegde weg en gemiddelde snelheid}
 
 %———————————————————————————————————————
 % OEFENING 1 (makkelijkst): verplaatsing, afgelegde weg en gemiddelde snelheid
@@ -130,6 +130,254 @@
     \end{question}
 \end{exercise}
 %———————————————————————————————————————
+\section{Grafieken: van de $x(t)$-grafiek naar snelheid en versnelling}
+Hier lees je de snelheid af als de helling van een $x(t)$-grafiek of van een raaklijn, en bepaal je daaruit (gemiddelde) versnellingen.
+
+%———————————————————————————————————————
+% OEFENING: x(t)-grafiek naar v(t) en a(t)
+\begin{exercise}
+    Een robotwagentje rijdt over een rechte rail langs de $x$-as. De figuur toont zijn positie $x$ als functie van de tijd.
+
+    \begin{center}
+        \begin{tikzpicture}[x=0.45cm,y=0.2cm]
+            \draw[gray!40, very thin] (0,-8) grid[xstep=2,ystep=4] (16,12);
+            \draw[positie] (0,0) -- (17,0) node[right] {$t\,(\mathrm{s})$};
+            \draw[positie] (0,-9.5) -- (0,14.5) node[above] {$x\,(\mathrm{m})$};
+            \foreach \tx in {2,4,...,16} \draw (\tx,0.4) -- (\tx,-0.4) node[above=3pt, font=\small] {\tx};
+            \foreach \xy in {-8,-4,4,8,12} \draw (0.2,\xy) -- (-0.2,\xy) node[left, font=\small] {$\xy$};
+            \draw[line width=1pt, black] (0,0) -- (4,12) -- (8,12) -- (12,0) -- (16,-8);
+        \end{tikzpicture}
+    \end{center}
+
+    \begin{question}
+        Bereken de snelheid $v_x$ van het wagentje tussen $t = 0 \, \mathrm{s}$ en $t = 4{,}0 \, \mathrm{s}$.
+
+        \[ v_x = \answer[tolerance=0.01,onlineshowanswerbutton]{3.0} \, \mathrm{m/s} \]
+
+        \begin{hint}
+            Wat stelt de helling van een $x(t)$-grafiek voor?
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & x(0) = 0 \, \mathrm{m} & & x(4{,}0 \, \mathrm{s}) = 12 \, \mathrm{m}
+            \end{align*}
+
+            \underline{Gevraagd:} $v_x$\\
+
+            \underline{Oplossing:}\\
+            De grafiek is een rechte, dus de snelheid is constant en gelijk aan de helling:
+            \[
+                v_x = \frac{\Delta x}{\Delta t} = \frac{12 \, \mathrm{m} - 0 \, \mathrm{m}}{4{,}0 \, \mathrm{s} - 0 \, \mathrm{s}} = 3{,}0 \, \mathrm{m/s}
+            \]
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken de snelheid $v_x$ tussen $t = 8{,}0 \, \mathrm{s}$ en $t = 12 \, \mathrm{s}$.
+
+        \[ v_x = \answer[tolerance=0.01,onlineshowanswerbutton]{-3.0} \, \mathrm{m/s} \]
+
+        Tussen $t = 4{,}0 \, \mathrm{s}$ en $t = 8{,}0 \, \mathrm{s}$ geldt: \wordChoice{
+            \choice[correct]{het wagentje staat stil}
+            \choice{het wagentje rijdt met constante snelheid vooruit}
+            \choice{het wagentje versnelt}
+        }
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & x(8{,}0 \, \mathrm{s}) = 12 \, \mathrm{m} & & x(12 \, \mathrm{s}) = 0 \, \mathrm{m}
+            \end{align*}
+
+            \underline{Gevraagd:} $v_x$\\
+
+            \underline{Oplossing:}\\
+            \[
+                v_x = \frac{\Delta x}{\Delta t} = \frac{0 \, \mathrm{m} - 12 \, \mathrm{m}}{12 \, \mathrm{s} - 8{,}0 \, \mathrm{s}} = -3{,}0 \, \mathrm{m/s}
+            \]
+            Het wagentje rijdt hier in de negatieve zin terug naar de oorsprong. Tussen $4{,}0 \, \mathrm{s}$ en $8{,}0 \, \mathrm{s}$ is de grafiek horizontaal: de positie verandert niet, dus $v_x = 0 \, \mathrm{m/s}$ en het wagentje staat stil.
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken de gemiddelde versnelling $\langle a_x \rangle$ tussen $t = 2{,}0 \, \mathrm{s}$ en $t = 10 \, \mathrm{s}$.
+
+        \[ \langle a_x \rangle = \answer[tolerance=0.01,onlineshowanswerbutton]{-0.75} \, \mathrm{m/s^2} \]
+
+        \begin{hint}
+            Je kent de snelheid op beide tijdstippen niet rechtstreeks, maar wel via de grafiek. Op welke momenten moet je dus de snelheid bepalen?
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & v_x(2{,}0 \, \mathrm{s}) = 3{,}0 \, \mathrm{m/s} & & v_x(10 \, \mathrm{s}) = -3{,}0 \, \mathrm{m/s}
+            \end{align*}
+
+            \underline{Gevraagd:} $\langle a_x \rangle$\\
+
+            \underline{Oplossing:}\\
+            Op $t = 2{,}0 \, \mathrm{s}$ is het wagentje in het eerste stuk (helling $3{,}0 \, \mathrm{m/s}$), op $t = 10 \, \mathrm{s}$ in het stuk met helling $-3{,}0 \, \mathrm{m/s}$:
+            \[
+                \langle a_x \rangle = \frac{\Delta v_x}{\Delta t} = \frac{-3{,}0 \, \mathrm{m/s} - 3{,}0 \, \mathrm{m/s}}{10 \, \mathrm{s} - 2{,}0 \, \mathrm{s}} = -0{,}75 \, \mathrm{m/s^2}
+            \]
+            In werkelijkheid verloopt een overgang tussen twee snelheden nooit ogenblikkelijk. De knikken in de grafiek zijn dus een vereenvoudiging, en daarom rekenen we hier met een gemiddelde versnelling.
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken de gemiddelde snelheid $\langle v_x \rangle$ tussen $t = 0 \, \mathrm{s}$ en $t = 16 \, \mathrm{s}$.
+
+        \[ \langle v_x \rangle = \answer[tolerance=0.01,onlineshowanswerbutton]{-0.50} \, \mathrm{m/s} \]
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & x(0) = 0 \, \mathrm{m} & & x(16 \, \mathrm{s}) = -8{,}0 \, \mathrm{m}
+            \end{align*}
+
+            \underline{Gevraagd:} $\langle v_x \rangle$\\
+
+            \underline{Oplossing:}\\
+            \[
+                \langle v_x \rangle = \frac{\Delta x}{\Delta t} = \frac{-8{,}0 \, \mathrm{m} - 0 \, \mathrm{m}}{16 \, \mathrm{s} - 0 \, \mathrm{s}} = -0{,}50 \, \mathrm{m/s}
+            \]
+            Het wagentje is uiteindelijk $8{,}0 \, \mathrm{m}$ links van de oorsprong, dus de gemiddelde snelheid is negatief.
+        \end{solution}
+    \end{question}
+\end{exercise}
+%———————————————————————————————————————
+%———————————————————————————————————————
+% OEFENING: gekromde x(t)-grafiek, raaklijn
+\begin{exercise}
+    De positie van een voorwerp op de $x$-as wordt gegeven door
+    \[
+        x(t) = -1{,}0 \, \mathrm{\frac{m}{s^2}} \cdot t^{2} + 8{,}0 \, \mathrm{\frac{m}{s}} \cdot t
+    \]
+    met $t$ in seconden. De grafiek is hieronder getekend, samen met de raaklijn aan de grafiek op $t = 2{,}0 \, \mathrm{s}$. Die raaklijn gaat door de punten $(0 \, \mathrm{s}; 4{,}0 \, \mathrm{m})$ en $(3{,}0 \, \mathrm{s}; 16 \, \mathrm{m})$.
+
+    \begin{center}
+        \begin{tikzpicture}[x=0.8cm,y=0.25cm]
+            \draw[gray!40, very thin] (0,0) grid[xstep=1,ystep=4] (8,17);
+            \draw[positie] (0,0) -- (8.8,0) node[right] {$t\,(\mathrm{s})$};
+            \draw[positie] (0,0) -- (0,19) node[above] {$x\,(\mathrm{m})$};
+            \foreach \tx in {1,2,...,8} \draw (\tx,0.4) -- (\tx,-0.4) node[below=3pt, font=\small] {\tx};
+            \foreach \xy in {4,8,12,16} \draw (0.1,\xy) -- (-0.1,\xy) node[left, font=\small] {$\xy$};
+            \draw[line width=1pt, black, domain=0:8, samples=40, smooth, variable=\xx] plot ({\xx},{-\xx*\xx+8*\xx});
+            \draw[line width=0.8pt, red!100!black] (0,4) -- (3,16);
+            \fill[red!100!black] (0,4) circle (2pt) (3,16) circle (2pt);
+            \fill (2,12) circle (2pt);
+        \end{tikzpicture}
+    \end{center}
+
+    \begin{question}
+        Bepaal de snelheid $v_x$ op $t = 2{,}0 \, \mathrm{s}$ met behulp van de raaklijn.
+
+        \[ v_x(2{,}0 \, \mathrm{s}) = \answer[tolerance=0.01,onlineshowanswerbutton]{4.0} \, \mathrm{m/s} \]
+
+        \begin{hint}
+            De ogenblikkelijke snelheid is de helling van de raaklijn. Welke twee punten van de raaklijn ken je?
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & (t_1; x_1) = (0 \, \mathrm{s}; 4{,}0 \, \mathrm{m}) & & (t_2; x_2) = (3{,}0 \, \mathrm{s}; 16 \, \mathrm{m})
+            \end{align*}
+
+            \underline{Gevraagd:} $v_x(2{,}0 \, \mathrm{s})$\\
+
+            \underline{Oplossing:}\\
+            \[
+                v_x = \frac{x_2 - x_1}{t_2 - t_1} = \frac{16 \, \mathrm{m} - 4{,}0 \, \mathrm{m}}{3{,}0 \, \mathrm{s} - 0 \, \mathrm{s}} = 4{,}0 \, \mathrm{m/s}
+            \]
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken de gemiddelde snelheid $\langle v_x \rangle$ tussen $t = 0 \, \mathrm{s}$ en $t = 2{,}0 \, \mathrm{s}$. Is de snelheid op $t = 0 \, \mathrm{s}$ groter of kleiner dan deze gemiddelde snelheid?
+
+        \[ \langle v_x \rangle = \answer[tolerance=0.01,onlineshowanswerbutton]{6.0} \, \mathrm{m/s} \]
+
+        De snelheid op $t = 0 \, \mathrm{s}$ is: \wordChoice{
+            \choice[correct]{groter}
+            \choice{kleiner}
+        }
+
+        \begin{hint}
+            Hoe verandert de helling van de grafiek tussen $t = 0 \, \mathrm{s}$ en $t = 2{,}0 \, \mathrm{s}$? Vergelijk het begin met het einde van het interval.
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & x(0) = 0 \, \mathrm{m} & & x(2{,}0 \, \mathrm{s}) = 12 \, \mathrm{m}
+            \end{align*}
+
+            \underline{Gevraagd:} $\langle v_x \rangle$\\
+
+            \underline{Oplossing:}\\
+            \[
+                \langle v_x \rangle = \frac{\Delta x}{\Delta t} = \frac{12 \, \mathrm{m} - 0 \, \mathrm{m}}{2{,}0 \, \mathrm{s} - 0 \, \mathrm{s}} = 6{,}0 \, \mathrm{m/s}
+            \]
+            De grafiek wordt vlakker naarmate $t$ toeneemt: de helling (en dus de snelheid) neemt af. Op $t = 2{,}0 \, \mathrm{s}$ is de snelheid $4{,}0 \, \mathrm{m/s}$, dus op $t = 0 \, \mathrm{s}$ is ze groter dan de gemiddelde $6{,}0 \, \mathrm{m/s}$.
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Wat is de snelheid op $t = 4{,}0 \, \mathrm{s}$, het hoogste punt van de grafiek, en wat is het teken van de versnelling $a_x$ tijdens de hele beweging?
+
+        De snelheid $v_x(4{,}0 \, \mathrm{s})$ is: \wordChoice{
+            \choice{positief}
+            \choice{negatief}
+            \choice[correct]{nul}
+        }
+
+        De versnelling $a_x$ is: \wordChoice{
+            \choice{positief}
+            \choice[correct]{negatief}
+            \choice{nul}
+        }
+
+        \begin{solution}\nl
+            \underline{Gegevens:}\\
+            $x(t) = -1{,}0 \, \mathrm{m/s^2} \cdot t^{2} + 8{,}0 \, \mathrm{m/s} \cdot t$\\
+
+            \underline{Gevraagd:} $v_x(4{,}0 \, \mathrm{s})$ en het teken van $a_x$\\
+
+            \underline{Oplossing:}\\
+            In het hoogste punt van de grafiek is de raaklijn horizontaal: de helling is nul, dus $v_x = 0 \, \mathrm{m/s}$. Via de afgeleide:
+            \[
+                v_x(t) = x'(t) = -2{,}0 \, \mathrm{m/s^2} \cdot t + 8{,}0 \, \mathrm{m/s} \quad \Rightarrow \quad v_x(4{,}0 \, \mathrm{s}) = -8{,}0 \, \mathrm{m/s} + 8{,}0 \, \mathrm{m/s} = 0 \, \mathrm{m/s}
+            \]
+            De versnelling is de afgeleide van de snelheid: $a_x = -2{,}0 \, \mathrm{m/s^2}$. Ze is negatief en constant: de snelheid wordt voortdurend kleiner.
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken met behulp van de positievergelijking de snelheid $v_x$ op $t = 6{,}0 \, \mathrm{s}$.
+
+        \[ v_x(6{,}0 \, \mathrm{s}) = \answer[tolerance=0.01,onlineshowanswerbutton]{-4.0} \, \mathrm{m/s} \]
+
+        \begin{solution}\nl
+            \underline{Gegevens:}\\
+            $v_x(t) = -2{,}0 \, \mathrm{m/s^2} \cdot t + 8{,}0 \, \mathrm{m/s}$\\
+
+            \underline{Gevraagd:} $v_x(6{,}0 \, \mathrm{s})$\\
+
+            \underline{Oplossing:}\\
+            \[
+                v_x(6{,}0 \, \mathrm{s}) = -2{,}0 \, \mathrm{m/s^2} \cdot 6{,}0 \, \mathrm{s} + 8{,}0 \, \mathrm{m/s} = -4{,}0 \, \mathrm{m/s}
+            \]
+            Na $t = 4{,}0 \, \mathrm{s}$ beweegt het voorwerp dus in de negatieve zin, wat overeenkomt met de dalende grafiek.
+        \end{solution}
+    \end{question}
+\end{exercise}
+%———————————————————————————————————————
+\section{Grafieken: van de $v_x(t)$- en $a_x(t)$-grafiek naar snelheid en positie}
+De helling van een $v_x(t)$-grafiek is de versnelling. De oppervlakte tussen de grafiek en de $t$-as (driehoeken en rechthoeken) geeft de verandering van de positie, of bij een $a_x(t)$-grafiek de verandering van de snelheid.
 
 %———————————————————————————————————————
 % OEFENING 2: v(t)-grafiek met zinsomkering
@@ -291,7 +539,6 @@
     \end{question}
 \end{exercise}
 %———————————————————————————————————————
-
 %———————————————————————————————————————
 % OEFENING 3: a(t)-grafiek, van versnelling naar snelheid naar positie
 \begin{exercise}
@@ -441,7 +688,222 @@
     \end{question}
 \end{exercise}
 %———————————————————————————————————————
+%———————————————————————————————————————
+% OEFENING: twee v(t)-grafieken, inhalen
+\begin{exercise}
+    Twee wagentjes $A$ en $B$ vertrekken op $t = 0 \, \mathrm{s}$ samen vanuit de oorsprong en rijden in dezelfde zin langs de $x$-as. De figuur toont hun snelheden $v_x$ als functie van de tijd. Wagentje $A$ vertrekt uit rust.
 
+    \begin{center}
+        \begin{tikzpicture}[x=0.55cm,y=0.2cm]
+            \draw[gray!40, very thin] (0,0) grid[xstep=1,ystep=4] (10,20);
+            \draw[positie] (0,0) -- (10.8,0) node[right] {$t\,(\mathrm{s})$};
+            \draw[positie] (0,0) -- (0,23) node[above] {$v_x\,(\mathrm{m/s})$};
+            \foreach \tx in {2,4,...,10} \draw (\tx,0.4) -- (\tx,-0.4) node[below=3pt, font=\small] {\tx};
+            \foreach \vy in {4,8,12,16,20} \draw (0.1,\vy) -- (-0.1,\vy) node[left, font=\small] {$\vy$};
+            \draw[line width=1pt, red!100!black] (0,0) -- (10,20) node[above left] {$A$};
+            \draw[line width=1pt, blue!70!black] (0,8) -- (10,8) node[above left] {$B$};
+        \end{tikzpicture}
+    \end{center}
+
+    \begin{question}
+        Bereken de versnelling van wagentje $A$.
+
+        \[ a_A = \answer[tolerance=0.01,onlineshowanswerbutton]{2.0} \, \mathrm{m/s^2} \]
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & v_A(0) = 0 \, \mathrm{m/s} & & v_A(10 \, \mathrm{s}) = 20 \, \mathrm{m/s}
+            \end{align*}
+
+            \underline{Gevraagd:} $a_A$\\
+
+            \underline{Oplossing:}\\
+            \[
+                a_A = \frac{\Delta v_x}{\Delta t} = \frac{20 \, \mathrm{m/s} - 0 \, \mathrm{m/s}}{10 \, \mathrm{s} - 0 \, \mathrm{s}} = 2{,}0 \, \mathrm{m/s^2}
+            \]
+            Wagentje $B$ rijdt met constante snelheid $8{,}0 \, \mathrm{m/s}$, dus $a_B = 0 \, \mathrm{m/s^2}$.
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Op welk tijdstip hebben beide wagentjes dezelfde snelheid?
+
+        \[ t = \answer[tolerance=0.01,onlineshowanswerbutton]{4.0} \, \mathrm{s} \]
+
+        \begin{solution}\nl
+            \underline{Gegevens:}\\
+            $v_A(t) = 2{,}0 \, \mathrm{m/s^2} \cdot t$ en $v_B = 8{,}0 \, \mathrm{m/s}$\\
+
+            \underline{Gevraagd:} $t$ waarvoor $v_A = v_B$\\
+
+            \underline{Oplossing:}\\
+            \[
+                2{,}0 \, \mathrm{m/s^2} \cdot t = 8{,}0 \, \mathrm{m/s} \quad \Rightarrow \quad t = 4{,}0 \, \mathrm{s}
+            \]
+            Dit is het snijpunt van beide grafieken.
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Wat is de grootste afstand tussen beide wagentjes tijdens de eerste $10 \, \mathrm{s}$? Wagentje $B$ ligt dan voor.
+
+        \[ \answer[tolerance=0.01,onlineshowanswerbutton]{16} \, \mathrm{m} \]
+
+        \begin{hint}
+            Vergelijk hoe ver elk wagentje is gekomen op het moment dat ze dezelfde snelheid hebben. Hoe bepaal je een afgelegde afstand uit een $v_x(t)$-grafiek?
+        \end{hint}
+        \begin{hint}
+            Voor $t < 4{,}0 \, \mathrm{s}$ is $B$ sneller dan $A$, daarna is $A$ sneller. Wanneer is de afstand tussen beide dus het grootst?
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & t = 4{,}0 \, \mathrm{s} & & v_A(4{,}0 \, \mathrm{s}) = v_B = 8{,}0 \, \mathrm{m/s}
+            \end{align*}
+
+            \underline{Gevraagd:} maximale afstand tussen $A$ en $B$\\
+
+            \underline{Oplossing:}\\
+            Voor $t < 4{,}0 \, \mathrm{s}$ rijdt $B$ sneller dan $A$ en groeit de afstand. Daarna rijdt $A$ sneller en wordt de afstand kleiner. De afstand is dus maximaal op $t = 4{,}0 \, \mathrm{s}$.
+
+            De afgelegde afstand is de oppervlakte onder de $v_x(t)$-grafiek (een rechthoek voor $B$, een driehoek voor $A$):
+            \begin{align*}
+                \Delta x_B &= 4{,}0 \, \mathrm{s} \cdot 8{,}0 \, \mathrm{m/s} = 32 \, \mathrm{m}\\
+                \Delta x_A &= \tfrac{1}{2} \cdot 4{,}0 \, \mathrm{s} \cdot 8{,}0 \, \mathrm{m/s} = 16 \, \mathrm{m}
+            \end{align*}
+            De afstand is $32 \, \mathrm{m} - 16 \, \mathrm{m} = 16 \, \mathrm{m}$.
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Op welk tijdstip haalt $A$ wagentje $B$ in, en op welke positie $x$ is dat?
+
+        \[ t = \answer[tolerance=0.01,onlineshowanswerbutton]{8.0} \, \mathrm{s} \qquad \text{en} \qquad x = \answer[tolerance=0.01,onlineshowanswerbutton]{64} \, \mathrm{m} \]
+
+        \begin{hint}
+            Op het moment van inhalen hebben beide wagentjes evenveel afstand afgelegd. Druk de oppervlakte onder elke grafiek uit in functie van $t$.
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gegevens:}\\
+            $v_A(t) = 2{,}0 \, \mathrm{m/s^2} \cdot t$ en $v_B = 8{,}0 \, \mathrm{m/s}$\\
+
+            \underline{Gevraagd:} $t$ en $x$ waarvoor $\Delta x_A = \Delta x_B$\\
+
+            \underline{Oplossing:}\\
+            Na een tijd $t$ is de afgelegde afstand van $B$ een rechthoek en die van $A$ een driehoek met hoogte $v_A(t) = 2{,}0 \, \mathrm{m/s^2} \cdot t$:
+            \begin{align*}
+                \Delta x_B &= 8{,}0 \, \mathrm{m/s} \cdot t\\
+                \Delta x_A &= \tfrac{1}{2} \cdot t \cdot 2{,}0 \, \mathrm{m/s^2} \cdot t = 1{,}0 \, \mathrm{m/s^2} \cdot t^{2}
+            \end{align*}
+            We stellen beide gelijk (eenheden even weggelaten, $t$ in $\mathrm{s}$): $t^{2} = 8t$, dus $t = 8{,}0 \, \mathrm{s}$ (naast de oplossing $t = 0$ van het vertrek). De positie is:
+            \[
+                x = 8{,}0 \, \mathrm{m/s} \cdot 8{,}0 \, \mathrm{s} = 64 \, \mathrm{m}
+            \]
+            Op dat moment rijdt $A$ met $16 \, \mathrm{m/s}$ en $B$ met $8{,}0 \, \mathrm{m/s}$: $A$ haalt $B$ in.
+        \end{solution}
+    \end{question}
+\end{exercise}
+%———————————————————————————————————————
+\section{Functievoorschriften: van snelheid en positie naar versnelling}
+Met afgeleiden ga je van $x(t)$ naar $v_x(t)$ en $a_x(t)$. Hoe je van een versnelling terug naar snelheid en positie gaat, wordt hier niet gevraagd.
+
+%———————————————————————————————————————
+% OEFENING: v(t)-voorschrift naar a(t)
+\begin{exercise}
+    De snelheid van een voorwerp langs de $x$-as wordt gegeven door
+    \[
+        v_x(t) = 3{,}0 \, \mathrm{\frac{m}{s^3}} \cdot t^{2} - 12 \, \mathrm{\frac{m}{s^2}} \cdot t
+    \]
+    met $t$ in seconden.
+
+    \begin{question}
+        Op welk tijdstip $t > 0$ staat het voorwerp even stil, en hoe groot is de versnelling $a_x$ op dat moment?
+
+        \[ t = \answer[tolerance=0.01,onlineshowanswerbutton]{4.0} \, \mathrm{s} \qquad \text{en} \qquad a_x = \answer[tolerance=0.01,onlineshowanswerbutton]{12} \, \mathrm{m/s^2} \]
+
+        \begin{hint}
+            Hoe vind je de versnellingsvergelijking vanuit de snelheidsvergelijking?
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gegevens:}\\
+            $v_x(t) = 3{,}0 \, \mathrm{m/s^3} \cdot t^{2} - 12 \, \mathrm{m/s^2} \cdot t$\\
+
+            \underline{Gevraagd:} $t$ waarvoor $v_x = 0$ en $a_x$ op dat moment\\
+
+            \underline{Oplossing:}\\
+            Stilstaan betekent $v_x = 0$. We zetten $t$ buiten haakjes:
+            \[
+                3{,}0 \, \mathrm{m/s^3} \cdot t \cdot (t - 4{,}0 \, \mathrm{s}) = 0 \quad \Rightarrow \quad t = 0 \, \mathrm{s} \text{ of } t = 4{,}0 \, \mathrm{s}
+            \]
+            De versnelling is de afgeleide van de snelheid:
+            \[
+                a_x(t) = v_x'(t) = 6{,}0 \, \mathrm{m/s^3} \cdot t - 12 \, \mathrm{m/s^2}
+            \]
+            \[
+                a_x(4{,}0 \, \mathrm{s}) = 6{,}0 \, \mathrm{m/s^3} \cdot 4{,}0 \, \mathrm{s} - 12 \, \mathrm{m/s^2} = 12 \, \mathrm{m/s^2}
+            \]
+            Een voorwerp dat even stilstaat, heeft dus niet noodzakelijk een versnelling nul.
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Wat is de kleinste snelheid die het voorwerp bereikt?
+
+        \[ v_{x,\min} = \answer[tolerance=0.01,onlineshowanswerbutton]{-12} \, \mathrm{m/s} \]
+
+        \begin{hint}
+            Bij een grafiek met een dal of een top is de helling nul. Wat betekent dat voor de versnelling?
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gegevens:}\\
+            $a_x(t) = 6{,}0 \, \mathrm{m/s^3} \cdot t - 12 \, \mathrm{m/s^2}$\\
+
+            \underline{Gevraagd:} $v_{x,\min}$\\
+
+            \underline{Oplossing:}\\
+            De snelheid is extreem als haar afgeleide, de versnelling, nul is:
+            \[
+                6{,}0 \, \mathrm{m/s^3} \cdot t - 12 \, \mathrm{m/s^2} = 0 \quad \Rightarrow \quad t = 2{,}0 \, \mathrm{s}
+            \]
+            \begin{align*}
+                v_x(2{,}0 \, \mathrm{s}) &= 3{,}0 \, \mathrm{m/s^3} \cdot (2{,}0 \, \mathrm{s})^{2} - 12 \, \mathrm{m/s^2} \cdot 2{,}0 \, \mathrm{s}\\
+                &= 12 \, \mathrm{m/s} - 24 \, \mathrm{m/s} = -12 \, \mathrm{m/s}
+            \end{align*}
+            De grafiek van $v_x(t)$ is een dalparabool, dus dit is een minimum.
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Op $t = 3{,}0 \, \mathrm{s}$ geldt: \wordChoice{
+            \choice{de grootte van de snelheid neemt toe}
+            \choice[correct]{de grootte van de snelheid neemt af}
+        }
+
+        \begin{hint}
+            Bepaal het teken van de snelheid en het teken van de versnelling op dat moment en vergelijk ze.
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gegevens:}\\
+            $v_x(t) = 3{,}0 \, \mathrm{m/s^3} \cdot t^{2} - 12 \, \mathrm{m/s^2} \cdot t$ en $a_x(t) = 6{,}0 \, \mathrm{m/s^3} \cdot t - 12 \, \mathrm{m/s^2}$\\
+
+            \underline{Gevraagd:} evolutie van de grootte van de snelheid op $t = 3{,}0 \, \mathrm{s}$\\
+
+            \underline{Oplossing:}\\
+            \begin{align*}
+                v_x(3{,}0 \, \mathrm{s}) &= 27 \, \mathrm{m/s} - 36 \, \mathrm{m/s} = -9{,}0 \, \mathrm{m/s}\\
+                a_x(3{,}0 \, \mathrm{s}) &= 18 \, \mathrm{m/s^2} - 12 \, \mathrm{m/s^2} = +6{,}0 \, \mathrm{m/s^2}
+            \end{align*}
+            De snelheid is negatief en de versnelling positief: ze hebben een verschillend teken. De grootte van de snelheid neemt dus af (het voorwerp remt af terwijl het in de negatieve zin beweegt).
+        \end{solution}
+    \end{question}
+\end{exercise}
+%———————————————————————————————————————
 %———————————————————————————————————————
 % OEFENING 4: positievergelijking (derde graad), afgeleiden en zinsomkering
 \begin{exercise}
@@ -593,7 +1055,98 @@
     \end{question}
 \end{exercise}
 %———————————————————————————————————————
+%———————————————————————————————————————
+% OEFENING: x(t) van de vierde graad, twee afgeleiden
+\begin{exercise}
+    De positie van een voorwerp op de $x$-as wordt gegeven door
+    \[
+        x(t) = 0{,}50 \, \mathrm{\frac{m}{s^4}} \cdot t^{4} - 4{,}0 \, \mathrm{\frac{m}{s^3}} \cdot t^{3} + 6{,}0 \, \mathrm{\frac{m}{s^2}} \cdot t^{2}
+    \]
+    met $t$ in seconden.
 
+    \begin{question}
+        Bereken de versnelling $a_x$ op $t = 2{,}0 \, \mathrm{s}$.
+
+        \[ a_x(2{,}0 \, \mathrm{s}) = \answer[tolerance=0.01,onlineshowanswerbutton]{-12} \, \mathrm{m/s^2} \]
+
+        \begin{hint}
+            Hoeveel keer moet je de positievergelijking afleiden om de versnellingsvergelijking te krijgen?
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gegevens:}\\
+            $x(t) = 0{,}50 \, \mathrm{m/s^4} \cdot t^{4} - 4{,}0 \, \mathrm{m/s^3} \cdot t^{3} + 6{,}0 \, \mathrm{m/s^2} \cdot t^{2}$\\
+
+            \underline{Gevraagd:} $a_x(2{,}0 \, \mathrm{s})$\\
+
+            \underline{Oplossing:}\\
+            \begin{align*}
+                v_x(t) &= x'(t) = 2{,}0 \, \mathrm{m/s^4} \cdot t^{3} - 12 \, \mathrm{m/s^3} \cdot t^{2} + 12 \, \mathrm{m/s^2} \cdot t\\
+                a_x(t) &= v_x'(t) = 6{,}0 \, \mathrm{m/s^4} \cdot t^{2} - 24 \, \mathrm{m/s^3} \cdot t + 12 \, \mathrm{m/s^2}
+            \end{align*}
+            \[
+                a_x(2{,}0 \, \mathrm{s}) = 6{,}0 \cdot 4{,}0 \, \mathrm{m/s^2} - 24 \cdot 2{,}0 \, \mathrm{m/s^2} + 12 \, \mathrm{m/s^2} = -12 \, \mathrm{m/s^2}
+            \]
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Het voorwerp staat op twee tijdstippen $t > 0$ even stil. Bepaal die tijdstippen $t_1$ en $t_2$ (met $t_1 < t_2$).
+
+        \[ t_1 = \answer[tolerance=0.01,onlineshowanswerbutton]{1.27} \, \mathrm{s} \qquad \text{en} \qquad t_2 = \answer[tolerance=0.01,onlineshowanswerbutton]{4.73} \, \mathrm{s} \]
+
+        \begin{hint}
+            Er is een gemeenschappelijke factor $t$ die je kan afzonderen. Wat blijft er over?
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gegevens:}\\
+            $v_x(t) = 2{,}0 \, \mathrm{m/s^4} \cdot t^{3} - 12 \, \mathrm{m/s^3} \cdot t^{2} + 12 \, \mathrm{m/s^2} \cdot t$\\
+
+            \underline{Gevraagd:} $t$ waarvoor $v_x = 0$\\
+
+            \underline{Oplossing:}\\
+            We stellen $v_x = 0$ (eenheden even weggelaten, $t$ in $\mathrm{s}$) en zetten $2t$ buiten haakjes:
+            \[
+                2t \cdot (t^{2} - 6t + 6) = 0
+            \]
+            De oplossing $t = 0$ is het begin. Voor de andere:
+            \[
+                t = \frac{6 \pm \sqrt{36 - 24}}{2} = \frac{6 \pm 3{,}464}{2} \quad \Rightarrow \quad t_1 = 1{,}27 \, \mathrm{s} \text{ en } t_2 = 4{,}73 \, \mathrm{s}
+            \]
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        De versnelling is nul op twee tijdstippen $t_3$ en $t_4$ (met $t_3 < t_4$). Bepaal de snelheid $v_x$ op beide momenten.
+
+        \[ v_x(t_3) = \answer[tolerance=0.02,onlineshowanswerbutton]{3.3} \, \mathrm{m/s} \qquad \text{en} \qquad v_x(t_4) = \answer[tolerance=0.02,onlineshowanswerbutton]{-19.3} \, \mathrm{m/s} \]
+
+        \begin{hint}
+            Stel de versnellingsvergelijking gelijk aan nul en los de vergelijking op. Vul daarna de gevonden tijdstippen in de snelheidsvergelijking in.
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gegevens:}\\
+            $a_x(t) = 6{,}0 \, \mathrm{m/s^4} \cdot t^{2} - 24 \, \mathrm{m/s^3} \cdot t + 12 \, \mathrm{m/s^2}$ en $v_x(t) = 2{,}0 \, \mathrm{m/s^4} \cdot t^{3} - 12 \, \mathrm{m/s^3} \cdot t^{2} + 12 \, \mathrm{m/s^2} \cdot t$\\
+
+            \underline{Gevraagd:} $v_x(t_3)$ en $v_x(t_4)$ waarbij $a_x = 0$\\
+
+            \underline{Oplossing:}\\
+            We stellen $a_x = 0$ (eenheden even weggelaten) en delen door $6$:
+            \[
+                t^{2} - 4t + 2 = 0 \quad \Rightarrow \quad t = \frac{4 \pm \sqrt{16 - 8}}{2} = 2 \pm \sqrt{2} \quad \Rightarrow \quad t_3 = 0{,}586 \, \mathrm{s} \text{ en } t_4 = 3{,}414 \, \mathrm{s}
+            \]
+            Invullen in de snelheidsvergelijking:
+            \begin{align*}
+                v_x(0{,}586 \, \mathrm{s}) &= 2{,}0 \cdot (0{,}586)^{3} - 12 \cdot (0{,}586)^{2} + 12 \cdot 0{,}586 \, \mathrm{m/s} = 3{,}3 \, \mathrm{m/s}\\
+                v_x(3{,}414 \, \mathrm{s}) &= 2{,}0 \cdot (3{,}414)^{3} - 12 \cdot (3{,}414)^{2} + 12 \cdot 3{,}414 \, \mathrm{m/s} = -19{,}3 \, \mathrm{m/s}
+            \end{align*}
+            Dit zijn een lokale top en een lokaal dal van de $v_x(t)$-grafiek.
+        \end{solution}
+    \end{question}
+\end{exercise}
+%———————————————————————————————————————
 %———————————————————————————————————————
 % OEFENING 5: onbekende coëfficiënten bepalen uit voorwaarden
 \begin{exercise}
@@ -714,6 +1267,7 @@
     \end{question}
 \end{exercise}
 %———————————————————————————————————————
+\section{Twee voorwerpen: ontmoetingen en inhalen}
 
 %———————————————————————————————————————
 % OEFENING 6: twee voertuigen, twee ontmoetingen (kwadratische positievergelijkingen)
@@ -848,7 +1402,118 @@
     \end{question}
 \end{exercise}
 %———————————————————————————————————————
+\section{Kromlijnige beweging: componenten combineren}
+De $x$- en $y$-componenten van snelheid en versnelling combineer je met de stelling van Pythagoras.
 
+%———————————————————————————————————————
+% OEFENING: kromlijnige beweging met functievoorschriften, Pythagoras
+\begin{exercise}
+    Een drone vertrekt uit de oorsprong. Zijn positie ten opzichte van een horizontale $x$-as en een verticale $y$-as wordt gegeven door
+    \begin{align*}
+        x(t) &= 4{,}0 \, \mathrm{\frac{m}{s}} \cdot t\\
+        y(t) &= 1{,}5 \, \mathrm{\frac{m}{s^2}} \cdot t^{2}
+    \end{align*}
+    met $t$ in seconden.
+
+    \begin{question}
+        Bereken de grootte van de snelheid van de drone op $t = 2{,}0 \, \mathrm{s}$.
+
+        \[ v = \answer[tolerance=0.01,onlineshowanswerbutton]{7.2} \, \mathrm{m/s} \]
+
+        \begin{hint}
+            Bepaal eerst de componenten $v_x$ en $v_y$. Hoe combineer je die tot de grootte van de snelheid?
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gegevens:}\\
+            $x(t) = 4{,}0 \, \mathrm{m/s} \cdot t$ en $y(t) = 1{,}5 \, \mathrm{m/s^2} \cdot t^{2}$; $t = 2{,}0 \, \mathrm{s}$\\
+
+            \underline{Gevraagd:} $v$\\
+
+            \underline{Oplossing:}\\
+            \begin{align*}
+                v_x(t) &= x'(t) = 4{,}0 \, \mathrm{m/s}\\
+                v_y(t) &= y'(t) = 3{,}0 \, \mathrm{m/s^2} \cdot t \quad \Rightarrow \quad v_y(2{,}0 \, \mathrm{s}) = 6{,}0 \, \mathrm{m/s}
+            \end{align*}
+            De componenten staan loodrecht op elkaar, dus we gebruiken de stelling van Pythagoras:
+            \[
+                v = \sqrt{v_x^{2} + v_y^{2}} = \sqrt{(4{,}0 \, \mathrm{m/s})^{2} + (6{,}0 \, \mathrm{m/s})^{2}} = 7{,}2 \, \mathrm{m/s}
+            \]
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken de grootte van de versnelling van de drone. Hangt die af van het tijdstip?
+
+        \[ a = \answer[tolerance=0.01,onlineshowanswerbutton]{3.0} \, \mathrm{m/s^2} \]
+
+        \begin{solution}\nl
+            \underline{Gegevens:}\\
+            $v_x(t) = 4{,}0 \, \mathrm{m/s}$ en $v_y(t) = 3{,}0 \, \mathrm{m/s^2} \cdot t$\\
+
+            \underline{Gevraagd:} $a$\\
+
+            \underline{Oplossing:}\\
+            \begin{align*}
+                a_x(t) &= v_x'(t) = 0 \, \mathrm{m/s^2}\\
+                a_y(t) &= v_y'(t) = 3{,}0 \, \mathrm{m/s^2}
+            \end{align*}
+            \[
+                a = \sqrt{a_x^{2} + a_y^{2}} = \sqrt{(0 \, \mathrm{m/s^2})^{2} + (3{,}0 \, \mathrm{m/s^2})^{2}} = 3{,}0 \, \mathrm{m/s^2}
+            \]
+            De versnelling is constant en wijst steeds in de positieve $y$-zin.
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Op welk tijdstip bedraagt de grootte van de snelheid $10 \, \mathrm{m/s}$?
+
+        \[ t = \answer[tolerance=0.01,onlineshowanswerbutton]{3.1} \, \mathrm{s} \]
+
+        \begin{hint}
+            Schrijf de grootte van de snelheid uit als functie van $t$ en stel ze gelijk aan $10 \, \mathrm{m/s}$.
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gegevens:}\\
+            $v_x = 4{,}0 \, \mathrm{m/s}$ en $v_y(t) = 3{,}0 \, \mathrm{m/s^2} \cdot t$\\
+
+            \underline{Gevraagd:} $t$ waarvoor $v = 10 \, \mathrm{m/s}$\\
+
+            \underline{Oplossing:}\\
+            We stellen $\sqrt{v_x^{2} + v_y^{2}} = 10$ (eenheden even weggelaten, $t$ in $\mathrm{s}$) en kwadrateren:
+            \[
+                16 + 9t^{2} = 100 \quad \Rightarrow \quad t^{2} = \frac{84}{9} \quad \Rightarrow \quad t = 3{,}1 \, \mathrm{s}
+            \]
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Op welke hoogte $y$ bevindt de drone zich op het moment dat hij $12 \, \mathrm{m}$ horizontaal heeft afgelegd?
+
+        \[ y = \answer[tolerance=0.01,onlineshowanswerbutton]{13.5} \, \mathrm{m} \]
+
+        \begin{hint}
+            Op welk tijdstip is $x = 12 \, \mathrm{m}$?
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gegevens:}\\
+            $x = 12 \, \mathrm{m}$\\
+
+            \underline{Gevraagd:} $y$\\
+
+            \underline{Oplossing:}\\
+            \[
+                12 \, \mathrm{m} = 4{,}0 \, \mathrm{m/s} \cdot t \quad \Rightarrow \quad t = 3{,}0 \, \mathrm{s}
+            \]
+            \[
+                y(3{,}0 \, \mathrm{s}) = 1{,}5 \, \mathrm{m/s^2} \cdot (3{,}0 \, \mathrm{s})^{2} = 13{,}5 \, \mathrm{m}
+            \]
+        \end{solution}
+    \end{question}
+\end{exercise}
+%———————————————————————————————————————
 %———————————————————————————————————————
 % OEFENING 7 (moeilijkst): kromlijnige beweging, tangentiele en normale versnelling
 \begin{exercise}
@@ -993,5 +1658,281 @@
     \end{question}
 \end{exercise}
 %———————————————————————————————————————
+\section{Gemengde oefeningen}
+In deze oefeningen staan de types door elkaar: meetgegevens, positievergelijkingen en componenten. Bedenk zelf welke aanpak je nodig hebt.
 
+%———————————————————————————————————————
+% OEFENING: meetgegevens 100 m
+\begin{exercise}
+    Tijdens een $100 \, \mathrm{m}$-sprint werden op enkele tijdstippen de positie $x$ en de snelheid $v_x$ van de loper gemeten.
+
+    \begin{center}
+        \begin{tabular}{|c|c|c|}
+            \hline
+            $t\,(\mathrm{s})$ & $x\,(\mathrm{m})$ & $v_x\,(\mathrm{m/s})$ \\
+            \hline
+            $0{,}00$ & $0{,}00$ & $0{,}00$ \\
+            $4{,}62$ & $39{,}88$ & $11{,}63$ \\
+            $5{,}79$ & $53{,}94$ & $12{,}11$ \\
+            $7{,}10$ & $69{,}88$ & $12{,}35$ \\
+            $8{,}19$ & $83{,}29$ & $12{,}08$ \\
+            $9{,}58$ & $100{,}00$ & $11{,}80$ \\
+            \hline
+        \end{tabular}
+    \end{center}
+
+    \begin{question}
+        Bereken de gemiddelde snelheid $\langle v_x \rangle$ tussen $t = 5{,}79 \, \mathrm{s}$ en $t = 8{,}19 \, \mathrm{s}$.
+
+        \[ \langle v_x \rangle = \answer[tolerance=0.01,onlineshowanswerbutton]{12.2} \, \mathrm{m/s} \]
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & x(5{,}79 \, \mathrm{s}) = 53{,}94 \, \mathrm{m} & & x(8{,}19 \, \mathrm{s}) = 83{,}29 \, \mathrm{m}
+            \end{align*}
+
+            \underline{Gevraagd:} $\langle v_x \rangle$\\
+
+            \underline{Oplossing:}\\
+            \[
+                \langle v_x \rangle = \frac{\Delta x}{\Delta t} = \frac{83{,}29 \, \mathrm{m} - 53{,}94 \, \mathrm{m}}{8{,}19 \, \mathrm{s} - 5{,}79 \, \mathrm{s}} = 12{,}2 \, \mathrm{m/s}
+            \]
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken de gemiddelde versnelling $\langle a_x \rangle$ tussen $t = 7{,}10 \, \mathrm{s}$ en $t = 9{,}58 \, \mathrm{s}$. Wat zegt het teken over de loper?
+
+        \[ \langle a_x \rangle = \answer[tolerance=0.02,onlineshowanswerbutton]{-0.22} \, \mathrm{m/s^2} \]
+
+        De loper: \wordChoice{
+            \choice{versnelt nog steeds}
+            \choice[correct]{vertraagt licht}
+        }
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & v_x(7{,}10 \, \mathrm{s}) = 12{,}35 \, \mathrm{m/s} & & v_x(9{,}58 \, \mathrm{s}) = 11{,}80 \, \mathrm{m/s}
+            \end{align*}
+
+            \underline{Gevraagd:} $\langle a_x \rangle$\\
+
+            \underline{Oplossing:}\\
+            \[
+                \langle a_x \rangle = \frac{\Delta v_x}{\Delta t} = \frac{11{,}80 \, \mathrm{m/s} - 12{,}35 \, \mathrm{m/s}}{9{,}58 \, \mathrm{s} - 7{,}10 \, \mathrm{s}} = -0{,}22 \, \mathrm{m/s^2}
+            \]
+            De snelheid is positief en de versnelling negatief: de loper vertraagt in dit interval licht.
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken de gemiddelde snelheid over de volledige race in $\mathrm{m/s}$ en in $\mathrm{km/h}$. Waarom ligt die lager dan elke snelheid uit de tabel vanaf $t = 4{,}62 \, \mathrm{s}$?
+
+        \[ \langle v_x \rangle = \answer[tolerance=0.01,onlineshowanswerbutton]{10.4} \, \mathrm{m/s} = \answer[tolerance=0.01,onlineshowanswerbutton]{37.6} \, \mathrm{km/h} \]
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & \Delta x = 100{,}00 \, \mathrm{m} & & \Delta t = 9{,}58 \, \mathrm{s}
+            \end{align*}
+
+            \underline{Gevraagd:} $\langle v_x \rangle$\\
+
+            \underline{Oplossing:}\\
+            \begin{align*}
+                \langle v_x \rangle &= \frac{100{,}00 \, \mathrm{m}}{9{,}58 \, \mathrm{s}} = 10{,}4 \, \mathrm{m/s}\\
+                &= 10{,}4 \cdot 3{,}6 \, \mathrm{km/h} = 37{,}6 \, \mathrm{km/h}
+            \end{align*}
+            De loper start uit rust en moet eerst op snelheid komen. In de beginfase is de snelheid veel kleiner dan $12 \, \mathrm{m/s}$, en dat drukt de gemiddelde snelheid over de hele race.
+        \end{solution}
+    \end{question}
+\end{exercise}
+%———————————————————————————————————————
+%———————————————————————————————————————
+% OEFENING: verticale worp met positievergelijking
+\begin{exercise}
+    Een steen wordt vanaf de grond verticaal omhoog geworpen. Zijn hoogte $y$ boven de grond wordt (tot hij terug de grond raakt) gegeven door
+    \[
+        y(t) = 20 \, \mathrm{\frac{m}{s}} \cdot t - 5{,}0 \, \mathrm{\frac{m}{s^2}} \cdot t^{2}
+    \]
+    met $t$ in seconden. De $y$-as wijst naar boven.
+
+    \begin{question}
+        Op welk tijdstip bereikt de steen het hoogste punt, en hoe hoog is dat?
+
+        \[ t = \answer[tolerance=0.01,onlineshowanswerbutton]{2.0} \, \mathrm{s} \qquad \text{en} \qquad y_{\max} = \answer[tolerance=0.01,onlineshowanswerbutton]{20} \, \mathrm{m} \]
+
+        \begin{hint}
+            Wat is de snelheid van de steen in het hoogste punt?
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gegevens:}\\
+            $y(t) = 20 \, \mathrm{m/s} \cdot t - 5{,}0 \, \mathrm{m/s^2} \cdot t^{2}$\\
+
+            \underline{Gevraagd:} $t$ en $y_{\max}$\\
+
+            \underline{Oplossing:}\\
+            De snelheid is de afgeleide van de positie:
+            \[
+                v_y(t) = y'(t) = 20 \, \mathrm{m/s} - 10 \, \mathrm{m/s^2} \cdot t
+            \]
+            In het hoogste punt keert de steen van zin om, dus $v_y = 0$:
+            \[
+                20 \, \mathrm{m/s} - 10 \, \mathrm{m/s^2} \cdot t = 0 \quad \Rightarrow \quad t = 2{,}0 \, \mathrm{s}
+            \]
+            \[
+                y(2{,}0 \, \mathrm{s}) = 20 \, \mathrm{m/s} \cdot 2{,}0 \, \mathrm{s} - 5{,}0 \, \mathrm{m/s^2} \cdot (2{,}0 \, \mathrm{s})^{2} = 20 \, \mathrm{m}
+            \]
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Op welke twee tijdstippen $t_1$ en $t_2$ (met $t_1 < t_2$) bevindt de steen zich op $15 \, \mathrm{m}$ hoogte?
+
+        \[ t_1 = \answer[tolerance=0.01,onlineshowanswerbutton]{1.0} \, \mathrm{s} \qquad \text{en} \qquad t_2 = \answer[tolerance=0.01,onlineshowanswerbutton]{3.0} \, \mathrm{s} \]
+
+        \begin{solution}\nl
+            \underline{Gegevens:}\\
+            $y = 15 \, \mathrm{m}$\\
+
+            \underline{Gevraagd:} $t_1$ en $t_2$\\
+
+            \underline{Oplossing:}\\
+            We stellen $y(t) = 15$ (eenheden even weggelaten, $t$ in $\mathrm{s}$):
+            \[
+                20t - 5t^{2} = 15 \quad \Rightarrow \quad t^{2} - 4t + 3 = 0 \quad \Rightarrow \quad t = \frac{4 \pm \sqrt{16 - 12}}{2}
+            \]
+            Dus $t_1 = 1{,}0 \, \mathrm{s}$ (op weg naar boven) en $t_2 = 3{,}0 \, \mathrm{s}$ (op weg naar beneden).
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Met welke snelheid $v_y$ komt de steen terug op de grond, en hoe groot is de afgelegde weg $s$ tot dan?
+
+        \[ v_y = \answer[tolerance=0.01,onlineshowanswerbutton]{-20} \, \mathrm{m/s} \qquad \text{en} \qquad s = \answer[tolerance=0.01,onlineshowanswerbutton]{40} \, \mathrm{m} \]
+
+        \begin{hint}
+            Wanneer is $y$ opnieuw nul? Is de verplaatsing dan gelijk aan de afgelegde weg?
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gegevens:}\\
+            $y(t) = 20 \, \mathrm{m/s} \cdot t - 5{,}0 \, \mathrm{m/s^2} \cdot t^{2}$ en $v_y(t) = 20 \, \mathrm{m/s} - 10 \, \mathrm{m/s^2} \cdot t$\\
+
+            \underline{Gevraagd:} $v_y$ bij de landing en $s$\\
+
+            \underline{Oplossing:}\\
+            We stellen $y = 0$ (eenheden even weggelaten): $20t - 5t^{2} = 5t \cdot (4 - t) = 0$, dus de steen landt op $t = 4{,}0 \, \mathrm{s}$.
+            \[
+                v_y(4{,}0 \, \mathrm{s}) = 20 \, \mathrm{m/s} - 10 \, \mathrm{m/s^2} \cdot 4{,}0 \, \mathrm{s} = -20 \, \mathrm{m/s}
+            \]
+            De steen gaat $20 \, \mathrm{m}$ omhoog en daarna $20 \, \mathrm{m}$ omlaag:
+            \[
+                s = 20 \, \mathrm{m} + 20 \, \mathrm{m} = 40 \, \mathrm{m}
+            \]
+            De verplaatsing is nul, de afgelegde weg niet.
+        \end{solution}
+    \end{question}
+\end{exercise}
+%———————————————————————————————————————
+%———————————————————————————————————————
+% OEFENING (moeilijkst van de extra's): kleinste snelheid via afgeleide van v^2
+\begin{exercise}
+    De snelheidscomponenten van een voorwerp in het $(x,y)$-vlak worden gegeven door
+    \begin{align*}
+        v_x(t) &= 3{,}0 \, \mathrm{\frac{m}{s^2}} \cdot t\\
+        v_y(t) &= 4{,}0 \, \mathrm{\frac{m}{s}} - 2{,}0 \, \mathrm{\frac{m}{s^2}} \cdot t
+    \end{align*}
+    met $t$ in seconden.
+
+    \begin{question}
+        Bereken de grootte van de versnelling van het voorwerp.
+
+        \[ a = \answer[tolerance=0.01,onlineshowanswerbutton]{3.6} \, \mathrm{m/s^2} \]
+
+        \begin{solution}\nl
+            \underline{Gegevens:}\\
+            $v_x(t) = 3{,}0 \, \mathrm{m/s^2} \cdot t$ en $v_y(t) = 4{,}0 \, \mathrm{m/s} - 2{,}0 \, \mathrm{m/s^2} \cdot t$\\
+
+            \underline{Gevraagd:} $a$\\
+
+            \underline{Oplossing:}\\
+            \begin{align*}
+                a_x &= v_x'(t) = 3{,}0 \, \mathrm{m/s^2}\\
+                a_y &= v_y'(t) = -2{,}0 \, \mathrm{m/s^2}
+            \end{align*}
+            \[
+                a = \sqrt{a_x^{2} + a_y^{2}} = \sqrt{(3{,}0 \, \mathrm{m/s^2})^{2} + (-2{,}0 \, \mathrm{m/s^2})^{2}} = 3{,}6 \, \mathrm{m/s^2}
+            \]
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Op welk tijdstip is de grootte van de snelheid het kleinst, en hoe groot is ze dan?
+
+        \[ t = \answer[tolerance=0.01,onlineshowanswerbutton]{0.62} \, \mathrm{s} \qquad \text{en} \qquad v_{\min} = \answer[tolerance=0.01,onlineshowanswerbutton]{3.3} \, \mathrm{m/s} \]
+
+        \begin{hint}
+            Nu veranderen zowel $v_x$ als $v_y$ in de tijd, dus de kleinste snelheid is niet meer het moment waarop een component nul is. Schrijf $v^2$ uit als functie van $t$: dat is een eenvoudiger functie om te minimaliseren.
+        \end{hint}
+        \begin{hint}
+            Hoe zoek je met afgeleiden naar het minimum van een functie?
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gegevens:}\\
+            $v_x(t) = 3{,}0 \, \mathrm{m/s^2} \cdot t$ en $v_y(t) = 4{,}0 \, \mathrm{m/s} - 2{,}0 \, \mathrm{m/s^2} \cdot t$\\
+
+            \underline{Gevraagd:} $t$ en $v_{\min}$\\
+
+            \underline{Oplossing:}\\
+            Met de stelling van Pythagoras is $v^{2} = v_x^{2} + v_y^{2}$. We laten de eenheden even weg ($t$ in $\mathrm{s}$):
+            \[
+                v^{2} = 9t^{2} + (4 - 2t)^{2} = 13t^{2} - 16t + 16
+            \]
+            De snelheid is het kleinst als $v^{2}$ het kleinst is, dus als de afgeleide nul is:
+            \[
+                (v^{2})' = 26t - 16 = 0 \quad \Rightarrow \quad t = \frac{16}{26} = 0{,}62 \, \mathrm{s}
+            \]
+            Invullen:
+            \begin{align*}
+                v_x &= 3{,}0 \, \mathrm{m/s^2} \cdot 0{,}615 \, \mathrm{s} = 1{,}85 \, \mathrm{m/s}\\
+                v_y &= 4{,}0 \, \mathrm{m/s} - 2{,}0 \, \mathrm{m/s^2} \cdot 0{,}615 \, \mathrm{s} = 2{,}77 \, \mathrm{m/s}
+            \end{align*}
+            \[
+                v_{\min} = \sqrt{(1{,}85 \, \mathrm{m/s})^{2} + (2{,}77 \, \mathrm{m/s})^{2}} = 3{,}3 \, \mathrm{m/s}
+            \]
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Op het moment van de kleinste snelheid geldt: \wordChoice{
+            \choice[correct]{de versnelling staat loodrecht op de snelheid}
+            \choice{de versnelling is evenwijdig met de snelheid}
+            \choice{de versnelling is nul}
+        }
+
+        \begin{hint}
+            Bepaal de hoek die $\vec{\mathbf{v}}$ en $\vec{\mathbf{a}}$ elk maken met de $x$-as.
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gegevens:}\\
+            $v_x = 1{,}85 \, \mathrm{m/s}$, $v_y = 2{,}77 \, \mathrm{m/s}$, $a_x = 3{,}0 \, \mathrm{m/s^2}$ en $a_y = -2{,}0 \, \mathrm{m/s^2}$\\
+
+            \underline{Gevraagd:} de onderlinge stand van $\vec{\mathbf{v}}$ en $\vec{\mathbf{a}}$\\
+
+            \underline{Oplossing:}\\
+            \begin{align*}
+                \theta_v &= \tan^{-1}\left(\frac{2{,}77 \, \mathrm{m/s}}{1{,}85 \, \mathrm{m/s}}\right) = 56{,}3^\circ\\
+                \theta_a &= \tan^{-1}\left(\frac{-2{,}0 \, \mathrm{m/s^2}}{3{,}0 \, \mathrm{m/s^2}}\right) = -33{,}7^\circ
+            \end{align*}
+            Het verschil is $56{,}3^\circ - (-33{,}7^\circ) = 90^\circ$. De versnelling staat dus loodrecht op de snelheid: de tangentiële versnelling is nul ($a_t = 0$) en de snelheid verandert op dat moment enkel van richting, niet van grootte. Dat is precies waarom de grootte van de snelheid daar minimaal is.
+        \end{solution}
+    \end{question}
+\end{exercise}
+%———————————————————————————————————————
 \end{document}

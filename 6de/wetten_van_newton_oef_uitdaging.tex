@@ -13,14 +13,14 @@
     Moeilijkere oefeningen op de wetten van Newton met meerdere massa's, van makkelijk naar moeilijk.
 \end{abstract}
 \maketitle
+Neem in alle oefeningen $g = 9{,}81 \, \mathrm{m/s^2}$. Touwen en katrollen hebben geen massa en de katrollen draaien zonder wrijving, tenzij anders vermeld.
 \section{Oefeningen met meerdere massa's}
 
-Neem in alle oefeningen $g = 9{,}81 \, \mathrm{m/s^2}$. Touwen en katrollen hebben geen massa en de katrollen draaien zonder wrijving, tenzij anders vermeld.
 
 %———————————————————————————————————————
 % OEFENING 1: DRIE BLOKKEN TEGEN ELKAAR (contactkrachten + wrijving)
 \begin{exercise}
-    Drie blokken liggen tegen elkaar op een horizontale tafel. Blok $A$ ($m_{A}= 4{,}0 \, \mathrm{kg}$) wordt horizontaal naar rechts geduwd met een kracht $F = 45 \, \mathrm{N}$. Blok $B$ heeft een massa $m_{B}= 6{,}0 \, \mathrm{kg}$ en blok $C$ een massa $m_{C}= 2{,}0 \, \mathrm{kg}$. De dynamische wrijvingscoëfficiënt tussen de tafel en blok $A$, $B$ en $C$ is respectievelijk $0{,}10$, $0{,}30$ en $0{,}20$.
+    Drie blokken liggen tegen elkaar op een horizontale tafel. Blok $A$ ($m_{A}= 4{,}0 \, \mathrm{kg}$) wordt horizontaal naar rechts geduwd met een kracht $F = 45 \, \mathrm{N}$. Blok $B$ heeft een massa $m_{B}= 6{,}0 \, \mathrm{kg}$ en blok $C$ een massa $m_{C}= 2{,}0 \, \mathrm{kg}$. De dynamische wrijvingscoëfficiënt tussen de tafel en blok $A$ is $0{,}10$, de dynamische wrijvingscoëfficiënt tussen de tafel en blok $B$ is $0{,}30$ en die tussen de tafel en blok $C$ is $0{,}20$.
 
     \begin{center}
         \begin{tikzpicture}
@@ -55,7 +55,7 @@ Neem in alle oefeningen $g = 9{,}81 \, \mathrm{m/s^2}$. Touwen en katrollen hebb
             \underline{Gevraagd:} $a$ \\
 
             \underline{Oplossing:}\\
-            Alle blokken voeren dezelfde beweging uit, dus we beschouwen ze als één systeem. De krachten tussen de blokken zijn dan inwendige krachten en vallen weg. Verticaal is er evenwicht, dus $F_{N} = m \cdot g$ voor elk blok en de wrijvingskracht is $F_{w,d} = \mu \cdot m \cdot g$:
+            Alle blokken voeren dezelfde beweging uit, dus we beschouwen ze als één systeem. De krachten tussen de blokken zijn dan inwendige krachten en vallen weg. Verticaal is er evenwicht, dus $F_{N} = F_{z}= m \cdot g$ voor elk blok en de wrijvingskracht is $F_{w,d} = \mu \cdot m \cdot g$:
             \begin{align*}
                 F_{w,d,A} &= 0{,}10 \cdot 4{,}0 \, \mathrm{kg} \cdot 9{,}81 \, \mathrm{m/s^2} = 3{,}924 \, \mathrm{N} \\
                 F_{w,d,B} &= 0{,}30 \cdot 6{,}0 \, \mathrm{kg} \cdot 9{,}81 \, \mathrm{m/s^2} = 17{,}658 \, \mathrm{N} \\
@@ -63,9 +63,9 @@ Neem in alle oefeningen $g = 9{,}81 \, \mathrm{m/s^2}$. Touwen en katrollen hebb
             \end{align*}
             De tweede wet van Newton, geprojecteerd op de horizontale as (positief naar rechts):
             \begin{align*}
-                F - F_{w,d,A} - F_{w,d,B} - F_{w,d,C} &= (m_{A}+m_{B}+m_{C}) \cdot a \\
+                F - F_{w,d,A} - F_{w,d,B} - F_{w,d,C} &= (m_{tot}) \cdot a  = (m_{A}+m_{B}+m_{C}) \cdot a \\
                 a &= \frac{45 \, \mathrm{N} - 3{,}924 \, \mathrm{N} - 17{,}658 \, \mathrm{N} - 3{,}924 \, \mathrm{N}}{12{,}0 \, \mathrm{kg}} \\
-                &= 1{,}6245 \, \mathrm{m/s^2} \simeq 1{,}6 \, \mathrm{m/s^2}
+                &= 1{,}6245 \, \mathrm{m/s^2} \simeq \boxed{1{,}6 \, \mathrm{m/s^2}}
             \end{align*}
         \end{solution}
     \end{question}
@@ -73,7 +73,7 @@ Neem in alle oefeningen $g = 9{,}81 \, \mathrm{m/s^2}$. Touwen en katrollen hebb
     \begin{question}
         Bereken de grootte van de kracht die blok $A$ uitoefent op blok $B$ en van de kracht die blok $B$ uitoefent op blok $C$.
 
-        \[ F_{AB} = \answer[tolerance=0.03,onlineshowanswerbutton]{34.6} \, \mathrm{N} \qquad F_{BC} = \answer[tolerance=0.05,onlineshowanswerbutton]{7.2} \, \mathrm{N} \]
+        \[ F_{AB} = \answer[tolerance=0.05,onlineshowanswerbutton]{34.6} \, \mathrm{N} \qquad F_{BC} = \answer[tolerance=0.05,onlineshowanswerbutton]{7.2} \, \mathrm{N} \]
 
         \begin{hint}
             Bekijk blok $C$ afzonderlijk: welke horizontale krachten werken er op en welke versnelling heeft het? Voor $F_{AB}$ kan je blok $A$ afzonderlijk bekijken. Wat zegt de derde wet over de kracht van $B$ op $A$?
@@ -83,6 +83,7 @@ Neem in alle oefeningen $g = 9{,}81 \, \mathrm{m/s^2}$. Touwen en katrollen hebb
             \underline{Gevraagd:} $F_{AB}$ en $F_{BC}$ \\
 
             \underline{Oplossing:}\\
+            De blokken raken elkaar en hebben dus allemaal dezelfde versnelling.\\
             \textsc{Schets (niet op schaal):} krachten op elk van de drie blokken.
 
             \begin{center}
@@ -101,12 +102,12 @@ Neem in alle oefeningen $g = 9{,}81 \, \mathrm{m/s^2}$. Touwen en katrollen hebb
             \kr[versnelling]{10.6}{1.7}{0.9}{0}{above}{$\vec{\mathbf{a}}$}
             \kr[kracht]{0}{0.1}{3.0}{0}{pos=0.6,above}{$\vec{\mathbf{F}}$}
             \kr[kracht]{0}{0.1}{-2.0}{0}{pos=0.5,above}{$\vec{\mathbf{F}}_{BA}$}
-            \kr[kracht]{0}{-0.1}{-0.8}{0}{pos=0.5,below}{$\vec{\mathbf{F}}_{w,d,A}$}
+            \kr[kracht]{0}{-0.1}{-0.8}{0}{pos=0.5,below left}{$\vec{\mathbf{F}}_{w,d,A}$}
             \kr[kracht]{5.5}{0.1}{2.0}{0}{pos=0.5,above}{$\vec{\mathbf{F}}_{AB}$}
             \kr[kracht]{5.5}{0.1}{-0.8}{0}{pos=0.5,above}{$\vec{\mathbf{F}}_{CB}$}
-            \kr[kracht]{5.5}{-0.1}{-1.1}{0}{pos=0.5,below}{$\vec{\mathbf{F}}_{w,d,B}$}
+            \kr[kracht]{5.5}{-0.1}{-1.1}{0}{pos=0.5,below left}{$\vec{\mathbf{F}}_{w,d,B}$}
             \kr[kracht]{11}{0.1}{0.9}{0}{right}{$\vec{\mathbf{F}}_{BC}$}
-            \kr[kracht]{11}{-0.1}{-0.8}{0}{pos=0.5,below}{$\vec{\mathbf{F}}_{w,d,C}$}
+            \kr[kracht]{11}{-0.1}{-0.8}{0}{pos=0.5,below left}{$\vec{\mathbf{F}}_{w,d,C}$}
             \as{-3.4}{1.4}{1.0}{0}{right}{$x$}
             \as{-3.4}{1.4}{0}{0.9}{above}{$y$}
             \end{tikzpicture}
@@ -116,15 +117,15 @@ Neem in alle oefeningen $g = 9{,}81 \, \mathrm{m/s^2}$. Touwen en katrollen hebb
             \begin{align*}
                 F_{BC} - F_{w,d,C} &= m_{C} \cdot a \\
                 F_{BC} &= 2{,}0 \, \mathrm{kg} \cdot 1{,}6245 \, \mathrm{m/s^2} + 3{,}924 \, \mathrm{N} \\
-                &= 7{,}173 \, \mathrm{N} \simeq 7{,}2 \, \mathrm{N}
+                &= 7{,}173 \, \mathrm{N} \simeq \boxed{7{,}2 \, \mathrm{N}}
             \end{align*}
             Op blok $A$ werken $F$ (naar rechts), de wrijving $F_{w,d,A}$ en de kracht $F_{BA}$ van blok $B$ op $A$ (naar links). Volgens de derde wet is $F_{BA} = F_{AB}$:
             \begin{align*}
                 F - F_{w,d,A} - F_{AB} &= m_{A} \cdot a \\
                 F_{AB} &= 45 \, \mathrm{N} - 3{,}924 \, \mathrm{N} - 4{,}0 \, \mathrm{kg} \cdot 1{,}6245 \, \mathrm{m/s^2} \\
-                &= 34{,}578 \, \mathrm{N} \simeq 3{,}5\cdot 10^1 \, \mathrm{N}
+                &= 34{,}578 \, \mathrm{N} \simeq \boxed{3{,}5\cdot 10 \, \mathrm{N}}
             \end{align*}
-            Controle met blok $B$: $F_{AB} - F_{w,d,B} - F_{BC} = 34{,}578 \, \mathrm{N} - 17{,}658 \, \mathrm{N} - 7{,}173 \, \mathrm{N} = 9{,}747 \, \mathrm{N} = m_{B} \cdot a$. 
+            Controle met blok $B$: $F_{AB} - F_{w,d,B} - F_{BC} = 34{,}578 \, \mathrm{N} - 17{,}658 \, \mathrm{N} - 7{,}173 \, \mathrm{N} = 9{,}747 \, \mathrm{N} \simeq m_{B} \cdot a=6{,}0 \mathrm{kg}\cdot 1{,}6\mathrm{m/s^2}$. 
         \end{solution}
     \end{question}
 

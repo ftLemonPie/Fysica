@@ -1,0 +1,108 @@
+\documentclass{ximera}
+%nieuw 31/10/26
+\title{Extra oefenen met een AI-assistent}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+    Zelf extra oefeningen  laten maken door een AI-assistent en hoe je dat slim en correct doet.
+\end{abstract}
+\maketitle
+\label{hoofdstuk:ai_oefenen}
+
+\section*{Inleiding}
+Hoe meer oefeningen je maakt, hoe zekerder je wordt. In deze cursus staan er een aantal, maar misschien heb je er nog meer nodig op precies dat onderdeel dat jij moeilijk vindt. Met een AI-assistent kan je zoveel extra oefeningen laten maken als je wil.
+
+Op de volgende pagina vind je een kant-en-klare \emph{prompt}: een tekst die je in een AI-assistent plakt. Die tekst legt de assistent uit hoe hij je moet laten oefenen over het elektrisch veld. Hij gedraagt zich dan als een oefenbegeleider en niet als een oplossingenmachine: hij geeft je een oefening, wacht op jouw antwoord, controleert dat en helpt je met tips als je vastzit.
+
+\section{Zo gebruik je de prompt}\label{sec:ai-gebruik}
+\begin{enumerate}
+    \item Open een AI-assistent naar keuze, bijvoorbeeld Mistral, ChatGPT, Claude, Gemini of Copilot. Kies als dat kan een versie met een \emph{denkmodus} of \emph{redeneermodus}: die rekent betrouwbaarder.
+    \item Start een \textbf{nieuw gesprek}.
+    \item Kopieer de volledige prompt uit sectie~\ref{sec:ai-prompt} en plak ze als eerste bericht.
+    \begin{onlineOnly}
+        Selecteer de tekst in het kader met je muis en kopieer ze met Ctrl+C (Windows) of Cmd+C (Mac).
+    \end{onlineOnly}
+    \pdfOnly{Werk je met de PDF of op papier? Scan dan de QR-code bij de prompt: die brengt je naar de online versie, waar je de tekst kan kopi\"eren.}
+    \item Verstuur het bericht. De assistent vraagt welk onderdeel je wil oefenen. Antwoord bijvoorbeeld: \emph{twee ladingen op een lijn waar het veld nul is}.
+    \item Maak de oefening \textbf{eerst op papier}. Typ pas daarna je antwoord.
+    \item Zit je vast? Vraag een tip. Wil je een volgende oefening? Zeg of ze makkelijker of moeilijker mag zijn.
+\end{enumerate}
+
+\begin{example}[foldable=true,title={Zo ziet een gesprek eruit}]\nl
+    Een korte uitwisseling, met een fout antwoord als illustratie van hoe de assistent je begeleidt:
+    \begin{itemize}
+        \item \textbf{Assistent:} Twee puntladingen liggen op de $x$-as: $Q_1 = +3{,}0 \, \mathrm{\mu C}$ bij $x = 0{,}00 \, \mathrm{m}$ en $Q_2 = -3{,}0 \, \mathrm{\mu C}$ bij $x = 0{,}60 \, \mathrm{m}$. Bereken het totale elektrisch veld in punt $P$ op $x = 0{,}90 \, \mathrm{m}$ (grootte en zin). Geef je antwoord in standaardvorm met 2 beduidende cijfers.
+        \item \textbf{Jij:} $3{,}3 \cdot 10^{4} \, \mathrm{N/C}$ naar rechts.
+        \item \textbf{Assistent:} Dat klopt nog niet. Je hebt het veld van maar een van de twee ladingen berekend. Welke lading ligt het dichtst bij $P$, en wat betekent dat voor de grootte van haar veld?
+        \item \textbf{Jij:} Oei, ik was $Q_2$ vergeten. Ik reken beide velden uit en tel ze op met de juiste zin: $2{,}7 \cdot 10^{5} \, \mathrm{N/C}$ naar links.
+        \item \textbf{Assistent:} Juist! Beide velden wijzen in tegengestelde zin en het veld van de dichtstbijzijnde lading $Q_2$ is veel groter, dus het totale veld wijst naar links. Wil je nog een oefening, makkelijker of moeilijker?
+    \end{itemize}
+\end{example}
+
+\section{Tips om echt iets te leren}\label{sec:ai-tips}
+\begin{itemize}
+    \item \textbf{Eerst zelf proberen.} Schrijf op papier je gegevens, wat gevraagd wordt en welke formule je gebruikt, net zoals bij de oefeningen in deze cursus. Reken eenheden om naar basiseenheden (C en m) voor je iets invult.
+    \item \textbf{Vraag een tip, geen oplossing.} Een volledige oplossing lezen voelt nuttig maar je leert er veel minder van dan van zelf de volgende stap vinden. Vraag eerst een kleine tip. Blijf je vastzitten, vraag dan een tweede, duidelijkere tip.
+    \item \textbf{Zeg wat je wil oefenen.} Hoe preciezer, hoe beter: \emph{ik wil oefenen op het punt waar het veld nul is, met een positieve en een negatieve lading}.
+    \item \textbf{Bouw op.} Lukt het vlot? Vraag een moeilijkere oefening. Lukt het niet? Vraag een makkelijkere of herhaal hetzelfde type met andere getallen.
+    \item \textbf{Teken de situatie.} De assistent beschrijft de opstelling in woorden. Maak er zelf een schets van en teken de velden in punt $P$ voor je rekent.
+    \item \textbf{Vergelijk met de cursus.} Bekijk de uitgewerkte oplossingen in de oefeningen hierboven: zo zie je hoe een goede uitwerking eruitziet.
+\end{itemize}
+
+\section{Controleer altijd wat de AI zegt}\label{sec:ai-controle}
+Een AI-assistent is geen rekenmachine en geen leerkracht. Hij kan fouten maken in de opgave, in de berekening en in de uitleg, en dat klinkt toch zelfverzekerd. Controleer daarom:
+\begin{itemize}
+    \item \textbf{Grootteorde en eenheden.} Zit je een macht van tien naast het antwoord van de assistent? Dan is meestal een eenheid niet omgezet.
+    \item \textbf{De zin van het veld.} Een veld wijst weg van een positieve lading en naar een negatieve lading toe. Klopt de richting van het antwoord daarmee?
+    \item \textbf{Redelijkheid.} Dichter bij een lading is het veld groter. Past je antwoord daarbij?
+    \item \textbf{Je rekenmachine.} Staat die in graden (DEG) als er hoeken in de oefening zitten?
+    \item \textbf{De opgave zelf.} Soms klopt een opgave niet, bijvoorbeeld afstanden die geen driehoek kunnen vormen. Vraag dan gewoon een nieuwe oefening.
+\end{itemize}
+Verschilt jouw antwoord van dat van de assistent? Vraag de assistent om de oplossing \emph{stap voor stap met eenheden in elke tussenstap}, en vergelijk elke stap met je eigen uitwerking. Kom je er niet uit, leg het dan voor aan een klasgenoot of aan je leerkracht. Beide kunnen het bij het verkeerde eind hebben, en dat is net leerzaam om uit te zoeken.
+
+\section{Als de assistent zich niet gedraagt}\label{sec:ai-problemen}
+\begin{itemize}
+    \item \textbf{Hij geeft meteen de oplossing.} Zeg: \emph{Geef de oplossing niet. Volg de regels uit de prompt: eerst mijn antwoord afwachten en dan pas tips geven.}
+    \item \textbf{Hij schrijft vreemde tekens of codes in plaats van gewone formules.} Zeg: \emph{Schrijf alle formules in gewone tekst.}
+    \item \textbf{Na lange tijd vergeet hij de regels.} Start een nieuw gesprek en plak de prompt opnieuw.
+    \item \textbf{De oefeningen worden te moeilijk of te makkelijk.} Zeg het gewoon: \emph{Geef een makkelijkere oefening.}
+\end{itemize}
+
+\section{Afspraken}\label{sec:ai-afspraken}
+\begin{itemize}
+    \item Gebruik de assistent om te oefenen, niet om taken of toetsen in te vullen. Volg de regels van je school over AI.
+    \item Geef geen persoonlijke gegevens in, zoals je naam, adres of school.
+    \item AI-diensten hebben hun eigen leeftijdsregels. Houd je daaraan.
+\end{itemize}
+
+\section{Test jezelf}\label{sec:ai-quiz}
+\begin{question}
+    Je zit vast bij een oefening die de assistent je gaf. Wat is de beste eerste stap?
+
+    \begin{multipleChoice}
+        \choice{Vragen om de volledige oplossing.}
+        \choice[correct]{Een kleine tip vragen en daarna zelf verder proberen.}
+        \choice{Een andere oefening vragen en deze laten liggen.}
+    \end{multipleChoice}
+
+    \begin{solution}\nl
+        Met een kleine tip leer je het meest: je vindt de volgende stap zelf, en je weet precies waar je vastzat. Een volledige oplossing lezen helpt veel minder. Een andere oefening vragen kan, maar dan los je het probleem niet op.
+    \end{solution}
+\end{question}
+
+\begin{question}
+    De assistent zegt dat het juiste antwoord $4{,}4 \cdot 10^{4} \, \mathrm{N/C}$ is. Jij vindt $4{,}4 \cdot 10^{5} \, \mathrm{N/C}$. Wat doe je?
+
+    \begin{multipleChoice}
+        \choice{Je past je antwoord aan: de assistent heeft altijd gelijk.}
+        \choice[correct]{Je controleert eerst je eigen uitwerking en vraagt de oplossing van de assistent stap voor stap, met aandacht voor eenheden en machten van tien.}
+        \choice{Je blijft bij je antwoord zonder verder na te kijken.}
+    \end{multipleChoice}
+
+    \begin{solution}\nl
+        Beide antwoorden kunnen fout zijn. Een verschil van precies een factor tien wijst meestal op een omzetting van eenheden of een fout met een macht van tien. Zoek eerst uit \emph{waar} jullie uitwerkingen verschillen. Kom je er niet uit, vraag het dan aan een klasgenoot of aan je leerkracht.
+    \end{solution}
+\end{question}
+
+\end{document}

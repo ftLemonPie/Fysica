@@ -6,7 +6,7 @@
 % hulpcommando's voor krachtendiagrammen in de oplossingen (lichamen als puntmassa)
 \newcommand{\blokje}[4][left]{\fill (#2,#3) circle (0.05); \node[#1, inner sep=3pt] at (#2,#3) {#4};}
 \newcommand{\kr}[7][kracht]{\draw[#1] (#2,#3) -- ++(#4,#5) node[#6] {#7};}
-\newcommand{\as}[6]{\draw[positie] (#1,#2) -- ++(#3,#4) node[#5] {#6};}
+\newcommand{\positiepijl}[6]{\draw[positie] (#1,#2) -- ++(#3,#4) node[#5] {#6};}
 
 \begin{document}
 \begin{abstract}
@@ -108,8 +108,8 @@ Neem in alle oefeningen $g = 9{,}81 \, \mathrm{m/s^2}$. Touwen en katrollen hebb
             \kr[kracht]{5.5}{-0.1}{-1.1}{0}{pos=0.5,below left}{$\vec{\mathbf{F}}_{w,d,B}$}
             \kr[kracht]{11}{0.1}{0.9}{0}{right}{$\vec{\mathbf{F}}_{BC}$}
             \kr[kracht]{11}{-0.1}{-0.8}{0}{pos=0.5,below left}{$\vec{\mathbf{F}}_{w,d,C}$}
-            \as{-3.4}{1.4}{1.0}{0}{right}{$x$}
-            \as{-3.4}{1.4}{0}{0.9}{above}{$y$}
+            \positiepijl{-3.4}{1.4}{1.0}{0}{right}{$x$}
+            \positiepijl{-3.4}{1.4}{0}{0.9}{above}{$y$}
             \end{tikzpicture}
             \end{center}
 
@@ -132,19 +132,49 @@ Neem in alle oefeningen $g = 9{,}81 \, \mathrm{m/s^2}$. Touwen en katrollen hebb
     \begin{question}
         De kracht $F = 45 \, \mathrm{N}$ wordt nu horizontaal naar links uitgeoefend op blok $C$ (de volgorde $A$, $B$, $C$ van links naar rechts blijft behouden). Bereken de grootte van de kracht tussen blok $B$ en blok $C$.
 
-        \[ F_{CB} = \answer[tolerance=0.02,onlineshowanswerbutton]{37.8} \, \mathrm{N} \]
+        \[ F_{CB} = \answer[tolerance=0.2,onlineshowanswerbutton]{37.8} \, \mathrm{N} \]
 
         \begin{hint}
             De versnelling van het geheel verandert niet. Welke blokken worden nu door blok $C$ meegeduwd? Bekijk die blokken samen als één deelsysteem.
         \end{hint}
 
         \begin{solution}\nl
+                        De blokken raken elkaar en hebben dus allemaal dezelfde versnelling.\\
+            \textsc{Schets (niet op schaal):} krachten op elk van de drie blokken.
+
+            \begin{center}
+            \begin{tikzpicture}[scale=0.85]
+            \blokje[below left]{0}{0}{$m_{A}$}
+            \kr[kracht]{0}{0}{0}{1.0}{right}{$\vec{\mathbf{F}}_{N}$}
+            \kr[kracht]{0}{0}{0}{-1.0}{right}{$\vec{\mathbf{F}}_{z}$}
+            \kr[versnelling]{0.4}{1.7}{-0.9}{0}{above}{$\vec{\mathbf{a}}$}
+            \blokje[below left]{5.5}{0}{$m_{B}$}
+            \kr[kracht]{5.5}{0}{0}{1.0}{right}{$\vec{\mathbf{F}}_{N}$}
+            \kr[kracht]{5.5}{0}{0}{-1.0}{right}{$\vec{\mathbf{F}}_{z}$}
+            \kr[versnelling]{5.7}{1.7}{-0.9}{0}{above}{$\vec{\mathbf{a}}$}
+            \blokje[below left]{11}{0}{$m_{C}$}
+            \kr[kracht]{11}{0}{0}{1.0}{right}{$\vec{\mathbf{F}}_{N}$}
+            \kr[kracht]{11}{0}{0}{-1.0}{right}{$\vec{\mathbf{F}}_{z}$}
+            \kr[versnelling]{11.1}{1.7}{-0.9}{0}{above}{$\vec{\mathbf{a}}$}
+            \kr[kracht]{11}{0.1}{-3.0}{0}{pos=0.6,above}{$\vec{\mathbf{F}}$}
+            \kr[kracht]{0}{0.1}{-0.8}{0}{pos=0.5,above}{$\vec{\mathbf{F}}_{BA}$}
+            \kr[kracht]{0}{-0.1}{0.8}{0}{pos=0.5,below right}{$\vec{\mathbf{F}}_{w,d,A}$}
+            \kr[kracht]{5.5}{0.1}{0.8}{0}{pos=0.5,above}{$\vec{\mathbf{F}}_{AB}$}
+            \kr[kracht]{5.5}{0.1}{-2.0}{0}{pos=0.5,above}{$\vec{\mathbf{F}}_{CB}$}
+            \kr[kracht]{5.5}{-0.1}{1.1}{0}{pos=0.5,below right}{$\vec{\mathbf{F}}_{w,d,B}$}
+            \kr[kracht]{11}{0.1}{2.0}{0}{right}{$\vec{\mathbf{F}}_{BC}$}
+            \kr[kracht]{11}{-0.1}{0.8}{0}{pos=0.5,below right}{$\vec{\mathbf{F}}_{w,d,C}$}
+            \positiepijl{-3.4}{1.4}{1.0}{0}{right}{$x$}
+            \positiepijl{-3.4}{1.4}{0}{0.9}{above}{$y$}
+            \end{tikzpicture}
+            \end{center}
             \underline{Gevraagd:} $F_{CB}$ \\
 
             \underline{Oplossing:}\\
             De totale massa en de totale wrijving zijn ongewijzigd, dus de versnelling is nog steeds $1{,}6245 \, \mathrm{m/s^2}$ (nu naar links). Blok $C$ duwt blok $B$, en blok $B$ duwt blok $A$. We bekijken blok $B$ en $A$ samen als deelsysteem. De enige uitwendige krachten in de bewegingsrichting zijn $F_{CB}$ en de wrijvingen $F_{w,d,A}$ en $F_{w,d,B}$:
             \begin{align*}
                 F_{CB} - F_{w,d,A} - F_{w,d,B} &= (m_{A}+m_{B}) \cdot a \\
+                F_{CB} &=(m_A+m_B)\cdot a + F_{w,d,A} + F_{w,d,B}\\
                 F_{CB} &= 10{,}0 \, \mathrm{kg} \cdot 1{,}6245 \, \mathrm{m/s^2} + 3{,}924 \, \mathrm{N} + 17{,}658 \, \mathrm{N} \\
                 &= 37{,}827 \, \mathrm{N} \simeq 3{,}8\cdot 10^1 \, \mathrm{N}
             \end{align*}
@@ -214,9 +244,9 @@ Neem in alle oefeningen $g = 9{,}81 \, \mathrm{m/s^2}$. Touwen en katrollen hebb
             \kr[versnelling]{1.0}{0.2}{0}{-0.9}{right}{$\vec{\mathbf{a}}$}
             \kr[versnelling]{4.0}{-0.2}{0}{0.9}{right}{$\vec{\mathbf{a}}$}
             \kr[versnelling]{7.0}{-0.2}{0}{0.9}{right}{$\vec{\mathbf{a}}$}
-            \as{1.6}{0.3}{0}{-0.9}{right}{$y$}
-            \as{4.8}{-0.3}{0}{0.9}{right}{$y$}
-            \as{7.8}{-0.3}{0}{0.9}{right}{$y$}
+            \positiepijl{1.6}{0.3}{0}{-0.9}{right}{$y$}
+            \positiepijl{4.8}{-0.3}{0}{0.9}{right}{$y$}
+            \positiepijl{7.8}{-0.3}{0}{0.9}{right}{$y$}
             \end{tikzpicture}
             \end{center}
 
@@ -347,8 +377,8 @@ Neem in alle oefeningen $g = 9{,}81 \, \mathrm{m/s^2}$. Touwen en katrollen hebb
             \node at (-0.22,-1.0) {\scriptsize $30^\circ$};
             \draw (-0.6,0) arc[start angle=180,end angle=240,radius=0.6];
             \node at (-0.95,-0.45) {\scriptsize $60^\circ$};
-            \as{2.6}{0.6}{-0.9}{0}{above}{$x$}
-            \as{2.6}{0.6}{0}{0.9}{right}{$y$}
+            \positiepijl{2.6}{0.6}{-0.9}{0}{above}{$x$}
+            \positiepijl{2.6}{0.6}{0}{0.9}{right}{$y$}
             \end{scope}
             \end{tikzpicture}
             \end{center}
@@ -436,8 +466,8 @@ Neem in alle oefeningen $g = 9{,}81 \, \mathrm{m/s^2}$. Touwen en katrollen hebb
             \node at (-0.22,-1.0) {\scriptsize $30^\circ$};
             \draw (-0.6,0) arc[start angle=180,end angle=240,radius=0.6];
             \node at (-0.95,-0.45) {\scriptsize $60^\circ$};
-            \as{2.6}{0.6}{-0.9}{0}{above}{$x$}
-            \as{2.6}{0.6}{0}{0.9}{right}{$y$}
+            \positiepijl{2.6}{0.6}{-0.9}{0}{above}{$x$}
+            \positiepijl{2.6}{0.6}{0}{0.9}{right}{$y$}
             \draw[versnelling] (1.6,1.0) -- (0.7,1.0) node[above] {$\vec{\mathbf{a}}$};
             \end{scope}
             \end{tikzpicture}
@@ -511,7 +541,7 @@ Neem in alle oefeningen $g = 9{,}81 \, \mathrm{m/s^2}$. Touwen en katrollen hebb
             \kr[kracht]{0.2}{0}{0}{-1.2}{right}{$\vec{\mathbf{F}}_{v}$}
             \kr[kracht]{3}{0}{0}{1.2}{right}{$\vec{\mathbf{F}}_{v}$}
             \kr[kracht]{3}{0}{0}{-1.2}{right}{$\vec{\mathbf{F}}_{z,2}$}
-            \as{-2.2}{-0.5}{0}{0.9}{right}{$y$}
+            \positiepijl{-2.2}{-0.5}{0}{0.9}{right}{$y$}
             \end{tikzpicture}
             \end{center}
 
@@ -683,8 +713,8 @@ Neem in alle oefeningen $g = 9{,}81 \, \mathrm{m/s^2}$. Touwen en katrollen hebb
             \kr[kracht]{6}{0.05}{1.4}{0}{above}{$\vec{\mathbf{F}}_{t}$}
             \kr[kracht]{6}{-0.05}{-1.0}{0}{above left}{$\vec{\mathbf{F}}_{w,d}'$}
             \kr[versnelling]{6.3}{2.6}{0.9}{0}{above}{$\vec{\mathbf{a}}$}
-            \as{-2.0}{-0.9}{1.0}{0}{right}{$x$}
-            \as{-2.0}{-0.9}{0}{0.9}{above}{$y$}
+            \positiepijl{-2.0}{-0.9}{1.0}{0}{right}{$x$}
+            \positiepijl{-2.0}{-0.9}{0}{0.9}{above}{$y$}
             \end{tikzpicture}
             \end{center}
 
@@ -787,9 +817,9 @@ Neem in alle oefeningen $g = 9{,}81 \, \mathrm{m/s^2}$. Touwen en katrollen hebb
             \kr[kracht]{4.5}{0}{0}{-2.2}{right}{$\vec{\mathbf{F}}_{z,2}$}
             \kr[versnelling]{1.4}{0.9}{0.9}{0}{above}{$\vec{\mathbf{a}}$}
             \kr[versnelling]{5.6}{-0.4}{0}{-0.9}{right}{$\vec{\mathbf{a}}$}
-            \as{-2.4}{-0.6}{1.0}{0}{right}{$x$}
-            \as{-2.4}{-0.6}{0}{0.9}{above}{$y$}
-            \as{7.0}{0.4}{0}{-0.9}{right}{$y$}
+            \positiepijl{-2.4}{-0.6}{1.0}{0}{right}{$x$}
+            \positiepijl{-2.4}{-0.6}{0}{0.9}{above}{$y$}
+            \positiepijl{7.0}{0.4}{0}{-0.9}{right}{$y$}
             \end{tikzpicture}
             \end{center}
 
@@ -886,7 +916,7 @@ Een touw kan zijn lengte niet op een ogenblik veranderen en een veer ook niet. D
             \kr[kracht]{0}{0}{0}{1.8}{right}{$\vec{\mathbf{F}}_{v,1}$}
             \kr[kracht]{-0.2}{0}{0}{-1.0}{left}{$\vec{\mathbf{F}}_{z}$}
             \kr[kracht]{0.2}{0}{0}{-0.8}{right}{$\vec{\mathbf{F}}_{v,2}$}
-            \as{-2.2}{-0.5}{0}{0.9}{right}{$y$}
+            \positiepijl{-2.2}{-0.5}{0}{0.9}{right}{$y$}
             \end{tikzpicture}
             \end{center}
 
@@ -1024,7 +1054,7 @@ Een touw kan zijn lengte niet op een ogenblik veranderen en een veer ook niet. D
             \kr[versnelling]{1.0}{0.2}{0}{0.9}{right}{$\vec{\mathbf{a}}$}
             \kr[versnelling]{4.2}{0.2}{0}{0.9}{right}{$\vec{\mathbf{a}}$}
             \kr[versnelling]{7.2}{0.2}{0}{0.9}{right}{$\vec{\mathbf{a}}$}
-            \as{-2.2}{-0.5}{0}{0.9}{right}{$y$}
+            \positiepijl{-2.2}{-0.5}{0}{0.9}{right}{$y$}
             \end{tikzpicture}
             \end{center}
 
@@ -1133,7 +1163,7 @@ Een touw kan zijn lengte niet op een ogenblik veranderen en een veer ook niet. D
             \kr[kracht]{3}{0}{0}{-0.8}{right}{$\vec{\mathbf{F}}_{z,2}$}
             \kr[versnelling]{1.0}{0.2}{0}{0.9}{right}{$\vec{\mathbf{a}}$}
             \kr[versnelling]{4.0}{-0.2}{0}{-0.9}{right}{$\vec{\mathbf{a}}$}
-            \as{-2.2}{-0.5}{0}{0.9}{right}{$y$}
+            \positiepijl{-2.2}{-0.5}{0}{0.9}{right}{$y$}
             \end{tikzpicture}
             \end{center}
 
@@ -1280,9 +1310,9 @@ Een touw kan zijn lengte niet op een ogenblik veranderen en een veer ook niet. D
             \kr[kracht]{6.2}{0}{0}{-0.8}{right}{$\vec{\mathbf{F}}_{z,3}$}
             \kr[versnelling]{1.0}{-0.2}{0}{-0.9}{right}{$\vec{\mathbf{a}}$}
             \kr[versnelling]{4.2}{0.2}{0}{0.9}{right}{$\vec{\mathbf{a}}$}
-            \as{1.7}{0.3}{0}{-0.9}{right}{$y$}
-            \as{4.9}{-0.3}{0}{0.9}{right}{$y$}
-            \as{7.5}{-0.3}{0}{0.9}{right}{$y$}
+            \positiepijl{1.7}{0.3}{0}{-0.9}{right}{$y$}
+            \positiepijl{4.9}{-0.3}{0}{0.9}{right}{$y$}
+            \positiepijl{7.5}{-0.3}{0}{0.9}{right}{$y$}
             \end{tikzpicture}
             \end{center}
 

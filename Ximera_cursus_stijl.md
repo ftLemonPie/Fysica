@@ -1,11 +1,10 @@
-```markdown
 # Stijlgids Cursus DDO 5 (Ximera)
 
 Dit document vat alles samen wat is afgesproken over de structuur, lay-out en syntax
-van de Ximera-cursus fysica (Cursus DDO 5). Upload dit bestand (samen met
-`xmPreamble.tex` en één volledig hoofdstuk als voorbeeld) als **project-kennis**
-in een Claude Project, zodat nieuwe chats deze context automatisch hebben zonder
-dat je alles opnieuw moet uitleggen of opnieuw tokens moet verbruiken aan uitleg.
+van de Ximera-cursus fysica (Cursus DDO 5). Het staat in de git-repo (`Fysica/`)
+en is de **enige bron van waarheid** voor de afspraken: Claude leest het rechtstreeks
+uit de gekoppelde map. Nieuwe afspraken worden hier toegevoegd (en gecommit), niet
+enkel in het geheugen van een chat.
 
 ---
 
@@ -24,6 +23,14 @@ dat je alles opnieuw moet uitleggen of opnieuw tokens moet verbruiken aan uitleg
   4. `\chapterstyle` + `\activity{..._oefeningen_inleiding.tex}` — inleiding op de oefeningen.
   5. `\sectionstyle` + oefeningen-onderdelen, **opgesplitst per type/moeilijkheidsgraad**
      (bv. `vragen`, `basis`, `1lijn`, `driehoek`), telkens **van makkelijk naar moeilijk**.
+
+### Twee tracks: volledig en 1 uur
+
+- Naast de volledige cursus (`Cursus_DDO_5.tex`) bestaat een lichtere variant
+  (`Cursus_5de_1uur.tex`) voor de 1-uursklassen, met bestanden met suffix `_1` / `_1uur`.
+- Uitgecommentarieerde stukken in die bestanden zijn **bewuste leerplanreducties**, geen fouten.
+- Elk nieuw hoofdstuk krijgt een expliciete **`_1uur`-analyse**: per bestand
+  hergebruiken, inkorten of weglaten.
 
 ### Bestandsnaamgeving
 
@@ -142,6 +149,38 @@ Kort: titel, abstract, `\maketitle`, één inleidende zin over wat volgt. Geen `
 - Bij hints wél toegestaan/gewenst: een conceptuele vraag die het denkproces op gang
   brengt (*"Wat gebeurt er met de richting van de kracht als je het teken van de lading omdraait?"*),
   of een aanwijzing over **welke tussenstap** nog ontbreekt (*"Je hebt nog $r_{23}$ nodig — hoe vind je die in deze driehoek?"*).
+- Bij een meerdelige oefening blijft de vraagtekst zelf kort; procedurele instructies
+  zoals *"maak eerst een tekening van ..."* horen in een `\hint`, niet in de hoofdvraag.
+
+### Eenheden in opgaven en oplossingen
+- De opgave mag "vriendelijke" eenheden met voorvoegsel gebruiken (`$+1{,}5\,\mathrm{\mu C}$`,
+  `$3{,}0\,\mathrm{dm}$`); in het `\underline{Gegevens:}`-blok wordt omgezet naar SI (C, m).
+- **Varieer de voorvoegsels** over opeenvolgende oefeningen (mC, µC, nC, cm, dm, ...),
+  niet steeds dezelfde eenheid of notatie.
+- Altijd `\,` vóór `\mathrm`, ook bij voorvoegsels: `4{,}0\,\mathrm{dm}`, niet `4{,}0\mathrm{dm}`.
+- Eenheden **in elke tussenstap** meenemen, niet enkel bij het eindantwoord:
+  `\sqrt{(0{,}899\,\mathrm{N})^2 + (0{,}899\,\mathrm{N})^2}`.
+
+### Notatie (mechanica)
+| Grootheid | Notatie | Vector |
+|---|---|---|
+| Dynamische / statische wrijving | `F_{w,d}`, `F_{w,s}` (evt. `F_{w,d,A}`, `F_{w,s,\max}`) — nooit `f` | `\vec{\mathbf{F}}_{w,d}` |
+| Normaalkracht | `F_N` — nooit `N` | `\vec{\mathbf{F}}_{N}` |
+| Trek-/spankracht | `F_t` — nooit `T` | `\vec{\mathbf{F}}_{t}` |
+
+### Typografie en commentaar
+- In lopende tekst **geen em-dash (—) en geen curly quotes** ("" ''); enkel gewone
+  koppeltekens/apostrofs of LaTeX-constructies. (In decoratieve `%———`-scheidingslijnen
+  tussen oefeningen mag het wel.)
+- Datumcommentaar numeriek: `%verbeterd 9/9/26` of `%nagekeken 9/9/26`, geen voluit
+  geschreven maandnamen.
+
+### Kruisverwijzingen en voettekst
+- Belangrijke `\section`-koppen krijgen een label, bv.
+  `\section{Tribo-elektrisch effect}\label{sec:tribo-elektrisch-effect}`, zodat de
+  hoofdstuk-inleiding ernaar kan verwijzen met `\ref{}`.
+- Een stuk zonder eigen `\section` erft de voettekst van de vorige sectie: elk logisch
+  inhoudsblok heeft dus een eigen `\section` nodig om de voettekst correct te resetten.
 
 ---
 
@@ -154,6 +193,37 @@ Kort: titel, abstract, `\maketitle`, één inleidende zin over wat volgt. Geen `
   `\drawvector`, `\addvectors`, `kracht`/`krachtcomponent`/`resulterendekracht`,
   `Evector`/`Evectorcomponent`/`Eveldlijn`, `Mvector`/`Mvectorcomponent`/`Mveldlijn`, ...).
   Dit vermijdt zowel auteursrechtproblemen als het beheer van losse beeldbestanden.
+- Nooit lokale `\tikzset{charge+/...}`, `force/...`-definities in losse figuren:
+  altijd de gedeelde preamble-stijlen gebruiken.
+
+### TikZ-regels
+- Ladingen eerst plaatsen (`\poslading`/`\neglading`), pas daarna `\drawvector` of
+  `\draw[kracht]` die eraan verankeren (de macro's maken de node aan).
+- `\drawvector`: positieve lengte = naar het doel (aantrekking), negatieve lengte =
+  ervan weg (afstoting). Vaste hoek via een hulppunt, bv. `(q1)+(60:1)`. Startanker mag
+  een randpunt zijn (`Q1.west`).
+- `\addvectors` gebruikt de **eindpunten** van de getekende vectoren, niet hun startlabels.
+- Schaalconventie: coördinaten = **10× de echte afstand in meter**, zodat de
+  ladingcirkels proportioneel kloppen.
+- Bij `scale=X` (X ≠ 1) altijd `transform shape` toevoegen.
+- Labels naast een lading (Q1, Q2, ...) op **2,5 mm / 6 pt** afstand, bv.
+  `\tkzLabelPoint[below left=2.5mm](A){$Q_{1}$}`.
+
+### Krachtendiagrammen in oplossingen
+- Lichamen als **puntmassa** (een punt) met label ernaast (bv. $m_1$), zodat vectoren
+  niet achter blokken verdwijnen.
+- Krachten ontbinden in componenten waar dat helpt (bv. helling).
+- Gekozen assen (x/y met positieve zin) naast de tekening, met de vermelding
+  *"Schets (niet op schaal)"*.
+- Geen vectoren die enkel uit een pijlpunt bestaan: liever niet op schaal, met een
+  leesbare minimumlengte.
+
+### Oefeningen op basis van veldlijnfiguren
+- **Rekenoefeningen** op een veldlijnentekening: enkel met een **homogeen veld**.
+- Zuiver **conceptuele** vragen (redeneren, geen rekenwerk) mogen ook andere
+  veldlijnbeelden gebruiken (puntlading, dipool).
+
+### Uitzondering
 - Enkel wanneer een tekening echt te complex is voor TikZ, een `\includegraphics`
   placeholder met een `% TIP:`-commentaar naar een vergelijkbare (niet over te nemen) bronfiguur.
 
@@ -172,6 +242,12 @@ Kort: titel, abstract, `\maketitle`, één inleidende zin over wat volgt. Geen `
   (stelling van Pythagoras)**. Willekeurige (scalene) driehoeken met cosinusregel op
   een niet-rechte hoek horen niet tot de basisleerstof — enkel gelijkzijdige driehoek/vierkant
   als verdieping voor sterkere leerlingen, duidelijk gelabeld als extra.
+- Ook de potentiaal van een puntlading ($V = kQ/r$) is **"Extra"** (verdieping),
+  duidelijk zo gelabeld.
+- Altijd eerst het leerplan checken vóór er inhoud wordt toegevoegd.
+- Bronmateriaal (scans Interactie, Serway, leerplan) staat in een aparte map
+  **naast** de repo (`~/Ximera/Bronnen/`, per hoofdstuk), **nooit in de repo**
+  (auteursrecht: die gaat naar GitHub).
 
 ---
 
@@ -185,53 +261,22 @@ Kort: titel, abstract, `\maketitle`, één inleidende zin over wat volgt. Geen `
    vóór ze in het definitieve bestand komen.
 4. Oefeningen binnen eenzelfde bestand **aantoonbaar oplopend** in moeilijkheidsgraad;
    bij twijfel een korte rationale geven voor de volgorde.
+5. Testcompilaties (TikZ-controles) gebeuren in een aparte scratchmap, niet in de
+   cursusmap. De echte PDF/HTML-builds gebeuren via de VS Code-taken (PDF/HTML/Bake).
+6. Claude bewerkt de `.tex`-bestanden rechtstreeks in de map; Daan bekijkt de
+   wijzigingen als diff in VS Code (Source Control) en commit zelf.
+   **Commit vóór een sessie**, zodat de diff nadien enkel Claudes wijzigingen toont.
 
 ---
 
-## 7. Tips om deze chat op te splitsen (tokens besparen)
+## 7. Tips om tokens te besparen
 
-**Kernprobleem:** één lange doorlopende chat herhaalt impliciet alle eerdere context
-(bestandsinhoud, afspraken, gecompileerde figuren, ...) bij elk nieuw bericht, wat duur
-en traag wordt.
-
-### a) Gebruik een Claude Project
-- Maak één **Project** aan voor deze cursus (bv. "Cursus DDO 5 – Fysica").
-- Upload in de **project-kennis** (niet in een losse chat): dit stijldocument,
-  `xmPreamble.tex`, en 1 volledig uitgewerkt hoofdstuk als referentievoorbeeld.
-- Elke **nieuwe chat binnen dat Project** leest deze kennis automatisch in — je hoeft
-  niet opnieuw uit te leggen hoe `\samenbox` werkt of dat `onlineOnly` niet rond
-  quizvragen mag staan.
-- Voeg eventueel **custom instructions** toe op projectniveau (bv. "Volg altijd
-  Ximera_stijlgids_Cursus_DDO5.md strikt; verifieer rekenwerk in Python; schrijf oefeningen
-  van makkelijk naar moeilijk").
-
-### b) Splits per hoofdstuk, niet per cursus
-- Start een **nieuwe chat per hoofdstuk** (of zelfs per documenttype: theorie vs.
-  oefeningen vs. figuren), en upload enkel de bestanden die voor dát hoofdstuk relevant zijn
-  — niet de volledige cursus of alle bronbestanden opnieuw.
-
-### c) Splits type werk
-- **Tekst/oefeningen schrijven** en **TikZ-figuren tekenen** vergen een ander soort
-  iteratie (figuren hebben veel compileer-heen-en-weer nodig). Aparte chats hiervoor
-  houden beide sneller en goedkoper.
-
-### d) Geef feedback gebundeld
-- Verzamel feedback over meerdere bestanden en geef die in **één bericht**, in plaats
-  van per bestand een apart correctierondje te starten. Dat scheelt een volledige
-  "herlees-en-antwoord"-cyclus per opmerking.
-
-### e) Laat afspraken expliciet vastleggen
-- Zinnen als *"onthoud dat..."* of *"doe dit voortaan zo..."* zorgen ervoor dat de
-  afspraak in het geheugensysteem terechtkomt en in toekomstige chats **binnen
-  hetzelfde Project** automatisch wordt toegepast, zonder dat je het opnieuw moet
-  uitleggen. Herhaal dit wel expliciet bij belangrijke stijlregels — vertrouw niet
-  blind op automatische onthouding voor kritieke afspraken; controleer ze af en toe
-  door te vragen "wat onthoud je over de stijl van samenvattingen?".
-- Dit stijldocument is de **robuustere back-up**: geheugen kan verouderen of gemist
-  worden, een geüpload referentiebestand niet.
-
-### f) Houd bestanden atomair
-- Vraag per chat om **één of enkele bestanden** tegelijk, niet "maak het hele hoofdstuk".
-  Kleinere, concrete taken zijn makkelijker te controleren en goedkoper te herdoen
-  als er iets moet worden aangepast.
-```
+- **Eén chat per hoofdstuk of per bestand(groep)**, niet één lange doorlopende chat.
+  Noem in de chat welke bestanden en welk bronhoofdstuk relevant zijn; Claude leest
+  dan enkel die uit de map.
+- **Tekst/oefeningen** en **TikZ-figuren** in aparte chats: figuren vragen veel
+  compileer-heen-en-weer.
+- **Feedback bundelen** in één bericht in plaats van per bestand een correctierondje.
+- **Atomaire taken**: één of enkele bestanden per keer, niet "maak het hele hoofdstuk".
+- **Nieuwe afspraken in dit bestand vastleggen** (vraag: *"zet dit in de stijlgids"*).
+  Het geheugen is een hulpmiddel; deze stijlgids in de repo is de robuuste referentie.

@@ -1,12 +1,13 @@
 \documentclass{ximera}
-%verbeterd 22/10/26
+%verbeterd 3/11/26
 \title{Vraagstukken wetten van Newton: meerdere massa's}
 \author{Daan Lipkens}
 
 % hulpcommando's voor krachtendiagrammen in de oplossingen (lichamen als puntmassa)
 \newcommand{\blokje}[4][left]{\fill (#2,#3) circle (0.05); \node[#1, inner sep=3pt] at (#2,#3) {#4};}
 \newcommand{\kr}[7][kracht]{\draw[#1] (#2,#3) -- ++(#4,#5) node[#6] {#7};}
-\newcommand{\positiepijl}[6]{\draw[positie] (#1,#2) -- ++(#3,#4) node[#5] {#6};}
+% as: positie-stijl, maar lichter gedrukt (50% zwart)
+\newcommand{\positiepijl}[6]{\draw[positie, draw=black!50, text=black!50] (#1,#2) -- ++(#3,#4) node[#5] {#6};}
 
 \begin{document}
 \begin{abstract}
@@ -73,7 +74,7 @@ Neem in alle oefeningen $g = 9{,}81 \, \mathrm{m/s^2}$. Touwen en katrollen hebb
     \begin{question}
         Bereken de grootte van de kracht die blok $A$ uitoefent op blok $B$ en van de kracht die blok $B$ uitoefent op blok $C$.
 
-        \[ F_{AB} = \answer[tolerance=0.05,onlineshowanswerbutton]{34.6} \, \mathrm{N} \qquad F_{BC} = \answer[tolerance=0.05,onlineshowanswerbutton]{7.2} \, \mathrm{N} \]
+        \[ F_{AB} = \answer[tolerance=0.5,onlineshowanswerbutton]{35} \, \mathrm{N} \qquad F_{BC} = \answer[tolerance=0.05,onlineshowanswerbutton]{7.2} \, \mathrm{N} \]
 
         \begin{hint}
             Bekijk blok $C$ afzonderlijk: welke horizontale krachten werken er op en welke versnelling heeft het? Voor $F_{AB}$ kan je blok $A$ afzonderlijk bekijken. Wat zegt de derde wet over de kracht van $B$ op $A$?
@@ -132,7 +133,7 @@ Neem in alle oefeningen $g = 9{,}81 \, \mathrm{m/s^2}$. Touwen en katrollen hebb
     \begin{question}
         De kracht $F = 45 \, \mathrm{N}$ wordt nu horizontaal naar links uitgeoefend op blok $C$ (de volgorde $A$, $B$, $C$ van links naar rechts blijft behouden). Bereken de grootte van de kracht tussen blok $B$ en blok $C$.
 
-        \[ F_{CB} = \answer[tolerance=0.2,onlineshowanswerbutton]{37.8} \, \mathrm{N} \]
+        \[ F_{CB} = \answer[tolerance=0.5,onlineshowanswerbutton]{38} \, \mathrm{N} \]
 
         \begin{hint}
             De versnelling van het geheel verandert niet. Welke blokken worden nu door blok $C$ meegeduwd? Bekijk die blokken samen als één deelsysteem.
@@ -198,11 +199,11 @@ Neem in alle oefeningen $g = 9{,}81 \, \mathrm{m/s^2}$. Touwen en katrollen hebb
             \draw[fill=white] (0,3) circle (0.8);
             \fill (0,3) circle (0.05);
             \draw (-0.8,3) -- (-0.8,1.6);
-            \draw (0.8,3) -- (0.8,2.4);
+            \draw (0.8,3) -- (0.8,2.1);
             \draw[fill=gray!20] (-1.3,0.6) rectangle (-0.3,1.6) node[midway] {$m_{1}$};
-            \draw[fill=gray!20] (0.3,1.4) rectangle (1.3,2.4) node[midway] {$m_{2}$};
-            \draw (0.8,1.4) -- (0.8,0.8);
-            \draw[fill=gray!20] (0.4,0.2) rectangle (1.2,0.8) node[midway] {$m_{3}$};
+            \draw[fill=gray!20] (0.45,1.5) rectangle (1.15,2.1) node[midway] {$m_{2}$};
+            \draw (0.8,1.5) -- (0.8,0.6);
+            \draw[fill=gray!20] (0.55,0.2) rectangle (1.05,0.6) node[midway] {$m_{3}$};
             \node[left] at (-0.8,2.4) {touw 1};
             \node[right] at (0.8,1.1) {touw 2};
         \end{tikzpicture}
@@ -211,7 +212,7 @@ Neem in alle oefeningen $g = 9{,}81 \, \mathrm{m/s^2}$. Touwen en katrollen hebb
     \begin{question}
         Bereken de grootte van de versnelling van de blokken.
 
-        \[ a = \answer[tolerance=0.1,onlineshowanswerbutton]{3.27} \, \mathrm{m/s^2} \]
+        \[ a = \answer[tolerance=0.05,onlineshowanswerbutton]{3.3} \, \mathrm{m/s^2} \]
 
         \begin{hint}
             Alle touwen blijven gespannen, dus alle blokken hebben een versnelling met dezelfde grootte. Je kan de drie blokken samen als één systeem bekijken. Welke krachten vallen dan weg?
@@ -244,23 +245,29 @@ Neem in alle oefeningen $g = 9{,}81 \, \mathrm{m/s^2}$. Touwen en katrollen hebb
             \kr[versnelling]{1.0}{0.2}{0}{-0.9}{right}{$\vec{\mathbf{a}}$}
             \kr[versnelling]{4.0}{-0.2}{0}{0.9}{right}{$\vec{\mathbf{a}}$}
             \kr[versnelling]{7.0}{-0.2}{0}{0.9}{right}{$\vec{\mathbf{a}}$}
-            \positiepijl{1.6}{0.3}{0}{-0.9}{right}{$y$}
-            \positiepijl{4.8}{-0.3}{0}{0.9}{right}{$y$}
-            \positiepijl{7.8}{-0.3}{0}{0.9}{right}{$y$}
+            \positiepijl{1.6}{0.3}{0}{-2.4}{right}{$y$}
+            \positiepijl{4.8}{-0.3}{0}{2.4}{right}{$y$}
+            \positiepijl{7.8}{-0.3}{0}{2.4}{right}{$y$}
             \end{tikzpicture}
             \end{center}
 
-            Blok 1 zakt, blok 2 en 3 stijgen. We nemen de bewegingsrichting als positief. Voor de drie blokken afzonderlijk:
+            Blok 1 zakt en blokken 2 en 3 stijgen. De bewegingsrichting is positief gekozen. Voor elk blok wordt een vergelijking opgesteld:
             \begin{align*}
-                m_{1} \cdot g - F_{t,1} &= m_{1} \cdot a \\
-                F_{t,1} - m_{2} \cdot g - F_{t,2} &= m_{2} \cdot a \\
-                F_{t,2} - m_{3} \cdot g &= m_{3} \cdot a
+                m_{1} \cdot g - F_{t,1} &= m_{1} \cdot a \tag{blok 1} \\
+                F_{t,1} - m_{2} \cdot g - F_{t,2} &= m_{2} \cdot a \tag{blok 2} \\
+                F_{t,2} - m_{3} \cdot g &= m_{3} \cdot a \tag{blok 3}
             \end{align*}
-            Optellen van de drie vergelijkingen laat de spankrachten wegvallen:
+            Uit de vergelijking van blok 1 volgt $F_{t,1}$ en uit de vergelijking van blok 3 volgt $F_{t,2}$.
             \begin{align*}
+                F_{t,1} &= m_{1} \cdot g - m_{1} \cdot a \\
+                F_{t,2} &= m_{3} \cdot a + m_{3} \cdot g
+            \end{align*}
+            Subsitutie - Deze uitdrukkingen worden ingevuld in de vergelijking van blok 2:
+            \begin{align*}
+                (m_{1} \cdot g - m_{1} \cdot a) - m_{2} \cdot g - (m_{3} \cdot a + m_{3} \cdot g) &= m_{2} \cdot a \\
                 (m_{1} - m_{2} - m_{3}) \cdot g &= (m_{1}+m_{2}+m_{3}) \cdot a \\
                 a &= \frac{(1{,}2 \, \mathrm{kg} - 0{,}40 \, \mathrm{kg} - 0{,}20 \, \mathrm{kg}) \cdot 9{,}81 \, \mathrm{m/s^2}}{1{,}2 \, \mathrm{kg} + 0{,}40 \, \mathrm{kg} + 0{,}20 \, \mathrm{kg}} \\
-                &= 3{,}27 \, \mathrm{m/s^2}\simeq 3{,}3 \, \mathrm{m/s^2}
+                &= 3{,}27 \, \mathrm{m/s^2}\simeq \boxed{3{,}3 \, \mathrm{m/s^2}}
             \end{align*}
         \end{solution}
     \end{question}
@@ -268,7 +275,7 @@ Neem in alle oefeningen $g = 9{,}81 \, \mathrm{m/s^2}$. Touwen en katrollen hebb
     \begin{question}
         Bereken de spankracht in touw 1 en in touw 2.
 
-        \[ F_{t,1} = \answer[tolerance=0.02,onlineshowanswerbutton]{7.85} \, \mathrm{N} \qquad F_{t,2} = \answer[tolerance=0.02,onlineshowanswerbutton]{2.62} \, \mathrm{N} \]
+        \[ F_{t,1} = \answer[tolerance=0.05,onlineshowanswerbutton]{7.8} \, \mathrm{N} \qquad F_{t,2} = \answer[tolerance=0.05,onlineshowanswerbutton]{2.6} \, \mathrm{N} \]
 
         \begin{hint}
             Kies telkens het blok waarvoor je de minste krachten moet bijhouden. Welk blok is dat voor $F_{t,1}$ en welk voor $F_{t,2}$?
@@ -280,8 +287,8 @@ Neem in alle oefeningen $g = 9{,}81 \, \mathrm{m/s^2}$. Touwen en katrollen hebb
             \underline{Oplossing:}\\
             Uit de vergelijking van blok 1 en van blok 3:
             \begin{align*}
-                F_{t,1} &= m_{1} \cdot (g - a) = 1{,}2 \, \mathrm{kg} \cdot (9{,}81 \, \mathrm{m/s^2} - 3{,}27 \, \mathrm{m/s^2}) = 7{,}848 \, \mathrm{N} \simeq 7{,}85 \, \mathrm{N} \\
-                F_{t,2} &= m_{3} \cdot (g + a) = 0{,}20 \, \mathrm{kg} \cdot (9{,}81 \, \mathrm{m/s^2} + 3{,}27 \, \mathrm{m/s^2}) = 2{,}616 \, \mathrm{N} \simeq 2{,}62 \, \mathrm{N}
+                F_{t,1} &= m_{1} \cdot (g - a) = 1{,}2 \, \mathrm{kg} \cdot (9{,}81 \, \mathrm{m/s^2} - 3{,}27 \, \mathrm{m/s^2}) = 7{,}848 \, \mathrm{N} \simeq \boxed{7{,}8 \, \mathrm{N}} \\
+                F_{t,2} &= m_{3} \cdot (g + a) = 0{,}20 \, \mathrm{kg} \cdot (9{,}81 \, \mathrm{m/s^2} + 3{,}27 \, \mathrm{m/s^2}) = 2{,}616 \, \mathrm{N} \simeq \boxed{2{,}6 \, \mathrm{N}}
             \end{align*}
             Controle met blok 2: $F_{t,1} - m_{2} \cdot g - F_{t,2} = 7{,}848 \, \mathrm{N} - 3{,}924 \, \mathrm{N} - 2{,}616 \, \mathrm{N} = 1{,}308 \, \mathrm{N} = m_{2} \cdot a$. 
         \end{solution}
@@ -302,14 +309,16 @@ Neem in alle oefeningen $g = 9{,}81 \, \mathrm{m/s^2}$. Touwen en katrollen hebb
             \underline{Oplossing:}\\
             Enkel blok 1 en blok 2 blijven verbonden:
             \begin{align*}
-                a' &= \frac{(m_{1} - m_{2}) \cdot g}{m_{1}+m_{2}} = \frac{(1{,}2 \, \mathrm{kg} - 0{,}40 \, \mathrm{kg}) \cdot 9{,}81 \, \mathrm{m/s^2}}{1{,}2 \, \mathrm{kg} + 0{,}40 \, \mathrm{kg}} = 4{,}905 \, \mathrm{m/s^2} \simeq 4{,}9 \, \mathrm{m/s^2} \\
-                F_{t,1}' &= m_{1} \cdot (g - a') = 1{,}2 \, \mathrm{kg} \cdot (9{,}81 \, \mathrm{m/s^2} - 4{,}905 \, \mathrm{m/s^2}) = 5{,}886 \, \mathrm{N} \simeq 5{,}9 \, \mathrm{N}
+                a' &= \frac{(m_{1} - m_{2}) \cdot g}{m_{1}+m_{2}} = \frac{(1{,}2 \, \mathrm{kg} - 0{,}40 \, \mathrm{kg}) \cdot 9{,}81 \, \mathrm{m/s^2}}{1{,}2 \, \mathrm{kg} + 0{,}40 \, \mathrm{kg}} = 4{,}905 \, \mathrm{m/s^2} \simeq \boxed{4{,}9 \, \mathrm{m/s^2}} \\
+                F_{t,1}' &= m_{1} \cdot (g - a') = 1{,}2 \, \mathrm{kg} \cdot (9{,}81 \, \mathrm{m/s^2} - 4{,}905 \, \mathrm{m/s^2}) = 5{,}886 \, \mathrm{N} \simeq \boxed{5{,}9 \, \mathrm{N}}
             \end{align*}
             De spankracht in touw 1 is kleiner geworden: blok 2 moet nu minder massa meetrekken.
         \end{solution}
     \end{question}
 \end{exercise}
 %———————————————————————————————————————
+
+% tot hier nagekeken.
 
 %———————————————————————————————————————
 % OEFENING 3: HELLING + HANGEND BLOK, RUST OF BEWEGING
@@ -403,7 +412,7 @@ Neem in alle oefeningen $g = 9{,}81 \, \mathrm{m/s^2}$. Touwen en katrollen hebb
     \begin{question}
         Bereken de grootte van de statische wrijvingskracht op blok 1 als $m_{2} = 1{,}0 \, \mathrm{kg}$.
 
-        \[ F_{w,s} = \answer[tolerance=0.02,onlineshowanswerbutton]{14.7} \, \mathrm{N} \]
+        \[ F_{w,s} = \answer[tolerance=0.5,onlineshowanswerbutton]{15} \, \mathrm{N} \]
 
         \begin{hint}
             Het systeem is in rust. Wat is dan de spankracht in het touw, en wat betekent dat voor het evenwicht van blok 1 langs de helling?
@@ -416,7 +425,7 @@ Neem in alle oefeningen $g = 9{,}81 \, \mathrm{m/s^2}$. Touwen en katrollen hebb
             Blok 2 is in rust, dus $F_{t} = m_{2} \cdot g = 9{,}81 \, \mathrm{N}$. Langs de helling is blok 1 in evenwicht. De zwaartekrachtcomponent wijst omlaag, de spankracht en de statische wrijving wijzen omhoog:
             \begin{align*}
                 F_{z,1,x} - F_{t} - F_{w,s} &= 0 \\
-                F_{w,s} &= 24{,}525 \, \mathrm{N} - 9{,}81 \, \mathrm{N} = 14{,}715 \, \mathrm{N} \simeq 14{,}7 \, \mathrm{N}
+                F_{w,s} &= 24{,}525 \, \mathrm{N} - 9{,}81 \, \mathrm{N} = 14{,}715 \, \mathrm{N} \simeq 15 \, \mathrm{N}
             \end{align*}
             De statische wrijving is hier dus kleiner dan het maximum ($16{,}99 \, \mathrm{N}$): ze past zich aan wat nodig is.
         \end{solution}
@@ -425,7 +434,7 @@ Neem in alle oefeningen $g = 9{,}81 \, \mathrm{m/s^2}$. Touwen en katrollen hebb
     \begin{question}
         Nu wordt blok 2 vervangen door een blok van $400 \, \mathrm{g}$. Bereken de grootte van de versnelling van de blokken en de spankracht in het touw.
 
-        \[ a = \answer[tolerance=0.03,onlineshowanswerbutton]{1.46} \, \mathrm{m/s^2} \qquad F_{t} = \answer[tolerance=0.03,onlineshowanswerbutton]{4.5} \, \mathrm{N} \]
+        \[ a = \answer[tolerance=0.05,onlineshowanswerbutton]{1.5} \, \mathrm{m/s^2} \qquad F_{t} = \answer[tolerance=0.03,onlineshowanswerbutton]{4.5} \, \mathrm{N} \]
 
         \begin{hint}
             Controleer eerst of het systeem nog in rust kan blijven. Maak daarna voor elk blok een tekening met alle krachten en kies voor elk blok een positieve zin die overeenkomt met zijn bewegingsrichting.
@@ -481,7 +490,7 @@ Neem in alle oefeningen $g = 9{,}81 \, \mathrm{m/s^2}$. Touwen en katrollen hebb
             Optellen en oplossen naar $a$:
             \begin{align*}
                 a &= \frac{F_{z,1,x} - m_{2} \cdot g - F_{w,d}}{m_{1}+m_{2}} \\
-                &= \frac{24{,}525 \, \mathrm{N} - 3{,}924 \, \mathrm{N} - 12{,}744 \, \mathrm{N}}{5{,}0 \, \mathrm{kg} + 0{,}40 \, \mathrm{kg}} = 1{,}455 \, \mathrm{m/s^2} \simeq 1{,}46 \, \mathrm{m/s^2}
+                &= \frac{24{,}525 \, \mathrm{N} - 3{,}924 \, \mathrm{N} - 12{,}744 \, \mathrm{N}}{5{,}0 \, \mathrm{kg} + 0{,}40 \, \mathrm{kg}} = 1{,}455 \, \mathrm{m/s^2} \simeq 1{,}5 \, \mathrm{m/s^2}
             \end{align*}
             Daarna is de spankracht:
             \[
@@ -514,7 +523,7 @@ Neem in alle oefeningen $g = 9{,}81 \, \mathrm{m/s^2}$. Touwen en katrollen hebb
     \begin{question}
         Het systeem hangt in rust. Bereken hoeveel de veer is uitgerekt en bereken de spankracht in het touw.
 
-        \[ x = \answer[tolerance=0.02,onlineshowanswerbutton]{14.7} \, \mathrm{cm} \qquad F_{t} = \answer[tolerance=0.02,onlineshowanswerbutton]{49.1} \, \mathrm{N} \]
+        \[ x = \answer[tolerance=0.5,onlineshowanswerbutton]{15} \, \mathrm{cm} \qquad F_{t} = \answer[tolerance=0.5,onlineshowanswerbutton]{49} \, \mathrm{N} \]
 
         \begin{hint}
             Welk blok heeft de veer als enige verbinding met de rest nodig om in rust te blijven? Bekijk de krachten op dat blok. Voor het touw kan je het hele geheel van blokken en veer als één systeem bekijken.
@@ -541,18 +550,18 @@ Neem in alle oefeningen $g = 9{,}81 \, \mathrm{m/s^2}$. Touwen en katrollen hebb
             \kr[kracht]{0.2}{0}{0}{-1.2}{right}{$\vec{\mathbf{F}}_{v}$}
             \kr[kracht]{3}{0}{0}{1.2}{right}{$\vec{\mathbf{F}}_{v}$}
             \kr[kracht]{3}{0}{0}{-1.2}{right}{$\vec{\mathbf{F}}_{z,2}$}
-            \positiepijl{-2.2}{-0.5}{0}{0.9}{right}{$y$}
+            \positiepijl{-2.2}{-0.5}{0}{2.4}{right}{$y$}
             \end{tikzpicture}
             \end{center}
 
             Blok 2 is in rust: de veerkracht (omhoog) compenseert de zwaartekracht (omlaag):
             \begin{align*}
                 k \cdot x - m_{2} \cdot g &= 0 \\
-                x &= \frac{3{,}0 \, \mathrm{kg} \cdot 9{,}81 \, \mathrm{m/s^2}}{200 \, \mathrm{N/m}} = 0{,}14715 \, \mathrm{m} \simeq 14{,}7 \, \mathrm{cm}
+                x &= \frac{3{,}0 \, \mathrm{kg} \cdot 9{,}81 \, \mathrm{m/s^2}}{200 \, \mathrm{N/m}} = 0{,}14715 \, \mathrm{m} \simeq 15 \, \mathrm{cm}
             \end{align*}
             Voor het touw bekijken we blokken en veer als één systeem. Verticaal werken enkel de spankracht en de zwaartekracht op beide blokken:
             \[
-                F_{t} = (m_{1}+m_{2}) \cdot g = 5{,}0 \, \mathrm{kg} \cdot 9{,}81 \, \mathrm{m/s^2} = 49{,}05 \, \mathrm{N} \simeq 49{,}1 \, \mathrm{N}
+                F_{t} = (m_{1}+m_{2}) \cdot g = 5{,}0 \, \mathrm{kg} \cdot 9{,}81 \, \mathrm{m/s^2} = 49{,}05 \, \mathrm{N} \simeq 49 \, \mathrm{N}
             \]
         \end{solution}
     \end{question}
@@ -560,7 +569,7 @@ Neem in alle oefeningen $g = 9{,}81 \, \mathrm{m/s^2}$. Touwen en katrollen hebb
     \begin{question}
         Het touw wordt doorgeknipt. Bereken de grootte van de versnelling van beide blokken \emph{net na} het doorknippen.
 
-        \[ a_{1} = \answer[tolerance=0.02,onlineshowanswerbutton]{24.5} \, \mathrm{m/s^2} \qquad a_{2} = \answer[tolerance=0.02,onlineshowanswerbutton]{0} \, \mathrm{m/s^2} \]
+        \[ a_{1} = \answer[tolerance=0.5,onlineshowanswerbutton]{25} \, \mathrm{m/s^2} \qquad a_{2} = \answer[tolerance=0.02,onlineshowanswerbutton]{0} \, \mathrm{m/s^2} \]
 
         \begin{hint}
             Een veer kan haar lengte niet op één ogenblik veranderen. Wat betekent dat voor de veerkracht op het moment van doorknippen? Teken daarna voor elk blok afzonderlijk alle krachten.
@@ -577,7 +586,7 @@ Neem in alle oefeningen $g = 9{,}81 \, \mathrm{m/s^2}$. Touwen en katrollen hebb
             Op blok 1 werken de zwaartekracht en de veerkracht (de uitgerekte veer trekt blok 1 omlaag), beide omlaag:
             \begin{align*}
                 m_{1} \cdot g + F_{v} &= m_{1} \cdot a_{1} \\
-                a_{1} &= \frac{2{,}0 \, \mathrm{kg} \cdot 9{,}81 \, \mathrm{m/s^2} + 29{,}43 \, \mathrm{N}}{2{,}0 \, \mathrm{kg}} = 24{,}525 \, \mathrm{m/s^2} \simeq 24{,}5 \, \mathrm{m/s^2}
+                a_{1} &= \frac{2{,}0 \, \mathrm{kg} \cdot 9{,}81 \, \mathrm{m/s^2} + 29{,}43 \, \mathrm{N}}{2{,}0 \, \mathrm{kg}} = 24{,}525 \, \mathrm{m/s^2} \simeq 25 \, \mathrm{m/s^2}
             \end{align*}
             Blok 1 versnelt dus sterker dan bij vrije val.
         \end{solution}
@@ -586,7 +595,7 @@ Neem in alle oefeningen $g = 9{,}81 \, \mathrm{m/s^2}$. Touwen en katrollen hebb
     \begin{question}
         Het touw wordt opnieuw aan het plafond van een lift bevestigd. De lift versnelt met $1{,}5 \, \mathrm{m/s^2}$ naar boven en blokken en veer hangen in rust ten opzichte van de lift. Bereken hoeveel de veer nu is uitgerekt.
 
-        \[ x' = \answer[tolerance=0.02,onlineshowanswerbutton]{17.0} \, \mathrm{cm} \]
+        \[ x' = \answer[tolerance=0.5,onlineshowanswerbutton]{17} \, \mathrm{cm} \]
 
         \begin{hint}
             Beide blokken versnellen mee met de lift. Welke blok zorgt ervoor dat de veerkracht afwijkt van wat ze in rust was? Teken de krachten op dat blok en kies de zin van de versnelling als positieve zin.
@@ -600,7 +609,7 @@ Neem in alle oefeningen $g = 9{,}81 \, \mathrm{m/s^2}$. Touwen en katrollen hebb
             \begin{align*}
                 k \cdot x' - m_{2} \cdot g &= m_{2} \cdot a \\
                 x' &= \frac{m_{2} \cdot (g + a)}{k} = \frac{3{,}0 \, \mathrm{kg} \cdot (9{,}81 \, \mathrm{m/s^2} + 1{,}5 \, \mathrm{m/s^2})}{200 \, \mathrm{N/m}} \\
-                &= 0{,}16965 \, \mathrm{m} \simeq 17{,}0 \, \mathrm{cm}
+                &= 0{,}16965 \, \mathrm{m} \simeq 17 \, \mathrm{cm}
             \end{align*}
         \end{solution}
     \end{question}
@@ -631,7 +640,7 @@ Neem in alle oefeningen $g = 9{,}81 \, \mathrm{m/s^2}$. Touwen en katrollen hebb
     \begin{question}
         Wat is de grootst mogelijke versnelling van de wagen waarbij het blok niet over de wagen schuift?
 
-        \[ a_{\max} = \answer[tolerance=0.02,onlineshowanswerbutton]{2.94} \, \mathrm{m/s^2} \]
+        \[ a_{\max} = \answer[tolerance=0.05,onlineshowanswerbutton]{2.9} \, \mathrm{m/s^2} \]
 
         \begin{hint}
             Welke is de enige horizontale kracht op het blok? Zolang het blok niet schuift, heeft het dezelfde versnelling als de wagen.
@@ -651,7 +660,7 @@ Neem in alle oefeningen $g = 9{,}81 \, \mathrm{m/s^2}$. Touwen en katrollen hebb
             De enige horizontale kracht op het blok is de statische wrijving $F_{w,s}$ van de wagen. Die is hoogstens $\mu_{s} \cdot F_{N} = \mu_{s} \cdot m \cdot g$. Zonder schuiven heeft het blok dezelfde versnelling als de wagen:
             \begin{align*}
                 F_{w,s} &= m \cdot a \leq \mu_{s} \cdot m \cdot g \\
-                a_{\max} &= \mu_{s} \cdot g = 0{,}30 \cdot 9{,}81 \, \mathrm{m/s^2} = 2{,}943 \, \mathrm{m/s^2} \simeq 2{,}94 \, \mathrm{m/s^2}
+                a_{\max} &= \mu_{s} \cdot g = 0{,}30 \cdot 9{,}81 \, \mathrm{m/s^2} = 2{,}943 \, \mathrm{m/s^2} \simeq 2{,}9 \, \mathrm{m/s^2}
             \end{align*}
         \end{solution}
     \end{question}
@@ -659,7 +668,7 @@ Neem in alle oefeningen $g = 9{,}81 \, \mathrm{m/s^2}$. Touwen en katrollen hebb
     \begin{question}
         Bereken de grootste massa $m_{h}$ waarbij het blok net niet over de wagen schuift.
 
-        \[ m_{h,\max} = \answer[tolerance=0.03,onlineshowanswerbutton]{2.14} \, \mathrm{kg} \]
+        \[ m_{h,\max} = \answer[tolerance=0.05,onlineshowanswerbutton]{2.1} \, \mathrm{kg} \]
 
         \begin{hint}
             Op het grensgeval heeft het hele systeem de versnelling uit de vorige deelvraag. Bekijk de wagen met het blok erop als één geheel en het hangende blok afzonderlijk.
@@ -677,7 +686,7 @@ Neem in alle oefeningen $g = 9{,}81 \, \mathrm{m/s^2}$. Touwen en katrollen hebb
             Combineren geeft:
             \begin{align*}
                 m_{h} \cdot (g - a_{\max}) &= (M+m) \cdot a_{\max} \\
-                m_{h} &= \frac{5{,}0 \, \mathrm{kg} \cdot 2{,}943 \, \mathrm{m/s^2}}{9{,}81 \, \mathrm{m/s^2} - 2{,}943 \, \mathrm{m/s^2}} = 2{,}143 \, \mathrm{kg} \simeq 2{,}14 \, \mathrm{kg}
+                m_{h} &= \frac{5{,}0 \, \mathrm{kg} \cdot 2{,}943 \, \mathrm{m/s^2}}{9{,}81 \, \mathrm{m/s^2} - 2{,}943 \, \mathrm{m/s^2}} = 2{,}143 \, \mathrm{kg} \simeq 2{,}1 \, \mathrm{kg}
             \end{align*}
         \end{solution}
     \end{question}
@@ -685,7 +694,7 @@ Neem in alle oefeningen $g = 9{,}81 \, \mathrm{m/s^2}$. Touwen en katrollen hebb
     \begin{question}
         Nu is $m_{h} = 3{,}0 \, \mathrm{kg}$. Bereken de grootte van de versnelling van het blok, van de wagen en de spankracht in het touw.
 
-        \[ a_{\text{blok}} = \answer[tolerance=0.03,onlineshowanswerbutton]{1.96} \, \mathrm{m/s^2} \qquad a_{\text{wagen}} = \answer[tolerance=0.03,onlineshowanswerbutton]{3.92} \, \mathrm{m/s^2} \qquad F_{t} = \answer[tolerance=0.03,onlineshowanswerbutton]{17.7} \, \mathrm{N} \]
+        \[ a_{\text{blok}} = \answer[tolerance=0.05,onlineshowanswerbutton]{2.0} \, \mathrm{m/s^2} \qquad a_{\text{wagen}} = \answer[tolerance=0.05,onlineshowanswerbutton]{3.9} \, \mathrm{m/s^2} \qquad F_{t} = \answer[tolerance=0.5,onlineshowanswerbutton]{18} \, \mathrm{N} \]
 
         \begin{hint}
             Controleer eerst of het blok nog met de wagen meebeweegt. Als het schuift, heeft het blok een andere versnelling dan de wagen. Welke zin heeft de wrijving op het blok en welke zin heeft de wrijving op de wagen? Wat zegt de derde wet?
@@ -695,7 +704,7 @@ Neem in alle oefeningen $g = 9{,}81 \, \mathrm{m/s^2}$. Touwen en katrollen hebb
             \underline{Gevraagd:} $a_{\text{blok}}$, $a_{\text{wagen}}$ en $F_{t}$ \\
 
             \underline{Oplossing:}\\
-            Omdat $m_{h} = 3{,}0 \, \mathrm{kg} > 2{,}14 \, \mathrm{kg}$ schuift het blok over de wagen. De wrijving is dan dynamisch: $F_{w,d} = \mu_{d} \cdot m \cdot g = 0{,}20 \cdot 1{,}0 \, \mathrm{kg} \cdot 9{,}81 \, \mathrm{m/s^2} = 1{,}962 \, \mathrm{N}$. De wagen versnelt sterker dan het blok, dus het blok schuift naar achteren ten opzichte van de wagen. De wrijving op het blok wijst dus naar rechts en de wrijving op de wagen (derde wet) naar links.
+            Omdat $m_{h} = 3{,}0 \, \mathrm{kg} > 2{,}1 \, \mathrm{kg}$ schuift het blok over de wagen. De wrijving is dan dynamisch: $F_{w,d} = \mu_{d} \cdot m \cdot g = 0{,}20 \cdot 1{,}0 \, \mathrm{kg} \cdot 9{,}81 \, \mathrm{m/s^2} = 1{,}962 \, \mathrm{N}$. De wagen versnelt sterker dan het blok, dus het blok schuift naar achteren ten opzichte van de wagen. De wrijving op het blok wijst dus naar rechts en de wrijving op de wagen (derde wet) naar links.
 
             \textsc{Schets (niet op schaal):} krachten op het blok en op de wagen, met $x$-as naar rechts en $y$-as omhoog.
 
@@ -726,12 +735,12 @@ Neem in alle oefeningen $g = 9{,}81 \, \mathrm{m/s^2}$. Touwen en katrollen hebb
             \end{align*}
             Uit de eerste vergelijking:
             \[
-                a_{\text{blok}} = \frac{1{,}962 \, \mathrm{N}}{1{,}0 \, \mathrm{kg}} = 1{,}962 \, \mathrm{m/s^2} \simeq 1{,}96 \, \mathrm{m/s^2}
+                a_{\text{blok}} = \frac{1{,}962 \, \mathrm{N}}{1{,}0 \, \mathrm{kg}} = 1{,}962 \, \mathrm{m/s^2} \simeq 2{,}0 \, \mathrm{m/s^2}
             \]
             Optellen van de tweede en de derde vergelijking laat $F_{t}$ wegvallen:
             \begin{align*}
-                a_{\text{wagen}} &= \frac{m_{h} \cdot g - F_{w,d}}{M + m_{h}} = \frac{3{,}0 \, \mathrm{kg} \cdot 9{,}81 \, \mathrm{m/s^2} - 1{,}962 \, \mathrm{N}}{4{,}0 \, \mathrm{kg} + 3{,}0 \, \mathrm{kg}} = 3{,}924 \, \mathrm{m/s^2} \simeq 3{,}92 \, \mathrm{m/s^2} \\
-                F_{t} &= m_{h} \cdot (g - a_{\text{wagen}}) = 3{,}0 \, \mathrm{kg} \cdot (9{,}81 \, \mathrm{m/s^2} - 3{,}924 \, \mathrm{m/s^2}) = 17{,}658 \, \mathrm{N} \simeq 17{,}7 \, \mathrm{N}
+                a_{\text{wagen}} &= \frac{m_{h} \cdot g - F_{w,d}}{M + m_{h}} = \frac{3{,}0 \, \mathrm{kg} \cdot 9{,}81 \, \mathrm{m/s^2} - 1{,}962 \, \mathrm{N}}{4{,}0 \, \mathrm{kg} + 3{,}0 \, \mathrm{kg}} = 3{,}924 \, \mathrm{m/s^2} \simeq 3{,}9 \, \mathrm{m/s^2} \\
+                F_{t} &= m_{h} \cdot (g - a_{\text{wagen}}) = 3{,}0 \, \mathrm{kg} \cdot (9{,}81 \, \mathrm{m/s^2} - 3{,}924 \, \mathrm{m/s^2}) = 17{,}658 \, \mathrm{N} \simeq 18 \, \mathrm{N}
             \end{align*}
             Controle: $a_{\text{wagen}} > a_{\text{blok}}$, dus de veronderstelling dat het blok achteruit schuift klopt.
         \end{solution}
@@ -787,7 +796,7 @@ Neem in alle oefeningen $g = 9{,}81 \, \mathrm{m/s^2}$. Touwen en katrollen hebb
     \begin{question}
         Bereken de grootte van de versnelling van beide blokken.
 
-        \[ a_{1} = \answer[tolerance=0.02,onlineshowanswerbutton]{4.9} \, \mathrm{m/s^2} \qquad a_{2} = \answer[tolerance=0.02,onlineshowanswerbutton]{2.45} \, \mathrm{m/s^2} \]
+        \[ a_{1} = \answer[tolerance=0.02,onlineshowanswerbutton]{4.9} \, \mathrm{m/s^2} \qquad a_{2} = \answer[tolerance=0.05,onlineshowanswerbutton]{2.5} \, \mathrm{m/s^2} \]
 
         \begin{hint}
             Het touw is overal even strak gespannen. Hoeveel touwstukken trekken er omhoog aan de beweeglijke katrol met blok 2? De katrol heeft geen massa, dus bekijk de katrol en blok 2 samen als één geheel.
@@ -831,7 +840,7 @@ Neem in alle oefeningen $g = 9{,}81 \, \mathrm{m/s^2}$. Touwen en katrollen hebb
             Met $a_{1} = 2 \cdot a_{2}$ wordt dit:
             \begin{align*}
                 m_{2} \cdot g - 2 \cdot m_{1} \cdot 2 \cdot a_{2} &= m_{2} \cdot a_{2} \\
-                a_{2} &= \frac{m_{2} \cdot g}{4 \cdot m_{1} + m_{2}} = \frac{4{,}0 \, \mathrm{kg} \cdot 9{,}81 \, \mathrm{m/s^2}}{4 \cdot 3{,}0 \, \mathrm{kg} + 4{,}0 \, \mathrm{kg}} = 2{,}4525 \, \mathrm{m/s^2} \simeq 2{,}45 \, \mathrm{m/s^2} \\
+                a_{2} &= \frac{m_{2} \cdot g}{4 \cdot m_{1} + m_{2}} = \frac{4{,}0 \, \mathrm{kg} \cdot 9{,}81 \, \mathrm{m/s^2}}{4 \cdot 3{,}0 \, \mathrm{kg} + 4{,}0 \, \mathrm{kg}} = 2{,}4525 \, \mathrm{m/s^2} \simeq 2{,}5 \, \mathrm{m/s^2} \\
                 a_{1} &= 2 \cdot a_{2} = 4{,}905 \, \mathrm{m/s^2} \simeq 4{,}9 \, \mathrm{m/s^2}
             \end{align*}
         \end{solution}
@@ -840,7 +849,7 @@ Neem in alle oefeningen $g = 9{,}81 \, \mathrm{m/s^2}$. Touwen en katrollen hebb
     \begin{question}
         Bereken de spankracht in het touw.
 
-        \[ F_{t} = \answer[tolerance=0.02,onlineshowanswerbutton]{14.7} \, \mathrm{N} \]
+        \[ F_{t} = \answer[tolerance=0.5,onlineshowanswerbutton]{15} \, \mathrm{N} \]
 
         \begin{hint}
             Is de spankracht even groot als de zwaartekracht op blok 2? Kies het blok waarvoor je de versnelling al kent en waarbij de spankracht de enige horizontale kracht is.
@@ -852,7 +861,7 @@ Neem in alle oefeningen $g = 9{,}81 \, \mathrm{m/s^2}$. Touwen en katrollen hebb
             \underline{Oplossing:}\\
             Uit de vergelijking van blok 1:
             \[
-                F_{t} = m_{1} \cdot a_{1} = 3{,}0 \, \mathrm{kg} \cdot 4{,}905 \, \mathrm{m/s^2} = 14{,}715 \, \mathrm{N} \simeq 14{,}7 \, \mathrm{N}
+                F_{t} = m_{1} \cdot a_{1} = 3{,}0 \, \mathrm{kg} \cdot 4{,}905 \, \mathrm{m/s^2} = 14{,}715 \, \mathrm{N} \simeq 15 \, \mathrm{N}
             \]
             Controle: $2 \cdot F_{t} = 29{,}43 \, \mathrm{N}$ en $m_{2} \cdot g - 2 \cdot F_{t} = 39{,}24 \, \mathrm{N} - 29{,}43 \, \mathrm{N} = 9{,}81 \, \mathrm{N} = m_{2} \cdot a_{2}$. De spankracht is dus kleiner dan $m_{2} \cdot g = 39{,}24 \, \mathrm{N}$.
         \end{solution}
@@ -891,7 +900,7 @@ Een touw kan zijn lengte niet op een ogenblik veranderen en een veer ook niet. D
     \begin{question}
         Bereken hoeveel de onderste veer is uitgerekt.
 
-        \[ x_{2} = \answer[tolerance=0.03,onlineshowanswerbutton]{10.9} \, \mathrm{cm} \]
+        \[ x_{2} = \answer[tolerance=0.5,onlineshowanswerbutton]{11} \, \mathrm{cm} \]
 
         \begin{hint}
             Teken alle krachten op het blok. De onderste veer is uitgerekt: in welke zin trekt ze aan het blok?
@@ -916,7 +925,7 @@ Een touw kan zijn lengte niet op een ogenblik veranderen en een veer ook niet. D
             \kr[kracht]{0}{0}{0}{1.8}{right}{$\vec{\mathbf{F}}_{v,1}$}
             \kr[kracht]{-0.2}{0}{0}{-1.0}{left}{$\vec{\mathbf{F}}_{z}$}
             \kr[kracht]{0.2}{0}{0}{-0.8}{right}{$\vec{\mathbf{F}}_{v,2}$}
-            \positiepijl{-2.2}{-0.5}{0}{0.9}{right}{$y$}
+            \positiepijl{-2.2}{-0.5}{0}{2.4}{right}{$y$}
             \end{tikzpicture}
             \end{center}
 
@@ -925,7 +934,7 @@ Een touw kan zijn lengte niet op een ogenblik veranderen en een veer ook niet. D
                 F_{v,1} - m \cdot g - F_{v,2} &= 0 \\
                 F_{v,1} &= k_{1} \cdot x_{1} = 300 \, \mathrm{N/m} \cdot 0{,}12 \, \mathrm{m} = 36 \, \mathrm{N} \\
                 F_{v,2} &= 36 \, \mathrm{N} - 2{,}0 \, \mathrm{kg} \cdot 9{,}81 \, \mathrm{m/s^2} = 16{,}38 \, \mathrm{N} \\
-                x_{2} &= \frac{F_{v,2}}{k_{2}} = \frac{16{,}38 \, \mathrm{N}}{150 \, \mathrm{N/m}} = 0{,}1092 \, \mathrm{m} \simeq 10{,}9 \, \mathrm{cm}
+                x_{2} &= \frac{F_{v,2}}{k_{2}} = \frac{16{,}38 \, \mathrm{N}}{150 \, \mathrm{N/m}} = 0{,}1092 \, \mathrm{m} \simeq 11 \, \mathrm{cm}
             \end{align*}
         \end{solution}
     \end{question}
@@ -933,7 +942,7 @@ Een touw kan zijn lengte niet op een ogenblik veranderen en een veer ook niet. D
     \begin{question}
         Het blok wordt plots losgemaakt van de onderste veer. Bereken de grootte van de versnelling van het blok net daarna.
 
-        \[ a = \answer[tolerance=0.02,onlineshowanswerbutton]{8.19} \, \mathrm{m/s^2} \]
+        \[ a = \answer[tolerance=0.05,onlineshowanswerbutton]{8.2} \, \mathrm{m/s^2} \]
 
         \begin{hint}
             De bovenste veer is nog even lang als net voordien. Welke krachten werken er nu nog op het blok?
@@ -946,7 +955,7 @@ Een touw kan zijn lengte niet op een ogenblik veranderen en een veer ook niet. D
             Net na het loskomen is $F_{v,1} = 36 \, \mathrm{N}$ nog ongewijzigd. De nettokracht (positief omhoog) is:
             \begin{align*}
                 F_{v,1} - m \cdot g &= m \cdot a \\
-                a &= \frac{36 \, \mathrm{N} - 2{,}0 \, \mathrm{kg} \cdot 9{,}81 \, \mathrm{m/s^2}}{2{,}0 \, \mathrm{kg}} = 8{,}19 \, \mathrm{m/s^2} \text{ (omhoog)}
+                a &= \frac{36 \, \mathrm{N} - 2{,}0 \, \mathrm{kg} \cdot 9{,}81 \, \mathrm{m/s^2}}{2{,}0 \, \mathrm{kg}} = 8{,}2 \, \mathrm{m/s^2} \text{ (omhoog)}
             \end{align*}
         \end{solution}
     \end{question}
@@ -954,7 +963,7 @@ Een touw kan zijn lengte niet op een ogenblik veranderen en een veer ook niet. D
     \begin{question}
         Terug in de beginsituatie breekt in plaats daarvan de bovenste veer. Bereken de grootte van de versnelling van het blok net daarna.
 
-        \[ a' = \answer[tolerance=0.02,onlineshowanswerbutton]{18.0} \, \mathrm{m/s^2} \]
+        \[ a' = \answer[tolerance=0.05,onlineshowanswerbutton]{18} \, \mathrm{m/s^2} \]
 
         \begin{hint}
             Welke twee krachten wijzen nu allebei omlaag? Gebruik de gegevens uit de eerste deelvraag.
@@ -967,7 +976,7 @@ Een touw kan zijn lengte niet op een ogenblik veranderen en een veer ook niet. D
             De onderste veer trekt het blok nog steeds omlaag met $F_{v,2} = 16{,}38 \, \mathrm{N}$ en ook de zwaartekracht wijst omlaag (positief omlaag):
             \begin{align*}
                 m \cdot g + F_{v,2} &= m \cdot a' \\
-                a' &= \frac{2{,}0 \, \mathrm{kg} \cdot 9{,}81 \, \mathrm{m/s^2} + 16{,}38 \, \mathrm{N}}{2{,}0 \, \mathrm{kg}} = 18{,}0 \, \mathrm{m/s^2} \text{ (omlaag)}
+                a' &= \frac{2{,}0 \, \mathrm{kg} \cdot 9{,}81 \, \mathrm{m/s^2} + 16{,}38 \, \mathrm{N}}{2{,}0 \, \mathrm{kg}} = 18 \, \mathrm{m/s^2} \text{ (omlaag)}
             \end{align*}
         \end{solution}
     \end{question}
@@ -998,7 +1007,7 @@ Een touw kan zijn lengte niet op een ogenblik veranderen en een veer ook niet. D
     \begin{question}
         Eerst houdt de persoon de blokken in rust. Bereken de spankracht in elk van de drie touwen.
 
-        \[ F_{t,1} = \answer[tolerance=0.02,onlineshowanswerbutton]{39.2} \, \mathrm{N} \qquad F_{t,2} = \answer[tolerance=0.02,onlineshowanswerbutton]{19.6} \, \mathrm{N} \qquad F_{t,3} = \answer[tolerance=0.02,onlineshowanswerbutton]{4.9} \, \mathrm{N} \]
+        \[ F_{t,1} = \answer[tolerance=0.5,onlineshowanswerbutton]{39} \, \mathrm{N} \qquad F_{t,2} = \answer[tolerance=0.5,onlineshowanswerbutton]{20} \, \mathrm{N} \qquad F_{t,3} = \answer[tolerance=0.02,onlineshowanswerbutton]{4.91} \, \mathrm{N} \]
 
         \begin{hint}
             Elk touw draagt alles wat eronder hangt. Welke blokken hangen er onder touw 2?
@@ -1016,9 +1025,9 @@ Een touw kan zijn lengte niet op een ogenblik veranderen en een veer ook niet. D
             \underline{Oplossing:}\\
             Alles is in rust. Touw 3 draagt enkel blok 3, touw 2 draagt blok 2 en 3 en touw 1 draagt alle drie de blokken:
             \begin{align*}
-                F_{t,3} &= m_{3} \cdot g = 0{,}50 \, \mathrm{kg} \cdot 9{,}81 \, \mathrm{m/s^2} = 4{,}905 \, \mathrm{N} \simeq 4{,}9 \, \mathrm{N} \\
-                F_{t,2} &= (m_{2}+m_{3}) \cdot g = 2{,}0 \, \mathrm{kg} \cdot 9{,}81 \, \mathrm{m/s^2} = 19{,}62 \, \mathrm{N} \simeq 19{,}6 \, \mathrm{N} \\
-                F_{t,1} &= (m_{1}+m_{2}+m_{3}) \cdot g = 4{,}0 \, \mathrm{kg} \cdot 9{,}81 \, \mathrm{m/s^2} = 39{,}24 \, \mathrm{N} \simeq 39{,}2 \, \mathrm{N}
+                F_{t,3} &= m_{3} \cdot g = 0{,}50 \, \mathrm{kg} \cdot 9{,}81 \, \mathrm{m/s^2} = 4{,}905 \, \mathrm{N} \simeq 4{,}91 \, \mathrm{N} \\
+                F_{t,2} &= (m_{2}+m_{3}) \cdot g = 2{,}0 \, \mathrm{kg} \cdot 9{,}81 \, \mathrm{m/s^2} = 19{,}62 \, \mathrm{N} \simeq 20 \, \mathrm{N} \\
+                F_{t,1} &= (m_{1}+m_{2}+m_{3}) \cdot g = 4{,}0 \, \mathrm{kg} \cdot 9{,}81 \, \mathrm{m/s^2} = 39{,}24 \, \mathrm{N} \simeq 39 \, \mathrm{N}
             \end{align*}
         \end{solution}
     \end{question}
@@ -1026,7 +1035,7 @@ Een touw kan zijn lengte niet op een ogenblik veranderen en een veer ook niet. D
     \begin{question}
         Nu trekt de persoon de blokken met een constante versnelling van $2{,}0 \, \mathrm{m/s^2}$ omhoog. Bereken de spankracht in elk van de drie touwen.
 
-        \[ F_{t,1} = \answer[tolerance=0.02,onlineshowanswerbutton]{47.2} \, \mathrm{N} \qquad F_{t,2} = \answer[tolerance=0.02,onlineshowanswerbutton]{23.6} \, \mathrm{N} \qquad F_{t,3} = \answer[tolerance=0.02,onlineshowanswerbutton]{5.9} \, \mathrm{N} \]
+        \[ F_{t,1} = \answer[tolerance=0.5,onlineshowanswerbutton]{47} \, \mathrm{N} \qquad F_{t,2} = \answer[tolerance=0.5,onlineshowanswerbutton]{24} \, \mathrm{N} \qquad F_{t,3} = \answer[tolerance=0.02,onlineshowanswerbutton]{5.91} \, \mathrm{N} \]
 
         \begin{hint}
             Alle blokken hebben dezelfde versnelling. Bekijk telkens het deelsysteem dat onder het touw hangt, net zoals in de eerste deelvraag.
@@ -1054,15 +1063,15 @@ Een touw kan zijn lengte niet op een ogenblik veranderen en een veer ook niet. D
             \kr[versnelling]{1.0}{0.2}{0}{0.9}{right}{$\vec{\mathbf{a}}$}
             \kr[versnelling]{4.2}{0.2}{0}{0.9}{right}{$\vec{\mathbf{a}}$}
             \kr[versnelling]{7.2}{0.2}{0}{0.9}{right}{$\vec{\mathbf{a}}$}
-            \positiepijl{-2.2}{-0.5}{0}{0.9}{right}{$y$}
+            \positiepijl{-2.2}{-0.5}{0}{2.4}{right}{$y$}
             \end{tikzpicture}
             \end{center}
 
             Voor elk deelsysteem onder een touw is de nettokracht (positief omhoog) gelijk aan de massa maal de versnelling:
             \begin{align*}
-                F_{t,3} - m_{3} \cdot g &= m_{3} \cdot a \Rightarrow F_{t,3} = 0{,}50 \, \mathrm{kg} \cdot 11{,}81 \, \mathrm{m/s^2} = 5{,}905 \, \mathrm{N} \simeq 5{,}9 \, \mathrm{N} \\
-                F_{t,2} - (m_{2}+m_{3}) \cdot g &= (m_{2}+m_{3}) \cdot a \Rightarrow F_{t,2} = 2{,}0 \, \mathrm{kg} \cdot 11{,}81 \, \mathrm{m/s^2} = 23{,}62 \, \mathrm{N} \simeq 23{,}6 \, \mathrm{N} \\
-                F_{t,1} - (m_{1}+m_{2}+m_{3}) \cdot g &= (m_{1}+m_{2}+m_{3}) \cdot a \Rightarrow F_{t,1} = 4{,}0 \, \mathrm{kg} \cdot 11{,}81 \, \mathrm{m/s^2} = 47{,}24 \, \mathrm{N} \simeq 47{,}2 \, \mathrm{N}
+                F_{t,3} - m_{3} \cdot g &= m_{3} \cdot a \Rightarrow F_{t,3} = 0{,}50 \, \mathrm{kg} \cdot 11{,}81 \, \mathrm{m/s^2} = 5{,}905 \, \mathrm{N} \simeq 5{,}91 \, \mathrm{N} \\
+                F_{t,2} - (m_{2}+m_{3}) \cdot g &= (m_{2}+m_{3}) \cdot a \Rightarrow F_{t,2} = 2{,}0 \, \mathrm{kg} \cdot 11{,}81 \, \mathrm{m/s^2} = 23{,}62 \, \mathrm{N} \simeq 24 \, \mathrm{N} \\
+                F_{t,1} - (m_{1}+m_{2}+m_{3}) \cdot g &= (m_{1}+m_{2}+m_{3}) \cdot a \Rightarrow F_{t,1} = 4{,}0 \, \mathrm{kg} \cdot 11{,}81 \, \mathrm{m/s^2} = 47{,}24 \, \mathrm{N} \simeq 47 \, \mathrm{N}
             \end{align*}
             Hoe hoger het touw, hoe meer massa het moet versnellen, dus hoe groter de spankracht.
         \end{solution}
@@ -1071,7 +1080,7 @@ Een touw kan zijn lengte niet op een ogenblik veranderen en een veer ook niet. D
     \begin{question}
         Terwijl de blokken met $2{,}0 \, \mathrm{m/s^2}$ omhoog versnellen, breekt touw 2. De persoon blijft met dezelfde kracht $F$ trekken. Bereken de grootte van de versnelling van blok 1 en van de blokken 2 en 3 net na het breken.
 
-        \[ a_{1} = \answer[tolerance=0.02,onlineshowanswerbutton]{13.8} \, \mathrm{m/s^2} \qquad a_{2,3} = \answer[tolerance=0.02,onlineshowanswerbutton]{9.81} \, \mathrm{m/s^2} \]
+        \[ a_{1} = \answer[tolerance=0.5,onlineshowanswerbutton]{14} \, \mathrm{m/s^2} \qquad a_{2,3} = \answer[tolerance=0.02,onlineshowanswerbutton]{9.81} \, \mathrm{m/s^2} \]
 
         \begin{hint}
             Welke grootte had $F$ voor het breken? Welke krachten werken er na het breken nog op blok 1, en welke op blok 2 en 3?
@@ -1084,7 +1093,7 @@ Een touw kan zijn lengte niet op een ogenblik veranderen en een veer ook niet. D
             De kracht van de persoon is $F = F_{t,1} = 47{,}24 \, \mathrm{N}$ en blijft constant. Op blok 1 werken nu enkel $F$ (omhoog) en de zwaartekracht (omlaag):
             \begin{align*}
                 F - m_{1} \cdot g &= m_{1} \cdot a_{1} \\
-                a_{1} &= \frac{47{,}24 \, \mathrm{N} - 2{,}0 \, \mathrm{kg} \cdot 9{,}81 \, \mathrm{m/s^2}}{2{,}0 \, \mathrm{kg}} = 13{,}81 \, \mathrm{m/s^2} \simeq 13{,}8 \, \mathrm{m/s^2} \text{ (omhoog)}
+                a_{1} &= \frac{47{,}24 \, \mathrm{N} - 2{,}0 \, \mathrm{kg} \cdot 9{,}81 \, \mathrm{m/s^2}}{2{,}0 \, \mathrm{kg}} = 13{,}81 \, \mathrm{m/s^2} \simeq 14 \, \mathrm{m/s^2} \text{ (omhoog)}
             \end{align*}
             Blok 2 en 3 hangen nog aan elkaar via touw 3, maar er werkt geen andere kracht op dan de zwaartekracht. Beide blokken vallen vrij met $a_{2,3} = g = 9{,}81 \, \mathrm{m/s^2}$ (omlaag), en dus is $F_{t,3} = 0$.
         \end{solution}
@@ -1114,7 +1123,7 @@ Een touw kan zijn lengte niet op een ogenblik veranderen en een veer ook niet. D
     \begin{question}
         In rust: bereken de uitrekking van de veer en de spankracht in het touw.
 
-        \[ x = \answer[tolerance=0.02,onlineshowanswerbutton]{39.2} \, \mathrm{cm} \qquad F_{t} = \answer[tolerance=0.02,onlineshowanswerbutton]{4.9} \, \mathrm{N} \]
+        \[ x = \answer[tolerance=0.5,onlineshowanswerbutton]{39} \, \mathrm{cm} \qquad F_{t} = \answer[tolerance=0.02,onlineshowanswerbutton]{4.9} \, \mathrm{N} \]
 
         \begin{hint}
             Welk deelsysteem hangt er onder de veer en welk onder het touw?
@@ -1133,7 +1142,7 @@ Een touw kan zijn lengte niet op een ogenblik veranderen en een veer ook niet. D
             De veer draagt beide blokken, het touw enkel blok 2:
             \begin{align*}
                 k \cdot x &= (m_{1}+m_{2}) \cdot g \\
-                x &= \frac{2{,}0 \, \mathrm{kg} \cdot 9{,}81 \, \mathrm{m/s^2}}{50 \, \mathrm{N/m}} = 0{,}3924 \, \mathrm{m} \simeq 39{,}2 \, \mathrm{cm} \\
+                x &= \frac{2{,}0 \, \mathrm{kg} \cdot 9{,}81 \, \mathrm{m/s^2}}{50 \, \mathrm{N/m}} = 0{,}3924 \, \mathrm{m} \simeq 39 \, \mathrm{cm} \\
                 F_{t} &= m_{2} \cdot g = 0{,}50 \, \mathrm{kg} \cdot 9{,}81 \, \mathrm{m/s^2} = 4{,}905 \, \mathrm{N} \simeq 4{,}9 \, \mathrm{N}
             \end{align*}
         \end{solution}
@@ -1142,7 +1151,7 @@ Een touw kan zijn lengte niet op een ogenblik veranderen en een veer ook niet. D
     \begin{question}
         Het touw wordt doorgeknipt. Bereken de grootte van de versnelling van blok 1 en van blok 2 net daarna.
 
-        \[ a_{1} = \answer[tolerance=0.02,onlineshowanswerbutton]{3.27} \, \mathrm{m/s^2} \qquad a_{2} = \answer[tolerance=0.02,onlineshowanswerbutton]{9.81} \, \mathrm{m/s^2} \]
+        \[ a_{1} = \answer[tolerance=0.05,onlineshowanswerbutton]{3.3} \, \mathrm{m/s^2} \qquad a_{2} = \answer[tolerance=0.02,onlineshowanswerbutton]{9.81} \, \mathrm{m/s^2} \]
 
         \begin{hint}
             Welke krachten werken er op blok 1 vlak na het doorknippen? Is de veerkracht al veranderd?
@@ -1163,14 +1172,14 @@ Een touw kan zijn lengte niet op een ogenblik veranderen en een veer ook niet. D
             \kr[kracht]{3}{0}{0}{-0.8}{right}{$\vec{\mathbf{F}}_{z,2}$}
             \kr[versnelling]{1.0}{0.2}{0}{0.9}{right}{$\vec{\mathbf{a}}$}
             \kr[versnelling]{4.0}{-0.2}{0}{-0.9}{right}{$\vec{\mathbf{a}}$}
-            \positiepijl{-2.2}{-0.5}{0}{0.9}{right}{$y$}
+            \positiepijl{-2.2}{-0.5}{0}{2.4}{right}{$y$}
             \end{tikzpicture}
             \end{center}
 
             Net na het doorknippen is de veerkracht nog $F_{v} = (m_{1}+m_{2}) \cdot g = 19{,}62 \, \mathrm{N}$ (omhoog). Blok 2 valt vrij: $a_{2} = g = 9{,}81 \, \mathrm{m/s^2}$ (omlaag). Voor blok 1 (positief omhoog):
             \begin{align*}
                 F_{v} - m_{1} \cdot g &= m_{1} \cdot a_{1} \\
-                a_{1} &= \frac{19{,}62 \, \mathrm{N} - 1{,}5 \, \mathrm{kg} \cdot 9{,}81 \, \mathrm{m/s^2}}{1{,}5 \, \mathrm{kg}} = 3{,}27 \, \mathrm{m/s^2} \text{ (omhoog)}
+                a_{1} &= \frac{19{,}62 \, \mathrm{N} - 1{,}5 \, \mathrm{kg} \cdot 9{,}81 \, \mathrm{m/s^2}}{1{,}5 \, \mathrm{kg}} = 3{,}3 \, \mathrm{m/s^2} \text{ (omhoog)}
             \end{align*}
         \end{solution}
     \end{question}
@@ -1178,7 +1187,7 @@ Een touw kan zijn lengte niet op een ogenblik veranderen en een veer ook niet. D
     \begin{question}
         Blok 1 beweegt na het doorknippen omhoog. Bereken de versnelling van blok 1 op het moment dat de veer nog slechts $25 \, \mathrm{cm}$ is uitgerekt, en geef de zin ervan.
 
-        \[ a = \answer[tolerance=0.03,onlineshowanswerbutton]{1.48} \, \mathrm{m/s^2} \]
+        \[ a = \answer[tolerance=0.05,onlineshowanswerbutton]{1.5} \, \mathrm{m/s^2} \]
 
         Zin van de versnelling: \wordChoice{
             \choice[correct]{omlaag}
@@ -1196,7 +1205,7 @@ Een touw kan zijn lengte niet op een ogenblik veranderen en een veer ook niet. D
             Bij $x = 25 \, \mathrm{cm} = 0{,}25 \, \mathrm{m}$ is de veerkracht $F_{v} = 50 \, \mathrm{N/m} \cdot 0{,}25 \, \mathrm{m} = 12{,}5 \, \mathrm{N}$. Dat is kleiner dan de zwaartekracht $m_{1} \cdot g = 14{,}715 \, \mathrm{N}$ (het nieuwe evenwichtspunt ligt bij $\frac{m_{1} \cdot g}{k} = 29{,}4 \, \mathrm{cm}$). De nettokracht wijst dus omlaag (positief omlaag):
             \begin{align*}
                 m_{1} \cdot g - F_{v} &= m_{1} \cdot a \\
-                a &= \frac{14{,}715 \, \mathrm{N} - 12{,}5 \, \mathrm{N}}{1{,}5 \, \mathrm{kg}} = 1{,}477 \, \mathrm{m/s^2} \simeq 1{,}48 \, \mathrm{m/s^2} \text{ (omlaag)}
+                a &= \frac{14{,}715 \, \mathrm{N} - 12{,}5 \, \mathrm{N}}{1{,}5 \, \mathrm{kg}} = 1{,}477 \, \mathrm{m/s^2} \simeq 1{,}5 \, \mathrm{m/s^2} \text{ (omlaag)}
             \end{align*}
             Blok 1 versnelt eerst omhoog, gaat voorbij het evenwichtspunt en wordt dan afgeremd.
         \end{solution}
@@ -1232,7 +1241,7 @@ Een touw kan zijn lengte niet op een ogenblik veranderen en een veer ook niet. D
     \begin{question}
         Bereken de uitrekking van de veer en de spankracht in het touw terwijl alles in rust is.
 
-        \[ x = \answer[tolerance=0.02,onlineshowanswerbutton]{7.85} \, \mathrm{cm} \qquad F_{t} = \answer[tolerance=0.02,onlineshowanswerbutton]{17.7} \, \mathrm{N} \]
+        \[ x = \answer[tolerance=0.05,onlineshowanswerbutton]{7.8} \, \mathrm{cm} \qquad F_{t} = \answer[tolerance=0.5,onlineshowanswerbutton]{18} \, \mathrm{N} \]
 
         \begin{hint}
             Welke blokken hangen er onder de veer, en welke onder het touw aan de rechterkant?
@@ -1251,11 +1260,11 @@ Een touw kan zijn lengte niet op een ogenblik veranderen en een veer ook niet. D
             \underline{Oplossing:}\\
             Blok 3 is in rust: $F_{v} = m_{3} \cdot g = 7{,}848 \, \mathrm{N}$ en dus
             \[
-                x = \frac{F_{v}}{k} = \frac{7{,}848 \, \mathrm{N}}{100 \, \mathrm{N/m}} = 0{,}07848 \, \mathrm{m} \simeq 7{,}85 \, \mathrm{cm}
+                x = \frac{F_{v}}{k} = \frac{7{,}848 \, \mathrm{N}}{100 \, \mathrm{N/m}} = 0{,}07848 \, \mathrm{m} \simeq 7{,}8 \, \mathrm{cm}
             \]
             De rechterkant (blok 2, veer en blok 3) is in rust en het touw draagt blok 2 en 3:
             \[
-                F_{t} = (m_{2}+m_{3}) \cdot g = 1{,}8 \, \mathrm{kg} \cdot 9{,}81 \, \mathrm{m/s^2} = 17{,}658 \, \mathrm{N} \simeq 17{,}7 \, \mathrm{N}
+                F_{t} = (m_{2}+m_{3}) \cdot g = 1{,}8 \, \mathrm{kg} \cdot 9{,}81 \, \mathrm{m/s^2} = 17{,}658 \, \mathrm{N} \simeq 18 \, \mathrm{N}
             \]
         \end{solution}
     \end{question}
@@ -1263,7 +1272,7 @@ Een touw kan zijn lengte niet op een ogenblik veranderen en een veer ook niet. D
     \begin{question}
         Bereken de grootte van de kracht die de steun uitoefent op blok 1.
 
-        \[ F_{N} = \answer[tolerance=0.02,onlineshowanswerbutton]{11.8} \, \mathrm{N} \]
+        \[ F_{N} = \answer[tolerance=0.5,onlineshowanswerbutton]{12} \, \mathrm{N} \]
 
         \begin{hint}
             Blok 1 is in rust. Welke krachten werken er op blok 1 in verticale zin?
@@ -1276,7 +1285,7 @@ Een touw kan zijn lengte niet op een ogenblik veranderen en een veer ook niet. D
             Op blok 1 werken de spankracht en de normaalkracht omhoog en de zwaartekracht omlaag:
             \begin{align*}
                 F_{N} + F_{t} - m_{1} \cdot g &= 0 \\
-                F_{N} &= 3{,}0 \, \mathrm{kg} \cdot 9{,}81 \, \mathrm{m/s^2} - 17{,}658 \, \mathrm{N} = 11{,}772 \, \mathrm{N} \simeq 11{,}8 \, \mathrm{N}
+                F_{N} &= 3{,}0 \, \mathrm{kg} \cdot 9{,}81 \, \mathrm{m/s^2} - 17{,}658 \, \mathrm{N} = 11{,}772 \, \mathrm{N} \simeq 12 \, \mathrm{N}
             \end{align*}
         \end{solution}
     \end{question}
@@ -1284,7 +1293,7 @@ Een touw kan zijn lengte niet op een ogenblik veranderen en een veer ook niet. D
     \begin{question}
         De steun wordt plots weggehaald. Bereken net daarna de grootte van de versnelling van blok 1 en 2, de versnelling van blok 3 en de spankracht in het touw.
 
-        \[ a_{1,2} = \answer[tolerance=0.02,onlineshowanswerbutton]{2.94} \, \mathrm{m/s^2} \qquad a_{3} = \answer[tolerance=0.02,onlineshowanswerbutton]{0} \, \mathrm{m/s^2} \qquad F_{t}' = \answer[tolerance=0.02,onlineshowanswerbutton]{20.6} \, \mathrm{N} \]
+        \[ a_{1,2} = \answer[tolerance=0.05,onlineshowanswerbutton]{2.9} \, \mathrm{m/s^2} \qquad a_{3} = \answer[tolerance=0.02,onlineshowanswerbutton]{0} \, \mathrm{m/s^2} \qquad F_{t}' = \answer[tolerance=0.5,onlineshowanswerbutton]{21} \, \mathrm{N} \]
 
         \begin{hint}
             De veer heeft nog dezelfde lengte. Wat betekent dat voor de krachten op blok 3? Welke krachten werken er op blok 2 en welke op blok 1?
@@ -1325,8 +1334,8 @@ Een touw kan zijn lengte niet op een ogenblik veranderen en een veer ook niet. D
             \end{align*}
             Optellen laat $F_{t}'$ wegvallen:
             \begin{align*}
-                a_{1,2} &= \frac{m_{1} \cdot g - m_{2} \cdot g - F_{v}}{m_{1}+m_{2}} = \frac{29{,}43 \, \mathrm{N} - 9{,}81 \, \mathrm{N} - 7{,}848 \, \mathrm{N}}{4{,}0 \, \mathrm{kg}} = 2{,}943 \, \mathrm{m/s^2} \simeq 2{,}94 \, \mathrm{m/s^2} \\
-                F_{t}' &= m_{1} \cdot (g - a_{1,2}) = 3{,}0 \, \mathrm{kg} \cdot (9{,}81 \, \mathrm{m/s^2} - 2{,}943 \, \mathrm{m/s^2}) = 20{,}601 \, \mathrm{N} \simeq 20{,}6 \, \mathrm{N}
+                a_{1,2} &= \frac{m_{1} \cdot g - m_{2} \cdot g - F_{v}}{m_{1}+m_{2}} = \frac{29{,}43 \, \mathrm{N} - 9{,}81 \, \mathrm{N} - 7{,}848 \, \mathrm{N}}{4{,}0 \, \mathrm{kg}} = 2{,}943 \, \mathrm{m/s^2} \simeq 2{,}9 \, \mathrm{m/s^2} \\
+                F_{t}' &= m_{1} \cdot (g - a_{1,2}) = 3{,}0 \, \mathrm{kg} \cdot (9{,}81 \, \mathrm{m/s^2} - 2{,}943 \, \mathrm{m/s^2}) = 20{,}601 \, \mathrm{N} \simeq 21 \, \mathrm{N}
             \end{align*}
             De spankracht is groter geworden dan in rust ($17{,}7 \, \mathrm{N}$) omdat blok 2 nu omhoog versnelt.
         \end{solution}

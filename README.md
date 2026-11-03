@@ -2,6 +2,20 @@
 - na herstart: in terminal: "podman machine start" dan op extra klikken voor start server
 - in ximera.4ht staat html code, in ximera.cls regels rond pdf
 
+# Stijlafspraken
+Alle afspraken over structuur, syntax, hints, eenheden, notatie, TikZ en werkwijze staan in
+**[`Ximera_cursus_stijl.md`](Ximera_cursus_stijl.md)**. Dat is de enige bron van waarheid:
+nieuwe afspraken komen daar, niet hier. De templates hieronder volgen die stijlgids.
+
+Kort de belangrijkste:
+- Eenheden romein met dunne spatie (`4{,}0\,\mathrm{N/C}`), decimale komma `2{,}0`.
+- `foldable=true` / `expandable=true` voluit; `\nl` na de opening van theorieblokken.
+- Nooit `onlineOnly` rond quizinhoud (multipleChoice, wordChoice, hint, solution).
+- Hints: duw voor een tussenstap bij een meerstappenprobleem, nooit de formule verklappen.
+- Geen em-dash of curly quotes in lopende tekst.
+- Datumcommentaar bovenaan: `%verbeterd D/M/JJ` of `%nagekeken D/M/JJ`.
+- Oefeningen in een bestand van makkelijk naar moeilijk.
+
 # Templates
 Hier is je "Ximera Fysica Toolkit". Je kan deze blokken code gewoon kopiëren, plakken en invullen!
 
@@ -24,17 +38,15 @@ Dit is de gouden standaard voor je oefeningen. Het bevat een invulvak voor weten
         \choice[correct]{rechts}
     }
 
-    % Hints (bouw ze logisch op)
+    % Hints: enkel bij meerstappenproblemen, een duw voor een tussenstap
+    % (nooit de formule verklappen; eenstapsoefeningen hebben vaak geen hint nodig)
     \begin{hint}
-        Hint 1: Wat moet je eerst doen of omzetten?
-    \end{hint}
-    \begin{hint}
-        Hint 2: Welke formule of wiskundige bewerking heb je nodig?
+        [Welke tussenstap ontbreekt nog? bv. "Je hebt nog $r_{23}$ nodig: hoe vind je die?"]
     \end{hint}
 
     % Oplossing
     \begin{solution}\nl
-        \underline{Gegevens:}
+        \underline{Gegevens:} % omgezet naar SI-eenheden
         \begin{align*}
             & [Symbool] = [Waarde] \, \mathrm{[Eenheid]} & & [Symbool] = [Waarde] \, \mathrm{[Eenheid]}\\
             & [Symbool] = [Waarde] \, \mathrm{[Eenheid]} & & 
@@ -43,7 +55,7 @@ Dit is de gouden standaard voor je oefeningen. Het bevat een invulvak voor weten
         \underline{Gevraagd:} $[Symbool]$ \\
 
         \underline{Oplossing:}\\
-        [Typ hier de uitwerking met eventueel een align-omgeving voor de berekening]
+        [Typ hier de uitwerking; eenheden in elke tussenstap meenemen]
         \begin{align*}
             [Formule] &= [Invullen] \\
             &= [Uitkomst] \, \mathrm{[Eenheid]}
@@ -164,11 +176,24 @@ Omdat YouTube-video's online mooi kunnen afspelen, maar in een geprinte PDF gewo
 
 
 # TODO
+Na elke afgewerkte of nagekeken stap: deze TODO **en** de stand van zaken voor de leerlingen
+bijwerken (`5de/inleiding_stand_51.tex` voor 1 uur, `5de/inleiding_stand_52.tex` voor 2 uur).
+
+## Stand van zaken 5de jaar (3/11/26)
+| Hoofdstuk | 2 uur (`Cursus_DDO_5.tex`) | 1 uur (`Cursus_5de_1uur.tex`) |
+|---|---|---|
+| H1 elektrische krachtwerking | geschreven, nagekeken | geschreven, nagekeken |
+| H2 elektrisch veld | geschreven, nagekeken | geschreven, nagekeken |
+| H3 potentiaal | geschreven, nog niet nagekeken | nog aan te passen en na te kijken |
+| H4 gemengde schakelingen | n.v.t. | geschreven, nog niet nagekeken |
+| Appendix vectorrekenen, standaardvorm | geschreven | geschreven |
+
 ## te doen volgende keer
 
-- [ ] style md aanpassen
-- [ ] oefeningen H3 nakijken en extra maken
-- [ ] gemengde schakelingen
+- [x] style md aanpassen
+- [ ] H3 potentiaal (2 uur): theorie en oefeningen nalezen, extra oefeningen maken
+- [ ] H3 potentiaal (1 uur): aanpassen en nakijken (`_1uur`-analyse)
+- [ ] H4 gemengde schakelingen (1 uur) nakijken
 - [ ] extra quiskes in H2, extra oefeningen H1
 
 

@@ -161,6 +161,24 @@ Kort: titel, abstract, `\maketitle`, één inleidende zin over wat volgt. Geen `
 - Eenheden **in elke tussenstap** meenemen, niet enkel bij het eindantwoord:
   `\sqrt{(0{,}899\,\mathrm{N})^2 + (0{,}899\,\mathrm{N})^2}`.
 
+### Afronding, antwoordvelden en tolerantie
+- Antwoorden altijd op het **juiste aantal beduidende cijfers** (afgeleid uit de gegevens), ook in het antwoordveld: `3{,}3 \, \mathrm{m/s^2}`, niet `3{,}27 \, \mathrm{m/s^2}`. In de `\answer{}` schrijf je de decimale punt (`3.3`).
+- De **tolerantie** van een `\answer` kies je zo dat zowel het correct afgeronde antwoord als het niet-afgeronde tussenresultaat worden aanvaard, zodat leerlingen die (niet) afronden toch een juist antwoord krijgen. Voor een antwoord `3.3` is dat `tolerance=0.05`.
+
+### Eindantwoorden in oplossingen
+- Elk eindantwoord in een oplossing staat in een `\boxed{}`.
+- Eindantwoorden zijn in **standaardvorm**: juist aantal beduidende cijfers, wetenschappelijke schrijfwijze (`\cdot 10^{n}`) en S.I.-eenheden, bv. `\boxed{3{,}5\cdot 10^{1} \, \mathrm{N}}`. Enkel waar we bewust van S.I. afwijken, wijken we ook hier af.
+- In het antwoordveld van de digitale check (`\answer{}`) staat het antwoord **niet** in wetenschappelijke notatie, maar als gewone decimale waarde met het juiste aantal beduidende cijfers, bv. `\answer{35}` voor `3{,}5\cdot 10^{1}`.
+- Dit geldt voor alle documenten (oefeningen, theorie, samenvattingen).
+
+### Stelsels van vergelijkingen oplossen
+- Oplossingen lossen een stelsel op via **substitutie**, niet door vergelijkingen op te tellen. Leerlingen gebruiken vooral substitutie, dus die aanpak volgen we ook in de uitwerkingen.
+
+### Leesbaarheid van uitwerkingen
+- Schrijf voor leerlingen: korte zinnen, een consistente stijl binnen één uitwerking (onpersoonlijk, gebiedende wijs of "we", niet door elkaar) en de naam van de methode waar je ze gebruikt (bv. substitutie).
+- Zet voor elke stap in een uitwerking kort de reden: waarom gebruik je deze vergelijking of wet?
+- Controleer elke tekst op spelling en taal, en laat geen symbolen zonder uitleg staan.
+
 ### Notatie (mechanica)
 | Grootheid | Notatie | Vector |
 |---|---|---|
@@ -213,6 +231,8 @@ Kort: titel, abstract, `\maketitle`, één inleidende zin over wat volgt. Geen `
 - Lichamen als **puntmassa** (een punt) met label ernaast (bv. $m_1$), zodat vectoren
   niet achter blokken verdwijnen.
 - Krachten ontbinden in componenten waar dat helpt (bv. helling).
+- **Assen** (positie-assen `x`/`y`) zijn lang genoeg om niet op een korte vector te lijken, en worden **lichter gedrukt** (`draw=black!50, text=black!50`) zodat ze niet concurreren met de krachtvectoren. Dit geldt voor elke as, ook als er maar één as getekend is.
+- **Genummerde vergelijkingen** in een oplossing krijgen een label via `\tag{blok 1}` (of `\tag{...}` naar keuze) binnen de `align*`-omgeving, zodat ernaar verwezen kan worden in de uitwerking.
 - Gekozen assen (x/y met positieve zin) naast de tekening, met de vermelding
   *"Schets (niet op schaal)"*.
 - Geen vectoren die enkel uit een pijlpunt bestaan: liever niet op schaal, met een
@@ -266,6 +286,11 @@ Kort: titel, abstract, `\maketitle`, één inleidende zin over wat volgt. Geen `
 6. Claude bewerkt de `.tex`-bestanden rechtstreeks in de map; Daan bekijkt de
    wijzigingen als diff in VS Code (Source Control) en commit zelf.
    **Commit vóór een sessie**, zodat de diff nadien enkel Claudes wijzigingen toont.
+7. **Stand van zaken bijhouden**: telkens een hoofdstuk (of een `_1uur`-versie) geschreven,
+   aangepast of nagekeken is, meteen bijwerken:
+   - `5de/inleiding_stand_51.tex` (1 uur) en/of `5de/inleiding_stand_52.tex` (2 uur),
+     voor de leerlingen (+ datumcommentaar aanpassen);
+   - de TODO en de tabel "Stand van zaken" in `README.md`.
 
 ---
 

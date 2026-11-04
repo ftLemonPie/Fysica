@@ -163,13 +163,14 @@ Kort: titel, abstract, `\maketitle`, één inleidende zin over wat volgt. Geen `
 
 ### Afronding, antwoordvelden en tolerantie
 - Antwoorden altijd op het **juiste aantal beduidende cijfers** (afgeleid uit de gegevens), ook in het antwoordveld: `3{,}3 \, \mathrm{m/s^2}`, niet `3{,}27 \, \mathrm{m/s^2}`. In de `\answer{}` schrijf je de decimale punt (`3.3`).
-- De **tolerantie** van een `\answer` kies je zo dat zowel het correct afgeronde antwoord als het niet-afgeronde tussenresultaat worden aanvaard, zodat leerlingen die (niet) afronden toch een juist antwoord krijgen. Voor een antwoord `3.3` is dat `tolerance=0.05`.
+- De **tolerantie** van een `\answer` is **2,5 % van het antwoord** (afgerond op een beduidend cijfer), zodat ook wie met afgeronde tussenwaarden werkt en dezelfde juiste methode gebruikt, het juiste antwoord krijgt. Voorbeeld: `tolerance=0.08` bij `3.3`.
 
 ### Eindantwoorden in oplossingen
 - Elk eindantwoord in een oplossing staat in een `\boxed{}`.
 - Eindantwoorden zijn in **standaardvorm**: juist aantal beduidende cijfers, wetenschappelijke schrijfwijze (`\cdot 10^{n}`) en S.I.-eenheden, bv. `\boxed{3{,}5\cdot 10^{1} \, \mathrm{N}}`. Enkel waar we bewust van S.I. afwijken, wijken we ook hier af.
 - In het antwoordveld van de digitale check (`\answer{}`) staat het antwoord **niet** in wetenschappelijke notatie, maar als gewone decimale waarde met het juiste aantal beduidende cijfers, bv. `\answer{35}` voor `3{,}5\cdot 10^{1}`.
 - Dit geldt voor alle documenten (oefeningen, theorie, samenvattingen).
+- Eindantwoorden in S.I.-eenheden: zet cm, g of andere afgeleide eenheden om naar m, kg, N, s (bv. `\boxed{1{,}5\cdot 10^{-1} \, \mathrm{m}}`, niet `15 cm`). Het antwoordveld krijgt dan `0.15` met eenheid m.
 
 ### Stelsels van vergelijkingen oplossen
 - Oplossingen lossen een stelsel op via **substitutie**, niet door vergelijkingen op te tellen. Leerlingen gebruiken vooral substitutie, dus die aanpak volgen we ook in de uitwerkingen.

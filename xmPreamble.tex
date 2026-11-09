@@ -326,7 +326,6 @@
                    line width=0.8pt,
                     draw=teal!100!black,
                     text=teal!100!black,
-                    fill=teal!100!black,
                     opacity=1,
                     postaction={decorate},
                     decoration={
@@ -334,6 +333,51 @@
                         mark=at position 0.5 with {\gecentreerdepijl[3mm]}
                     }
                 ]   
+                %------------
+            %Magnetisme: stroom, stroom in/uit het blad, staafmagneet, kompasnaald
+                %------------------------------
+                % stroomzin in een geleider (pijl langs de draad)
+                \tikzstyle{stroom}=[
+                    -{Latex[length=3mm]},
+                    line width=1.2pt,
+                    draw=red!60!black,
+                    text=red!60!black,
+                    fill=red!60!black
+                ]
+                % stroom uit het blad (puntje) en in het blad (kruisje), als node zodat je eraan kan verankeren
+                \tikzstyle{stroomuit}=[circle, draw=black, line width=0.7pt, fill=white, minimum size=4mm, inner sep=0pt,
+                    path picture={\fill[black] (path picture bounding box.center) circle (0.6mm);}]
+                \tikzstyle{stroomin}=[circle, draw=black, line width=0.7pt, fill=white, minimum size=4mm, inner sep=0pt,
+                    path picture={\draw[line width=0.7pt] (path picture bounding box.south west) -- (path picture bounding box.north east) (path picture bounding box.north west) -- (path picture bounding box.south east);}]
+                \newcommand{\stroomuit}[2]{\node[stroomuit] (#1) at (#2) {};}% \stroomuit{naam}{x,y}
+                \newcommand{\stroomin}[2]{\node[stroomin] (#1) at (#2) {};}% \stroomin{naam}{x,y}
+                % staafmagneet: N-pool (rood) wijst in de richting van de hoek
+                \newcommand{\staafmagneet}[4][3]{% \staafmagneet[lengte in cm]{naam}{midden x,y}{hoek in graden}
+                    \begin{scope}[shift={(#3)}, rotate=#4]
+                        \fill[red!75!black] (0,-0.25) rectangle (#1/2,0.25);
+                        \fill[gray!30] (-#1/2,-0.25) rectangle (0,0.25);
+                        \draw[line width=0.6pt] (-#1/2,-0.25) rectangle (#1/2,0.25);
+                        \node[white, font=\bfseries\small] at (#1/4,0) {N};
+                        \node[font=\bfseries\small] at (-#1/4,0) {Z};
+                        \coordinate (#2) at (0,0);
+                        \coordinate (#2-N) at (#1/2,0);
+                        \coordinate (#2-Z) at (-#1/2,0);
+                    \end{scope}
+                }
+                % kompasnaald: rode punt = N-pool, wijst in de richting van de hoek
+                \newcommand{\kompasnaald}[3][1.2]{% \kompasnaald[lengte in cm]{midden x,y}{hoek in graden}
+                    \begin{scope}[shift={(#2)}, rotate=#3]
+                        \fill[red!75!black] (0,0.1) -- (#1/2,0) -- (0,-0.1) -- cycle;
+                        \fill[gray!35] (0,0.1) -- (-#1/2,0) -- (0,-0.1) -- cycle;
+                        \draw[line width=0.4pt] (#1/2,0) -- (0,0.1) -- (-#1/2,0) -- (0,-0.1) -- cycle;
+                        \fill[black] (0,0) circle (0.5mm);
+                    \end{scope}
+                }
+                %gebruik:
+                    %\stroomuit{I1}{0,0}              % stroom uit het blad in (0,0), node I1
+                    %\stroomin{I2}{3,0}               % stroom in het blad in (3,0), node I2
+                    %\staafmagneet[4]{M}{0,0}{0}      % staafmagneet van 4 cm, N-pool rechts; punten M, M-N, M-Z
+                    %\kompasnaald{2,1}{45}            % kompasnaald in (2,1), N-pool wijst naar 45 graden
                 %------------
  % assenstelsels
         % Assenstelsel tekenen op een gegeven punt, met de x-as onder een gekozen hoek

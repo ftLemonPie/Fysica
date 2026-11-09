@@ -169,7 +169,154 @@
 %———————————————————————————————————————
 
 %———————————————————————————————————————
-% BASIS OEFENING 7 (moeilijkst): spanning tussen twee punten die geen van beide op de platen liggen
+% BASIS OEFENING 7: potentiaal, afstand tot de positieve plaat gegeven naast de plaatafstand
+\begin{exercise}
+    Twee evenwijdige platen staan op $0{,}40 \, \mathrm{m}$ van elkaar. Tussen de platen is een homogeen elektrisch veld met grootte $E = 250 \, \mathrm{N/C}$. Een punt $P$ ligt op $10 \, \mathrm{cm}$ van de positieve plaat. Bereken de potentiaal in $P$ ten opzichte van de negatieve plaat.
+
+    \[ V_{P} = \answer[tolerance=2,onlineshowanswerbutton]{75} \, \mathrm{V} \]
+
+    \begin{hint}
+        Bereken eerst de afstand van $P$ tot de negatieve plaat.
+    \end{hint}
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & d_{\text{platen}} = 0{,}40 \, \mathrm{m} & & d_{\text{pos}} = 10 \, \mathrm{cm} = 0{,}10 \, \mathrm{m} & & E = 250 \, \mathrm{N/C}
+        \end{align*}
+
+        \underline{Gevraagd:} $V_{P}$
+
+        \underline{Oplossing:}\\
+        De afstand van $P$ tot de negatieve plaat is de plaatafstand min de afstand tot de positieve plaat:
+        \begin{align*}
+            d_{P} &= d_{\text{platen}} - d_{\text{pos}} \\
+            &= 0{,}40 \, \mathrm{m} - 0{,}10 \, \mathrm{m} = 0{,}30 \, \mathrm{m}
+        \end{align*}
+        De potentiaal in $P$ volgt uit $V = E \cdot d$ met $d$ de afstand tot de negatieve plaat:
+        \begin{align*}
+            V_{P} &= E \cdot d_{P} \\
+            &= 250 \, \mathrm{N/C} \cdot 0{,}30 \, \mathrm{m} = \boxed{75 \, \mathrm{V}}
+        \end{align*}
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% BASIS OEFENING 8: Epot, de afstand tussen de platen is niet nodig
+\begin{exercise}
+    Tussen twee evenwijdige platen op $0{,}50 \, \mathrm{m}$ van elkaar heerst een homogeen elektrisch veld met grootte $120 \, \mathrm{N/C}$. Punt $P$ ligt op $0{,}20 \, \mathrm{m}$ van de negatieve plaat. Bereken de potentiële elektrische energie van een lading $Q = +3{,}0 \, \mathrm{\mu C}$ in $P$.
+
+    \[ E_{\text{pot}} = \answer[tolerance=0.2,onlineshowanswerbutton]{7.2} \cdot 10^{-5} \, \mathrm{J} \]
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & Q = +3{,}0 \cdot 10^{-6} \, \mathrm{C} & & E = 120 \, \mathrm{N/C} & & d = 0{,}20 \, \mathrm{m}
+        \end{align*}
+        De plaatafstand van $0{,}50 \, \mathrm{m}$ wordt niet gebruikt, want de afstand van $P$ tot de negatieve plaat is al gegeven.
+
+        \underline{Gevraagd:} $E_{\text{pot}}$
+
+        \underline{Oplossing:}
+        \begin{align*}
+            E_{\text{pot}} &= Q \cdot E \cdot d \\
+            &= 3{,}0 \cdot 10^{-6} \, \mathrm{C} \cdot 120 \, \mathrm{N/C} \cdot 0{,}20 \, \mathrm{m} = \boxed{7{,}2 \cdot 10^{-5} \, \mathrm{J}}
+        \end{align*}
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% BASIS OEFENING 9: arbeid over een verplaatsing, geen afstand tot een plaat nodig
+\begin{exercise}
+    Tussen twee platen heerst een homogeen elektrisch veld met grootte $35 \, \mathrm{N/C}$. Een lading $Q = +6{,}0 \, \mathrm{nC}$ wordt over $0{,}40 \, \mathrm{m}$ verplaatst in de richting van het veld. Bereken de arbeid die het elektrisch veld op de lading verricht.
+
+    \[ W = \answer[tolerance=0.2,onlineshowanswerbutton]{8.4} \cdot 10^{-8} \, \mathrm{J} \]
+
+    \begin{hint}
+        Je hebt de afstand tot een plaat niet nodig. Bereken eerst de spanning over de verplaatsing.
+    \end{hint}
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & Q = +6{,}0 \cdot 10^{-9} \, \mathrm{C} & & E = 35 \, \mathrm{N/C} & & \Delta d = 0{,}40 \, \mathrm{m}
+        \end{align*}
+
+        \underline{Gevraagd:} $W$
+
+        \underline{Oplossing:}
+        \begin{align*}
+            U &= E \cdot \Delta d = 35 \, \mathrm{N/C} \cdot 0{,}40 \, \mathrm{m} = 14 \, \mathrm{V} \\
+            W &= Q \cdot U = 6{,}0 \cdot 10^{-9} \, \mathrm{C} \cdot 14 \, \mathrm{V} = \boxed{8{,}4 \cdot 10^{-8} \, \mathrm{J}}
+        \end{align*}
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% BASIS OEFENING 10: spanning tussen een punt en de positieve plaat
+\begin{exercise}
+    Tussen twee evenwijdige platen heerst een homogeen elektrisch veld met grootte $500 \, \mathrm{N/C}$. Punt $P$ ligt op $3{,}0 \, \mathrm{cm}$ van de positieve plaat. Bereken de grootte van de spanning tussen $P$ en de positieve plaat.
+
+    \[ U = \answer[tolerance=0.4,onlineshowanswerbutton]{15} \, \mathrm{V} \]
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & E = 500 \, \mathrm{N/C} & & d_{\text{pos}} = 3{,}0 \, \mathrm{cm} = 0{,}030 \, \mathrm{m}
+        \end{align*}
+        De plaatafstand en de afstand tot de negatieve plaat zijn hier niet nodig.
+
+        \underline{Gevraagd:} $U$
+
+        \underline{Oplossing:}
+        \begin{align*}
+            U &= E \cdot d_{\text{pos}} \\
+            &= 500 \, \mathrm{N/C} \cdot 0{,}030 \, \mathrm{m} = \boxed{15 \, \mathrm{V}}
+        \end{align*}
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% BASIS OEFENING 11: Epot van een elektron, plaatafstand en afstand tot de positieve plaat gegeven
+\begin{exercise}
+    Twee evenwijdige platen staan op $0{,}60 \, \mathrm{m}$ van elkaar. Tussen de platen heerst een homogeen elektrisch veld met grootte $300 \, \mathrm{N/C}$. Een punt $P$ ligt op $15 \, \mathrm{cm}$ van de positieve plaat. Bereken de potentiële elektrische energie van een elektron in $P$.
+
+    \[ E_{\text{pot}} = \answer[tolerance=0.05,onlineshowanswerbutton]{-2.16} \cdot 10^{-17} \, \mathrm{J} \]
+
+    \begin{hint}
+        Bereken eerst de afstand van $P$ tot de negatieve plaat, en daarna de potentiaal in $P$.
+    \end{hint}
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & d_{\text{platen}} = 0{,}60 \, \mathrm{m} & & d_{\text{pos}} = 15 \, \mathrm{cm} = 0{,}15 \, \mathrm{m} & & E = 300 \, \mathrm{N/C} \\
+            & Q = -e = -1{,}60 \cdot 10^{-19} \, \mathrm{C}
+        \end{align*}
+
+        \underline{Gevraagd:} $E_{\text{pot}}$
+
+        \underline{Oplossing:}\\
+        De afstand van $P$ tot de negatieve plaat:
+        \begin{align*}
+            d_{P} &= d_{\text{platen}} - d_{\text{pos}} = 0{,}60 \, \mathrm{m} - 0{,}15 \, \mathrm{m} = 0{,}45 \, \mathrm{m}
+        \end{align*}
+        De potentiaal in $P$ en de potentiële energie van het elektron:
+        \begin{align*}
+            V_{P} &= E \cdot d_{P} = 300 \, \mathrm{N/C} \cdot 0{,}45 \, \mathrm{m} = 135 \, \mathrm{V} \\
+            E_{\text{pot}} &= Q \cdot V_{P} = -1{,}60 \cdot 10^{-19} \, \mathrm{C} \cdot 135 \, \mathrm{V} = \boxed{-2{,}16 \cdot 10^{-17} \, \mathrm{J}}
+        \end{align*}
+        De potentiële energie is negatief omdat de lading van het elektron negatief is.
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% BASIS OEFENING 12 (moeilijkst): spanning tussen twee punten die geen van beide op de platen liggen
 \begin{exercise}
     In een homogeen elektrisch veld met grootte $E = 500 \, \mathrm{N/C}$ bevindt punt $1$ zich op $0{,}08 \, \mathrm{m}$ van de negatieve plaat, en punt $2$ op $0{,}20 \, \mathrm{m}$ van de negatieve plaat. Bereken de spanning $U_{12}$ tussen deze twee punten.
 

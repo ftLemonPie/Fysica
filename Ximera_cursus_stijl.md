@@ -8,6 +8,29 @@ enkel in het geheugen van een chat.
 
 ---
 
+## 0. Visie en vaste hoofdstukopbouw
+
+**Doel.** Alle hoofdstukken van Cursus DDO 5 hebben dezelfde opbouw. De structuur is geïnspireerd op Serway (*Physics for Scientists and Engineers*): een inleiding, genummerde figuren, theorie met duidelijke begrippen, conceptvragen en voorbeelden, een samenvatting en oefeningen. De inhoud volgt het leerplan NatS (LPD). We gaan zo diep en ver mogelijk binnen het leerplan. Alles wat verder gaat dan het leerplan krijgt het label **Extra** en staat in een uitklapbare omgeving.
+
+**Bronnen.** Interactie bepaalt het niveau en de inhoud. Serway levert de structuur en de meerwaarde. Serway-tekst wordt nooit overgenomen: we herschrijven alles naar eigen voorbeelden op middelbaar niveau.
+
+### Vaste opbouw per hoofdstuk
+1. **Inleiding** (`_inleiding.tex`): een korte probleemstelling of onderzoeksvraag, en de lijst **"Wat je na dit hoofdstuk moet kennen en kunnen"**, afgeleid uit het leerplan.
+2. **Per theoriesectie:**
+   - een genummerde figuur met bijschrift (`\label{fig:...}`), waar de tekst naar verwijst;
+   - korte theorie, met begrippen in een `definition`, eigenschappen in een `proposition` en wetten en formules in een `proposition`;
+   - aan het eind van de sectie minstens één korte **conceptvraag** (`question` met één juist antwoord) die de kern van de sectie toetst.
+3. **Voorbeelden**: altijd het stramien Gegevens, Gevraagd, Oplossing. Optioneel een `remark` met titel "Denkstap": een conceptuele aanpak zonder formule, zoals het stramien van Serway (begrijpen, aanpak kiezen, uitwerken, controleren).
+4. **Extra's**: alles buiten het leerplan krijgt "Extra:" in de titel en een `expandable=true`-omgeving. Voorbeeld: `\begin{remark}[expandable=true,title={Extra: potentiaal van een puntlading}]`.
+5. **Samenvatting** (`_samenvatting.tex`): blokken met `\samenbox` voor de definities, de wetten en formules (met verwijzing naar de vergelijkingen via `\ref`) en de concepten.
+6. **Oefeningen** (`_oefeningen`): reeks 1 (basis) en reeks 2 (moeilijker), van makkelijk naar moeilijk, met de bijbehorende `_1uur`-analyse.
+
+### Kwaliteitscheck per hoofdstuk
+- Elk LPD-doel van het hoofdstuk is aantoonbaar behandeld. Noteer per doel in welke sectie het staat.
+- Elke sectie heeft een figuur (waar zinvol) en een conceptvraag.
+- Geen em-dash, geen `\"`-accenten in titels, geen wiskunde in remarktitels.
+- Alle `\ref`-verwijzingen werken (bij bouwen in VS Code controleren).
+
 ## 1. Architectuur
 
 - **`Cursus_DDO_5.tex`** (`\documentclass[nonewpage]{xourse}`) is het hoofdbestand.
@@ -61,6 +84,8 @@ Gedeelde preamble met o.a.:
   - Veldlijnen: `Eveldlijn` / `Mveldlijn` — via `decorations.markings` staat de pijl in het **midden** van de lijn, niet op het uiteinde.
   - `\R` is niet langer nodig om ladingcirkels te tekenen (dat zit vast in de `poslading`/`neglading`-stijl, `minimum size=6mm`), maar kan nog gebruikt worden voor verticale label-offsets boven een lading.
   - Bij een `tikzpicture[scale=X]` met X ≠ 1: voeg `transform shape` toe aan de opties, anders schalen de ladingsnodes niet mee met de rest van de figuur.
+  - Magnetisme: `stroom` (stijl voor de stroomzin langs een draad), `\stroomuit{naam}{coord}` / `\stroomin{naam}{coord}` (draad loodrecht op het blad, stroom uit/in het blad, als node), `\staafmagneet[lengte]{naam}{midden}{hoek}` (N rood, Z grijs; maakt de punten `naam`, `naam-N`, `naam-Z`) en `\kompasnaald[lengte]{midden}{hoek}` (rode punt = N). `Mveldlijn` heeft geen `fill`, zodat ook kromme veldlijnen (`plot[smooth]`) niet worden opgevuld.
+  - Veldlijnen met de gecentreerde pijl (`Eveldlijn`, `Mveldlijn`) geven bij sommige `scale`-waarden een *Dimension too large*-fout: teken zulke figuren liever op ware grootte (zonder `scale`). Exacte veldlijnpatronen (staafmagneet, spoel, ...) worden in Python berekend en als `plot[smooth] coordinates {...}` in de figuur gezet.
 - `\samenbox{titel}{tekst}`, `\nl`, `\mylink`
 - `tkz-euclide` voor driehoeken/hoeken (`\tkzDefPoint`, `\tkzDrawPolygon`, `\tkzFillAngle`, ...)
 
@@ -88,6 +113,9 @@ Gedeelde preamble met o.a.:
   of `[expandable=true]` — **altijd voluit `=true`, nooit de kale vlag**.
 - `\nl` direct na de opening van zo'n omgeving (nodig voor correcte newline).
 - `example[foldable=true,title={...}]` voor uitgewerkte voorbeelden/toepassingen.
+- Eigenschappen (bv. "loodrecht op de equipotentiaaloppervlakken") staan in een `proposition`, niet in een `remark`.
+- Stellingen en wetten gebruik je als `proposition`, niet als `theorem`.
+- Nergens een em-dash (—) in lopende tekst, ook niet in `remark`- of `example`-omgevingen. Gebruik een komma, dubbele punt of haakjes.
 - Quisvragen: `\begin{question}` **rechtstreeks** in de tekst (zie §3, geen `onlineOnly`).
 
 ### c) Samenvatting (`_samenvatting.tex`)
@@ -141,6 +169,12 @@ Kort: titel, abstract, `\maketitle`, één inleidende zin over wat volgt. Geen `
 | `onlineOnly` wél voor: | video's, en `\maketitle` in samenvattingen (bladindeling) |
 | Meerdelige oefening | gedeelde gegevens in `exercise`, elke deelvraag een eigen `question` |
 
+### Keuzevragen: welke omgeving?
+- **Alle juiste antwoorden moeten aangeduid worden**: `selectAll` (dit is meestal het geval). Enkel correct als alle correcte antwoorden zijn aangeduid.
+- **1 juist antwoord is genoeg** (ook bij meerdere `[correct]`-opties): `wordChoice` of `multipleChoice`. Beide werken hetzelfde qua nakijken; de keuze hangt van de lay-out af.
+  - `wordChoice`: dropdown-menu, inline in een zin.
+  - `multipleChoice`: alle opties onder elkaar, als apart antwoord.
+
 ### Hints: filosofie
 - Een hint is een duw in de rug voor een **tussenstap** in een **lastig, meerstappen-probleem**,
   voor wie vastzit — **geen** rechtstreekse vermelding van de te gebruiken formule
@@ -148,7 +182,7 @@ Kort: titel, abstract, `\maketitle`, één inleidende zin over wat volgt. Geen `
 - **Eenvoudige, éántraps-oefeningen hebben vaak helemaal geen hint nodig.**
 - Bij hints wél toegestaan/gewenst: een conceptuele vraag die het denkproces op gang
   brengt (*"Wat gebeurt er met de richting van de kracht als je het teken van de lading omdraait?"*),
-  of een aanwijzing over **welke tussenstap** nog ontbreekt (*"Je hebt nog $r_{23}$ nodig — hoe vind je die in deze driehoek?"*).
+  of een aanwijzing over **welke tussenstap** nog ontbreekt (*"Je hebt nog $r_{23}$ nodig. Hoe vind je die in deze driehoek?"*).
 - Bij een meerdelige oefening blijft de vraagtekst zelf kort; procedurele instructies
   zoals *"maak eerst een tekening van ..."* horen in een `\hint`, niet in de hoofdvraag.
 
@@ -188,6 +222,7 @@ Kort: titel, abstract, `\maketitle`, één inleidende zin over wat volgt. Geen `
 | Trek-/spankracht | `F_t` — nooit `T` | `\vec{\mathbf{F}}_{t}` |
 
 ### Typografie en commentaar
+- Bijzinnen staan tussen **komma's**, niet tussen haakjes. Haakjes gebruik je enkel voor een korte verduidelijking, bv. `(RP)` of `(met behoud van teken)`.
 - In lopende tekst **geen em-dash (—) en geen curly quotes** ("" ''); enkel gewone
   koppeltekens/apostrofs of LaTeX-constructies. (In decoratieve `%———`-scheidingslijnen
   tussen oefeningen mag het wel.)
@@ -206,7 +241,9 @@ Kort: titel, abstract, `\maketitle`, één inleidende zin over wat volgt. Geen `
 ## 4. Afbeeldingen
 
 - Pad per hoofdstuk: `pic5/elektriciteit/<onderwerp>/` (bv. `pic5/elektriciteit/veld/`).
-- **Nooit** figuren uit Interactie of Serway scannen/overnemen (auteursrecht).
+- **Figuren uit de bronnen (Interactie, Serway) of van het internet** mogen gebruikt worden, mits de bron duidelijk vermeld staat in het bijschrift, bv. `\caption{... Bron: Interactie, T1 H3, p.~43.}`. Bij internetbeelden controleer je de licentie en vermeld je die ook.
+- **Voorkeur**: een eigen TikZ-herwerking van de figuur, met de stijlen uit de preamble. Dat is op het gebied van auteursrecht de veiligste optie.
+- Een bronvermelding maakt een figuur niet automatisch toegelaten voor publicatie. Bij twijfel over het gebruik van een figuur in de gepubliceerde cursus, overleg je eerst.
 - Voorkeur: **originele TikZ-tekeningen**, rechtstreeks in de `.tex`-bestanden,
   met de stijlen en macro's uit `xmPreamble.tex` (`\poslading`/`\neglading`,
   `\drawvector`, `\addvectors`, `kracht`/`krachtcomponent`/`resulterendekracht`,
@@ -254,9 +291,9 @@ Kort: titel, abstract, `\maketitle`, één inleidende zin over wat volgt. Geen `
 
 - **Hoofdbron**: *Interactie* (oud handboek, niet meer verkocht) — leidt de opbouw en
   voorbeeldtypes van elk hoofdstuk.
-- **Aanvullend/inspiratie**: Serway, *Physics for Scientists and Engineers*, 7th ed. —
+- **Aanvullend/inspiratie**: Serway, *Physics for Scientists and Engineers*, 7th ed.,
   voor niveau, "Quick Quiz"-stijl en extra oefeningen, maar dieper dan het leerplan vereist.
-- Beide bronnen: **nooit letterlijk overnemen** (tekst, cijfers-configuraties of figuren).
+- Beide bronnen: **nooit letterlijk overnemen** (tekst of cijfer-configuraties). Figuren zie §4.
   Altijd herschrijven/herwerken naar eigen voorbeelden op middelbare-schoolniveau.
 - **Leerplanbeperking** (NatS, oktober 2024, LPD 2/3 F): elektrische krachtwerking en
   elektrisch veld blijven beperkt tot ladingen **in lijn** of **onder een rechte hoek

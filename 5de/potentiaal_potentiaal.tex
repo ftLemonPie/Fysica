@@ -11,7 +11,7 @@
 \section{Definitie van de potentiaal}
 De potentiële energie van een lading $Q$ in een punt $P$ hangt af van de grootte van die lading zelf: hoe groter $Q$, hoe groter $E_{\text{pot}}$. Om een grootheid te bekomen die enkel afhangt van het \textbf{veld} en de \textbf{plaats} in dat veld (en dus niet van de testlading die je er toevallig in plaatst), delen we de potentiële energie door de lading.
 
-\begin{definition}[title={Potentiaal}]\nl
+\begin{definition}[foldable=true,title={Potentiaal}]\nl
 De \textbf{potentiaal} $V$ in een punt $P$ van een elektrisch veld is de potentiële energie per eenheid van lading in dat punt:
 \begin{equation}\label{eq:potentiaal_definitie}
     V = \frac{E_{\text{pot}}}{Q}
@@ -19,12 +19,14 @@ De \textbf{potentiaal} $V$ in een punt $P$ van een elektrisch veld is de potenti
 Potentiaal is een \textbf{scalaire} grootheid en wordt uitgedrukt in \textbf{volt} (V), genoemd naar Alessandro Volta (1745-1827). Er geldt $1 \, \mathrm{V} = 1 \, \mathrm{J/C}$.
 \end{definition}
 
-\begin{remark}[title={Analogie met het elektrisch veld}]\nl
+Met andere woorden: de potentiaal in een punt is de potentiële energie die een testlading van $+1 \, \mathrm{C}$ in dat punt zou hebben.
+
+\begin{remark}[expandable=true,title={Analogie met het elektrisch veld}]\nl
 Vergelijk dit met de definitie van het elektrisch veld $E = F/Q$ uit het vorige hoofdstuk: net zoals het elektrisch veld de \emph{kracht per coulomb} is, is de potentiaal de \emph{potentiële energie per coulomb}.
 \begin{center}
 \begin{tabular}{lcc}
     & $\vec{E}$ & $V$ \\ \hline
-    definitie & $\dfrac{\vec{F}}{Q}$ & $\dfrac{E_{\text{pot}}}{Q}$ \\
+    \rule{0pt}{6mm}definitie & $\vec{E}=\dfrac{\vec{F}}{Q}$ & $V=\dfrac{E_{\text{pot}}}{Q}$ \\
     afhankelijk van $Q$? & neen & neen \\
     grootheid & vectorieel & scalair \\
     eenheid & $\mathrm{N/C}$ & $\mathrm{J/C} = \mathrm{V}$
@@ -47,19 +49,19 @@ Vergelijk dit met de definitie van het elektrisch veld $E = F/Q$ uit het vorige 
 \end{question}
 
 \section{Potentiaal in een homogeen veld}
-Voor een lading $Q$ op een afstand $d$ van de negatieve plaat in een homogeen veld geldt $E_{\text{pot}} = Q \cdot E \cdot d$. De potentiaal in dat punt is dan:
+Voor een lading $Q$ op een afstand $d$ van de negatieve plaat in een homogeen veld geldt $E_{\text{pot}} = Q \cdot E \cdot d$ (vergelijking~\ref{eq:epot_homogeen}). De potentiaal in dat punt is dan:
 \begin{align*}
     V &= \frac{E_{\text{pot}}}{Q} = \frac{Q \cdot E \cdot d}{Q}
 \end{align*}
 
-\begin{theorem}[title={Potentiaal in een homogeen veld}]\nl
+\begin{proposition}[foldable=true,title={Potentiaal in een homogeen veld}]\nl
 De potentiaal in een punt $P$ op een afstand $d$ van de negatieve plaat, in een homogeen elektrisch veld met grootte $E$, is:
 \begin{equation}\label{eq:potentiaal_homogeen}
     V = E \cdot d
 \end{equation}
-\end{theorem}
+\end{proposition}
 
-Merk op dat de potentiaal enkel afhangt van de grootte van het elektrisch veld en van de afstand tot de negatieve plaat — niet van een eventuele testlading die je erin plaatst.
+Merk op dat de potentiaal enkel afhangt van de grootte van het elektrisch veld en van de afstand tot de negatieve plaat, en niet van een eventuele testlading die je erin plaatst.
 
 \begin{example}[foldable=true,title={Voorbeeld: potentiaal berekenen}]\nl
 Tussen twee platen op $0{,}15 \, \mathrm{m}$ van elkaar heerst een homogeen veld met grootte $E = 500 \, \mathrm{N/C}$. Bereken de potentiaal op $0{,}15 \, \mathrm{m}$ van de negatieve plaat (dus ter hoogte van de positieve plaat).
@@ -79,7 +81,7 @@ Tussen twee platen op $0{,}15 \, \mathrm{m}$ van elkaar heerst een homogeen veld
 \end{solution}
 \end{example}
 
-\begin{remark}[title={Eenheid van het elektrisch veld}]\nl
+\begin{remark}[expandable=true,title={Eenheid van het elektrisch veld}]\nl
 De eenheid $\mathrm{N/C}$ van het elektrisch veld is hetzelfde als $\mathrm{V/m}$ (volgt uit $V = E \cdot d$). Beide eenheden worden in de praktijk gebruikt.
 \end{remark}
 
@@ -113,6 +115,21 @@ Omdat $V = E \cdot d$, is ook hier de grafiek van $V$ in functie van $d$ een rec
     \end{hint}
     \begin{solution}\nl
         In de formule $V = E \cdot d$ is $E$ altijd positief, maar de afstand $d$ wordt gemeten ten opzichte van een gekozen referentiepunt. Als je het referentiepunt niet op de negatieve plaat kiest, kan de potentiaal in een punt negatief uitvallen. Bovendien geldt algemener dat een potentiaal, net zoals een hoogte, afhangt van een vrij gekozen nulpunt.
+    \end{solution}
+\end{question}
+
+\begin{question}
+    Langs de $x$-as is de potentiaal overal gelijk aan nul. Wat kan je hieruit besluiten over het elektrisch veld?
+
+    \begin{multipleChoice}
+        \choice{Het elektrisch veld is overal nul.}
+        \choice[correct]{De component van het elektrisch veld langs de $x$-as is nul.}
+        \choice{Het elektrisch veld wijst in de positieve $x$-richting.}
+        \choice{Het elektrisch veld wijst in de negatieve $x$-richting.}
+    \end{multipleChoice}
+
+    \begin{solution}\nl
+        Als de potentiaal langs de $x$-as niet verandert, is er geen potentiaalverschil in die richting, dus is de component van het veld langs de $x$-as nul. Dat zegt niets over de andere richtingen: het veld kan loodrecht op de $x$-as nog steeds groot zijn. Voor een homogeen veld volgt uit $V = E \cdot d$ (vergelijking~\ref{eq:potentiaal_homogeen}) dat een constante potentiaal enkel mogelijk is bij $E = 0$.
     \end{solution}
 \end{question}
 

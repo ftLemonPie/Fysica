@@ -11,7 +11,7 @@
 \section{Definitie}
 Elektrische veldsterkte en potentiaal zijn vrij abstracte begrippen. \textbf{Spanning} daarentegen is een grootheid die je uit het dagelijks leven kent: denk aan de spanning van een batterij ($1{,}5 \, \mathrm{V}$ voor een AA-batterij) of aan de netspanning ($230 \, \mathrm{V}$ in België).
 
-\begin{definition}[title={Spanning}]\nl
+\begin{definition}[foldable=true,title={Spanning}]\nl
 De \textbf{spanning} $U_{12}$ tussen twee punten $1$ en $2$ in een elektrisch veld is het verschil in potentiaal tussen die twee punten:
 \begin{equation}\label{eq:spanning_definitie}
     U_{12} = V(1) - V(2)
@@ -19,7 +19,7 @@ De \textbf{spanning} $U_{12}$ tussen twee punten $1$ en $2$ in een elektrisch ve
 Spanning wordt, net als potentiaal, uitgedrukt in \textbf{volt} (V).
 \end{definition}
 
-\begin{remark}[title={Spanning is een verschil}]\nl
+\begin{remark}[expandable=true,title={Spanning is een verschil}]\nl
 Spanning is een verschil en kan dus zowel positief als negatief zijn, afhankelijk van welke twee punten je met elkaar vergelijkt en in welke volgorde.
 \end{remark}
 
@@ -41,7 +41,7 @@ Spanning is een verschil en kan dus zowel positief als negatief zijn, afhankelij
 \subsection{De spanningspijl}
 Om aan te geven welk van de twee punten de hoogste potentiaal heeft, gebruiken we een \textbf{spanningspijl}.
 
-\begin{definition}[title={Spanningspijl}]\nl
+\begin{definition}[foldable=true,title={Spanningspijl}]\nl
 De \textbf{spanningspijl} wijst naar het punt met de \textbf{hoogste} potentiaal.
 \end{definition}
 
@@ -49,11 +49,10 @@ De \textbf{spanningspijl} wijst naar het punt met de \textbf{hoogste} potentiaal
     \begin{tikzpicture}[scale=0.9]
         \draw[thick] (0,-1.5) -- (0,1.5);
         \draw[thick] (5,-1.5) -- (5,1.5);
+        % Ladingen naast de platen (+ en -) zonder de extra streepjes
         \foreach \y in {-1.2,-0.6,0,0.6,1.2} {
-            \draw[thick] (-0.15,\y) -- (0.15,\y);
-            \node[left] at (-0.25,\y) {$-$};
-            \draw[thick] (4.85,\y+0.3) -- (5.15,\y-0.3);
-            \node[right] at (5.25,\y) {$+$};
+            \node[left] at (-0.1,\y) {$-$};
+            \node[right] at (5.1,\y) {$+$};
         }
         \foreach \y in {-1,-0.5,0,0.5,1} {
             \draw[Eveldlijn] (4.85,\y) -- (0.15,\y);
@@ -62,18 +61,21 @@ De \textbf{spanningspijl} wijst naar het punt met de \textbf{hoogste} potentiaal
         \node[below] at (4,-1.6) {$2$};
         \fill (1,0) circle (1.5pt);
         \fill (4,0) circle (1.5pt);
-        \draw[-{Latex[length=3mm]}, line width=0.8pt, red!70!black] (1,0.9) -- (4,0.9) node[midway, above] {$U$};
+        \draw[-{Latex[length=3mm]}, line width=0.8pt, red!70!black] (1,1.3) -- (4,1.3) node[midway, above] {$U$};
     \end{tikzpicture}
 \end{center}
 
 We bekijken het homogeen veld tussen twee platen. Punten dicht bij de positieve plaat (punt 2) hebben de hoogste potentiaal, dus de spanningspijl $U$ wijst naar punt $2$.
 
-\begin{remark}[title={Spanningspijl en veldlijnen}]\nl
+\begin{remark}[expandable=true,title={Scalaire grootheid}]\nl
+Spanning is een \textbf{scalaire} grootheid, wat betekent dat ze geen richting heeft. De spanningspijl is dus geen vector, maar een hulpmiddel om aan te geven welk punt de hoogste potentiaal heeft.
+\end{remark}
+\begin{remark}[expandable=true,title={Spanningspijl en veldlijnen}]\nl
 De spanningspijl is \textbf{tegengesteld} aan de zin van de veldlijnen. Dit geldt algemeen: veldlijnen wijzen steeds van hoge naar lage potentiaal.
 \end{remark}
 
 \section{Meten van spanning}
-De spanning tussen twee punten meten we met een \textbf{voltmeter} (V-meter). Een voltmeter heeft twee aansluitpunten: de plus-aansluiting en de min- of COM-aansluiting.
+De spanning tussen twee punten meten we met een \textbf{voltmeter} (V-meter). Een voltmeter heeft twee aansluitpunten: de plus-aansluiting en de min- of COM-aansluiting. Een analoge voltmeter is correct aangesloten als de naald naar de juiste kant uitwijkt.
 
 \begin{remark}[expandable=true,title={Correct aansluiten van een voltmeter}]\nl
 Een digitale voltmeter is correct aangesloten als hij een \textbf{positieve} spanning aangeeft. Bij een correct aangesloten voltmeter heeft het punt verbonden met de plusaansluiting de hoogste potentiaal, en wijst de spanningspijl dus naar dat punt. Geeft de voltmeter een negatieve waarde aan, dan wijst de spanningspijl naar het punt verbonden met de \emph{min}-aansluiting.
@@ -94,12 +96,62 @@ Een digitale voltmeter is correct aangesloten als hij een \textbf{positieve} spa
 \end{question}
 
 \section{Spanningsbronnen}
-Een \textbf{spanningsbron} (bijvoorbeeld een batterij) onderhoudt de spanning tussen zijn twee polen. Bij een \textbf{gelijkspanningsbron} is deze spanning constant in de tijd; de pluspool is de pool met de hoogste potentiaal. Bij een \textbf{wisselspanningsbron} (zoals de netspanning) wisselen de polen voortdurend van teken; in Europa gebeurt dit $50$ keer per seconde ($50 \, \mathrm{Hz}$).
+Een \textbf{spanningsbron} (bijvoorbeeld een batterij) onderhoudt de spanning tussen zijn twee polen. Bij een \textbf{gelijkspanningsbron} is deze spanning constant in de tijd; de pluspool is de pool met de hoogste potentiaal. Bij een \textbf{wisselspanningsbron} (zoals de netspanning) wisselen de polen voortdurend van teken; in Europa gebeurt dit $50$ keer per seconde ($50 \, \mathrm{Hz}$). Een gelijkspanningsbron houdt het ladingsverschil tussen de polen in stand: de minpool heeft een overschot aan elektronen, de pluspool een tekort. Hoe groter dat verschil, hoe groter de spanning.
+
+\begin{remark}[expandable=true,title={Herhaling: symbolen van spanningsbronnen}]\nl
+In een elektrisch schema krijgt elke spanningsbron een eigen symbool. Bij een gelijkspanningsbron staat de lange streep aan de pluspool en de korte streep aan de minpool. Een variabele gelijkspanningsbron herken je aan de pijl door het symbool: de spanning kan je regelen. Het symbool van een wisselspanningsbron is een cirkel met een sinusvormig golfje, omdat de spanning voortdurend van teken wisselt.
+\begin{center}
+    \begin{tikzpicture}[scale=1]
+        % Gelijkspanningsbron: lange streep = pluspool, korte streep = minpool
+        \begin{scope}
+            \draw[thick] (-0.7,0) -- (-0.1,0);
+            \draw[line width=0.4pt] (-0.1,-0.45) -- (-0.1,0.45);
+            \draw[line width=2pt] (0.1,-0.22) -- (0.1,0.22);
+            \draw[thick] (0.1,0) -- (0.7,0);
+            \node[above left] at (-0.1,0.45) {$+$};
+            \node[above right] at (0.1,0.22) {$-$};
+            \node[below] at (0,-0.7) {gelijkspanningsbron};
+        \end{scope}
+        % Variabele gelijkspanningsbron: zelfde symbool met pijl door het midden
+        \begin{scope}[xshift=4.2cm]
+            \draw[thick] (-0.7,0) -- (-0.1,0);
+            \draw[line width=0.4pt] (-0.1,-0.45) -- (-0.1,0.45);
+            \draw[line width=2pt] (0.1,-0.22) -- (0.1,0.22);
+            \draw[thick] (0.1,0) -- (0.7,0);
+            \draw[-{Latex[length=2.5mm]}, thick] (-0.5,0.55) -- (0.5,-0.55);
+            \node[above left] at (-0.1,0.45) {$+$};
+            \node[above right] at (0.1,0.22) {$-$};
+            \node[below] at (0,-0.7) {variabele gelijkspanningsbron};
+        \end{scope}
+        % Wisselspanningsbron: cirkel met een sinusvormig golfje
+        \begin{scope}[xshift=8.4cm]
+            \draw[thick] (0,0) circle (0.45);
+            \draw[thick, domain=-0.3:0.3, samples=40, smooth] plot (\x,{0.22*sin(\x*360/0.6)});
+            \node[below] at (0,-0.7) {wisselspanningsbron};
+        \end{scope}
+    \end{tikzpicture}
+\end{center}
+\end{remark}
+
+\begin{question}
+    Twee identieke lampjes staan in serie met een batterij van $12 \, \mathrm{V}$. Wat is de spanning over één lampje?
+
+    \begin{multipleChoice}
+        \choice{$12 \, \mathrm{V}$}
+        \choice[correct]{$6 \, \mathrm{V}$}
+        \choice{$3 \, \mathrm{V}$}
+        \choice{$0 \, \mathrm{V}$}
+    \end{multipleChoice}
+
+    \begin{solution}\nl
+        De spanningen over de twee lampjes samen zijn gelijk aan de spanning van de batterij. Omdat de lampjes identiek zijn, is de spanning over elk lampje de helft: $6 \, \mathrm{V}$.
+    \end{solution}
+\end{question}
 
 \section{Spanning over een geleider}
 Beschouw opnieuw het homogeen veld tussen twee platen, met veldsterkte $E$. Een punt $P$ op een afstand $x$ van de negatieve plaat heeft potentiaal $V(P) = E \cdot x$.
 
-\begin{proposition}[title={Spanning over een geleider}]\nl
+\begin{proposition}[foldable=true,title={Spanning over een geleider}]\nl
 Voor de spanning $U$ over een geleider met lengte $\ell$, waarin een homogeen elektrisch veld met grootte $E$ heerst, geldt:
 \begin{equation}\label{eq:spanning_geleider}
     U = E \cdot \ell
@@ -124,7 +176,7 @@ In een geleider met lengte $0{,}20 \, \mathrm{m}$ heerst een homogeen elektrisch
 \end{solution}
 \end{example}
 
-\begin{remark}[title={Veldsterkte uit spanning}]\nl
+\begin{remark}[expandable=true,title={Veldsterkte uit spanning}]\nl
 Uit $U = E \cdot \ell$ volgt ook $E = U/\ell$: hoe groter de opgelegde spanning over een geleider met vaste lengte, hoe groter het elektrisch veld erin.
 \end{remark}
 

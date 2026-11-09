@@ -1,0 +1,178 @@
+\documentclass{ximera}
+%geschreven 9/11/26
+\title{Permanente magneten}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+    Natuurlijke en kunstmatige magneten, magnetische polen en hun krachtwerking, magnetische influentie en ferromagnetische stoffen.
+\end{abstract}
+\maketitle
+
+\section{Natuurlijke en kunstmatige magneten}\label{sec:permanente-magneten}
+Al meer dan tweeduizend jaar weten mensen dat sommige stenen ijzer aantrekken. Het gaat om \textbf{magnetiet}, een ijzererts dat van nature magnetisch is. Volgens de overlevering werd het gevonden in de streek Magnesia, in het huidige Turkije: daar komt het woord \emph{magnetisme} vandaan. Magnetiet is een \textbf{natuurlijke magneet}.
+
+Vandaag gebruiken we bijna uitsluitend \textbf{kunstmatige magneten}. Die worden gemaakt uit staal of uit speciale legeringen, zoals AlNiCo (aluminium, nikkel en kobalt), ferriet (een keramisch materiaal met ijzeroxide) en neodymium-ijzer-boor. Neodymiummagneten zijn de sterkste permanente magneten die we kennen: je vindt ze in oortjes, harde schijven, elektrische motoren en windturbines.
+
+\begin{definition}[foldable=true,title={Permanente magneet}]\nl
+    Een \textbf{permanente magneet} is een voorwerp dat zijn magnetische eigenschappen blijvend behoudt, zonder dat er een elektrische stroom nodig is.
+\end{definition}
+
+\section{Polen en krachtwerking}\label{sec:polen}
+Strooi je ijzervijlsel over een staafmagneet, dan blijft het vooral aan de uiteinden hangen. Daar is de magnetische werking het sterkst. Die uiteinden noemen we de \textbf{polen} van de magneet.
+
+Hang je een staafmagneet aan een draadje, zodat hij vrij kan draaien, dan draait hij altijd in dezelfde stand: ongeveer noord-zuid. Een \textbf{kompasnaald} is niets anders dan zo'n klein, vrij draaibaar magneetje.
+
+\begin{definition}[foldable=true,title={Noordpool en zuidpool}]\nl
+    De pool van een vrij draaibare magneet die naar het geografische noorden wijst, noemen we de \textbf{noordpool} (N). De andere pool is de \textbf{zuidpool} (Z). In figuren kleuren we de noordpool rood.
+\end{definition}
+
+Breng je twee magneten bij elkaar, dan oefenen ze een kracht op elkaar uit, zie figuur~\ref{fig:polen_kracht}.
+
+%---------------------------
+\begin{figure}[ht!]
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
+        \begin{tikzpicture}
+            % ongelijknamige polen
+            \staafmagneet[2]{A}{0,0}{0}
+            \staafmagneet[2]{B}{4.4,0}{0}
+            \draw[kracht] (A-N) -- ++(0.7,0) node[above]{$\vec{F}$};
+            \draw[kracht] (B-Z) -- ++(-0.7,0) node[above]{$\vec{F}$};
+            \node at (2.2,-0.8) {(a) ongelijknamige polen trekken elkaar aan};
+            % gelijknamige polen
+            \begin{scope}[yshift=-2.2cm]
+                \staafmagneet[2]{C}{0,0}{0}
+                \staafmagneet[2]{D}{4.4,0}{180}
+                \draw[kracht] (C-Z) -- ++(-0.7,0) node[above]{$\vec{F}$};
+                \draw[kracht] (D-Z) -- ++(0.7,0) node[above]{$\vec{F}$};
+                \node at (2.2,-0.8) {(b) gelijknamige polen stoten elkaar af};
+            \end{scope}
+        \end{tikzpicture}
+    \end{center}
+    \caption{De krachtwerking tussen twee staafmagneten. De krachten op beide magneten zijn even groot en tegengesteld (actie en reactie).}
+    \label{fig:polen_kracht}
+\end{figure}
+%---------------------------
+
+\begin{proposition}[foldable=true,title={Eigenschappen van permanente magneten}]\nl
+    \begin{itemize}
+        \item Elke magneet heeft \textbf{twee polen}: een noordpool en een zuidpool.
+        \item \textbf{Gelijknamige} polen (N en N, of Z en Z) \textbf{stoten elkaar af}.
+        \item \textbf{Ongelijknamige} polen (N en Z) \textbf{trekken elkaar aan}.
+        \item De krachtwerking is het sterkst aan de polen en neemt af als de afstand groter wordt.
+        \item Er bestaan \textbf{geen afzonderlijke polen}: breek je een magneet doormidden, dan krijg je twee kleinere magneten, elk met een noordpool en een zuidpool, zie figuur~\ref{fig:gebroken_magneet}.
+    \end{itemize}
+\end{proposition}
+
+%---------------------------
+\begin{figure}[ht!]
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
+        \begin{tikzpicture}
+            \staafmagneet[4]{A}{0,0}{0}
+            \draw[dashed] (0,0.45) -- (0,-0.45);
+            \draw[-{Latex[length=2mm]}, thick] (0,-0.6) -- (0,-1.1);
+            \staafmagneet[2]{B}{-1.3,-1.6}{0}
+            \staafmagneet[2]{C}{1.3,-1.6}{0}
+        \end{tikzpicture}
+    \end{center}
+    \caption{Breek je een staafmagneet doormidden, dan krijg je twee volledige magneten. Een losse noordpool of een losse zuidpool kan je niet maken.}
+    \label{fig:gebroken_magneet}
+\end{figure}
+%---------------------------
+
+\begin{remark}[expandable=true,title={Vergelijking met elektrische ladingen}]\nl
+    Bij elektrische ladingen geldt een gelijkaardige regel: gelijke ladingen stoten elkaar af, tegengestelde ladingen trekken elkaar aan. Er is wel een groot verschil: een positieve lading of een negatieve lading kan je wel afzonderen, een noordpool of een zuidpool niet.
+\end{remark}
+
+\begin{question}
+    Je breekt een staafmagneet in twee stukken. Wat is waar?
+
+    \begin{multipleChoice}
+        \choice{Je krijgt een stuk met enkel een noordpool en een stuk met enkel een zuidpool.}
+        \choice[correct]{Je krijgt twee magneten, elk met een noordpool en een zuidpool.}
+        \choice{De stukken zijn niet meer magnetisch.}
+        \choice{Enkel het stuk met de oorspronkelijke noordpool blijft magnetisch.}
+    \end{multipleChoice}
+
+    \begin{solution}\nl
+        Er bestaan geen afzonderlijke magnetische polen. Elk stuk van een magneet is zelf opnieuw een volledige magneet met een noordpool en een zuidpool.
+    \end{solution}
+\end{question}
+
+\section{Magnetische influentie}\label{sec:influentie}
+Een magneet trekt een ijzeren spijker aan, maar geen koperen muntstuk of een stuk aluminiumfolie. Breng je een magneet in de buurt van een ijzeren spijker, dan wordt de spijker zelf een magneet: hij kan op zijn beurt een tweede spijker aantrekken. Het uiteinde van de spijker dat het dichtst bij de noordpool van de magneet ligt, wordt een zuidpool. Daardoor wordt de spijker aangetrokken.
+
+\begin{definition}[foldable=true,title={Magnetische influentie}]\nl
+    \textbf{Magnetische influentie} is het magnetisch worden van een voorwerp onder invloed van een magneet in de buurt. Aan de kant van de magneet ontstaat een ongelijknamige pool, waardoor het voorwerp steeds wordt \textbf{aangetrokken}.
+\end{definition}
+
+\begin{definition}[foldable=true,title={Ferromagnetische stoffen}]\nl
+    Stoffen die door een magneet sterk worden aangetrokken en zelf magnetisch kunnen worden, noemen we \textbf{ferromagnetische stoffen}. De belangrijkste zijn \textbf{ijzer} (Fe), \textbf{kobalt} (Co) en \textbf{nikkel} (Ni), en legeringen met die metalen zoals staal.
+\end{definition}
+
+Niet alle ferromagnetische stoffen gedragen zich hetzelfde als je de magneet weer wegneemt.
+
+\begin{proposition}[foldable=true,title={Hard en zacht magnetiseerbaar materiaal}]\nl
+    \begin{itemize}
+        \item Een \textbf{hard magnetiseerbaar} materiaal (bijvoorbeeld staal of een neodymiumlegering) blijft magnetisch als je de magneet wegneemt. Hiermee maak je permanente magneten.
+        \item Een \textbf{zacht magnetiseerbaar} materiaal (bijvoorbeeld \textbf{weekijzer}, zuiver ijzer) verliest zijn magnetisme bijna volledig zodra de magneet weg is.
+    \end{itemize}
+\end{proposition}
+
+\begin{remark}[expandable=true,title={Proef: wat wordt aangetrokken?}]\nl
+    Houd een sterke magneet bij verschillende voorwerpen: een paperclip, een koperen draad, aluminiumfolie, een muntstuk van 1 cent, een stuk glas en een nikkelen voorwerp. Je merkt dat enkel voorwerpen met ijzer, kobalt of nikkel worden aangetrokken. Een muntstuk van 1 of 2 cent wordt wel aangetrokken: het is gemaakt van staal met een dun laagje koper.
+\end{remark}
+
+\begin{remark}[expandable=true,title={Extra: elementaire magneetjes en Weissgebieden}]\nl
+    Je kan het magnetisme van een stof verklaren met \textbf{elementaire magneetjes}. Elk atoom van een ferromagnetische stof gedraagt zich als een klein magneetje. Die magneetjes groeperen zich in kleine gebiedjes (enkele honderdsten van een millimeter groot) waarin ze allemaal dezelfde kant op wijzen: de \textbf{Weissgebieden}, zie figuur~\ref{fig:weissgebieden}.
+    \begin{itemize}
+        \item In een niet-gemagnetiseerd stuk ijzer wijzen de Weissgebieden in willekeurige richtingen: hun velden heffen elkaar op.
+        \item Breng je een magneet in de buurt, dan draaien de Weissgebieden mee met het veld of groeien de gebieden die al goed gericht zijn. Het ijzer wordt magnetisch.
+        \item Verhit je een magneet boven een bepaalde temperatuur (de curietemperatuur, voor ijzer $770\,^\circ\mathrm{C}$), dan raakt die ordening verloren en verdwijnt het magnetisme. Ook door een harde klap kan een magneet een deel van zijn magnetisme verliezen.
+    \end{itemize}
+
+    %---------------------------
+    \begin{center}
+        \begin{tikzpicture}
+            % niet gemagnetiseerd
+            \draw[line width=0.6pt] (0,0) rectangle (4,1.6);
+            \draw[gray] (1.3,0) -- (1.0,1.6) (1.15,0.8) -- (2.6,1.0) (2.6,1.0) -- (2.9,0) (2.6,1.0) -- (2.4,1.6);
+            \foreach \x/\y/\a in {0.5/0.5/30, 0.55/1.15/120, 1.9/0.45/-60, 1.8/1.3/200, 3.4/0.5/90, 3.3/1.25/-150}{
+                \draw[-{Latex[length=2mm]}, thick] (\x,\y) -- ++(\a:0.45);
+            }
+            \node[below] at (2,-0.1) {(a) niet gemagnetiseerd};
+            % gemagnetiseerd
+            \begin{scope}[xshift=5.5cm]
+                \draw[line width=0.6pt] (0,0) rectangle (4,1.6);
+                \draw[gray] (1.3,0) -- (1.0,1.6) (1.15,0.8) -- (2.6,1.0) (2.6,1.0) -- (2.9,0) (2.6,1.0) -- (2.4,1.6);
+                \foreach \x/\y in {0.35/0.5, 0.35/1.15, 1.65/0.45, 1.6/1.3, 3.1/0.5, 3.1/1.25}{
+                    \draw[-{Latex[length=2mm]}, thick] (\x,\y) -- ++(0:0.5);
+                }
+                \node[below] at (2,-0.1) {(b) gemagnetiseerd};
+            \end{scope}
+        \end{tikzpicture}
+        \captionsetup{width=0.85\textwidth}
+        \captionof{figure}{Weissgebieden in een stuk ijzer. Elk pijltje stelt de gemeenschappelijke richting van de elementaire magneetjes in één gebied voor.}
+        \label{fig:weissgebieden}
+    \end{center}
+    %---------------------------
+\end{remark}
+
+\begin{question}
+    Welk voorwerp wordt door een magneet aangetrokken?
+
+    \begin{multipleChoice}
+        \choice{een koperen elektriciteitsdraad}
+        \choice{een blikje van aluminium}
+        \choice[correct]{een stalen paperclip}
+        \choice{een glazen knikker}
+    \end{multipleChoice}
+
+    \begin{solution}\nl
+        Staal is een legering van ijzer en dus ferromagnetisch. Door magnetische influentie wordt de paperclip zelf een magneetje, met een ongelijknamige pool aan de kant van de magneet. Koper, aluminium en glas zijn niet ferromagnetisch.
+    \end{solution}
+\end{question}
+
+\end{document}

@@ -1,0 +1,340 @@
+\documentclass{ximera}
+%geschreven 9/11/26
+\title{Vraagstukken het magnetisch veld: moeilijkere oefeningen}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+    Oefeningen waarin je magnetische velden samenstelt (op één lijn of loodrecht) of meerdere stappen combineert.
+\end{abstract}
+\maketitle
+
+\section{Moeilijkere oefeningen het magnetisch veld}
+
+%———————————————————————————————————————
+% GEVORDERD 1: spoel aan een spanningsbron
+\begin{exercise}
+    Een spoel van $8{,}0\,\mathrm{cm}$ lang heeft $500$ windingen en een weerstand van $4{,}0\,\mathrm{\Omega}$. Je sluit de spoel aan op een spanningsbron van $6{,}0\,\mathrm{V}$. Bereken het magnetisch veld in de spoel.
+
+    \[ B = \answer[tolerance=0.3,onlineshowanswerbutton]{12} \, \mathrm{mT} \]
+
+    \begin{hint}
+        Om het veld te berekenen heb je de stroom door de spoel nodig. Welke wet verbindt spanning, weerstand en stroom?
+    \end{hint}
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & N = 500 & & \ell = 8{,}0\,\mathrm{cm} = 8{,}0 \cdot 10^{-2}\,\mathrm{m} & & R = 4{,}0\,\mathrm{\Omega} & & U = 6{,}0\,\mathrm{V}
+        \end{align*}
+
+        \underline{Gevraagd:} $B$
+
+        \underline{Oplossing:} Eerst berekenen we de stroom met de wet van Ohm:
+        \begin{align*}
+            I &= \frac{U}{R} = \frac{6{,}0\,\mathrm{V}}{4{,}0\,\mathrm{\Omega}} = 1{,}5\,\mathrm{A}
+        \end{align*}
+        Daarna gebruiken we het veld in een spoel:
+        \begin{align*}
+            B &= \frac{\mu_0 \cdot N \cdot I}{\ell} = \frac{4\pi \cdot 10^{-7}\,\mathrm{T\cdot m/A} \cdot 500 \cdot 1{,}5\,\mathrm{A}}{8{,}0 \cdot 10^{-2}\,\mathrm{m}} = \boxed{1{,}2 \cdot 10^{-2}\,\mathrm{T}}
+        \end{align*}
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% GEVORDERD 2: elektromagneet ontwerpen
+\begin{exercise}
+    Je ontwerpt een elektromagneet van $10\,\mathrm{cm}$ lang met een kern met relatieve permeabiliteit $300$. De voeding levert hoogstens $2{,}0\,\mathrm{A}$. Hoeveel windingen heb je minstens nodig om in de kern een magnetisch veld van $0{,}60\,\mathrm{T}$ te krijgen?
+
+    \[ N = \answer[tolerance=2,onlineshowanswerbutton]{80} \]
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & \ell = 10\,\mathrm{cm} = 0{,}10\,\mathrm{m} & & \mu_r = 300 & & I = 2{,}0\,\mathrm{A} & & B = 0{,}60\,\mathrm{T}
+        \end{align*}
+
+        \underline{Gevraagd:} $N$
+
+        \underline{Oplossing:} We vormen het veld in een spoel met kern om naar $N$:
+        \begin{align*}
+            N &= \frac{B \cdot \ell}{\mu_r \cdot \mu_0 \cdot I} = \frac{0{,}60\,\mathrm{T} \cdot 0{,}10\,\mathrm{m}}{300 \cdot 4\pi \cdot 10^{-7}\,\mathrm{T\cdot m/A} \cdot 2{,}0\,\mathrm{A}} = \boxed{8{,}0 \cdot 10^{1}}
+        \end{align*}
+        Met ongeveer $80$ windingen haal je het gevraagde veld. Met een kleinere stroom heb je meer windingen nodig.
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% GEVORDERD 3: spoel wikkelen met een gegeven lengte draad
+\begin{exercise}
+    Je wikkelt $40\,\mathrm{m}$ gelakte koperdraad in één laag rond een buis met een diameter van $2{,}0\,\mathrm{cm}$. De wikkeling is $15\,\mathrm{cm}$ lang. Er loopt een stroom van $2{,}0\,\mathrm{A}$ door de spoel.
+
+    \begin{question}
+        Hoeveel windingen heeft de spoel?
+
+        \[ N = \answer[tolerance=16,onlineshowanswerbutton]{640} \]
+
+        \begin{hint}
+            Hoeveel draad heb je nodig voor één winding rond de buis?
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & L_{\text{draad}} = 40\,\mathrm{m} & & d = 2{,}0\,\mathrm{cm} = 2{,}0 \cdot 10^{-2}\,\mathrm{m}
+            \end{align*}
+
+            \underline{Gevraagd:} $N$
+
+            \underline{Oplossing:} Eén winding is een cirkel met omtrek $\pi \cdot d$. Het aantal windingen is de totale draadlengte gedeeld door de lengte van één winding:
+            \begin{align*}
+                N &= \frac{L_{\text{draad}}}{\pi \cdot d} = \frac{40\,\mathrm{m}}{\pi \cdot 2{,}0 \cdot 10^{-2}\,\mathrm{m}} = \boxed{6{,}4 \cdot 10^{2}}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken het magnetisch veld in de spoel.
+
+        \[ B = \answer[tolerance=0.3,onlineshowanswerbutton]{11} \, \mathrm{mT} \]
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & N = 637 & & \ell = 15\,\mathrm{cm} = 0{,}15\,\mathrm{m} & & I = 2{,}0\,\mathrm{A}
+            \end{align*}
+
+            \underline{Gevraagd:} $B$
+
+            \underline{Oplossing:} We rekenen verder met de niet-afgeronde waarde van $N$ en gebruiken het veld in een spoel:
+            \begin{align*}
+                B &= \frac{\mu_0 \cdot N \cdot I}{\ell} = \frac{4\pi \cdot 10^{-7}\,\mathrm{T\cdot m/A} \cdot 637 \cdot 2{,}0\,\mathrm{A}}{0{,}15\,\mathrm{m}} = \boxed{1{,}1 \cdot 10^{-2}\,\mathrm{T}}
+            \end{align*}
+        \end{solution}
+    \end{question}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% GEVORDERD 4: twee draden, tegengestelde stroom, punt in het midden
+\begin{exercise}
+    Twee lange, evenwijdige draden liggen op $10\,\mathrm{cm}$ van elkaar. Door de ene draad loopt een stroom van $6{,}0\,\mathrm{A}$, door de andere een stroom van $9{,}0\,\mathrm{A}$ in \textbf{tegengestelde zin}. Bereken het magnetisch veld in het punt precies midden tussen de draden.
+
+    \[ B = \answer[tolerance=2,onlineshowanswerbutton]{60} \, \mathrm{\mu T} \]
+
+    \begin{hint}
+        Teken een bovenaanzicht: de ene stroom uit het blad, de andere in het blad. Wijzen de twee velden in het midden dezelfde kant op of tegengesteld?
+    \end{hint}
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & I_1 = 6{,}0\,\mathrm{A} & & I_2 = 9{,}0\,\mathrm{A} & & r_1 = r_2 = 5{,}0\,\mathrm{cm} = 5{,}0 \cdot 10^{-2}\,\mathrm{m}
+        \end{align*}
+
+        \underline{Gevraagd:} $B$ in het midden
+
+        \underline{Oplossing:}
+        \begin{center}
+            \begin{tikzpicture}
+                \stroomuit{D1}{0,0}\node[below=2mm] at (D1) {$I_1$};
+                \stroomin{D2}{4,0}\node[below=2mm] at (D2) {$I_2$};
+                \coordinate (P) at (2,0);
+                \fill (P) circle (0.6mm) node[below]{$P$};
+                \draw[Mvectorcomponent] (P) -- ++(0,0.8) node[left]{$\vec{B}_1$};
+                \draw[Mvectorcomponent] ($(P)+(0.3,0)$) -- ++(0,1.2) node[right]{$\vec{B}_2$};
+                \node[right] at (4.5,-0.6) {Schets (niet op schaal)};
+            \end{tikzpicture}
+        \end{center}
+        Stroom $I_1$ loopt uit het blad: het veld draait in tegenwijzerzin en wijst rechts van de draad naar boven. Stroom $I_2$ loopt in het blad: het veld draait in wijzerzin en wijst links van de draad ook naar boven. Beide velden liggen op één lijn en wijzen dezelfde kant op, dus tellen we ze op:
+        \begin{align*}
+            B_1 &= \frac{\mu_0 \cdot I_1}{2\pi \cdot r_1} = \frac{4\pi \cdot 10^{-7}\,\mathrm{T\cdot m/A} \cdot 6{,}0\,\mathrm{A}}{2\pi \cdot 5{,}0 \cdot 10^{-2}\,\mathrm{m}} = 2{,}4 \cdot 10^{-5}\,\mathrm{T} \\
+            B_2 &= \frac{\mu_0 \cdot I_2}{2\pi \cdot r_2} = \frac{4\pi \cdot 10^{-7}\,\mathrm{T\cdot m/A} \cdot 9{,}0\,\mathrm{A}}{2\pi \cdot 5{,}0 \cdot 10^{-2}\,\mathrm{m}} = 3{,}6 \cdot 10^{-5}\,\mathrm{T} \\
+            B &= B_1 + B_2 = 2{,}4 \cdot 10^{-5}\,\mathrm{T} + 3{,}6 \cdot 10^{-5}\,\mathrm{T} = \boxed{6{,}0 \cdot 10^{-5}\,\mathrm{T}}
+        \end{align*}
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% GEVORDERD 5: nulpunt tussen twee draden
+\begin{exercise}
+    Twee lange, evenwijdige draden liggen op $20\,\mathrm{cm}$ van elkaar. Door draad 1 loopt een stroom van $4{,}0\,\mathrm{A}$, door draad 2 een stroom van $12\,\mathrm{A}$, in \textbf{dezelfde zin}. Op welke afstand van draad 1 is het resulterend magnetisch veld nul?
+
+    \[ x = \answer[tolerance=0.001,onlineshowanswerbutton]{0.050} \, \mathrm{m} \]
+
+    \begin{hint}
+        Waar kunnen de twee velden tegengesteld zijn: tussen de draden of erbuiten? Noem de gezochte afstand tot draad 1 $x$. Hoe ver ligt dat punt dan van draad 2?
+    \end{hint}
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & I_1 = 4{,}0\,\mathrm{A} & & I_2 = 12\,\mathrm{A} & & d = 20\,\mathrm{cm} = 0{,}20\,\mathrm{m}
+        \end{align*}
+
+        \underline{Gevraagd:} de afstand $x$ tot draad 1 waar $B = 0$
+
+        \underline{Oplossing:} Bij stromen in dezelfde zin wijzen de velden tussen de draden tegengesteld (zie de vorige oefeningen). Het nulpunt ligt dus tussen de draden, op afstand $x$ van draad 1 en $d - x$ van draad 2. Daar moeten beide velden even groot zijn:
+        \begin{align*}
+            \frac{\mu_0 \cdot I_1}{2\pi \cdot x} &= \frac{\mu_0 \cdot I_2}{2\pi \cdot (d - x)}
+        \end{align*}
+        We schrappen $\mu_0/(2\pi)$ en vermenigvuldigen kruiselings:
+        \begin{align*}
+            I_1 \cdot (d - x) &= I_2 \cdot x \\
+            4{,}0\,\mathrm{A} \cdot (0{,}20\,\mathrm{m} - x) &= 12\,\mathrm{A} \cdot x \\
+            0{,}80\,\mathrm{A\cdot m} &= 16\,\mathrm{A} \cdot x \\
+            x &= \boxed{5{,}0 \cdot 10^{-2}\,\mathrm{m}}
+        \end{align*}
+        Het nulpunt ligt het dichtst bij de draad met de kleinste stroom, zoals je kan verwachten.
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% GEVORDERD 6: kompas naast een verticale kabel
+\begin{exercise}
+    Een verticale kabel voert een stroom van $40\,\mathrm{A}$ naar boven. Een kompas ligt op $25\,\mathrm{cm}$ ten zuiden van de kabel. De horizontale component van het aardmagnetisch veld is $19\,\mathrm{\mu T}$ en wijst naar het noorden.
+
+    \begin{question}
+        Bereken het magnetisch veld van de kabel ter hoogte van het kompas.
+
+        \[ B_{\text{draad}} = \answer[tolerance=0.8,onlineshowanswerbutton]{32} \, \mathrm{\mu T} \]
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & I = 40\,\mathrm{A} & & r = 25\,\mathrm{cm} = 0{,}25\,\mathrm{m}
+            \end{align*}
+
+            \underline{Gevraagd:} $B_{\text{draad}}$
+
+            \underline{Oplossing:}
+            \begin{align*}
+                B_{\text{draad}} &= \frac{\mu_0 \cdot I}{2\pi \cdot r} = \frac{4\pi \cdot 10^{-7}\,\mathrm{T\cdot m/A} \cdot 40\,\mathrm{A}}{2\pi \cdot 0{,}25\,\mathrm{m}} = \boxed{3{,}2 \cdot 10^{-5}\,\mathrm{T}}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken het resulterend horizontaal magnetisch veld bij het kompas.
+
+        \[ B = \answer[tolerance=0.9,onlineshowanswerbutton]{37} \, \mathrm{\mu T} \]
+
+        \begin{hint}
+            Maak eerst een bovenaanzicht met het noorden naar boven. In welke zin wijst $\vec{B}_{\text{draad}}$ ten zuiden van de kabel?
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & B_{\text{draad}} = 3{,}2 \cdot 10^{-5}\,\mathrm{T} & & B_{\text{aarde}} = 19\,\mathrm{\mu T} = 1{,}9 \cdot 10^{-5}\,\mathrm{T}
+            \end{align*}
+
+            \underline{Gevraagd:} $B$
+
+            \underline{Oplossing:}
+            \begin{center}
+                \begin{tikzpicture}
+                    \stroomuit{K}{0,0}
+                    \node[above] at (K.north) {kabel};
+                    \coordinate (P) at (0,-1.5);
+                    \fill (P) circle (0.6mm);
+                    \draw[dashed] (K) -- (P) node[midway, left]{$r$};
+                    \draw[Mvectorcomponent] (P) -- ++(1.6,0) coordinate (B1) node[below]{$\vec{B}_{\text{draad}}$};
+                    \draw[Mvectorcomponent] (P) -- ++(0,0.95) coordinate (B2) node[left]{$\vec{B}_{\text{aarde}}$};
+                    \addvectors[Mvector]{P}{B1}{B2}{$\vec{B}$}
+                    \draw[-{Latex[length=2mm]}, draw=black!50, text=black!50] (3.2,0) -- (3.2,0.8) node[above]{N};
+                    \draw[-{Latex[length=2mm]}, draw=black!50, text=black!50] (3.2,0) -- (4.0,0) node[right]{O};
+                    \node[right] at (2.6,-2.2) {Schets (niet op schaal)};
+                \end{tikzpicture}
+            \end{center}
+            In het bovenaanzicht loopt de stroom uit het blad: de veldlijnen draaien in tegenwijzerzin. Onder de kabel (ten zuiden) wijst $\vec{B}_{\text{draad}}$ naar het \textbf{oosten}, loodrecht op $\vec{B}_{\text{aarde}}$. Met de stelling van Pythagoras:
+            \begin{align*}
+                B &= \sqrt{B_{\text{aarde}}^2 + B_{\text{draad}}^2} = \sqrt{(1{,}9 \cdot 10^{-5}\,\mathrm{T})^2 + (3{,}2 \cdot 10^{-5}\,\mathrm{T})^2} = \boxed{3{,}7 \cdot 10^{-5}\,\mathrm{T}}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Over welke hoek wijkt de kompasnaald af van het noorden?
+
+        \[ \alpha = \answer[tolerance=1.5,onlineshowanswerbutton]{59} \, ^\circ \]
+
+        \begin{solution}\nl
+            \underline{Gevraagd:} de hoek $\alpha$ tussen $\vec{B}$ en het noorden
+
+            \underline{Oplossing:} De kompasnaald richt zich volgens $\vec{B}$. In de rechthoekige driehoek ligt $B_{\text{draad}}$ tegenover $\alpha$ en ligt $B_{\text{aarde}}$ aan $\alpha$:
+            \begin{align*}
+                \tan \alpha &= \frac{B_{\text{draad}}}{B_{\text{aarde}}} = \frac{3{,}2 \cdot 10^{-5}\,\mathrm{T}}{1{,}9 \cdot 10^{-5}\,\mathrm{T}} = 1{,}7 \quad \Rightarrow \quad \boxed{\alpha = 59^\circ}
+            \end{align*}
+            De naald wijkt $59^\circ$ af van het noorden, naar het oosten.
+        \end{solution}
+    \end{question}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% GEVORDERD 7: twee draden, velden loodrecht
+\begin{exercise}
+    Twee lange, evenwijdige draden $A$ en $B$ staan loodrecht op het blad, op $10{,}0\,\mathrm{cm}$ van elkaar. Door $A$ loopt een stroom van $9{,}0\,\mathrm{A}$ en door $B$ een stroom van $8{,}0\,\mathrm{A}$, beide uit het blad. Punt $P$ ligt op $6{,}0\,\mathrm{cm}$ van $A$ en op $8{,}0\,\mathrm{cm}$ van $B$. Bereken de grootte van het resulterend magnetisch veld in $P$.
+
+    \begin{center}
+        \begin{tikzpicture}
+            \stroomuit{A}{0,0}\node[above left] at (A.north west) {$A$};
+            \stroomuit{B}{5,0}\node[above right] at (B.north east) {$B$};
+            \coordinate (P) at (1.8,-2.4);
+            \fill (P) circle (0.6mm) node[below]{$P$};
+            \draw[dashed] (A) -- (B) node[midway, above]{$10{,}0\,\mathrm{cm}$};
+            \draw[dashed] (A) -- (P) node[midway, left]{$6{,}0\,\mathrm{cm}$};
+            \draw[dashed] (B) -- (P) node[midway, below right]{$8{,}0\,\mathrm{cm}$};
+        \end{tikzpicture}
+    \end{center}
+
+    \[ B = \answer[tolerance=0.9,onlineshowanswerbutton]{36} \, \mathrm{\mu T} \]
+
+    \begin{hint}
+        Controleer met de stelling van Pythagoras welke hoek de lijnstukken $AP$ en $BP$ in $P$ maken. Het veld van elke draad staat loodrecht op de verbindingslijn met die draad. Welke hoek maken de twee velden dan met elkaar?
+    \end{hint}
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & I_A = 9{,}0\,\mathrm{A} & & r_A = 6{,}0\,\mathrm{cm} = 6{,}0 \cdot 10^{-2}\,\mathrm{m} \\
+            & I_B = 8{,}0\,\mathrm{A} & & r_B = 8{,}0\,\mathrm{cm} = 8{,}0 \cdot 10^{-2}\,\mathrm{m}
+        \end{align*}
+
+        \underline{Gevraagd:} $B$ in $P$
+
+        \underline{Oplossing:} Omdat $(6{,}0\,\mathrm{cm})^2 + (8{,}0\,\mathrm{cm})^2 = (10{,}0\,\mathrm{cm})^2$, is driehoek $APB$ rechthoekig in $P$: $AP \perp BP$. Elk veld staat loodrecht op de verbindingslijn met zijn draad, dus ook $\vec{B}_A \perp \vec{B}_B$.
+
+        \begin{center}
+            \begin{tikzpicture}
+                \stroomuit{A}{0,0}\node[above left] at (A.north west) {$A$};
+                \stroomuit{B}{5,0}\node[above right] at (B.north east) {$B$};
+                \coordinate (P) at (1.8,-2.4);
+                \fill (P) circle (0.6mm) node[below left]{$P$};
+                \draw[dashed, gray] (A) -- (P) (B) -- (P);
+                \draw[Mvectorcomponent] (P) -- ++(1.2,0.9) coordinate (BA) node[above]{$\vec{B}_A$};
+                \draw[Mvectorcomponent] (P) -- ++(0.6,-0.8) coordinate (BB) node[below]{$\vec{B}_B$};
+                \addvectors[Mvector]{P}{BA}{BB}{$\vec{B}$}
+                \node[right] at (4,-2.6) {Schets (niet op schaal)};
+            \end{tikzpicture}
+        \end{center}
+
+        We berekenen elk veld afzonderlijk:
+        \begin{align*}
+            B_A &= \frac{\mu_0 \cdot I_A}{2\pi \cdot r_A} = \frac{4\pi \cdot 10^{-7}\,\mathrm{T\cdot m/A} \cdot 9{,}0\,\mathrm{A}}{2\pi \cdot 6{,}0 \cdot 10^{-2}\,\mathrm{m}} = 3{,}0 \cdot 10^{-5}\,\mathrm{T} \\
+            B_B &= \frac{\mu_0 \cdot I_B}{2\pi \cdot r_B} = \frac{4\pi \cdot 10^{-7}\,\mathrm{T\cdot m/A} \cdot 8{,}0\,\mathrm{A}}{2\pi \cdot 8{,}0 \cdot 10^{-2}\,\mathrm{m}} = 2{,}0 \cdot 10^{-5}\,\mathrm{T}
+        \end{align*}
+        De velden staan loodrecht op elkaar, dus gebruiken we de stelling van Pythagoras:
+        \begin{align*}
+            B &= \sqrt{B_A^2 + B_B^2} = \sqrt{(3{,}0 \cdot 10^{-5}\,\mathrm{T})^2 + (2{,}0 \cdot 10^{-5}\,\mathrm{T})^2} = \boxed{3{,}6 \cdot 10^{-5}\,\mathrm{T}}
+        \end{align*}
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+\end{document}

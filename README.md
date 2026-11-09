@@ -179,13 +179,14 @@ Omdat YouTube-video's online mooi kunnen afspelen, maar in een geprinte PDF gewo
 Na elke afgewerkte of nagekeken stap: deze TODO **en** de stand van zaken voor de leerlingen
 bijwerken (`5de/inleiding_stand_51.tex` voor 1 uur, `5de/inleiding_stand_52.tex` voor 2 uur).
 
-## Stand van zaken 5de jaar (3/11/26)
+## Stand van zaken 5de jaar (9/11/26)
 | Hoofdstuk | 2 uur (`Cursus_DDO_5.tex`) | 1 uur (`Cursus_5de_1uur.tex`) |
 |---|---|---|
 | H1 elektrische krachtwerking | geschreven, nagekeken | geschreven, nagekeken |
 | H2 elektrisch veld | geschreven, nagekeken | geschreven, nagekeken |
 | H3 potentiaal | geschreven, nog niet nagekeken | nog aan te passen en na te kijken |
 | H4 gemengde schakelingen | n.v.t. | geschreven, nog niet nagekeken |
+| H4/H5 het magnetisch veld (`magnetisme_*`) | geschreven, nog niet nagekeken | zelfde bestanden (leerplan identiek), nog niet nagekeken |
 | Appendix vectorrekenen, standaardvorm | geschreven | geschreven |
 
 ## te doen volgende keer
@@ -194,6 +195,7 @@ bijwerken (`5de/inleiding_stand_51.tex` voor 1 uur, `5de/inleiding_stand_52.tex`
 - [ ] H3 potentiaal (2 uur): theorie en oefeningen nalezen, extra oefeningen maken
 - [ ] H3 potentiaal (1 uur): aanpassen en nakijken (`_1uur`-analyse)
 - [ ] H4 gemengde schakelingen (1 uur) nakijken
+- [ ] Magnetisch veld (2 uur H4, 1 uur H5) nalezen: theorie, figuren, oefeningen; beslissen of 1 uur `magnetismeoef_gevorderd` volledig houdt
 - [ ] extra quiskes in H2, extra oefeningen H1
 
 

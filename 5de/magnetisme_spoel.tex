@@ -1,0 +1,211 @@
+\documentclass{ximera}
+%geschreven 9/11/26
+\title{Het magnetisch veld van een stroomvoerende spoel}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+    Het magnetisch veld van een stroomvoerende winding en van een stroomvoerende spoel: veldlijnen, rechterhandregel en de grootte van het veld in een spoel. Bewegende ladingen als bron van magnetisme.
+\end{abstract}
+\maketitle
+
+\section{Het magnetisch veld van een winding}\label{sec:veld-winding}
+Buig je een draad tot een cirkelvormige lus, dan krijg je een \textbf{winding}. Ook een stroom door een winding maakt een magnetisch veld. Elk stukje van de winding is een klein stukje rechte draad met cirkelvormige veldlijnen errond. In het midden van de winding wijzen al die bijdragen dezelfde kant op: daar versterken ze elkaar.
+
+Figuur~\ref{fig:veld_winding} toont een doorsnede. We snijden de winding loodrecht op haar vlak door: boven komt de stroom uit het blad, onder gaat hij het blad in.
+
+%---------------------------
+\begin{figure}[ht!]
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{scope}
+                \clip (-3.2,-2.6) rectangle (3.2,2.6);
+                \draw[Mveldlijn] plot[smooth cycle] coordinates {(0.00,0.25) (0.30,0.27) (0.59,0.35) (0.87,0.46) (1.13,0.63) (1.36,0.83) (1.54,1.06) (1.70,1.33) (1.80,1.61) (1.86,1.91) (1.87,2.21) (1.83,2.52) (1.75,2.80) (1.62,3.07) (1.45,3.32) (1.24,3.53) (0.99,3.72) (0.72,3.86) (0.44,3.95) (0.14,3.99) (-0.16,3.99) (-0.45,3.94) (-0.74,3.85) (-1.01,3.70) (-1.25,3.52) (-1.46,3.30) (-1.63,3.05) (-1.76,2.78) (-1.84,2.49) (-1.87,2.19) (-1.86,1.89) (-1.80,1.60) (-1.69,1.32) (-1.54,1.05) (-1.35,0.82) (-1.12,0.62) (-0.87,0.46) (-0.59,0.35) (-0.30,0.27)};
+                \draw[Mveldlijn] plot[smooth cycle] coordinates {(0.00,-0.25) (0.30,-0.27) (0.59,-0.35) (0.87,-0.46) (1.13,-0.63) (1.36,-0.83) (1.54,-1.06) (1.70,-1.33) (1.80,-1.61) (1.86,-1.91) (1.87,-2.21) (1.83,-2.52) (1.75,-2.80) (1.62,-3.07) (1.45,-3.32) (1.24,-3.53) (0.99,-3.72) (0.72,-3.86) (0.44,-3.95) (0.14,-3.99) (-0.16,-3.99) (-0.45,-3.94) (-0.74,-3.85) (-1.01,-3.70) (-1.25,-3.52) (-1.46,-3.30) (-1.63,-3.05) (-1.76,-2.78) (-1.84,-2.49) (-1.87,-2.19) (-1.86,-1.89) (-1.80,-1.60) (-1.69,-1.32) (-1.54,-1.05) (-1.35,-0.82) (-1.12,-0.62) (-0.87,-0.46) (-0.59,-0.35) (-0.30,-0.27)};
+                \draw[Mveldlijn] plot[smooth cycle] coordinates {(0.00,0.50) (0.29,0.56) (0.54,0.73) (0.70,0.99) (0.75,1.28) (0.68,1.58) (0.49,1.82) (0.23,1.96) (-0.07,2.00) (-0.36,1.91) (-0.59,1.72) (-0.72,1.45) (-0.74,1.15) (-0.64,0.86) (-0.44,0.64) (-0.17,0.52)};
+                \draw[Mveldlijn] plot[smooth cycle] coordinates {(0.00,-0.50) (0.29,-0.56) (0.54,-0.73) (0.70,-0.99) (0.75,-1.28) (0.68,-1.58) (0.49,-1.82) (0.23,-1.96) (-0.07,-2.00) (-0.36,-1.91) (-0.59,-1.72) (-0.72,-1.45) (-0.74,-1.15) (-0.64,-0.86) (-0.44,-0.64) (-0.17,-0.52)};
+                \draw[Mveldlijn] plot[smooth cycle] coordinates {(0.00,0.70) (0.27,0.82) (0.36,1.10) (0.22,1.36) (-0.07,1.42) (-0.31,1.25) (-0.35,0.96) (-0.16,0.74)};
+                \draw[Mveldlijn] plot[smooth cycle] coordinates {(0.00,-0.70) (0.27,-0.82) (0.36,-1.10) (0.22,-1.36) (-0.07,-1.42) (-0.31,-1.25) (-0.35,-0.96) (-0.16,-0.74)};
+                \draw[Mveldlijn] plot[smooth cycle] coordinates {(0.00,0.85) (0.16,1.06) (-0.09,1.15) (-0.11,0.89)};
+                \draw[Mveldlijn] plot[smooth cycle] coordinates {(0.00,-0.85) (0.16,-1.06) (-0.09,-1.15) (-0.11,-0.89)};
+                \draw[Mveldlijn] (-3.2,0) -- (3.2,0);
+            \end{scope}
+            \draw[gray, thick, dashed] (0,1) -- (0,-1);
+            \stroomuit{A}{0,1}
+            \stroomin{B}{0,-1}
+            \node[font=\bfseries] at (2.8,-0.35) {N};
+            \node[font=\bfseries] at (-2.8,-0.35) {Z};
+        \end{tikzpicture}
+    \end{center}
+    \caption{Doorsnede van een stroomvoerende winding (de stippellijn is het vlak van de winding). Rond elk stukje draad lopen cirkelvormige veldlijnen. In het midden van de winding staan de veldlijnen loodrecht op het vlak van de winding en wijzen ze allemaal naar rechts. De winding gedraagt zich als een platte magneet met de noordpool rechts.}
+    \label{fig:veld_winding}
+\end{figure}
+%---------------------------
+
+\begin{proposition}[foldable=true,title={Veldlijnen bij een stroomvoerende winding}]\nl
+    In het midden van een stroomvoerende winding staan de magnetische veldlijnen \textbf{loodrecht} op het vlak van de winding. Een winding gedraagt zich als een platte magneet: de kant waar de veldlijnen de winding verlaten, is de noordpool.
+\end{proposition}
+
+\begin{proposition}[foldable=true,title={Rechterhandregel voor een winding of een spoel}]\nl
+    Krul de \textbf{vingers} van je \textbf{rechterhand} in de zin van de \textbf{stroom} door de winding. Je \textbf{duim} wijst dan in de zin van de \textbf{veldlijnen in de winding}, dus naar de \textbf{noordpool}.
+\end{proposition}
+
+\begin{remark}[expandable=true,title={Twee keer dezelfde regel}]\nl
+    De rechterhandregel voor een winding volgt uit die voor een rechte draad: pas de regel voor een rechte draad toe op een klein stukje van de winding, en je ziet dat de veldlijnen in het midden steeds dezelfde kant op wijzen. Bij de rechte draad wijst de duim de stroom aan en de vingers het veld, bij de winding is het net omgekeerd.
+\end{remark}
+
+\begin{remark}[expandable=true,title={Extra: het veld in het middelpunt van een winding}]\nl
+    In het middelpunt van een cirkelvormige winding met straal $r$ en stroom $I$ is de grootte van het magnetisch veld:
+    \begin{equation*}
+        B = \frac{\mu_0 \cdot I}{2 \cdot r}
+    \end{equation*}
+    Vergelijk met vergelijking~\eqref{eq:B_rechte_geleider}: de factor $\pi$ valt weg, omdat alle stukjes van de winding even ver van het middelpunt liggen en hun velden daar in dezelfde zin wijzen.
+\end{remark}
+
+\section{Het magnetisch veld van een spoel}\label{sec:veld-spoel}
+Wikkel je een draad in vele windingen naast elkaar rond een buis, dan krijg je een \textbf{spoel} of \textbf{solenoïde}. Elke winding maakt een veld, en alle windingen samen geven het veld van de spoel, zie figuur~\ref{fig:spoel_ruimtelijk} en figuur~\ref{fig:veld_spoel}.
+
+%---------------------------
+\begin{figure}[ht!]
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
+        \begin{tikzpicture}
+            \def\R{0.8}\def\p{0.6}
+            % achterkant van de windingen
+            \foreach \k in {0,...,5}{
+                \draw[gray!60, line width=1pt, domain={\k*360+180}:{\k*360+360}, samples=25, smooth, variable=\t] plot ({\p*\t/360+0.3*\R*sin(\t)},{\R*cos(\t)});
+            }
+            % veld in de spoel
+            \draw[Mvector] (-0.2,0) -- (4.2,0) node[above]{$\vec{B}$};
+            % voorkant van de windingen
+            \foreach \k in {0,...,5}{
+                \draw[red!60!black, line width=1.2pt, domain={\k*360}:{\k*360+180}, samples=25, smooth, variable=\t] plot ({\p*\t/360+0.3*\R*sin(\t)},{\R*cos(\t)});
+            }
+            \draw[stroom] ({\p*2.25+0.3*\R},-0.05) -- ++(0.08,-0.5);
+            \draw[red!60!black, line width=1.2pt] (0,\R) -- (0,1.8);
+            \draw[red!60!black, line width=1.2pt] ({\p*6},\R) -- ({\p*6},1.8);
+            \draw[stroom] (0,1.5) -- (0,1.0) node[left]{$I$};
+            \draw[stroom] ({\p*6},1.0) -- ({\p*6},1.5);
+            \node[font=\bfseries] at (4.8,0) {N};
+            \node[font=\bfseries] at (-0.8,0) {Z};
+        \end{tikzpicture}
+    \end{center}
+    \caption{Een stroomvoerende spoel. Aan de voorkant loopt de stroom naar beneden. Volgens de rechterhandregel wijst het veld in de spoel naar rechts: rechts is de noordpool.}
+    \label{fig:spoel_ruimtelijk}
+\end{figure}
+%---------------------------
+
+%---------------------------
+\begin{figure}[ht!]
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{scope}
+                \clip (-4.5,-2.8) rectangle (4.5,2.8);
+                \draw[Mveldlijn] plot[smooth cycle] coordinates {(0.00,0.15) (0.30,0.15) (0.60,0.15) (0.91,0.16) (1.21,0.16) (1.51,0.17) (1.81,0.19) (2.11,0.24) (2.39,0.36) (2.63,0.54) (2.84,0.76) (3.02,1.00) (3.18,1.26) (3.32,1.53) (3.43,1.82) (3.51,2.11) (3.56,2.40) (3.60,2.70) (3.60,3.01) (3.58,3.31) (3.54,3.61) (3.46,3.91) (3.37,4.20) (3.25,4.47) (3.11,4.74) (2.94,4.99) (2.76,5.23) (2.55,5.45) (2.33,5.66) (2.10,5.84) (1.84,6.01) (1.57,6.15) (1.29,6.27) (1.01,6.37) (0.71,6.44) (0.42,6.49) (0.12,6.51) (-0.18,6.51) (-0.48,6.48) (-0.78,6.43) (-1.07,6.35) (-1.35,6.25) (-1.63,6.13) (-1.89,5.98) (-2.14,5.81) (-2.38,5.62) (-2.59,5.41) (-2.79,5.19) (-2.98,4.94) (-3.14,4.69) (-3.28,4.41) (-3.39,4.14) (-3.48,3.85) (-3.55,3.55) (-3.59,3.25) (-3.60,2.95) (-3.59,2.65) (-3.56,2.35) (-3.50,2.06) (-3.41,1.77) (-3.30,1.48) (-3.16,1.21) (-2.99,0.96) (-2.80,0.72) (-2.59,0.50) (-2.33,0.33) (-2.05,0.23) (-1.75,0.19) (-1.45,0.17) (-1.14,0.16) (-0.84,0.15) (-0.54,0.15) (-0.24,0.15)};
+                \draw[Mveldlijn] plot[smooth cycle] coordinates {(0.00,-0.15) (0.30,-0.15) (0.60,-0.15) (0.90,-0.16) (1.21,-0.16) (1.51,-0.17) (1.81,-0.19) (2.10,-0.24) (2.38,-0.36) (2.63,-0.54) (2.84,-0.75) (3.02,-0.99) (3.18,-1.25) (3.31,-1.52) (3.42,-1.81) (3.50,-2.10) (3.56,-2.39) (3.60,-2.69) (3.60,-3.00) (3.58,-3.30) (3.54,-3.60) (3.47,-3.90) (3.37,-4.19) (3.25,-4.46) (3.11,-4.73) (2.95,-4.98) (2.76,-5.23) (2.56,-5.45) (2.34,-5.65) (2.11,-5.84) (1.85,-6.00) (1.58,-6.15) (1.30,-6.27) (1.02,-6.37) (0.72,-6.44) (0.42,-6.49) (0.12,-6.51) (-0.18,-6.51) (-0.48,-6.48) (-0.77,-6.43) (-1.06,-6.36) (-1.34,-6.26) (-1.62,-6.13) (-1.89,-5.98) (-2.14,-5.81) (-2.38,-5.62) (-2.59,-5.41) (-2.79,-5.19) (-2.98,-4.94) (-3.14,-4.69) (-3.28,-4.41) (-3.39,-4.14) (-3.48,-3.85) (-3.55,-3.55) (-3.59,-3.25) (-3.60,-2.95) (-3.59,-2.65) (-3.56,-2.35) (-3.49,-2.05) (-3.41,-1.76) (-3.30,-1.48) (-3.16,-1.21) (-2.99,-0.96) (-2.80,-0.72) (-2.59,-0.51) (-2.34,-0.34) (-2.06,-0.23) (-1.76,-0.19) (-1.46,-0.17) (-1.15,-0.16) (-0.85,-0.15) (-0.55,-0.15) (-0.25,-0.15)};
+                \draw[Mveldlijn] plot[smooth cycle] coordinates {(0.00,0.30) (0.30,0.30) (0.60,0.31) (0.90,0.31) (1.20,0.32) (1.51,0.34) (1.81,0.38) (2.10,0.47) (2.24,0.73) (2.23,1.03) (2.16,1.32) (2.05,1.60) (1.91,1.86) (1.72,2.11) (1.51,2.32) (1.27,2.51) (1.01,2.66) (0.73,2.77) (0.44,2.85) (0.14,2.89) (-0.16,2.89) (-0.45,2.85) (-0.75,2.77) (-1.02,2.65) (-1.29,2.50) (-1.52,2.31) (-1.73,2.10) (-1.91,1.86) (-2.06,1.60) (-2.16,1.32) (-2.23,1.02) (-2.24,0.73) (-2.10,0.47) (-1.81,0.38) (-1.51,0.34) (-1.21,0.32) (-0.91,0.31) (-0.60,0.31) (-0.30,0.30) (-0.00,0.30)};
+                \draw[Mveldlijn] plot[smooth cycle] coordinates {(0.00,-0.30) (0.30,-0.30) (0.60,-0.31) (0.90,-0.31) (1.21,-0.32) (1.51,-0.34) (1.82,-0.39) (2.10,-0.47) (2.24,-0.74) (2.23,-1.04) (2.16,-1.34) (2.05,-1.62) (1.90,-1.88) (1.71,-2.12) (1.50,-2.33) (1.26,-2.51) (1.00,-2.66) (0.72,-2.78) (0.43,-2.85) (0.13,-2.89) (-0.17,-2.89) (-0.47,-2.85) (-0.76,-2.76) (-1.04,-2.65) (-1.30,-2.49) (-1.53,-2.30) (-1.74,-2.09) (-1.92,-1.85) (-2.06,-1.58) (-2.17,-1.30) (-2.23,-1.01) (-2.24,-0.71) (-2.08,-0.46) (-1.79,-0.38) (-1.49,-0.34) (-1.19,-0.32) (-0.88,-0.31) (-0.58,-0.31) (-0.27,-0.30)};
+                \draw[Mveldlijn] plot[smooth cycle] coordinates {(0.00,0.42) (0.30,0.43) (0.60,0.44) (0.90,0.44) (1.21,0.45) (1.50,0.48) (1.79,0.56) (2.06,0.59) (1.86,0.80) (1.65,1.02) (1.42,1.21) (1.16,1.38) (0.89,1.51) (0.60,1.61) (0.31,1.66) (0.01,1.68) (-0.29,1.67) (-0.58,1.61) (-0.87,1.52) (-1.14,1.39) (-1.39,1.23) (-1.63,1.04) (-1.84,0.82) (-2.06,0.62) (-1.82,0.57) (-1.54,0.48) (-1.24,0.45) (-0.94,0.44) (-0.64,0.44) (-0.34,0.42) (-0.04,0.42)};
+                \draw[Mveldlijn] plot[smooth cycle] coordinates {(0.00,-0.42) (0.30,-0.43) (0.60,-0.44) (0.90,-0.44) (1.21,-0.45) (1.50,-0.48) (1.79,-0.56) (2.06,-0.59) (1.86,-0.80) (1.65,-1.02) (1.42,-1.21) (1.16,-1.38) (0.89,-1.51) (0.60,-1.61) (0.31,-1.66) (0.01,-1.68) (-0.29,-1.67) (-0.58,-1.61) (-0.87,-1.52) (-1.14,-1.39) (-1.40,-1.23) (-1.63,-1.04) (-1.84,-0.82) (-2.06,-0.62) (-1.81,-0.57) (-1.54,-0.48) (-1.23,-0.45) (-0.93,-0.44) (-0.63,-0.44) (-0.33,-0.42) (-0.03,-0.42)};
+                \draw[Mveldlijn] (-4.5,0) -- (4.5,0);
+            \end{scope}
+            \foreach \x in {-2,-1.6,...,2.01}{\stroomuit{u}{\x,0.6}\stroomin{i}{\x,-0.6}}
+            \node[font=\bfseries] at (3.0,-0.35) {N};
+            \node[font=\bfseries] at (-3.0,-0.35) {Z};
+        \end{tikzpicture}
+    \end{center}
+    \caption{Doorsnede van de spoel uit figuur~\ref{fig:spoel_ruimtelijk}. In de spoel lopen de veldlijnen evenwijdig en op gelijke afstand: het veld is er homogeen. Buiten de spoel lijkt het veld op dat van een staafmagneet.}
+    \label{fig:veld_spoel}
+\end{figure}
+%---------------------------
+
+\begin{proposition}[foldable=true,title={Veldlijnen bij een stroomvoerende spoel}]\nl
+    \begin{itemize}
+        \item \textbf{In} een lange spoel is het magnetisch veld \textbf{homogeen}: de veldlijnen zijn evenwijdig met de as van de spoel.
+        \item \textbf{Buiten} de spoel lijkt het veld op dat van een \textbf{staafmagneet}. Het uiteinde waar de veldlijnen de spoel verlaten, is de noordpool.
+        \item De zin van de veldlijnen in de spoel vind je met de \textbf{rechterhandregel voor een winding of een spoel}.
+    \end{itemize}
+\end{proposition}
+
+De grootte van het veld in de spoel hangt af van de stroom en van hoe dicht de windingen bij elkaar liggen.
+
+\begin{proposition}[foldable=true,title={Magnetisch veld in een stroomvoerende spoel}]\nl
+    In een lange spoel met $N$ windingen, lengte $\ell$ en stroom $I$ is de grootte van het magnetisch veld:
+    \begin{equation}\label{eq:B_spoel}
+        B = \frac{\mu_0 \cdot N \cdot I}{\ell}
+    \end{equation}
+    Het quotiënt $n = \dfrac{N}{\ell}$ is de \textbf{windingsdichtheid}: het aantal windingen per meter.
+\end{proposition}
+
+\begin{remark}[expandable=true,title={Geldigheid van de formule}]\nl
+    Vergelijking~\eqref{eq:B_spoel} geldt \textbf{in} een spoel die veel langer is dan breed, niet te dicht bij de uiteinden. Opvallend: de diameter van de spoel komt niet voor in de formule. Een dikke en een dunne spoel met dezelfde windingsdichtheid en dezelfde stroom hebben binnenin hetzelfde veld.
+\end{remark}
+
+%---------------------------
+\begin{example}[foldable=true,title={Veld in een spoel}]\nl
+    Een spoel met lengte $15\,\mathrm{cm}$ heeft $450$ windingen. Er loopt een stroom van $2{,}0\,\mathrm{A}$ door de spoel, in de zin van de figuur.
+    \begin{enumerate}
+        \item Bereken de grootte van het magnetisch veld in de spoel.
+        \item Welk uiteinde van de spoel is de noordpool?
+    \end{enumerate}
+
+    \begin{center}
+        \begin{tikzpicture}
+            \draw[gray, line width=0.6pt] (-2.2,-0.4) rectangle (2.2,0.4);
+            \foreach \x in {-1.8,-1.2,...,1.81}{\stroomin{u}{\x,0.4}\stroomuit{i}{\x,-0.4}}
+            \node at (-2.8,0) {links};
+            \node at (2.8,0) {rechts};
+        \end{tikzpicture}
+    \end{center}
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & N = 450 & & \ell = 15\,\mathrm{cm} = 0{,}15\,\mathrm{m} & & I = 2{,}0\,\mathrm{A}
+        \end{align*}
+
+        \underline{Gevraagd:} $B$ en de plaats van de noordpool
+
+        \underline{Oplossing:}
+        \begin{enumerate}
+            \item We gebruiken het veld in een spoel, vergelijking~\eqref{eq:B_spoel}:
+            \begin{align*}
+                B &= \frac{\mu_0 \cdot N \cdot I}{\ell} = \frac{4\pi \cdot 10^{-7}\,\mathrm{T\cdot m/A} \cdot 450 \cdot 2{,}0\,\mathrm{A}}{0{,}15\,\mathrm{m}} = \boxed{7{,}5 \cdot 10^{-3}\,\mathrm{T}}
+            \end{align*}
+            \item Boven gaat de stroom het blad in, onder komt hij eruit. Bekijk de draad bovenaan: de duim wijst het blad in, de vingers krullen in wijzerzin, dus onder die draad (in de spoel) wijst het veld naar links. Voor de draden onderaan vind je hetzelfde. Het veld in de spoel wijst naar links: de veldlijnen verlaten de spoel aan de linkerkant. \textbf{Links} is de noordpool.
+        \end{enumerate}
+    \end{solution}
+\end{example}
+%---------------------------
+
+\begin{question}
+    Je verdubbelt de stroom door een spoel en je drukt de windingen samen tot de spoel half zo lang is. Het aantal windingen blijft gelijk. Hoe verandert het magnetisch veld in de spoel?
+
+    \begin{multipleChoice}
+        \choice{Het blijft gelijk.}
+        \choice{Het wordt twee keer zo groot.}
+        \choice[correct]{Het wordt vier keer zo groot.}
+        \choice{Het wordt half zo groot.}
+    \end{multipleChoice}
+
+    \begin{solution}\nl
+        Volgens $B = \mu_0 \cdot N \cdot I/\ell$ is $B$ recht evenredig met $I$ en omgekeerd evenredig met $\ell$. Een twee keer grotere stroom geeft een factor $2$, een twee keer kortere spoel nog eens een factor $2$: samen een factor $4$.
+    \end{solution}
+\end{question}
+
+\section{Bewegende ladingen als bron van magnetisme}\label{sec:bron-magnetisme}
+Vergelijk het veld van een spoel (figuur~\ref{fig:veld_spoel}) met dat van een staafmagneet (figuur~\ref{fig:veldlijnen_staafmagneet}). Buiten de spoel zijn de patronen bijna identiek. Een spoel trekt ook ijzer aan en richt zich als een kompasnaald noord-zuid als je ze vrij laat draaien.
+
+Bij de spoel weten we waar het veld vandaan komt: van de elektronen die door de windingen bewegen. Dat doet vermoeden dat ook in een permanente magneet bewegende ladingen zitten. Dat is ook zo: elk elektron in een atoom beweegt rond de kern en draait bovendien rond zijn eigen as (de \textbf{spin} van het elektron). Elk atoom is zo een minuscule stroomkring. In de meeste stoffen heffen die stroompjes elkaar op, maar in ferromagnetische stoffen versterken ze elkaar.
+
+\begin{proposition}[foldable=true,title={Bron van magnetisme}]\nl
+    Alle magnetische velden worden veroorzaakt door \textbf{bewegende ladingen}: elektrische stromen in draden, en bewegende elektronen in de atomen van een permanente magneet.
+\end{proposition}
+
+\begin{remark}[expandable=true,title={Waarom geen afzonderlijke polen?}]\nl
+    Een stroomkring heeft altijd twee kanten: een kant waar de veldlijnen erin gaan en een kant waar ze eruit komen. Omdat elk magnetisch veld van stroomkringen komt, bestaat er altijd een noordpool samen met een zuidpool. Daarom krijg je bij het breken van een magneet nooit een losse pool.
+\end{remark}
+
+\end{document}

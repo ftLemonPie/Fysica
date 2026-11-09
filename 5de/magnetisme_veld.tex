@@ -1,0 +1,319 @@
+\documentclass{ximera}
+%geschreven 9/11/26
+\title{Het magnetisch veld en veldlijnen}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+    De magnetische veldvector, magnetische veldlijnen bij permanente magneten, het homogeen magnetisch veld, het magnetisch veld van de aarde en de analogie met het zwaarteveld en het elektrisch veld.
+\end{abstract}
+\maketitle
+
+\section{De magnetische veldvector}\label{sec:magnetisch-veld}
+Rond een lading bestaat een elektrisch veld: een andere lading op die plaats ondervindt een kracht. Op dezelfde manier verandert een magneet de ruimte rondom zich. We zeggen dat er rond de magneet een \textbf{magnetisch veld} bestaat. Een kompasnaald op die plaats ondervindt krachten en draait in een welbepaalde stand.
+
+Net zoals een testlading het elektrisch veld \emph{aantoont}, toont een kompasnaald het magnetisch veld aan. Het veld zelf wordt gemaakt door de magneet, niet door het kompas.
+
+\begin{definition}[foldable=true,title={Magnetische veldvector}]\nl
+    Het magnetisch veld in een punt $P$ stellen we voor met de \textbf{magnetische veldvector} $\vec{B}$, met:
+    \begin{itemize}
+        \item \textbf{aangrijpingspunt}: het punt $P$;
+        \item \textbf{richting}: de richting van een kompasnaald in $P$;
+        \item \textbf{zin}: de zin waarin de noordpool van de kompasnaald wijst;
+        \item \textbf{grootte}: de sterkte van het magnetisch veld in $P$.
+    \end{itemize}
+    De grootte $B$ van het magnetisch veld wordt uitgedrukt in \textbf{tesla} (T).
+\end{definition}
+
+Een tesla is een groot magnetisch veld. Daarom gebruiken we vaak millitesla ($1\,\mathrm{mT} = 10^{-3}\,\mathrm{T}$) en microtesla ($1\,\mathrm{\mu T} = 10^{-6}\,\mathrm{T}$). Tabel~\ref{tab:waarden_B} geeft enkele grootteordes.
+
+\begin{table}[ht!]
+    \begin{center}
+        \begin{tabular}{l r}
+            \toprule
+            Bron & $B$ \\
+            \midrule
+            magnetisch veld van de aarde in België & $48\,\mathrm{\mu T}$ \\
+            koelkastmagneetje (aan het oppervlak) & $5\,\mathrm{mT}$ \\
+            neodymiummagneet (aan het oppervlak) & $1\,\mathrm{T}$ \\
+            MRI-scanner in een ziekenhuis & $1{,}5$ tot $3\,\mathrm{T}$ \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+    \caption{Grootteordes van magnetische velden.}
+    \label{tab:waarden_B}
+\end{table}
+
+\begin{remark}[expandable=true,title={Waar komt de eenheid tesla vandaan?}]\nl
+    De tesla is genoemd naar de Servisch-Amerikaanse ingenieur Nikola Tesla (1856-1943). Hoe de tesla precies gedefinieerd is, zie je in het volgende hoofdstuk: daar gebruiken we de kracht die een magnetisch veld uitoefent op een bewegende lading.
+\end{remark}
+
+\section{Magnetische veldlijnen}\label{sec:magnetische-veldlijnen}
+Net als bij het elektrisch veld maken we een magnetisch veld zichtbaar met \textbf{veldlijnen}. Je kan ze ook in het echt zien: strooi ijzervijlsel op een blad papier boven een magneet. Door magnetische influentie wordt elk korreltje een klein kompasnaaldje, en de korreltjes schikken zich in lijnen langs de veldlijnen.
+
+\begin{proposition}[foldable=true,title={Regels voor magnetische veldlijnen}]\nl
+    \begin{enumerate}
+        \item De magnetische veldvector $\vec{B}$ in een punt \textbf{raakt} aan de veldlijn door dat punt, zie figuur~\ref{fig:B_raaklijn}. De pijl op de veldlijn geeft de zin van het veld.
+        \item Buiten een magneet lopen de veldlijnen \textbf{van de noordpool naar de zuidpool}. In de magneet lopen ze van Z naar N: magnetische veldlijnen zijn \textbf{gesloten lussen}.
+        \item Waar de veldlijnen \textbf{dicht bij elkaar} liggen, is het veld \textbf{sterk}. Waar ze ver uit elkaar liggen, is het veld zwak.
+        \item Veldlijnen \textbf{snijden elkaar nooit}: in elk punt is er maar één veldvector.
+    \end{enumerate}
+\end{proposition}
+
+%---------------------------
+\begin{figure}[ht!]
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
+        \begin{tikzpicture}
+            \draw[Mveldlijn] (0,0) .. controls (2,2) and (4,2) .. (6,0);
+            \coordinate (P) at (1.5,1.13);
+            \fill (P) circle (0.6mm) node[above left]{$P$};
+            \draw[Mvector] (P) -- ++(36:1.2) node[above]{$\vec{B}$};
+            \kompasnaald{4.6,1.13}{-30}
+            \node[above] at (4.6,1.3) {kompasnaald};
+        \end{tikzpicture}
+    \end{center}
+    \caption{De veldvector $\vec{B}$ raakt aan de veldlijn. Een kompasnaald op de veldlijn richt zich volgens de veldlijn, met de noordpool (rood) in de zin van de veldlijn.}
+    \label{fig:B_raaklijn}
+\end{figure}
+%---------------------------
+
+\subsection{Veldlijnenpatronen bij permanente magneten}
+Het patroon van de veldlijnen noemen we het \textbf{veldlijnenpatroon} of veldlijnenspectrum. Figuur~\ref{fig:veldlijnen_staafmagneet} toont het veld van een staafmagneet. Denk eraan dat het veld driedimensionaal is: de figuur toont enkel de veldlijnen in het vlak van het blad.
+
+%---------------------------
+\begin{figure}[ht!]
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{scope}
+                \clip (-4.2,-2.4) rectangle (4.2,2.4);
+                \draw[Mveldlijn] plot[smooth] coordinates {(2.01,0.24) (2.28,0.37) (2.54,0.51) (2.82,0.66) (3.08,0.80) (3.35,0.96) (3.61,1.12) (3.86,1.28) (4.20,1.51)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(-4.20,1.51) (-3.95,1.34) (-3.70,1.18) (-3.44,1.01) (-3.17,0.86) (-2.91,0.71) (-2.64,0.56) (-2.37,0.42) (-2.01,0.24)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(2.01,-0.24) (2.28,-0.37) (2.54,-0.51) (2.82,-0.66) (3.08,-0.80) (3.35,-0.96) (3.61,-1.12) (3.86,-1.28) (4.20,-1.51)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(-4.20,-1.51) (-3.95,-1.34) (-3.70,-1.18) (-3.44,-1.01) (-3.17,-0.86) (-2.91,-0.71) (-2.64,-0.56) (-2.37,-0.42) (-2.01,-0.24)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(1.71,0.25) (1.90,0.49) (2.09,0.74) (2.26,0.99) (2.42,1.24) (2.57,1.50) (2.72,1.78) (2.85,2.06) (2.98,2.40)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(-2.98,2.40) (-2.87,2.12) (-2.75,1.85) (-2.61,1.57) (-2.47,1.31) (-2.30,1.05) (-2.13,0.79) (-1.94,0.54) (-1.71,0.25)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(1.71,-0.25) (1.90,-0.49) (2.09,-0.74) (2.26,-0.99) (2.42,-1.24) (2.57,-1.50) (2.72,-1.78) (2.85,-2.06) (2.98,-2.40)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(-2.98,-2.40) (-2.87,-2.12) (-2.75,-1.85) (-2.61,-1.57) (-2.47,-1.31) (-2.30,-1.05) (-2.13,-0.79) (-1.94,-0.54) (-1.71,-0.25)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(1.54,0.26) (1.59,0.55) (1.62,0.86) (1.63,1.17) (1.62,1.47) (1.57,1.78) (1.49,2.08) (1.35,2.41)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(1.54,-0.26) (1.59,-0.55) (1.62,-0.86) (1.63,-1.17) (1.62,-1.47) (1.57,-1.78) (1.49,-2.08) (1.35,-2.41)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(1.38,0.25) (1.25,0.52) (1.09,0.79) (0.90,1.03) (0.67,1.24) (0.41,1.40) (0.12,1.48) (-0.18,1.47) (-0.47,1.37) (-0.72,1.21) (-0.93,1.00) (-1.11,0.75) (-1.26,0.49) (-1.38,0.26)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(1.38,-0.25) (1.25,-0.52) (1.09,-0.79) (0.90,-1.03) (0.67,-1.24) (0.41,-1.40) (0.12,-1.48) (-0.18,-1.47) (-0.47,-1.37) (-0.72,-1.21) (-0.93,-1.00) (-1.11,-0.75) (-1.26,-0.49) (-1.38,-0.26)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(1.06,0.25) (0.78,0.39) (0.49,0.50) (0.19,0.57) (-0.11,0.58) (-0.41,0.52) (-0.69,0.43) (-1.05,0.25)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(1.06,-0.25) (0.78,-0.39) (0.49,-0.50) (0.19,-0.57) (-0.11,-0.58) (-0.41,-0.52) (-0.69,-0.43) (-1.05,-0.25)};
+                \draw[Mveldlijn] (2,0) -- (4.2,0);
+                \draw[Mveldlijn] (-4.2,0) -- (-2,0);
+            \end{scope}
+            \staafmagneet[4]{M}{0,0}{0}
+        \end{tikzpicture}
+    \end{center}
+    \caption{Veldlijnen van een staafmagneet. Buiten de magneet lopen de veldlijnen van de noordpool naar de zuidpool. Aan de polen liggen de veldlijnen het dichtst bij elkaar: daar is het veld het sterkst.}
+    \label{fig:veldlijnen_staafmagneet}
+\end{figure}
+%---------------------------
+
+Brengen we twee magneten bij elkaar, dan tellen hun velden op. Figuur~\ref{fig:veldlijnen_twee_magneten} toont het resultaat voor twee ongelijknamige en twee gelijknamige polen.
+
+%---------------------------
+\begin{figure}[ht!]
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{scope}
+                \clip (-5,-2.4) rectangle (5,2.4);
+                \draw[Mveldlijn] plot[smooth] coordinates {(-1.33,-0.25) (-1.26,-0.54) (-1.19,-0.83) (-1.12,-1.12) (-1.04,-1.43) (-0.96,-1.72) (-0.88,-2.00) (-0.74,-2.41)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(-1.19,-0.25) (-0.99,-0.48) (-0.79,-0.70) (-0.56,-0.91) (-0.30,-1.06) (-0.01,-1.12) (0.29,-1.06) (0.55,-0.92) (0.79,-0.71) (0.99,-0.49) (1.19,-0.25)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(-0.99,-0.19) (-0.72,-0.31) (-0.43,-0.42) (-0.12,-0.48) (0.18,-0.47) (0.47,-0.40) (0.76,-0.29) (1.00,-0.19)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(-1.00,0.00) (-0.70,0.00) (-0.40,0.00) (-0.10,0.00) (0.20,0.00) (0.50,0.00) (0.80,0.00) (0.99,0.00)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(-0.99,0.19) (-0.72,0.31) (-0.43,0.42) (-0.12,0.48) (0.18,0.47) (0.47,0.40) (0.76,0.29) (1.00,0.19)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(-1.19,0.25) (-0.99,0.48) (-0.79,0.70) (-0.56,0.91) (-0.30,1.06) (-0.01,1.12) (0.29,1.06) (0.55,0.92) (0.79,0.71) (0.99,0.49) (1.19,0.25)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(-1.33,0.25) (-1.26,0.54) (-1.19,0.83) (-1.12,1.12) (-1.04,1.43) (-0.96,1.72) (-0.88,2.00) (-0.74,2.41)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(-1.49,0.25) (-1.61,0.54) (-1.75,0.82) (-1.93,1.07) (-2.16,1.27) (-2.44,1.38) (-2.74,1.37) (-3.02,1.25) (-3.26,1.05) (-3.45,0.80) (-3.59,0.54) (-3.71,0.25)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(-1.49,-0.25) (-1.61,-0.54) (-1.75,-0.82) (-1.93,-1.07) (-2.16,-1.27) (-2.44,-1.38) (-2.74,-1.37) (-3.02,-1.25) (-3.26,-1.05) (-3.45,-0.80) (-3.59,-0.54) (-3.71,-0.25)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(-1.71,0.25) (-1.96,0.44) (-2.22,0.58) (-2.52,0.65) (-2.83,0.62) (-3.11,0.51) (-3.36,0.35) (-3.49,0.25)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(-1.71,-0.25) (-1.96,-0.44) (-2.22,-0.58) (-2.52,-0.65) (-2.83,-0.62) (-3.11,-0.51) (-3.36,-0.35) (-3.49,-0.25)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(3.87,-0.25) (3.94,-0.55) (3.99,-0.86) (4.02,-1.17) (4.02,-1.48) (4.00,-1.79) (3.94,-2.08) (3.84,-2.41)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(4.10,-0.25) (4.33,-0.46) (4.55,-0.66) (4.77,-0.88) (5.01,-1.14)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(4.21,0.00) (4.52,0.00) (4.83,0.00) (5.01,0.00)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(4.10,0.25) (4.33,0.46) (4.55,0.66) (4.77,0.88) (5.01,1.14)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(3.87,0.25) (3.94,0.55) (3.99,0.86) (4.02,1.17) (4.02,1.48) (4.00,1.79) (3.94,2.08) (3.84,2.41)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(3.71,0.25) (3.59,0.53) (3.45,0.80) (3.27,1.04) (3.05,1.23) (2.78,1.36) (2.48,1.38) (2.19,1.29) (1.95,1.10) (1.77,0.86) (1.63,0.59) (1.49,0.26)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(3.71,-0.25) (3.59,-0.53) (3.45,-0.80) (3.27,-1.04) (3.05,-1.23) (2.78,-1.36) (2.48,-1.38) (2.19,-1.29) (1.95,-1.10) (1.77,-0.86) (1.63,-0.59) (1.49,-0.26)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(3.35,0.25) (3.06,0.38) (2.76,0.46) (2.47,0.46) (2.16,0.39) (1.84,0.25)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(3.35,-0.25) (3.06,-0.38) (2.76,-0.46) (2.47,-0.46) (2.16,-0.39) (1.84,-0.25)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(-5.01,0.00) (-4.70,0.00) (-4.39,0.00) (-4.21,0.00)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(-5.01,1.14) (-4.80,0.91) (-4.58,0.69) (-4.35,0.48) (-4.10,0.25)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(-5.01,-1.14) (-4.80,-0.91) (-4.58,-0.69) (-4.35,-0.48) (-4.10,-0.25)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(-3.84,2.41) (-3.93,2.12) (-3.99,1.83) (-4.02,1.52) (-4.02,1.22) (-4.00,0.91) (-3.95,0.60) (-3.87,0.25)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(-3.84,-2.41) (-3.93,-2.12) (-3.99,-1.83) (-4.02,-1.52) (-4.02,-1.22) (-4.00,-0.91) (-3.95,-0.60) (-3.87,-0.25)};
+            \end{scope}
+            \staafmagneet[2.4]{A}{-2.6,0}{0}
+            \staafmagneet[2.4]{B}{2.6,0}{0}
+            \node at (0,-2.8) {(a) ongelijknamige polen (N tegenover Z)};
+        \end{tikzpicture}
+
+        \vspace{0.5cm}
+        \begin{tikzpicture}
+            \begin{scope}
+                \clip (-5,-2.4) rectangle (5,2.4);
+                \draw[Mveldlijn] plot[smooth] coordinates {(-1.36,-0.26) (-1.32,-0.56) (-1.32,-0.86) (-1.37,-1.16) (-1.46,-1.44) (-1.61,-1.72) (-1.80,-1.96) (-2.03,-2.16) (-2.30,-2.30) (-2.59,-2.38) (-2.90,-2.37) (-3.18,-2.27) (-3.44,-2.10) (-3.64,-1.86) (-3.77,-1.60) (-3.86,-1.30) (-3.90,-1.00) (-3.90,-0.70) (-3.84,-0.25)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(-1.19,-0.25) (-1.01,-0.51) (-0.86,-0.78) (-0.77,-1.06) (-0.73,-1.37) (-0.73,-1.67) (-0.77,-1.98) (-0.87,-2.40)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(-1.00,-0.15) (-0.71,-0.27) (-0.45,-0.43) (-0.26,-0.66) (-0.17,-0.96) (-0.14,-1.26) (-0.13,-1.57) (-0.13,-1.88) (-0.14,-2.19) (-0.15,-2.41)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(-1.00,0.15) (-0.71,0.27) (-0.45,0.43) (-0.26,0.66) (-0.17,0.96) (-0.14,1.26) (-0.13,1.57) (-0.13,1.88) (-0.14,2.19) (-0.15,2.41)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(-1.19,0.25) (-1.01,0.51) (-0.86,0.78) (-0.77,1.06) (-0.73,1.37) (-0.73,1.67) (-0.77,1.98) (-0.87,2.40)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(-1.36,0.26) (-1.32,0.56) (-1.32,0.86) (-1.37,1.16) (-1.46,1.44) (-1.61,1.72) (-1.80,1.96) (-2.03,2.16) (-2.30,2.30) (-2.59,2.38) (-2.90,2.37) (-3.18,2.27) (-3.44,2.10) (-3.64,1.86) (-3.77,1.60) (-3.86,1.30) (-3.90,1.00) (-3.90,0.70) (-3.84,0.25)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(-1.49,0.25) (-1.62,0.53) (-1.77,0.78) (-1.97,1.01) (-2.22,1.18) (-2.52,1.27) (-2.82,1.26) (-3.10,1.14) (-3.33,0.93) (-3.50,0.69) (-3.64,0.42) (-3.71,0.25)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(-1.49,-0.25) (-1.62,-0.53) (-1.77,-0.78) (-1.97,-1.01) (-2.22,-1.18) (-2.52,-1.27) (-2.82,-1.26) (-3.10,-1.14) (-3.33,-0.93) (-3.50,-0.69) (-3.64,-0.42) (-3.71,-0.25)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(-1.86,0.25) (-2.14,0.37) (-2.43,0.44) (-2.74,0.45) (-3.04,0.38) (-3.35,0.25)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(-1.86,-0.25) (-2.14,-0.37) (-2.43,-0.44) (-2.74,-0.45) (-3.04,-0.38) (-3.35,-0.25)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(1.36,-0.26) (1.32,-0.56) (1.32,-0.86) (1.37,-1.16) (1.46,-1.44) (1.61,-1.72) (1.80,-1.96) (2.03,-2.16) (2.29,-2.30) (2.58,-2.38) (2.89,-2.37) (3.18,-2.28) (3.43,-2.11) (3.63,-1.87) (3.77,-1.61) (3.86,-1.31) (3.90,-1.00) (3.90,-0.70) (3.84,-0.25)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(1.19,-0.25) (1.01,-0.51) (0.86,-0.78) (0.77,-1.06) (0.73,-1.37) (0.73,-1.67) (0.77,-1.98) (0.87,-2.40)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(1.00,-0.15) (0.71,-0.27) (0.46,-0.43) (0.26,-0.65) (0.17,-0.95) (0.14,-1.25) (0.13,-1.56) (0.13,-1.86) (0.14,-2.17) (0.15,-2.41)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(1.00,0.15) (0.71,0.27) (0.46,0.43) (0.26,0.65) (0.17,0.95) (0.14,1.25) (0.13,1.56) (0.13,1.86) (0.14,2.17) (0.15,2.41)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(1.19,0.25) (1.01,0.51) (0.86,0.78) (0.77,1.06) (0.73,1.37) (0.73,1.67) (0.77,1.98) (0.87,2.40)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(1.36,0.26) (1.32,0.56) (1.32,0.86) (1.37,1.16) (1.46,1.44) (1.61,1.72) (1.80,1.96) (2.03,2.16) (2.29,2.30) (2.58,2.38) (2.89,2.37) (3.18,2.28) (3.43,2.11) (3.63,1.87) (3.77,1.61) (3.86,1.31) (3.90,1.00) (3.90,0.70) (3.84,0.25)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(1.49,0.25) (1.62,0.53) (1.77,0.78) (1.97,1.01) (2.22,1.18) (2.52,1.27) (2.82,1.26) (3.10,1.14) (3.33,0.93) (3.50,0.69) (3.64,0.42) (3.71,0.25)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(1.49,-0.25) (1.62,-0.53) (1.77,-0.78) (1.97,-1.01) (2.22,-1.18) (2.52,-1.27) (2.82,-1.26) (3.10,-1.14) (3.33,-0.93) (3.50,-0.69) (3.64,-0.42) (3.71,-0.25)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(1.86,0.25) (2.14,0.37) (2.43,0.44) (2.74,0.45) (3.04,0.38) (3.35,0.25)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(1.86,-0.25) (2.14,-0.37) (2.43,-0.44) (2.74,-0.45) (3.04,-0.38) (3.35,-0.25)};
+            \end{scope}
+            \staafmagneet[2.4]{C}{-2.6,0}{0}
+            \staafmagneet[2.4]{D}{2.6,0}{180}
+            \node at (0,-2.8) {(b) gelijknamige polen (N tegenover N)};
+        \end{tikzpicture}
+    \end{center}
+    \caption{Veldlijnen van twee staafmagneten. (a) Tussen ongelijknamige polen lopen de veldlijnen van de ene magneet naar de andere. (b) Tussen gelijknamige polen buigen de veldlijnen van elkaar weg; in het midden is het veld nul.}
+    \label{fig:veldlijnen_twee_magneten}
+\end{figure}
+%---------------------------
+
+\subsection{Homogeen magnetisch veld}
+Tussen de benen van een U-vormige magneet liggen de veldlijnen nagenoeg evenwijdig en op gelijke afstand van elkaar, zie figuur~\ref{fig:homogeen_magnetisch_veld}.
+
+\begin{definition}[foldable=true,title={Homogeen magnetisch veld}]\nl
+    In een \textbf{homogeen magnetisch veld} is de veldvector $\vec{B}$ in elk punt dezelfde: dezelfde grootte, richting en zin. De veldlijnen zijn evenwijdige rechten op gelijke afstand van elkaar.
+\end{definition}
+
+%---------------------------
+\begin{figure}[ht!]
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
+        \begin{tikzpicture}
+            \fill[gray!15] (0,0) rectangle (3,0.7);
+            \fill[red!75!black] (0,0.7) rectangle (0.7,2.7);
+            \fill[gray!30] (2.3,0.7) rectangle (3,2.7);
+            \draw[line width=0.6pt] (0,2.7) -- (0,0) -- (3,0) -- (3,2.7) -- (2.3,2.7) -- (2.3,0.7) -- (0.7,0.7) -- (0.7,2.7) -- cycle;
+            \node[white,font=\bfseries\small] at (0.35,2.3){N};
+            \node[font=\bfseries\small] at (2.65,2.3){Z};
+            \foreach \y in {1.3,1.6,1.9,2.2,2.5}{\draw[Mveldlijn] (0.7,\y) -- (2.3,\y);}
+            \draw[Mveldlijn] (0.5,2.7) .. controls (0.8,3.4) and (2.2,3.4) .. (2.5,2.7);
+            \draw[Mveldlijn] (0.2,2.7) .. controls (0.5,4.0) and (2.5,4.0) .. (2.8,2.7);
+        \end{tikzpicture}
+    \end{center}
+    \caption{Tussen de benen van een U-magneet is het magnetisch veld nagenoeg homogeen.}
+    \label{fig:homogeen_magnetisch_veld}
+\end{figure}
+%---------------------------
+
+\begin{question}
+    Een kleine kompasnaald staat op verschillende plaatsen rond een staafmagneet, zie figuur~\ref{fig:veldlijnen_staafmagneet}. Waar ondervindt de naald het sterkste magnetisch veld?
+
+    \begin{multipleChoice}
+        \choice[correct]{vlak bij een van de polen}
+        \choice{boven het midden van de magneet, op $2\,\mathrm{cm}$ afstand}
+        \choice{ver van de magneet}
+        \choice{overal even sterk}
+    \end{multipleChoice}
+
+    \begin{solution}\nl
+        Bij de polen liggen de veldlijnen het dichtst bij elkaar. Daar is het magnetisch veld het sterkst.
+    \end{solution}
+\end{question}
+
+\section{Het magnetisch veld van de aarde}\label{sec:aardmagnetisme}
+Een kompasnaald richt zich op aarde ongeveer noord-zuid. De aarde gedraagt zich dus zelf als een grote magneet, alsof er een staafmagneet in de aarde zit, zie figuur~\ref{fig:aardmagnetisme}.
+
+Omdat ongelijknamige polen elkaar aantrekken, ligt bij de geografische noordpool (GN) een \textbf{magnetische zuidpool}. Daar wijst de noordpool van een kompasnaald immers naartoe. De magnetische as van de aarde maakt een kleine hoek met de draaias.
+
+%---------------------------
+\begin{figure}[ht!]
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{scope}
+                \clip (-3.6,-3.3) rectangle (3.6,3.3);
+                \draw[Mveldlijn] plot[smooth] coordinates {(0.84,-0.72) (1.13,-0.65) (1.35,-0.45) (1.42,-0.15) (1.32,0.13) (1.05,0.36)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(0.68,-0.87) (0.99,-0.92) (1.29,-0.89) (1.57,-0.75) (1.76,-0.51) (1.83,-0.22) (1.75,0.07) (1.57,0.31) (1.32,0.46) (0.96,0.55)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(0.55,-0.95) (0.83,-1.09) (1.13,-1.18) (1.43,-1.19) (1.72,-1.14) (2.00,-1.01) (2.21,-0.80) (2.35,-0.53) (2.38,-0.23) (2.30,0.06) (2.12,0.32) (1.88,0.51) (1.61,0.63) (1.32,0.70) (0.87,0.67)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(0.46,-1.00) (0.70,-1.20) (0.96,-1.35) (1.25,-1.45) (1.54,-1.51) (1.84,-1.52) (2.15,-1.47) (2.43,-1.36) (2.67,-1.19) (2.87,-0.97) (3.00,-0.69) (3.05,-0.39) (3.00,-0.10) (2.89,0.18) (2.70,0.42) (2.46,0.62) (2.19,0.76) (1.91,0.85) (1.61,0.89) (1.30,0.88) (1.00,0.83) (0.80,0.76)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(-1.05,-0.36) (-1.29,-0.18) (-1.42,0.10) (-1.37,0.40) (-1.17,0.62) (-0.84,0.72)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(-0.96,-0.55) (-1.25,-0.49) (-1.52,-0.34) (-1.73,-0.13) (-1.83,0.15) (-1.79,0.46) (-1.62,0.71) (-1.37,0.86) (-1.07,0.92) (-0.68,0.87)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(-0.87,-0.67) (-1.18,-0.70) (-1.48,-0.67) (-1.77,-0.57) (-2.03,-0.41) (-2.23,-0.18) (-2.36,0.10) (-2.38,0.40) (-2.29,0.68) (-2.10,0.93) (-1.85,1.09) (-1.56,1.18) (-1.26,1.19) (-0.95,1.14) (-0.55,0.95)};
+                \draw[Mveldlijn] plot[smooth] coordinates {(-0.80,-0.76) (-1.09,-0.85) (-1.38,-0.89) (-1.68,-0.88) (-1.99,-0.83) (-2.28,-0.72) (-2.54,-0.56) (-2.76,-0.35) (-2.93,-0.10) (-3.03,0.19) (-3.04,0.50) (-2.96,0.80) (-2.81,1.05) (-2.58,1.26) (-2.31,1.41) (-2.02,1.50) (-1.72,1.52) (-1.41,1.49) (-1.12,1.41) (-0.84,1.28) (-0.58,1.11) (-0.46,1.01)};
+            \end{scope}
+            \shade[ball color=blue!25] (0,0) circle (1.1);
+            \staafmagneet[1.4]{A}{0,0}{-101}
+            \draw[dashed, thick] (0,-1.6) -- (0,1.6) node[above]{GN};
+            \node[below] at (0,-1.6) {GZ};
+        \end{tikzpicture}
+    \end{center}
+    \caption{Het magnetisch veld van de aarde lijkt op dat van een staafmagneet. Bij de geografische noordpool (GN) ligt een magnetische zuidpool. De magnetische as staat iets schuin ten opzichte van de draaias (stippellijn).}
+    \label{fig:aardmagnetisme}
+\end{figure}
+%---------------------------
+
+In België is het magnetisch veld van de aarde ongeveer $48\,\mathrm{\mu T}$. Het veld loopt niet evenwijdig met het aardoppervlak, maar duikt schuin de grond in. Een gewoon kompas kan enkel horizontaal draaien en voelt daardoor alleen de \textbf{horizontale component} van het aardmagnetisch veld. In België is die ongeveer $19\,\mathrm{\mu T}$ en wijst ze naar het noorden.
+
+\begin{remark}[expandable=true,title={Extra: magnetische declinatie}]\nl
+    De magnetische zuidpool van de aarde valt niet samen met de geografische noordpool. Een kompasnaald wijst daarom meestal niet exact naar het geografische noorden. De hoek tussen beide richtingen noemen we de \textbf{magnetische declinatie}. In België is die vandaag ongeveer $2^\circ$ naar het oosten, maar elders op aarde kan ze tientallen graden bedragen. Wie met kaart en kompas navigeert, moet daar rekening mee houden.
+\end{remark}
+
+\begin{remark}[expandable=true,title={Extra: waar komt het aardmagnetisch veld vandaan?}]\nl
+    In de aarde zit geen echte staafmagneet: daarvoor is het binnenin veel te warm (zie de curietemperatuur). De buitenkern van de aarde bestaat uit vloeibaar, gesmolten ijzer en nikkel. Door de hoge temperatuur bevat dat metaal veel vrije elektronen en ionen. Door stromingen in die buitenkern en de draaiing van de aarde bewegen die geladen deeltjes rond. Zoals je verder in dit hoofdstuk ziet, maken bewegende ladingen een magnetisch veld. Uit gesteenten weten we ook dat het magnetisch veld van de aarde in het verleden al vaak is omgepoold.
+\end{remark}
+
+\begin{question}
+    Een wandelaar staat met een kompas op de geografische noordpool. Welke magnetische pool ligt daar in de buurt?
+
+    \begin{multipleChoice}
+        \choice{een magnetische noordpool, want de N-pool van het kompas wijst ernaartoe}
+        \choice[correct]{een magnetische zuidpool, want de N-pool van het kompas wordt ernaartoe aangetrokken}
+        \choice{er ligt geen magnetische pool in de buurt}
+    \end{multipleChoice}
+
+    \begin{solution}\nl
+        De noordpool van de kompasnaald wordt aangetrokken door een ongelijknamige pool. In de buurt van de geografische noordpool ligt dus een magnetische zuidpool.
+    \end{solution}
+\end{question}
+
+\section{Zwaarteveld, elektrisch veld en magnetisch veld}\label{sec:analogie-velden}
+Je kent nu drie soorten velden. Ze beschrijven telkens een kracht die op afstand werkt, en we stellen ze allemaal voor met veldlijnen. Er zijn wel belangrijke verschillen, zie tabel~\ref{tab:analogie_velden}.
+
+\begin{table}[ht!]
+    \begin{center}
+        \begin{tabular}{l l l l}
+            \toprule
+            & zwaarteveld & elektrisch veld & magnetisch veld \\
+            \midrule
+            bron van het veld & massa's & ladingen & bewegende ladingen \\
+            ondervindt een kracht & massa's & ladingen & bewegende ladingen \\
+            symbool, eenheid & $\vec{g}$, $\mathrm{N/kg}$ & $\vec{E}$, $\mathrm{N/C}$ & $\vec{B}$, $\mathrm{T}$ \\
+            veldlijnen & eindigen op massa's & van $+$ naar $-$ & gesloten lussen \\
+            afzonderlijke bron & ja (een massa) & ja ($+$ of $-$) & nee (altijd N en Z) \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+    \caption{Vergelijking tussen het zwaarteveld, het elektrisch veld en het magnetisch veld.}
+    \label{tab:analogie_velden}
+\end{table}
+
+Vergelijk het veld van een staafmagneet (figuur~\ref{fig:veldlijnen_staafmagneet}) met het elektrisch veld van een positieve en een negatieve lading (figuur~\ref{fig:veldlijnen_dipool}). Buiten de bronnen lijken de patronen sterk op elkaar. Het grote verschil zit binnenin: elektrische veldlijnen starten en eindigen op ladingen, magnetische veldlijnen lopen door de magneet verder en vormen gesloten lussen.
+
+\begin{proposition}[foldable=true,title={Bron van het magnetisch veld}]\nl
+    Een magnetisch veld wordt altijd veroorzaakt door \textbf{bewegende ladingen}. In een draad zijn dat de elektronen van de elektrische stroom. In een permanente magneet zijn dat de elektronen in de atomen zelf.
+\end{proposition}
+
+Dat bewegende ladingen de bron zijn van magnetisme, ontdekken we in de volgende secties: een stroom door een draad of een spoel maakt een magnetisch veld, en een spoel geeft een veld dat er precies zo uitziet als dat van een staafmagneet.
+
+\end{document}

@@ -16,8 +16,8 @@ Beschouw een lading $Q$ die van punt $1$ naar punt $2$ beweegt onder invloed van
 
 Uit de wet van behoud van energie weten we dat $E_{\text{pot}}(1) + E_{\text{kin}}(1) = E_{\text{pot}}(2) + E_{\text{kin}}(2)$, en dus $E_{\text{pot}}(1) - E_{\text{pot}}(2) = E_{\text{kin}}(2) - E_{\text{kin}}(1)$.
 
-\begin{theorem}[title={Betekenis van de spanning}]\nl
-De spanning $U_{12}$ tussen twee punten $1$ en $2$ geeft de verandering van de kinetische energie per eenheid van lading, voor een lading die van $1$ naar $2$ beweegt:
+\begin{proposition}[foldable=true,title={Betekenis van de spanning}]\nl
+De spanning $U_{12}$ tussen twee punten $1$ en $2$ geeft de verandering van de kinetische energie\footnote{formule kinetische energie: $E_{\text{kin}} = \frac{1}{2} m v^2$} per eenheid van lading, voor een lading die van $1$ naar $2$ beweegt:
 \begin{equation}\label{eq:spanning_energie}
     U_{12} = \frac{\Delta E_{\text{kin}, 1 \to 2}}{Q}
 \end{equation}
@@ -25,7 +25,7 @@ Ofwel, gebruik makend van $W = \Delta E_{\text{kin}}$ (arbeid-energiestelling):
 \begin{equation}\label{eq:arbeid_spanning}
     W = Q \cdot U_{12}
 \end{equation}
-\end{theorem}
+\end{proposition}
 
 \begin{example}[foldable=true,title={Voorbeeld: energie geleverd door een batterij}]\nl
 Een batterij van $12 \, \mathrm{V}$ verplaatst een lading van $1 \, \mathrm{C}$ van de ene pool naar de andere. Hoeveel energie komt daarbij vrij?
@@ -46,7 +46,7 @@ Er komt dus $12 \, \mathrm{J}$ energie vrij per coulomb lading die van de ene po
 \end{solution}
 \end{example}
 
-\begin{remark}[title={In de praktijk}]\nl
+\begin{remark}[expandable=true,title={In de praktijk}]\nl
 In een echte geleider botsen de vrije elektronen voortdurend tegen de roosterionen. Hierdoor wordt de kinetische energie die de elektronen winnen, grotendeels omgezet in warmte, in plaats van dat de elektronen steeds sneller blijven bewegen.
 \end{remark}
 
@@ -62,6 +62,20 @@ In een echte geleider botsen de vrije elektronen voortdurend tegen de roosterion
 
     \begin{solution}\nl
         $W = Q \cdot U = 2{,}0 \, \mathrm{C} \cdot 6{,}0 \, \mathrm{V} = 12 \, \mathrm{J}$.
+    \end{solution}
+\end{question}
+
+\begin{question}
+    Een negatieve lading beweegt van punt $1$ naar punt $2$, waarbij de spanning $U_{12} = +5{,}0 \, \mathrm{V}$. Is de arbeid die het elektrisch veld op de lading verricht positief of negatief?
+
+    \begin{multipleChoice}
+        \choice{Positief, want de spanning is positief.}
+        \choice[correct]{Negatief, want $W = Q \cdot U_{12}$ en $Q$ is negatief.}
+        \choice{Nul, want de lading beweegt.}
+    \end{multipleChoice}
+
+    \begin{solution}\nl
+        Volgens vergelijking~\ref{eq:arbeid_spanning} is $W = Q \cdot U_{12}$. Met $U_{12} > 0$ en $Q < 0$ is $W < 0$: het veld verricht negatieve arbeid, de lading beweegt tegen het veld in.
     \end{solution}
 \end{question}
 

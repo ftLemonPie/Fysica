@@ -1,0 +1,226 @@
+\documentclass{ximera}
+%geschreven 9/11/26
+\title{Vraagstukken het magnetisch veld: basisoefeningen}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+    Basisoefeningen op het magnetisch veld van een rechte geleider, een spoel en een spoel met kern.
+\end{abstract}
+\maketitle
+
+\section{Basisoefeningen het magnetisch veld}
+
+%———————————————————————————————————————
+% BASIS 1: B van een rechte geleider
+\begin{exercise}
+    Door een lange, rechte draad loopt een stroom van $12\,\mathrm{A}$. Bereken het magnetisch veld op $30\,\mathrm{mm}$ van de draad.
+
+    \[ B = \answer[tolerance=2,onlineshowanswerbutton]{80} \, \mathrm{\mu T} \]
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & I = 12\,\mathrm{A} & & r = 30\,\mathrm{mm} = 3{,}0 \cdot 10^{-2}\,\mathrm{m}
+        \end{align*}
+
+        \underline{Gevraagd:} $B$
+
+        \underline{Oplossing:} We gebruiken het veld van een rechte stroomvoerende geleider.
+        \begin{align*}
+            B &= \frac{\mu_0 \cdot I}{2\pi \cdot r} = \frac{4\pi \cdot 10^{-7}\,\mathrm{T\cdot m/A} \cdot 12\,\mathrm{A}}{2\pi \cdot 3{,}0 \cdot 10^{-2}\,\mathrm{m}} = \boxed{8{,}0 \cdot 10^{-5}\,\mathrm{T}}
+        \end{align*}
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% BASIS 2: afstand r berekenen
+\begin{exercise}
+    Door een rechte hoogspanningskabel loopt een stroom van $30\,\mathrm{A}$. Op welke afstand van de kabel is het magnetisch veld $50\,\mathrm{\mu T}$, ongeveer even groot als het magnetisch veld van de aarde?
+
+    \[ r = \answer[tolerance=0.003,onlineshowanswerbutton]{0.12} \, \mathrm{m} \]
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & I = 30\,\mathrm{A} & & B = 50\,\mathrm{\mu T} = 5{,}0 \cdot 10^{-5}\,\mathrm{T}
+        \end{align*}
+
+        \underline{Gevraagd:} $r$
+
+        \underline{Oplossing:} We vormen het veld van een rechte geleider om naar $r$.
+        \begin{align*}
+            B = \frac{\mu_0 \cdot I}{2\pi \cdot r} \quad \Rightarrow \quad r &= \frac{\mu_0 \cdot I}{2\pi \cdot B} = \frac{4\pi \cdot 10^{-7}\,\mathrm{T\cdot m/A} \cdot 30\,\mathrm{A}}{2\pi \cdot 5{,}0 \cdot 10^{-5}\,\mathrm{T}} = \boxed{1{,}2 \cdot 10^{-1}\,\mathrm{m}}
+        \end{align*}
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% BASIS 3: stroom I berekenen
+\begin{exercise}
+    Op $15\,\mathrm{mm}$ van een rechte draad meet je een magnetisch veld van $0{,}20\,\mathrm{mT}$. Bereken de stroomsterkte in de draad.
+
+    \[ I = \answer[tolerance=0.4,onlineshowanswerbutton]{15} \, \mathrm{A} \]
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & r = 15\,\mathrm{mm} = 1{,}5 \cdot 10^{-2}\,\mathrm{m} & & B = 0{,}20\,\mathrm{mT} = 2{,}0 \cdot 10^{-4}\,\mathrm{T}
+        \end{align*}
+
+        \underline{Gevraagd:} $I$
+
+        \underline{Oplossing:} We vormen het veld van een rechte geleider om naar $I$.
+        \begin{align*}
+            I &= \frac{2\pi \cdot r \cdot B}{\mu_0} = \frac{2\pi \cdot 1{,}5 \cdot 10^{-2}\,\mathrm{m} \cdot 2{,}0 \cdot 10^{-4}\,\mathrm{T}}{4\pi \cdot 10^{-7}\,\mathrm{T\cdot m/A}} = \boxed{1{,}5 \cdot 10^{1}\,\mathrm{A}}
+        \end{align*}
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% BASIS 4: B in een spoel
+\begin{exercise}
+    Een spoel met lengte $25\,\mathrm{cm}$ heeft $800$ windingen. Er loopt een stroom van $1{,}5\,\mathrm{A}$ door. Bereken het magnetisch veld in de spoel.
+
+    \[ B = \answer[tolerance=0.2,onlineshowanswerbutton]{6.0} \, \mathrm{mT} \]
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & N = 800 & & \ell = 25\,\mathrm{cm} = 0{,}25\,\mathrm{m} & & I = 1{,}5\,\mathrm{A}
+        \end{align*}
+
+        \underline{Gevraagd:} $B$
+
+        \underline{Oplossing:} We gebruiken het veld in een spoel.
+        \begin{align*}
+            B &= \frac{\mu_0 \cdot N \cdot I}{\ell} = \frac{4\pi \cdot 10^{-7}\,\mathrm{T\cdot m/A} \cdot 800 \cdot 1{,}5\,\mathrm{A}}{0{,}25\,\mathrm{m}} = \boxed{6{,}0 \cdot 10^{-3}\,\mathrm{T}}
+        \end{align*}
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% BASIS 5: stroom in een spoel
+\begin{exercise}
+    Een spoel van $30\,\mathrm{cm}$ lang heeft $1200$ windingen. Welke stroom moet door de spoel lopen om binnenin een magnetisch veld van $10\,\mathrm{mT}$ te krijgen?
+
+    \[ I = \answer[tolerance=0.05,onlineshowanswerbutton]{2.0} \, \mathrm{A} \]
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & N = 1200 & & \ell = 30\,\mathrm{cm} = 0{,}30\,\mathrm{m} & & B = 10\,\mathrm{mT} = 1{,}0 \cdot 10^{-2}\,\mathrm{T}
+        \end{align*}
+
+        \underline{Gevraagd:} $I$
+
+        \underline{Oplossing:} We vormen het veld in een spoel om naar $I$.
+        \begin{align*}
+            I &= \frac{B \cdot \ell}{\mu_0 \cdot N} = \frac{1{,}0 \cdot 10^{-2}\,\mathrm{T} \cdot 0{,}30\,\mathrm{m}}{4\pi \cdot 10^{-7}\,\mathrm{T\cdot m/A} \cdot 1200} = \boxed{2{,}0\,\mathrm{A}}
+        \end{align*}
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% BASIS 6: aantal windingen
+\begin{exercise}
+    Je wil een spoel maken van $12\,\mathrm{cm}$ lang die bij een stroom van $500\,\mathrm{mA}$ een magnetisch veld van $2{,}1\,\mathrm{mT}$ geeft. Hoeveel windingen heb je nodig?
+
+    \[ N = \answer[tolerance=10,onlineshowanswerbutton]{400} \]
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & \ell = 12\,\mathrm{cm} = 0{,}12\,\mathrm{m} & & I = 500\,\mathrm{mA} = 0{,}500\,\mathrm{A} & & B = 2{,}1\,\mathrm{mT} = 2{,}1 \cdot 10^{-3}\,\mathrm{T}
+        \end{align*}
+
+        \underline{Gevraagd:} $N$
+
+        \underline{Oplossing:} We vormen het veld in een spoel om naar $N$.
+        \begin{align*}
+            N &= \frac{B \cdot \ell}{\mu_0 \cdot I} = \frac{2{,}1 \cdot 10^{-3}\,\mathrm{T} \cdot 0{,}12\,\mathrm{m}}{4\pi \cdot 10^{-7}\,\mathrm{T\cdot m/A} \cdot 0{,}500\,\mathrm{A}} = \boxed{4{,}0 \cdot 10^{2}}
+        \end{align*}
+        Je hebt ongeveer $400$ windingen nodig.
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% BASIS 7: windingsdichtheid
+\begin{exercise}
+    Op een lange spoel liggen $20$ windingen per centimeter. Er loopt een stroom van $3{,}0\,\mathrm{A}$ door. Bereken het magnetisch veld in de spoel.
+
+    \[ B = \answer[tolerance=0.2,onlineshowanswerbutton]{7.5} \, \mathrm{mT} \]
+
+    \begin{hint}
+        Je kent $N$ en $\ell$ niet afzonderlijk. Welk quotiënt uit de formule ken je wel? Zet het om naar windingen per meter.
+    \end{hint}
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & \frac{N}{\ell} = 20\,\mathrm{cm^{-1}} = 2{,}0 \cdot 10^{3}\,\mathrm{m^{-1}} & & I = 3{,}0\,\mathrm{A}
+        \end{align*}
+
+        \underline{Gevraagd:} $B$
+
+        \underline{Oplossing:} In de formule voor het veld in een spoel komt enkel de windingsdichtheid $N/\ell$ voor.
+        \begin{align*}
+            B &= \mu_0 \cdot \frac{N}{\ell} \cdot I = 4\pi \cdot 10^{-7}\,\mathrm{T\cdot m/A} \cdot 2{,}0 \cdot 10^{3}\,\mathrm{m^{-1}} \cdot 3{,}0\,\mathrm{A} = \boxed{7{,}5 \cdot 10^{-3}\,\mathrm{T}}
+        \end{align*}
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% BASIS 8: spoel met kern
+\begin{exercise}
+    Het magnetisch veld in een lege spoel is $4{,}0\,\mathrm{mT}$. Je schuift een kern met relatieve permeabiliteit $350$ in de spoel. Bereken het nieuwe magnetisch veld in de kern.
+
+    \[ B = \answer[tolerance=0.04,onlineshowanswerbutton]{1.4} \, \mathrm{T} \]
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & B_{\text{zonder kern}} = 4{,}0\,\mathrm{mT} = 4{,}0 \cdot 10^{-3}\,\mathrm{T} & & \mu_r = 350
+        \end{align*}
+
+        \underline{Gevraagd:} $B_{\text{met kern}}$
+
+        \underline{Oplossing:} Volgens de definitie van de relatieve permeabiliteit vermenigvuldigt de kern het veld met $\mu_r$.
+        \begin{align*}
+            B_{\text{met kern}} &= \mu_r \cdot B_{\text{zonder kern}} = 350 \cdot 4{,}0 \cdot 10^{-3}\,\mathrm{T} = \boxed{1{,}4\,\mathrm{T}}
+        \end{align*}
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% BASIS 9: relatieve permeabiliteit bepalen
+\begin{exercise}
+    In een spoel zonder kern meet je een magnetisch veld van $2{,}5\,\mathrm{mT}$. Met een ijzeren kern in de spoel meet je $0{,}90\,\mathrm{T}$. Bereken de relatieve permeabiliteit van het ijzer.
+
+    \[ \mu_r = \answer[tolerance=9,onlineshowanswerbutton]{360} \]
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & B_{\text{zonder kern}} = 2{,}5\,\mathrm{mT} = 2{,}5 \cdot 10^{-3}\,\mathrm{T} & & B_{\text{met kern}} = 0{,}90\,\mathrm{T}
+        \end{align*}
+
+        \underline{Gevraagd:} $\mu_r$
+
+        \underline{Oplossing:} We gebruiken de definitie van de relatieve permeabiliteit.
+        \begin{align*}
+            \mu_r &= \frac{B_{\text{met kern}}}{B_{\text{zonder kern}}} = \frac{0{,}90\,\mathrm{T}}{2{,}5 \cdot 10^{-3}\,\mathrm{T}} = \boxed{3{,}6 \cdot 10^{2}}
+        \end{align*}
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+\end{document}

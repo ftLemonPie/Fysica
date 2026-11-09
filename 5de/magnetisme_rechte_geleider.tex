@@ -1,0 +1,295 @@
+\documentclass{ximera}
+%geschreven 9/11/26
+\title{Het magnetisch veld van een rechte stroomvoerende geleider}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+    De proef van Oersted, de veldlijnen bij een rechte stroomvoerende geleider, de rechterhandregel en de grootte van het magnetisch veld. Superpositie van magnetische velden.
+\end{abstract}
+\maketitle
+
+\section{De proef van Oersted}\label{sec:veld-rechte-geleider}
+In 1820 merkte de Deense natuurkundige Hans Christian Oersted tijdens een les iets vreemds op: een kompasnaald die vlak bij een stroomdraad lag, draaide weg zodra er stroom door de draad liep. Keerde hij de stroomzin om, dan draaide de naald naar de andere kant. Schakelde hij de stroom uit, dan richtte de naald zich weer naar het noorden.
+
+\begin{proposition}[foldable=true,title={Besluit uit de proef van Oersted}]\nl
+    Een \textbf{elektrische stroom} veroorzaakt een \textbf{magnetisch veld}. De zin van het veld hangt af van de zin van de stroom.
+\end{proposition}
+
+Dit was de eerste aanwijzing dat elektriciteit en magnetisme nauw samenhangen. Een stroom is niets anders dan ladingen die bewegen: bewegende ladingen maken een magnetisch veld.
+
+\begin{remark}[expandable=true,title={Notatie: in en uit het blad}]\nl
+    Een draad die loodrecht op het blad staat, tekenen we als een cirkeltje. Loopt de stroom \textbf{uit het blad} naar je toe, dan tekenen we een puntje: \tikz[baseline=-0.6ex]{\stroomuit{a}{0,0}}. Je ziet de punt van een pijl die naar je toe komt. Loopt de stroom \textbf{in het blad}, van je weg, dan tekenen we een kruisje: \tikz[baseline=-0.6ex]{\stroomin{b}{0,0}}. Je ziet de veren aan het uiteinde van een pijl die van je wegvliegt.
+\end{remark}
+
+\section{Veldlijnen bij een rechte stroomvoerende geleider}\label{sec:veldlijnen-rechte-geleider}
+Steek een verticale draad door een horizontaal karton en strooi er ijzervijlsel op. Laat je een grote stroom door de draad lopen, dan vormt het vijlsel cirkels rond de draad. Kompasnaaldjes op het karton tonen de zin van de veldlijnen, zie figuur~\ref{fig:veld_rechte_geleider}.
+
+%---------------------------
+\begin{figure}[ht!]
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
+        \begin{tikzpicture}
+            % (a) perspectief
+            \begin{scope}
+                \foreach \r in {0.6,1.1,1.6}{\draw[Mveldlijn] (135:{\r} and {0.35*\r}) arc (135:495:{\r} and {0.35*\r});}
+                \draw[line width=3pt, white] (0,-2) -- (0,2.2);
+                \draw[line width=1.5pt, gray!70!black] (0,-2) -- (0,2.2);
+                \draw[stroom] (0,1.0) -- (0,1.9) node[right]{$I$};
+                \node[teal!100!black] at (1.9,-0.3) {$B$};
+                \node at (0,-2.5) {(a)};
+            \end{scope}
+            % (b) bovenaanzicht, stroom uit het blad
+            \begin{scope}[xshift=4.6cm]
+                \foreach \r in {0.6,1.1,1.6}{\draw[Mveldlijn] (\r,0) arc (0:360:\r);}
+                \stroomuit{I1}{0,0}
+                \node[above right] at (I1.north east) {$I$};
+                \node at (0,-2.5) {(b)};
+            \end{scope}
+            % (c) bovenaanzicht, stroom in het blad
+            \begin{scope}[xshift=9cm]
+                \foreach \r in {0.6,1.1,1.6}{\draw[Mveldlijn] (\r,0) arc (0:-360:\r);}
+                \stroomin{I2}{0,0}
+                \node[above right] at (I2.north east) {$I$};
+                \node at (0,-2.5) {(c)};
+            \end{scope}
+        \end{tikzpicture}
+    \end{center}
+    \caption{Veldlijnen bij een rechte stroomvoerende geleider. (a) Ruimtelijk beeld: de veldlijnen zijn cirkels in vlakken loodrecht op de draad. (b) Bovenaanzicht met de stroom uit het blad: de veldlijnen draaien in tegenwijzerzin. (c) Bovenaanzicht met de stroom in het blad: de veldlijnen draaien in wijzerzin.}
+    \label{fig:veld_rechte_geleider}
+\end{figure}
+%---------------------------
+
+\begin{proposition}[foldable=true,title={Veldlijnen bij een rechte stroomvoerende geleider}]\nl
+    De magnetische veldlijnen van een rechte stroomvoerende geleider zijn \textbf{concentrische cirkels} met de draad als middelpunt. Ze liggen in vlakken \textbf{loodrecht op de draad}. Dicht bij de draad liggen de veldlijnen dichter bij elkaar: daar is het veld sterker.
+\end{proposition}
+
+De zin van de veldlijnen vind je met een eenvoudige regel.
+
+\begin{proposition}[foldable=true,title={Rechterhandregel voor een rechte geleider}]\nl
+    Omklem de draad met je \textbf{rechterhand}, zodat je \textbf{duim} in de zin van de (conventionele) \textbf{stroom} wijst. Je \textbf{gekromde vingers} geven dan de zin van de \textbf{magnetische veldlijnen}.
+\end{proposition}
+
+\begin{remark}[expandable=true,title={Kurkentrekkerregel}]\nl
+    Je kan de zin ook onthouden met een kurkentrekker (of een schroef met gewone schroefdraad). Draai je de kurkentrekker zo dat hij vooruitgaat in de zin van de stroom, dan geeft de draaizin de zin van de veldlijnen.
+\end{remark}
+
+\begin{question}
+    In een bovenaanzicht loopt de stroom door een rechte draad \textbf{uit het blad}. Punt $P$ ligt rechts van de draad. Welke zin heeft het magnetisch veld in $P$?
+
+    \begin{multipleChoice}
+        \choice[correct]{naar boven in het blad}
+        \choice{naar onder in het blad}
+        \choice{naar rechts, weg van de draad}
+        \choice{uit het blad, evenwijdig met de stroom}
+    \end{multipleChoice}
+
+    \begin{hint}
+        Richt je rechterduim naar je toe, uit het blad. In welke zin draaien je vingers?
+    \end{hint}
+
+    \begin{solution}\nl
+        Met de duim uit het blad krullen de vingers in tegenwijzerzin, zie figuur~\ref{fig:veld_rechte_geleider}(b). Aan de rechterkant van een cirkel in tegenwijzerzin wijst de raaklijn naar boven. Het veld staat altijd loodrecht op de verbindingslijn met de draad, dus nooit naar de draad toe of ervan weg.
+    \end{solution}
+\end{question}
+
+\section{Grootte van het magnetisch veld}\label{sec:grootte-B-rechte-geleider}
+Metingen tonen dat het magnetisch veld rond een lange, rechte draad groter is als de stroom groter is, en kleiner als je verder van de draad gaat. Het veld is recht evenredig met de stroomsterkte $I$ en omgekeerd evenredig met de afstand $r$ tot de draad, zie figuur~\ref{fig:B_rechte_geleider}.
+
+%---------------------------
+\begin{figure}[ht!]
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
+        \begin{tikzpicture}
+            \draw[Mveldlijn] (2,0) arc (0:360:2);
+            \stroomuit{I}{0,0}
+            \node[above left] at (I.north west) {$I$};
+            \coordinate (P) at (-30:2);
+            \draw[dashed] (I) -- (P) node[midway, below left]{$r$};
+            \fill (P) circle (0.6mm) node[below right]{$P$};
+            \draw[Mvector] (P) -- ++(60:1.3) node[right]{$\vec{B}$};
+        \end{tikzpicture}
+    \end{center}
+    \caption{Het magnetisch veld in een punt $P$ op afstand $r$ van een rechte stroomvoerende geleider raakt aan de cirkelvormige veldlijn door $P$.}
+    \label{fig:B_rechte_geleider}
+\end{figure}
+%---------------------------
+
+\begin{proposition}[foldable=true,title={Magnetisch veld bij een rechte stroomvoerende geleider}]\nl
+    De grootte van het magnetisch veld op een afstand $r$ van een lange, rechte geleider met stroom $I$ is:
+    \begin{equation}\label{eq:B_rechte_geleider}
+        B = \frac{\mu_0 \cdot I}{2\pi \cdot r}
+    \end{equation}
+    met $\mu_0 = 4\pi \cdot 10^{-7}\,\mathrm{T\cdot m/A} = 1{,}257 \cdot 10^{-6}\,\mathrm{T\cdot m/A}$, de \textbf{magnetische permeabiliteit van vacuüm}. Voor lucht mag je dezelfde waarde gebruiken.
+\end{proposition}
+
+\begin{remark}[expandable=true,title={Vergelijk met een puntlading}]\nl
+    Het elektrisch veld van een puntlading is omgekeerd evenredig met $r^2$. Het magnetisch veld van een rechte draad is omgekeerd evenredig met $r$: neemt de afstand tot de draad twee keer toe, dan wordt het veld maar twee keer kleiner, niet vier keer.
+\end{remark}
+
+\begin{remark}[expandable=true,title={Extra: waar komt de noemer van de formule vandaan?}]\nl
+    De noemer $2\pi r$ is de omtrek van de cirkelvormige veldlijn door $P$. De wet van Ampère, die verder gaat dan deze cursus, zegt dat het veld vermenigvuldigd met de lengte van zo'n gesloten veldlijn gelijk is aan $\mu_0 \cdot I$: $B \cdot 2\pi r = \mu_0 \cdot I$. Daaruit volgt meteen vergelijking~\eqref{eq:B_rechte_geleider}.
+\end{remark}
+
+%---------------------------
+\begin{example}[foldable=true,title={Magnetisch veld bij een laskabel}]\nl
+    Door de rechte kabel van een lasapparaat loopt een stroom van $180\,\mathrm{A}$. Bereken het magnetisch veld op $4{,}0\,\mathrm{cm}$ van de kabel en vergelijk met het magnetisch veld van de aarde ($48\,\mathrm{\mu T}$).
+
+    \begin{remark}[title={Denkstap}]\nl
+        De kabel is lang en recht, dus gebruik je het veld van een rechte geleider. Verwacht je een groot of een klein veld? De stroom is groot en het punt ligt dicht bij de draad: het veld zal veel groter zijn dan het aardveld.
+    \end{remark}
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & I = 180\,\mathrm{A} & & r = 4{,}0\,\mathrm{cm} = 4{,}0 \cdot 10^{-2}\,\mathrm{m} & & \mu_0 = 4\pi \cdot 10^{-7}\,\mathrm{T\cdot m/A}
+        \end{align*}
+
+        \underline{Gevraagd:} $B$
+
+        \underline{Oplossing:} We gebruiken het veld van een rechte stroomvoerende geleider, vergelijking~\eqref{eq:B_rechte_geleider}.
+        \begin{align*}
+            B &= \frac{\mu_0 \cdot I}{2\pi \cdot r} = \frac{4\pi \cdot 10^{-7}\,\mathrm{T\cdot m/A} \cdot 180\,\mathrm{A}}{2\pi \cdot 4{,}0 \cdot 10^{-2}\,\mathrm{m}} = \boxed{9{,}0 \cdot 10^{-4}\,\mathrm{T}}
+        \end{align*}
+        Dat is $0{,}90\,\mathrm{mT}$, ongeveer $19$ keer het magnetisch veld van de aarde. Een kompas vlak bij de laskabel wijst dus niet meer naar het noorden.
+    \end{solution}
+\end{example}
+%---------------------------
+
+\begin{question}
+    Op $5\,\mathrm{cm}$ van een rechte stroomvoerende draad is het magnetisch veld $B$. Hoe groot is het veld op $10\,\mathrm{cm}$ van de draad?
+
+    \begin{multipleChoice}
+        \choice{$2B$}
+        \choice[correct]{$B/2$}
+        \choice{$B/4$}
+        \choice{$B$, het veld hangt niet af van de afstand}
+    \end{multipleChoice}
+
+    \begin{solution}\nl
+        Het veld is omgekeerd evenredig met de afstand $r$. Als $r$ twee keer groter wordt, wordt $B$ twee keer kleiner.
+    \end{solution}
+\end{question}
+
+\section{Superpositie van magnetische velden}\label{sec:superpositie-B}
+Net als bij het elektrisch veld tellen magnetische velden van verschillende bronnen \textbf{vectorieel} op.
+
+\begin{proposition}[foldable=true,title={Superpositiebeginsel}]\nl
+    Het resulterend magnetisch veld in een punt is de vectoriële som van de velden van alle bronnen:
+    \begin{equation*}
+        \vec{B} = \vec{B}_1 + \vec{B}_2 + \dots
+    \end{equation*}
+\end{proposition}
+
+We beperken ons tot twee eenvoudige gevallen. Liggen de velden \textbf{op één lijn}, dan kies je een positieve zin en tel je algebraïsch op. Staan de velden \textbf{loodrecht} op elkaar, dan vind je de grootte met de stelling van Pythagoras.
+
+%---------------------------
+\begin{example}[foldable=true,title={Kompas naast een verticale stroomkabel}]\nl
+    In een technische schacht loopt een verticale kabel met een stroom van $25\,\mathrm{A}$ naar boven. Een kompas ligt op $20\,\mathrm{cm}$ ten noorden van de kabel. De horizontale component van het aardmagnetisch veld is $19\,\mathrm{\mu T}$ en wijst naar het noorden.
+    Bepaal het resulterend horizontaal magnetisch veld bij het kompas, en de hoek waarover de kompasnaald afwijkt van het noorden.
+
+    \begin{remark}[title={Denkstap}]\nl
+        Teken eerst een bovenaanzicht. De stroom loopt naar boven, in het bovenaanzicht dus uit het blad. Met de rechterhandregel vind je de zin van $\vec{B}_{\text{draad}}$. Staat dat veld loodrecht op het aardveld, dan kan je Pythagoras gebruiken.
+    \end{remark}
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & I = 25\,\mathrm{A} & & r = 20\,\mathrm{cm} = 0{,}20\,\mathrm{m} & & B_{\text{aarde}} = 19\,\mathrm{\mu T} = 1{,}9 \cdot 10^{-5}\,\mathrm{T}
+        \end{align*}
+
+        \underline{Gevraagd:} $B$ en de afwijking $\alpha$ van de kompasnaald
+
+        \underline{Oplossing:}
+
+        \begin{center}
+            \begin{tikzpicture}
+                % bovenaanzicht: noorden naar boven
+                \stroomuit{K}{0,0}
+                \node[below] at (K.south) {kabel};
+                \draw[Mveldlijn] (2,0) arc (0:360:2);
+                \coordinate (P) at (0,2);
+                \fill (P) circle (0.6mm);
+                \draw[Mvectorcomponent] (P) -- ++(-1.3,0) coordinate (B1) node[below left]{$\vec{B}_{\text{draad}}$};
+                \draw[Mvectorcomponent] (P) -- ++(0,1.0) coordinate (B2) node[right]{$\vec{B}_{\text{aarde}}$};
+                \addvectors[Mvector]{P}{B1}{B2}{$\vec{B}$}
+                \draw[dashed] (K) -- (P) node[midway, right]{$r$};
+                \draw (P) ++(90:0.6) arc (90:142.5:0.6);
+                \node at ($(P)+(116:0.85)$) {$\alpha$};
+                % windroos
+                \draw[-{Latex[length=2mm]}, draw=black!50, text=black!50] (3,1) -- (3,1.8) node[above]{N};
+                \draw[-{Latex[length=2mm]}, draw=black!50, text=black!50] (3,1) -- (3.8,1) node[right]{O};
+                \node[right] at (2.6,-1.6) {Schets (niet op schaal)};
+            \end{tikzpicture}
+        \end{center}
+
+        Het veld van de kabel berekenen we met vergelijking~\eqref{eq:B_rechte_geleider}:
+        \begin{align*}
+            B_{\text{draad}} &= \frac{\mu_0 \cdot I}{2\pi \cdot r} = \frac{4\pi \cdot 10^{-7}\,\mathrm{T\cdot m/A} \cdot 25\,\mathrm{A}}{2\pi \cdot 0{,}20\,\mathrm{m}} = 2{,}5 \cdot 10^{-5}\,\mathrm{T}
+        \end{align*}
+        De duim van je rechterhand wijst uit het blad, de vingers krullen in tegenwijzerzin. Ten noorden van de kabel wijst $\vec{B}_{\text{draad}}$ dus naar het \textbf{westen}, loodrecht op $\vec{B}_{\text{aarde}}$. Met de stelling van Pythagoras:
+        \begin{align*}
+            B &= \sqrt{B_{\text{aarde}}^2 + B_{\text{draad}}^2} = \sqrt{(1{,}9 \cdot 10^{-5}\,\mathrm{T})^2 + (2{,}5 \cdot 10^{-5}\,\mathrm{T})^2} = \boxed{3{,}1 \cdot 10^{-5}\,\mathrm{T}}
+        \end{align*}
+        De kompasnaald richt zich volgens $\vec{B}$. De afwijking ten opzichte van het noorden volgt uit de rechthoekige driehoek:
+        \begin{align*}
+            \tan \alpha &= \frac{B_{\text{draad}}}{B_{\text{aarde}}} = \frac{2{,}5 \cdot 10^{-5}\,\mathrm{T}}{1{,}9 \cdot 10^{-5}\,\mathrm{T}} = 1{,}3 \quad \Rightarrow \quad \boxed{\alpha = 53^\circ}
+        \end{align*}
+        De kompasnaald wijkt $53^\circ$ af van het noorden, naar het westen.
+    \end{solution}
+\end{example}
+%---------------------------
+
+%---------------------------
+\begin{example}[foldable=true,title={Twee evenwijdige draden}]\nl
+    Twee lange, evenwijdige draden staan loodrecht op het blad, op $12\,\mathrm{cm}$ van elkaar. Door draad 1 loopt een stroom van $8{,}0\,\mathrm{A}$ en door draad 2 een stroom van $4{,}0\,\mathrm{A}$, beide uit het blad. Punt $P$ ligt tussen de draden, op $4{,}0\,\mathrm{cm}$ van draad 1. Bepaal het resulterend magnetisch veld in $P$.
+
+    \begin{center}
+        \begin{tikzpicture}
+            \stroomuit{D1}{0,0}\node[below=2mm] at (D1) {$I_1$};
+            \stroomuit{D2}{6,0}\node[below=2mm] at (D2) {$I_2$};
+            \fill (2,0) circle (0.6mm) node[below=1mm]{$P$};
+            \draw[|-|] (0,0.8) -- (2,0.8) node[midway, above]{$4{,}0\,\mathrm{cm}$};
+            \draw[|-|] (0,1.6) -- (6,1.6) node[midway, above]{$12\,\mathrm{cm}$};
+        \end{tikzpicture}
+    \end{center}
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & I_1 = 8{,}0\,\mathrm{A} & & r_1 = 4{,}0\,\mathrm{cm} = 4{,}0 \cdot 10^{-2}\,\mathrm{m} \\
+            & I_2 = 4{,}0\,\mathrm{A} & & r_2 = 12\,\mathrm{cm} - 4{,}0\,\mathrm{cm} = 8{,}0 \cdot 10^{-2}\,\mathrm{m}
+        \end{align*}
+
+        \underline{Gevraagd:} $\vec{B}$ in $P$
+
+        \underline{Oplossing:} We berekenen eerst het veld van elke draad afzonderlijk met vergelijking~\eqref{eq:B_rechte_geleider}.
+        \begin{align*}
+            B_1 &= \frac{\mu_0 \cdot I_1}{2\pi \cdot r_1} = \frac{4\pi \cdot 10^{-7}\,\mathrm{T\cdot m/A} \cdot 8{,}0\,\mathrm{A}}{2\pi \cdot 4{,}0 \cdot 10^{-2}\,\mathrm{m}} = 4{,}0 \cdot 10^{-5}\,\mathrm{T} \\
+            B_2 &= \frac{\mu_0 \cdot I_2}{2\pi \cdot r_2} = \frac{4\pi \cdot 10^{-7}\,\mathrm{T\cdot m/A} \cdot 4{,}0\,\mathrm{A}}{2\pi \cdot 8{,}0 \cdot 10^{-2}\,\mathrm{m}} = 1{,}0 \cdot 10^{-5}\,\mathrm{T}
+        \end{align*}
+        Beide stromen lopen uit het blad, dus beide veldlijnen draaien in tegenwijzerzin. $P$ ligt rechts van draad 1: $\vec{B}_1$ wijst naar boven. $P$ ligt links van draad 2: $\vec{B}_2$ wijst naar onder.
+
+        \begin{center}
+            \begin{tikzpicture}
+                \stroomuit{D1}{0,0}
+                \stroomuit{D2}{6,0}
+                \coordinate (P) at (2,0);
+                \fill (P) circle (0.6mm) node[below left]{$P$};
+                \draw[Mvectorcomponent] (P) -- ++(0,1.6) node[left]{$\vec{B}_1$};
+                \draw[Mvectorcomponent] ($(P)+(0.3,0)$) -- ++(0,-0.4) node[right]{$\vec{B}_2$};
+                \draw[positie, draw=black!50, text=black!50] (4,0.5) -- (4,1.5) node[above]{$+$};
+                \node[right] at (4.3,-0.8) {Schets (niet op schaal)};
+            \end{tikzpicture}
+        \end{center}
+
+        De velden liggen op één lijn. We kiezen naar boven als positieve zin en tellen algebraïsch op:
+        \begin{align*}
+            B &= B_1 - B_2 = 4{,}0 \cdot 10^{-5}\,\mathrm{T} - 1{,}0 \cdot 10^{-5}\,\mathrm{T} = \boxed{3{,}0 \cdot 10^{-5}\,\mathrm{T}}
+        \end{align*}
+        Het resulterend veld in $P$ wijst naar boven.
+    \end{solution}
+\end{example}
+%---------------------------
+
+\end{document}

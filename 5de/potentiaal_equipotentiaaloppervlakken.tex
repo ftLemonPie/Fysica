@@ -11,7 +11,7 @@
 \section{Definitie}
 In een homogeen veld geldt $V = E \cdot d$: alle punten die zich op dezelfde afstand $d$ van de negatieve plaat bevinden, hebben dus \textbf{dezelfde potentiaal}.
 
-\begin{definition}[title={Equipotentiaaloppervlak}]\nl
+\begin{definition}[foldable=true,title={Equipotentiaaloppervlak}]\nl
 Een \textbf{equipotentiaaloppervlak} is een oppervlak gevormd door alle punten met dezelfde potentiaal.
 \end{definition}
 
@@ -21,11 +21,10 @@ In een homogeen veld zijn de equipotentiaaloppervlakken vlakken die evenwijdig l
     \begin{tikzpicture}[scale=0.9]
         \draw[thick] (0,-1.5) -- (0,1.5);
         \draw[thick] (5,-1.5) -- (5,1.5);
+        % Ladingen naast de platen (+ en -) zonder de extra streepjes
         \foreach \y in {-1.2,-0.6,0,0.6,1.2} {
-            \draw[thick] (-0.15,\y) -- (0.15,\y);
-            \node[left] at (-0.25,\y) {$-$};
-            \draw[thick] (4.85,\y+0.3) -- (5.15,\y-0.3);
-            \node[right] at (5.25,\y) {$+$};
+            \node[left] at (-0.1,\y) {$-$};
+            \node[right] at (5.1,\y) {$+$};
         }
         \foreach \y in {-1,-0.5,0,0.5,1} {
             \draw[Eveldlijn] (4.85,\y) -- (0.15,\y);
@@ -39,12 +38,20 @@ In een homogeen veld zijn de equipotentiaaloppervlakken vlakken die evenwijdig l
     \end{tikzpicture}
 \end{center}
 
-\begin{remark}[title={Belangrijke eigenschap}]\nl
+\begin{proposition}[foldable=true,title={Belangrijke eigenschap}]\nl
 De veldlijnen staan steeds \textbf{loodrecht} op de equipotentiaaloppervlakken. Dit geldt niet enkel voor een homogeen veld, maar voor \emph{elk} elektrisch veld.
+\end{proposition}
+
+\begin{remark}[expandable=true,title={Vergelijking met hoogtelijnen}]\nl
+    Je kan equipotentiaallijnen vergelijken met hoogtelijnen op een stafkaart: elke lijn verbindt punten op dezelfde hoogte, en het pad van sterkste stijging (de helling) staat er steeds loodrecht op, net zoals veldlijnen loodrecht staan op de equipotentiaaloppervlakken.
 \end{remark}
 
-\begin{remark}[title={Vergelijking met hoogtelijnen}]\nl
-    Je kan equipotentiaallijnen vergelijken met hoogtelijnen op een stafkaart: elke lijn verbindt punten op dezelfde hoogte, en het pad van sterkste stijging (de helling) staat er steeds loodrecht op — net zoals veldlijnen loodrecht staan op de equipotentiaaloppervlakken.
+\begin{proposition}[foldable=true,title={Geleider in evenwicht}]\nl
+Alle punten aan het oppervlak van een geleider in elektrostatisch evenwicht hebben dezelfde potentiaal. Binnen in de geleider is het elektrisch veld nul. Het oppervlak van een geleider is dus een equipotentiaaloppervlak.
+\end{proposition}
+
+\begin{remark}[expandable=true,title={Toepassingen van equipotentiaaloppervlakken}]\nl
+Een bliksemafleider is een metalen punt op een gebouw. Rond de top van dat punt is het veld sterk, waardoor ladingen er gemakkelijker wegvloeien. In een Van de Graaff-generator wordt lading naar een holle metalen bol gebracht. Het veld binnen de bol is nul, dus kan de bol tot een zeer hoge potentiaal worden opgeladen (zie ook de kooi van Faraday).
 \end{remark}
 
 \begin{question}

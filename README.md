@@ -212,6 +212,9 @@ bijwerken (`5de/inleiding_stand_51.tex` voor 1 uur, `5de/inleiding_stand_52.tex`
 
 ## toekomst
 - [ ] AI prompts voor oefenignen
+    - [x] elektrische krachtwerking (_1 en _2)
+    - [x] elektrisch veld (_1 en _2)
+    - [x] potentiaal (_1 en _2)
 - [ ] Herhalignsoefeningen per H en per deel
 - [ ] oefeningen toelatingsproeven
 - [ ] Appendix nummering herstarten romeins.

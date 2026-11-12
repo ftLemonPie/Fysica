@@ -1,5 +1,6 @@
 \documentclass{ximera}
 %geschreven 9/11/26
+%verbeterd 12/11/26
 \title{Elektromagneten}
 \author{Daan Lipkens}
 
@@ -63,6 +64,10 @@ Voor lucht en voor de meeste stoffen is $\mu_r$ praktisch gelijk aan $1$: ze ver
             \def\R{0.8}\def\p{0.6}
             \fill[gray!50] (-0.8,-0.5) rectangle (4.4,0.5);
             \draw (-0.8,-0.5) rectangle (4.4,0.5);
+            % achterkant van de windingen (achter de kern: stippellijn)
+            \foreach \k in {0,...,5}{
+                \draw[red!60!black, line width=0.8pt, dashed, domain={\k*360+180}:{\k*360+360}, samples=25, smooth, variable=\t] plot ({\p*\t/360+0.3*\R*sin(\t)},{\R*cos(\t)});
+            }
             \foreach \k in {0,...,5}{
                 \draw[red!60!black, line width=1.2pt, domain={\k*360}:{\k*360+180}, samples=25, smooth, variable=\t] plot ({\p*\t/360+0.3*\R*sin(\t)},{\R*cos(\t)});
             }
@@ -129,21 +134,110 @@ Waarom weekijzer en geen staal? Weekijzer is zacht magnetiseerbaar: zodra je de 
     \end{solution}
 \end{question}
 
-\section{Toepassingen}\label{sec:toepassingen-elektromagneet}
-\begin{remark}[expandable=true,title={Extra: toepassingen van elektromagneten}]\nl
-    \begin{itemize}
-        \item \textbf{Hijsmagneet}: op een schroothoop tilt een grote elektromagneet ijzeren afval op. Schakel je de stroom uit, dan valt het afval los. Zo scheidt men ook ijzerhoudend afval van ander afval.
-        \item \textbf{Elektromagnetische klep}: een spoel trekt een ijzeren staafje aan dat een klep opent, bijvoorbeeld de watertoevoer van een wasmachine. Valt de stroom weg, dan duwt een veer de klep dicht.
-        \item \textbf{Deuropener}: met een drukknop in een appartement laat je stroom door een spoel lopen, die een ijzeren pen uit het slot van de buitendeur trekt.
-        \item \textbf{Relais}: een kleine stroom door een spoel trekt een schakelaar aan, die een andere, grote stroom inschakelt. Zo kan een zwakke stroomkring een krachtig toestel bedienen.
-        \item \textbf{Automatische zekering}: wordt de stroom te groot, dan wordt het veld van een spoel in de zekering zo sterk dat een ijzeren plaatje wordt aangetrokken en de stroomkring wordt onderbroken.
-        \item \textbf{MRI-scanner}: een zeer grote spoel maakt een sterk, homogeen magnetisch veld (tot enkele tesla), waarmee beelden van het lichaam gemaakt worden.
-    \end{itemize}
-\end{remark}
+\section{Toepassingen van elektromagneten}\label{sec:toepassingen-elektromagneet}
+In alle volgende toestellen gebruiken we de voordelen van een elektromagneet: je kan hem aan- en uitschakelen, en zijn sterkte hangt af van de stroom.
 
-\begin{remark}[expandable=true,title={Extra: toepassingen van permanente magneten}]\nl
-    Permanente magneten hebben geen stroom nodig. Je vindt ze in luidsprekers en oortjes, in sommige microfoons, in elektromotoren van elektrische wagens en fietsen, en in de generatoren van windturbines op zee. Ook de sluiting van een koelkastdeur en een kompas werken met permanente magneten.
-\end{remark}
+%---------------------------
+\begin{example}[foldable=true,title={Hijsmagneet en scheiding van schroot}]\nl
+    Op een schroothoop tilt een kraan ijzeren afval op met een grote elektromagneet: een spoel rond een kern van weekijzer, zie figuur~\ref{fig:hijsmagneet}.
+    \begin{itemize}
+        \item \textbf{Stroom aan:} de kern wordt een sterke magneet. Door magnetische influentie wordt het ijzeren afval aangetrokken.
+        \item \textbf{Stroom uit:} weekijzer is zacht magnetiseerbaar en verliest zijn magnetisme. Het afval valt los.
+    \end{itemize}
+    Met hetzelfde principe scheidt men ijzerhoudend afval van ander afval. Boven een lopende band met gemengd afval hangt een elektromagneet. Enkel de ferromagnetische stukken worden eruit getrokken; aluminium, plastic en glas blijven op de band liggen.
+
+    % bron: https://commons.wikimedia.org/wiki/File:Industrial_lifting_magnet.jpg
+    \begin{center}
+        \includegraphics[width=0.3\textwidth]{pic5/elektromagnetisme/hijsmagneet.jpg}
+        \fotobron{C. M. Jansky (1914)}{publiek domein}{https://commons.wikimedia.org/wiki/File:Industrial_lifting_magnet.jpg}
+        \captionsetup{width=0.85\textwidth}
+        \captionof{figure}{Een hijsmagneet tilt schroot op (rond 1914).}
+        \label{fig:hijsmagneet}
+    \end{center}
+\end{example}
+%---------------------------
+
+%---------------------------
+\begin{example}[foldable=true,title={Elektromagnetische klep en elektrische deuropener}]\nl
+    Beide toestellen werken op dezelfde manier: een spoel trekt een beweegbare pen van weekijzer naar binnen. Een veer duwt de pen terug zodra de stroom wegvalt.
+    \begin{itemize}
+        \item \textbf{Elektromagnetische klep:} de pen sluit een leiding af. Loopt er stroom door de spoel, dan wordt de pen in de spoel getrokken en gaat de klep open. Zo regelt een wasmachine de watertoevoer, en zo wordt de toevoer van gas naar een motor of een verwarmingsketel geopend en gesloten.
+        \item \textbf{Elektrische deuropener:} de pen houdt het slot van een buitendeur dicht. Met een drukknop in een appartement laat je stroom door de spoel lopen. De pen wordt uit het slot getrokken en de deur kan open.
+    \end{itemize}
+    Valt de stroom uit, dan gaat de klep vanzelf dicht. Dat is een belangrijke veiligheid, bijvoorbeeld bij een gasleiding.
+\end{example}
+%---------------------------
+
+%---------------------------
+\begin{example}[foldable=true,title={Relais}]\nl
+    Een \textbf{relais} is een schakelaar die bediend wordt door een elektromagneet. Het bestaat uit twee stroomkringen die elektrisch van elkaar gescheiden zijn.
+    \begin{itemize}
+        \item In de \textbf{stuurkring} loopt een kleine stroom door een spoel met een kern van weekijzer.
+        \item De elektromagneet trekt een ijzeren plaatje (het anker) aan. Dat anker drukt twee contacten tegen elkaar en sluit zo de \textbf{tweede kring}, waarin een grote stroom kan lopen.
+        \item Valt de stuurstroom weg, dan trekt een veer het anker terug en gaat de tweede kring weer open.
+    \end{itemize}
+    Zo kan een zwakke stroom, bijvoorbeeld van een kleine schakelaar of van een computer, een krachtig toestel aan- en uitzetten. In een auto schakelt een relais de grote stroom voor de startmotor in wanneer je de contactsleutel omdraait.
+\end{example}
+%---------------------------
+
+%---------------------------
+\begin{example}[foldable=true,title={Automatische zekering}]\nl
+    Een automatische zekering beschermt de elektrische leidingen in een huis tegen een te grote stroom, bijvoorbeeld bij kortsluiting. De stroom van de kring loopt door een spoel in de zekering.
+    \begin{itemize}
+        \item Bij een normale stroom is het magnetisch veld van de spoel te zwak om iets te doen.
+        \item Het veld in een spoel is recht evenredig met de stroom ($B = \mu_0 \cdot N \cdot I/\ell$). Wordt de stroom te groot, dan wordt ook het veld groot genoeg om een ijzeren pen of plaatje aan te trekken. Dat duwt een schakelaar open en de kring wordt onderbroken.
+    \end{itemize}
+    Is het probleem opgelost, dan zet je de zekering met een hendeltje weer aan. Een gewone smeltzekering moet je na elke kortsluiting vervangen.
+\end{example}
+%---------------------------
+
+%---------------------------
+\begin{example}[foldable=true,title={MRI-scanner}]\nl
+    Een MRI-scanner in een ziekenhuis maakt beelden van het binnenste van het lichaam, zie figuur~\ref{fig:mri_scanner}. De tunnel van de scanner is een enorme spoel, die een sterk en zeer homogeen magnetisch veld maakt van $1{,}5$ tot $3\,\mathrm{T}$.
+
+    Hoeveel stroom is daarvoor nodig? Uit $B = \mu_0 \cdot N \cdot I/\ell$ volgt dat je voor $1{,}5\,\mathrm{T}$ in een spoel van $1{,}5\,\mathrm{m}$ lang een product $N \cdot I = B \cdot \ell/\mu_0 \approx 1{,}8 \cdot 10^{6}\,\mathrm{A}$ nodig hebt, bijvoorbeeld $3000$ windingen met elk $600\,\mathrm{A}$. Met gewone koperdraad zou die stroom de spoel doen smelten. Daarom gebruikt men \textbf{supergeleidende} draad, die gekoeld wordt met vloeibaar helium en dan helemaal geen weerstand heeft.
+
+    Omdat het veld zo sterk is, mogen er geen ijzeren voorwerpen in de buurt van de scanner komen: ze zouden met grote kracht naar de tunnel toe vliegen.
+
+    % bron: https://commons.wikimedia.org/wiki/File:MRI-Philips.JPG
+    \begin{center}
+        \includegraphics[width=0.5\textwidth]{pic5/elektromagnetisme/mri_scanner.jpg}
+        \fotobron{Jan Ainali}{CC BY 3.0}{https://commons.wikimedia.org/wiki/File:MRI-Philips.JPG}
+        \captionsetup{width=0.85\textwidth}
+        \captionof{figure}{Een MRI-scanner in een ziekenhuis.}
+        \label{fig:mri_scanner}
+    \end{center}
+\end{example}
+%---------------------------
+
+\section{Toepassingen van permanente magneten}\label{sec:toepassingen-permanente-magneet}
+Een permanente magneet heeft geen stroom nodig om een magnetisch veld te maken. Dat maakt hem nuttig in toestellen waar het veld altijd aanwezig moet zijn.
+
+%---------------------------
+\begin{example}[foldable=true,title={Luidspreker en oortjes}]\nl
+    In een luidspreker zit een sterke permanente magneet. Daarvoor hangt een klein spoeltje dat vastzit aan een conus van papier of kunststof.
+    \begin{itemize}
+        \item Door het spoeltje loopt een wisselstroom met het geluidssignaal. Het spoeltje wordt een elektromagneet waarvan de polen voortdurend wisselen.
+        \item Daardoor wordt het spoeltje afwisselend aangetrokken en afgestoten door de permanente magneet. Het trilt heen en weer, en de conus trilt mee.
+        \item De trillende conus zet de lucht in beweging: je hoort geluid.
+    \end{itemize}
+    Oortjes en koptelefoons werken op dezelfde manier, met heel kleine neodymiummagneten.
+\end{example}
+%---------------------------
+
+%---------------------------
+\begin{example}[foldable=true,title={Elektromotor en generator}]\nl
+    In de motor van een elektrische wagen of fiets, en in de generator van een windturbine op zee, zitten vaak sterke permanente magneten. Hoe een motor en een generator precies werken, zie je in de volgende hoofdstukken: een motor gebruikt de kracht van een magnetisch veld op een stroom, een generator wekt een spanning op door een magneet en een spoel tegenover elkaar te bewegen.
+
+    Een permanente magneet heeft daarbij een groot voordeel: er gaat geen elektrische energie verloren aan het maken van het magnetisch veld. Daardoor zijn zulke motoren en generatoren eenvoudiger en hebben ze een beter rendement.
+\end{example}
+%---------------------------
+
+%---------------------------
+\begin{example}[foldable=true,title={Magneetsluitingen}]\nl
+    Een koelkastdeur sluit vanzelf goed af: in de rubberen rand zit een strip met magnetisch materiaal die de deur tegen de stalen kast trekt. Ook bij tassen, kastdeurtjes, laptophoezen en oplaadkabels van smartwatches zorgen kleine permanente magneten voor een sluiting die je met de hand gemakkelijk weer opent.
+\end{example}
+%---------------------------
 
 \begin{remark}[expandable=true,title={Extra: para- en diamagnetisme}]\nl
     Niet-ferromagnetische stoffen reageren ook op een magnetisch veld, maar duizenden keren zwakker.

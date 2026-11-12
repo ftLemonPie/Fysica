@@ -15,6 +15,8 @@ Kort de belangrijkste:
 - Geen em-dash of curly quotes in lopende tekst.
 - Datumcommentaar bovenaan: `%verbeterd D/M/JJ` of `%nagekeken D/M/JJ`.
 - Oefeningen in een bestand van makkelijk naar moeilijk.
+- Verwijzen naar iets in **een ander bestand**: altijd `\verwijs`, nooit `\ref` (zie template 7).
+- Foto's van internet: bron met `\fotobron` onder de foto **en** in `bibliografie_52.tex` (zie template 5).
 
 # Templates
 Hier is je "Ximera Fysica Toolkit". Je kan deze blokken code gewoon kopiëren, plakken en invullen!
@@ -141,19 +143,54 @@ Gebruik deze omgevingen om belangrijke theorie te accentueren. Ximera geeft ze a
 
 ### 5. Afbeeldingen invoegen
 
-Dit is de veiligste manier om afbeeldingen in te voegen, zodat ze zowel in de PDF als op de webpagina mooi in het midden staan en een bijschrift hebben.
+Voorkeur: een eigen TikZ-tekening (geen bron nodig). Een foto van het internet mag enkel als ze een vrije licentie heeft (Wikimedia Commons: CC BY, CC BY-SA, CC0 of publiek domein). Geen scans uit handboeken (Interactie, Serway): de cursus is publiek.
+
+**a) Eigen figuur of TikZ**
 
 -->latex
 %---------------------------
 % AFBEELDING: [Beschrijving]
 \begin{figure}[ht!]
+    \captionsetup{width=0.85\textwidth}
     \begin{center}
-        \includegraphics[width=0.6\textwidth]{[Pad/naar/je/afbeelding.jpg]}
+        \includegraphics[width=0.6\textwidth]{pic5/[thema]/[naam].png}  % of een tikzpicture
     \end{center}
-    \caption{[Typ hier het bijschrift van de figuur.]}
+    \caption{[Inhoudelijk bijschrift: wat zie je en waarom is het belangrijk?]}
     \label{fig:[korte_naam]}
 \end{figure}
 %---------------------------
+
+**b) Foto van Wikimedia Commons**
+
+Stappen:
+1. Zoek de foto op commons.wikimedia.org en controleer op de bestandspagina de **licentie** en de **auteur**.
+2. Download ze (liefst niet groter dan 1280 px breed) naar `xmPictures/pic5/[thema]/` met een korte Nederlandse naam.
+3. Gebruik het sjabloon hieronder. Het bijschrift blijft inhoudelijk; de bron staat in `\fotobron`, direct onder de afbeelding. Dat werkt in de PDF en online (de bron wordt een link).
+4. Zet de foto ook in `5de/bibliografie_52.tex`, sectie *Bronnen van afbeeldingen*, onder het juiste hoofdstuk.
+
+-->latex
+%---------------------------
+% AFBEELDING: [Beschrijving]
+% bron: https://commons.wikimedia.org/wiki/File:[Bestandsnaam.jpg]
+\begin{figure}[ht!]
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
+        \includegraphics[width=0.6\textwidth]{pic5/[thema]/[naam].jpg}
+        \fotobron{[Auteur]}{[Licentie, bv. CC BY-SA 4.0 of publiek domein]}{https://commons.wikimedia.org/wiki/File:[Bestandsnaam.jpg]}
+    \end{center}
+    \caption{[Inhoudelijk bijschrift, zonder bron.]}
+    \label{fig:[korte_naam]}
+\end{figure}
+%---------------------------
+
+Een foto van een andere site dan Commons: geef de naam van de site als optie, bv. `\fotobron[NASA]{[Auteur]}{publiek domein}{[url]}`.
+
+Regel in de bibliografie (`5de/bibliografie_52.tex`):
+
+-->latex
+\item Figuur~\verwijs[[Korte beschrijving]]{fig:[korte_naam]}{[bestand_zonder_tex]}: [Auteur], [Licentie], Wikimedia Commons, \url{https://commons.wikimedia.org/wiki/File:[Bestandsnaam.jpg]}
+
+Staat de figuur in een `example` of `remark` (geen `figure`-omgeving mogelijk), gebruik dan `\begin{center} ... \captionof{figure}{...}\label{...} \end{center}` met `\fotobron` direct onder `\includegraphics`.
 
 
 
@@ -175,6 +212,33 @@ Omdat YouTube-video's online mooi kunnen afspelen, maar in een geprinte PDF gewo
 %---------------------------
 
 
+### 7. Verwijzingen naar figuren, vergelijkingen en secties
+
+Online wordt elk bestand (`\activity`) apart gecompileerd. Een `\ref` naar een label in een **ander bestand** geeft daar `??`. Gebruik daarom:
+
+| Waar staat het label? | Gebruik | PDF | Online |
+|---|---|---|---|
+| in hetzelfde bestand | `\ref{label}` (of `\eqref`) | nummer | nummer met link |
+| in een ander bestand | `\verwijs[tekst]{label}{bestand}` | nummer | `tekst` als link naar dat bestand |
+| in een hoofdstuk dat nog niet bestaat | gewone tekst | | |
+
+-->latex
+% label zetten (bij een figuur, vergelijking of belangrijke sectie)
+\section{Permanente magneten}\label{sec:permanente-magneten}
+\label{fig:[korte_naam]}        % in de figure, na \caption
+\begin{equation}\label{eq:[korte_naam]} ... \end{equation}
+
+% verwijzen binnen hetzelfde bestand
+zie figuur~\ref{fig:[korte_naam]}
+
+% verwijzen naar een ander bestand (bestandsnaam zonder .tex)
+zie~\verwijs[Permanente magneten]{sec:permanente-magneten}{magnetisme_permanente_magneten}
+figuur~\verwijs[in Het magnetisch veld en veldlijnen]{fig:veldlijnen_staafmagneet}{magnetisme_veld}
+
+Kies de tekst tussen `[ ]` zo dat de zin online ook klopt: online verschijnt die tekst in plaats van het nummer.
+
+
+
 # TODO
 Na elke afgewerkte of nagekeken stap: deze TODO **en** de stand van zaken voor de leerlingen
 bijwerken (`5de/inleiding_stand_51.tex` voor 1 uur, `5de/inleiding_stand_52.tex` voor 2 uur).
@@ -186,7 +250,7 @@ bijwerken (`5de/inleiding_stand_51.tex` voor 1 uur, `5de/inleiding_stand_52.tex`
 | H2 elektrisch veld | geschreven, nagekeken | geschreven, nagekeken |
 | H3 potentiaal | geschreven, nog niet nagekeken | nog aan te passen en na te kijken |
 | H4 gemengde schakelingen | n.v.t. | geschreven, nog niet nagekeken |
-| H4/H5 het magnetisch veld (`magnetisme_*`) | geschreven, nog niet nagekeken | zelfde bestanden (leerplan identiek), nog niet nagekeken |
+| H4/H5 het magnetisch veld (`magnetisme_*`) | geschreven, nog niet nagekeken | zelfde bestanden, behalve `magnetisme_elektromagneet_1uur` (toepassingen Extra), nog niet nagekeken |
 | Appendix vectorrekenen, standaardvorm | geschreven | geschreven |
 
 ## te doen volgende keer

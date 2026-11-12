@@ -1,0 +1,252 @@
+\documentclass{ximera}
+%geschreven 9/11/26
+%verbeterd 12/11/26
+%1 uur: zelfde als magnetisme_elektromagneet.tex, maar de toepassingen zijn Extra
+\title{Elektromagneten}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+    De invloed van een ijzeren kern op het veld van een spoel, de relatieve permeabiliteit, de elektromagneet en enkele toepassingen.
+\end{abstract}
+\maketitle
+
+\section{Een spoel met een ijzeren kern}\label{sec:elektromagneet}
+Het veld in een spoel zonder kern is meestal klein: enkele millitesla. Schuif je een staaf \textbf{weekijzer} in de spoel, dan wordt het veld honderden keren sterker. Dat komt door magnetische influentie: het veld van de spoel magnetiseert het ijzer, en het gemagnetiseerde ijzer voegt zijn eigen, veel sterker veld toe aan dat van de spoel.
+
+\begin{definition}[foldable=true,title={Relatieve permeabiliteit}]\nl
+    De \textbf{relatieve permeabiliteit} $\mu_r$ van een stof geeft aan hoeveel keer het magnetisch veld in een spoel groter wordt als je de spoel volledig met die stof vult:
+    \begin{equation*}
+        \mu_r = \frac{B_{\text{met kern}}}{B_{\text{zonder kern}}}
+    \end{equation*}
+    De relatieve permeabiliteit is een getal zonder eenheid.
+\end{definition}
+
+\begin{proposition}[foldable=true,title={Magnetisch veld in een spoel met kern}]\nl
+    In een lange spoel met $N$ windingen, lengte $\ell$, stroom $I$ en een kern met relatieve permeabiliteit $\mu_r$ is de grootte van het magnetisch veld:
+    \begin{equation}\label{eq:B_spoel_kern}
+        B = \frac{\mu_r \cdot \mu_0 \cdot N \cdot I}{\ell}
+    \end{equation}
+\end{proposition}
+
+Voor lucht en voor de meeste stoffen is $\mu_r$ praktisch gelijk aan $1$: ze veranderen het veld nauwelijks. Enkel voor ferromagnetische stoffen is $\mu_r$ veel groter dan $1$, zie tabel~\ref{tab:mu_r}.
+
+\begin{table}[ht!]
+    \begin{center}
+        \begin{tabular}{l r}
+            \toprule
+            Stof & $\mu_r$ (grootteorde) \\
+            \midrule
+            vacuüm, lucht, koper, aluminium, water & $1$ \\
+            nikkel & $100$ tot $600$ \\
+            staal & $100$ tot $1000$ \\
+            weekijzer & $1000$ tot $5000$ \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+    \caption{Relatieve permeabiliteit van enkele stoffen. Bij ferromagnetische stoffen hangt de waarde sterk af van de samenstelling en van het veld zelf.}
+    \label{tab:mu_r}
+\end{table}
+
+\begin{remark}[expandable=true,title={Een ijzeren kern raakt verzadigd}]\nl
+    Je kan een ijzeren kern niet onbeperkt sterker magnetiseren. Zodra (bijna) alle elementaire magneetjes in het ijzer dezelfde kant op wijzen, is het ijzer \textbf{verzadigd}. Bij ijzer gebeurt dat rond $2\,\mathrm{T}$. Vergelijking~\eqref{eq:B_spoel_kern} geldt enkel ruim onder die grens.
+\end{remark}
+
+\section{De elektromagneet}\label{sec:elektromagneet-toestel}
+\begin{definition}[foldable=true,title={Elektromagneet}]\nl
+    Een \textbf{elektromagneet} is een spoel met een kern van weekijzer. Zolang er stroom door de spoel loopt, gedraagt ze zich als een sterke magneet.
+\end{definition}
+
+%---------------------------
+\begin{figure}[ht!]
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
+        \begin{tikzpicture}
+            \def\R{0.8}\def\p{0.6}
+            \fill[gray!50] (-0.8,-0.5) rectangle (4.4,0.5);
+            \draw (-0.8,-0.5) rectangle (4.4,0.5);
+            % achterkant van de windingen (achter de kern: stippellijn)
+            \foreach \k in {0,...,5}{
+                \draw[red!60!black, line width=0.8pt, dashed, domain={\k*360+180}:{\k*360+360}, samples=25, smooth, variable=\t] plot ({\p*\t/360+0.3*\R*sin(\t)},{\R*cos(\t)});
+            }
+            \foreach \k in {0,...,5}{
+                \draw[red!60!black, line width=1.2pt, domain={\k*360}:{\k*360+180}, samples=25, smooth, variable=\t] plot ({\p*\t/360+0.3*\R*sin(\t)},{\R*cos(\t)});
+            }
+            \draw[red!60!black, line width=1.2pt] (0,\R) -- (0,1.8) -- (1.2,1.8);
+            \draw[red!60!black, line width=1.2pt] ({\p*6},\R) -- ({\p*6},1.8) -- (2.4,1.8);
+            \draw (1.2,1.8) to[battery1] (2.4,1.8);
+            \node[below] at (1.8,-1.0) {kern van weekijzer};
+        \end{tikzpicture}
+    \end{center}
+    \caption{Een elektromagneet: een spoel rond een kern van weekijzer, aangesloten op een spanningsbron.}
+    \label{fig:elektromagneet}
+\end{figure}
+%---------------------------
+
+\begin{proposition}[foldable=true,title={Voordelen van een elektromagneet}]\nl
+    In vergelijking met een permanente magneet heeft een elektromagneet belangrijke voordelen:
+    \begin{itemize}
+        \item je kan hem \textbf{aan- en uitschakelen};
+        \item je kan de sterkte \textbf{regelen} met de stroomsterkte;
+        \item je kan de polen \textbf{omwisselen} door de stroomzin om te keren;
+        \item met een kern kan het veld \textbf{veel sterker} zijn dan bij een spoel zonder kern.
+    \end{itemize}
+\end{proposition}
+
+Waarom weekijzer en geen staal? Weekijzer is zacht magnetiseerbaar: zodra je de stroom uitschakelt, verliest de kern zijn magnetisme. Een stalen kern zou magnetisch blijven, en dan kan je de magneet niet meer uitschakelen.
+
+%---------------------------
+\begin{example}[foldable=true,title={Spoel met een kern van weekijzer}]\nl
+    In de spoel uit het voorbeeld van de vorige sectie ($450$ windingen, lengte $15\,\mathrm{cm}$, stroom $2{,}0\,\mathrm{A}$) schuif je een kern met relatieve permeabiliteit $200$. Bereken het magnetisch veld in de kern.
+
+    \begin{remark}[title={Denkstap}]\nl
+        Zonder kern vonden we $B = 7{,}5 \cdot 10^{-3}\,\mathrm{T}$. De kern vermenigvuldigt dat veld met $\mu_r$. Controleer achteraf of het resultaat onder de verzadigingsgrens van ijzer blijft.
+    \end{remark}
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & N = 450 & & \ell = 15\,\mathrm{cm} = 0{,}15\,\mathrm{m} & & I = 2{,}0\,\mathrm{A} & & \mu_r = 200
+        \end{align*}
+
+        \underline{Gevraagd:} $B$
+
+        \underline{Oplossing:} We gebruiken het veld in een spoel met kern, vergelijking~\eqref{eq:B_spoel_kern}:
+        \begin{align*}
+            B &= \frac{\mu_r \cdot \mu_0 \cdot N \cdot I}{\ell} = \frac{200 \cdot 4\pi \cdot 10^{-7}\,\mathrm{T\cdot m/A} \cdot 450 \cdot 2{,}0\,\mathrm{A}}{0{,}15\,\mathrm{m}} = \boxed{1{,}5\,\mathrm{T}}
+        \end{align*}
+        Dat is $200$ keer zo groot als zonder kern, en nog net onder de verzadigingsgrens van ongeveer $2\,\mathrm{T}$.
+    \end{solution}
+\end{example}
+%---------------------------
+
+\begin{question}
+    Waarom maak je de kern van een elektromagneet uit weekijzer en niet uit staal?
+
+    \begin{multipleChoice}
+        \choice{Weekijzer is een betere elektrische geleider.}
+        \choice[correct]{Weekijzer verliest zijn magnetisme zodra de stroom wegvalt, zodat je de magneet kan uitschakelen.}
+        \choice{Staal wordt niet aangetrokken door een magneet.}
+        \choice{Weekijzer blijft magnetisch, ook zonder stroom.}
+    \end{multipleChoice}
+
+    \begin{solution}\nl
+        Weekijzer is zacht magnetiseerbaar. Zonder stroom wijzen de Weissgebieden weer in willekeurige richtingen en verdwijnt het magnetisme. Staal is hard magnetiseerbaar en zou een permanente magneet worden.
+    \end{solution}
+\end{question}
+
+\section{Toepassingen van elektromagneten}\label{sec:toepassingen-elektromagneet}
+In alle volgende toestellen gebruiken we de voordelen van een elektromagneet: je kan hem aan- en uitschakelen, en zijn sterkte hangt af van de stroom.
+
+%---------------------------
+\begin{example}[expandable=true,title={Extra: Hijsmagneet en scheiding van schroot}]\nl
+    Op een schroothoop tilt een kraan ijzeren afval op met een grote elektromagneet: een spoel rond een kern van weekijzer, zie figuur~\ref{fig:hijsmagneet}.
+    \begin{itemize}
+        \item \textbf{Stroom aan:} de kern wordt een sterke magneet. Door magnetische influentie wordt het ijzeren afval aangetrokken.
+        \item \textbf{Stroom uit:} weekijzer is zacht magnetiseerbaar en verliest zijn magnetisme. Het afval valt los.
+    \end{itemize}
+    Met hetzelfde principe scheidt men ijzerhoudend afval van ander afval. Boven een lopende band met gemengd afval hangt een elektromagneet. Enkel de ferromagnetische stukken worden eruit getrokken; aluminium, plastic en glas blijven op de band liggen.
+
+    % bron: https://commons.wikimedia.org/wiki/File:Industrial_lifting_magnet.jpg
+    \begin{center}
+        \includegraphics[width=0.3\textwidth]{pic5/elektromagnetisme/hijsmagneet.jpg}
+        \fotobron{C. M. Jansky (1914)}{publiek domein}{https://commons.wikimedia.org/wiki/File:Industrial_lifting_magnet.jpg}
+        \captionsetup{width=0.85\textwidth}
+        \captionof{figure}{Een hijsmagneet tilt schroot op (rond 1914).}
+        \label{fig:hijsmagneet}
+    \end{center}
+\end{example}
+%---------------------------
+
+%---------------------------
+\begin{example}[expandable=true,title={Extra: Elektromagnetische klep en elektrische deuropener}]\nl
+    Beide toestellen werken op dezelfde manier: een spoel trekt een beweegbare pen van weekijzer naar binnen. Een veer duwt de pen terug zodra de stroom wegvalt.
+    \begin{itemize}
+        \item \textbf{Elektromagnetische klep:} de pen sluit een leiding af. Loopt er stroom door de spoel, dan wordt de pen in de spoel getrokken en gaat de klep open. Zo regelt een wasmachine de watertoevoer, en zo wordt de toevoer van gas naar een motor of een verwarmingsketel geopend en gesloten.
+        \item \textbf{Elektrische deuropener:} de pen houdt het slot van een buitendeur dicht. Met een drukknop in een appartement laat je stroom door de spoel lopen. De pen wordt uit het slot getrokken en de deur kan open.
+    \end{itemize}
+    Valt de stroom uit, dan gaat de klep vanzelf dicht. Dat is een belangrijke veiligheid, bijvoorbeeld bij een gasleiding.
+\end{example}
+%---------------------------
+
+%---------------------------
+\begin{example}[expandable=true,title={Extra: Relais}]\nl
+    Een \textbf{relais} is een schakelaar die bediend wordt door een elektromagneet. Het bestaat uit twee stroomkringen die elektrisch van elkaar gescheiden zijn.
+    \begin{itemize}
+        \item In de \textbf{stuurkring} loopt een kleine stroom door een spoel met een kern van weekijzer.
+        \item De elektromagneet trekt een ijzeren plaatje (het anker) aan. Dat anker drukt twee contacten tegen elkaar en sluit zo de \textbf{tweede kring}, waarin een grote stroom kan lopen.
+        \item Valt de stuurstroom weg, dan trekt een veer het anker terug en gaat de tweede kring weer open.
+    \end{itemize}
+    Zo kan een zwakke stroom, bijvoorbeeld van een kleine schakelaar of van een computer, een krachtig toestel aan- en uitzetten. In een auto schakelt een relais de grote stroom voor de startmotor in wanneer je de contactsleutel omdraait.
+\end{example}
+%---------------------------
+
+%---------------------------
+\begin{example}[expandable=true,title={Extra: Automatische zekering}]\nl
+    Een automatische zekering beschermt de elektrische leidingen in een huis tegen een te grote stroom, bijvoorbeeld bij kortsluiting. De stroom van de kring loopt door een spoel in de zekering.
+    \begin{itemize}
+        \item Bij een normale stroom is het magnetisch veld van de spoel te zwak om iets te doen.
+        \item Het veld in een spoel is recht evenredig met de stroom ($B = \mu_0 \cdot N \cdot I/\ell$). Wordt de stroom te groot, dan wordt ook het veld groot genoeg om een ijzeren pen of plaatje aan te trekken. Dat duwt een schakelaar open en de kring wordt onderbroken.
+    \end{itemize}
+    Is het probleem opgelost, dan zet je de zekering met een hendeltje weer aan. Een gewone smeltzekering moet je na elke kortsluiting vervangen.
+\end{example}
+%---------------------------
+
+%---------------------------
+\begin{example}[expandable=true,title={Extra: MRI-scanner}]\nl
+    Een MRI-scanner in een ziekenhuis maakt beelden van het binnenste van het lichaam, zie figuur~\ref{fig:mri_scanner}. De tunnel van de scanner is een enorme spoel, die een sterk en zeer homogeen magnetisch veld maakt van $1{,}5$ tot $3\,\mathrm{T}$.
+
+    Hoeveel stroom is daarvoor nodig? Uit $B = \mu_0 \cdot N \cdot I/\ell$ volgt dat je voor $1{,}5\,\mathrm{T}$ in een spoel van $1{,}5\,\mathrm{m}$ lang een product $N \cdot I = B \cdot \ell/\mu_0 \approx 1{,}8 \cdot 10^{6}\,\mathrm{A}$ nodig hebt, bijvoorbeeld $3000$ windingen met elk $600\,\mathrm{A}$. Met gewone koperdraad zou die stroom de spoel doen smelten. Daarom gebruikt men \textbf{supergeleidende} draad, die gekoeld wordt met vloeibaar helium en dan helemaal geen weerstand heeft.
+
+    Omdat het veld zo sterk is, mogen er geen ijzeren voorwerpen in de buurt van de scanner komen: ze zouden met grote kracht naar de tunnel toe vliegen.
+
+    % bron: https://commons.wikimedia.org/wiki/File:MRI-Philips.JPG
+    \begin{center}
+        \includegraphics[width=0.5\textwidth]{pic5/elektromagnetisme/mri_scanner.jpg}
+        \fotobron{Jan Ainali}{CC BY 3.0}{https://commons.wikimedia.org/wiki/File:MRI-Philips.JPG}
+        \captionsetup{width=0.85\textwidth}
+        \captionof{figure}{Een MRI-scanner in een ziekenhuis.}
+        \label{fig:mri_scanner}
+    \end{center}
+\end{example}
+%---------------------------
+
+\section{Toepassingen van permanente magneten}\label{sec:toepassingen-permanente-magneet}
+Een permanente magneet heeft geen stroom nodig om een magnetisch veld te maken. Dat maakt hem nuttig in toestellen waar het veld altijd aanwezig moet zijn.
+
+%---------------------------
+\begin{example}[expandable=true,title={Extra: Luidspreker en oortjes}]\nl
+    In een luidspreker zit een sterke permanente magneet. Daarvoor hangt een klein spoeltje dat vastzit aan een conus van papier of kunststof.
+    \begin{itemize}
+        \item Door het spoeltje loopt een wisselstroom met het geluidssignaal. Het spoeltje wordt een elektromagneet waarvan de polen voortdurend wisselen.
+        \item Daardoor wordt het spoeltje afwisselend aangetrokken en afgestoten door de permanente magneet. Het trilt heen en weer, en de conus trilt mee.
+        \item De trillende conus zet de lucht in beweging: je hoort geluid.
+    \end{itemize}
+    Oortjes en koptelefoons werken op dezelfde manier, met heel kleine neodymiummagneten.
+\end{example}
+%---------------------------
+
+%---------------------------
+\begin{example}[expandable=true,title={Extra: Elektromotor en generator}]\nl
+    In de motor van een elektrische wagen of fiets, en in de generator van een windturbine op zee, zitten vaak sterke permanente magneten. Hoe een motor en een generator precies werken, zie je in de volgende hoofdstukken: een motor gebruikt de kracht van een magnetisch veld op een stroom, een generator wekt een spanning op door een magneet en een spoel tegenover elkaar te bewegen.
+
+    Een permanente magneet heeft daarbij een groot voordeel: er gaat geen elektrische energie verloren aan het maken van het magnetisch veld. Daardoor zijn zulke motoren en generatoren eenvoudiger en hebben ze een beter rendement.
+\end{example}
+%---------------------------
+
+%---------------------------
+\begin{example}[expandable=true,title={Extra: Magneetsluitingen}]\nl
+    Een koelkastdeur sluit vanzelf goed af: in de rubberen rand zit een strip met magnetisch materiaal die de deur tegen de stalen kast trekt. Ook bij tassen, kastdeurtjes, laptophoezen en oplaadkabels van smartwatches zorgen kleine permanente magneten voor een sluiting die je met de hand gemakkelijk weer opent.
+\end{example}
+%---------------------------
+
+\begin{remark}[expandable=true,title={Extra: para- en diamagnetisme}]\nl
+    Niet-ferromagnetische stoffen reageren ook op een magnetisch veld, maar duizenden keren zwakker.
+    \begin{itemize}
+        \item \textbf{Paramagnetische} stoffen, zoals aluminium en zuurstof, worden heel zwak aangetrokken ($\mu_r$ net iets groter dan $1$).
+        \item \textbf{Diamagnetische} stoffen, zoals water, koper en bismut, worden heel zwak afgestoten ($\mu_r$ net iets kleiner dan $1$).
+    \end{itemize}
+    In een extreem sterk magnetisch veld (ongeveer $16\,\mathrm{T}$) is de afstoting van water groot genoeg om een kikker, die vooral uit water bestaat, te laten zweven. Met dat experiment won de natuurkundige Andre Geim in 2000 een Ig Nobelprijs, een prijs voor onderzoek dat eerst doet lachen en dan doet nadenken. Tien jaar later kreeg hij de echte Nobelprijs voor de ontdekking van grafeen.
+\end{remark}
+
+\end{document}

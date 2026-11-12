@@ -73,9 +73,9 @@ Wikkel je een draad in vele windingen naast elkaar rond een buis, dan krijg je e
     \begin{center}
         \begin{tikzpicture}
             \def\R{0.8}\def\p{0.6}
-            % achterkant van de windingen
+            % achterkant van de windingen (achter het blad: stippellijn)
             \foreach \k in {0,...,5}{
-                \draw[gray!60, line width=1pt, domain={\k*360+180}:{\k*360+360}, samples=25, smooth, variable=\t] plot ({\p*\t/360+0.3*\R*sin(\t)},{\R*cos(\t)});
+                \draw[red!60!black, line width=0.8pt, dashed, domain={\k*360+180}:{\k*360+360}, samples=25, smooth, variable=\t] plot ({\p*\t/360+0.3*\R*sin(\t)},{\R*cos(\t)});
             }
             % veld in de spoel
             \draw[Mvector] (-0.2,0) -- (4.2,0) node[above]{$\vec{B}$};
@@ -119,6 +119,21 @@ Wikkel je een draad in vele windingen naast elkaar rond een buis, dan krijg je e
     \end{center}
     \caption{Doorsnede van de spoel uit figuur~\ref{fig:spoel_ruimtelijk}. In de spoel lopen de veldlijnen evenwijdig en op gelijke afstand: het veld is er homogeen. Buiten de spoel lijkt het veld op dat van een staafmagneet.}
     \label{fig:veld_spoel}
+\end{figure}
+%---------------------------
+
+Ook het veld van een spoel kan je zichtbaar maken met ijzervijlsel, zie figuur~\ref{fig:ijzervijlsel_spoel}.
+
+%---------------------------
+% bron: https://commons.wikimedia.org/wiki/File:Magnetic_field_around_solenoid.jpg
+\begin{figure}[ht!]
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
+        \includegraphics[width=0.45\textwidth]{pic5/elektromagnetisme/ijzervijlsel_spoel.jpg}
+        \fotobron{Maciej J. Mrowinski}{CC BY-SA 4.0}{https://commons.wikimedia.org/wiki/File:Magnetic_field_around_solenoid.jpg}
+    \end{center}
+    \caption{Ijzervijlsel rond een stroomvoerende spoel. In de spoel liggen de korreltjes evenwijdig met de as, buiten de spoel lijkt het patroon op dat van een staafmagneet.}
+    \label{fig:ijzervijlsel_spoel}
 \end{figure}
 %---------------------------
 

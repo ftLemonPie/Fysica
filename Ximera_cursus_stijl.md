@@ -245,7 +245,9 @@ Kort: titel, abstract, `\maketitle`, één inleidende zin over wat volgt. Geen `
 
 - Pad per hoofdstuk: `pic5/elektriciteit/<onderwerp>/` (bv. `pic5/elektriciteit/veld/`).
 - **Figuren uit de bronnen (Interactie, Serway) of van het internet** mogen gebruikt worden, mits de bron duidelijk vermeld staat in het bijschrift, bv. `\caption{... Bron: Interactie, T1 H3, p.~43.}`. Bij internetbeelden controleer je de licentie en vermeld je die ook.
+- **Foto's van het internet**: enkel van Wikimedia Commons met een vrije licentie (CC BY, CC BY-SA, CC0 of publiek domein). Bestand in `xmPictures/pic5/<thema>/` met een Nederlandse naam; boven de figuur een commentaarregel `% bron: <url van de Commons-pagina>`; direct onder `\includegraphics` de macro `\fotobron{<auteur>}{<licentie>}{<url>}` (niet in het bijschrift, dat blijft inhoudelijk); en een regel in `5de/bibliografie_52.tex`, sectie *Bronnen van afbeeldingen*. Sjabloon: README, template 5. Geen scans uit Interactie of Serway (publieke repo en website) en geen foto's waarop een bekende persoon herkenbaar is.
 - **Voorkeur**: een eigen TikZ-herwerking van de figuur, met de stijlen uit de preamble. Dat is op het gebied van auteursrecht de veiligste optie.
+- **Werkwijze bij een nieuwe foto**: de bestandsnaam staat in `pic5/<onderwerp>/` (zie §4). Boven de `\includegraphics` komt een commentaarregel met de bron-URL (`% bron: https://commons.wikimedia.org/wiki/File:...`). In het bijschrift staan de auteur en de licentie, bv. `Bron: Jan Ainali, Wikimedia Commons, CC BY 3.0.`
 - Een bronvermelding maakt een figuur niet automatisch toegelaten voor publicatie. Bij twijfel over het gebruik van een figuur in de gepubliceerde cursus, overleg je eerst.
 - Voorkeur: **originele TikZ-tekeningen**, rechtstreeks in de `.tex`-bestanden,
   met de stijlen en macro's uit `xmPreamble.tex` (`\poslading`/`\neglading`,

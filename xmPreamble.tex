@@ -538,6 +538,19 @@
     \ref{#2}%
 \fi}
 
+% --- bronvermelding van een afbeelding (foto van internet) ---
+% \fotobron[bronsite]{auteur}{licentie}{url van de bronpagina}
+%   zet direct onder \includegraphics, vóór \caption; standaard bronsite = Wikimedia Commons
+%   PDF:  kleine grijze regel "Afbeelding: auteur, licentie, bronsite" (bronsite klikbaar)
+%   HTML: zelfde regel, bronsite is een link (nieuw tabblad)
+%   Vermeld de afbeelding ook in bibliografie_52.tex (sectie Bronnen van afbeeldingen).
+\NewDocumentCommand{\fotobron}{O{Wikimedia Commons} m m m}{%
+\ifdefined\HCode
+    \HCode{<p class="fotobron" style="font-size:small;color:gray;text-align:center;margin-top:0.2em;">}Afbeelding: #2, #3, \HCode{<a href="#4" target="_blank">}#1\HCode{</a></p>}%
+\else
+    \par{\footnotesize\color{gray}Afbeelding: #2, #3, \href{#4}{#1}\par}%
+\fi}
+
 % --- samenvatting boc ---
 % Dit commando toont een tcolorbox in de PDF en een definition in de HTML!
 \newcommand{\samenbox}[2]{

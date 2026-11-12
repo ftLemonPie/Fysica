@@ -526,6 +526,18 @@
 \newcommand{\nl}{\ \par} % newline (achter heading van definition etc.)
 \fi
 
+% --- verwijzing naar een ander ximera-bestand (andere activity) ---
+% \ref werkt online enkel binnen hetzelfde bestand (elke activity wordt apart gecompileerd).
+% \verwijs[tekst voor html]{label}{bestandsnaam zonder .tex}
+%   PDF:  gewone \ref{label}
+%   HTML: link naar de pagina van het andere bestand, met de opgegeven tekst
+\NewDocumentCommand{\verwijs}{O{deze sectie} m m}{%
+\ifdefined\HCode
+    \HCode{<a href="#3">}#1\HCode{</a>}%
+\else
+    \ref{#2}%
+\fi}
+
 % --- samenvatting boc ---
 % Dit commando toont een tcolorbox in de PDF en een definition in de HTML!
 \newcommand{\samenbox}[2]{

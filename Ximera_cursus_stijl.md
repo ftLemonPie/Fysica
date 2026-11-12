@@ -230,6 +230,9 @@ Kort: titel, abstract, `\maketitle`, één inleidende zin over wat volgt. Geen `
   geschreven maandnamen.
 
 ### Kruisverwijzingen en voettekst
+- **Verwijzingen naar een ander bestand** (een andere `\activity`) gebeuren met `\verwijs[tekst voor html]{label}{bestandsnaam zonder .tex}`, nooit met `\ref`/`\eqref`. Online wordt elke activity apart gecompileerd, waardoor `\ref` naar een label in een ander bestand `??` geeft. `\verwijs` geeft in de PDF een gewone `\ref` en online een link naar de pagina van het andere bestand. Voorbeeld: `zie~\verwijs[Permanente magneten]{sec:permanente-magneten}{magnetisme_permanente_magneten}`. Kies de tekst zo dat de zin online ook klopt (bv. `figuur~\verwijs[in Het magnetisch veld en veldlijnen]{fig:...}{magnetisme_veld}`).
+- `\ref` blijft gewoon voor verwijzingen binnen hetzelfde bestand.
+- Verwijzen naar een hoofdstuk dat nog niet bestaat: gewone tekst (bv. "in het hoofdstuk over deeltjesfysica"), geen label.
 - Belangrijke `\section`-koppen krijgen een label, bv.
   `\section{Tribo-elektrisch effect}\label{sec:tribo-elektrisch-effect}`, zodat de
   hoofdstuk-inleiding ernaar kan verwijzen met `\ref{}`.

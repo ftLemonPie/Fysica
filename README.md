@@ -243,7 +243,7 @@ Kies de tekst tussen `[ ]` zo dat de zin online ook klopt: online verschijnt die
 Na elke afgewerkte of nagekeken stap: deze TODO **en** de stand van zaken voor de leerlingen
 bijwerken (`5de/inleiding_stand_51.tex` voor 1 uur, `5de/inleiding_stand_52.tex` voor 2 uur).
 
-## Stand van zaken 5de jaar (9/11/26)
+## Stand van zaken 5de jaar (12/11/26)
 | Hoofdstuk | 2 uur (`Cursus_DDO_5.tex`) | 1 uur (`Cursus_5de_1uur.tex`) |
 |---|---|---|
 | H1 elektrische krachtwerking | geschreven, nagekeken | geschreven, nagekeken |
@@ -251,7 +251,7 @@ bijwerken (`5de/inleiding_stand_51.tex` voor 1 uur, `5de/inleiding_stand_52.tex`
 | H3 potentiaal | geschreven, nog niet nagekeken | nog aan te passen en na te kijken |
 | H4 gemengde schakelingen | n.v.t. | geschreven, nog niet nagekeken |
 | H4/H5 het magnetisch veld (`magnetisme_*`) | geschreven, nog niet nagekeken | zelfde bestanden, behalve `magnetisme_elektromagneet_1uur` (toepassingen Extra), nog niet nagekeken |
-| Appendix vectorrekenen, standaardvorm | geschreven | geschreven |
+| Appendix vectorrekenen, standaardvorm, natuurconstanten | geschreven | geschreven |
 
 ## te doen volgende keer
 

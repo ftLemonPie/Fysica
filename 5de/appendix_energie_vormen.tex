@@ -1,0 +1,93 @@
+\documentclass{ximera}
+%geschreven 13/11/26
+\title{Kinetische en potentiële energie}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+    Bewegingsenergie en potentiële zwaarte-energie, en de keuze van een referentiepunt.
+\end{abstract}
+\maketitle
+
+\section{Energievormen}\label{sec:energievormen}
+Energie is het vermogen om arbeid te verrichten. Een voorwerp dat beweegt, of een voorwerp dat zich hoog boven de grond bevindt, kan arbeid verrichten. In deze cursus gebruiken we vooral twee vormen van mechanische energie: kinetische energie en potentiële energie.
+
+\subsection{Kinetische energie}
+\begin{definition}[title={Kinetische energie}]\nl
+    Een voorwerp met massa $m$ dat beweegt met een snelheid $v$, bezit \textbf{kinetische energie} (bewegingsenergie):
+    \begin{equation}\label{eq:ekin}
+        E_{\text{kin}} = \frac{1}{2} \cdot m \cdot v^{2}
+    \end{equation}
+\end{definition}
+
+Kinetische energie is nooit negatief. Omdat de snelheid in het kwadraat staat, wordt $E_{\text{kin}}$ vier keer zo groot als de snelheid verdubbelt.
+
+\begin{example}[foldable=true,title={Voorbeeld: kinetische energie van een tennisbal}]\nl
+    Een tennisbal met een massa van $58 \, \mathrm{g}$ vliegt met een snelheid van $30 \, \mathrm{m/s}$. Bereken de kinetische energie van de bal.
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & m = 58 \, \mathrm{g} = 58 \cdot 10^{-3} \, \mathrm{kg} & & v = 30 \, \mathrm{m/s}
+        \end{align*}
+
+        \underline{Gevraagd:} $E_{\text{kin}}$
+
+        \underline{Oplossing:}
+        \begin{align*}
+            E_{\text{kin}} &= \frac{1}{2} \cdot m \cdot v^{2} && \text{(kinetische energie)}\\
+            &= \frac{1}{2} \cdot 58 \cdot 10^{-3} \, \mathrm{kg} \cdot (30 \, \mathrm{m/s})^{2} && \text{(gegevens invullen)}\\
+            &= 26{,}1 \, \mathrm{J} \simeq \boxed{26 \, \mathrm{J}} && \text{(uitrekenen)}
+        \end{align*}
+    \end{solution}
+\end{example}
+
+\subsection{Potentiële zwaarte-energie}
+\begin{definition}[title={Potentiële zwaarte-energie}]\nl
+    Een voorwerp met massa $m$ op een hoogte $h$ boven een gekozen referentiepunt (RP) bezit \textbf{potentiële zwaarte-energie}:
+    \begin{equation}\label{eq:epot_zwaarte}
+        E_{\text{pot}} = m \cdot g \cdot h
+    \end{equation}
+    met $g = 9{,}81 \, \mathrm{N/kg}$ (zie tabel~\verwijs[Natuurconstanten]{tab:natuurconstanten}{appendix_gegevens_constanten}). In het RP is $E_{\text{pot}} = 0 \, \mathrm{J}$.
+\end{definition}
+
+\begin{remark}[title={Kies zelf het referentiepunt}]\nl
+    Het RP mag je vrij kiezen, bijvoorbeeld de grond of een tafelblad. De waarde van $E_{\text{pot}}$ hangt van die keuze af, maar het \textbf{verschil} in potentiële energie tussen twee punten niet. Ligt een voorwerp lager dan het RP, dan is $h < 0$ en dus $E_{\text{pot}} < 0$. Hetzelfde idee gebruiken we bij de potentiële elektrische energie, waar de negatieve plaat het RP is.
+\end{remark}
+
+\begin{example}[foldable=true,title={Voorbeeld: een boek op een kast}]\nl
+    Een boek van $1{,}2 \, \mathrm{kg}$ ligt op een kast van $1{,}8 \, \mathrm{m}$ hoog. Bereken de potentiële zwaarte-energie van het boek, met de vloer als RP.
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & m = 1{,}2 \, \mathrm{kg} & & h = 1{,}8 \, \mathrm{m} & & g = 9{,}81 \, \mathrm{N/kg}
+        \end{align*}
+
+        \underline{Gevraagd:} $E_{\text{pot}}$
+
+        \underline{Oplossing:}
+        \begin{align*}
+            E_{\text{pot}} &= m \cdot g \cdot h && \text{(potentiële zwaarte-energie)}\\
+            &= 1{,}2 \, \mathrm{kg} \cdot 9{,}81 \, \mathrm{N/kg} \cdot 1{,}8 \, \mathrm{m} && \text{(gegevens invullen)}\\
+            &= 21{,}19 \, \mathrm{J} \simeq \boxed{21 \, \mathrm{J}} && \text{(uitrekenen)}
+        \end{align*}
+    \end{solution}
+\end{example}
+
+\begin{question}
+    De snelheid van een fietser verdubbelt. Hoe verandert zijn kinetische energie?
+
+    \begin{multipleChoice}
+        \choice{Ze blijft gelijk.}
+        \choice{Ze verdubbelt.}
+        \choice[correct]{Ze wordt vier keer zo groot.}
+        \choice{Ze wordt acht keer zo groot.}
+    \end{multipleChoice}
+
+    \begin{solution}\nl
+        In $E_{\text{kin}} = \frac{1}{2} \cdot m \cdot v^{2}$ staat de snelheid in het kwadraat: $(2v)^{2} = 4 v^{2}$.
+    \end{solution}
+\end{question}
+
+\end{document}

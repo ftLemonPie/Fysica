@@ -1,0 +1,94 @@
+\documentclass{ximera}
+%geschreven 13/11/26
+\title{Arbeid}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+    De arbeid van een constante kracht en het teken van de arbeid.
+\end{abstract}
+\maketitle
+
+\section{Arbeid van een constante kracht}\label{sec:arbeid}
+Een kracht die op een voorwerp werkt terwijl het voorwerp zich verplaatst, verricht \textbf{arbeid}. Enkel het deel van de kracht in de richting van de verplaatsing telt mee. In figuur~\ref{fig:arbeid_hoek} trekt iemand een kist over de vloer met een kracht $\vec{\mathbf{F}}$ die een hoek $\alpha$ maakt met de verplaatsing $\Delta \vec{\mathbf{x}}$. Enkel de horizontale component $F \cdot \cos \alpha$ helpt om de kist te verplaatsen.
+
+\begin{figure}[h]
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
+        \begin{tikzpicture}
+            % vloer
+            \draw[black!60, line width=0.8pt] (-0.5,0) -- (7.5,0);
+            \foreach \x in {-0.4,-0.1,...,7.4} \draw[black!40] (\x,0) -- (\x-0.2,-0.2);
+            % kist begin (licht) en einde
+            \draw[black!30, dashed] (0,0) rectangle (1.4,1.2);
+            \draw[fill=orange!25, draw=black] (4.5,0) rectangle (5.9,1.2);
+            % kracht onder hoek
+            \coordinate (A) at (5.9,0.6);
+            \draw[kracht] (A) -- ++(30:2.0) node[above right] {$\vec{\mathbf{F}}$};
+            \draw[krachtcomponent] (A) -- ++(1.732,0) node[below right] {$F \cdot \cos \alpha$};
+            \draw[black!60] (A) ++(0.8,0) arc[start angle=0, end angle=30, radius=0.8];
+            \node[black!80] at ($(A)+(15:1.05)$) {$\alpha$};
+            % verplaatsing
+            \draw[positie] (0.7,-0.6) -- (5.2,-0.6) node[midway, below] {$\Delta \vec{\mathbf{x}}$};
+        \end{tikzpicture}
+    \end{center}
+    \caption{Een kracht $\vec{\mathbf{F}}$ onder een hoek $\alpha$ verplaatst een kist over een afstand $\Delta x$. Enkel de component $F \cdot \cos \alpha$ evenwijdig met de verplaatsing verricht arbeid.}
+    \label{fig:arbeid_hoek}
+\end{figure}
+
+\begin{proposition}[title={Arbeid van een constante kracht}]\nl
+    Een constante kracht $\vec{\mathbf{F}}$ die een hoek $\alpha$ maakt met de verplaatsing $\Delta \vec{\mathbf{x}}$, verricht een arbeid
+    \begin{equation}\label{eq:arbeid}
+        W = F \cdot \Delta x \cdot \cos \alpha
+    \end{equation}
+    Arbeid is een scalaire grootheid. De eenheid is de \textbf{joule}: $1 \, \mathrm{J} = 1 \, \mathrm{N \cdot m}$.
+\end{proposition}
+
+\begin{proposition}[title={Teken van de arbeid}]\nl
+    \begin{itemize}
+        \item Kracht en verplaatsing hebben \textbf{dezelfde zin} ($\alpha = 0^\circ$): $W = F \cdot \Delta x > 0$. De kracht helpt de beweging.
+        \item Kracht \textbf{loodrecht} op de verplaatsing ($\alpha = 90^\circ$): $W = 0 \, \mathrm{J}$. De kracht verricht geen arbeid.
+        \item Kracht en verplaatsing hebben een \textbf{tegengestelde zin} ($\alpha = 180^\circ$): $W = -F \cdot \Delta x < 0$. De kracht werkt de beweging tegen, zoals een wrijvingskracht.
+    \end{itemize}
+\end{proposition}
+
+\begin{remark}[title={Arbeid in het hoofdstuk potentiaal}]\nl
+    In een homogeen elektrisch veld ligt de elektrische kracht steeds evenwijdig met de veldlijnen. Beweegt een lading langs een veldlijn, dan is $\alpha = 0^\circ$ of $\alpha = 180^\circ$ en volstaat $W = \pm F \cdot \Delta x$, zoals in~\verwijs[Potentiële elektrische energie in een homogeen veld]{eq:epot_homogeen}{potentiaal_potentiele_energie}.
+\end{remark}
+
+\begin{example}[foldable=true,title={Voorbeeld: een kist voorttrekken}]\nl
+    Een kist wordt $4{,}0 \, \mathrm{m}$ over een horizontale vloer getrokken met een touw. De kracht in het touw is $45 \, \mathrm{N}$ en maakt een hoek van $30^\circ$ met de vloer. Bereken de arbeid die deze kracht verricht.
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & F = 45 \, \mathrm{N} & & \Delta x = 4{,}0 \, \mathrm{m} & & \alpha = 30^\circ
+        \end{align*}
+
+        \underline{Gevraagd:} $W$
+
+        \underline{Oplossing:}\\
+        De kracht is constant en maakt een hoek met de verplaatsing, we gebruiken dus vergelijking~\ref{eq:arbeid}.
+        \begin{align*}
+            W &= F \cdot \Delta x \cdot \cos \alpha && \text{(arbeid van een constante kracht)}\\
+            &= 45 \, \mathrm{N} \cdot 4{,}0 \, \mathrm{m} \cdot \cos 30^\circ && \text{(gegevens invullen)}\\
+            &= 155{,}9 \, \mathrm{J} \simeq \boxed{1{,}6 \cdot 10^{2} \, \mathrm{J}} && \text{(uitrekenen)}
+        \end{align*}
+    \end{solution}
+\end{example}
+
+\begin{question}
+    Een kist schuift over een horizontale vloer. Welke kracht verricht \textbf{geen} arbeid op de kist?
+
+    \begin{multipleChoice}
+        \choice{de horizontale duwkracht}
+        \choice{de wrijvingskracht}
+        \choice[correct]{de normaalkracht van de vloer}
+    \end{multipleChoice}
+
+    \begin{solution}\nl
+        De normaalkracht staat loodrecht op de verplaatsing ($\alpha = 90^\circ$), dus $W = F_N \cdot \Delta x \cdot \cos 90^\circ = 0 \, \mathrm{J}$. Ook de zwaartekracht verricht hier geen arbeid. De wrijvingskracht verricht negatieve arbeid.
+    \end{solution}
+\end{question}
+
+\end{document}

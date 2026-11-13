@@ -59,6 +59,7 @@ enkel in het geheugen van een chat.
 
 `<onderwerp>_<subonderdeel>.tex` voor theorie, `<onderwerp>oef_<type>.tex` voor
 oefeningen (let op: **geen underscore** tussen onderwerp en `oef`).
+Bestanden van de **appendix** krijgen het voorvoegsel `appendix_`, zodat ze samen staan in de map: `appendix_<onderwerp>_<subonderdeel>.tex` (bv. `appendix_vectoren_som.tex`, `appendix_energie_arbeid.tex`). Verwijs ernaar met die volledige naam in `\verwijs`.
 Voorbeeld hoofdstuk "elektrisch veld":
 ```
 elektrischveld_inleiding.tex

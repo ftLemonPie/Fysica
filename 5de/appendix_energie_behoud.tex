@@ -1,0 +1,137 @@
+\documentclass{ximera}
+%geschreven 13/11/26
+\title{Behoud van energie}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+    De wet van behoud van energie, de arbeid-energiestelling en het verband tussen arbeid en potentiële energie.
+\end{abstract}
+\maketitle
+
+\section{De wet van behoud van energie}\label{sec:behoud_energie}
+Energie kan niet ontstaan of verdwijnen: ze wordt enkel omgezet van de ene vorm in de andere. Laat je een steen vallen, dan daalt zijn potentiële energie en stijgt zijn kinetische energie (figuur~\ref{fig:vallende_steen}).
+
+\begin{figure}[h]
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
+        \begin{tikzpicture}
+            % grond
+            \draw[black!60, line width=0.8pt] (-1.5,0) -- (6.5,0);
+            \foreach \x in {-1.4,-1.1,...,6.4} \draw[black!40] (\x,0) -- (\x-0.2,-0.2);
+            \node[black!60, below] at (-0.9,-0.2) {RP};
+            % hoogte-as
+            \draw[-{Latex[length=2mm]}, draw=black!50, text=black!50] (-0.9,0) -- (-0.9,4.4) node[above] {$h$};
+            % drie standen
+            \foreach \y/\lab in {4/1, 2/2, 0.25/3} {
+                \fill[black!70] (0,\y) circle (0.22);
+                \node[right] at (1.1,\y) {\lab};
+            }
+            \draw[snelheid] (0.5,2.25) -- (0.5,1.75) node[midway, right] {$\vec{\mathbf{v}}$};
+            \draw[snelheid] (0.5,0.7) -- (0.5,0.0) node[midway, right] {$\vec{\mathbf{v}}$};
+            % energiebalkjes
+            \foreach \y/\p/\k in {4/1.6/0, 2/0.8/0.8, 0.25/0/1.6} {
+                \draw[black!50] (2,\y-0.2) rectangle (3.6,\y+0.2);
+                \fill[blue!50] (2,\y-0.2) rectangle (2+\p,\y+0.2);
+                \fill[red!50] (2+\p,\y-0.2) rectangle (3.6,\y+0.2);
+            }
+            \fill[blue!50] (4.2,3.2) rectangle (4.5,3.45); \node[right] at (4.5,3.32) {$E_{\text{pot}}$};
+            \fill[red!50] (4.2,2.7) rectangle (4.5,2.95); \node[right] at (4.5,2.82) {$E_{\text{kin}}$};
+        \end{tikzpicture}
+    \end{center}
+    \caption{Een steen valt vanuit rust (stand 1) tot vlak boven de grond (stand 3). Zonder luchtwrijving blijft de som van potentiële en kinetische energie gelijk: de balkjes hebben telkens dezelfde lengte.}
+    \label{fig:vallende_steen}
+\end{figure}
+
+\begin{proposition}[title={Wet van behoud van mechanische energie}]\nl
+    Werken er geen wrijvingskrachten, dan blijft de som van de potentiële en de kinetische energie constant. Voor twee standen $1$ en $2$ geldt:
+    \begin{equation}\label{eq:behoud_energie}
+        E_{\text{pot}}(1) + E_{\text{kin}}(1) = E_{\text{pot}}(2) + E_{\text{kin}}(2)
+    \end{equation}
+\end{proposition}
+
+\begin{remark}[title={Met wrijving}]\nl
+    Werkt er wel wrijving, dan wordt een deel van de mechanische energie omgezet in warmte. De totale energie blijft behouden, maar de som $E_{\text{pot}} + E_{\text{kin}}$ daalt. Zo botsen de vrije elektronen in een geleider tegen de roosterionen en wordt hun kinetische energie omgezet in warmte.
+\end{remark}
+
+\begin{example}[foldable=true,title={Voorbeeld: een vallende steen}]\nl
+    Een steen wordt vanuit rust losgelaten op $5{,}0 \, \mathrm{m}$ boven de grond. Bereken de snelheid waarmee hij de grond raakt. Verwaarloos de luchtwrijving.
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & h_{1} = 5{,}0 \, \mathrm{m} & & v_{1} = 0 \, \mathrm{m/s} & & h_{2} = 0 \, \mathrm{m} \text{ (grond = RP)}
+        \end{align*}
+
+        \underline{Gevraagd:} $v_{2}$
+
+        \underline{Oplossing:}\\
+        Er werkt geen wrijving, we gebruiken dus de wet van behoud van energie (vergelijking~\ref{eq:behoud_energie}). In stand 1 is $E_{\text{kin}} = 0 \, \mathrm{J}$, in stand 2 is $E_{\text{pot}} = 0 \, \mathrm{J}$.
+        \begin{align*}
+            m \cdot g \cdot h_{1} &= \frac{1}{2} \cdot m \cdot v_{2}^{2} && \text{(behoud van energie, $m$ valt weg)}\\
+            v_{2} &= \sqrt{2 \cdot g \cdot h_{1}} && \text{(omvormen naar $v_{2}$)}\\
+            &= \sqrt{2 \cdot 9{,}81 \, \mathrm{m/s^2} \cdot 5{,}0 \, \mathrm{m}} && \text{(gegevens invullen)}\\
+            &= 9{,}90 \, \mathrm{m/s} \simeq \boxed{9{,}9 \, \mathrm{m/s}} && \text{(uitrekenen)}
+        \end{align*}
+    \end{solution}
+\end{example}
+
+\section{Arbeid en energie}\label{sec:arbeid_energie}
+Arbeid is energie die door een kracht wordt overgedragen. Verricht een kracht positieve arbeid op een voorwerp, dan krijgt het voorwerp energie. Bij negatieve arbeid verliest het voorwerp energie.
+
+\begin{proposition}[title={Arbeid-energiestelling}]\nl
+    De totale arbeid die de krachten op een voorwerp verrichten, is gelijk aan de verandering van zijn kinetische energie:
+    \begin{equation}\label{eq:arbeid_energiestelling}
+        W = \Delta E_{\text{kin}} = E_{\text{kin}}(2) - E_{\text{kin}}(1)
+    \end{equation}
+\end{proposition}
+
+\begin{proposition}[title={Arbeid en potentiële energie}]\nl
+    Verricht de zwaartekracht (of de elektrische kracht) een arbeid $W$, dan verandert de potentiële energie met de tegengestelde waarde:
+    \begin{equation}\label{eq:arbeid_epot}
+        \Delta E_{\text{pot}} = -W
+    \end{equation}
+    Valt een steen, dan verricht de zwaartekracht positieve arbeid en daalt de potentiële energie.
+\end{proposition}
+
+\begin{example}[foldable=true,title={Voorbeeld: een kar versnellen}]\nl
+    Een kar van $2{,}0 \, \mathrm{kg}$ staat stil op een horizontale baan zonder wrijving. Je duwt de kar $3{,}0 \, \mathrm{m}$ vooruit met een constante horizontale kracht van $12 \, \mathrm{N}$. Bereken de eindsnelheid van de kar.
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & m = 2{,}0 \, \mathrm{kg} & & F = 12 \, \mathrm{N} & & \Delta x = 3{,}0 \, \mathrm{m} & & v_{1} = 0 \, \mathrm{m/s}
+        \end{align*}
+
+        \underline{Gevraagd:} $v_{2}$
+
+        \underline{Oplossing:}\\
+        Eerst berekenen we de arbeid van de duwkracht. Kracht en verplaatsing hebben dezelfde zin ($\alpha = 0^\circ$), zie vergelijking~\verwijs[Arbeid]{eq:arbeid}{appendix_energie_arbeid}.
+        \begin{align*}
+            W &= F \cdot \Delta x = 12 \, \mathrm{N} \cdot 3{,}0 \, \mathrm{m} = 36 \, \mathrm{J} && \text{(arbeid)}
+        \end{align*}
+        Die arbeid wordt volledig kinetische energie, want de kar start in rust (vergelijking~\ref{eq:arbeid_energiestelling}).
+        \begin{align*}
+            W &= \frac{1}{2} \cdot m \cdot v_{2}^{2} - 0 && \text{(arbeid-energiestelling)}\\
+            v_{2} &= \sqrt{\frac{2 \cdot W}{m}} = \sqrt{\frac{2 \cdot 36 \, \mathrm{J}}{2{,}0 \, \mathrm{kg}}} && \text{(omvormen en invullen)}\\
+            &= \boxed{6{,}0 \, \mathrm{m/s}} && \text{(uitrekenen)}
+        \end{align*}
+    \end{solution}
+\end{example}
+
+\begin{question}
+    Een bal rolt een helling af. Er is geen wrijving. Welke uitspraken zijn juist?
+
+    \begin{selectAll}
+        \choice[correct]{De potentiële energie van de bal daalt.}
+        \choice[correct]{De zwaartekracht verricht positieve arbeid op de bal.}
+        \choice{De som van potentiële en kinetische energie stijgt.}
+        \choice[correct]{De kinetische energie stijgt evenveel als de potentiële energie daalt.}
+    \end{selectAll}
+
+    \begin{solution}\nl
+        Zonder wrijving blijft $E_{\text{pot}} + E_{\text{kin}}$ constant. De zwaartekracht heeft een component in de zin van de verplaatsing, verricht dus positieve arbeid, en daardoor daalt $E_{\text{pot}}$ ($\Delta E_{\text{pot}} = -W$) en stijgt $E_{\text{kin}}$ met dezelfde hoeveelheid.
+    \end{solution}
+\end{question}
+
+\end{document}

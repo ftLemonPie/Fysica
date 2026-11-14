@@ -663,3 +663,75 @@
 
 
 \makeatother
+% ----------------------------------------------------------------------
+%   Nummering per sectie (enkel PDF)
+% ----------------------------------------------------------------------
+% PDF: elk genummerd element = <hoofdstuk>.<sectie>.<nr>, bv. Voorbeeld 2.5.1,
+%      Figuur 2.5.2, Oefening 3.3.1 (deelvraag 3.3.1.b). De teller begint opnieuw
+%      in elke sectie. Het laatste cijfer is zo het nummer op de webpagina van die
+%      sectie (online begint elke pagina opnieuw bij 1; daar verandert niets).
+%      In een hoofdstuk-activity (vóór de eerste sectie): <hoofdstuk>.<nr>.
+%      Pagina's: <hoofdstuk>.<pagina>, bv. p. 3.4; elk hoofdstuk start op een
+%      nieuwe pagina (behalve direct na \part, dan op dezelfde pagina).
+%      Enkel in de xourse-pdf; losse activity-pdf's (handouts) blijven zoals ze waren.
+% Alles zit in één macro: zo ziet TeX de \if's erin niet bij het overslaan
+% (anders 'Extra \fi' bij de html-build en bij losse activity-pdf's).
+\makeatletter
+\@ifclassloaded{xourse}{\let\xmIsXourse\relax}{}
+\newcommand\xm@NummeringSetup{%
+\newcommand\xm@nrprefix{\arabic{titlenumber}.\ifnum\value{section}>0 \arabic{section}.\fi}
+\newcommand\xm@nrcounters{theorem,algorithm,axiom,claim,conclusion,condition,%
+  conjecture,corollary,criterion,definition,example,fact,lemma,formula,idea,%
+  notation,model,observation,proposition,paradox,procedure,remark,summary,%
+  template,warning,figure,table,equation}
+\@for\xm@c:=\xm@nrcounters\do{%
+  \@ifundefined{c@\xm@c}{}{%
+    \expandafter\edef\csname the\xm@c\endcsname{%
+      \noexpand\xm@nrprefix\noexpand\arabic{\xm@c}}%
+    % unieke hyperlink-ankers (tellers starten nu meermaals opnieuw)
+    \expandafter\edef\csname theH\xm@c\endcsname{%
+      \noexpand\arabic{titlenumber}.\noexpand\arabic{section}.\noexpand\arabic{\xm@c}}}}
+% oefeningen, vragen, problemen (ximera-teller depthICount, deelvragen depthIICount, ...)
+% (kopie van \problemNumber uit ximera.cls, met het prefix vóór het nummer)
+\renewcommand\problemNumber{%
+  \ifcsname c@depth\Roman{problem@Depth}Count\endcsname\else
+    \expandafter\newcounter{depth\Roman{problem@Depth}Count}%
+    \expandafter\setcounter{depth\Roman{problem@Depth}Count}{0}%
+  \fi
+  \expandafter\stepcounter{depth\Roman{problem@Depth}Count}%
+  \xm@nrprefix\arabic{depthICount}%
+  \forloop{Iteration@probCnt}{2}{\arabic{Iteration@probCnt} < \numexpr \value{problem@Depth} + 1 \relax}{%
+    .\expandafter\alph{depth\Roman{Iteration@probCnt}Count}}}% deelvragen: a, b, c
+% verticale lijn links naast elke oefening/vraag (bovenste niveau), zoals bij KU Leuven:
+% toont wat bij elkaar hoort, ook over een paginagrens heen
+\RequirePackage[leftbars,color]{changebar}
+\setlength{\changebarwidth}{1.5pt}
+\setlength{\changebarsep}{8pt}
+\cbcolor{blue!45!black}
+\xpatchcmd{\problemEnvironmentStart}{\stepcounter{problem@Depth}}%
+  {\stepcounter{problem@Depth}\ifnum\value{problem@Depth}=1 \cbstart\fi}{}{}
+\xpatchcmd{\problemEnvironmentEnd}{\addtocounter{problem@Depth}{-2}}%
+  {\addtocounter{problem@Depth}{-2}\ifnum\value{problem@Depth}=0 \cbend\fi}{}{}
+% alle tellers terug op 0 bij elke nieuwe sectie/hoofdstuk
+\newcommand\xm@resetnrs{%
+  \@for\xm@c:=\xm@nrcounters\do{%
+    \@ifundefined{c@\xm@c}{}{\setcounter{\xm@c}{0}}}%
+  \@ifundefined{c@depthICount}{}{\setcounter{depthICount}{0}}}
+% paginanummers per hoofdstuk
+\renewcommand\thepage{\arabic{titlenumber}.\arabic{page}}
+\newif\ifxm@afterpart
+\xpretocmd{\part}{\global\xm@afterparttrue}{}{}
+\let\xm@origchapterstyle\chapterstyle
+\renewcommand\chapterstyle{\xm@origchapterstyle
+  \let\xm@chmaketitle\maketitle
+  \def\maketitle{%
+    \ifxm@afterpart\global\xm@afterpartfalse\else\clearpage\fi
+    \setcounter{page}{1}%
+    \xm@chmaketitle\xm@resetnrs}}
+\let\xm@origsectionstyle\sectionstyle
+\renewcommand\sectionstyle{\xm@origsectionstyle
+  \let\xm@secmaketitle\maketitle
+  \def\maketitle{\xm@secmaketitle\xm@resetnrs}}
+}% einde \xm@NummeringSetup
+\ifdefined\HCode\else\ifdefined\xmIsXourse\xm@NummeringSetup\fi\fi
+\makeatother

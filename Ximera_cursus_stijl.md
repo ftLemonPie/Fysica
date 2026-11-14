@@ -233,6 +233,7 @@ Kort: titel, abstract, `\maketitle`, één inleidende zin over wat volgt. Geen `
 ### Kruisverwijzingen en voettekst
 - **Verwijzingen naar een ander bestand** (een andere `\activity`) gebeuren met `\verwijs[tekst voor html]{label}{bestandsnaam zonder .tex}`, nooit met `\ref`/`\eqref`. Online wordt elke activity apart gecompileerd, waardoor `\ref` naar een label in een ander bestand `??` geeft. `\verwijs` geeft in de PDF een gewone `\ref` en online een link naar de pagina van het andere bestand. Voorbeeld: `zie~\verwijs[Permanente magneten]{sec:permanente-magneten}{magnetisme_permanente_magneten}`. Kies de tekst zo dat de zin online ook klopt (bv. `figuur~\verwijs[in Het magnetisch veld en veldlijnen]{fig:...}{magnetisme_veld}`).
 - `\ref` blijft gewoon voor verwijzingen binnen hetzelfde bestand.
+- **Nummering (PDF)**: per sectie, `<hoofdstuk>.<sectie>.<nr>` (Voorbeeld 2.5.1, Figuur 2.5.2, Oefening 3.3.1, deelvraag in een oefening 3.3.1.a; een losse vraag blijft Vraag 2.1.1); elke oefening/losse vraag krijgt links een blauwe lijn; pagina's `<hoofdstuk>.<pagina>` (p. 3.4), elk hoofdstuk op een nieuwe pagina. Online begint elke pagina opnieuw bij 1, zodat het laatste cijfer in de pdf het nummer op de webpagina is. Geregeld in `xmPreamble.tex` (blok *Nummering per sectie*), enkel voor de xourse-pdf. Nummers dus **nooit hard in de tekst** zetten: altijd `\ref`/`\verwijs`.
 - Verwijzen naar een hoofdstuk dat nog niet bestaat: gewone tekst (bv. "in het hoofdstuk over deeltjesfysica"), geen label.
 - Belangrijke `\section`-koppen krijgen een label, bv.
   `\section{Tribo-elektrisch effect}\label{sec:tribo-elektrisch-effect}`, zodat de
@@ -299,7 +300,12 @@ Kort: titel, abstract, `\maketitle`, één inleidende zin over wat volgt. Geen `
   voorbeeldtypes van elk hoofdstuk.
 - **Aanvullend/inspiratie**: Serway, *Physics for Scientists and Engineers*, 7th ed.,
   voor niveau, "Quick Quiz"-stijl en extra oefeningen, maar dieper dan het leerplan vereist.
-- Beide bronnen: **nooit letterlijk overnemen** (tekst of cijfer-configuraties). Figuren zie §4.
+- **Algemene bron**: KU Leuven, *Blik op fysica* (cursus voorkennis),
+  <https://set.kuleuven.be/voorkennis/blik-op-fysica/cursus/cursus> en de pagina's waarnaar
+  die linkt. Voor alle thema's te raadplegen: vakinhoud controleren, uitleg en opbouw,
+  ideeën voor oefeningen. De site blokkeert automatisch ophalen (robots.txt): Daan bewaart
+  de relevante pagina's als pdf in `~/Ximera/Bronnen/KU Leuven Blik op fysica/`.
+- Alle bronnen: **nooit letterlijk overnemen** (tekst of cijfer-configuraties). Figuren zie §4.
   Altijd herschrijven/herwerken naar eigen voorbeelden op middelbare-schoolniveau.
 - **Leerplanbeperking** (NatS, oktober 2024, LPD 2/3 F): elektrische krachtwerking en
   elektrisch veld blijven beperkt tot ladingen **in lijn** of **onder een rechte hoek

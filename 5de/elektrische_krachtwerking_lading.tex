@@ -1,5 +1,5 @@
 \documentclass{ximera}
-%verbeterd 12/11/26
+%verbeterd 14/11/26
 \title{Ladingen}
 \author{Daan Lipkens}
 
@@ -26,16 +26,18 @@ Er zijn simpele experimentjes om aan te tonen dat er elektrische krachten zijn. 
 %	eigenschappen van ladingen en soorten ladingen
 % -------------------------------
 \section{Eigenschappen van ladingen}
-In een reeks van simpele experimenten, zoals te zien in figuur \ref{fig:buisjes}, kan je aantonen dat er maar twee soorten ladingen bestaan. Daarom werd het deeltjesmodel uitgebreid:
+In een reeks van simpele experimenten, zoals te zien in figuur \ref{fig:ballonnen}, kan je aantonen dat er maar twee soorten ladingen bestaan. Daarom werd het deeltjesmodel uitgebreid:
 %--------------------------
-%afbeelding buisjes --> verschijnen niet in html
-\begin{figure}[h]
-\captionsetup{width=0.85\textwidth}
-\begin{center}
-\includegraphics[width=0.8\textwidth]{pic5/elektriciteit/coulomb/buisjes.jpg}
-\caption{(a) Een negatief geladen rubberen staaf die aan een draad hangt, wordt aangetrokken door een positief geladen glazen staaf. (b) Een negatief geladen rubberen staaf wordt afgestoten door een andere negatief geladen rubberen staaf.}
-\label{fig:buisjes}
-\end{center}
+% AFBEELDING: ballon en haar trekken elkaar aan, twee ballonnen stoten elkaar af
+% bron: https://commons.wikimedia.org/wiki/File:Attractive-and-repulsive-electric-force-demonstrations.jpg
+\begin{figure}[ht!]
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
+        \includegraphics[width=0.8\textwidth]{pic5/elektriciteit/coulomb/ballonnen_aantrekken_afstoten.jpg}
+        \fotobron{MikeRun}{CC BY-SA 4.0}{https://commons.wikimedia.org/wiki/File:Attractive-and-repulsive-electric-force-demonstrations.jpg}
+    \end{center}
+    \caption{(a) Een ballon die over het haar gewreven werd, trekt het haar aan: ballon en haar hebben een tegengestelde lading. (b) Twee ballonnen die op dezelfde manier geladen werden, stoten elkaar af.}
+    \label{fig:ballonnen}
 \end{figure}
 %--------------------------
 \begin{itemize}
@@ -47,7 +49,7 @@ In een reeks van simpele experimenten, zoals te zien in figuur \ref{fig:buisjes}
 	De totale elektrische lading in een gesloten systeem blijft altijd gelijk. Met andere woorden: lading kan niet uit het niets ontstaan of zomaar verdwijnen. Ze kan enkel worden verplaatst van het ene voorwerp naar het andere. Wanneer een voorwerp elektronen verliest, neemt een ander voorwerp ze op, zodat de totale hoeveelheid lading onveranderd blijft.
 	\end{proposition}
 	\begin{itemize}
-	\item lading is \textbf{gekwantiseerd}\footnote{Gekwantiseerd betekent dat een bepaalde grootheid niet willekeurig elke waarde kan aannemen, maar enkel specifieke, discrete waarden. De kleinste waarde noemen we de elementaire lading \textit{e}. $\mathit{e}=1,6\cdot 10^{-19}\text{C}$. De huidige theorieën laten wel breuken van deze lading toe voor quarks, al zijn \textit{vrije} quarks nog nooit gevonden. Meer hierover in het hoofdstuk over deeltjesfysica.}%hoofdstuk~\ref{hoofdstuk: Deeltjes Fysica} 
+	\item lading is \textbf{gekwantiseerd}\footnote{Gekwantiseerd betekent dat een bepaalde grootheid niet willekeurig elke waarde kan aannemen, maar enkel specifieke, discrete waarden. De kleinste waarde noemen we de elementaire lading \textit{e}. $e=1{,}60\cdot 10^{-19}\,\mathrm{C}$. De huidige theorieën laten wel breuken van deze lading toe voor quarks, al zijn \textit{vrije} quarks nog nooit gevonden. Meer hierover in het hoofdstuk over deeltjesfysica.}%hoofdstuk~\ref{hoofdstuk: Deeltjes Fysica} 
 \end{itemize}
 
 \begin{definition}
@@ -66,9 +68,9 @@ Lange tijd dacht men dat lading en materie twee gescheiden domeinen van de weten
 	\toprule
 	deeltje & lading (C) & massa (kg)\\
 	\midrule
-	\textcolor{red}{proton} & $+1,60\cdot 10^{-19}$ & $1,673\cdot 10^{-27}$ \\
-	neutron & 0 & $1,675\cdot 10^{-27}$ \\
-	\textcolor{blue}{elektron} & $-1,60\cdot 10^{-19}$ & $9,109\cdot 10^{-31}$ \\
+	\textcolor{red}{proton} & $+1{,}60\cdot 10^{-19}$ & $1{,}673\cdot 10^{-27}$ \\
+	neutron & 0 & $1{,}675\cdot 10^{-27}$ \\
+	\textcolor{blue}{elektron} & $-1{,}60\cdot 10^{-19}$ & $9{,}109\cdot 10^{-31}$ \\
 	\bottomrule
 	\label{tabel:ladingen_proton_elektron}
 \end{tabular}
@@ -78,7 +80,7 @@ Lange tijd dacht men dat lading en materie twee gescheiden domeinen van de weten
 	\end{remark}
 \end{table}
 
-De ladingen van de bouwstenen van een atoom vind je in tabel~\ref{tabel:ladingen_proton_elektron}. De eenheidslading $e$ is de grootte van de lading van een elektron: $e=1,60\cdot 10^{-19}\mathrm{C}$. \footnote{We zijn enkel geïnteresseerd in de grootte van de lading, niet in het teken.}
+De ladingen van de bouwstenen van een atoom vind je in tabel~\ref{tabel:ladingen_proton_elektron}. De eenheidslading $e$ is de grootte van de lading van een elektron: $e=1{,}60\cdot 10^{-19}\,\mathrm{C}$. \footnote{We zijn enkel geïnteresseerd in de grootte van de lading, niet in het teken.}
 
 
 
@@ -95,7 +97,7 @@ De ladingen van de bouwstenen van een atoom vind je in tabel~\ref{tabel:ladingen
 	\end{multipleChoice}
 
 	\begin{solution}
-	Volgens de \textbf{wet van Coulomb} stoten ladingen met hetzelfde teken elkaar af en trekken ladingen met een verschillend teken elkaar aan.
+	Ladingen met hetzelfde teken stoten elkaar af en ladingen met een verschillend teken trekken elkaar aan.
 	\end{solution}
 \end{question}
 %---------------

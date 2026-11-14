@@ -1,5 +1,5 @@
 \documentclass{ximera}
-%verbeterd 29/9/26
+%verbeterd 14/11/26
 \title{Vraagstukken elektrisch veld: ladingen op een lijn}
 \author{Daan Lipkens}
 
@@ -51,8 +51,8 @@
         \underline{Oplossing:}\\
         \textbf{Stap 1: Grootte van de afzonderlijke velden}
         \begin{align*}
-            E_{1} &= k_e \frac{|Q_{1}|}{r_{1}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 4{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}90 \, \mathrm{m})^{2}} = 4{,}4 \cdot 10^{4} \, \mathrm{N/C} \\
-            E_{2} &= k_e \frac{|Q_{2}|}{r_{2}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 4{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}30 \, \mathrm{m})^{2}} = 4{,}0 \cdot 10^{5} \, \mathrm{N/C}
+            E_{1} &= k \frac{|Q_{1}|}{r_{1}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 4{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}90 \, \mathrm{m})^{2}} = 4{,}4 \cdot 10^{4} \, \mathrm{N/C} \\
+            E_{2} &= k \frac{|Q_{2}|}{r_{2}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 4{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}30 \, \mathrm{m})^{2}} = 4{,}0 \cdot 10^{5} \, \mathrm{N/C}
         \end{align*}
 
         \textbf{Stap 2: Zin van de velden bepalen}\\
@@ -64,7 +64,7 @@
         \begin{align*}
             E_{\text{net}} &= E_1 - E_2 \\
                             &= 4{,}4 \cdot 10^{4} \, \mathrm{N/C} - 4{,}0 \cdot 10^{5} \, \mathrm{N/C} \\
-                            &= -3{,}6 \cdot 10^{5} \, \mathrm{N/C}
+                            &= \boxed{-3{,}6 \cdot 10^{5} \, \mathrm{N/C}}
         \end{align*}
         Het resulterende veld heeft een grootte van $3{,}6 \cdot 10^{5} \, \mathrm{N/C}$ en wijst naar \textbf{links} ($-x$-richting): dus naar de ladingen toe.
     \end{solution}
@@ -98,16 +98,16 @@
 
         \underline{Oplossing:}\\
         Omdat beide ladingen positief zijn, wijzen hun velden tussen de ladingen in tegengestelde richtingen: het is dus mogelijk dat ze elkaar opheffen. In het gezochte punt geldt $E_1 = E_3$.
-        Met $E_1=k_e \frac{Q_1}{r_1^{2}}=k_e \frac{Q_1}{x^{2}}$ en $E_3=k_e \frac{Q_3}{r_3^{2}}=k_e \frac{Q_3}{(d-x)^{2}}$. Hieruit volgt:
+        Met $E_1=k \frac{Q_1}{r_1^{2}}=k \frac{Q_1}{x^{2}}$ en $E_3=k \frac{Q_3}{r_3^{2}}=k \frac{Q_3}{(d-x)^{2}}$. Hieruit volgt:
         \begin{align*}
-            k_e \frac{Q_1}{x^{2}} &= k_e \frac{Q_3}{(d-x)^{2}} \\
+            k \frac{Q_1}{x^{2}} &= k \frac{Q_3}{(d-x)^{2}} \\
             \frac{Q_1}{x^{2}} &= \frac{Q_3}{(d-x)^{2}} \\
             \left(\frac{d-x}{x}\right)^{2} &= \frac{Q_3}{Q_1} = \frac{8{,}0 \cdot 10^{-6} \, \mathrm{C}}{2{,}0 \cdot 10^{-6} \, \mathrm{C}} = 4 \\
             \frac{d-x}{x} &= 2
         \end{align*}
         Hieruit volgt $d - x = 2x$, dus $d = 3x$, en
         \[
-            x = \frac{d}{3} = \frac{1{,}20 \, \mathrm{m}}{3} = 0{,}40 \, \mathrm{m} = 4{,}0\cdot 10^{-1} \, \mathrm{m}
+            x = \frac{d}{3} = \frac{1{,}20 \, \mathrm{m}}{3} = 0{,}40 \, \mathrm{m} = \boxed{4{,}0\cdot 10^{-1} \, \mathrm{m}}
         \]
         Het gezochte punt ligt dus op $4{,}0\cdot 10^{-1} \, \mathrm{m}$ van $Q_1$ (en dus $0{,}80 \, \mathrm{m}$ van $Q_3$), zoals verwacht dichter bij de kleinste lading.
     \end{solution}
@@ -136,7 +136,7 @@
     \begin{question}
         Bereken de grootte van $Q_2$.
 
-        \[ Q_2 = \answer[tolerance=1,onlineshowanswerbutton]{3.2} \cdot 10^{-5} \, \mathrm{C} \]
+        \[ Q_2 = \answer[tolerance=0.08,onlineshowanswerbutton]{3.2} \cdot 10^{-5} \, \mathrm{C} \]
 
         \begin{hint}
             In $P$ moet gelden $E_1 = E_2$. De afstand van $Q_1$ tot $P$ is $0{,}20 \, \mathrm{m}$; de afstand van $Q_2$ tot $P$ is $0{,}40 \, \mathrm{m}$.
@@ -153,11 +153,11 @@
             \underline{Oplossing:}\\
             Opdat $E_{\text{net}}(P) = 0$, moet gelden $E_1 = E_2$:
             \begin{align*}
-                k_e \frac{Q_1}{r_1^{2}} &= k_e \frac{Q_2}{r_2^{2}} \\
+                k \frac{Q_1}{r_1^{2}} &= k \frac{Q_2}{r_2^{2}} \\
                 Q_2 &= Q_1 \cdot \left(\frac{r_2}{r_1}\right)^{2} \\
                     &= 8{,}0 \cdot 10^{-6} \, \mathrm{C} \cdot \left(\frac{0{,}40 \, \mathrm{m}}{0{,}20 \, \mathrm{m}}\right)^{2} \\
                     &= 8{,}0 \cdot 10^{-6} \, \mathrm{C} \cdot 4 \\
-                    &= 32 \cdot 10^{-6} \, \mathrm{C} = 3{,}2 \cdot 10^{-5} \, \mathrm{C}
+                    &= 32 \cdot 10^{-6} \, \mathrm{C} = \boxed{3{,}2 \cdot 10^{-5} \, \mathrm{C}}
             \end{align*}
         \end{solution}
     \end{question}
@@ -203,8 +203,8 @@
         \underline{Oplossing:}\\
         \textbf{Stap 1: Grootte van de afzonderlijke velden}
         \begin{align*}
-            E_{1} &= k_e \frac{|Q_{1}|}{r_{1}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 3{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}30 \, \mathrm{m})^{2}} = 3{,}0 \cdot 10^{5} \, \mathrm{N/C} \\
-            E_{2} &= k_e \frac{|Q_{2}|}{r_{2}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 7{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}50 \, \mathrm{m})^{2}} = 2{,}5 \cdot 10^{5} \, \mathrm{N/C}
+            E_{1} &= k \frac{|Q_{1}|}{r_{1}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 3{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}30 \, \mathrm{m})^{2}} = 2{,}997 \cdot 10^{5} \, \mathrm{N/C} \\
+            E_{2} &= k \frac{|Q_{2}|}{r_{2}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 7{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}50 \, \mathrm{m})^{2}} = 2{,}517 \cdot 10^{5} \, \mathrm{N/C}
         \end{align*}
 
         \textbf{Stap 2: Zin van de velden bepalen}\\
@@ -213,7 +213,7 @@
 
         \textbf{Stap 3: Algebraïsch optellen} (rechts is positief)
         \begin{align*}
-            E_{\text{net}} &= E_1 - E_2 = 3{,}0 \cdot 10^{5} \, \mathrm{N/C} - 2{,}5 \cdot 10^{5} \, \mathrm{N/C} = 4{,}8 \cdot 10^{4} \, \mathrm{N/C}
+            E_{\text{net}} &= E_1 - E_2 = 2{,}997 \cdot 10^{5} \, \mathrm{N/C} - 2{,}517 \cdot 10^{5} \, \mathrm{N/C} = \boxed{4{,}8 \cdot 10^{4} \, \mathrm{N/C}}
         \end{align*}
         $E_1$ is groter dan $E_2$: hoewel $Q_1$ de zwakste lading is, ligt ze dichter bij $P$ en overheerst daardoor haar bijdrage. Het resulterende veld wijst dus naar \textbf{rechts} ($+x$-richting), in de zin van $\vec{E}_1$.
     \end{solution}
@@ -244,13 +244,13 @@
         \underline{Oplossing:}\\
         Omdat beide ladingen negatief zijn, wijzen hun velden tussen de ladingen in tegengestelde richting (elk naar de eigen lading toe): het is dus mogelijk dat ze elkaar opheffen ergens tussen de twee ladingen. In het gezochte punt geldt $|E_1| = |E_4|$:
         \begin{align*}
-            k_e \frac{|Q_1|}{x^{2}} &= k_e \frac{|Q_4|}{(d-x)^{2}} \\
+            k \frac{|Q_1|}{x^{2}} &= k \frac{|Q_4|}{(d-x)^{2}} \\
             \left(\frac{d-x}{x}\right)^{2} &= \frac{|Q_4|}{|Q_1|} = \frac{12{,}0 \cdot 10^{-6} \, \mathrm{C}}{3{,}0 \cdot 10^{-6} \, \mathrm{C}} = 4 \\
             \frac{d-x}{x} &= 2
         \end{align*}
         Hieruit volgt $d - x = 2x$, dus $d = 3x$, en
         \[
-            x = \frac{d}{3} = \frac{0{,}90 \, \mathrm{m}}{3} = 0{,}30 \, \mathrm{m} = 3{,}0\cdot 10^{-1} \, \mathrm{m}
+            x = \frac{d}{3} = \frac{0{,}90 \, \mathrm{m}}{3} = 0{,}30 \, \mathrm{m} = \boxed{3{,}0\cdot 10^{-1} \, \mathrm{m}}
         \]
         Het gezochte punt ligt dus op $3{,}0\cdot 10^{-1} \, \mathrm{m}$ van $Q_1$, zoals verwacht dichter bij de kleinste lading.
     \end{solution}
@@ -301,8 +301,8 @@
         \underline{Oplossing:}\\
         \textbf{Stap 1: Grootte van de afzonderlijke velden}
         \begin{align*}
-            E_{1} &= k_e \frac{|Q_{1}|}{r_{1}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 2{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}20 \, \mathrm{m})^{2}} = 4{,}5 \cdot 10^{5} \, \mathrm{N/C} \\
-            E_{2} &= k_e \frac{|Q_{2}|}{r_{2}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 6{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}70 \, \mathrm{m})^{2}} = 1{,}1 \cdot 10^{5} \, \mathrm{N/C}
+            E_{1} &= k \frac{|Q_{1}|}{r_{1}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 2{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}20 \, \mathrm{m})^{2}} = 4{,}5 \cdot 10^{5} \, \mathrm{N/C} \\
+            E_{2} &= k \frac{|Q_{2}|}{r_{2}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 6{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}70 \, \mathrm{m})^{2}} = 1{,}1 \cdot 10^{5} \, \mathrm{N/C}
         \end{align*}
 
         \textbf{Stap 2: Zin van de velden bepalen}\\
@@ -311,7 +311,7 @@
 
         \textbf{Stap 3: Algebraïsch optellen} (rechts is positief)
         \begin{align*}
-            E_{\text{net}} &= -E_1 + E_2 = -4{,}5 \cdot 10^{5} \, \mathrm{N/C} + 1{,}1 \cdot 10^{5} \, \mathrm{N/C} = -3{,}4 \cdot 10^{5} \, \mathrm{N/C}
+            E_{\text{net}} &= -E_1 + E_2 = -4{,}5 \cdot 10^{5} \, \mathrm{N/C} + 1{,}1 \cdot 10^{5} \, \mathrm{N/C} = \boxed{-3{,}4 \cdot 10^{5} \, \mathrm{N/C}}
         \end{align*}
         Het resulterende veld heeft een grootte van $3{,}4 \cdot 10^{5} \, \mathrm{N/C}$ en wijst naar \textbf{links} ($-x$-richting).
     \end{solution}
@@ -357,12 +357,12 @@
 
             \underline{Oplossing:}\\
             \begin{align*}
-                E_{1} &= k_e \frac{|Q_{1}|}{r_{1}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 1{,}0 \cdot 10^{-6} \, \mathrm{C}}{(1{,}50 \, \mathrm{m})^{2}} = 4{,}0 \cdot 10^{3} \, \mathrm{N/C} \\
-                E_{2} &= k_e \frac{|Q_{2}|}{r_{2}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 9{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}50 \, \mathrm{m})^{2}} = 3{,}2 \cdot 10^{5} \, \mathrm{N/C}
+                E_{1} &= k \frac{|Q_{1}|}{r_{1}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 1{,}0 \cdot 10^{-6} \, \mathrm{C}}{(1{,}50 \, \mathrm{m})^{2}} = 4{,}0 \cdot 10^{3} \, \mathrm{N/C} \\
+                E_{2} &= k \frac{|Q_{2}|}{r_{2}^{2}} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 9{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}50 \, \mathrm{m})^{2}} = 3{,}2 \cdot 10^{5} \, \mathrm{N/C}
             \end{align*}
             Beide velden wijzen naar rechts, dus:
             \begin{align*}
-                E_{\text{net}} = E_1 + E_2 = 4{,}0 \cdot 10^{3} \, \mathrm{N/C} + 3{,}2 \cdot 10^{5} \, \mathrm{N/C} \simeq 3{,}3 \cdot 10^{5} \, \mathrm{N/C}
+                E_{\text{net}} = E_1 + E_2 = 4{,}0 \cdot 10^{3} \, \mathrm{N/C} + 3{,}2 \cdot 10^{5} \, \mathrm{N/C} \simeq \boxed{3{,}3 \cdot 10^{5} \, \mathrm{N/C}}
             \end{align*}
         \end{solution}
     \end{question}
@@ -412,13 +412,13 @@
             \underline{Oplossing:}\\
             Op het gezochte punt geldt $E_1 = E_2$, met afstand $x$ tot $Q_1$ en $(d+x)$ tot $Q_2$:
             \begin{align*}
-                k_e \frac{|Q_1|}{x^{2}} &= k_e \frac{|Q_2|}{(d+x)^{2}} \\
+                k \frac{|Q_1|}{x^{2}} &= k \frac{|Q_2|}{(d+x)^{2}} \\
                 \left(\frac{d+x}{x}\right)^{2} &= \frac{|Q_2|}{|Q_1|} = \frac{20{,}0 \cdot 10^{-6} \, \mathrm{C}}{5{,}0 \cdot 10^{-6} \, \mathrm{C}} = 4 \\
                 \frac{d+x}{x} &= 2
             \end{align*}
             Hieruit volgt $d + x = 2x$, dus $d = x$, en
             \[
-                x = d = 0{,}60 \, \mathrm{m} = 6{,}0\cdot 10^{-1} \, \mathrm{m}
+                x = d = 0{,}60 \, \mathrm{m} = \boxed{6{,}0\cdot 10^{-1} \, \mathrm{m}}
             \]
             Het gezochte punt ligt dus $6{,}0\cdot 10^{-1} \, \mathrm{m}$ links van $Q_1$.
         \end{solution}
@@ -474,7 +474,7 @@
             \]
             Dit punt ligt $2{,}00 \, \mathrm{m}$ links van $Q_1$ (die op $x=0{,}00 \, \mathrm{m}$ ligt), dus is de gezochte coördinaat
             \[
-                x = -2{,}00 \, \mathrm{m}
+                x = \boxed{-2{,}00 \, \mathrm{m}}
             \]
         \end{solution}
     \end{question}

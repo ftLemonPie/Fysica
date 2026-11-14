@@ -1,4 +1,5 @@
 \documentclass{ximera}
+%verbeterd 14/11/26
 \title{Spanning, arbeid en energie}
 \author{Daan Lipkens}
 
@@ -40,7 +41,7 @@ Een batterij van $12 \, \mathrm{V}$ verplaatst een lading van $1 \, \mathrm{C}$ 
 
 \underline{Oplossing:}
 \begin{align*}
-    W = Q \cdot U = 1 \, \mathrm{C} \cdot 12 \, \mathrm{V} = 12 \, \mathrm{J}
+    W = Q \cdot U = 1 \, \mathrm{C} \cdot 12 \, \mathrm{V} = \boxed{12 \, \mathrm{J}}
 \end{align*}
 Er komt dus $12 \, \mathrm{J}$ energie vrij per coulomb lading die van de ene pool naar de andere beweegt.
 \end{solution}
@@ -75,7 +76,7 @@ In een echte geleider botsen de vrije elektronen voortdurend tegen de roosterion
     \end{multipleChoice}
 
     \begin{solution}\nl
-        Volgens vergelijking~\ref{eq:arbeid_spanning} is $W = Q \cdot U_{12}$. Met $U_{12} > 0$ en $Q < 0$ is $W < 0$: het veld verricht negatieve arbeid: de lading beweegt tegen het veld in.
+        Volgens vergelijking~\ref{eq:arbeid_spanning} is $W = Q \cdot U_{12}$. Met $U_{12} > 0$ en $Q < 0$ is $W < 0$: het veld verricht negatieve arbeid. De lading beweegt tegen de elektrische kracht in en wordt afgeremd.
     \end{solution}
 \end{question}
 
@@ -102,7 +103,7 @@ De arbeid die het veld op het elektron verricht, wordt volledig omgezet in kinet
     W &= Q \cdot U = \tfrac{1}{2} m_{e} v^{2} \\
     1{,}60 \cdot 10^{-19} \, \mathrm{C} \cdot 200 \, \mathrm{V} &= \tfrac{1}{2} \cdot 9{,}11 \cdot 10^{-31} \, \mathrm{kg} \cdot v^{2} \\
     v &= \sqrt{\frac{2 \cdot 3{,}20 \cdot 10^{-17} \, \mathrm{J}}{9{,}11 \cdot 10^{-31} \, \mathrm{kg}}} \\
-    &= 8{,}38 \cdot 10^{6} \, \mathrm{m/s}
+    &= \boxed{8{,}38 \cdot 10^{6} \, \mathrm{m/s}}
 \end{align*}
 \end{solution}
 \end{example}
@@ -126,7 +127,17 @@ De arbeid die het veld op het elektron verricht, wordt volledig omgezet in kinet
 Robert Millikan voerde tussen 1909 en 1913 een beroemde reeks experimenten uit waarmee hij de \textbf{elementaire lading} $e$ bepaalde en aantoonde dat lading gekwantiseerd is.
 
 \begin{remark}[expandable=true,title={Opstelling van Millikan}]\nl
-Met een verstuiver worden fijne oliedruppeltjes tussen twee horizontale platen gebracht. Door wrijving met de sproeier worden de druppeltjes elektrisch geladen. Tussen de platen heerst een instelbaar homogeen elektrisch veld. Regel je de spanning tussen de platen zo dat een druppeltje precies blijft \emph{zweven}, dan is de opwaartse elektrische kracht exact gelijk aan de neerwaartse zwaartekracht. Millikan vond dat de lading van een druppeltje steeds een veelvoud is van $1{,}60 \cdot 10^{-19} \, \mathrm{C}$: de lading van één elektron.
+Met een verstuiver worden fijne oliedruppeltjes tussen twee horizontale platen gebracht. Door wrijving met de sproeier worden de druppeltjes elektrisch geladen. Tussen de platen heerst een instelbaar homogeen elektrisch veld. Regel je de spanning tussen de platen zo dat een druppeltje precies blijft \emph{zweven}, dan is de opwaartse elektrische kracht exact gelijk aan de neerwaartse zwaartekracht. Millikan vond dat de lading van een druppeltje steeds een veelvoud is van $1{,}60 \cdot 10^{-19} \, \mathrm{C}$: de lading van één elektron. Figuur~\ref{fig:millikan_opstelling} toont de originele opstelling.
+
+% AFBEELDING: originele opstelling van Millikan
+% bron: https://commons.wikimedia.org/w/index.php?curid=685647
+\begin{center}
+    \captionsetup{width=0.85\textwidth}
+    \includegraphics[width=0.5\textwidth]{pic5/elektriciteit/potentiaal/millikan_opstelling.jpg}
+    \fotobron{onbekende fotograaf}{publiek domein}{https://commons.wikimedia.org/w/index.php?curid=685647}
+    \captionof{figure}{De originele opstelling waarmee Millikan de elementaire lading bepaalde. In de cilinder zitten de twee horizontale platen; via het kijkertje volgde hij de oliedruppeltjes.}
+    \label{fig:millikan_opstelling}
+\end{center}
 \end{remark}
 
 \begin{question}
@@ -135,7 +146,7 @@ Met een verstuiver worden fijne oliedruppeltjes tussen twee horizontale platen g
     \begin{multipleChoice}
         \choice{De elektrische kracht is groter dan de zwaartekracht.}
         \choice[correct]{De elektrische kracht is even groot als de zwaartekracht en tegengesteld gericht.}
-        \choice{Het elektrisch veld heft de zwaartekracht op de olie op.}
+        \choice{In een elektrisch veld werkt er geen zwaartekracht meer op de olie.}
     \end{multipleChoice}
 
     \begin{solution}\nl
@@ -174,7 +185,7 @@ Omdat het druppeltje zweeft, is de resulterende kracht nul: $F_{z} = F_{e} = E \
 \end{align*}
 We delen door de elementaire lading om het aantal elektronen te vinden:
 \begin{align*}
-    n = \frac{9{,}52 \cdot 10^{-19} \, \mathrm{C}}{1{,}60 \cdot 10^{-19} \, \mathrm{C}} \approx 6
+    n = \frac{9{,}52 \cdot 10^{-19} \, \mathrm{C}}{1{,}60 \cdot 10^{-19} \, \mathrm{C}} \approx \boxed{6}
 \end{align*}
 Het druppeltje heeft dus $6$ elektronen opgenomen, en heeft een (afgeronde) lading van $\lvert Q \rvert = 6 \cdot 1{,}60 \cdot 10^{-19} \, \mathrm{C} = 9{,}6 \cdot 10^{-19} \, \mathrm{C}$.
 \end{solution}

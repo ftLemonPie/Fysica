@@ -1,6 +1,6 @@
 \documentclass{ximera}
 %herschreven 23 september 2026
-%verbeterd 12/11/26
+%verbeterd 14/11/26
 \title{Het elektrisch veld van een puntlading}
 \author{Daan Lipkens}
 
@@ -15,12 +15,12 @@
 \section{Grootte van het elektrisch veld van een puntlading}
 
 We kunnen de grootte van het elektrisch veld van één enkele puntlading afleiden door de wet van Coulomb in te vullen in de definitie van het veld. De kracht die bronlading $Q_b$ uitoefent op testlading $Q_t$ op afstand $r$ is:
-$$ F_e = k_e \frac{|Q_b| \cdot |Q_t|}{r^2} $$
+$$ F_e = k \frac{|Q_b| \cdot |Q_t|}{r^2} $$
 
 Als we dit delen door $Q_t$, bekomen we de grootte van het elektrisch veld veroorzaakt door $Q_b$:
 
 \begin{definition}[title={Formule radiaal veld}]\nl
-    $$E = k_e \frac{|Q_b|}{r^2}$$
+    $$E = k \frac{|Q_b|}{r^2}$$
 \end{definition}
 
 \section{Richting en zin van het elektrisch veld van een puntlading}
@@ -35,8 +35,7 @@ Als we dit delen door $Q_t$, bekomen we de grootte van het elektrisch veld veroo
     \begin{center}
         \captionsetup{width=0.85\textwidth}
         \includegraphics[height=10cm,width=14cm,keepaspectratio]{pic5/elektriciteit/veld/veld_puntlading.png}
-        % TIP: Gebruik hier Figure 23.11 uit het boek (a, b, c, d)
-        \captionof{figure}{Een testlading $q_0$ in punt \textit{P} bevindt zich op een afstand $r$ van een puntlading $q$. (a) Als $q$ positief is, is de kracht op de testlading weg van $q$ gericht. (b) Bij een positieve bronlading wijst het elektrisch veld in \textit{P} radiaal weg van $q$. (c) Als $q$ negatief is, is de kracht op de testlading naar $q$ toe gericht. (d) Bij een negatieve bronlading wijst het elektrisch veld in \textit{P} radiaal naar $q$ toe.}
+        \captionof{figure}{Een testlading $Q_t$ in punt \textit{P} bevindt zich op een afstand $r$ van een puntlading $Q_b$ (in de figuur heten ze $q_0$ en $q$). (a) Als $Q_b$ positief is, is de kracht op de testlading weg van $Q_b$ gericht. (b) Bij een positieve bronlading wijst het elektrisch veld in \textit{P} radiaal weg van $Q_b$. (c) Als $Q_b$ negatief is, is de kracht op de testlading naar $Q_b$ toe gericht. (d) Bij een negatieve bronlading wijst het elektrisch veld in \textit{P} radiaal naar $Q_b$ toe. Bron: Serway, \textit{Physics for Scientists and Engineers} (7de ed.), fig.~23.11.}
         \label{fig:veld_puntlading}
     \end{center}
     %---------------------------
@@ -140,19 +139,19 @@ Wanneer de bronladingen zich op één rechte lijn bevinden, samen met het punt \
 
         Veld van $Q_{1}$ in $P$ (afstand $r_{1}=0{,}60 \, \mathrm{m}$):
         \[
-            E_{1}=k_{e}\frac{|Q_{1}|}{r_{1}^{2}}=\frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 5{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}60 \, \mathrm{m})^{2}}=1{,}2 \cdot 10^{5} \, \mathrm{N/C}
+            E_{1}=k\frac{|Q_{1}|}{r_{1}^{2}}=\frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 5{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}60 \, \mathrm{m})^{2}}=1{,}249 \cdot 10^{5} \, \mathrm{N/C}
         \]
         Omdat $Q_{1}$ positief is, wijst $\vec{E}_{1}$ in $P$ weg van $Q_{1}$: naar rechts (de $+x$-richting).
 
         Veld van $Q_{2}$ in $P$ (afstand $r_{2}=0{,}20 \, \mathrm{m}$):
         \[
-            E_{2}=k_{e}\frac{|Q_{2}|}{r_{2}^{2}}=\frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 2{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}20 \, \mathrm{m})^{2}}=4{,}5 \cdot 10^{5} \, \mathrm{N/C}
+            E_{2}=k\frac{|Q_{2}|}{r_{2}^{2}}=\frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 2{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}20 \, \mathrm{m})^{2}}=4{,}495 \cdot 10^{5} \, \mathrm{N/C}
         \]
         Omdat $Q_{2}$ negatief is, wijst $\vec{E}_{2}$ in $P$ naar $Q_{2}$ toe: naar links (de $-x$-richting).
 
         Beide velden liggen op dezelfde lijn, dus tellen we ze algebraïsch op (rechts is positief):
         \[
-            E_{\text{net}}=E_{1}-E_{2}=1{,}2 \cdot 10^{5} \, \mathrm{N/C} - 4{,}5 \cdot 10^{5} \, \mathrm{N/C} = -3{,}2 \cdot 10^{5} \, \mathrm{N/C}
+            E_{\text{net}}=E_{1}-E_{2}=1{,}249 \cdot 10^{5} \, \mathrm{N/C} - 4{,}495 \cdot 10^{5} \, \mathrm{N/C} = -3{,}246 \cdot 10^{5} \, \mathrm{N/C} \simeq \boxed{-3{,}2 \cdot 10^{5} \, \mathrm{N/C}}
         \]
         Het resulterende veld heeft een grootte van $3{,}2 \cdot 10^{5} \, \mathrm{N/C}$ en wijst naar links (de $-x$-richting), dus naar de ladingen toe.
     \end{solution}

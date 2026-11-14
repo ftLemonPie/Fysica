@@ -1,5 +1,5 @@
 \documentclass{ximera}
-%verbeterd 12/11/26
+%verbeterd 14/11/26
 \title{Coulombkracht}
 \author{Daan Lipkens}
 
@@ -17,11 +17,26 @@
 %   UITKLAPBARE REMARK - geschiedenis coulomb
 % ------------------
 \begin{remark}[expandable=true,title={Geschiedenis: Charles-Augustin de Coulomb}]\nl
+    % bron: https://commons.wikimedia.org/wiki/File:Charles_de_Coulomb.png
     \begin{center}
-        \includegraphics[width=5cm]{pic5/elektriciteit/coulomb/charles.jpg}
+        \includegraphics[width=5cm]{pic5/elektriciteit/coulomb/coulomb_portret.jpg}
+        \fotobron{Louis Hierle}{publiek domein}{https://commons.wikimedia.org/wiki/File:Charles_de_Coulomb.png}
+        \captionof{figure}{Charles-Augustin de Coulomb.}
+        \label{fig:coulomb_portret}
     \end{center}
     \textbf{Charles-Augustin de Coulomb (1736-1806)}\\
-    Coulomb was een Franse natuurkundige die vooral bekendstaat om zijn onderzoek naar elektrische en magnetische krachten. Hij formuleerde de wet die het verband beschrijft tussen de kracht, de grootte van de ladingen en hun onderlinge afstand: de wet van Coulomb. Naast zijn werk in de natuurkunde deed hij ook onderzoek naar de stevigheid van materialen en naar ergonomie, waarbij hij bestudeerde hoe mensen en dieren zo efficiënt mogelijk kunnen werken.
+    Coulomb (figuur~\ref{fig:coulomb_portret}) was een Franse natuurkundige die vooral bekendstaat om zijn onderzoek naar elektrische en magnetische krachten. Hij formuleerde de wet die het verband beschrijft tussen de kracht, de grootte van de ladingen en hun onderlinge afstand: de wet van Coulomb. Naast zijn werk in de natuurkunde deed hij ook onderzoek naar de stevigheid van materialen en naar ergonomie, waarbij hij bestudeerde hoe mensen en dieren zo efficiënt mogelijk kunnen werken.
+
+    Om de elektrische kracht te meten, bouwde Coulomb in 1785 een \textbf{torsiebalans} (figuur~\ref{fig:torsiebalans}). Aan een dunne draad hangt een licht horizontaal staafje met aan één uiteinde een geladen bolletje. Breng je er een tweede geladen bolletje bij, dan duwt of trekt de elektrische kracht het staafje opzij en wordt de draad getordeerd. Uit de hoek waarover de draad verdraait, leidde Coulomb de grootte van de kracht af.
+
+    % bron: https://commons.wikimedia.org/wiki/File:Balance_de_Coulomb.jpg
+    \begin{center}
+        \captionsetup{width=0.85\textwidth}
+        \includegraphics[width=5cm]{pic5/elektriciteit/coulomb/torsiebalans_coulomb.jpg}
+        \fotobron{Charles-Augustin de Coulomb (1785)}{publiek domein}{https://commons.wikimedia.org/wiki/File:Balance_de_Coulomb.jpg}
+        \captionof{figure}{De torsiebalans van Coulomb, zoals hij ze zelf tekende in zijn verhandeling over elektriciteit.}
+        \label{fig:torsiebalans}
+    \end{center}
 \end{remark}
 
 \subsection{Richting en zin van de kracht}
@@ -179,7 +194,7 @@ Deze constante, de coulombconstante, is afhankelijk van de stof die zich tussen 
             F_{c} &= F_{e,Q} = F_{Q,e} \\
             &= k \cdot \frac{\lvert Q_{e}\rvert \cdot \lvert Q\rvert}{r^{2}} && \text{(wet van Coulomb)} \\
             &= 8{,}99 \cdot 10^9 \, \mathrm{\frac{N\cdot m^2}{C^2}} \cdot \frac{\lvert -1{,}60 \cdot 10^{-19} \, \mathrm{C}\rvert \cdot \lvert +1{,}45 \cdot 10^{-6} \, \mathrm{C}\rvert}{(12{,}9 \cdot 10^{-2} \, \mathrm{m})^{2}} && \text{(gegevens invullen)} \\
-            &= 1{,}2533 \cdot 10^{-13} \, \mathrm{N} \simeq 1{,}25 \cdot 10^{-13} \, \mathrm{N} && \text{(uitrekenen)}
+            &= 1{,}2533 \cdot 10^{-13} \, \mathrm{N} \simeq \boxed{1{,}25 \cdot 10^{-13} \, \mathrm{N}} && \text{(uitrekenen)}
         \end{align*}
     \end{solution}
 \end{example}
@@ -255,7 +270,7 @@ Een andere interessante vraag is waar een derde lading tussen twee andere lading
         \begin{center}
             \begin{tikzpicture}
                 \coordinate (L) at (-6,0);
-                \coordinate (C) at (-1,0);
+                \coordinate (C) at (1,0);
                 \coordinate (R) at (+6,0);
 
                 % CHARGES
@@ -269,12 +284,12 @@ Een andere interessante vraag is waar een derde lading tussen twee andere lading
 
                 % AFSTANDEN
                     \draw[<->] (-6,-0.8) -- (6,-0.8) node[midway, fill=white, inner sep=1pt] {$r_{12}$};
-                    \draw[<->] (-6,-1.6) -- (-1,-1.6) node[midway, fill=white, inner sep=1pt] {$r_{13}=x$};
-                    \draw[<->] (-1,-1.6) -- (6,-1.6) node[midway, fill=white, inner sep=1pt] {$r_{12}-x$};
+                    \draw[<->] (-6,-1.6) -- (1,-1.6) node[midway, fill=white, inner sep=1pt] {$r_{13}=x$};
+                    \draw[<->] (1,-1.6) -- (6,-1.6) node[midway, fill=white, inner sep=1pt] {$r_{12}-x$};
 
                 % HULPLIJNTJES
                     \draw[dashed, gray] (Q1.south) -- (-6,-1.6);
-                    \draw[dashed, gray] (Q3.south) -- (-1,-1.6);
+                    \draw[dashed, gray] (Q3.south) -- (1,-1.6);
                     \draw[dashed, gray] (Q2.south) -- (6,-0.8);
 
                 % LABELS
@@ -299,7 +314,7 @@ Een andere interessante vraag is waar een derde lading tussen twee andere lading
             \Leftrightarrow (\sqrt{\lvert Q_{2}\rvert} + \sqrt{\lvert Q_{1}\rvert}) \cdot x &= \sqrt{\lvert Q_{1}\rvert} \cdot r_{12} && \text{($x$ afzonderen)} \\
             \Leftrightarrow x &= \frac{\sqrt{\lvert Q_{1}\rvert} \cdot r_{12}}{\sqrt{\lvert Q_{2}\rvert} + \sqrt{\lvert Q_{1}\rvert}} \\
             &= \frac{\sqrt{10 \cdot 10^{-6} \, \mathrm{C}}}{\sqrt{5 \cdot 10^{-6} \, \mathrm{C}} + \sqrt{10 \cdot 10^{-6} \, \mathrm{C}}} \cdot 0{,}20 \, \mathrm{m} \\
-            &= 0{,}1171 \, \mathrm{m} \simeq 1{,}2 \cdot 10^{-1} \, \mathrm{m}
+            &= 0{,}1172 \, \mathrm{m} \simeq \boxed{1{,}2 \cdot 10^{-1} \, \mathrm{m}}
         \end{align*}
         
         Dus lading $Q_{3}$ ligt tussen $Q_{1}$ en $Q_{2}$ en op $12 \, \mathrm{cm}$ van lading $Q_{1}$ (of $8 \, \mathrm{cm}$ van lading $Q_{2}$).
@@ -312,12 +327,124 @@ Een andere interessante vraag is waar een derde lading tussen twee andere lading
 % EINDE OEFENING 1 LIJN
 %------------------------------------------------------------------------------------
 
-\subsection{Drie ladingen in een driehoek}
+\subsection{Drie ladingen onder een rechte hoek}
+Liggen de ladingen niet op één lijn, dan moet je de deelkrachten vectorieel optellen (zie appendix~\verwijs[Som van vectoren]{sec:vec_optellen}{appendix_vectoren_som}). We bekijken eerst situaties waarbij de krachten \textbf{loodrecht op elkaar} inwerken. Wanneer we deze loodrechte vectoren optellen in een krachtenparallellogram, ontstaat er een rechthoekige driehoek. Dit maakt de berekening eenvoudig: we kunnen de grootte van de resulterende vector direct berekenen met behulp van de \textbf{stelling van Pythagoras} ($c^{2} = a^{2} + b^{2}$).
+
+\begin{remark}[title={Stappenplan bij vectoren in 2D}]\nl
+Teken altijd eerst de afzonderlijke krachten op de gevraagde lading. Bepaal aan de hand van de tekening of de hoek tussen deze krachten $90^\circ$ is. Pas daarna de stelling van Pythagoras toe met de groottes van de berekende krachten.
+\end{remark}
+
+% ------------------------------------------------------------------------------------------
+%---voorbeeld: Pythagoras
+%---------------------------------------------------------------------------------------
+\begin{example}[foldable=true,title={Voorbeeld: loodrechte krachten in een driehoek}]\label{vb:rechthoek}\nl
+    Drie ladingen bevinden zich op de hoeken van een rechthoekige driehoek, zoals te zien in de figuur hieronder.            
+    
+    % TEKEN DRIEHOEK OPGAVE
+    \begin{center}
+        \begin{tikzpicture}[scale=1.2]
+            % Definieer de punten van de rechthoekige driehoek
+                \tkzDefPoint(0,3){A}
+                \tkzDefPoint(0,0){B}
+                \tkzDefPoint(4,0){C}
+        
+            % Teken de driehoek
+                \tkzDrawPolygon(A,B,C)
+                \tkzMarkRightAngle[size=0.3](A,B,C)
+        
+            % BENOEMEN VAN LADINGEN
+                \tkzLabelPoint[left, above=6pt](A){$Q_{1}=+4{,}00 \, \mu\mathrm{C}$}
+                \tkzLabelPoint[left, below=6pt](B){$Q_{2}=-2{,}00 \, \mu\mathrm{C}$}
+                \tkzLabelPoint[right, below=6pt](C){$Q_{3}=+5{,}00 \, \mu\mathrm{C}$}
+        
+            % DE AFSTANDEN BIJ DE LIJNEN
+                \tkzLabelSegment[left](A,B){$r_{12}=3{,}0 \, \mathrm{cm}$}
+                \tkzLabelSegment[below](B,C){$r_{32}=4{,}0 \, \mathrm{cm}$}
+        
+            % LADING SYMBOOL TEKENEN
+                \node[poslading] at (A) {$+$};
+                \node[neglading] at (B) {$-$};
+                \node[poslading] at (C) {$+$};
+        \end{tikzpicture}
+    \end{center}
+    
+    Bereken en maak een schets van de resulterende elektrische kracht op lading $Q_{2}$. 
+
+    \begin{solution}\nl
+        Eerst zetten we alle gegevens met hun juiste symbool in de SI-eenheden en maken we een schets van de krachten. Zo kunnen we de richting en zin van de deelkrachten bepalen.\\[1ex]
+        
+        \underline{Gegevens:}\\
+        $Q_{1} = +4{,}00 \, \mu\mathrm{C} = 4{,}00 \cdot 10^{-6} \, \mathrm{C}$\\
+        $Q_{2} = -2{,}00 \, \mu\mathrm{C} = -2{,}00 \cdot 10^{-6} \, \mathrm{C}$\\
+        $Q_{3} = +5{,}00 \, \mu\mathrm{C} = 5{,}00 \cdot 10^{-6} \, \mathrm{C}$\\
+        $r_{12} = 3{,}0 \, \mathrm{cm} = 3{,}0 \cdot 10^{-2} \, \mathrm{m}$\\
+        $r_{32} = 4{,}0 \, \mathrm{cm} = 4{,}0 \cdot 10^{-2} \, \mathrm{m}$
+        
+        \vspace{2ex}
+        \underline{Gevraagd:}\\
+        $F_{\text{res}}$ op $Q_2$
+        
+        \vspace{2ex}
+        \underline{Oplossing:}\\[1ex]
+        \textsc{Schets:} We kijken naar de kracht op $Q_2$. Lading $Q_1$ is positief en $Q_2$ is negatief, dus $Q_1$ trekt $Q_2$ \textbf{naar boven} aan ($\vec{F}_{12}$). Lading $Q_3$ is positief en $Q_2$ is negatief, dus $Q_3$ trekt $Q_2$ \textbf{naar rechts} aan ($\vec{F}_{32}$). 
+        
+        \begin{center}
+            \begin{tikzpicture}[scale=0.8]
+                \tkzDefPoint(0,3){A}
+                \tkzDefPoint(0,0){B}
+                \tkzDefPoint(4,0){C}
+
+                \node[poslading, scale=0.8] at (A) {$+$};
+                \node[neglading, scale=0.8] at (B) {$-$};
+                \node[poslading, scale=0.8] at (C) {$+$};
+
+                \coordinate (P1) at (0,2.5);
+                \coordinate (P2) at (1.8,0);
+
+                \draw[kracht] (B) -- (P1) node[left] {$\vec{F}_{12}$};
+                \draw[kracht] (B) -- (P2) node[below] {$\vec{F}_{32}$};
+
+                \addvectors{B}{P1}{P2}{$\vec{F}_{\text{res}}$}
+
+                \tkzMarkRightAngle[size=0.3](C,B,A)
+            \end{tikzpicture}
+        \end{center}
+        
+        Eerst berekenen we de grootte van de twee deelkrachten $F_{12}$ en $F_{32}$ met de wet van Coulomb:
+        \begin{align*}
+            F_{12} &= k \cdot \frac{\lvert Q_{1}\rvert \cdot \lvert Q_{2}\rvert}{r^{2}_{12}} \\
+            &= 8{,}99 \cdot 10^9 \, \mathrm{\frac{N\cdot m^2}{C^2}} \cdot \frac{\lvert 4{,}00 \cdot 10^{-6} \, \mathrm{C} \rvert \cdot \lvert -2{,}00 \cdot 10^{-6} \, \mathrm{C}\rvert}{(3{,}0 \cdot 10^{-2} \, \mathrm{m})^{2}} \\
+            &= 8{,}99 \cdot 10^9 \cdot \frac{8{,}00 \cdot 10^{-12}}{0{,}00090} \\
+            &= 79{,}9 \, \mathrm{N}
+        \end{align*}    
+        \begin{align*}
+            F_{32} &= k \cdot \frac{\lvert Q_{3}\rvert \cdot \lvert Q_{2}\rvert}{r^{2}_{32}} \\
+            &= 8{,}99 \cdot 10^9 \, \mathrm{\frac{N\cdot m^2}{C^2}} \cdot \frac{\lvert 5{,}00 \cdot 10^{-6} \, \mathrm{C}\rvert \cdot \lvert -2{,}00 \cdot 10^{-6} \, \mathrm{C}\rvert}{(4{,}0 \cdot 10^{-2} \, \mathrm{m})^{2}} \\
+            &= 8{,}99 \cdot 10^9 \cdot \frac{10{,}0 \cdot 10^{-12}}{0{,}0016} \\
+            &= 56{,}2 \, \mathrm{N}
+        \end{align*}    
+        
+        Uit onze schets blijkt heel duidelijk dat $\vec{F}_{12}$ en $\vec{F}_{32}$ loodrecht op elkaar inwerken. Ze vormen de twee rechthoekszijden van een rechthoekige driehoek, met $\vec{F}_{\text{res}}$ als schuine zijde. We kunnen de resulterende kracht dus eenvoudig berekenen met de stelling van Pythagoras:
+        
+        \begin{align*}
+            F^{2}_{\text{res}} &= F^{2}_{12} + F^{2}_{32} \\
+            F_{\text{res}} &= \sqrt{(79{,}9 \, \mathrm{N})^{2} + (56{,}2 \, \mathrm{N})^{2}} \\
+            &= \sqrt{6384 \, \mathrm{N}^2 + 3158 \, \mathrm{N}^2} \\
+            &= \sqrt{9542 \, \mathrm{N}^2} \\
+            &= 97{,}7 \, \mathrm{N} \simeq \boxed{9{,}8 \cdot 10^{1} \, \mathrm{N}}
+        \end{align*}
+        
+    \end{solution}
+\end{example}
+
+\subsection{Extra: drie ladingen in een willekeurige driehoek}
+Dit onderdeel is verdieping: het gaat verder dan het leerplan, dat zich beperkt tot ladingen op één lijn en krachten onder een rechte hoek.
+
 Tot nu toe vormde het vectoriële karakter van de kracht geen groot probleem. Zodra de ladingen echter niet meer op één lijn liggen, maar een andere configuratie aannemen, kan de resulterende kracht enkel worden bepaald door de deelkrachten vectorieel op te tellen. Dit kan zowel grafisch als algebraïsch gebeuren (zie appendix~\verwijs[Som van vectoren]{sec:vec_optellen}{appendix_vectoren_som}).
 
 Wanneer in een opgave enkel gevraagd wordt om de krachten te tekenen, volstaat de grafische methode. Indien daarentegen de grootte van de resulterende kracht berekend moet worden, maken we gebruik van de algebraïsche methode.
 
-Een bijkomende moeilijkheid is dat niet altijd alle afstanden tussen de ladingen bekend zijn, maar soms enkel de hoek, of omgekeerd. In dat geval kan het ontbrekende gegeven worden berekend met behulp van de cosinusregel, toegepast op de \textsl{fysieke} driehoek (de driehoek die gevormd wordt door de afstanden tussen de ladingen).\footnote{In loodrechte driehoeken kan je gebruikmaken van de stelling van Pythagoras en de sinus, cosinus en tangens.}
+Een bijkomende moeilijkheid is dat niet altijd alle afstanden tussen de ladingen bekend zijn, maar soms enkel de hoek, of omgekeerd. In dat geval kan het ontbrekende gegeven worden berekend met behulp van de cosinusregel, toegepast op de \textsl{fysieke} driehoek (de driehoek die gevormd wordt door de afstanden tussen de ladingen).\footnote{In rechthoekige driehoeken kan je gebruikmaken van de stelling van Pythagoras en de sinus, cosinus en tangens.}
 
 Door alle krachten te tekenen, ontstaat ook een driehoek van krachtvectoren. Hierop kan de cosinusregel ($A^{2} = B^{2} + C^{2} - 2 \cdot B \cdot C \cdot \cos(\widehat{BC})$) worden toegepast.
 
@@ -454,7 +581,7 @@ In dit geval zijn $A$, $B$ en $C$ de \textbf{groottes van de vectoren} en betref
             F_{12} &= 8{,}99 \cdot 10^9 \, \mathrm{\frac{N\cdot m^2}{C^2}} \cdot \frac{\lvert 0{,}542 \cdot 10^{-3} \, \mathrm{C} \rvert \cdot \lvert 12{,}76 \cdot 10^{-6} \, \mathrm{C}\rvert}{(10 \cdot 10^{-2} \, \mathrm{m})^{2}} \\
             &= 6217{,}4 \, \mathrm{N}\simeq 6{,}2 \cdot 10^3 \, \mathrm{N} \\
             F_{32} &= 8{,}99 \cdot 10^9 \, \mathrm{\frac{N\cdot m^2}{C^2}} \cdot \frac{\lvert -765{,}2 \cdot 10^{-6} \, \mathrm{C}\rvert \cdot \lvert 12{,}76 \cdot 10^{-6} \, \mathrm{C}\rvert}{(0{,}09636 \, \mathrm{m})^{2}} \\
-            &= 9454 \, \mathrm{N}\simeq 9{,}5 \cdot 10^3 \, \mathrm{N}
+            &= 9453 \, \mathrm{N}\simeq 9{,}5 \cdot 10^3 \, \mathrm{N}
         \end{align*}    
         
         Met deze twee deelkrachten kunnen we de resulterende kracht $F_{\text{res}}$ berekenen. Hiervoor hebben we de overstaande hoek in het krachtenparallellogram nodig, $\theta$. Die is jammer genoeg niet gegeven, maar we weten wel dat $\theta = 180^\circ - \beta$. 
@@ -484,8 +611,8 @@ In dit geval zijn $A$, $B$ en $C$ de \textbf{groottes van de vectoren} en betref
         Nu hebben we alle informatie berekend om de resulterende kracht te vinden:
         \begin{align*}
             F^{2}_{\text{res}} &= F^{2}_{12} + F^{2}_{32} - 2 \cdot F_{12} \cdot F_{32} \cdot \cos(\theta) && \text{(grootte vectoren via cosinusregel)} \\
-            F_{\text{res}} &= \sqrt{(6217{,}4 \, \mathrm{N})^{2} + (9454 \, \mathrm{N})^{2} - 2 \cdot 6217{,}4 \, \mathrm{N} \cdot 9454 \, \mathrm{N} \cdot \cos(45^\circ)} \\
-            &= 6701 \, \mathrm{N} \simeq 6{,}7 \cdot 10^3 \, \mathrm{N}
+            F_{\text{res}} &= \sqrt{(6217{,}4 \, \mathrm{N})^{2} + (9453 \, \mathrm{N})^{2} - 2 \cdot 6217{,}4 \, \mathrm{N} \cdot 9453 \, \mathrm{N} \cdot \cos(45^\circ)} \\
+            &= 6701 \, \mathrm{N} \simeq \boxed{6{,}7 \cdot 10^3 \, \mathrm{N}}
         \end{align*}
         
         \begin{hint}

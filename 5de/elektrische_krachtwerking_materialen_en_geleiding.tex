@@ -1,5 +1,5 @@
 \documentclass{ximera}
-% verbeterd 26/9/26
+%verbeterd 14/11/26
 \title{Materialen en geleiding}
 \author{Daan Lipkens}
 
@@ -12,7 +12,7 @@
 %----------------------
 % Herhaling aarding
 \begin{remark}[foldable=true,title={Aarding}]\nl
-    Aarding is het geleidend verbinden van een voorwerp met de aarde. Hierdoor kan een teveel aan elektronen gecompenseerd worden door elektronen naar de aarde te sturen, of kunnen er bij een tekort aan elektronen juist elektronen aan de aarde onttrokken worden.
+    Aarding is het geleidend verbinden van een voorwerp met de aarde. Hierdoor kan een teveel aan elektronen gecompenseerd worden door elektronen naar de aarde te sturen, of kunnen er bij een tekort aan elektronen juist elektronen aan de aarde onttrokken worden. In elektrische installaties herken je de aardingsdraad aan zijn geel-groene kleur (figuur~\ref{fig:aarding}).
     
     %--------
     % afbeelding symbool aarding
@@ -27,9 +27,11 @@
     
     %---------
     % afbeelding aarding
+    % bron: https://commons.wikimedia.org/wiki/File:Installatiedraad.jpg
     \captionsetup{width=0.85\textwidth}
     \begin{center}
-        \includegraphics[width=0.45\textwidth]{pic5/elektriciteit/coulomb/aarding_kabels.jpg}
+        \includegraphics[width=0.45\textwidth]{pic5/elektriciteit/coulomb/aardingsdraad_geelgroen.jpg}
+        \fotobron{Erik Wannee}{CC0}{https://commons.wikimedia.org/wiki/File:Installatiedraad.jpg}
     \end{center}
     \captionof{figure}{De kleur van de aardingsdraad in kabels is geel-groen.}
     \label{fig:aarding}
@@ -41,7 +43,7 @@
 % SUBSECTION: geleiders
 \section{Geleiders}
 Metalen zijn goede geleiders. In de chemie heb je al kennisgemaakt met het metaalrooster. Metaalatomen bezitten elektronen die gemakkelijk loskomen van het atoom: de zogenaamde valentie-elektronen. Deze elektronen bewegen 'vrij' door het rooster van positieve metaalionen (zie figuur~\ref{fig:metaal_vrij}).
-\begin{definition}[foldable, title={Geleider}]\nl
+\begin{definition}[foldable=true,title={Geleider}]\nl
     Materialen waarin ladingen vrij kunnen bewegen, zijn \textbf{geleiders}.\\
 \end{definition}
 %-----------------------------
@@ -108,7 +110,7 @@ Een metaal in vaste toestand bevat vrije (negatieve) elektronen en vaste (positi
 
 Een metalen staaf kan positief geladen worden door elektronen af te geven (zie figuur~\ref{fig:metalen_staaf}b). Aangezien de elektronen zich vrij kunnen bewegen, zal het tekort aan elektronen zich gelijkmatig verspreiden over het hele oppervlak aan de buitenkant van de staaf en zo ver mogelijk van elkaar. Voor een positief geladen staaf is er op de buitenkant van de staaf een tekort aan vrije elektronen.
 
-Als je de staaf met de aarde verbindt door middel van een isolator, dan gebeurt er niets, zie figuur~\ref{fig:metalen_staaf}c. Verbind je de staaf met de aarde door middel van een geleider, dan gaan er via de aarding elektronen van de aarde naar de staaf en wordt de staaf weer neutraal (zie figuur~\ref{fig:metalen_staaf}d).
+Verbind je de positief geladen staaf met de aarde door middel van een geleider (zie figuur~\ref{fig:metalen_staaf}c), dan gaan er via de aarding elektronen van de aarde naar de staaf en wordt de staaf weer neutraal (zie figuur~\ref{fig:metalen_staaf}d). Verbind je de staaf met de aarde door middel van een isolator, dan gebeurt er niets.
 
 Een metalen staaf kan negatief geladen worden door elektronen op te nemen. Omdat de elektronen zich vrij kunnen bewegen, verspreiden ze zich gelijkmatig over het hele oppervlak aan de buitenkant van de staaf, zo ver mogelijk van elkaar. Voor een negatief geladen staaf betekent dit dat er een overschot aan vrije elektronen aanwezig is aan de buitenzijde.
 
@@ -136,7 +138,7 @@ Positieve roosterionen kunnen zich niet verplaatsen: zij hebben een vaste positi
 % ----------------------
 \section{Isolatoren}
 
-Atomen uit groep \textrm{V}a, \textrm{VI}a of \textrm{VII}a van het periodiek systeem staan geen elektronen af. In een vaste stof vormen ze bindingen met andere atomen en gedragen ze zich als isolatoren. Voor wrijvingsproeven gebruik je daarom isolatoren: de aangebrachte ladingen verplaatsen zich niet. De elektronen blijven zitten waar ze zijn aangebracht (zie figuur~\ref{fig:isolator_staaf}b), zelfs wanneer je een geleidende verbinding maakt met de aarde (zie figuur~\ref{fig:isolator_staaf}c). De lading verdwijnt enkel door contact met een tegengesteld geladen voorwerp of door interactie met moleculen in de lucht (ionisatie).
+In isolatoren, zoals glas, rubber en de meeste kunststoffen, zitten alle elektronen vast in de bindingen tussen de atomen. Er zijn geen vrije elektronen. Voor wrijvingsproeven gebruik je daarom isolatoren: de aangebrachte ladingen verplaatsen zich niet. De elektronen blijven zitten waar ze zijn aangebracht (zie figuur~\ref{fig:isolator_staaf}b), zelfs wanneer je een geleidende verbinding maakt met de aarde (zie figuur~\ref{fig:isolator_staaf}c). De lading verdwijnt enkel door contact met een tegengesteld geladen voorwerp of door interactie met moleculen in de lucht (ionisatie).
 
 % --------------------
 % Video ladingen bij isolator
@@ -171,7 +173,7 @@ Atomen uit groep \textrm{V}a, \textrm{VI}a of \textrm{VII}a van het periodiek sy
     \label{fig:isolator_staaf}
 \end{figure}
 
-\begin{definition}[foldable, title={Isolator}]\nl
+\begin{definition}[foldable=true,title={Isolator}]\nl
     Materialen waarin ladingen niet vrij kunnen bewegen, maar gebonden zijn aan hun kern, zijn \textbf{isolatoren}.
 \end{definition}
 
@@ -207,31 +209,33 @@ Halfgeleiders gedragen zich bij lage temperaturen als isolatoren en bij hoge tem
 \begin{example}[foldable=true,title={Toepassing: vandegraaffgenerator}]\nl
     De \textbf{vandegraaffgenerator} maakt het mogelijk een grote hoeveelheid lading te verzamelen. Dit is te zien op de foto in figuur \ref{fig:vandegraaffgenerator_foto} en in de schematische voorstelling in figuur \ref{fig:vandegraaffgenerator_schema}. Het toestel bestaat uit twee rollen van verschillend materiaal waarover een rubberen band loopt. De onderste rol is bv. van pvc en de bovenste van nylon. Vlak bij de rollen zit een metalen kam. Onderaan is die kam verbonden met de aarde, terwijl de kam bovenaan verbonden is met een metalen koepel.
 
-    %---------
-    % afbeelding in omgeving
-    
-    \captionsetup{width=0.85\textwidth}
-    \begin{center}
-        \includegraphics[width=8cm]{pic5/elektriciteit/coulomb/vadegraaffgenerator.jpg}
-    \end{center}
-    \captionof{figure}{De vandegraaffgenerator wekt een grote ladingshoeveelheid op dankzij het tribo-elektrisch effect.}
-    \label{fig:vandegraaffgenerator_foto}
-    
-
-    \captionsetup{width=0.85\textwidth}
-    \begin{center}
-        \includegraphics[width=6cm]{pic5/elektriciteit/coulomb/schema vandegraaffgenerator.png}
-    \end{center}
-    \captionof{figure}{Schematische voorstelling van een vandegraaffgenerator. In punt A ontstaat elektrische lading door wrijving tussen de band en de onderste rol. De bewegende band transporteert deze lading naar de bovenzijde van het toestel. In punt B wordt de lading via interactie met de bovenste rol overgedragen op de metalen koepel, waar ze zich gelijkmatig verspreidt over het buitenoppervlak.}
-    \label{fig:vandegraaffgenerator_schema}
-    
-    \vspace{3mm}
-
     De onderste rol van de vandegraaffgenerator wordt mechanisch aangedreven zodat de band continu rondbeweegt. Door het tribo-elektrische effect wisselt de rol lading uit met de band. Afhankelijk van de gebruikte materialen wordt er ofwel positieve ofwel negatieve lading op de band overgedragen. In het voorbeeld met pvc als onderste rol en een rubberen band neemt de rol elektronen op van de band. Omdat de negatieve ladingen op de rol dichter bij elkaar zitten dan op de band, ondervinden de vrije elektronen in de nabijgelegen kam een netto afstotende kracht. Hierdoor springen elektronen van de band naar de kam en blijft er een positieve lading achter op de band, die vervolgens naar boven wordt getransporteerd. De kam is verbonden met de aarde en kan daardoor onbeperkt lading opnemen of afgeven.
 
     Ook aan de bovenste rol treedt het tribo-elektrische effect op. In dit voorbeeld met nylon en rubber wordt de bovenste rol positief geladen. De combinatie van de positieve lading op de rol en die op de band zorgt ervoor dat via de bovenste kam elektronen worden onttrokken aan de metalen koepel. Deze elektronen vloeien via de band terug naar beneden, waardoor de koepel netto positief geladen achterblijft.
 
     Dit proces herhaalt zich voortdurend. Op die manier kan de vandegraaffgenerator een zeer grote hoeveelheid lading op de metalen koepel opslaan. Belangrijk hierbij is dat de vandegraaffgenerator geen lading aanmaakt, maar door middel van ladingscheiding en transport een aanzienlijke netto lading kan accumuleren op de koepel.
+
+    %---------
+    % afbeelding in omgeving
+    % bron: https://commons.wikimedia.org/wiki/File:Van_de_graaff_generator_sm.jpg
+    
+    % foto en schema naast elkaar, na de uitleg
+    \begin{center}
+        \begin{minipage}[t]{0.38\textwidth}
+            \centering
+            \includegraphics[height=6.5cm]{pic5/elektriciteit/coulomb/vadegraaffgenerator.jpg}
+            \fotobron{Jared C. Benedict}{CC BY-SA 3.0}{https://commons.wikimedia.org/wiki/File:Van_de_graaff_generator_sm.jpg}
+            \captionof{figure}{De vandegraaffgenerator wekt een grote ladingshoeveelheid op dankzij het tribo-elektrisch effect.}
+            \label{fig:vandegraaffgenerator_foto}
+        \end{minipage}\hfill
+        \begin{minipage}[t]{0.58\textwidth}
+            \centering
+            \includegraphics[height=6.5cm]{pic5/elektriciteit/coulomb/schema vandegraaffgenerator.png}
+            \captionof{figure}{Schematische voorstelling van een vandegraaffgenerator. In punt A ontstaat elektrische lading door wrijving tussen de band en de onderste rol. De bewegende band transporteert deze lading naar de bovenzijde van het toestel. In punt B wordt de lading via interactie met de bovenste rol overgedragen op de metalen koepel, waar ze zich gelijkmatig verspreidt over het buitenoppervlak.}
+            \label{fig:vandegraaffgenerator_schema}
+        \end{minipage}
+    \end{center}
+
 
     \vspace{3mm}
 

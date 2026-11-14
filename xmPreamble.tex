@@ -676,6 +676,14 @@
 %      Enkel in de xourse-pdf; losse activity-pdf's (handouts) blijven zoals ze waren.
 % Alles zit in één macro: zo ziet TeX de \if's erin niet bij het overslaan
 % (anders 'Extra \fi' bij de html-build en bij losse activity-pdf's).
+% Oude .aux-bestanden bevatten nog regels van changebar (vroegere blauwe lijn).
+% Deze lege definities vangen die op, zodat je de .aux niet hoeft te wissen.
+\makeatletter
+\providecommand\cb@pdfxy[5]{}
+\providecommand\cb@barpoint[3]{}
+\providecommand\cb@pdfpoints[2]{}
+\providecommand\cb@pdfpagenr[2]{}
+\makeatother
 \makeatletter
 \@ifclassloaded{xourse}{\let\xmIsXourse\relax}{}
 \newcommand\xm@NummeringSetup{%
@@ -703,15 +711,19 @@
   \forloop{Iteration@probCnt}{2}{\arabic{Iteration@probCnt} < \numexpr \value{problem@Depth} + 1 \relax}{%
     .\expandafter\alph{depth\Roman{Iteration@probCnt}Count}}}% deelvragen: a, b, c
 % verticale lijn links naast elke oefening/vraag (bovenste niveau), zoals bij KU Leuven:
-% toont wat bij elkaar hoort, ook over een paginagrens heen
-\RequirePackage[leftbars,color]{changebar}
-\setlength{\changebarwidth}{1.5pt}
-\setlength{\changebarsep}{8pt}
-\cbcolor{blue!45!black}
+% toont wat bij elkaar hoort, ook over een paginagrens heen.
+% Een breekbare tcolorbox met enkel een linkerrand (vroeger changebar: die lijn
+% liep door tot onderaan de pagina en bleef soms 'hangen' na vragen in een kader).
+\RequirePackage{tcolorbox}\tcbuselibrary{breakable,skins}
+\tcbset{xmvraagbalk/.style={enhanced jigsaw, breakable, sharp corners,
+  frame hidden, interior hidden, boxrule=0pt, boxsep=0pt,
+  borderline west={1.5pt}{0pt}{blue!45!black},
+  enlarge left by=9.5pt, left=8pt, right=0pt, top=0pt, bottom=0pt,
+  before skip=\medskipamount, after skip=\medskipamount}}
 \xpatchcmd{\problemEnvironmentStart}{\stepcounter{problem@Depth}}%
-  {\stepcounter{problem@Depth}\ifnum\value{problem@Depth}=1 \cbstart\fi}{}{}
-\xpatchcmd{\problemEnvironmentEnd}{\addtocounter{problem@Depth}{-2}}%
-  {\addtocounter{problem@Depth}{-2}\ifnum\value{problem@Depth}=0 \cbend\fi}{}{}
+  {\stepcounter{problem@Depth}\ifnum\value{problem@Depth}=1 \tcolorbox[xmvraagbalk]\fi}{}{}
+\xpatchcmd{\problemEnvironmentEnd}{\end{trivlist}}%
+  {\end{trivlist}\ifnum\value{problem@Depth}=0 \endtcolorbox\fi}{}{}
 % alle tellers terug op 0 bij elke nieuwe sectie/hoofdstuk
 \newcommand\xm@resetnrs{%
   \@for\xm@c:=\xm@nrcounters\do{%

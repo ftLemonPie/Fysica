@@ -259,6 +259,7 @@ bijwerken (`5de/inleiding_stand_51.tex` voor 1 uur, `5de/inleiding_stand_52.tex`
 - [ ] H3 potentiaal (2 uur): theorie en oefeningen nalezen, extra oefeningen maken
 - [ ] H3 potentiaal (1 uur): aanpassen en nakijken (`_1uur`-analyse)
 - [ ] H4 gemengde schakelingen (1 uur) nakijken
+- [ ] H4 vermogen, Joule-effect en veiligheid (1 uur, geschreven 14/11/26: `schakelingen_vermogen.tex`, `schakelingenoef_vermogen.tex`) nakijken
 - [ ] Magnetisch veld (2 uur H4, 1 uur H5) nalezen: theorie, figuren, oefeningen; beslissen of 1 uur `magnetismeoef_gevorderd` volledig houdt
 - [ ] extra quiskes in H2, extra oefeningen H1
 

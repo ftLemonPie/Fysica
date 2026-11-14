@@ -1,5 +1,5 @@
 \documentclass{ximera}
-%verbeterd 9/9/26
+%verbeterd 14/11/26
 \title{Tribo-elektrisch effect}
 \author{Daan Lipkens}
 
@@ -23,6 +23,22 @@ Een stof kan enkel een lading \textit{krijgen} wanneer er ladingen worden uitgew
     Het \textbf{tribo-elektrisch effect} is een soort contactelektrificatie waarbij de materialen die met elkaar in contact komen tijdens het wrijven elektrische lading uitwisselen en zo elektrisch opgeladen worden.
 \end{definition}
 %------------------
+Figuur~\ref{fig:kat_piepschuim} toont een bekend voorbeeld van het tribo-elektrisch effect.
+
+%---------------------------
+% AFBEELDING: kat met piepschuimbolletjes
+% bron: https://commons.wikimedia.org/wiki/File:Cat_demonstrating_static_cling_with_styrofoam_peanuts.jpg
+\begin{figure}[ht!]
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
+        \includegraphics[width=0.5\textwidth]{pic5/elektriciteit/coulomb/kat_piepschuim.jpg}
+        \fotobron{Sean McGrath}{CC BY 2.0}{https://commons.wikimedia.org/wiki/File:Cat_demonstrating_static_cling_with_styrofoam_peanuts.jpg}
+    \end{center}
+    \caption{Piepschuimbolletjes blijven aan de vacht van een kat kleven. Door de wrijving hebben vacht en piepschuim elektronen uitgewisseld en zijn ze tegengesteld geladen.}
+    \label{fig:kat_piepschuim}
+\end{figure}
+%---------------------------
+
 \section{Tribo-elektrische reeks}
 Wanneer je een materiaal dat hoger (meer links in figuur~\ref{fig:tribo-elektrische-reeks}) in de tribo-elektrische reeks staat, wrijft tegen een materiaal dat lager (meer rechts) in de reeks staat, zal het hoger geplaatste materiaal elektronen afstaan en daardoor positief geladen worden. Het lager geplaatste materiaal neemt deze elektronen op en wordt negatief geladen.
 
@@ -50,14 +66,14 @@ Wanneer je een materiaal dat hoger (meer links in figuur~\ref{fig:tribo-elektris
     % Let op: {nikkel, koper} staat tussen accolades zodat de komma de lijst niet breekt
     \foreach \materiaal [count=\i from 0] in {
         Droge huid, konijnenvel, glas, haar, nylon, wol, lood, zijde, aluminium, papier, 
-        katoen, staal, hout, luciet, amber, plexiglas, rubber, {nikkel, koper}, polyester, vinyl (pvc), teflon
+        katoen, staal, hout, amber, plexiglas, rubber, {nikkel, koper}, polyester, vinyl (pvc), teflon
     } {
         % Witte streepjes in de pijl voor de afleesbaarheid
-        \draw[thick, white] (0.5 + \i*0.7, -0.4) -- (0.5 + \i*0.7, -0.2);
+        \draw[thick, white] (0.5 + \i*0.737, -0.4) -- (0.5 + \i*0.737, -0.2);
         % Zwarte indicator streepjes onder de pijl
-        \draw[thick, black] (0.5 + \i*0.7, -0.4) -- (0.5 + \i*0.7, -0.5);
+        \draw[thick, black] (0.5 + \i*0.737, -0.4) -- (0.5 + \i*0.737, -0.5);
         % Tekstlabels schuin (60 graden) onder de pijl
-        \node[anchor=east, rotate=60, font=\small] at (0.5 + \i*0.7, -0.6) {\materiaal};
+        \node[anchor=east, rotate=60, font=\small] at (0.5 + \i*0.737, -0.6) {\materiaal};
     }
 \end{tikzpicture}%
 }

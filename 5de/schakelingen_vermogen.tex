@@ -1,0 +1,208 @@
+\documentclass{ximera}
+%geschreven 14/11/26
+\title{Vermogen, Joule-effect en veiligheid}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+    Het elektrisch vermogen, de warmteontwikkeling in een weerstand en de beveiliging van een elektrische kring.
+\end{abstract}
+\maketitle
+
+\section{Elektrisch vermogen}\label{sec:vermogen}
+Een lamp van $60\,\mathrm{W}$ geeft meer licht dan een lamp van $25\,\mathrm{W}$, en een waterkoker van $2000\,\mathrm{W}$ kookt water sneller dan een van $1000\,\mathrm{W}$. Het vermogen zegt hoe snel een toestel elektrische energie omzet in een andere energievorm.
+
+\begin{definition}[foldable=true,title={Vermogen}]\nl
+    Het \textbf{vermogen} $P$ is de energie $\Delta E$ die per tijdseenheid $\Delta t$ wordt omgezet:
+    \begin{equation*}
+        P = \frac{\Delta E}{\Delta t}
+    \end{equation*}
+    De eenheid van vermogen is de watt: $1\,\mathrm{W} = 1\,\mathrm{J/s}$.
+\end{definition}
+
+In het hoofdstuk over potentiaal zag je dat een lading $Q$ die een spanning $U$ doorloopt, een energie $Q \cdot U$ omzet. Stroomt er in een tijd $\Delta t$ een lading $\Delta Q = I \cdot \Delta t$ door een toestel, dan is de omgezette energie $\Delta E = U \cdot I \cdot \Delta t$. Delen door $\Delta t$ geeft het vermogen.
+
+\begin{proposition}[title={Elektrisch vermogen}]\nl
+    Staat over een toestel een spanning $U$ en loopt er een stroom $I$ door, dan is het elektrisch vermogen:
+    \begin{equation}\label{eq:vermogen}
+        P = U \cdot I
+    \end{equation}
+\end{proposition}
+
+\begin{remark}[foldable=true,title={Energie en kilowattuur}]\nl
+    Uit de definitie volgt $\Delta E = P \cdot \Delta t$. De energieleverancier rekent niet in joule maar in \textbf{kilowattuur}: de energie die een toestel van $1\,\mathrm{kW}$ in $1\,\mathrm{h}$ omzet. Er geldt $1\,\mathrm{kWh} = 1000\,\mathrm{W} \cdot 3600\,\mathrm{s} = 3{,}6 \cdot 10^{6}\,\mathrm{J}$.
+\end{remark}
+
+%---------------------------------------------------------------------------
+% VOORBEELD VERMOGEN
+\begin{example}[foldable=true,title={Voorbeeld: vermogen van een waterkoker}]\nl
+    Een waterkoker is aangesloten op de netspanning van $230\,\mathrm{V}$ en neemt een stroom van $8{,}7\,\mathrm{A}$ op. Bereken het vermogen van de waterkoker en de energie die hij omzet in $3{,}0\,\mathrm{min}$.
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & U = 230\,\mathrm{V} & & I = 8{,}7\,\mathrm{A} \\
+            & \Delta t = 3{,}0\,\mathrm{min} = 180\,\mathrm{s} & &
+        \end{align*}
+
+        \underline{Gevraagd:} $P$ en $\Delta E$ \\
+
+        \underline{Oplossing:}\\
+        We kennen de spanning en de stroom, dus gebruiken we vergelijking~\ref{eq:vermogen}:
+        \begin{align*}
+            P &= U \cdot I = 230\,\mathrm{V} \cdot 8{,}7\,\mathrm{A} = 2001\,\mathrm{W} \simeq \boxed{2{,}0 \cdot 10^{3}\,\mathrm{W}}
+        \end{align*}
+        De energie volgt uit de definitie van vermogen:
+        \begin{align*}
+            \Delta E &= P \cdot \Delta t = 2001\,\mathrm{W} \cdot 180\,\mathrm{s} = 360\,180\,\mathrm{J} \simeq \boxed{3{,}6 \cdot 10^{5}\,\mathrm{J}}
+        \end{align*}
+    \end{solution}
+\end{example}
+%---------------------------------------------------------------------------
+
+\section{Het Joule-effect}\label{sec:joule}
+In een weerstand botsen de bewegende elektronen voortdurend tegen de roosterionen. Daarbij geven ze energie af en wordt de weerstand warm.
+
+\begin{definition}[foldable=true,title={Joule-effect}]\nl
+    Het \textbf{Joule-effect} is de omzetting van elektrische energie in warmte in een geleider waardoor een stroom loopt.
+\end{definition}
+
+Soms is die warmte net wat je wil, zoals in een broodrooster, een strijkijzer of een elektrische verwarming. In een verlengkabel of een oplader is ze verloren energie.
+
+\begin{proposition}[title={Vermogen in een weerstand}]\nl
+    Voor een weerstand $R$ geldt de wet van Ohm, $U = R \cdot I$. Daarmee kan je het vermogen op twee andere manieren schrijven:
+    \begin{equation}\label{eq:joule}
+        P = R \cdot I^{2} \qquad \text{en} \qquad P = \frac{U^{2}}{R}
+    \end{equation}
+\end{proposition}
+
+\begin{remark}[foldable=true,title={Welke weerstand wordt het warmst?}]\nl
+    In een \textbf{serieschakeling} loopt door elke weerstand dezelfde stroom. Uit $P = R \cdot I^{2}$ volgt dat de grootste weerstand het grootste vermogen omzet. In een \textbf{parallelschakeling} staat over elke weerstand dezelfde spanning. Uit $P = \frac{U^{2}}{R}$ volgt dat daar net de kleinste weerstand het grootste vermogen omzet.
+\end{remark}
+
+%---------------------------------------------------------------------------
+% VOORBEELD JOULE
+\begin{example}[foldable=true,title={Voorbeeld: vermogen in een serieschakeling}]\nl
+    Een weerstand $R_1 = 10\,\mathrm{\Omega}$ en een weerstand $R_2 = 20\,\mathrm{\Omega}$ staan in serie op een bron van $12\,\mathrm{V}$. Bereken het vermogen in elke weerstand en het vermogen dat de bron levert.
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & R_1 = 10\,\mathrm{\Omega} & & R_2 = 20\,\mathrm{\Omega} \\
+            & U = 12\,\mathrm{V} & &
+        \end{align*}
+
+        \underline{Gevraagd:} $P_1$, $P_2$ en $P$ \\
+
+        \underline{Oplossing:}\\
+        \textbf{Stap 1: Stroomsterkte}\\
+        De weerstanden staan in serie, dus tellen we ze op en gebruiken we de wet van Ohm:
+        \begin{align*}
+            I &= \frac{U}{R_1 + R_2} = \frac{12\,\mathrm{V}}{30\,\mathrm{\Omega}} = 0{,}40\,\mathrm{A}
+        \end{align*}
+        \textbf{Stap 2: Vermogen in elke weerstand}\\
+        We kennen de weerstand en de stroom, dus gebruiken we $P = R \cdot I^{2}$:
+        \begin{align*}
+            P_1 &= R_1 \cdot I^{2} = 10\,\mathrm{\Omega} \cdot (0{,}40\,\mathrm{A})^{2} = \boxed{1{,}6\,\mathrm{W}} \\
+            P_2 &= R_2 \cdot I^{2} = 20\,\mathrm{\Omega} \cdot (0{,}40\,\mathrm{A})^{2} = \boxed{3{,}2\,\mathrm{W}}
+        \end{align*}
+        \textbf{Stap 3: Vermogen van de bron}
+        \begin{align*}
+            P &= U \cdot I = 12\,\mathrm{V} \cdot 0{,}40\,\mathrm{A} = \boxed{4{,}8\,\mathrm{W}}
+        \end{align*}
+        Controle: $P_1 + P_2 = 1{,}6\,\mathrm{W} + 3{,}2\,\mathrm{W} = 4{,}8\,\mathrm{W} = P$. De energie die de bron levert, wordt volledig omgezet in de weerstanden.
+    \end{solution}
+\end{example}
+%---------------------------------------------------------------------------
+
+%---------------
+% QUIZ: JOULE
+\begin{question}
+    Je verdubbelt de stroom door een weerstand. Wat gebeurt er met het vermogen dat de weerstand in warmte omzet?
+    \begin{multipleChoice}
+        \choice{Het blijft gelijk.}
+        \choice{Het verdubbelt.}
+        \choice[correct]{Het wordt vier keer zo groot.}
+        \choice{Het halveert.}
+    \end{multipleChoice}
+    \begin{solution}\nl
+        In $P = R \cdot I^{2}$ staat de stroom in het kwadraat: $(2I)^{2} = 4I^{2}$. Een kabel waardoor een te grote stroom loopt, wordt dus heel snel veel warmer.
+    \end{solution}
+\end{question}
+
+\section{Veiligheid}\label{sec:veiligheid}
+Ook de leidingen in een huis hebben een kleine weerstand en worden dus warm als er stroom door loopt. Bij een te grote stroom kan de isolatie smelten en kan er brand ontstaan. Een te grote stroom ontstaat op twee manieren.
+
+\begin{definition}[foldable=true,title={Kortsluiting en overbelasting}]\nl
+    \begin{itemize}
+        \item Bij een \textbf{kortsluiting} zijn de twee polen van de bron rechtstreeks verbonden door een geleider met een heel kleine weerstand, zie figuur~\ref{fig:kortsluiting}. Uit $I = \frac{U}{R}$ volgt dat de stroom dan heel groot wordt.
+        \item Bij \textbf{overbelasting} zijn er te veel toestellen tegelijk parallel aangesloten op dezelfde kring. Elke extra tak verhoogt de totale stroom door de leiding.
+    \end{itemize}
+\end{definition}
+
+\begin{figure}[ht!]
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
+        \begin{circuitikz}[european]
+            \draw (0,3) to[battery1, l=$U$] (0,0) -- (5,0);
+            \draw (0,3) -- (5,3) to[lamp] (5,0);
+            \draw[red!70!black, very thick] (2.5,3) to[short, *-*] (2.5,0);
+            \node[red!70!black, left] at (2.4,1.5) {kortsluiting};
+        \end{circuitikz}
+    \end{center}
+    \caption{Kortsluiting: een draad zonder weerstand verbindt de twee polen van de bron. Bijna alle stroom loopt door die draad en niet meer door de lamp.}
+    \label{fig:kortsluiting}
+\end{figure}
+
+\begin{definition}[foldable=true,title={Zekering}]\nl
+    Een \textbf{zekering} onderbreekt de kring zodra de stroom groter wordt dan een bepaalde waarde, bijvoorbeeld $16\,\mathrm{A}$ of $20\,\mathrm{A}$. Ze staat \textbf{in serie} met de toestellen die ze beveiligt, zodat de volledige stroom van de kring erdoor loopt.
+\end{definition}
+
+In een smeltzekering smelt een dun draadje door het Joule-effect. Een automatische zekering schakelt uit en kan je daarna gewoon weer inschakelen.
+
+%---------------------------------------------------------------------------
+% VOORBEELD OVERBELASTING
+\begin{example}[foldable=true,title={Voorbeeld: springt de zekering?}]\nl
+    Een keukenkring van $230\,\mathrm{V}$ is beveiligd met een zekering van $20\,\mathrm{A}$. Je gebruikt tegelijk een waterkoker van $2{,}0\,\mathrm{kW}$, een oven van $2{,}3\,\mathrm{kW}$ en een broodrooster van $0{,}90\,\mathrm{kW}$. Onderbreekt de zekering de kring?
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & U = 230\,\mathrm{V} & & I_{\text{max}} = 20\,\mathrm{A} \\
+            & P_1 = 2{,}0 \cdot 10^{3}\,\mathrm{W} & & P_2 = 2{,}3 \cdot 10^{3}\,\mathrm{W} \\
+            & P_3 = 0{,}90 \cdot 10^{3}\,\mathrm{W} & &
+        \end{align*}
+
+        \underline{Gevraagd:} de totale stroom $I$ \\
+
+        \underline{Oplossing:}\\
+        De toestellen staan parallel, dus staat over elk toestel $230\,\mathrm{V}$ en tellen de stromen op. We tellen eerst de vermogens op en gebruiken dan vergelijking~\ref{eq:vermogen}:
+        \begin{align*}
+            P &= P_1 + P_2 + P_3 = 5{,}2 \cdot 10^{3}\,\mathrm{W} \\
+            I &= \frac{P}{U} = \frac{5{,}2 \cdot 10^{3}\,\mathrm{W}}{230\,\mathrm{V}} = 22{,}6\,\mathrm{A} \simeq \boxed{2{,}3 \cdot 10^{1}\,\mathrm{A}}
+        \end{align*}
+        De stroom is groter dan $20\,\mathrm{A}$: de zekering onderbreekt de kring.
+    \end{solution}
+\end{example}
+%---------------------------------------------------------------------------
+
+\begin{remark}[foldable=true,title={Een zekering beschermt de leidingen}]\nl
+    Een zekering reageert pas bij stromen van vele ampère. Voor het menselijk lichaam is een stroom van enkele tientallen milliampère al gevaarlijk. Daarom zit er in elke huisinstallatie ook een \textbf{verliesstroomschakelaar} (differentieelschakelaar). Die onderbreekt de kring zodra er een kleine stroom weglekt naar de aarde, bijvoorbeeld door een persoon.
+\end{remark}
+
+%---------------
+% QUIZ: ZEKERING
+\begin{question}
+    Waarom staat een zekering in serie met de toestellen en niet parallel?
+    \begin{multipleChoice}
+        \choice{In serie krijgt elk toestel een kleinere spanning, wat veiliger is.}
+        \choice[correct]{In serie loopt de volledige stroom van de kring door de zekering, en valt de stroom overal weg als de zekering de kring onderbreekt.}
+        \choice{Parallel zou de zekering te veel energie verbruiken.}
+        \choice{Het maakt niet uit hoe je de zekering schakelt.}
+    \end{multipleChoice}
+    \begin{solution}\nl
+        In een serieschakeling is de stroom overal gelijk en is er maar één pad. De zekering voelt dus de volledige stroom, en als ze opent, kan er nergens in de kring nog stroom lopen.
+    \end{solution}
+\end{question}
+
+\end{document}

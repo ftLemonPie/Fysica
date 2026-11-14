@@ -1,0 +1,254 @@
+\documentclass{ximera}
+%geschreven 14/11/26
+\title{Vraagstukken gemengde schakelingen: vermogen en veiligheid}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+    Oefeningen op vermogen, het Joule-effect en de beveiliging van een kring, van makkelijk naar moeilijk.
+\end{abstract}
+\maketitle
+
+\section{Oefeningen vermogen en veiligheid}
+
+%———————————————————————————————————————
+% VERMOGEN 1: P = U I
+\begin{exercise}
+    Door een lampje dat aangesloten is op $12\,\mathrm{V}$ loopt een stroom van $0{,}50\,\mathrm{A}$. Bereken het vermogen van het lampje.
+
+    \[ P = \answer[tolerance=0.2,onlineshowanswerbutton]{6.0} \, \mathrm{W} \]
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & U = 12\,\mathrm{V} & & I = 0{,}50\,\mathrm{A}
+        \end{align*}
+
+        \underline{Gevraagd:} $P$ \\
+
+        \underline{Oplossing:}
+        \begin{align*}
+            P &= U \cdot I = 12\,\mathrm{V} \cdot 0{,}50\,\mathrm{A} = \boxed{6{,}0\,\mathrm{W}}
+        \end{align*}
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% VERMOGEN 2: I = P/U
+\begin{exercise}
+    Een waterkoker van $2{,}2\,\mathrm{kW}$ is aangesloten op de netspanning van $230\,\mathrm{V}$. Bereken de stroom door de waterkoker.
+
+    \[ I = \answer[tolerance=0.2,onlineshowanswerbutton]{9.6} \, \mathrm{A} \]
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & P = 2{,}2\,\mathrm{kW} = 2{,}2 \cdot 10^{3}\,\mathrm{W} & & U = 230\,\mathrm{V}
+        \end{align*}
+
+        \underline{Gevraagd:} $I$ \\
+
+        \underline{Oplossing:}
+        \begin{align*}
+            P = U \cdot I \quad \Rightarrow \quad I &= \frac{P}{U} = \frac{2{,}2 \cdot 10^{3}\,\mathrm{W}}{230\,\mathrm{V}} = 9{,}57\,\mathrm{A} \simeq \boxed{9{,}6\,\mathrm{A}}
+        \end{align*}
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% VERMOGEN 3: P = R I^2
+\begin{exercise}
+    Door een weerstand van $47\,\mathrm{\Omega}$ loopt een stroom van $200\,\mathrm{mA}$. Bereken het vermogen dat de weerstand omzet in warmte.
+
+    \[ P = \answer[tolerance=0.05,onlineshowanswerbutton]{1.9} \, \mathrm{W} \]
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & R = 47\,\mathrm{\Omega} & & I = 200\,\mathrm{mA} = 0{,}200\,\mathrm{A}
+        \end{align*}
+
+        \underline{Gevraagd:} $P$ \\
+
+        \underline{Oplossing:}
+        \begin{align*}
+            P &= R \cdot I^{2} = 47\,\mathrm{\Omega} \cdot (0{,}200\,\mathrm{A})^{2} = 1{,}88\,\mathrm{W} \simeq \boxed{1{,}9\,\mathrm{W}}
+        \end{align*}
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% VERMOGEN 4: SERIE
+\begin{exercise}
+    Twee weerstanden $R_1 = 20\,\mathrm{\Omega}$ en $R_2 = 40\,\mathrm{\Omega}$ staan in serie, aangesloten op een bron van $12\,\mathrm{V}$.
+
+    \begin{question}
+        Bereken de stroom door de schakeling.
+
+        \[ I = \answer[tolerance=0.005,onlineshowanswerbutton]{0.20} \, \mathrm{A} \]
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & R_1 = 20\,\mathrm{\Omega} & & R_2 = 40\,\mathrm{\Omega} \\
+                & U = 12\,\mathrm{V} & &
+            \end{align*}
+
+            \underline{Gevraagd:} $I$ \\
+
+            \underline{Oplossing:}
+            \begin{align*}
+                I &= \frac{U}{R_1 + R_2} = \frac{12\,\mathrm{V}}{60\,\mathrm{\Omega}} = \boxed{2{,}0 \cdot 10^{-1}\,\mathrm{A}}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken het vermogen in elke weerstand.
+
+        \[ P_1 = \answer[tolerance=0.02,onlineshowanswerbutton]{0.80} \, \mathrm{W} \qquad P_2 = \answer[tolerance=0.04,onlineshowanswerbutton]{1.6} \, \mathrm{W} \]
+
+        \begin{hint}
+            Welke grootheid is dezelfde voor beide weerstanden in een serieschakeling?
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gevraagd:} $P_1$ en $P_2$ \\
+
+            \underline{Oplossing:}\\
+            Door beide weerstanden loopt dezelfde stroom.
+            \begin{align*}
+                P_1 &= R_1 \cdot I^{2} = 20\,\mathrm{\Omega} \cdot (0{,}20\,\mathrm{A})^{2} = \boxed{8{,}0 \cdot 10^{-1}\,\mathrm{W}} \\
+                P_2 &= R_2 \cdot I^{2} = 40\,\mathrm{\Omega} \cdot (0{,}20\,\mathrm{A})^{2} = \boxed{1{,}6\,\mathrm{W}}
+            \end{align*}
+            De grootste weerstand zet het grootste vermogen om.
+        \end{solution}
+    \end{question}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% VERMOGEN 5: ZEKERING
+\begin{exercise}
+    Op een kring van $230\,\mathrm{V}$ met een zekering van $16\,\mathrm{A}$ sluit je tegelijk een verwarmingstoestel van $2{,}0\,\mathrm{kW}$ en een stofzuiger van $1{,}8\,\mathrm{kW}$ aan.
+
+    \begin{question}
+        Bereken de totale stroom door de kring.
+
+        \[ I = \answer[tolerance=0.4,onlineshowanswerbutton]{17} \, \mathrm{A} \]
+
+        \begin{hint}
+            De toestellen staan parallel. Wat weet je dan over de spanning over elk toestel en over de totale stroom?
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & U = 230\,\mathrm{V} & & I_{\text{max}} = 16\,\mathrm{A} \\
+                & P_1 = 2{,}0 \cdot 10^{3}\,\mathrm{W} & & P_2 = 1{,}8 \cdot 10^{3}\,\mathrm{W}
+            \end{align*}
+
+            \underline{Gevraagd:} $I$ \\
+
+            \underline{Oplossing:}\\
+            Over beide toestellen staat $230\,\mathrm{V}$ en de stromen tellen op:
+            \begin{align*}
+                I &= \frac{P_1 + P_2}{U} = \frac{3{,}8 \cdot 10^{3}\,\mathrm{W}}{230\,\mathrm{V}} = 16{,}5\,\mathrm{A} \simeq \boxed{1{,}7 \cdot 10^{1}\,\mathrm{A}}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        De zekering \wordChoice{
+            \choice[correct]{onderbreekt de kring}
+            \choice{onderbreekt de kring niet}
+        }.
+
+        \begin{solution}\nl
+            De totale stroom is groter dan $16\,\mathrm{A}$. De zekering onderbreekt de kring, zodat de leidingen niet te warm worden.
+        \end{solution}
+    \end{question}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% VERMOGEN 6: GEMENGD
+\begin{exercise}
+    In de schakeling is $R_1 = 4{,}0\,\mathrm{\Omega}$ en zijn $R_2 = R_3 = 12\,\mathrm{\Omega}$. De bron levert $12\,\mathrm{V}$.
+
+    \begin{center}
+        \begin{circuitikz}[european]
+            \draw (0,3) to[battery1, l=$U$] (0,0) -- (6,0);
+            \draw (0,3) to[R, l=$R_1$] (3,3) -- (6,3);
+            \draw (3,3) to[R, l=$R_2$, *-*] (3,0);
+            \draw (6,3) to[R, l=$R_3$, *-*] (6,0);
+        \end{circuitikz}
+    \end{center}
+
+    \begin{question}
+        Bereken de stroom door de bron.
+
+        \[ I = \answer[tolerance=0.03,onlineshowanswerbutton]{1.2} \, \mathrm{A} \]
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & R_1 = 4{,}0\,\mathrm{\Omega} & & R_2 = R_3 = 12\,\mathrm{\Omega} \\
+                & U = 12\,\mathrm{V} & &
+            \end{align*}
+
+            \underline{Gevraagd:} $I$ \\
+
+            \underline{Oplossing:}\\
+            $R_2$ en $R_3$ staan in parallel en zijn gelijk. Die groep staat in serie met $R_1$:
+            \begin{align*}
+                R_{23} &= \frac{12\,\mathrm{\Omega}}{2} = 6{,}0\,\mathrm{\Omega} \\
+                R_{\text{tot}} &= R_1 + R_{23} = 4{,}0\,\mathrm{\Omega} + 6{,}0\,\mathrm{\Omega} = 10\,\mathrm{\Omega} \\
+                I &= \frac{U}{R_{\text{tot}}} = \frac{12\,\mathrm{V}}{10\,\mathrm{\Omega}} = \boxed{1{,}2\,\mathrm{A}}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken het vermogen in $R_1$ en in $R_2$.
+
+        \[ P_1 = \answer[tolerance=0.1,onlineshowanswerbutton]{5.8} \, \mathrm{W} \qquad P_2 = \answer[tolerance=0.1,onlineshowanswerbutton]{4.3} \, \mathrm{W} \]
+
+        \begin{hint}
+            Door $R_1$ loopt de stroom van de bron. Welke stroom loopt er door $R_2$?
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gevraagd:} $P_1$ en $P_2$ \\
+
+            \underline{Oplossing:}\\
+            Door $R_1$ loopt de volledige stroom. Die verdeelt zich gelijk over $R_2$ en $R_3$, dus $I_2 = 0{,}60\,\mathrm{A}$.
+            \begin{align*}
+                P_1 &= R_1 \cdot I^{2} = 4{,}0\,\mathrm{\Omega} \cdot (1{,}2\,\mathrm{A})^{2} = 5{,}76\,\mathrm{W} \simeq \boxed{5{,}8\,\mathrm{W}} \\
+                P_2 &= R_2 \cdot I_2^{2} = 12\,\mathrm{\Omega} \cdot (0{,}60\,\mathrm{A})^{2} = 4{,}32\,\mathrm{W} \simeq \boxed{4{,}3\,\mathrm{W}}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken het vermogen dat de bron levert.
+
+        \[ P = \answer[tolerance=0.4,onlineshowanswerbutton]{14} \, \mathrm{W} \]
+
+        \begin{solution}\nl
+            \underline{Gevraagd:} $P$ \\
+
+            \underline{Oplossing:}
+            \begin{align*}
+                P &= U \cdot I = 12\,\mathrm{V} \cdot 1{,}2\,\mathrm{A} = 14{,}4\,\mathrm{W} \simeq \boxed{1{,}4 \cdot 10^{1}\,\mathrm{W}}
+            \end{align*}
+            Controle: $P_1 + P_2 + P_3 = 5{,}76\,\mathrm{W} + 4{,}32\,\mathrm{W} + 4{,}32\,\mathrm{W} = 14{,}4\,\mathrm{W}$.
+        \end{solution}
+    \end{question}
+\end{exercise}
+%———————————————————————————————————————
+
+\end{document}

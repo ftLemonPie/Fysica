@@ -1,4 +1,5 @@
 \documentclass{ximera}
+%verbeterd 14/11/26
 \title{Elektrische spanning}
 \author{Daan Lipkens}
 
@@ -9,7 +10,22 @@
 \maketitle
 
 \section{Definitie}
-Elektrische veldsterkte en potentiaal zijn vrij abstracte begrippen. \textbf{Spanning} daarentegen is een grootheid die je uit het dagelijks leven kent: denk aan de spanning van een batterij ($1{,}5 \, \mathrm{V}$ voor een AA-batterij) of aan de netspanning ($230 \, \mathrm{V}$ in België).
+Elektrische veldsterkte en potentiaal zijn vrij abstracte begrippen. \textbf{Spanning} daarentegen is een grootheid die je uit het dagelijks leven kent: denk aan de spanning van een batterij ($1{,}5 \, \mathrm{V}$ voor een AA-batterij, zie figuur~\ref{fig:batterijen}) of aan de netspanning ($230 \, \mathrm{V}$ in België).
+
+%---------------------------
+% AFBEELDING: batterijen naast elkaar
+% bron: https://commons.wikimedia.org/wiki/File:Batteries_comparison_4,5_D_C_AA_AAA_AAAA_A23_9V_CR2032_LR44_matchstick-1.jpeg
+\begin{figure}[ht!]
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
+        \includegraphics[width=0.9\textwidth]{pic5/elektriciteit/potentiaal/batterijen.jpg}
+        \fotobron{Lead holder}{CC BY-SA 3.0}{https://commons.wikimedia.org/wiki/File:Batteries_comparison_4,5_D_C_AA_AAA_AAAA_A23_9V_CR2032_LR44_matchstick-1.jpeg}
+    \end{center}
+    \caption{Batterijen van verschillende grootte en spanning. Van links naar rechts onder andere een platte batterij van $4{,}5 \, \mathrm{V}$, de types D, C, AA en AAA (elk $1{,}5 \, \mathrm{V}$), een blokbatterij van $9 \, \mathrm{V}$ en enkele knoopcellen.}
+    \label{fig:batterijen}
+\end{figure}
+%---------------------------
+
 
 \begin{definition}[foldable=true,title={Spanning}]\nl
 De \textbf{spanning} $U_{12}$ tussen twee punten $1$ en $2$ in een elektrisch veld is het verschil in potentiaal tussen die twee punten:
@@ -75,7 +91,22 @@ De spanningspijl is \textbf{tegengesteld} aan de zin van de veldlijnen. Dit geld
 \end{remark}
 
 \section{Meten van spanning}
-De spanning tussen twee punten meten we met een \textbf{voltmeter} (V-meter). Een voltmeter heeft twee aansluitpunten: de plusaansluiting en de min- of COM-aansluiting. Een analoge voltmeter is correct aangesloten als de naald naar de juiste kant uitwijkt.
+De spanning tussen twee punten meten we met een \textbf{voltmeter} (V-meter). Een voltmeter heeft twee aansluitpunten: de plusaansluiting en de min- of COM-aansluiting. Een analoge voltmeter is correct aangesloten als de naald naar de juiste kant uitwijkt. In de praktijk gebruik je meestal een digitale multimeter die je instelt als voltmeter, zoals in figuur~\ref{fig:spanning_meten}.
+
+%---------------------------
+% AFBEELDING: spanning van een batterij meten met een multimeter
+% bron: https://commons.wikimedia.org/wiki/File:Testing_voltage_of_a_battery_using_a_digital_multimeter.jpg
+\begin{figure}[ht!]
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
+        \includegraphics[width=0.55\textwidth]{pic5/elektriciteit/potentiaal/spanning_meten_multimeter.jpg}
+        \fotobron{Jiazheng0609}{CC BY-SA 4.0}{https://commons.wikimedia.org/wiki/File:Testing_voltage_of_a_battery_using_a_digital_multimeter.jpg}
+    \end{center}
+    \caption{Een digitale multimeter, ingesteld als voltmeter, meet de spanning over een lithiumbatterij van $3 \, \mathrm{V}$. De rode meetsnoer zit aan de plusaansluiting, de zwarte aan COM.}
+    \label{fig:spanning_meten}
+\end{figure}
+%---------------------------
+
 
 \begin{remark}[expandable=true,title={Correct aansluiten van een voltmeter}]\nl
 Een digitale voltmeter is correct aangesloten als hij een \textbf{positieve} spanning aangeeft. Bij een correct aangesloten voltmeter heeft het punt verbonden met de plusaansluiting de hoogste potentiaal, en wijst de spanningspijl dus naar dat punt. Geeft de voltmeter een negatieve waarde aan, dan wijst de spanningspijl naar het punt verbonden met de \emph{min}-aansluiting.
@@ -96,7 +127,7 @@ Een digitale voltmeter is correct aangesloten als hij een \textbf{positieve} spa
 \end{question}
 
 \section{Spanningsbronnen}
-Een \textbf{spanningsbron} (bijvoorbeeld een batterij) onderhoudt de spanning tussen zijn twee polen. Bij een \textbf{gelijkspanningsbron} is deze spanning constant in de tijd; de pluspool is de pool met de hoogste potentiaal. Bij een \textbf{wisselspanningsbron} (zoals de netspanning) wisselen de polen voortdurend van teken; in Europa gebeurt dit $50$ keer per seconde ($50 \, \mathrm{Hz}$). Een gelijkspanningsbron houdt het ladingsverschil tussen de polen in stand: de minpool heeft een overschot aan elektronen, de pluspool een tekort. Hoe groter dat verschil, hoe groter de spanning.
+Een \textbf{spanningsbron} (bijvoorbeeld een batterij) onderhoudt de spanning tussen zijn twee polen. Bij een \textbf{gelijkspanningsbron} is deze spanning constant in de tijd; de pluspool is de pool met de hoogste potentiaal. Bij een \textbf{wisselspanningsbron} (zoals de netspanning) wisselen de polen voortdurend van teken; in Europa doorloopt de spanning $50$ volledige wisselingen per seconde ($50 \, \mathrm{Hz}$). Een gelijkspanningsbron houdt het ladingsverschil tussen de polen in stand: de minpool heeft een overschot aan elektronen, de pluspool een tekort. Hoe groter dat verschil, hoe groter de spanning.
 
 \begin{remark}[expandable=true,title={Herhaling: symbolen van spanningsbronnen}]\nl
 In een elektrisch schema krijgt elke spanningsbron een eigen symbool. Bij een gelijkspanningsbron staat de lange streep aan de pluspool en de korte streep aan de minpool. Een variabele gelijkspanningsbron herken je aan de pijl door het symbool: de spanning kan je regelen. Het symbool van een wisselspanningsbron is een cirkel met een sinusvormig golfje, omdat de spanning voortdurend van teken wisselt.
@@ -171,7 +202,7 @@ In een geleider met lengte $0{,}20 \, \mathrm{m}$ heerst een homogeen elektrisch
 
 \underline{Oplossing:}
 \begin{align*}
-    U = E \cdot \ell = 250 \, \mathrm{N/C} \cdot 0{,}20 \, \mathrm{m} = 50 \, \mathrm{V}
+    U = E \cdot \ell = 250 \, \mathrm{N/C} \cdot 0{,}20 \, \mathrm{m} = \boxed{50 \, \mathrm{V}}
 \end{align*}
 \end{solution}
 \end{example}

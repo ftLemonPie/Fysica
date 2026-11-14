@@ -215,6 +215,13 @@ Kort: titel, abstract, `\maketitle`, één inleidende zin over wat volgt. Geen `
 - Zet voor elke stap in een uitwerking kort de reden: waarom gebruik je deze vergelijking of wet?
 - Controleer elke tekst op spelling en taal, en laat geen symbolen zonder uitleg staan.
 
+### Notatie (elektriciteit)
+- De coulombconstante noteren we overal als `k`, nooit als `k_e`.
+
+### Extra en oefeningen
+- Het label **Extra** gebruiken we enkel in de theorie. Oefeningen krijgen geen Extra-label.
+- Verschilt de inhoud van een hoofdstuk tussen 1 uur en 2 uur, dan krijgt de 1uur-cursus een eigen inleiding (`..._inleiding_1uur.tex`) die enkel aankondigt wat er ook in staat.
+
 ### Notatie (mechanica)
 | Grootheid | Notatie | Vector |
 |---|---|---|
@@ -233,7 +240,7 @@ Kort: titel, abstract, `\maketitle`, één inleidende zin over wat volgt. Geen `
 ### Kruisverwijzingen en voettekst
 - **Verwijzingen naar een ander bestand** (een andere `\activity`) gebeuren met `\verwijs[tekst voor html]{label}{bestandsnaam zonder .tex}`, nooit met `\ref`/`\eqref`. Online wordt elke activity apart gecompileerd, waardoor `\ref` naar een label in een ander bestand `??` geeft. `\verwijs` geeft in de PDF een gewone `\ref` en online een link naar de pagina van het andere bestand. Voorbeeld: `zie~\verwijs[Permanente magneten]{sec:permanente-magneten}{magnetisme_permanente_magneten}`. Kies de tekst zo dat de zin online ook klopt (bv. `figuur~\verwijs[in Het magnetisch veld en veldlijnen]{fig:...}{magnetisme_veld}`).
 - `\ref` blijft gewoon voor verwijzingen binnen hetzelfde bestand.
-- **Nummering (PDF)**: per sectie, `<hoofdstuk>.<sectie>.<nr>` (Voorbeeld 2.5.1, Figuur 2.5.2, Oefening 3.3.1, deelvraag in een oefening 3.3.1.a; een losse vraag blijft Vraag 2.1.1); elke oefening/losse vraag krijgt links een blauwe lijn; pagina's `<hoofdstuk>.<pagina>` (p. 3.4), elk hoofdstuk op een nieuwe pagina. Online begint elke pagina opnieuw bij 1, zodat het laatste cijfer in de pdf het nummer op de webpagina is. Geregeld in `xmPreamble.tex` (blok *Nummering per sectie*), enkel voor de xourse-pdf. Nummers dus **nooit hard in de tekst** zetten: altijd `\ref`/`\verwijs`.
+- **Nummering (PDF)**: per sectie, `<hoofdstuk>.<sectie>.<nr>` (Voorbeeld 2.5.1, Figuur 2.5.2, Oefening 3.3.1, deelvraag in een oefening 3.3.1.a; een losse vraag blijft Vraag 2.1.1); elke oefening/losse vraag krijgt links een blauwe lijn (een breekbare tcolorbox met enkel een linkerrand, stijl `xmvraagbalk` in de preamble; geen changebar, want die respecteert de paginagrenzen niet); pagina's `<hoofdstuk>.<pagina>` (p. 3.4), elk hoofdstuk op een nieuwe pagina. Online begint elke pagina opnieuw bij 1, zodat het laatste cijfer in de pdf het nummer op de webpagina is. Geregeld in `xmPreamble.tex` (blok *Nummering per sectie*), enkel voor de xourse-pdf. Nummers dus **nooit hard in de tekst** zetten: altijd `\ref`/`\verwijs`.
 - Verwijzen naar een hoofdstuk dat nog niet bestaat: gewone tekst (bv. "in het hoofdstuk over deeltjesfysica"), geen label.
 - Belangrijke `\section`-koppen krijgen een label, bv.
   `\section{Tribo-elektrisch effect}\label{sec:tribo-elektrisch-effect}`, zodat de
@@ -250,6 +257,7 @@ Kort: titel, abstract, `\maketitle`, één inleidende zin over wat volgt. Geen `
 - **Foto's van het internet**: enkel van Wikimedia Commons met een vrije licentie (CC BY, CC BY-SA, CC0 of publiek domein). Bestand in `xmPictures/pic5/<thema>/` met een Nederlandse naam; boven de figuur een commentaarregel `% bron: <url van de Commons-pagina>`; direct onder `\includegraphics` de macro `\fotobron{<auteur>}{<licentie>}{<url>}` (niet in het bijschrift, dat blijft inhoudelijk); en een regel in `5de/bibliografie_52.tex`, sectie *Bronnen van afbeeldingen*. Sjabloon: README, template 5. Geen scans uit Interactie of Serway (publieke repo en website) en geen foto's waarop een bekende persoon herkenbaar is.
 - **Voorkeur**: een eigen TikZ-herwerking van de figuur, met de stijlen uit de preamble. Dat is op het gebied van auteursrecht de veiligste optie.
 - **Werkwijze bij een nieuwe foto**: de bestandsnaam staat in `pic5/<onderwerp>/` (zie §4). Boven de `\includegraphics` komt een commentaarregel met de bron-URL (`% bron: https://commons.wikimedia.org/wiki/File:...`). In het bijschrift staan de auteur en de licentie, bv. `Bron: Jan Ainali, Wikimedia Commons, CC BY 3.0.`
+- **Elke figuur krijgt een verwijzing in de lopende tekst** (`figuur~\ref{fig:...}` of `\verwijs`), ook een foto die enkel illustreert. Plaats de figuur na de tekst die ze uitlegt; in een `example`/`remark` komen grote figuren na de uitleg, zodat het kader over een paginagrens kan breken.
 - Een bronvermelding maakt een figuur niet automatisch toegelaten voor publicatie. Bij twijfel over het gebruik van een figuur in de gepubliceerde cursus, overleg je eerst.
 - Voorkeur: **originele TikZ-tekeningen**, rechtstreeks in de `.tex`-bestanden,
   met de stijlen en macro's uit `xmPreamble.tex` (`\poslading`/`\neglading`,

@@ -1,6 +1,6 @@
 
 \documentclass{ximera}
-%verbeterd 27/9/26
+%verbeterd 14/11/26
 \title{Vraagstukken elektrische krachtwerking: goniometrische figuren}
 \author{Daan Lipkens}
 
@@ -59,8 +59,8 @@
         \underline{Gegevens:}
         \begin{align*}
             & Q_{1} = +1{,}5 \cdot 10^{-6} \, \mathrm{C} & & Q_{2} = +1{,}5 \cdot 10^{-6} \, \mathrm{C} \\
-            & Q_{3} = -2{,}0 \cdot 10^{-6} \, \mathrm{C} & & r_{12} =4{,}0\mathrm{dm} = 0{,}40 \, \mathrm{m}\\
-            & r_{13} =3{,}0\mathrm{dm}= 0{,}30 \, \mathrm{m} & & 
+            & Q_{3} = -2{,}0 \cdot 10^{-6} \, \mathrm{C} & & r_{12} =4{,}0\,\mathrm{dm} = 0{,}40 \, \mathrm{m}\\
+            & r_{13} =3{,}0\,\mathrm{dm}= 0{,}30 \, \mathrm{m} & & 
         \end{align*}
 
         \underline{Gevraagd:} $ F_{\text{res},3}$\\ 
@@ -76,7 +76,7 @@
         \begin{align*}
             F_{13}&=\frac{k\cdot\lvert Q_{1}\rvert\cdot\lvert Q_{3}\rvert}{(r_{13})^{2}} \\
             &=\frac{8{,}99 \cdot 10^9 \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 1{,}5 \cdot 10^{-6} \, \mathrm{C} \cdot 2{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}30 \, \mathrm{m})^{2}} \\
-            &= 0{,}29966 \, \mathrm{N}
+            &= 0{,}29967 \, \mathrm{N}
         \end{align*}
         We doen hetzelfde voor $F_{23}$. Hiervoor hebben we eerst $r_{23}$ nodig:
         \begin{align*}
@@ -105,8 +105,11 @@
                 \end{scope}
                 \tkzDefPointOnLine[pos=2*0.3](C,A)\tkzGetPoint{D} 
                 \tkzDefPointOnLine[pos=2*0.17](C,B)\tkzGetPoint{E}  
+                \tkzDefParallelogram(D,C,E)
                 \tkzGetPoint{F}             
                 \tkzDrawPolygon[dotted, gray](D,C,E,F)      
+                \draw[kracht] (C)--(D) node[left] {$\vec{\mathbf{F}}_{13}$};
+                \draw[kracht] (C) -- (E) node[above, right] {$\vec{\mathbf{F}}_{23}$};
                 \tkzDrawPolygon(A,B,C)      
 
                 % BENOEMEN VAN LADINGEN
@@ -171,8 +174,8 @@
                 \node[neglading] at (C) {$-$};
 
                 % KRACHTEN
-                \draw[kracht] (C)--(D) node[left] {$\vec{\mathbf{F}}_{21}$};
-                \draw[kracht] (C) -- (E) node[above, right] {$\vec{\mathbf{F}}_{31}$};
+                \draw[kracht] (C)--(D) node[left] {$\vec{\mathbf{F}}_{13}$};
+                \draw[kracht] (C) -- (E) node[above, right] {$\vec{\mathbf{F}}_{23}$};
                 \draw[resulterendekracht] (C) -- (F) node[right] {$\vec{\mathbf{F}}_{\text{res}}$};
             \end{tikzpicture}
         \end{center}
@@ -181,8 +184,8 @@
     \textbf{Stap 4: Cosinusregel gebruiken}  
         \begin{align*}
             F_{\text{res},3} &= \sqrt{F_{13}^{2} + F_{23}^{2} - 2 \cdot F_{13} \cdot F_{23}\cdot \cos(127^\circ)}\\
-            &= \sqrt{(0{,}29966 \, \mathrm{N})^{2}+(0{,}10788 \, \mathrm{N})^{2}-2\cdot 0{,}29966 \, \mathrm{N} \cdot 0{,}10788 \, \mathrm{N} \cdot \cos(127^\circ)}\\
-            &\simeq 0{,}37 \, \mathrm{N}
+            &= \sqrt{(0{,}29967 \, \mathrm{N})^{2}+(0{,}10788 \, \mathrm{N})^{2}-2\cdot 0{,}29967 \, \mathrm{N} \cdot 0{,}10788 \, \mathrm{N} \cdot \cos(127^\circ)}\\
+            &\simeq \boxed{0{,}37 \, \mathrm{N}}
         \end{align*}
         De resulterende kracht op lading $Q_{3}$ is ongeveer $3{,}7 \cdot 10^{-1} \, \mathrm{N}$.
 
@@ -254,17 +257,17 @@
         \textbf{Stap 2: Overstaande hoek}  
         In een gelijkzijdige driehoek zijn de hoeken gelijk aan $60^\circ$. Omdat $Q_2$ aantrekt en $Q_3$ afstoot, is de hoek tussen de vectoren $F_{21}$ en $F_{31}$ gelijk aan $120^\circ$. De overstaande hoek in het parallellogram voor $\vec{\mathbf{F}}_{\text{res}}$ is $60^\circ$.
         \begin{hint}
-            Hoeken parallelogram:
+            Hoeken parallellogram:
                 \begin{align*}
                     &360^\circ=2\cdot\alpha+2\cdot\beta\\
-                    &\Rightarrow \alpha = \beta - 180^\circ
+                    &\Rightarrow \alpha = 180^\circ - \beta
                 \end{align*}
         \end{hint}
         \textbf{Stap 3: Cosinusregel gebruiken}  
         \begin{align*}
-            F_{\text{res},1} &= \sqrt{F_{21}^{2} + F_{31}^{2} - 2 \cdot F_{12} \cdot F_{13}\cdot \cos(60^\circ)}\\
+            F_{\text{res},1} &= \sqrt{F_{21}^{2} + F_{31}^{2} - 2 \cdot F_{21} \cdot F_{31}\cdot \cos(60^\circ)}\\
             &= \sqrt{(0{,}21576 \, \mathrm{N})^{2}+(0{,}28768 \, \mathrm{N})^{2}-2\cdot 0{,}21576 \, \mathrm{N} \cdot 0{,}28768 \, \mathrm{N} \cdot \cos(60^\circ)}\\
-            &\simeq 0{,}26 \, \mathrm{N}
+            &\simeq \boxed{0{,}26 \, \mathrm{N}}
         \end{align*}
         De resulterende kracht op $Q_{1}$ bedraagt dus ongeveer $2{,}6 \cdot 10^{-1} \, \mathrm{N}$.
     \end{solution}
@@ -345,7 +348,7 @@
             &= \sqrt{(1{,}1238 \, \mathrm{N})^{2} + (1{,}4983 \, \mathrm{N})^{2}} \\
             &= \sqrt{1{,}2628\, \mathrm{N}^2 + 2{,}2450\, \mathrm{N}^2} \\
             &= \sqrt{3{,}5078\, \mathrm{N}^2} \\
-            &= 1{,}8729 \, \mathrm{N} \simeq 1{,}9 \, \mathrm{N}
+            &= 1{,}8729 \, \mathrm{N} \simeq \boxed{1{,}9 \, \mathrm{N}}
         \end{align*}
         De resulterende kracht is ongeveer $1{,}9 \, \mathrm{N}$ groot.
     \end{solution}
@@ -426,7 +429,7 @@
             De afstotingskracht $F_{31}$ wijst langs exact dezelfde as \emph{van het midden weg}.
             Omdat ze een tegengestelde zin hebben op dezelfde lijn, mogen we ze simpelweg aftrekken:
             \[
-                F_{\text{res}} = F_{24} - F_{31} = 1{,}271 \, \mathrm{N} - 0{,}4495 \, \mathrm{N} = 0{,}8215 \, \mathrm{N} \simeq 8{,}2 \cdot 10^{-1} \, \mathrm{N}
+                F_{\text{res}} = F_{24} - F_{31} = 1{,}271 \, \mathrm{N} - 0{,}4495 \, \mathrm{N} = 0{,}8215 \, \mathrm{N} \simeq \boxed{8{,}2 \cdot 10^{-1} \, \mathrm{N}}
             \]
             De nettokracht trekt lading $Q_1$ schuin naar het centrum van het vierkant.
         \end{solution}

@@ -1,5 +1,5 @@
 \documentclass{ximera}
-%verbeterd 30/10/26
+%verbeterd 14/11/26
 \title{Parallelschakeling}
 \author{Daan Lipkens}
 
@@ -98,7 +98,7 @@ Elke weerstand in figuur~\ref{fig:parallel} is rechtstreeks verbonden met beide 
         \end{align*}
         \textbf{Stap 3: Totale stroom}\\
         \begin{align*}
-            I &= I_1 + I_2 = 0{,}60\,\mathrm{A} + 0{,}40\,\mathrm{A} = 1{,}0\,\mathrm{A}
+            I &= I_1 + I_2 = 0{,}60\,\mathrm{A} + 0{,}40\,\mathrm{A} = \boxed{1{,}0\,\mathrm{A}}
         \end{align*}
         Controle: $\frac{U}{R_{\text{p}}} = \frac{12\,\mathrm{V}}{12\,\mathrm{\Omega}} = 1{,}0\,\mathrm{A}$.
     \end{solution}
@@ -121,7 +121,17 @@ Elke weerstand in figuur~\ref{fig:parallel} is rechtstreeks verbonden met beide 
 \end{question}
 
 \begin{example}[foldable=true,title={Toepassing: de huisinstallatie}]\nl
-    Alle toestellen in een woning zijn \emph{parallel} aangesloten op het net. Daardoor staat over elk toestel dezelfde netspanning en kan je elk toestel afzonderlijk aan- of uitzetten zonder dat de andere toestellen beïnvloed worden. Hoe meer toestellen je tegelijk gebruikt, hoe groter de totale stroom door de hoofdleiding.
+    Alle toestellen in een woning zijn \emph{parallel} aangesloten op het net. Daardoor staat over elk toestel dezelfde netspanning en kan je elk toestel afzonderlijk aan- of uitzetten zonder dat de andere toestellen beïnvloed worden. Hoe meer toestellen je tegelijk gebruikt, hoe groter de totale stroom door de hoofdleiding. Elke groep stopcontacten en lampen is beveiligd met een eigen zekering of automaat in de zekeringkast (figuur~\ref{fig:zekeringkast}).
+
+    % AFBEELDING: zekeringkast
+    % bron: https://commons.wikimedia.org/wiki/File:Domestic_Consumer_Unit_part_3.JPG
+    \begin{center}
+        \captionsetup{width=0.85\textwidth}
+        \includegraphics[width=0.45\textwidth]{pic5/elektriciteit/schakelingen/zekeringkast.jpg}
+        \fotobron{Pfnicholls}{CC BY-SA 4.0}{https://commons.wikimedia.org/wiki/File:Domestic_Consumer_Unit_part_3.JPG}
+        \captionof{figure}{Een zekeringkast met daaronder de elektriciteitsmeter. Elke groep in de woning heeft een eigen automaat.}
+        \label{fig:zekeringkast}
+    \end{center}
 \end{example}
 
 \end{document}

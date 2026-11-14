@@ -1,4 +1,5 @@
 \documentclass{ximera}
+%verbeterd 14/11/26
 %herschreven 23 september 2026
 \title{Het elektrisch veld}
 \author{Daan Lipkens}
@@ -17,7 +18,7 @@ Een \textbf{elektrisch veld} bestaat in de ruimte rondom een geladen voorwerp (d
     De elektrische veldvector $\vec{E}$ in een bepaald punt in de ruimte is gedefinieerd als de elektrische kracht $\vec{F}_e$ die inwerkt op een positieve testlading $Q_t$ in dat punt, gedeeld door de grootte van die testlading:
     \textcolor{gray}{$$ \vec{E} = \frac{\vec{F}_e}{Q_t}$$}
     De grootte van het elektrisch veld bereken je dus met de formule:
-    $$ \lVert E\rVert = \frac{\lVert F_e\rVert}{\lvert Q_t \rvert} $$
+    $$ E = \frac{F_e}{\lvert Q_t \rvert} $$
     De SI-eenheid van het elektrisch veld is de \textbf{newton per coulomb (N/C)}.
 \end{definition}
 
@@ -27,16 +28,15 @@ Een \textbf{elektrisch veld} bestaat in de ruimte rondom een geladen voorwerp (d
     \captionsetup{width=0.85\textwidth}
     \begin{center}
         \includegraphics[height=8cm,width=12cm, keepaspectratio]{pic5/elektriciteit/veld/testlading_bronlading.png}
-        % TIP: Gebruik hier de afbeelding van Figure 23.10 uit het boek
     \end{center}
-    \caption{Een kleine positieve testlading $Q_t$ in de buurt van een grotere positieve bronlading $Q$ bevindt zich in het elektrisch veld $\vec{E}$ van die bronlading.}
+    \caption{Een kleine positieve testlading $Q_t$ in de buurt van een grotere positieve bronlading $Q$ bevindt zich in het elektrisch veld $\vec{E}$ van die bronlading. In de figuur heet de testlading $q_0$. Bron: Serway, \textit{Physics for Scientists and Engineers} (7de ed.), fig.~23.10.}
     \label{fig:testlading_bronlading}
 \end{figure}
 %---------------------------
 
 %---------------------------
 % ANALOGIE ZWAARTEKRACHT
-\begin{remark}[expandable, title={Analogie met het zwaarteveld}]\nl
+\begin{remark}[expandable=true,title={Analogie met het zwaarteveld}]\nl
     De definitie van het elektrisch veld lijkt heel sterk op iets wat we al kennen: het zwaarteveld! %Als veldkracht, een kracht dat geen contact nodig heeft om een invloed uit te oefenen, is er een bijhorend veld. Denk terug aan de zwaartekracht en het zwaarteveld.
     Net zoals een voorwerp met massa $m$ een zwaartekracht $\vec{F}_g$ ondervindt in het zwaarteveld $\vec{g}$ van de aarde, ondervindt een lading $Q_t$ een elektrische kracht $\vec{F}_e$ in een elektrisch veld $\vec{E}$.
     
@@ -69,7 +69,7 @@ Een \textbf{elektrisch veld} bestaat in de ruimte rondom een geladen voorwerp (d
                 \node[circle, draw=red!90!black, fill=red!40, thick, minimum size=9mm, font=\large] (q) at (6,0) {$+Q_t$};
             
             % Elektrische kracht
-                \draw[kracht] (q) -- (6,-1.6) node[right] {$\vec{F}_c$};
+                \draw[kracht] (q) -- (6,-1.6) node[right] {$\vec{F}_e$};
         \end{tikzpicture}
     \end{center}
 \end{remark}

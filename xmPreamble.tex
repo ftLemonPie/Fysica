@@ -492,21 +492,26 @@
  \fi
 
 
- % Mylink: doet nog niet wat ik dacht dat het doet!!!
- \newcommand{\mylink}[2][]{
-	\ifdefined\HCode %Href werkt niet?
-		\nl\url{#2}: \text{#1} 
+% Mylink: QR-code (PDF) of url (HTML) met uitlegtekst.
+% \mylink{url}{tekst}   (oude vorm \mylink[tekst]{url} werkt ook)
+%   PDF: QR-code links, tekst rechts ernaast, samen in één minipage,
+%        zodat tekst en QR-code nooit op een andere pagina belanden.
+%        Zonder tekst: enkel de QR-code (bv. in een center-omgeving).
+%   HTML: url gevolgd door de tekst.
+\NewDocumentCommand{\mylink}{O{} m G{}}{%
+	\ifdefined\HCode
+		\nl\url{#2}: #1#3%
 	\else
-
-		\qrcode[hyperlink]{#2}#1
-		%figure werkt niet goed.
-		% \begin{figure}[h!]
-		% 	\qrcode[hyperlink]{#2}
-		% 	\caption*{#1}
-		% \end{figure}
-
-		\fi	
- }
+		\if\relax\detokenize{#1#3}\relax
+			\qrcode[hyperlink]{#2}%
+		\else
+			\par\medskip\noindent
+			\begin{minipage}{\linewidth}
+				\parbox[c]{2cm}{\qrcode[hyperlink,height=2cm]{#2}}\hspace{1em}%
+				\parbox{\dimexpr\linewidth-2cm-1em\relax}{#1#3}%
+			\end{minipage}\par\medskip
+		\fi
+	\fi}
 % % om youtube aan te passen voor mijn cursus
 % \ifdefined\HCode
 %  \renewcommand{\youtube}[1]{\ifvmode \IgnorePar\fi \EndP\HCode{<iframe class="xmyoutube" src="https://www.youtube-nocookie.com/embed/#1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>}}
@@ -739,11 +744,106 @@
   \def\maketitle{%
     \ifxm@afterpart\global\xm@afterpartfalse\else\clearpage\fi
     \setcounter{page}{1}%
-    \xm@chmaketitle\xm@resetnrs}}
+    \xm@qrcodehfd\xm@chmaketitle\xm@resetnrs}}
 \let\xm@origsectionstyle\sectionstyle
 \renewcommand\sectionstyle{\xm@origsectionstyle
   \let\xm@secmaketitle\maketitle
-  \def\maketitle{\xm@secmaketitle\xm@resetnrs}}
+  \def\maketitle{\par\addvspace{\xm@secruimte}\xm@qrcodeoef\xm@secmaketitle\xm@resetnrs}}
 }% einde \xm@NummeringSetup
 \ifdefined\HCode\else\ifdefined\xmIsXourse\xm@NummeringSetup\fi\fi
+\makeatother
+
+% ----------------------------------------------------------------------
+%   Titelblad en QR-codes (enkel in de PDF van een xourse)
+% ----------------------------------------------------------------------
+% In het cursusbestand (vóór \begin{document}), naast \title en \author:
+%   \ondertitel{Wetenschappen}
+%   \schooljaar{2026-2027}
+%   \titelfoto{pic5/elektromagnetisme.jpg}            (weglaten = geen foto)
+%   \titelfotobron{auteur}{licentie}{url}             (zelfde argumenten als \fotobron)
+%   \titelbijschrift{korte uitleg bij de foto en de link met de leerstof}
+%   \cursuswebsite{https://xerxes.ximera.org/sui/5de/Cursus_DDO_5/5de/}
+% Met \cursuswebsite krijgt elke hoofdstuk-activity (theorie; niet inleiding_... of ...oef_inleiding) en
+% elke sectie-activity met 'oef' in de bestandsnaam een QR-code naar zijn webpagina
+% (= website + map + bestandsnaam zonder .tex; bv. ../5de/ voor gedeelde bestanden).
+% Zonder \cursuswebsite: geen QR-codes.
+% Online (HTML) doen deze commando's niets; daar toont Ximera titel, abstract en logo.
+\makeatletter
+% (\def i.p.v. \newcommand: anders werkt de test \ifx...\@empty niet)
+\def\xm@ondertitel{}\newcommand\ondertitel[1]{\def\xm@ondertitel{#1}}
+\def\xm@schooljaar{}\newcommand\schooljaar[1]{\def\xm@schooljaar{#1}}
+\def\xm@titelfoto{}\newcommand\titelfoto[1]{\def\xm@titelfoto{#1}}
+\def\xm@titelfotobron{}
+\def\xm@titelbijschrift{}\newcommand\titelbijschrift[1]{\def\xm@titelbijschrift{#1}}
+\NewDocumentCommand\titelfotobron{O{Wikimedia Commons} m m m}{%
+  \def\xm@titelfotobron{\fotobron[#1]{#2}{#3}{#4}}}
+\def\xm@website{}\newcommand\cursuswebsite[1]{\def\xm@website{#1}}
+\newcommand\xm@titelfotohoogte{0.33\textheight}% max. hoogte titelfoto
+\newcommand\xm@logo{Logo_SUI.jpg}% schoollogo (in xmPictures)
+
+% QR-code naar de webpagina van de huidige activity (bestandsnaam via currfile),
+% in de rechtermarge naast de titel; neemt geen plaats in (box van hoogte 0).
+\newcommand\xm@qrafstand{0.5cm}% afstand tussen tekst en QR-code
+\newcommand\xm@secruimte{2.5\baselineskip}% witruimte vóór een sectietitel die op dezelfde pagina verdergaat
+\newcommand\xm@qrcode{%
+  \ifx\xm@website\@empty\else
+    \par\edef\xm@pd{\the\prevdepth}\nointerlineskip
+    \vbox to 0pt{\hbox to \linewidth{\hfill\rlap{\hspace{\xm@qrafstand}%
+      \raisebox{-\height}{\begin{tabular}{@{}c@{}}
+        \qrcode[hyperlink,height=1.6cm]{\xm@website\currfiledir\currfilebase}\\[1pt]
+        {\scriptsize\color{gray}dit deel online}%
+      \end{tabular}}}}\vss}%
+    \prevdepth=\xm@pd\relax % regelafstand alsof de box er niet is
+  \fi}
+% hoofdstuk-activity: niet voor de cursusinleiding (inleiding_...) en niet voor
+% de inleiding van een oefenreeks (bv. elektrischveldoef_inleiding: bevat 'oef')
+\newcommand\xm@qrcodehfd{%
+  \edef\xm@tmpfile{\detokenize\expandafter{\currfilebase}}%
+  \edef\xm@tmppat{\detokenize{inleiding_}}%
+  \edef\xm@tmppatb{\detokenize{oef}}%
+  \IfBeginWith{\xm@tmpfile}{\xm@tmppat}{}{%
+    \IfSubStr{\xm@tmpfile}{\xm@tmppatb}{}{\xm@qrcode}}}
+% sectie-activity: enkel als de bestandsnaam 'oef' bevat (oefeningen)
+\newcommand\xm@qrcodeoef{%
+  \edef\xm@tmpfile{\detokenize\expandafter{\currfilebase}}%
+  \edef\xm@tmppat{\detokenize{oef}}% (currfile geeft andere catcodes)
+  \IfSubStr{\xm@tmpfile}{\xm@tmppat}{\xm@qrcode}{}}
+
+% Titelblad (vervangt \maketitle van xourse.cls, enkel PDF)
+\newcommand\xm@titelblad{%
+  \pagestyle{empty}%
+  \begingroup
+  \noindent\hfill\includegraphics[height=2.2cm]{\xm@logo}\par
+  \vspace*{0.6cm}
+  \begin{center}
+    \rule{\textwidth}{0.6pt}\par\vspace{0.8em}
+    {\Huge\bfseries \@title\par}%
+    \ifx\xm@ondertitel\@empty\else\vspace{0.5em}{\LARGE \xm@ondertitel\par}\fi
+    \vspace{0.6em}\rule{\textwidth}{0.6pt}\par
+    \ifx\xm@titelfoto\@empty\else
+      \vspace{0.8cm}%
+      \includegraphics[width=\textwidth,height=\xm@titelfotohoogte,keepaspectratio]{\xm@titelfoto}%
+      \xm@titelfotobron
+      \ifx\xm@titelbijschrift\@empty\else
+        \vspace{0.4em}\parbox{0.85\textwidth}{\centering\small\itshape \xm@titelbijschrift}\par
+      \fi
+    \fi
+  \end{center}
+  \vfill
+  {\large Naam: \rule[-2pt]{0.5\textwidth}{0.4pt}\hfill Klas: \rule[-2pt]{0.18\textwidth}{0.4pt}\par}
+  \vspace{1cm}
+  \noindent\rule{\textwidth}{0.4pt}\par\vspace{0.3em}
+  \noindent{\large \@author}\hfill
+    {\large\ifx\xm@schooljaar\@empty\else Schooljaar \xm@schooljaar\fi}\par
+  \noindent{\footnotesize\color{gray}Versie van \today}\par
+  \endgroup
+  \clearpage
+  \ifnotoc\else\tableofcontents\clearpage\fi
+  \pagestyle{main}%
+  % activities zonder \chapterstyle/\sectionstyle: ook QR-code bij oefeningen
+  \def\maketitle{\par\addvspace{\xm@secruimte}\xm@qrcodeoef\othermaketitle}}
+\ifdefined\HCode\else\ifdefined\xmIsXourse
+  \RequirePackage{xstring}%
+  \AtBeginDocument{\let\maketitle\xm@titelblad}% na xourse.cls (die laadt dit bestand vroeger)
+\fi\fi
 \makeatother

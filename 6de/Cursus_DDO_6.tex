@@ -1,0 +1,106 @@
+\documentclass[nonewpage]{xourse}
+
+
+% Start \part op een nieuwe pagina (Ximera doet dat niet per default)
+\xpretocmd{\part}{\clearpage}{}{}
+
+\newcommand{\richting}{Wetenschappen 6de jaar}%De klas/richting --> hoofding header
+% \documentclass{xourse}
+%in
+%\title{\includegraphics[width=0.7\textwidth]{pic5/elektromagnetisme.jpg}\\[2cm]Fysica 5de jaar - Wetenschappen}
+\title{Fysica 6de jaar - Wetenschappen}
+\author{Daan Lipkens}
+% titelblad (PDF): zie xmPreamble.tex, sectie Titelblad en QR-codes
+\schooljaar{2026-2027}
+% titelfoto: LIGO Hanford (zwaartekrachtgolven): trillingen, golven, gravitatie
+\titelfoto{pic6/ligo_hanford.jpg}
+\titelfotobron{NOIRLab/LIGO/NSF/AURA/T. Matsopoulos}{CC BY 4.0}{https://commons.wikimedia.org/wiki/File:LIGO_at_Hanford,_Washington_(LIGO_Pic_09-CC).jpg}
+\titelbijschrift{LIGO meet zwaartekrachtgolven met laserlicht in twee loodrechte armen van 4 km lang. De spiegels hangen aan slingers die trillingen van de bodem wegfilteren. Trillingen, golven en gravitatie zijn leerstof van dit jaar.}
+\cursuswebsite{https://xerxes.ximera.org/sui/6de/Cursus_DDO_6/6de/}
+\begin{document}
+\begin{abstract}
+    Cursus Fysica 6de jaar Wetenschappen domeinoverschrijvende doorstroom.
+\end{abstract}
+\maketitle
+%\xmtitle{Fysica 5de jaar - Wetenschappen}{}
+% \part voor delen
+%\chapterstyle voor hoofdstukken >> \activity{hoofdstuk ....}
+%\sectionstyle voor delen in het hoofdstuk >> \activity{met onderdelen}
+% Inleiding, informatie, ...
+
+
+% INFO
+% toepassingen onder \begin{example}
+% Quizjes als \question met \begin{selectAll}
+% voorbeeld oefeningen met align x &= berekening && (uitleg)
+% komma's met {,} in math mode
+
+
+ \part{Inleiding}
+% \chapterstyle
+% \activity{inleiding_stand_63.tex}
+% \sectionstyle
+% \activity{inleiding_praktische_richtlijnen_63.tex}
+ \activity{inleiding_hoe_fysica_te_studeren_6.tex}
+% \activity{inleiding_vectorkleuren.tex}
+
+
+%--------positie, snelheid en versnelling----------------
+\part{Positie, snelheid en versnelling}
+\activity{x_v_a_oef_uitdaging.tex}
+
+%--------Wetten van Newton----------------
+\part{Kracht en beweging} %parts nog aanpassen
+%COULOMBKRACHT of ELEKTRISCHE KRACHTWERKING
+%picture path: pic5/elektriciteit/coulomb/
+
+\activity{wetten_van_newton_oef_uitdaging.tex}
+
+% %--------MAGNETISME----------------
+% \part{Elektromagnetisme}
+% \part{Lorentzkracht}
+% \part{Inductiespanning}
+
+% \newpage
+% %--------KERNFYSICA----------------
+
+
+
+%---------APPENDIX---------------
+
+\part{Appendix} %nummering anders
+
+\chapterstyle
+\activity{vectoren_inleiding.tex}
+
+\sectionstyle
+\activity{vectoren_scalar.tex}
+\activity{vectoren_component.tex}
+\activity{vectoren_som.tex}
+\activity{vectoren_verschil.tex}
+\activity{vectoren_scalaire_vermenigvuldiging.tex}
+\activity{vectoren_vectorieel_product.tex}
+
+
+\chapterstyle
+%Gedeeld met de 5de: deze bestanden staan enkel in ../5de (13/11/26).
+%Werkt ../ niet bij het bouwen? Zet dan de oude regels terug (standaardvorm_*.tex in deze map).
+\activity{../5de/appendix_standaardvorm_inleiding.tex}
+
+\sectionstyle
+\activity{../5de/appendix_standaardvorm_si.tex}
+\activity{../5de/appendix_standaardvorm_omzetten_eenheden.tex}
+\activity{../5de/appendix_standaardvorm_bc.tex}
+\activity{../5de/appendix_standaardvorm_oefeningen.tex}
+
+%Vector rekenen
+    %vectoren
+    %cosinus regel
+
+%nuclide tabel
+%standaard vorm
+%logaritme en exponentiële functies
+%---------Bibliografie
+\part{Bibliografie}
+
+\end{document}

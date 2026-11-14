@@ -363,3 +363,11 @@ Kort: titel, abstract, `\maketitle`, één inleidende zin over wat volgt. Geen `
 - **Atomaire taken**: één of enkele bestanden per keer, niet "maak het hele hoofdstuk".
 - **Nieuwe afspraken in dit bestand vastleggen** (vraag: *"zet dit in de stijlgids"*).
   Het geheugen is een hulpmiddel; deze stijlgids in de repo is de robuuste referentie.
+
+## 8. Titelblad en QR-codes (enkel PDF)
+
+- Het titelblad van elke cursus-PDF komt uit `xmPreamble.tex` (sectie *Titelblad en QR-codes*): SUI-logo rechtsboven (`xmPictures/Logo_SUI.jpg`), `\title`, titelfoto met bronregel, naam/klas, auteur, schooljaar en versiedatum. Daarna de inhoudstafel.
+- Per cursus enkel in het cursusbestand (vóór `\begin{document}`): `\schooljaar{...}`, `\titelfoto{...}`, `\titelfotobron{auteur}{licentie}{url}`, `\titelbijschrift{...}` (2 à 3 zinnen: wat is de foto en wat is de link met de leerstof van dat jaar, volgens het leerplan), `\cursuswebsite{...}` en optioneel `\ondertitel{...}`. Geen `\titelfoto` = geen foto.
+- `\title` niet inkorten: het is ook de cursusnaam op de website.
+- Met `\cursuswebsite` krijgt elke hoofdstuk-activity (`\chapterstyle`, behalve de cursusinleiding `inleiding_...` en de inleiding van een oefenreeks `...oef_inleiding`) en elke sectie-activity met `oef` in de bestandsnaam een QR-code naar haar webpagina (website + bestandsnaam). De QR-code staat in de rechtermarge naast de titel en neemt geen plaats in. Nieuwe oefenbestanden dus altijd met `oef` in de naam.
+- Online verandert er niets (de website zelf kan niet aangepast worden).

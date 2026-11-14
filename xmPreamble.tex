@@ -810,32 +810,48 @@
   \IfSubStr{\xm@tmpfile}{\xm@tmppat}{\xm@qrcode}{}}
 
 % Titelblad (vervangt \maketitle van xourse.cls, enkel PDF)
+\newdimen\xm@fotoh
 \newcommand\xm@titelblad{%
   \pagestyle{empty}%
   \begingroup
-  \noindent\hfill\includegraphics[height=2.2cm]{\xm@logo}\par
-  \vspace*{0.6cm}
-  \begin{center}
-    \rule{\textwidth}{0.6pt}\par\vspace{0.8em}
-    {\Huge\bfseries \@title\par}%
-    \ifx\xm@ondertitel\@empty\else\vspace{0.5em}{\LARGE \xm@ondertitel\par}\fi
-    \vspace{0.6em}\rule{\textwidth}{0.6pt}\par
+  % bovenaan: logo en titel
+  \setbox0=\vbox{%
+    \noindent\hfill\includegraphics[height=2.2cm]{\xm@logo}\par
+    \vspace*{0.6cm}%
+    \begin{center}
+      \rule{\textwidth}{0.6pt}\par\vspace{0.8em}
+      {\Huge\bfseries \@title\par}%
+      \ifx\xm@ondertitel\@empty\else\vspace{0.5em}{\LARGE \xm@ondertitel\par}\fi
+      \vspace{0.6em}\rule{\textwidth}{0.6pt}\par
+    \end{center}}%
+  % onder de foto: bronregel en bijschrift
+  \setbox2=\vbox{%
+    \centering
+    \xm@titelfotobron
+    \ifx\xm@titelbijschrift\@empty\else
+      \vspace{0.4em}\parbox{0.85\textwidth}{\centering\small\itshape \xm@titelbijschrift}\par
+    \fi}%
+  % onderaan: naam, klas, auteur, schooljaar, versie
+  \setbox4=\vbox{%
+    {\large Naam: \rule[-2pt]{0.5\textwidth}{0.4pt}\hfill Klas: \rule[-2pt]{0.18\textwidth}{0.4pt}\par}
+    \vspace{1cm}%
+    \noindent\rule{\textwidth}{0.4pt}\par\vspace{0.3em}
+    \noindent{\large \@author}\hfill
+      {\large\ifx\xm@schooljaar\@empty\else Schooljaar \xm@schooljaar\fi}\par
+    \noindent{\footnotesize\color{gray}Versie van \today}\par}%
+  % fotohoogte: wat overblijft (min 2,5 cm witruimte), maximaal \xm@titelfotohoogte
+  % zo past het titelblad altijd op één pagina, ook bij een lange titel
+  \xm@fotoh=\dimexpr\textheight-\ht0-\dp0-\ht2-\dp2-\ht4-\dp4-2.5cm\relax
+  \ifdim\xm@fotoh>\xm@titelfotohoogte\relax\xm@fotoh=\xm@titelfotohoogte\relax\fi
+  \vbox to \textheight{%
+    \unvbox0
     \ifx\xm@titelfoto\@empty\else
       \vspace{0.8cm}%
-      \includegraphics[width=\textwidth,height=\xm@titelfotohoogte,keepaspectratio]{\xm@titelfoto}%
-      \xm@titelfotobron
-      \ifx\xm@titelbijschrift\@empty\else
-        \vspace{0.4em}\parbox{0.85\textwidth}{\centering\small\itshape \xm@titelbijschrift}\par
-      \fi
+      \centerline{\includegraphics[width=\textwidth,height=\xm@fotoh,keepaspectratio]{\xm@titelfoto}}%
+      \unvbox2
     \fi
-  \end{center}
-  \vfill
-  {\large Naam: \rule[-2pt]{0.5\textwidth}{0.4pt}\hfill Klas: \rule[-2pt]{0.18\textwidth}{0.4pt}\par}
-  \vspace{1cm}
-  \noindent\rule{\textwidth}{0.4pt}\par\vspace{0.3em}
-  \noindent{\large \@author}\hfill
-    {\large\ifx\xm@schooljaar\@empty\else Schooljaar \xm@schooljaar\fi}\par
-  \noindent{\footnotesize\color{gray}Versie van \today}\par
+    \vfill
+    \unvbox4}%
   \endgroup
   \clearpage
   \ifnotoc\else\tableofcontents\clearpage\fi

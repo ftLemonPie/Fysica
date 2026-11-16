@@ -863,3 +863,17 @@
   \AtBeginDocument{\let\maketitle\xm@titelblad}% na xourse.cls (die laadt dit bestand vroeger)
 \fi\fi
 \makeatother
+
+% --- Inleiding als deel zonder nummer en hoofdstuk 0 (enkel PDF) ---
+% In het cursusbestand rond het eerste deel:
+%   \inleidingstart
+%   \part{Inleiding}
+%   \inleidingstop
+% Het deel krijgt geen nummer (volgende deel = I), het eerste hoofdstuk is 0
+% (volgende hoofdstuk = 1). Online verandert er niets.
+\makeatletter
+\newcommand\inleidingstart{\ifdefined\HCode\else
+  \setcounter{part}{-1}\let\xm@partname\partname\def\partname{}\fi}
+\newcommand\inleidingstop{\ifdefined\HCode\else
+  \let\partname\xm@partname\setcounter{titlenumber}{-1}\fi}
+\makeatother

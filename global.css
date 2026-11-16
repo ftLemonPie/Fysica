@@ -251,3 +251,18 @@ e.g. use "P1", "Problem 1", "Prob 1", "Exciting Problem 1", etc.
 	border-radius: 6px;
 }
 */
+/* ------------------------------------------------------------------
+ * Nummering inhoudsopgave (links): Inleiding = 0, volgende deel = 1, ...
+ * zodat de website overeenkomt met de PDF (\inleidingstart/\inleidingstop
+ * in de cursusbestanden). Ximera zet zelf data-nav-counter (1, 1.1, 1.1.1);
+ * hier tellen we opnieuw met CSS-tellers die bij 0 beginnen.
+ * Geldt voor alle cursussen in deze repo (die beginnen allemaal met Inleiding).
+ * ------------------------------------------------------------------ */
+.toc > ul { counter-reset: xmdeel -1 xmhfd 0 xmsec 0; }
+.toc li.part    { counter-increment: xmdeel; counter-set: xmhfd 0 xmsec 0; }
+.toc li.chapter { counter-increment: xmhfd;  counter-set: xmsec 0; }
+.toc li.section { counter-increment: xmsec; }
+.toc li.part::before    { content: counter(xmdeel) "  "; }
+.toc li.chapter::before { content: counter(xmdeel) "." counter(xmhfd) "  "; }
+.toc li.section::before { content: counter(xmdeel) "." counter(xmhfd) "." counter(xmsec) "  "; }
+.toc li.part::before, .toc li.chapter::before, .toc li.section::before { padding-right: 0.35em; }

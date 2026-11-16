@@ -1,5 +1,5 @@
 \documentclass{ximera}
-%verbeterd 14/11/26
+%verbeterd 16/11/26
 \title{Parallelschakeling}
 \author{Daan Lipkens}
 
@@ -8,6 +8,7 @@
     Eigenschappen van een parallelschakeling en de vervangingsweerstand in parallel.
 \end{abstract}
 \maketitle
+\label{ond:schakelingen_parallel}
 
 \section{Parallelschakeling}\label{sec:parallelschakeling}
 \begin{definition}[title={Parallelschakeling}]\nl
@@ -29,7 +30,7 @@
 \end{figure}
 
 \subsection{Stroomsterkte en spanning}
-Elke weerstand in figuur~\ref{fig:parallel} is rechtstreeks verbonden met beide polen van de bron. Daardoor staat over elke weerstand dezelfde spanning. De stroom van de bron splitst zich bij het vertakkingspunt, en omdat er geen lading verloren gaat, komt de som van de deelstromen weer samen.
+Elke weerstand in figuur~\ref{fig:parallel} is rechtstreeks verbonden met beide polen van de bron. Daardoor staat over elke weerstand dezelfde spanning. De stroom van de bron splitst zich bij het vertakkingspunt. Omdat er geen lading verloren gaat, komt de som van de deelstromen weer samen.
 
 \begin{proposition}[title={Parallelschakeling: stroom en spanning}]\nl
     In een parallelschakeling is de spanning over elke tak gelijk:
@@ -65,8 +66,8 @@ Elke weerstand in figuur~\ref{fig:parallel} is rechtstreeks verbonden met beide 
     Een enkele weerstand $R_{\text{p}}$ die bij dezelfde spanning $U$ dezelfde stroom $I = \frac{U}{R_{\text{p}}}$ geeft, moet dus voldoen aan $\frac{1}{R_{\text{p}}} = \frac{1}{R_1} + \frac{1}{R_2}$.
 \end{remark}
 
-\begin{remark}[foldable=true,title={Twee bijzondere gevallen}]\nl
-    Voor $n$ identieke weerstanden $R$ in parallel is $R_{\text{p}} = \frac{R}{n}$. Voor twee weerstanden kan je het ook schrijven als $R_{\text{p}} = \frac{R_1 \cdot R_2}{R_1 + R_2}$.
+\begin{remark}[foldable=true,title={Identieke weerstanden in parallel}]\nl
+    Voor $n$ identieke weerstanden $R$ in parallel is $R_{\text{p}} = \frac{R}{n}$.
 \end{remark}
 
 %---------------------------------------------------------------------------
@@ -87,14 +88,14 @@ Elke weerstand in figuur~\ref{fig:parallel} is rechtstreeks verbonden met beide 
         \textbf{Stap 1: Vervangingsweerstand}\\
         \begin{align*}
             \frac{1}{R_{\text{p}}} &= \frac{1}{R_1} + \frac{1}{R_2} = \frac{1}{20\,\mathrm{\Omega}} + \frac{1}{30\,\mathrm{\Omega}} = \frac{3 + 2}{60\,\mathrm{\Omega}} = \frac{1}{12\,\mathrm{\Omega}} \\
-            R_{\text{p}} &= 12\,\mathrm{\Omega}
+            R_{\text{p}} &= 12\,\mathrm{\Omega} = \boxed{1{,}2 \cdot 10^{1}\,\mathrm{\Omega}}
         \end{align*}
         Dit is kleiner dan de kleinste weerstand ($20\,\mathrm{\Omega}$), zoals verwacht.\\
         \textbf{Stap 2: Stroom door elke weerstand}\\
         Over beide weerstanden staat de bronspanning:
         \begin{align*}
-            I_1 &= \frac{U}{R_1} = \frac{12\,\mathrm{V}}{20\,\mathrm{\Omega}} = 0{,}60\,\mathrm{A} \\
-            I_2 &= \frac{U}{R_2} = \frac{12\,\mathrm{V}}{30\,\mathrm{\Omega}} = 0{,}40\,\mathrm{A}
+            I_1 &= \frac{U}{R_1} = \frac{12\,\mathrm{V}}{20\,\mathrm{\Omega}} = 0{,}60\,\mathrm{A} = \boxed{6{,}0 \cdot 10^{-1}\,\mathrm{A}} \\
+            I_2 &= \frac{U}{R_2} = \frac{12\,\mathrm{V}}{30\,\mathrm{\Omega}} = 0{,}40\,\mathrm{A} = \boxed{4{,}0 \cdot 10^{-1}\,\mathrm{A}}
         \end{align*}
         \textbf{Stap 3: Totale stroom}\\
         \begin{align*}

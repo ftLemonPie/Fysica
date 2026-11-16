@@ -57,6 +57,11 @@
 % -- nodig voor env en andere zaken
 \usepackage{fancyhdr}
 \usepackage{geometry}
+% \restoregeometry (einde samenvatting) zet ook de paginahoogte van de uitvoer terug;
+% anders loopt de pagina na een samenvatting door tot onderaan het blad en valt de voettekst weg
+\makeatletter
+\xapptocmd{\restoregeometry}{\global\vsize\textheight\global\@colht\textheight\global\@colroom\textheight}{}{}
+\makeatother
 %\usepackage[left=2cm, right=2.5cm, top=3cm, bottom=3cm]{geometry}
 % \usepackage[usenames,dvipsnames]{xcolor}
  %\usepackage[many]{tcolorbox}

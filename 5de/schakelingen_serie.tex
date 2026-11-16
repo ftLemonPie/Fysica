@@ -1,5 +1,5 @@
 \documentclass{ximera}
-%verbeterd 14/11/26
+%verbeterd 16/11/26
 \title{Serieschakeling}
 \author{Daan Lipkens}
 
@@ -8,6 +8,7 @@
     Eigenschappen van een serieschakeling en de vervangingsweerstand in serie.
 \end{abstract}
 \maketitle
+\label{ond:schakelingen_serie}
 
 \section{Serieschakeling}\label{sec:serieschakeling}
 \begin{definition}[title={Serieschakeling}]\nl
@@ -55,7 +56,7 @@ We kunnen alle weerstanden in een serieschakeling vervangen door één weerstand
 \end{proposition}
 
 \begin{remark}[foldable=true,title={Afleiding voor twee weerstanden}]\nl
-    Door beide weerstanden loopt dezelfde stroom $I$, en de bronspanning is de som van beide spanningen:
+    Door beide weerstanden loopt dezelfde stroom $I$ en de bronspanning is de som van beide spanningen:
     \begin{align*}
         U &= U_1 + U_2 \\
         &= R_1 \cdot I + R_2 \cdot I \\
@@ -86,12 +87,12 @@ We kunnen alle weerstanden in een serieschakeling vervangen door één weerstand
         \textbf{Stap 2: Stroomsterkte}\\
         De stroom door de bron is de stroom door de vervangingsweerstand:
         \begin{align*}
-            I &= \frac{U}{R_{\text{s}}} = \frac{12\,\mathrm{V}}{30\,\mathrm{\Omega}} = 0{,}40\,\mathrm{A}
+            I &= \frac{U}{R_{\text{s}}} = \frac{12\,\mathrm{V}}{30\,\mathrm{\Omega}} = 0{,}40\,\mathrm{A} = \boxed{4{,}0 \cdot 10^{-1}\,\mathrm{A}}
         \end{align*}
         \textbf{Stap 3: Spanning over elke weerstand}\\
         Dezelfde stroom loopt door beide weerstanden:
         \begin{align*}
-            U_1 &= R_1 \cdot I = 10\,\mathrm{\Omega} \cdot 0{,}40\,\mathrm{A} = 4{,}0\,\mathrm{V} \\
+            U_1 &= R_1 \cdot I = 10\,\mathrm{\Omega} \cdot 0{,}40\,\mathrm{A} = \boxed{4{,}0\,\mathrm{V}} \\
             U_2 &= R_2 \cdot I = 20\,\mathrm{\Omega} \cdot 0{,}40\,\mathrm{A} = \boxed{8{,}0\,\mathrm{V}}
         \end{align*}
         Controle: $U_1 + U_2 = 4{,}0\,\mathrm{V} + 8{,}0\,\mathrm{V} = 12\,\mathrm{V} = U$.

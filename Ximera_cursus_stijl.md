@@ -221,6 +221,7 @@ Kort: titel, abstract, `\maketitle`, één inleidende zin over wat volgt. Geen `
 - **Potentiaal in J/C, spanning in V** (1 en 2 uur), om het verschil tussen een potentiaal in één punt en een spanning tussen twee punten te tonen. Ook in antwoordvelden en tussenstappen.
 - Spreek van **spanning** of **potentiaalverschil**, nooit van "spanningsverschil".
 - Arbeid van een constante kracht zoals in de tweede graad: `W = +F \cdot \Delta x` (zelfde zin) of `W = -F \cdot \Delta x` (tegengestelde zin), met `F` en `\Delta x` als groottes.
+- Ampèremeter en voltmeter in circuitikz zonder pijl: `to[rmeter, t=A]` en `to[rmeter, t=V]` (niet `ammeter`/`voltmeter`, die tekenen een pijl).
 - Schrappen in een breuk met `\cancel{...}` (package `cancel`, zit in de preamble; online via MathJax).
 
 ### Gedeelde bestanden 1 uur en 2 uur
@@ -240,6 +241,8 @@ Kort: titel, abstract, `\maketitle`, één inleidende zin over wat volgt. Geen `
 | Trek-/spankracht | `F_t` — nooit `T` | `\vec{\mathbf{F}}_{t}` |
 
 ### Typografie en commentaar
+- **Geen komma voor "en"**, behalve aan het einde van een bijzin (bv. "als ze dezelfde zin hebben, en ..."). Ook niet in een opsomming ("A, B en C").
+- **Geen puntkomma (;)** en **geen gedachtestreepje (– of —)**. Maak er twee zinnen van of gebruik een dubbele punt. Ook niet aan het einde van items in een lijst.
 - Bijzinnen staan tussen **komma's**, niet tussen haakjes. Haakjes gebruik je enkel voor een korte verduidelijking, bv. `(RP)` of `(met behoud van teken)`.
 - In lopende tekst **geen em-dash (—) en geen curly quotes** ("" ''); enkel gewone
   koppeltekens/apostrofs of LaTeX-constructies. (In decoratieve `%———`-scheidingslijnen
@@ -250,7 +253,7 @@ Kort: titel, abstract, `\maketitle`, één inleidende zin over wat volgt. Geen `
 ### Kruisverwijzingen en voettekst
 - **Verwijzingen naar een ander bestand** (een andere `\activity`) gebeuren met `\verwijs[tekst voor html]{label}{bestandsnaam zonder .tex}`, nooit met `\ref`/`\eqref`. Online wordt elke activity apart gecompileerd, waardoor `\ref` naar een label in een ander bestand `??` geeft. `\verwijs` geeft in de PDF een gewone `\ref` en online een link naar de pagina van het andere bestand. Voorbeeld: `zie~\verwijs[Permanente magneten]{sec:permanente-magneten}{magnetisme_permanente_magneten}`. Kies de tekst zo dat de zin online ook klopt (bv. `figuur~\verwijs[in Het magnetisch veld en veldlijnen]{fig:...}{magnetisme_veld}`).
 - `\ref` blijft gewoon voor verwijzingen binnen hetzelfde bestand.
-- **Naar een heel hoofdstuk of onderdeel (activity) verwijzen**: zet een `\label{...}` direct na `\maketitle` (`hoofdstuk:...` bij een hoofdstuk, `app:...` bij een onderdeel van de appendix) en verwijs met `\verwijs`. De preamble zorgt dat zo'n label het nummer van het hoofdstuk (bv. 17) of het onderdeel (bv. 17.2) krijgt. Een label bij een `\section` binnen een activity geeft enkel het nummer op de webpagina (bv. 1.1) en is in de pdf dubbelzinnig: gebruik dat niet voor verwijzingen naar een ander bestand.
+- **Naar een heel hoofdstuk of onderdeel (activity) verwijzen**: zet een `\label{...}` direct na `\maketitle` (`hoofdstuk:...` bij een hoofdstuk, `ond:<bestandsnaam>` bij een onderdeel, `app:...` bij een onderdeel van de appendix) en verwijs met `\verwijs`. De preamble zorgt dat zo'n label het nummer van het hoofdstuk (bv. 17) of het onderdeel (bv. 17.2) krijgt. Een label bij een `\section` binnen een activity geeft enkel het nummer op de webpagina (bv. 1.1) en is in de pdf dubbelzinnig: gebruik dat niet voor verwijzingen naar een ander bestand.
 - **Nummering (PDF)**: per sectie, `<hoofdstuk>.<sectie>.<nr>` (Voorbeeld 2.5.1, Figuur 2.5.2, Oefening 3.3.1, deelvraag in een oefening 3.3.1.a; een losse vraag blijft Vraag 2.1.1); elke oefening/losse vraag krijgt links een blauwe lijn (een breekbare tcolorbox met enkel een linkerrand, stijl `xmvraagbalk` in de preamble; geen changebar, want die respecteert de paginagrenzen niet); pagina's `<hoofdstuk>.<pagina>` (p. 3.4), elk hoofdstuk op een nieuwe pagina. Online begint elke pagina opnieuw bij 1, zodat het laatste cijfer in de pdf het nummer op de webpagina is. Geregeld in `xmPreamble.tex` (blok *Nummering per sectie*), enkel voor de xourse-pdf. Nummers dus **nooit hard in de tekst** zetten: altijd `\ref`/`\verwijs`.
 - Verwijzen naar een hoofdstuk dat nog niet bestaat: gewone tekst (bv. "in het hoofdstuk over deeltjesfysica"), geen label.
 - Belangrijke `\section`-koppen krijgen een label, bv.

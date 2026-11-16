@@ -4,7 +4,7 @@
 
 \begin{document}
 \begin{abstract}
-    Vlakken van gelijke potentiaal in een elektrisch veld, en hun verband met de veldlijnen.
+    Vlakken van gelijke potentiaal in een elektrisch veld en hun verband met de veldlijnen.
 \end{abstract}
 \maketitle
 
@@ -15,9 +15,11 @@ In een homogeen veld geldt $V = E \cdot d$: alle punten die zich op dezelfde afs
 Een \textbf{equipotentiaaloppervlak} is een oppervlak gevormd door alle punten met dezelfde potentiaal.
 \end{definition}
 
-In een homogeen veld zijn de equipotentiaaloppervlakken vlakken die evenwijdig lopen met de platen.
+In een homogeen veld zijn de equipotentiaaloppervlakken vlakken die evenwijdig lopen met de platen, zoals in figuur~\ref{fig:equipotentiaal_homogeen}.
 
-\begin{center}
+\begin{figure}[h]
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
     \begin{tikzpicture}[scale=0.9]
         \draw[thick] (0,-1.5) -- (0,1.5);
         \draw[thick] (5,-1.5) -- (5,1.5);
@@ -36,14 +38,17 @@ In een homogeen veld zijn de equipotentiaaloppervlakken vlakken die evenwijdig l
         \node[purple!70!black, above] at (2.5,1.4) {$V_2$};
         \node[purple!70!black, above] at (3.75,1.4) {$V_3$};
     \end{tikzpicture}
-\end{center}
+    \end{center}
+    \caption{Equipotentiaaloppervlakken (stippellijnen) in een homogeen veld staan loodrecht op de veldlijnen.}
+    \label{fig:equipotentiaal_homogeen}
+\end{figure}
 
 \begin{proposition}[foldable=true,title={Belangrijke eigenschap}]\nl
 De veldlijnen staan steeds \textbf{loodrecht} op de equipotentiaaloppervlakken. Dit geldt niet enkel voor een homogeen veld, maar voor \emph{elk} elektrisch veld.
 \end{proposition}
 
 \begin{remark}[expandable=true,title={Vergelijking met hoogtelijnen}]\nl
-    Je kan equipotentiaallijnen vergelijken met hoogtelijnen op een stafkaart: elke lijn verbindt punten op dezelfde hoogte, en het pad van sterkste stijging (de helling) staat er steeds loodrecht op, net zoals veldlijnen loodrecht staan op de equipotentiaaloppervlakken.
+    Je kan equipotentiaallijnen vergelijken met hoogtelijnen op een stafkaart: elke lijn verbindt punten op dezelfde hoogte. Het pad van sterkste stijging (de helling) staat er steeds loodrecht op, net zoals veldlijnen loodrecht staan op de equipotentiaaloppervlakken.
 \end{remark}
 
 \begin{proposition}[foldable=true,title={Geleider in evenwicht}]\nl
@@ -75,7 +80,7 @@ Een bliksemafleider (figuur~\ref{fig:bliksemafleider}) is een metalen punt op ee
     \end{selectAll}
 
     \begin{solution}\nl
-        Alle punten met dezelfde afstand tot de negatieve plaat hebben dezelfde potentiaal ($V = E \cdot d$): de equipotentiaaloppervlakken zijn vlakken evenwijdig met de platen, en dus loodrecht op de veldlijnen. Per definitie is de potentiaal constant langs een equipotentiaaloppervlak.
+        Alle punten met dezelfde afstand tot de negatieve plaat hebben dezelfde potentiaal ($V = E \cdot d$): de equipotentiaaloppervlakken zijn vlakken evenwijdig met de platen en dus loodrecht op de veldlijnen. Per definitie is de potentiaal constant langs een equipotentiaaloppervlak.
     \end{solution}
 \end{question}
 

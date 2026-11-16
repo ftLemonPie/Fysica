@@ -1,5 +1,5 @@
 \documentclass{ximera}
-%verbeterd 30/10/26
+%verbeterd 16/11/26
 \title{Gemengde schakelingen}
 \author{Daan Lipkens}
 
@@ -8,6 +8,7 @@
     Schakelingen met weerstanden in serie én in parallel, aangesloten op één spanningsbron.
 \end{abstract}
 \maketitle
+\label{ond:schakelingen_gemengd}
 
 \section{Gemengde schakelingen}\label{sec:gemengde-schakeling}
 \begin{definition}[title={Gemengde schakeling}]\nl
@@ -18,7 +19,7 @@ Het geheim van gemengde schakelingen is dat je ze \emph{stap voor stap vereenvou
 
 \begin{remark}[title={Stappenplan gemengde schakeling}]\nl
     \begin{enumerate}
-        \item Zoek een groep weerstanden die duidelijk in serie of in parallel staat. Begin bij de groep die het verst van de bron verwijderd is.
+        \item Zoek een groep weerstanden die puur in serie of puur in parallel staat (begin bij de groep die het verst van de bron verwijderd is).
         \item Vervang die groep door één vervangingsweerstand en teken de vereenvoudigde schakeling. Herhaal tot er één weerstand $R_{\text{tot}}$ overblijft.
         \item Bereken de stroom door de bron met de wet van Ohm en $R_{\text{tot}}$.
         \item Werk terug naar de oorspronkelijke schakeling. In een serieschakeling is de stroom overal gelijk, in een parallelschakeling is de spanning overal gelijk.
@@ -75,16 +76,17 @@ Het geheim van gemengde schakelingen is dat je ze \emph{stap voor stap vereenvou
         \end{align*}
 
         \textbf{Stap 4: Terugwerken}\\
-        $R_1$ staat in serie met de rest, dus $I_1 = I = 0{,}60\,\mathrm{A}$. Dezelfde stroom loopt door $R_{23}$.
+        $R_1$ staat in serie met de rest. Dezelfde stroom loopt door $R_{23}$.
         \begin{align*}
-            U_1 &= R_1 \cdot I_1 = 8{,}0\,\mathrm{\Omega} \cdot 0{,}60\,\mathrm{A} = 4{,}8\,\mathrm{V} \\
+            I_1 &= I = 0{,}60\,\mathrm{A} = \boxed{6{,}0 \cdot 10^{-1}\,\mathrm{A}} \\
+            U_1 &= R_1 \cdot I_1 = 8{,}0\,\mathrm{\Omega} \cdot 0{,}60\,\mathrm{A} = \boxed{4{,}8\,\mathrm{V}} \\
             U_{23} &= R_{23} \cdot I = 12\,\mathrm{\Omega} \cdot 0{,}60\,\mathrm{A} = 7{,}2\,\mathrm{V}
         \end{align*}
         $R_2$ en $R_3$ staan in parallel, dus over beide staat $U_{23}$:
         \begin{align*}
-            U_2 &= U_3 = 7{,}2\,\mathrm{V} \\
-            I_2 &= \frac{U_2}{R_2} = \frac{7{,}2\,\mathrm{V}}{20\,\mathrm{\Omega}} = 0{,}36\,\mathrm{A} \\
-            I_3 &= \frac{U_3}{R_3} = \frac{7{,}2\,\mathrm{V}}{30\,\mathrm{\Omega}} = 0{,}24\,\mathrm{A}
+            U_2 &= U_3 = \boxed{7{,}2\,\mathrm{V}} \\
+            I_2 &= \frac{U_2}{R_2} = \frac{7{,}2\,\mathrm{V}}{20\,\mathrm{\Omega}} = 0{,}36\,\mathrm{A} = \boxed{3{,}6 \cdot 10^{-1}\,\mathrm{A}} \\
+            I_3 &= \frac{U_3}{R_3} = \frac{7{,}2\,\mathrm{V}}{30\,\mathrm{\Omega}} = 0{,}24\,\mathrm{A} = \boxed{2{,}4 \cdot 10^{-1}\,\mathrm{A}}
         \end{align*}
 
         \textbf{Stap 5: Controle}

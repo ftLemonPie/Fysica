@@ -1,4 +1,5 @@
 \documentclass{ximera}
+%verbeterd 16/11/26
 \title{Potentiële elektrische energie in een homogeen veld}
 \author{Daan Lipkens}
 
@@ -15,10 +16,10 @@ Een massa $m$ die zich op een hoogte $h$ boven het aardoppervlak bevindt, bezit 
 \[
     E_{\text{pot}} = m \cdot g \cdot h
 \]
-Hierbij is het aardoppervlak het gekozen referentiepunt (RP), waar $E_{\text{pot}} = 0 \, \mathrm{J}$. Zie ook appendix~\verwijs[Kinetische en potentiële energie]{sec:energievormen}{appendix_energie_vormen}.
+Hierbij is het aardoppervlak het gekozen referentiepunt (RP), waar $E_{\text{pot}} = 0 \, \mathrm{J}$. Zie ook appendix~\verwijs[Kinetische en potentiële energie]{app:energievormen}{appendix_energie_vormen}.
 \end{remark}
 
-Ook een lading die zich in een elektrisch veld bevindt, bezit energie: \textbf{potentiële elektrische energie}. Van welke factoren hangt die energie af, en hoe kan je dat wiskundig weergeven? Om deze energie te kunnen berekenen, moeten we net als bij het zwaarteveld een RP kiezen.
+Ook een lading die zich in een elektrisch veld bevindt, bezit energie: \textbf{potentiële elektrische energie}. Van welke factoren hangt die energie af, en hoe kan je dat wiskundig weergeven? Om deze energie te kunnen berekenen, moeten we net als bij het zwaarteveld een RP\footnote{RP: referentiepunt.} kiezen.
 Een RP is een punt in het elektrisch veld waar we de potentiële energie gelijkstellen aan nul.
 Bij een \textbf{homogeen} elektrisch veld, tussen twee evenwijdige platen, kiezen we het RP op de \textbf{negatieve plaat}, zoals te zien in figuur~\ref{fig:rust_potentiaal}.
 
@@ -29,18 +30,18 @@ Bij een \textbf{homogeen} elektrisch veld, tussen twee evenwijdige platen, kieze
             % Platen
             \draw[thick] (0,-1.5) -- (0,1.5);
             \draw[thick] (5,-1.5) -- (5,1.5);
-        
+
             % Ladingen naast de platen (+ en -) zonder de extra streepjes
             \foreach \y in {-1.2,-0.6,0,0.6,1.2} {
                 \node[left] at (-0.1,\y) {$-$};
                 \node[right] at (5.1,\y) {$+$};
             }
-        
+
             % Veldlijnen met de pijl automatisch in het midden
             \foreach \y in {-1,-0.5,0,0.5,1} {
                 \draw[Eveldlijn] (4.7,\y) -- (0.3,\y);
             }
-        
+
             % De puntlading en overige aanduidingen
             \node[poslading] at (3,0) {$+$};
             \node[above] at (3.5,0) {$Q$};
@@ -55,15 +56,72 @@ Bij een \textbf{homogeen} elektrisch veld, tussen twee evenwijdige platen, kieze
 De potentiële elektrische energie van een lading $Q$ in een punt \textit{P} is de arbeid die de elektrische kracht verricht wanneer de lading van dat punt \textit{P} naar het RP (de negatieve plaat) beweegt.
 
 \section{Afleiding van de formule}
-In een homogeen veld met veldsterkte $E$ is de grootte van de elektrische kracht op een lading $Q$ gelijk aan $F = \lvert Q \rvert \cdot E$, zoals behandeld in het hoofdstuk \textit{Elektrisch veld}. Deze kracht is constant, dus de arbeid die deze kracht verricht over een verplaatsing $d$ is eenvoudig te berekenen.
+We berekenen die arbeid stap voor stap, voor een lading in een punt $P$ op een afstand $d$ van de negatieve plaat (figuur~\ref{fig:afleiding_epot}).
+
+\begin{figure}[h]
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
+    \begin{tikzpicture}
+        \foreach \xs in {0, 6.8} {
+        \begin{scope}[xshift=\xs cm]
+            % Platen
+            \draw[thick] (0,-1.5) -- (0,1.5);
+            \draw[thick] (5,-1.5) -- (5,1.5);
+            \foreach \y in {-1.2,-0.6,0,0.6,1.2} {
+                \node[left] at (-0.1,\y) {$-$};
+                \node[right] at (5.1,\y) {$+$};
+            }
+            % Veldlijnen
+            \foreach \y in {-1.25,1.25} {
+                \draw[Eveldlijn] (4.85,\y) -- (0.15,\y);
+            }
+            % Punt P, RP en verplaatsing van P naar het RP
+            \node[below] at (0,-1.5) {RP};
+            \node[below] at (3,-1.5) {$P$};
+            \draw[dotted] (3,-1.5) -- (3,0.3);
+            \draw[positie] (3,-0.55) -- (0,-0.55) node[midway, below] {$\Delta x = d$};
+        \end{scope}
+        }
+        % Positieve lading: kracht naar de negatieve plaat
+        \node[poslading] (Q1) at (3,0.3) {$+$};
+        \draw[kracht] (Q1.west) -- ++(-1.3,0) node[above] {$\vec{\mathbf{F}}$};
+        % Negatieve lading: kracht naar de positieve plaat
+        \node[neglading] (Q2) at (9.8,0.3) {$-$};
+        \draw[kracht] (Q2.east) -- ++(1.3,0) node[above] {$\vec{\mathbf{F}}$};
+    \end{tikzpicture}
+    \end{center}
+    \caption{Een positieve lading (links) en een negatieve lading (rechts) bewegen van $P$ naar het RP. Links hebben kracht en verplaatsing dezelfde zin, rechts een tegengestelde zin.}
+    \label{fig:afleiding_epot}
+\end{figure}
+
+\begin{itemize}
+    \item[\textbf{Stap 1.}] \textbf{De kracht.} In een homogeen veld met veldsterkte $E$ is de grootte van de elektrische kracht op een lading $Q$ gelijk aan $F = \lvert Q \rvert \cdot E$, zoals behandeld in het hoofdstuk \textit{Elektrisch veld}. Deze kracht is overal tussen de platen even groot.
+    \item[\textbf{Stap 2.}] \textbf{De verplaatsing.} Van $P$ naar het RP legt de lading een afstand $\Delta x = d$ af, in de zin van de negatieve plaat.
+    \item[\textbf{Stap 3.}] \textbf{De arbeid.} Voor een constante kracht geldt $W = +F \cdot \Delta x$ als kracht en verplaatsing dezelfde zin hebben, en $W = -F \cdot \Delta x$ als ze een tegengestelde zin hebben (zie appendix~\verwijs[Arbeid]{app:arbeid}{appendix_energie_arbeid}).
+    \begin{itemize}
+        \item Een \textbf{positieve} lading wordt naar de negatieve plaat getrokken: kracht en verplaatsing hebben dezelfde zin, dus
+        \[
+            W = +F \cdot d = +\lvert Q \rvert \cdot E \cdot d = Q \cdot E \cdot d
+        \]
+        \item Een \textbf{negatieve} lading wordt naar de positieve plaat getrokken: kracht en verplaatsing hebben een tegengestelde zin, dus
+        \[
+            W = -F \cdot d = -\lvert Q \rvert \cdot E \cdot d = Q \cdot E \cdot d \qquad \text{want } Q = -\lvert Q \rvert
+        \]
+    \end{itemize}
+    \item[\textbf{Stap 4.}] \textbf{De potentiële energie.} In beide gevallen is de arbeid van $P$ naar het RP gelijk aan $Q \cdot E \cdot d$. Dat is de potentiële elektrische energie in $P$.
+\end{itemize}
 
 \begin{proposition}[foldable=true,title={Potentiële elektrische energie in een homogeen veld}]\nl
     De potentiële elektrische energie van een lading $Q$ in een punt \textit{P} op een afstand $d$ van de negatieve plaat, in een homogeen elektrisch veld met grootte $E$, wordt gegeven door:
     \begin{equation}\label{eq:epot_homogeen}
         E_{\text{pot}} = Q \cdot E \cdot d
     \end{equation}
-    Deze formule geldt voor zowel positieve als negatieve ladingen $Q$ (met behoud van teken).
+    Deze formule geldt voor zowel positieve als negatieve ladingen $Q$ (met behoud van teken). $E_{\text{pot}}$ kan dus zowel positief als negatief zijn.
 \end{proposition}
+
+\begin{remark}[expandable=true,title={Notatie}]\nl
+Voor de potentiële elektrische energie vind je verschillende notaties: $E_{\text{pot}}$, $E_{p,e}$ of $E_{\text{pot},e}$. De index $e$ wijst op \emph{elektrisch}, om het onderscheid te maken met de potentiële zwaarte-energie. Alle drie de notaties betekenen hetzelfde. In deze cursus gebruiken we $E_{\text{pot}}$.
+\end{remark}
 
 \begin{remark}[expandable=true,title={Vergelijking met het zwaarteveld}]\nl
 \begin{center}
@@ -71,11 +129,8 @@ In een homogeen veld met veldsterkte $E$ is de grootte van de elektrische kracht
     $m \to Q$ & $g \to E$ & $h \to d$
 \end{tabular}
 \end{center}
-De formule $E_{\text{pot}} = Q \cdot E \cdot d$ is dus volledig analoog aan $E_{\text{pot}} = m \cdot g \cdot h$.
+De formule $E_{\text{pot}} = Q \cdot E \cdot d$ is dus volledig analoog aan $E_{\text{pot}} = m \cdot g \cdot h$. Er is één belangrijk verschil: een massa is steeds positief, maar een lading $Q$ kan zowel positief als negatief zijn. Daardoor kan ook $E_{\text{pot}}$ negatief zijn.
 \end{remark}
-
-\section{Het teken van de lading}
-In tegenstelling tot een massa, die steeds positief is, kan een lading $Q$ zowel positief als negatief zijn. Dit heeft gevolgen voor het teken van de potentiële energie.
 
 \begin{example}[foldable=true,title={Voorbeeld: teken van de potentiële energie}]\nl
 Tussen twee platen op $0{,}15 \, \mathrm{m}$ van elkaar heerst een homogeen veld met grootte $E = 500 \, \mathrm{N/C}$. Bereken de potentiële energie van een lading die zich op de positieve plaat bevindt, voor
@@ -104,13 +159,24 @@ b) \begin{align*}
 \end{solution}
 \end{example}
 
-Het teken van $Q$ bepaalt ook of de elektrische kracht de lading in de zin van de verplaatsing duwt of trekt, en dus of de energie toeneemt of afneemt. De arbeid van de elektrische kracht is $W = F \cdot \Delta x$, waarbij $\Delta x$ de verplaatsing is (zie appendix~\verwijs[Arbeid]{sec:arbeid}{appendix_energie_arbeid}). Hebben kracht en verplaatsing dezelfde zin, dan is $W > 0$. Hebben ze een tegengestelde zin, dan is $W < 0$. De verandering van de potentiële energie is de tegengestelde van de arbeid: $\Delta E_{\text{pot}} = -W$.
+\section{Spontane en geforceerde bewegingen}
+Beweegt een lading van een punt $1$ naar een punt $2$, dan is de arbeid van de elektrische kracht het verschil van de arbeid tot het RP vanuit beide punten: $W_{1 \to 2} = E_{\text{pot}}(1) - E_{\text{pot}}(2)$. De verandering van de potentiële energie is dus de tegengestelde van de arbeid:
+\[
+    \Delta E_{\text{pot}} = E_{\text{pot}}(2) - E_{\text{pot}}(1) = -W
+\]
+Verricht de elektrische kracht positieve arbeid, dan daalt de potentiële energie. Verricht ze negatieve arbeid, dan stijgt de potentiële energie.
 
-\textbf{Spontane en geforceerde bewegingen.} Een beweging is \textbf{spontaan} wanneer de elektrische kracht de lading zelf in die richting drijft. Bij een spontane beweging neemt de potentiële energie altijd af. Een beweging die niet spontaan kan gebeuren, noemen we \textbf{geforceerd}. Om ze uit te voeren moet er van buitenaf energie worden toegevoegd, en daarom neemt de potentiële energie toe.
+Een beweging is \textbf{spontaan} wanneer de elektrische kracht de lading zelf in die richting drijft. De kracht verricht dan positieve arbeid, en de potentiële energie neemt af. Een beweging die niet spontaan kan gebeuren, noemen we \textbf{geforceerd}. Om ze uit te voeren moet een externe kracht arbeid verrichten tegen de elektrische kracht in, en daarom neemt de potentiële energie toe.
 
-Voor een \textbf{positieve} lading die van de positieve naar de negatieve plaat beweegt, is de beweging spontaan: de kracht wijst naar de negatieve plaat, net als de verplaatsing. De lading versnelt, haar kinetische energie neemt toe en haar potentiële energie daalt. Dit is in overeenstemming met de wet van behoud van energie. Omdat de afstand $d$ tot het RP afneemt, daalt ook $E_{\text{pot}}$ volgens vergelijking~\ref{eq:epot_homogeen}.
+\begin{proposition}[foldable=true,title={Spontane beweging in een homogeen veld}]\nl
+\begin{itemize}
+    \item Een \textbf{positieve} lading beweegt spontaan van de positieve naar de negatieve plaat. In de omgekeerde zin is de beweging geforceerd.
+    \item Een \textbf{negatieve} lading beweegt spontaan van de negatieve naar de positieve plaat. In de omgekeerde zin is de beweging geforceerd.
+\end{itemize}
+Bij een spontane beweging daalt de potentiële energie, bij een geforceerde beweging stijgt ze.
+\end{proposition}
 
-Voor een \textbf{negatieve} lading die van de positieve naar de negatieve plaat beweegt, is de beweging geforceerd: de elektrische kracht wijst naar de positieve plaat, tegen de verplaatsing in. Er moet dus een externe kracht werken, en de potentiële energie stijgt.
+Voor een positieve lading die van de positieve naar de negatieve plaat beweegt, wijst de kracht naar de negatieve plaat, net als de verplaatsing. Omdat de afstand $d$ tot het RP afneemt, daalt ook $E_{\text{pot}}$ volgens vergelijking~\ref{eq:epot_homogeen}. Beweegt een negatieve lading van de positieve naar de negatieve plaat, dan wijst de elektrische kracht tegen de verplaatsing in. Er moet dus een externe kracht werken, en de potentiële energie stijgt: met $Q < 0$ wordt $E_{\text{pot}} = Q \cdot E \cdot d$ minder negatief als $d$ kleiner wordt.
 
 \begin{question}
     Een positieve lading beweegt in een homogeen elektrisch veld van de positieve naar de negatieve plaat. Welke uitspraken over haar potentiële elektrische energie en over het elektrische veld tussen de platen zijn juist?
@@ -125,7 +191,7 @@ Voor een \textbf{negatieve} lading die van de positieve naar de negatieve plaat 
     \end{selectAll}
 
     \begin{solution}\nl
-        \textbf{Met redeneren:} de positieve lading wordt aangetrokken door de negatieve plaat en versnelt in de zin van de verplaatsing. Volgens de wet van behoud van energie neemt haar kinetische energie dan toe, en dus moet haar potentiële energie dalen.
+        \textbf{Met redeneren:} de positieve lading wordt aangetrokken door de negatieve plaat. De elektrische kracht en de verplaatsing hebben dezelfde zin: de beweging is spontaan en de kracht verricht positieve arbeid. Dus daalt de potentiële energie.
 
         \textbf{Met de formule:} de lading beweegt naar de negatieve plaat, dus de afstand $d$ tot het RP wordt kleiner. Met $Q>0$ en $E>0$ wordt $E_{\text{pot}} = Q \cdot E \cdot d$ dan kleiner. Dus daalt de potentiële energie.
 

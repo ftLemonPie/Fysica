@@ -243,21 +243,23 @@ Kies de tekst tussen `[ ]` zo dat de zin online ook klopt: online verschijnt die
 Na elke afgewerkte of nagekeken stap: deze TODO **en** de stand van zaken voor de leerlingen
 bijwerken (`5de/inleiding_stand_51.tex` voor 1 uur, `5de/inleiding_stand_52.tex` voor 2 uur).
 
-## Stand van zaken 5de jaar (13/11/26)
+## Stand van zaken 5de jaar (16/11/26)
 | Hoofdstuk | 2 uur (`Cursus_DDO_5.tex`) | 1 uur (`Cursus_5de_1uur.tex`) |
 |---|---|---|
 | H1 elektrische krachtwerking | geschreven, nagekeken | geschreven, nagekeken |
 | H2 elektrisch veld | geschreven, nagekeken | geschreven, nagekeken |
-| H3 potentiaal | geschreven, nog niet nagekeken | nog aan te passen en na te kijken |
+| H3 potentiaal | geschreven, gedeelde bestanden aangepast aan de verbeteringen van 1 uur (16/11/26), rest nog niet nagekeken | aangepast (16/11/26) na verbeteringen: geen kinetische energie, geen spanningspijl; nog na te lezen |
 | H4 gemengde schakelingen | n.v.t. | geschreven, nog niet nagekeken |
 | H4/H5 het magnetisch veld (`magnetisme_*`) | geschreven, nog niet nagekeken | zelfde bestanden, behalve `magnetisme_elektromagneet_1uur` (toepassingen Extra), nog niet nagekeken |
-| Appendix vectorrekenen, standaardvorm, arbeid en energie, natuurconstanten | geschreven | geschreven |
+| Appendix vectorrekenen, standaardvorm, arbeid en energie, meten van spanning en spanningsbronnen, natuurconstanten | geschreven | geschreven |
 
 ## te doen volgende keer
 
 - [x] style md aanpassen
 - [ ] H3 potentiaal (2 uur): theorie en oefeningen nalezen, extra oefeningen maken
-- [ ] H3 potentiaal (1 uur): aanpassen en nakijken (`_1uur`-analyse)
+- [x] H3 potentiaal (1 uur): aanpassen (`_1uur`-analyse, verbeteringen 16/11/26)
+- [ ] H3 potentiaal (1 uur): verbeteringen van 16/11/26 nalezen (o.a. `\cancel` online controleren)
+- [ ] H3 potentiaal (2 uur): nieuwe bestanden `potentiaal_spanningspijl_kinetische_energie.tex` en `potentiaaloef_energie_kinetisch.tex` nalezen
 - [ ] H4 gemengde schakelingen (1 uur) nakijken
 - [ ] H4 vermogen, Joule-effect en veiligheid (1 uur, geschreven 14/11/26: `schakelingen_vermogen.tex`, `schakelingenoef_vermogen.tex`) nakijken
 - [ ] Magnetisch veld (2 uur H4, 1 uur H5) nalezen: theorie, figuren, oefeningen; beslissen of 1 uur `magnetismeoef_gevorderd` volledig houdt

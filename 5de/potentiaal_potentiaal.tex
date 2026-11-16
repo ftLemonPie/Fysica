@@ -1,5 +1,5 @@
 \documentclass{ximera}
-%verbeterd 14/11/26
+%verbeterd 16/11/26
 \title{Potentiaal}
 \author{Daan Lipkens}
 
@@ -17,7 +17,7 @@ De \textbf{potentiaal} $V$ in een punt $P$ van een elektrisch veld is de potenti
 \begin{equation}\label{eq:potentiaal_definitie}
     V = \frac{E_{\text{pot}}}{Q}
 \end{equation}
-Potentiaal is een \textbf{scalaire} grootheid en wordt uitgedrukt in \textbf{volt} (V), genoemd naar Alessandro Volta (1745-1827). Er geldt $1 \, \mathrm{V} = 1 \, \mathrm{J/C}$.
+Potentiaal is een \textbf{scalaire} grootheid en wordt uitgedrukt in \textbf{joule per coulomb} ($\mathrm{J/C}$).
 \end{definition}
 
 Met andere woorden: de potentiaal in een punt is de potentiële energie die een testlading van $+1 \, \mathrm{C}$ in dat punt zou hebben.
@@ -30,7 +30,7 @@ Vergelijk dit met de definitie van het elektrisch veld $E = F/Q$ uit het vorige 
     \rule{0pt}{6mm}definitie & $\vec{E}=\dfrac{\vec{F}}{Q}$ & $V=\dfrac{E_{\text{pot}}}{Q}$ \\
     afhankelijk van $Q$? & neen & neen \\
     grootheid & vectorieel & scalair \\
-    eenheid & $\mathrm{N/C}$ & $\mathrm{J/C} = \mathrm{V}$
+    eenheid & $\mathrm{N/C}$ & $\mathrm{J/C}$
 \end{tabular}
 \end{center}
 \end{remark}
@@ -52,7 +52,7 @@ Vergelijk dit met de definitie van het elektrisch veld $E = F/Q$ uit het vorige 
 \section{Potentiaal in een homogeen veld}
 Voor een lading $Q$ op een afstand $d$ van de negatieve plaat in een homogeen veld geldt $E_{\text{pot}} = Q \cdot E \cdot d$ (vergelijking~\verwijs[in Potentiële elektrische energie in een homogeen veld]{eq:epot_homogeen}{potentiaal_potentiele_energie}). De potentiaal in dat punt is dan:
 \begin{align*}
-    V &= \frac{E_{\text{pot}}}{Q} = \frac{Q \cdot E \cdot d}{Q}
+    V &= \frac{E_{\text{pot}}}{Q} = \frac{\cancel{Q} \cdot E \cdot d}{\cancel{Q}} = E \cdot d
 \end{align*}
 
 \begin{proposition}[foldable=true,title={Potentiaal in een homogeen veld}]\nl
@@ -77,32 +77,37 @@ Tussen twee platen op $0{,}15 \, \mathrm{m}$ van elkaar heerst een homogeen veld
 
 \underline{Oplossing:}
 \begin{align*}
-    V &= E \cdot d = 500 \, \mathrm{N/C} \cdot 0{,}15 \, \mathrm{m} = \boxed{75 \, \mathrm{V}}
+    V &= E \cdot d = 500 \, \mathrm{N/C} \cdot 0{,}15 \, \mathrm{m} = 75 \, \mathrm{J/C} = \boxed{7{,}5 \cdot 10^{1} \, \mathrm{J/C}}
 \end{align*}
 \end{solution}
 \end{example}
 
-\begin{remark}[expandable=true,title={Eenheid van het elektrisch veld}]\nl
-De eenheid $\mathrm{N/C}$ van het elektrisch veld is hetzelfde als $\mathrm{V/m}$ (volgt uit $V = E \cdot d$). Beide eenheden worden in de praktijk gebruikt.
-\end{remark}
-
 \begin{question}
-    Welke van de onderstaande eenheden zijn gelijk aan $1 \, \mathrm{V}$?
+    Welke van de onderstaande eenheden zijn gelijk aan de eenheid van potentiaal, $1 \, \mathrm{J/C}$?
 
     \begin{selectAll}
-        \choice[correct]{$1 \, \mathrm{J/C}$}
-        \choice{$1 \, \mathrm{N/C}$}
         \choice[correct]{$1 \, \mathrm{N \cdot m/C}$}
-        \choice{$1 \, \mathrm{V/m}$}
+        \choice{$1 \, \mathrm{N/C}$}
+        \choice{$1 \, \mathrm{J \cdot C}$}
+        \choice[correct]{$1 \, \mathrm{N/C} \cdot 1 \, \mathrm{m}$}
     \end{selectAll}
 
     \begin{solution}\nl
-        Per definitie is $1 \, \mathrm{V} = 1 \, \mathrm{J/C}$. Omdat $1 \, \mathrm{J} = 1 \, \mathrm{N \cdot m}$, is ook $1 \, \mathrm{V} = 1 \, \mathrm{N \cdot m/C}$. De eenheden $\mathrm{N/C}$ en $\mathrm{V/m}$ zijn eenheden van het elektrisch veld, niet van de potentiaal.
+        Omdat $1 \, \mathrm{J} = 1 \, \mathrm{N \cdot m}$, is $1 \, \mathrm{J/C} = 1 \, \mathrm{N \cdot m/C}$. Dat is ook de eenheid van $E \cdot d$: $\mathrm{N/C} \cdot \mathrm{m}$. De eenheid $\mathrm{N/C}$ is de eenheid van het elektrisch veld, niet van de potentiaal.
     \end{solution}
 \end{question}
 
 \subsection{Het $V(d)$-diagram}
-Omdat $V = E \cdot d$, is ook hier de grafiek van $V$ in functie van $d$ een rechte door de oorsprong, met richtingscoëfficiënt $E$. Omdat $E$ steeds positief is, is deze rechte \textbf{altijd stijgend}: hoe verder een punt van de negatieve plaat verwijderd is, hoe groter de potentiaal in dat punt.
+Omdat $V = E \cdot d$, is ook hier de grafiek van $V$ in functie van $d$ een rechte door de oorsprong, met richtingscoëfficiënt $E$. Omdat $E$ steeds positief is, is deze rechte \textbf{altijd stijgend}: hoe verder een punt van de negatieve plaat verwijderd is, hoe groter de potentiaal in dat punt. De positieve plaat heeft dus de hoogste potentiaal, de negatieve plaat de laagste.
+
+Hiermee kunnen we de spontane bewegingen uit het vorige onderdeel ook in termen van potentiaal beschrijven.
+
+\begin{proposition}[foldable=true,title={Spontane beweging en potentiaal}]\nl
+\begin{itemize}
+    \item Een \textbf{positieve} lading beweegt spontaan van een punt met een \textbf{hoge} naar een punt met een \textbf{lage} potentiaal.
+    \item Een \textbf{negatieve} lading beweegt spontaan van een punt met een \textbf{lage} naar een punt met een \textbf{hoge} potentiaal.
+\end{itemize}
+\end{proposition}
 
 \begin{question}
     De potentiaal in een punt in een homogeen elektrisch veld

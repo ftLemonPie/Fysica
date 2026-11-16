@@ -1,0 +1,177 @@
+\documentclass{ximera}
+%geschreven 16/11/26
+\title{Spanningspijl en kinetische energie}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+    De spanningspijl, het verband tussen spanning en kinetische energie, en de proef van Millikan als toepassing.
+\end{abstract}
+\maketitle
+
+\section{De spanningspijl}\label{sec:spanningspijl}
+Om aan te geven welk van de twee punten de hoogste potentiaal heeft, gebruiken we een \textbf{spanningspijl}.
+
+\begin{definition}[foldable=true,title={Spanningspijl}]\nl
+De \textbf{spanningspijl} wijst naar het punt met de \textbf{hoogste} potentiaal.
+\end{definition}
+
+\begin{center}
+    \begin{tikzpicture}[scale=0.9]
+        \draw[thick] (0,-1.5) -- (0,1.5);
+        \draw[thick] (5,-1.5) -- (5,1.5);
+        % Ladingen naast de platen (+ en -) zonder de extra streepjes
+        \foreach \y in {-1.2,-0.6,0,0.6,1.2} {
+            \node[left] at (-0.1,\y) {$-$};
+            \node[right] at (5.1,\y) {$+$};
+        }
+        \foreach \y in {-1,-0.5,0,0.5,1} {
+            \draw[Eveldlijn] (4.85,\y) -- (0.15,\y);
+        }
+        \node[below] at (1,-1.6) {$1$};
+        \node[below] at (4,-1.6) {$2$};
+        \fill (1,0) circle (1.5pt);
+        \fill (4,0) circle (1.5pt);
+        \draw[-{Latex[length=3mm]}, line width=0.8pt, red!70!black] (1,1.3) -- (4,1.3) node[midway, above] {$U$};
+    \end{tikzpicture}
+\end{center}
+
+We bekijken het homogeen veld tussen twee platen. Punten dicht bij de positieve plaat (punt 2) hebben de hoogste potentiaal, dus de spanningspijl $U$ wijst naar punt $2$.
+
+\begin{remark}[expandable=true,title={Scalaire grootheid}]\nl
+Spanning is een \textbf{scalaire} grootheid, wat betekent dat ze geen richting heeft. De spanningspijl is dus geen vector, maar een hulpmiddel om aan te geven welk punt de hoogste potentiaal heeft.
+\end{remark}
+\begin{remark}[expandable=true,title={Spanningspijl en veldlijnen}]\nl
+De spanningspijl is \textbf{tegengesteld} aan de zin van de veldlijnen. Dit geldt algemeen: veldlijnen wijzen steeds van hoge naar lage potentiaal.
+\end{remark}
+\begin{remark}[expandable=true,title={Spanningspijl en voltmeter}]\nl
+Geeft een digitale voltmeter een positieve spanning aan, dan wijst de spanningspijl naar het punt aan de plusaansluiting. Bij een negatieve waarde wijst de spanningspijl naar het punt aan de COM-aansluiting (zie appendix~\verwijs[Meten van spanning]{app:spanning_meten}{appendix_spanning_meten}).
+\end{remark}
+
+\section{Spanning en kinetische energie}
+In het vorige onderdeel zagen we dat $W_{1 \to 2} = Q \cdot U_{12}$, met $W_{1 \to 2} = E_{\text{pot}}(1) - E_{\text{pot}}(2)$. Werkt enkel de elektrische kracht op de lading, dan wordt de potentiële energie omgezet in kinetische energie. Uit de wet van behoud van energie (zie appendix~\verwijs[Behoud van energie]{app:behoud}{appendix_energie_behoud}) weten we dat $E_{\text{pot}}(1) + E_{\text{kin}}(1) = E_{\text{pot}}(2) + E_{\text{kin}}(2)$, en dus $E_{\text{pot}}(1) - E_{\text{pot}}(2) = E_{\text{kin}}(2) - E_{\text{kin}}(1)$.
+
+\begin{proposition}[foldable=true,title={Spanning en kinetische energie}]\nl
+Werkt enkel de elektrische kracht, dan geeft de spanning $U_{12}$ tussen twee punten $1$ en $2$ de verandering van de kinetische energie\footnote{formule kinetische energie: $E_{\text{kin}} = \frac{1}{2} m v^2$} per eenheid van lading, voor een lading die van $1$ naar $2$ beweegt:
+\begin{equation}\label{eq:spanning_kinetisch}
+    U_{12} = \frac{\Delta E_{\text{kin}, 1 \to 2}}{Q}
+\end{equation}
+Dit klopt met de arbeid-energiestelling $W = \Delta E_{\text{kin}}$ (zie appendix~\verwijs[Behoud van energie]{app:behoud}{appendix_energie_behoud}) en $W = Q \cdot U_{12}$.
+\end{proposition}
+
+\begin{remark}[expandable=true,title={In de praktijk}]\nl
+In een echte geleider botsen de vrije elektronen voortdurend tegen de roosterionen. Hierdoor wordt de kinetische energie die de elektronen winnen, grotendeels omgezet in warmte, in plaats van dat de elektronen steeds sneller blijven bewegen.
+\end{remark}
+
+\section{Toepassing: een geladen deeltje versnellen}
+\begin{example}[foldable=true,title={Voorbeeld: elektron versneld door een spanning}]\nl
+Een elektron, aanvankelijk in rust, wordt versneld door een spanning van $200 \, \mathrm{V}$. Bereken de snelheid van het elektron nadat het deze spanning heeft doorlopen.
+
+\begin{hint}
+    Gebruik de arbeid-energiestelling: $W = \Delta E_{\text{kin}}$. Het elektron start in rust, dus $E_{\text{kin,begin}} = 0 \, \mathrm{J}$.
+\end{hint}
+
+\begin{solution}\nl
+\underline{Gegevens:}
+\begin{align*}
+    & U = 200 \, \mathrm{V} & & Q = e = 1{,}60 \cdot 10^{-19} \, \mathrm{C} \\
+    & m_{e} = 9{,}11 \cdot 10^{-31} \, \mathrm{kg} & & v_{\text{begin}} = 0 \, \mathrm{m/s}
+\end{align*}
+
+\underline{Gevraagd:} $v$
+
+\underline{Oplossing:}\\
+De arbeid die het veld op het elektron verricht, wordt volledig omgezet in kinetische energie:
+\begin{align*}
+    W &= Q \cdot U = \tfrac{1}{2} m_{e} v^{2} \\
+    1{,}60 \cdot 10^{-19} \, \mathrm{C} \cdot 200 \, \mathrm{V} &= \tfrac{1}{2} \cdot 9{,}11 \cdot 10^{-31} \, \mathrm{kg} \cdot v^{2} \\
+    v &= \sqrt{\frac{2 \cdot 3{,}20 \cdot 10^{-17} \, \mathrm{J}}{9{,}11 \cdot 10^{-31} \, \mathrm{kg}}} \\
+    &= \boxed{8{,}38 \cdot 10^{6} \, \mathrm{m/s}}
+\end{align*}
+\end{solution}
+\end{example}
+
+\begin{question}
+    Een positieve en een negatieve lading worden beide in rust losgelaten in hetzelfde homogene elektrische veld tussen twee platen. Welke uitspraken zijn juist?
+
+    \begin{selectAll}
+        \choice[correct]{Beide ladingen winnen kinetische energie.}
+        \choice[correct]{De positieve lading beweegt in de zin van de veldlijnen, de negatieve lading in de tegengestelde zin.}
+        \choice[correct]{De potentiële energie van beide ladingen daalt.}
+        \choice{De negatieve lading verliest kinetische energie.}
+    \end{selectAll}
+
+    \begin{solution}\nl
+        Op beide ladingen werkt een elektrische kracht in de zin van hun verplaatsing: het veld verricht positieve arbeid. Daardoor versnellen ze allebei, en volgens de wet van behoud van energie daalt hun potentiële energie.
+    \end{solution}
+\end{question}
+
+\section{Toepassing: de proef van Millikan}
+Robert Millikan voerde tussen 1909 en 1913 een beroemde reeks experimenten uit waarmee hij de \textbf{elementaire lading} $e$ bepaalde en aantoonde dat lading gekwantiseerd is.
+
+\begin{remark}[expandable=true,title={Opstelling van Millikan}]\nl
+Met een verstuiver worden fijne oliedruppeltjes tussen twee horizontale platen gebracht. Door wrijving met de sproeier worden de druppeltjes elektrisch geladen. Tussen de platen heerst een instelbaar homogeen elektrisch veld. Regel je de spanning tussen de platen zo dat een druppeltje precies blijft \emph{zweven}, dan is de opwaartse elektrische kracht exact gelijk aan de neerwaartse zwaartekracht. Millikan vond dat de lading van een druppeltje steeds een veelvoud is van $1{,}60 \cdot 10^{-19} \, \mathrm{C}$: de lading van één elektron. Figuur~\ref{fig:millikan_opstelling} toont de originele opstelling.
+
+% AFBEELDING: originele opstelling van Millikan
+% bron: https://commons.wikimedia.org/w/index.php?curid=685647
+\begin{center}
+    \captionsetup{width=0.85\textwidth}
+    \includegraphics[width=0.5\textwidth]{pic5/elektriciteit/potentiaal/millikan_opstelling.jpg}
+    \fotobron{onbekende fotograaf}{publiek domein}{https://commons.wikimedia.org/w/index.php?curid=685647}
+    \captionof{figure}{De originele opstelling waarmee Millikan de elementaire lading bepaalde. In de cilinder zitten de twee horizontale platen; via het kijkertje volgde hij de oliedruppeltjes.}
+    \label{fig:millikan_opstelling}
+\end{center}
+\end{remark}
+
+\begin{question}
+    Waarom blijft een geladen oliedruppeltje in de proef van Millikan precies zweven?
+
+    \begin{multipleChoice}
+        \choice{De elektrische kracht is groter dan de zwaartekracht.}
+        \choice[correct]{De elektrische kracht is even groot als de zwaartekracht en tegengesteld gericht.}
+        \choice{In een elektrisch veld werkt er geen zwaartekracht meer op de olie.}
+    \end{multipleChoice}
+
+    \begin{solution}\nl
+        Een druppeltje blijft in rust (of beweegt met constante snelheid) als de resulterende kracht nul is. De opwaartse elektrische kracht moet dus even groot zijn als de neerwaartse zwaartekracht.
+    \end{solution}
+\end{question}
+
+\begin{example}[foldable=true,title={Voorbeeld: lading van een oliedruppeltje}]\nl
+Een oliedruppeltje met massa $3{,}30 \cdot 10^{-15} \, \mathrm{kg}$ bevindt zich tussen twee horizontale platen op $5{,}00 \cdot 10^{-3} \, \mathrm{m}$ van elkaar. Bij een spanning van $170 \, \mathrm{V}$ blijft het druppeltje juist zweven. Bepaal de grootte van de lading op het druppeltje, en hoeveel elektronen het heeft opgenomen.
+
+\begin{hint}
+    Stel de grootte van de zwaartekracht gelijk aan de grootte van de elektrische kracht ($F_{z} = F_{e}$), en gebruik $U = E \cdot d$ om het elektrisch veld tussen de platen te vinden.
+\end{hint}
+
+\begin{solution}\nl
+\underline{Gegevens:}
+\begin{align*}
+    & m = 3{,}30 \cdot 10^{-15} \, \mathrm{kg} & & d = 5{,}00 \cdot 10^{-3} \, \mathrm{m} \\
+    & U = 170 \, \mathrm{V} & & g = 9{,}81 \, \mathrm{N/kg}
+\end{align*}
+
+\underline{Gevraagd:} $\lvert Q \rvert$, aantal elektronen
+
+\underline{Oplossing:}\\
+De grootte van de zwaartekracht op het druppeltje:
+\begin{align*}
+    F_{z} = m \cdot g = 3{,}30 \cdot 10^{-15} \, \mathrm{kg} \cdot 9{,}81 \, \mathrm{N/kg} = 3{,}24 \cdot 10^{-14} \, \mathrm{N}
+\end{align*}
+De grootte van het elektrisch veld tussen de platen:
+\begin{align*}
+    E = \frac{U}{d} = \frac{170 \, \mathrm{V}}{5{,}00 \cdot 10^{-3} \, \mathrm{m}} = 3{,}40 \cdot 10^{4} \, \mathrm{N/C}
+\end{align*}
+Omdat het druppeltje zweeft, is de resulterende kracht nul: $F_{z} = F_{e} = E \cdot \lvert Q \rvert$.
+\begin{align*}
+    \lvert Q \rvert = \frac{F_{z}}{E} = \frac{3{,}24 \cdot 10^{-14} \, \mathrm{N}}{3{,}40 \cdot 10^{4} \, \mathrm{N/C}} = 9{,}52 \cdot 10^{-19} \, \mathrm{C}
+\end{align*}
+We delen door de elementaire lading om het aantal elektronen te vinden:
+\begin{align*}
+    n = \frac{9{,}52 \cdot 10^{-19} \, \mathrm{C}}{1{,}60 \cdot 10^{-19} \, \mathrm{C}} \approx \boxed{6}
+\end{align*}
+Het druppeltje heeft dus $6$ elektronen opgenomen, en heeft een (afgeronde) lading van $\lvert Q \rvert = 6 \cdot 1{,}60 \cdot 10^{-19} \, \mathrm{C} = 9{,}6 \cdot 10^{-19} \, \mathrm{C}$.
+\end{solution}
+\end{example}
+
+\end{document}

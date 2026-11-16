@@ -1,0 +1,49 @@
+\documentclass{ximera}
+%geschreven 16/11/26
+\title{Meten van spanning}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+    Spanning meten met een voltmeter of een digitale multimeter.
+\end{abstract}
+\maketitle
+\label{app:spanning_meten}
+
+\section{Meten van spanning}\label{sec:spanning_meten}
+De spanning tussen twee punten meten we met een \textbf{voltmeter} (V-meter). Een voltmeter heeft twee aansluitpunten: de plusaansluiting en de min- of COM-aansluiting. Een analoge voltmeter is correct aangesloten als de naald naar de juiste kant uitwijkt. In de praktijk gebruik je meestal een digitale multimeter die je instelt als voltmeter, zoals in figuur~\ref{fig:spanning_meten}.
+
+%---------------------------
+% AFBEELDING: spanning van een batterij meten met een multimeter
+% bron: https://commons.wikimedia.org/wiki/File:Testing_voltage_of_a_battery_using_a_digital_multimeter.jpg
+\begin{figure}[ht!]
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
+        \includegraphics[width=0.55\textwidth]{pic5/elektriciteit/potentiaal/spanning_meten_multimeter.jpg}
+        \fotobron{Jiazheng0609}{CC BY-SA 4.0}{https://commons.wikimedia.org/wiki/File:Testing_voltage_of_a_battery_using_a_digital_multimeter.jpg}
+    \end{center}
+    \caption{Een digitale multimeter, ingesteld als voltmeter, meet de spanning over een lithiumbatterij van $3 \, \mathrm{V}$. De rode meetsnoer zit aan de plusaansluiting, de zwarte aan COM.}
+    \label{fig:spanning_meten}
+\end{figure}
+%---------------------------
+
+
+\begin{remark}[expandable=true,title={Correct aansluiten van een voltmeter}]\nl
+Een digitale voltmeter geeft de spanning $U = V(\text{plus}) - V(\text{COM})$: de potentiaal van het punt aan de plusaansluiting min die van het punt aan de COM-aansluiting. Hij is correct aangesloten als hij een \textbf{positieve} spanning aangeeft: dan heeft het punt aan de plusaansluiting de hoogste potentiaal. Geeft de voltmeter een negatieve waarde aan, dan heeft het punt aan de COM-aansluiting de hoogste potentiaal.
+\end{remark}
+
+\begin{question}
+    Een digitale voltmeter geeft $-4{,}5 \, \mathrm{V}$ aan. Wat kan je hieruit besluiten?
+
+    \begin{multipleChoice}
+        \choice{Het punt aan de plusaansluiting heeft de hoogste potentiaal.}
+        \choice[correct]{Het punt aan de COM-aansluiting heeft de hoogste potentiaal.}
+        \choice{De voltmeter is defect.}
+    \end{multipleChoice}
+
+    \begin{solution}\nl
+        De voltmeter geeft de potentiaal van het punt aan de plusaansluiting min die van het punt aan de COM-aansluiting. Een negatieve waarde betekent dat het punt aan de COM-aansluiting de hoogste potentiaal heeft. De meter is dus niet defect, enkel omgekeerd aangesloten.
+    \end{solution}
+\end{question}
+
+\end{document}

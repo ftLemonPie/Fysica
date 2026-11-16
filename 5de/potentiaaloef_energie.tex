@@ -1,24 +1,21 @@
 \documentclass{ximera}
-%verbeterd 14/11/26
+%verbeterd 16/11/26
 
-\title{Vraagstukken potentiële energie, potentiaal en spanning: energie en arbeid}
+\title{Vraagstukken potentiële energie, potentiaal en spanning: spanning en arbeid}
 \author{Daan Lipkens}
 
 \begin{document}
 \begin{abstract}
+    Oefeningen op het verband tussen spanning en arbeid ($W = Q \cdot U$), van makkelijk naar moeilijk.
 \end{abstract}
 \maketitle
 
-\section{Oefeningen spanning, arbeid en energie}
+\section{Oefeningen spanning en arbeid}
 
 %———————————————————————————————————————
-% OEFENINGEN SPANNING, ARBEID EN ENERGIE
-%———————————————————————————————————————
-
-%———————————————————————————————————————
-% OEF 1: W = Q*U, eenvoudig
+% OEF 1: W = Q*U
 \begin{exercise}
-    Een lading $Q = 2{,}0 \cdot 10^{-6} \, \mathrm{C}$ doorloopt een spanningsverschil van $500 \, \mathrm{V}$. Bereken de arbeid die het elektrisch veld op de lading verricht.
+    Een lading $Q = 2{,}0 \cdot 10^{-6} \, \mathrm{C}$ beweegt tussen twee punten met een spanning van $500 \, \mathrm{V}$. Bereken de arbeid die het elektrisch veld op de lading verricht.
 
     \[ W = \answer[tolerance=0.01,onlineshowanswerbutton]{1.0} \cdot 10^{-3} \, \mathrm{J} \]
 
@@ -39,162 +36,104 @@
 %———————————————————————————————————————
 
 %———————————————————————————————————————
-% OEF 2: proton versneld vanuit rust
+% OEF 2: U = W/Q
 \begin{exercise}
-    Een proton, aanvankelijk in rust, wordt versneld door een spanningsverschil van $400 \, \mathrm{V}$. Bereken de snelheid van het proton nadat het deze spanning heeft doorlopen.
+    Het elektrisch veld verricht een arbeid van $2{,}0 \cdot 10^{-3} \, \mathrm{J}$ op een lading $Q = +5{,}0 \cdot 10^{-6} \, \mathrm{C}$ die van punt $1$ naar punt $2$ beweegt. Bereken de spanning $U_{12}$ tussen die twee punten.
 
-    \[ v = \answer[tolerance=1000,onlineshowanswerbutton]{276851} \, \mathrm{m/s} \]
-
-    \begin{hint}
-        De arbeid die het veld verricht, wordt volledig omgezet in kinetische energie: $Q \cdot U = \tfrac{1}{2} m v^{2}$. Zoek de massa en de lading van een proton op in je tabellenboekje.
-    \end{hint}
+    \[ U_{12} = \answer[tolerance=10,onlineshowanswerbutton]{400} \, \mathrm{V} \]
 
     \begin{solution}\nl
         \underline{Gegevens:}
         \begin{align*}
-            & U = 400 \, \mathrm{V} & & Q = e = 1{,}60 \cdot 10^{-19} \, \mathrm{C} \\
-            & m_{p} = 1{,}67 \cdot 10^{-27} \, \mathrm{kg} & & v_{\text{begin}} = 0 \, \mathrm{m/s}
+            & W = 2{,}0 \cdot 10^{-3} \, \mathrm{J} & & Q = +5{,}0 \cdot 10^{-6} \, \mathrm{C}
         \end{align*}
 
-        \underline{Gevraagd:} $v$
+        \underline{Gevraagd:} $U_{12}$
 
         \underline{Oplossing:}
         \begin{align*}
-            Q \cdot U &= \tfrac{1}{2} m_{p} v^{2} \\
-            1{,}60 \cdot 10^{-19} \, \mathrm{C} \cdot 400 \, \mathrm{V} &= \tfrac{1}{2} \cdot 1{,}67 \cdot 10^{-27} \, \mathrm{kg} \cdot v^{2} \\
-            v &= \sqrt{\frac{2 \cdot 6{,}40 \cdot 10^{-17} \, \mathrm{J}}{1{,}67 \cdot 10^{-27} \, \mathrm{kg}}} \\
-            &= \boxed{2{,}77 \cdot 10^{5} \, \mathrm{m/s}}
+            U_{12} = \frac{W}{Q} = \frac{2{,}0 \cdot 10^{-3} \, \mathrm{J}}{5{,}0 \cdot 10^{-6} \, \mathrm{C}} = \boxed{4{,}0 \cdot 10^{2} \, \mathrm{V}}
         \end{align*}
     \end{solution}
 \end{exercise}
 %———————————————————————————————————————
 
 %———————————————————————————————————————
-% OEF 3: elektron met beginsnelheid, versneld door spanning
+% OEF 3: Q = W/U (autobatterij)
 \begin{exercise}
-    Een elektron beweegt met een beginsnelheid van $2{,}0 \cdot 10^{6} \, \mathrm{m/s}$ en doorloopt daarna een spanningsverschil $U_{12} = -50 \, \mathrm{V}$ (waarbij het elektron van punt 1 naar punt 2 beweegt). Bereken de eindsnelheid van het elektron.
+    Een autobatterij van $12 \, \mathrm{V}$ levert een energie van $3{,}6 \cdot 10^{3} \, \mathrm{J}$. Hoeveel lading is daarbij van de ene pool naar de andere verplaatst?
 
-    \begin{hint}
-        Bereken eerst de arbeid $W = Q \cdot U_{12}$, met $Q$ de (negatieve) lading van het elektron. Gebruik daarna de arbeid-energiestelling $W = E_{\text{kin,eind}} - E_{\text{kin,begin}}$ om de eindsnelheid te vinden.
-    \end{hint}
-    \begin{hint}
-        Vergeet niet om eerst $E_{\text{kin,begin}}$ te berekenen uit de beginsnelheid, vooraleer je de eindsnelheid kan bepalen.
-    \end{hint}
-
-    \[ v_{\text{eind}} = \answer[tolerance=10000,onlineshowanswerbutton]{4643610} \, \mathrm{m/s} \]
+    \[ Q = \answer[tolerance=8,onlineshowanswerbutton]{300} \, \mathrm{C} \]
 
     \begin{solution}\nl
         \underline{Gegevens:}
         \begin{align*}
-            & v_{\text{begin}} = 2{,}0 \cdot 10^{6} \, \mathrm{m/s} & & U_{12} = -50 \, \mathrm{V} \\
-            & Q = -e = -1{,}60 \cdot 10^{-19} \, \mathrm{C} & & m_{e} = 9{,}11 \cdot 10^{-31} \, \mathrm{kg}
+            & U = 12 \, \mathrm{V} & & W = 3{,}6 \cdot 10^{3} \, \mathrm{J}
         \end{align*}
 
-        \underline{Gevraagd:} $v_{\text{eind}}$
+        \underline{Gevraagd:} $Q$
 
-        \underline{Oplossing:}\\
-        De beginkinetische energie van het elektron:
+        \underline{Oplossing:}
         \begin{align*}
-            E_{\text{kin,begin}} &= \tfrac{1}{2} m_{e} v_{\text{begin}}^{2} \\
-            &= \tfrac{1}{2} \cdot 9{,}11 \cdot 10^{-31} \, \mathrm{kg} \cdot (2{,}0 \cdot 10^{6} \, \mathrm{m/s})^{2} \\
-            &= 1{,}822 \cdot 10^{-18} \, \mathrm{J}
+            Q = \frac{W}{U} = \frac{3{,}6 \cdot 10^{3} \, \mathrm{J}}{12 \, \mathrm{V}} = \boxed{3{,}0 \cdot 10^{2} \, \mathrm{C}}
         \end{align*}
-        De arbeid die het veld op het elektron verricht:
-        \begin{align*}
-            W &= Q \cdot U_{12} = (-1{,}60 \cdot 10^{-19} \, \mathrm{C}) \cdot (-50 \, \mathrm{V}) \\
-            &= 8{,}00 \cdot 10^{-18} \, \mathrm{J}
-        \end{align*}
-        Uit de arbeid-energiestelling volgt de eindkinetische energie:
-        \begin{align*}
-            E_{\text{kin,eind}} &= E_{\text{kin,begin}} + W \\
-            &= 1{,}822 \cdot 10^{-18} \, \mathrm{J} + 8{,}00 \cdot 10^{-18} \, \mathrm{J} \\
-            &= 9{,}822 \cdot 10^{-18} \, \mathrm{J}
-        \end{align*}
-        Hieruit volgt de eindsnelheid:
-        \begin{align*}
-            v_{\text{eind}} = \sqrt{\frac{2 \cdot E_{\text{kin,eind}}}{m_{e}}} = \sqrt{\frac{2 \cdot 9{,}822 \cdot 10^{-18} \, \mathrm{J}}{9{,}11 \cdot 10^{-31} \, \mathrm{kg}}} = \boxed{4{,}64 \cdot 10^{6} \, \mathrm{m/s}}
-        \end{align*}
-        De positieve arbeid geeft aan dat het elektron versnelt: de eindsnelheid is dus groter dan de beginsnelheid.
     \end{solution}
 \end{exercise}
 %———————————————————————————————————————
 
 %———————————————————————————————————————
-% OEF 4 (moeilijkst): Millikan-stijl, meerdelige oefening
+% OEF 4 (moeilijkst): negatieve lading, teken van W en van de verandering van E_pot
 \begin{exercise}
-    Een oliedruppeltje met massa $1{,}96 \cdot 10^{-15} \, \mathrm{kg}$ bevindt zich tussen twee horizontale platen op $5{,}00 \cdot 10^{-3} \, \mathrm{m}$ van elkaar, en blijft juist zweven bij een spanning van $150 \, \mathrm{V}$ tussen de platen.
+    Een elektron beweegt van punt $1$ naar punt $2$ in een elektrisch veld. De spanning tussen die punten is $U_{12} = +80 \, \mathrm{V}$.
 
     \begin{question}
-        Bereken de grootte van het elektrisch veld tussen de platen.
+        Bereken de arbeid die het elektrisch veld op het elektron verricht.
 
-        \[ E = \answer[tolerance=100,onlineshowanswerbutton]{30000} \, \mathrm{N/C} \]
-
-        \begin{solution}\nl
-            \underline{Gegevens:}
-            \begin{align*}
-                & U = 150 \, \mathrm{V} & & d = 5{,}00 \cdot 10^{-3} \, \mathrm{m}
-            \end{align*}
-
-            \underline{Gevraagd:} $E$
-
-            \underline{Oplossing:}
-            \begin{align*}
-                E = \frac{U}{d} = \frac{150 \, \mathrm{V}}{5{,}00 \cdot 10^{-3} \, \mathrm{m}} = \boxed{3{,}0 \cdot 10^{4} \, \mathrm{N/C}}
-            \end{align*}
-        \end{solution}
-    \end{question}
-
-    \begin{question}
-        Bereken de grootte van de lading op het druppeltje.
-
-        \[ \lvert Q \rvert = \answer[tolerance=0.2,onlineshowanswerbutton]{6.4} \cdot 10^{-19} \, \mathrm{C} \]
+        \[ W = \answer[tolerance=0.04,onlineshowanswerbutton]{-1.3} \cdot 10^{-17} \, \mathrm{J} \]
 
         \begin{hint}
-            Het druppeltje zweeft, dus de resulterende kracht op het druppeltje is nul: de zwaartekracht en de elektrische kracht zijn even groot.
+            Houd rekening met het teken van de lading van een elektron.
         \end{hint}
 
         \begin{solution}\nl
             \underline{Gegevens:}
             \begin{align*}
-                & m = 1{,}96 \cdot 10^{-15} \, \mathrm{kg} & & g = 9{,}81 \, \mathrm{N/kg} & & E = 3{,}0 \cdot 10^{4} \, \mathrm{N/C}
+                & Q = -e = -1{,}60 \cdot 10^{-19} \, \mathrm{C} & & U_{12} = +80 \, \mathrm{V}
             \end{align*}
 
-            \underline{Gevraagd:} $\lvert Q \rvert$
+            \underline{Gevraagd:} $W$
 
-            \underline{Oplossing:}\\
-            De grootte van de zwaartekracht:
+            \underline{Oplossing:}
             \begin{align*}
-                F_{z} = m \cdot g = 1{,}96 \cdot 10^{-15} \, \mathrm{kg} \cdot 9{,}81 \, \mathrm{N/kg} = 1{,}923 \cdot 10^{-14} \, \mathrm{N}
+                W = Q \cdot U_{12} = (-1{,}60 \cdot 10^{-19} \, \mathrm{C}) \cdot 80 \, \mathrm{V} = -1{,}28 \cdot 10^{-17} \, \mathrm{J} \simeq \boxed{-1{,}3 \cdot 10^{-17} \, \mathrm{J}}
             \end{align*}
-            Omdat het druppeltje zweeft, geldt $F_{z} = F_{e} = E \cdot \lvert Q \rvert$:
-            \begin{align*}
-                \lvert Q \rvert = \frac{F_{z}}{E} = \frac{1{,}923 \cdot 10^{-14} \, \mathrm{N}}{3{,}0 \cdot 10^{4} \, \mathrm{N/C}} = \boxed{6{,}4 \cdot 10^{-19} \, \mathrm{C}}
-            \end{align*}
+            De spanning heeft 2 beduidende cijfers, dus ook het antwoord.
         \end{solution}
     \end{question}
 
     \begin{question}
-        Hoeveel elektronen heeft het druppeltje opgenomen?
+        Bereken de verandering van de potentiële energie van het elektron.
 
-        \[ n = \answer[tolerance=0.1,onlineshowanswerbutton]{4} \]
+        \[ \Delta E_{\text{pot}} = \answer[tolerance=0.04,onlineshowanswerbutton]{1.3} \cdot 10^{-17} \, \mathrm{J} \]
 
-        \begin{hint}
-            Deel de gevonden lading door de elementaire lading $e = 1{,}60 \cdot 10^{-19} \, \mathrm{C}$.
-        \end{hint}
+        De beweging van het elektron van $1$ naar $2$ is: \wordChoice{
+            \choice{spontaan}
+            \choice[correct]{geforceerd}
+        }
 
         \begin{solution}\nl
             \underline{Gegevens:}
             \begin{align*}
-                & \lvert Q \rvert = 6{,}4 \cdot 10^{-19} \, \mathrm{C} & & e = 1{,}60 \cdot 10^{-19} \, \mathrm{C}
+                & W = -1{,}28 \cdot 10^{-17} \, \mathrm{J}
             \end{align*}
 
-            \underline{Gevraagd:} $n$
+            \underline{Gevraagd:} $\Delta E_{\text{pot}}$
 
             \underline{Oplossing:}
             \begin{align*}
-                n = \frac{\lvert Q \rvert}{e} = \frac{6{,}4 \cdot 10^{-19} \, \mathrm{C}}{1{,}60 \cdot 10^{-19} \, \mathrm{C}} = \boxed{4}
+                \Delta E_{\text{pot}} = -W = -(-1{,}28 \cdot 10^{-17} \, \mathrm{J}) = 1{,}28 \cdot 10^{-17} \, \mathrm{J} \simeq \boxed{1{,}3 \cdot 10^{-17} \, \mathrm{J}}
             \end{align*}
-            Het druppeltje heeft dus $4$ elektronen opgenomen. Dit bevestigt dat de lading van het druppeltje een geheel veelvoud is van de elementaire lading, zoals Millikan experimenteel vaststelde.
+            Het veld verricht negatieve arbeid en de potentiële energie stijgt: de beweging is geforceerd. Dit is logisch: een negatieve lading beweegt spontaan naar een punt met een hogere potentiaal, maar hier gaat het elektron naar een punt met een lagere potentiaal ($U_{12} > 0$, dus $V(1) > V(2)$).
         \end{solution}
     \end{question}
 \end{exercise}

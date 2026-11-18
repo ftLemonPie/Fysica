@@ -283,6 +283,7 @@ bijwerken (`5de/inleiding_stand_51.tex` voor 1 uur, `5de/inleiding_stand_52.tex`
     - [x] elektrische krachtwerking (_1 en _2)
     - [x] elektrisch veld (_1 en _2)
     - [x] potentiaal (_1 en _2)
+    - [x] gemengde schakelingen (_1, enkel 1 uur)
 - [ ] Herhalignsoefeningen per H en per deel
 - [ ] oefeningen toelatingsproeven
 - [ ] Appendix nummering herstarten romeins.

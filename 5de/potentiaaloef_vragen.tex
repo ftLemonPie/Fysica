@@ -217,7 +217,26 @@
     Wat is de spanning $U_{AB}$ tussen deze twee punten? Verklaar.
 
     \begin{solution}\nl
-        De spanning is $0 \, \mathrm{V}$. In een homogeen veld geldt $V = E \cdot d$, met $d$ de afstand tot de negatieve plaat. Omdat $A$ en $B$ even ver van de negatieve plaat liggen, is $V(A) = V(B)$ en dus $U_{AB} = V(A) - V(B) = 0 \, \mathrm{V}$. Verplaats je een lading van $A$ naar $B$, dan verricht het veld geen arbeid.
+        De spanning is $0 \, \mathrm{V}$.
+
+        \textbf{Via de formule:} in een homogeen veld geldt $V = E \cdot d$, met $d$ de afstand tot de negatieve plaat. Omdat $A$ en $B$ even ver van de negatieve plaat liggen, is $V(A) = V(B)$ en dus $U_{AB} = V(A) - V(B) = 0 \, \mathrm{V}$.
+
+        \textbf{Via de equipotentiaaloppervlakken:} in een homogeen veld zijn de equipotentiaaloppervlakken vlakken evenwijdig met de platen. $A$ en $B$ liggen op hetzelfde equipotentiaaloppervlak (stippellijn), dus $V(A) = V(B)$ en $U_{AB} = 0 \, \mathrm{V}$.
+        \begin{center}
+            \begin{tikzpicture}
+                \draw[thick] (0,-1.5) -- (0,1.5);
+                \draw[thick] (4,-1.5) -- (4,1.5);
+                \foreach \y in {-1.2,-0.6,0,0.6,1.2} {
+                    \node[left] at (-0.1,\y) {$-$};
+                    \node[right] at (4.1,\y) {$+$};
+                    \draw[Eveldlijn] (4,\y) -- (0,\y);
+                }
+                \draw[dashed, purple!70!black, thick] (2,-1.4) -- (2,1.4);
+                \fill (2,0.9) circle (1.5pt) node[above right=1pt] {$A$};
+                \fill (2,-0.8) circle (1.5pt) node[below right=1pt] {$B$};
+            \end{tikzpicture}
+        \end{center}
+        Verplaats je een lading van $A$ naar $B$, dan verricht het veld geen arbeid.
     \end{solution}
 \end{question}
 %———————————————————————————————————————

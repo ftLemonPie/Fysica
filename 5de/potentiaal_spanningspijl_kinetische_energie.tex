@@ -1,5 +1,5 @@
 \documentclass{ximera}
-%geschreven 16/11/26
+%geschreven 16/11/26, verbeterd 18/11/26
 \title{Spanningspijl en kinetische energie}
 \author{Daan Lipkens}
 
@@ -57,7 +57,7 @@ Geeft een digitale voltmeter een positieve spanning aan, dan wijst de spanningsp
 In het vorige onderdeel zagen we dat $W_{1 \to 2} = Q \cdot U_{12}$, met $W_{1 \to 2} = E_{\text{pot}}(1) - E_{\text{pot}}(2)$. Werkt enkel de elektrische kracht op de lading, dan wordt de potentiële energie omgezet in kinetische energie. Uit de wet van behoud van energie (zie appendix~\verwijs[Behoud van energie]{app:behoud}{appendix_energie_behoud}) weten we dat $E_{\text{pot}}(1) + E_{\text{kin}}(1) = E_{\text{pot}}(2) + E_{\text{kin}}(2)$. Daaruit volgt $E_{\text{pot}}(1) - E_{\text{pot}}(2) = E_{\text{kin}}(2) - E_{\text{kin}}(1)$.
 
 \begin{proposition}[foldable=true,title={Spanning en kinetische energie}]\nl
-Werkt enkel de elektrische kracht, dan geeft de spanning $U_{12}$ tussen twee punten $1$ en $2$ de verandering van de kinetische energie\footnote{formule kinetische energie: $E_{\text{kin}} = \frac{1}{2} m v^2$} per eenheid van lading, voor een lading die van $1$ naar $2$ beweegt:
+Werkt enkel de elektrische kracht, dan geeft de spanning $U_{12}$ tussen twee punten $1$ en $2$ de verandering van de kinetische energie\footnote{formule kinetische energie: $E_{\text{kin}} = \frac{m \cdot v^2}{2}$} per eenheid van lading, voor een lading die van $1$ naar $2$ beweegt:
 \begin{equation}\label{eq:spanning_kinetisch}
     U_{12} = \frac{\Delta E_{\text{kin}, 1 \to 2}}{Q}
 \end{equation}
@@ -69,6 +69,40 @@ In een echte geleider botsen de vrije elektronen voortdurend tegen de roosterion
 \end{remark}
 
 \section{Toepassing: een geladen deeltje versnellen}
+Een spanning kan geladen deeltjes een grote snelheid geven. In een \textbf{lineaire deeltjesversneller} (figuur~\ref{fig:lineaire_versneller}) gaan geladen deeltjes door een reeks holle metalen buizen. In elke spleet tussen twee buizen staat een spanning $U$ die het deeltje versnelt: bij elke spleet neemt zijn kinetische energie toe met $Q \cdot U$. Binnen een buis is er geen veld en beweegt het deeltje met constante snelheid.
+
+\begin{figure}[h]
+    \captionsetup{width=0.85\textwidth}
+    \begin{center}
+    \begin{tikzpicture}
+        % bron van geladen deeltjes
+        \draw[thick, fill=black!15] (-1.6,-0.45) rectangle (-0.6,0.45);
+        \node[font=\small] at (-1.1,0.8) {bron};
+        % holle buizen, steeds langer
+        \foreach \x/\l/\t in {0/1.0/$-$, 1.4/1.4/$+$, 3.2/1.9/$-$, 5.5/2.5/$+$} {
+            \draw[thick, fill=black!5] (\x,-0.3) rectangle ({\x+\l},0.3);
+            \node[font=\small] at ({\x+\l/2},0.55) {\t};
+        }
+        % bundel geladen deeltjes
+        \draw[-{Latex[length=2.5mm]}, very thick, red!70!black] (-0.6,0) -- (8.6,0);
+        \foreach \x in {-0.3,1.2,2.95,5.25} \fill[red!70!black] (\x,0) circle (2pt);
+        % spanning in een spleet
+        \draw[<->] (1.0,1.05) -- (1.4,1.05) node[midway, above, font=\small] {$U$};
+        % wisselspanningsbron: buis 1 en 3 aan de ene pool, buis 2 en 4 aan de andere
+        \draw[thick] (-1.1,-1.5) circle (0.25);
+        \draw[thick, domain=-0.15:0.15, samples=30, smooth] plot ({-1.1+\x},{-1.5+0.1*sin(\x*360/0.3)});
+        \draw (-1.1,-1.25) -- (-1.1,-1.1) -- (4.15,-1.1) -- (4.15,-0.3);
+        \draw (0.5,-1.1) -- (0.5,-0.3);
+        \fill (0.5,-1.1) circle (1.2pt);
+        \draw (-1.1,-1.75) -- (-1.1,-1.9) -- (6.75,-1.9) -- (6.75,-0.3);
+        \draw (2.1,-1.9) -- (2.1,-0.3);
+        \fill (2.1,-1.9) circle (1.2pt);
+        \node[font=\small, below] at (-1.1,-1.95) {wisselspanning};
+    \end{tikzpicture}
+    \end{center}
+    \caption{Principe van een lineaire deeltjesversneller. De wisselspanning wisselt zo snel van teken dat elke spleet het deeltje versnelt op het moment dat het erdoor komt. Omdat het deeltje steeds sneller gaat, zijn de buizen steeds langer.}
+    \label{fig:lineaire_versneller}
+\end{figure}
 \begin{example}[foldable=true,title={Voorbeeld: elektron versneld door een spanning}]\nl
 Een elektron, aanvankelijk in rust, wordt versneld door een spanning van $200 \, \mathrm{V}$. Bereken de snelheid van het elektron nadat het deze spanning heeft doorlopen.
 

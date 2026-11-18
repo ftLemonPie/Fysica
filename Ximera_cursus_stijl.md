@@ -222,6 +222,8 @@ Kort: titel, abstract, `\maketitle`, één inleidende zin over wat volgt. Geen `
 - Spreek van **spanning** of **potentiaalverschil**, nooit van "spanningsverschil".
 - Arbeid van een constante kracht zoals in de tweede graad: `W = +F \cdot \Delta x` (zelfde zin) of `W = -F \cdot \Delta x` (tegengestelde zin), met `F` en `\Delta x` als groottes.
 - Ampèremeter en voltmeter in circuitikz zonder pijl: `to[rmeter, t=A]` en `to[rmeter, t=V]` (niet `ammeter`/`voltmeter`, die tekenen een pijl).
+- In een berekening met vermenigvuldigingen schrijf je de eenheid N/C als breuk: `500 \, \frac{\mathrm{N}}{\mathrm{C}} \cdot 0{,}15 \, \mathrm{m}` (duidelijker dan `\mathrm{N/C} \cdot`). In de gegevens en in een noemer blijft `\mathrm{N/C}`.
+- Kinetische energie noteren we als `E_{\text{kin}} = \frac{m \cdot v^2}{2}`.
 - Schrappen in een breuk met `\cancel{...}` (package `cancel`, zit in de preamble; online via MathJax).
 
 ### Gedeelde bestanden 1 uur en 2 uur

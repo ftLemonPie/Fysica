@@ -87,6 +87,7 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{cancel} %cancel streepjes
+\usepackage{needspace} %titel en QR-code van een onderdeel samen op een nieuwe pagina
 \usepackage{setspace} %voor interlinie: \onehalfspacing en \singlespacing
 % -- file packages
 \usepackage{pdfpages} %om pdf's toe te voegen
@@ -754,7 +755,7 @@
 \let\xm@origsectionstyle\sectionstyle
 \renewcommand\sectionstyle{\xm@origsectionstyle
   \let\xm@secmaketitle\maketitle
-  \def\maketitle{\par\addvspace{\xm@secruimte}\xm@qrcodeoef\xm@secmaketitle\xm@resetnrs
+  \def\maketitle{\par\needspace{8\baselineskip}\addvspace{\xm@secruimte}\xm@qrcodeoef\xm@secmaketitle\xm@resetnrs
     \protected@edef\@currentlabel{\arabic{titlenumber}.\arabic{sectiontitlenumber}}}}% \label na \maketitle = nummer van het onderdeel
 }% einde \xm@NummeringSetup
 \ifdefined\HCode\else\ifdefined\xmIsXourse\xm@NummeringSetup\fi\fi
@@ -864,7 +865,7 @@
   \ifnotoc\else\tableofcontents\clearpage\fi
   \pagestyle{main}%
   % activities zonder \chapterstyle/\sectionstyle: ook QR-code bij oefeningen
-  \def\maketitle{\par\addvspace{\xm@secruimte}\xm@qrcodeoef\othermaketitle}}
+  \def\maketitle{\par\needspace{8\baselineskip}\addvspace{\xm@secruimte}\xm@qrcodeoef\othermaketitle}}
 \ifdefined\HCode\else\ifdefined\xmIsXourse
   \RequirePackage{xstring}%
   \AtBeginDocument{\let\maketitle\xm@titelblad}% na xourse.cls (die laadt dit bestand vroeger)

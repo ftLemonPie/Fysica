@@ -40,8 +40,20 @@ jobs:
             ximera-
 
 
+      # TEST 18/11/26: eerst een gewone build, zodat elk bestand een .aux heeft;
+      # daarna alles geforceerd opnieuw (XM_FORCE), zodat \ref geen ?? meer geeft.
+      # Terugdraaien: deze stap en de regel XM_FORCE hieronder verwijderen.
+      - name: Pre-build (eerste compilatie voor .aux)
+        env:
+          XIMERA_URL: "https://xerxes.ximera.org/"
+          XIMERA_NAME: "sui*preview"
+        run: |
+          chmod +x xmScripts/xmlatex
+          ./xmScripts/xmlatex bake
+
       - name: Build and publish Ximera courses
         env:
+          XM_FORCE: "1"   # TEST 18/11/26: tweede compilatie forceren (zie Pre-build)
           # These variables can/should be set at repository level
           # If not set, defaults from xmScripts/config.txt or xlatex will be used 
           # (The defaults will presumably make this step fail.)

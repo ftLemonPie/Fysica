@@ -2,12 +2,6 @@ name: Ximera Workflow
 
 on:
   push:
-  workflow_dispatch:   # TEST 18/11/26: handmatig starten via Actions > Run workflow
-    inputs:
-      force:
-        description: 'Alles opnieuw compileren (XM_FORCE)'
-        type: boolean
-        default: false
     # tags:
     #   - 'v*'  # Trigger the workflow when a new tag starting with 'v' is pushed   
 
@@ -45,34 +39,6 @@ jobs:
             ximera-${{ github.ref_name }}-
             ximera-
 
-
-      # TEST 18/11/26: eerst een gewone build, zodat elk bestand een .aux heeft;
-      # daarna alles geforceerd opnieuw (XM_FORCE), zodat \ref geen ?? meer geeft.
-      # Terugdraaien: deze stap en de regel XM_FORCE hieronder verwijderen.
-      - name: Pre-build (eerste compilatie voor .aux)
-        env:
-          XIMERA_URL: "https://xerxes.ximera.org/"
-          XIMERA_NAME: "sui*preview"
-        run: |
-          chmod +x xmScripts/xmlatex
-          ./xmScripts/xmlatex bake
-
-      # TEST 18/11/26: pdf's waarvan de log om een tweede compilatie vraagt
-      # (Rerun / undefined references) wissen, zodat de volgende stap ze opnieuw
-      # compileert, nu met de .aux van de Pre-build.
-      - name: Tweede compilatie voorbereiden (pdf's met ?? wissen)
-        run: |
-          grep -rlE --include='*.log' 'Rerun to get|undefined references|Label\(s\) may have changed' . | while read -r log; do
-            stem="${log%.log}"
-            echo "Opnieuw compileren: ${stem}.pdf"
-            rm -f "${stem}.pdf"
-          done || true
-
-      # TEST 18/11/26: enkel bij handmatige run met 'force': alles opnieuw compileren.
-      # XM_FORCE moet in config.txt staan: xmlatex geeft geen extra env-variabelen door aan docker.
-      - name: Alles forceren (enkel handmatig)
-        if: ${{ github.event_name == 'workflow_dispatch' && inputs.force }}
-        run: echo 'export XM_FORCE=1' >> xmScripts/config.txt
 
       - name: Build and publish Ximera courses
         env:

@@ -338,3 +338,6 @@ gpgkey
 
 # File used to update DevEnv config-files  (xmlatex updateDevEnv)
 xmDevEnvFiles.tgz
+
+## Restbestanden van de map-koppeling met Claude (FUSE)
+.fuse_hidden*

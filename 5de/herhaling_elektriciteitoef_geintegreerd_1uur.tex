@@ -1,0 +1,656 @@
+\documentclass{ximera}
+%geschreven 19/11/26
+%1 uur: H1-H4, zonder kinetische energie, equipotentiaaloppervlakken en materie in een veld
+\title{Herhaling: vraagstukken over meerdere hoofdstukken}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+    Vraagstukken die leerstof van de elektrische krachtwerking, het elektrisch veld, de potentiaal en gemengde schakelingen combineren.
+\end{abstract}
+\maketitle
+
+%———————————————————————————————————————
+% GEÏNTEGREERDE HERHALINGSOEFENINGEN H1-H4 (1 uur)
+% Elke oefening combineert minstens twee hoofdstukken (zie commentaar).
+% Van makkelijk naar moeilijk.
+%———————————————————————————————————————
+\section{Vraagstukken over meerdere hoofdstukken}
+
+In elk vraagstuk hieronder heb je leerstof uit meer dan één hoofdstuk nodig. De deelvragen bouwen op elkaar verder: gebruik je resultaat van een vorige deelvraag in de volgende.
+
+%———————————————————————————————————————
+% GEÏNTEGREERD 1 (H1 + H2): behoud van lading, coulombkracht, veld van twee gelijke ladingen
+\begin{exercise}
+    Twee identieke metalen bolletjes $A$ en $B$ hangen aan een isolerend draadje. Bolletje $A$ heeft een lading van $+8{,}0 \, \mathrm{nC}$, bolletje $B$ een lading van $-2{,}0 \, \mathrm{nC}$. Je laat de bolletjes elkaar even raken en brengt ze daarna op $20 \, \mathrm{cm}$ van elkaar. Beschouw de bolletjes als puntladingen.
+
+    \begin{question}
+        Bereken de lading van elk bolletje na het contact.
+
+        \[ Q_A = Q_B = \answer[tolerance=0.08,onlineshowanswerbutton]{3.0} \cdot 10^{-9} \, \mathrm{C} \]
+
+        \begin{hint}
+            Hoe groot is de totale lading van de twee bolletjes samen, voor en na het contact?
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & Q_A = +8{,}0 \cdot 10^{-9} \, \mathrm{C} & & Q_B = -2{,}0 \cdot 10^{-9} \, \mathrm{C}
+            \end{align*}
+
+            \underline{Gevraagd:} $Q_A'$ en $Q_B'$
+
+            \underline{Oplossing:}\\
+            Volgens de wet van behoud van lading blijft de totale lading gelijk:
+            \begin{align*}
+                Q_{\text{tot}} = Q_A + Q_B = +8{,}0 \cdot 10^{-9} \, \mathrm{C} + (-2{,}0 \cdot 10^{-9} \, \mathrm{C}) = +6{,}0 \cdot 10^{-9} \, \mathrm{C}
+            \end{align*}
+            De bolletjes zijn identieke geleiders, dus de totale lading verdeelt zich gelijk over beide:
+            \begin{align*}
+                Q_A' = Q_B' = \frac{Q_{\text{tot}}}{2} = \frac{+6{,}0 \cdot 10^{-9} \, \mathrm{C}}{2} = \boxed{+3{,}0 \cdot 10^{-9} \, \mathrm{C}}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Hoeveel elektronen zijn er tijdens het contact overgegaan en in welke zin?
+
+        \[ n = \answer[tolerance=0.08,onlineshowanswerbutton]{3.1} \cdot 10^{10} \]
+
+        De elektronen gaan van \wordChoice{\choice{$A$ naar $B$}\choice[correct]{$B$ naar $A$}}.
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & Q_B = -2{,}0 \cdot 10^{-9} \, \mathrm{C} & & Q_B' = +3{,}0 \cdot 10^{-9} \, \mathrm{C} & & e = 1{,}60 \cdot 10^{-19} \, \mathrm{C}
+            \end{align*}
+
+            \underline{Gevraagd:} $n$
+
+            \underline{Oplossing:}\\
+            Enkel elektronen kunnen zich verplaatsen. De lading van $B$ stijgt van $-2{,}0 \, \mathrm{nC}$ naar $+3{,}0 \, \mathrm{nC}$: $B$ heeft dus elektronen afgegeven aan $A$. De verandering van de lading van $B$ is:
+            \begin{align*}
+                \Delta Q_B = Q_B' - Q_B = +3{,}0 \cdot 10^{-9} \, \mathrm{C} - (-2{,}0 \cdot 10^{-9} \, \mathrm{C}) = +5{,}0 \cdot 10^{-9} \, \mathrm{C}
+            \end{align*}
+            Elk elektron draagt een lading met grootte $e$:
+            \begin{align*}
+                n = \frac{|\Delta Q_B|}{e} = \frac{5{,}0 \cdot 10^{-9} \, \mathrm{C}}{1{,}60 \cdot 10^{-19} \, \mathrm{C}} = \boxed{3{,}1 \cdot 10^{10}}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken de grootte van de elektrische kracht tussen de bolletjes op $20 \, \mathrm{cm}$ van elkaar.
+
+        \[ F_{AB} = \answer[tolerance=0.05,onlineshowanswerbutton]{2.0} \cdot 10^{-6} \, \mathrm{N} \]
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & Q_A' = Q_B' = +3{,}0 \cdot 10^{-9} \, \mathrm{C} & & r = 20 \, \mathrm{cm} = 0{,}20 \, \mathrm{m}
+            \end{align*}
+
+            \underline{Gevraagd:} $F_{AB}$
+
+            \underline{Oplossing:}
+            \begin{align*}
+                F_{AB} &= k \cdot \frac{|Q_A'| \cdot |Q_B'|}{r^2} \\
+                &= 8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot \frac{3{,}0 \cdot 10^{-9} \, \mathrm{C} \cdot 3{,}0 \cdot 10^{-9} \, \mathrm{C}}{(0{,}20 \, \mathrm{m})^2} = \boxed{2{,}0 \cdot 10^{-6} \, \mathrm{N}}
+            \end{align*}
+            Beide bolletjes zijn nu positief, dus ze stoten elkaar af.
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Hoe groot is het totale elektrisch veld in het midden tussen de twee bolletjes?
+
+        \begin{multipleChoice}
+            \choice[correct]{Nul.}
+            \choice{Twee keer het veld van één bolletje.}
+            \choice{Even groot als het veld van één bolletje.}
+        \end{multipleChoice}
+
+        \begin{solution}\nl
+            In het midden liggen beide bolletjes op dezelfde afstand en hebben ze dezelfde lading. Hun velden zijn dus even groot. Beide ladingen zijn positief, dus elk veld wijst weg van zijn eigen bolletje: de velden zijn tegengesteld en heffen elkaar op.
+        \end{solution}
+    \end{question}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% GEÏNTEGREERD 2 (H1 + H2): coulombkracht, veld als kracht per lading, nulpunt van het veld
+\begin{exercise}
+    Twee puntladingen $Q_1 = +6{,}0 \, \mathrm{nC}$ en $Q_2 = -2{,}0 \, \mathrm{nC}$ liggen op $12 \, \mathrm{cm}$ van elkaar op een rechte lijn.
+
+    \begin{question}
+        Bereken de grootte van de kracht die $Q_1$ op $Q_2$ uitoefent.
+
+        \[ F_{12} = \answer[tolerance=0.2,onlineshowanswerbutton]{7.5} \cdot 10^{-6} \, \mathrm{N} \]
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & Q_1 = +6{,}0 \cdot 10^{-9} \, \mathrm{C} & & Q_2 = -2{,}0 \cdot 10^{-9} \, \mathrm{C} & & r_{12} = 12 \, \mathrm{cm} = 0{,}12 \, \mathrm{m}
+            \end{align*}
+
+            \underline{Gevraagd:} $F_{12}$
+
+            \underline{Oplossing:}
+            \begin{align*}
+                F_{12} &= k \cdot \frac{|Q_1| \cdot |Q_2|}{r_{12}^2} \\
+                &= 8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot \frac{6{,}0 \cdot 10^{-9} \, \mathrm{C} \cdot 2{,}0 \cdot 10^{-9} \, \mathrm{C}}{(0{,}12 \, \mathrm{m})^2} = \boxed{7{,}5 \cdot 10^{-6} \, \mathrm{N}}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken de grootte van het elektrisch veld van $Q_1$ op de plaats van $Q_2$.
+
+        \[ E_1 = \answer[tolerance=0.09,onlineshowanswerbutton]{3.7} \cdot 10^{3} \, \mathrm{N/C} \]
+
+        \begin{hint}
+            Er zijn twee manieren: met de kracht uit de vorige deelvraag of met de formule voor het veld van een puntlading. Welke lading is hier de bronlading en welke de testlading?
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & F_{12} = 7{,}49 \cdot 10^{-6} \, \mathrm{N} & & Q_t = Q_2 = -2{,}0 \cdot 10^{-9} \, \mathrm{C}
+            \end{align*}
+
+            \underline{Gevraagd:} $E_1$ op de plaats van $Q_2$
+
+            \underline{Oplossing:}\\
+            $Q_1$ is de bronlading en $Q_2$ de testlading. Het veld is de kracht per eenheid van lading:
+            \begin{align*}
+                E_1 = \frac{F_{12}}{|Q_2|} = \frac{7{,}49 \cdot 10^{-6} \, \mathrm{N}}{2{,}0 \cdot 10^{-9} \, \mathrm{C}} = \boxed{3{,}7 \cdot 10^{3} \, \mathrm{N/C}}
+            \end{align*}
+            Controle met het veld van een puntlading:
+            \begin{align*}
+                E_1 = k \frac{|Q_1|}{r^2} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 6{,}0 \cdot 10^{-9} \, \mathrm{C}}{(0{,}12 \, \mathrm{m})^2} = 3{,}7 \cdot 10^{3} \, \mathrm{N/C}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Het veld van $Q_1$ op de plaats van $Q_2$ en de kracht op $Q_2$ hebben
+        \wordChoice{\choice{dezelfde zin}\choice[correct]{een tegengestelde zin}}.
+
+        \begin{solution}\nl
+            $Q_2$ is negatief. Op een negatieve lading werkt een kracht tegengesteld aan het veld. Het veld van $Q_1$ wijst weg van $Q_1$, de kracht op $Q_2$ wijst naar $Q_1$ toe: de ladingen trekken elkaar aan.
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Op de lijn door de twee ladingen ligt één punt waar het totale elektrisch veld nul is. Waar ligt dat punt?
+
+        \begin{multipleChoice}
+            \choice{Tussen de twee ladingen.}
+            \choice{Aan de buitenkant, aan de kant van $Q_1$.}
+            \choice[correct]{Aan de buitenkant, aan de kant van $Q_2$.}
+        \end{multipleChoice}
+
+        \begin{solution}\nl
+            Tussen twee ladingen met een tegengesteld teken wijzen beide velden in dezelfde zin: ze kunnen elkaar daar niet opheffen. Buiten de ladingen zijn de velden wel tegengesteld. Om even groot te zijn, moet het punt dichter bij de kleinste lading liggen, dus aan de kant van $Q_2$.
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken de afstand $x$ van dat punt tot $Q_2$.
+
+        \[ x = \answer[tolerance=0.004,onlineshowanswerbutton]{0.16} \, \mathrm{m} \]
+
+        \begin{hint}
+            Als het punt op een afstand $x$ van $Q_2$ ligt, hoe ver ligt het dan van $Q_1$?
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & Q_1 = +6{,}0 \cdot 10^{-9} \, \mathrm{C} & & Q_2 = -2{,}0 \cdot 10^{-9} \, \mathrm{C} & & d = 0{,}12 \, \mathrm{m}
+            \end{align*}
+
+            \underline{Gevraagd:} $x$, de afstand tot $Q_2$ waar $E_{\text{tot}} = 0$
+
+            \underline{Oplossing:}\\
+            Het punt ligt op een afstand $x$ van $Q_2$ en op een afstand $d + x$ van $Q_1$. Daar zijn de twee velden even groot:
+            \begin{align*}
+                k \frac{|Q_1|}{(d+x)^2} &= k \frac{|Q_2|}{x^2} \\
+                \left(\frac{d+x}{x}\right)^2 &= \frac{|Q_1|}{|Q_2|} = \frac{6{,}0 \cdot 10^{-9} \, \mathrm{C}}{2{,}0 \cdot 10^{-9} \, \mathrm{C}} = 3{,}0 \\
+                \frac{d+x}{x} &= \sqrt{3{,}0} = 1{,}73
+            \end{align*}
+            Hieruit volgt $d + x = 1{,}73 \, x$, dus $d = 0{,}73 \, x$ en
+            \begin{align*}
+                x = \frac{d}{\sqrt{3{,}0} - 1} = \frac{0{,}12 \, \mathrm{m}}{0{,}73} = \boxed{1{,}6 \cdot 10^{-1} \, \mathrm{m}}
+            \end{align*}
+        \end{solution}
+    \end{question}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% GEÏNTEGREERD 3 (H2 + H3): homogeen veld met figuur, kracht, potentiaal, spanning en arbeid
+\begin{exercise}
+    Twee verticale evenwijdige platen staan op $10 \, \mathrm{cm}$ van elkaar. De linkerplaat is positief, de rechterplaat negatief. Tussen de platen staat een spanning van $50 \, \mathrm{V}$. De punten $A$, $B$ en $C$ liggen tussen de platen, zoals op de figuur hieronder. Het referentiepunt ligt op de negatieve plaat. In $A$ bevindt zich een lading $Q = -4{,}0 \, \mathrm{nC}$.
+
+    \begin{center}
+            \begin{tikzpicture}
+                \draw[thick] (0,-1.6) -- (0,1.6);
+                \draw[thick] (5,-1.6) -- (5,1.6);
+                \foreach \y in {-1.2,-0.6,0,0.6,1.2} {
+                    \node[left] at (-0.1,\y) {$+$};
+                    \node[right] at (5.1,\y) {$-$};
+                    \draw[Eveldlijn] (0,\y) -- (5,\y);
+                }
+                \fill (1,0.9) circle (1.5pt) node[right=2pt] {$A$};
+                \fill (3.5,0.9) circle (1.5pt) node[right=2pt] {$B$};
+                \fill (3.5,-0.9) circle (1.5pt) node[right=2pt] {$C$};
+                \draw[<->] (0,-2.0) -- (1,-2.0) node[midway,below] {$2{,}0\,\mathrm{cm}$};
+                \draw[<->] (0,-2.7) -- (3.5,-2.7) node[midway,below] {$7{,}0\,\mathrm{cm}$};
+                \draw[<->] (0,-3.4) -- (5,-3.4) node[midway,below] {$10\,\mathrm{cm}$};
+                \draw[dashed, gray] (1,0.9) -- (1,-2.0);
+                \draw[dashed, gray] (3.5,-0.9) -- (3.5,-2.7);
+            \end{tikzpicture}
+    \end{center}
+    De afstanden op de figuur zijn gemeten vanaf de positieve plaat.
+
+    \begin{question}
+        Bereken de grootte van het elektrisch veld tussen de platen.
+
+        \[ E = \answer[tolerance=10,onlineshowanswerbutton]{500} \, \mathrm{N/C} \]
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & U = 50 \, \mathrm{V} & & \ell = 10 \, \mathrm{cm} = 0{,}10 \, \mathrm{m}
+            \end{align*}
+
+            \underline{Gevraagd:} $E$
+
+            \underline{Oplossing:}
+            \begin{align*}
+                E = \frac{U}{\ell} = \frac{50 \, \mathrm{V}}{0{,}10 \, \mathrm{m}} = \boxed{5{,}0 \cdot 10^{2} \, \mathrm{N/C}}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken de grootte van de elektrische kracht op de lading in $A$.
+
+        \[ F_e = \answer[tolerance=0.05,onlineshowanswerbutton]{2.0} \cdot 10^{-6} \, \mathrm{N} \]
+
+        De kracht wijst naar de \wordChoice{\choice[correct]{positieve plaat}\choice{negatieve plaat}}.
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & Q = -4{,}0 \cdot 10^{-9} \, \mathrm{C} & & E = 5{,}0 \cdot 10^{2} \, \mathrm{N/C}
+            \end{align*}
+
+            \underline{Gevraagd:} $F_e$
+
+            \underline{Oplossing:}
+            \begin{align*}
+                F_e = |Q| \cdot E = 4{,}0 \cdot 10^{-9} \, \mathrm{C} \cdot 5{,}0 \cdot 10^{2} \, \frac{\mathrm{N}}{\mathrm{C}} = \boxed{2{,}0 \cdot 10^{-6} \, \mathrm{N}}
+            \end{align*}
+            De lading is negatief, dus de kracht is tegengesteld aan het veld: naar links, naar de positieve plaat.
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken de potentiaal in $A$ en in $B$.
+
+        \[ V_A = \answer[tolerance=1,onlineshowanswerbutton]{40} \, \mathrm{J/C} \qquad V_B = \answer[tolerance=0.4,onlineshowanswerbutton]{15} \, \mathrm{J/C} \]
+
+        \begin{hint}
+            De afstanden op de figuur zijn gemeten vanaf de positieve plaat. Ten opzichte van welke plaat heb je de afstand nodig?
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & E = 5{,}0 \cdot 10^{2} \, \mathrm{N/C} \\
+                & d_A = 10 \, \mathrm{cm} - 2{,}0 \, \mathrm{cm} = 0{,}080 \, \mathrm{m} & & d_B = 10 \, \mathrm{cm} - 7{,}0 \, \mathrm{cm} = 0{,}030 \, \mathrm{m}
+            \end{align*}
+
+            \underline{Gevraagd:} $V_A$ en $V_B$
+
+            \underline{Oplossing:}\\
+            De potentiaal hangt af van de afstand tot de negatieve plaat (het referentiepunt):
+            \begin{align*}
+                V_A &= E \cdot d_A = 5{,}0 \cdot 10^{2} \, \frac{\mathrm{N}}{\mathrm{C}} \cdot 0{,}080 \, \mathrm{m} = \boxed{4{,}0 \cdot 10^{1} \, \mathrm{J/C}} \\
+                V_B &= E \cdot d_B = 5{,}0 \cdot 10^{2} \, \frac{\mathrm{N}}{\mathrm{C}} \cdot 0{,}030 \, \mathrm{m} = \boxed{1{,}5 \cdot 10^{1} \, \mathrm{J/C}}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        De lading beweegt van $A$ naar $B$. Bereken de arbeid die het elektrisch veld daarbij verricht.
+
+        \[ W_{A \to B} = \answer[tolerance=0.03,onlineshowanswerbutton]{-1.0} \cdot 10^{-7} \, \mathrm{J} \]
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & Q = -4{,}0 \cdot 10^{-9} \, \mathrm{C} & & V_A = 40 \, \mathrm{J/C} & & V_B = 15 \, \mathrm{J/C}
+            \end{align*}
+
+            \underline{Gevraagd:} $W_{A \to B}$
+
+            \underline{Oplossing:}\\
+            Eerst de spanning tussen $A$ en $B$:
+            \begin{align*}
+                U_{AB} = V_A - V_B = 40 \, \mathrm{J/C} - 15 \, \mathrm{J/C} = 25 \, \mathrm{V}
+            \end{align*}
+            De arbeid van het veld:
+            \begin{align*}
+                W_{A \to B} = Q \cdot U_{AB} = -4{,}0 \cdot 10^{-9} \, \mathrm{C} \cdot 25 \, \mathrm{V} = \boxed{-1{,}0 \cdot 10^{-7} \, \mathrm{J}}
+            \end{align*}
+            De arbeid is negatief: de lading beweegt van $A$ naar $B$ tegen de elektrische kracht in (die wijst naar de positieve plaat). Er is dus een externe kracht nodig. Dat klopt met de vorige deelvraag over de zin van de kracht.
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Daarna beweegt de lading van $B$ naar $C$. De arbeid die het veld daarbij verricht, is
+        \wordChoice{\choice{positief}\choice{negatief}\choice[correct]{nul}}.
+
+        \begin{solution}\nl
+            $B$ en $C$ liggen op dezelfde afstand van de negatieve plaat. Met $V = E \cdot d$ hebben ze dus dezelfde potentiaal. De spanning $U_{BC}$ is nul en dus ook de arbeid $W = Q \cdot U_{BC}$. De verplaatsing staat loodrecht op de elektrische kracht.
+        \end{solution}
+    \end{question}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% GEÏNTEGREERD 4 (H2 + H3 + H4): veld in een stroomdraad, kracht op een elektron
+\begin{exercise}
+    Een rechte metalen draad van $2{,}0\,\mathrm{m}$ lang heeft een weerstand van $4{,}0\,\mathrm{\Omega}$. Door de draad loopt een stroom van $1{,}5\,\mathrm{A}$. In de draad heerst een homogeen elektrisch veld.
+
+    \begin{question}
+        Bereken de spanning over de draad.
+
+        \[ U = \answer[tolerance=0.2,onlineshowanswerbutton]{6.0} \, \mathrm{V} \]
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & R = 4{,}0\,\mathrm{\Omega} & & I = 1{,}5\,\mathrm{A} & & \ell = 2{,}0\,\mathrm{m}
+            \end{align*}
+
+            \underline{Gevraagd:} $U$
+
+            \underline{Oplossing:}\\
+            Volgens de wet van Ohm:
+            \begin{align*}
+                U = R \cdot I = 4{,}0\,\mathrm{\Omega} \cdot 1{,}5\,\mathrm{A} = \boxed{6{,}0\,\mathrm{V}}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken de grootte van het elektrisch veld in de draad.
+
+        \[ E = \answer[tolerance=0.08,onlineshowanswerbutton]{3.0} \, \mathrm{N/C} \]
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & U = 6{,}0\,\mathrm{V} & & \ell = 2{,}0\,\mathrm{m}
+            \end{align*}
+
+            \underline{Gevraagd:} $E$
+
+            \underline{Oplossing:}\\
+            Over een geleider met lengte $\ell$ in een homogeen veld geldt $U = E \cdot \ell$:
+            \begin{align*}
+                E = \frac{U}{\ell} = \frac{6{,}0\,\mathrm{V}}{2{,}0\,\mathrm{m}} = \boxed{3{,}0\,\mathrm{N/C}}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken de grootte van de elektrische kracht op één vrij elektron in de draad.
+
+        \[ F_e = \answer[tolerance=0.1,onlineshowanswerbutton]{4.8} \cdot 10^{-19} \, \mathrm{N} \]
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & |Q| = e = 1{,}60 \cdot 10^{-19}\,\mathrm{C} & & E = 3{,}0\,\mathrm{N/C}
+            \end{align*}
+
+            \underline{Gevraagd:} $F_e$
+
+            \underline{Oplossing:}
+            \begin{align*}
+                F_e = |Q| \cdot E = 1{,}60 \cdot 10^{-19}\,\mathrm{C} \cdot 3{,}0\,\frac{\mathrm{N}}{\mathrm{C}} = \boxed{4{,}8 \cdot 10^{-19}\,\mathrm{N}}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        De elektrische kracht op de vrije elektronen in de draad wijst
+        \wordChoice{\choice{in de zin van het elektrisch veld}\choice[correct]{tegen de zin van het elektrisch veld in}}.
+
+        \begin{solution}\nl
+            Elektronen zijn negatief. De kracht op een negatieve lading is tegengesteld aan het veld. De elektronen bewegen dus tegen het veld in, van de min- naar de pluspool. De afgesproken stroomzin is tegengesteld aan de beweging van de elektronen en heeft dus dezelfde zin als het veld.
+        \end{solution}
+    \end{question}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% GEÏNTEGREERD 5 (H2 + H3 + H4): platen aangesloten over een weerstand in een serieschakeling
+\begin{exercise}
+    Twee weerstanden $R_1 = 30\,\mathrm{\Omega}$ en $R_2 = 60\,\mathrm{\Omega}$ staan in serie op een bron van $18\,\mathrm{V}$. Twee evenwijdige metalen platen op $5{,}0\,\mathrm{mm}$ van elkaar zijn met draden verbonden met de twee uiteinden van $R_2$. Er loopt geen stroom tussen de platen.
+
+    \begin{question}
+        Bereken de spanning tussen de platen.
+
+        \[ U_2 = \answer[tolerance=0.3,onlineshowanswerbutton]{12} \, \mathrm{V} \]
+
+        \begin{hint}
+            De platen staan parallel met $R_2$. Welke spanning staat er dan tussen de platen?
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & R_1 = 30\,\mathrm{\Omega} & & R_2 = 60\,\mathrm{\Omega} & & U = 18\,\mathrm{V}
+            \end{align*}
+
+            \underline{Gevraagd:} $U_2$
+
+            \underline{Oplossing:}\\
+            De weerstanden staan in serie:
+            \begin{align*}
+                R_{\text{s}} &= R_1 + R_2 = 30\,\mathrm{\Omega} + 60\,\mathrm{\Omega} = 90\,\mathrm{\Omega} \\
+                I &= \frac{U}{R_{\text{s}}} = \frac{18\,\mathrm{V}}{90\,\mathrm{\Omega}} = 0{,}20\,\mathrm{A}
+            \end{align*}
+            De platen zijn verbonden met de uiteinden van $R_2$, dus tussen de platen staat dezelfde spanning als over $R_2$:
+            \begin{align*}
+                U_2 = R_2 \cdot I = 60\,\mathrm{\Omega} \cdot 0{,}20\,\mathrm{A} = \boxed{1{,}2 \cdot 10^{1}\,\mathrm{V}}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken de grootte van het homogeen elektrisch veld tussen de platen.
+
+        \[ E = \answer[tolerance=0.06,onlineshowanswerbutton]{2.4} \cdot 10^{3} \, \mathrm{N/C} \]
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & U_2 = 12\,\mathrm{V} & & \ell = 5{,}0\,\mathrm{mm} = 5{,}0 \cdot 10^{-3}\,\mathrm{m}
+            \end{align*}
+
+            \underline{Gevraagd:} $E$
+
+            \underline{Oplossing:}
+            \begin{align*}
+                E = \frac{U_2}{\ell} = \frac{12\,\mathrm{V}}{5{,}0 \cdot 10^{-3}\,\mathrm{m}} = \boxed{2{,}4 \cdot 10^{3}\,\mathrm{N/C}}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken de grootte van de elektrische kracht op een elektron tussen de platen.
+
+        \[ F_e = \answer[tolerance=0.1,onlineshowanswerbutton]{3.8} \cdot 10^{-16} \, \mathrm{N} \]
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & |Q| = e = 1{,}60 \cdot 10^{-19}\,\mathrm{C} & & E = 2{,}4 \cdot 10^{3}\,\mathrm{N/C}
+            \end{align*}
+
+            \underline{Gevraagd:} $F_e$
+
+            \underline{Oplossing:}
+            \begin{align*}
+                F_e = |Q| \cdot E = 1{,}60 \cdot 10^{-19}\,\mathrm{C} \cdot 2{,}4 \cdot 10^{3}\,\frac{\mathrm{N}}{\mathrm{C}} = \boxed{3{,}8 \cdot 10^{-16}\,\mathrm{N}}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Het elektron bevindt zich in het midden tussen de platen. Bereken de potentiaal in dat punt en de potentiële elektrische energie van het elektron. Het referentiepunt ligt op de negatieve plaat.
+
+        \[ V = \answer[tolerance=0.2,onlineshowanswerbutton]{6.0} \, \mathrm{J/C} \qquad E_{\text{pot}} = \answer[tolerance=0.2,onlineshowanswerbutton]{-9.6} \cdot 10^{-19} \, \mathrm{J} \]
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & E = 2{,}4 \cdot 10^{3}\,\mathrm{N/C} & & d = \frac{5{,}0\,\mathrm{mm}}{2} = 2{,}5 \cdot 10^{-3}\,\mathrm{m} & & Q = -1{,}60 \cdot 10^{-19}\,\mathrm{C}
+            \end{align*}
+
+            \underline{Gevraagd:} $V$ en $E_{\text{pot}}$
+
+            \underline{Oplossing:}
+            \begin{align*}
+                V &= E \cdot d = 2{,}4 \cdot 10^{3}\,\frac{\mathrm{N}}{\mathrm{C}} \cdot 2{,}5 \cdot 10^{-3}\,\mathrm{m} = \boxed{6{,}0\,\mathrm{J/C}} \\
+                E_{\text{pot}} &= Q \cdot V = -1{,}60 \cdot 10^{-19}\,\mathrm{C} \cdot 6{,}0\,\mathrm{J/C} = \boxed{-9{,}6 \cdot 10^{-19}\,\mathrm{J}}
+            \end{align*}
+            De potentiaal in het midden is de helft van de spanning tussen de platen. De potentiële energie is negatief omdat het elektron negatief is.
+        \end{solution}
+    \end{question}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% GEÏNTEGREERD 6 (H3 + H4): gemengde schakeling, vermogen en arbeid op één elektron
+\begin{exercise}
+    In de schakeling is $R_1 = 20\,\mathrm{\Omega}$ en zijn $R_2 = R_3 = 40\,\mathrm{\Omega}$. De bron levert $12\,\mathrm{V}$.
+
+    \begin{center}
+        \begin{circuitikz}[european]
+            \draw (0,3) to[battery1, l=$U$] (0,0) -- (6,0);
+            \draw (0,3) to[R, l=$R_1$] (3,3) -- (6,3);
+            \draw (3,3) to[R, l=$R_2$, *-*] (3,0);
+            \draw (6,3) to[R, l=$R_3$] (6,0);
+        \end{circuitikz}
+    \end{center}
+
+    \begin{question}
+        Bereken de stroom door de bron.
+
+        \[ I = \answer[tolerance=0.008,onlineshowanswerbutton]{0.30} \, \mathrm{A} \]
+
+        \begin{hint}
+            Bereken eerst de totale weerstand. Welke twee weerstanden voeg je als eerste samen?
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & R_1 = 20\,\mathrm{\Omega} & & R_2 = R_3 = 40\,\mathrm{\Omega} & & U = 12\,\mathrm{V}
+            \end{align*}
+
+            \underline{Gevraagd:} $I$
+
+            \underline{Oplossing:}\\
+            $R_2$ en $R_3$ staan parallel en zijn gelijk:
+            \begin{align*}
+                R_{23} = \frac{40\,\mathrm{\Omega}}{2} = 20\,\mathrm{\Omega}
+            \end{align*}
+            Deze groep staat in serie met $R_1$:
+            \begin{align*}
+                R_{\text{tot}} &= R_1 + R_{23} = 20\,\mathrm{\Omega} + 20\,\mathrm{\Omega} = 40\,\mathrm{\Omega} \\
+                I &= \frac{U}{R_{\text{tot}}} = \frac{12\,\mathrm{V}}{40\,\mathrm{\Omega}} = \boxed{3{,}0 \cdot 10^{-1}\,\mathrm{A}}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken de spanning over $R_1$ en de stroom door $R_2$.
+
+        \[ U_1 = \answer[tolerance=0.2,onlineshowanswerbutton]{6.0} \, \mathrm{V} \qquad I_2 = \answer[tolerance=0.004,onlineshowanswerbutton]{0.15} \, \mathrm{A} \]
+
+        \begin{solution}\nl
+            \underline{Gevraagd:} $U_1$ en $I_2$
+
+            \underline{Oplossing:}\\
+            De volledige stroom loopt door $R_1$:
+            \begin{align*}
+                U_1 = R_1 \cdot I = 20\,\mathrm{\Omega} \cdot 0{,}30\,\mathrm{A} = \boxed{6{,}0\,\mathrm{V}}
+            \end{align*}
+            Over de parallelle groep staat de rest van de bronspanning:
+            \begin{align*}
+                U_{23} &= U - U_1 = 12\,\mathrm{V} - 6{,}0\,\mathrm{V} = 6{,}0\,\mathrm{V} \\
+                I_2 &= \frac{U_{23}}{R_2} = \frac{6{,}0\,\mathrm{V}}{40\,\mathrm{\Omega}} = \boxed{1{,}5 \cdot 10^{-1}\,\mathrm{A}}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken het vermogen dat $R_1$ omzet.
+
+        \[ P_1 = \answer[tolerance=0.05,onlineshowanswerbutton]{1.8} \, \mathrm{W} \]
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & U_1 = 6{,}0\,\mathrm{V} & & I = 0{,}30\,\mathrm{A}
+            \end{align*}
+
+            \underline{Gevraagd:} $P_1$
+
+            \underline{Oplossing:}
+            \begin{align*}
+                P_1 = U_1 \cdot I = 6{,}0\,\mathrm{V} \cdot 0{,}30\,\mathrm{A} = \boxed{1{,}8\,\mathrm{W}}
+            \end{align*}
+            Deze energie wordt in $R_1$ omgezet in warmte (Joule-effect).
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken de grootte van de arbeid die het elektrisch veld verricht op één elektron dat door $R_1$ gaat.
+
+        \[ W = \answer[tolerance=0.2,onlineshowanswerbutton]{9.6} \cdot 10^{-19} \, \mathrm{J} \]
+
+        \begin{hint}
+            Welke spanning doorloopt het elektron? Welk verband tussen lading, spanning en arbeid ken je uit het hoofdstuk over potentiaal?
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & |Q| = e = 1{,}60 \cdot 10^{-19}\,\mathrm{C} & & U_1 = 6{,}0\,\mathrm{V}
+            \end{align*}
+
+            \underline{Gevraagd:} $W$
+
+            \underline{Oplossing:}\\
+            Het elektron doorloopt de spanning $U_1$ over $R_1$. De spanning is de arbeid per eenheid van lading:
+            \begin{align*}
+                W = |Q| \cdot U_1 = 1{,}60 \cdot 10^{-19}\,\mathrm{C} \cdot 6{,}0\,\mathrm{V} = \boxed{9{,}6 \cdot 10^{-19}\,\mathrm{J}}
+            \end{align*}
+            Elk elektron dat door $R_1$ gaat, geeft daar deze energie af als warmte.
+        \end{solution}
+    \end{question}
+\end{exercise}
+%———————————————————————————————————————
+
+\end{document}

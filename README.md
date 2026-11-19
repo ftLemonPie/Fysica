@@ -285,6 +285,8 @@ bijwerken (`5de/inleiding_stand_51.tex` voor 1 uur, `5de/inleiding_stand_52.tex`
     - [x] potentiaal (_1 en _2)
     - [x] gemengde schakelingen (_1, enkel 1 uur)
 - [ ] Herhalignsoefeningen per H en per deel
+    - [x] H1-H3 elektriciteit, 2 uur (herhaling_elektriciteitoef_*, geschreven 19/11/26, niet nagekeken)
+    - [x] H1-H4 elektriciteit, 1 uur (herhaling_elektriciteitoef_*_1uur, geschreven 19/11/26, niet nagekeken)
 - [ ] oefeningen toelatingsproeven
 - [ ] Appendix nummering herstarten romeins.
 - [ ] verwijzingen nakijken.

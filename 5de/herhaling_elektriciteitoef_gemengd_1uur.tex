@@ -1,0 +1,738 @@
+\documentclass{ximera}
+%geschreven 19/11/26
+%1 uur: H1-H4 (elektrische krachtwerking tot gemengde schakelingen), zonder kinetische energie en equipotentiaaloppervlakken
+\title{Herhaling: gemengde vragen en vraagstukken}
+\author{Daan Lipkens}
+
+\begin{document}
+\begin{abstract}
+    Vragen en vraagstukken over elektrische krachtwerking, elektrisch veld, potentiaal en gemengde schakelingen, door elkaar.
+\end{abstract}
+\maketitle
+
+%———————————————————————————————————————
+% GEMENGDE HERHALINGSOEFENINGEN H1-H4 (1 uur)
+% De leerstof staat bewust door elkaar. Het onderwerp staat enkel in de commentaar.
+% Grote lijn: van makkelijk naar moeilijk.
+%———————————————————————————————————————
+\section{Gemengde oefeningen}
+
+De oefeningen hieronder gaan over de elektrische krachtwerking, het elektrisch veld, de potentiaal en gemengde schakelingen, in willekeurige volgorde. Bepaal bij elke oefening eerst zelf welke leerstof je nodig hebt.
+
+%———————————————————————————————————————
+% GEMENGD 1 (H1): lading uit aantal elektronen
+\begin{exercise}
+    Na het kammen van droog haar heeft een plastic kam $2{,}5 \cdot 10^{10}$ elektronen opgenomen. Bereken de lading van de kam.
+
+    \[ Q = \answer[tolerance=0.1,onlineshowanswerbutton]{-4.0} \cdot 10^{-9} \, \mathrm{C} \]
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & n = 2{,}5 \cdot 10^{10} & & e = 1{,}60 \cdot 10^{-19} \, \mathrm{C}
+        \end{align*}
+
+        \underline{Gevraagd:} $Q$
+
+        \underline{Oplossing:}\\
+        Elk opgenomen elektron brengt een lading $-e$ mee. De kam krijgt dus een negatieve lading:
+        \begin{align*}
+            Q &= -n \cdot e \\
+            &= -2{,}5 \cdot 10^{10} \cdot 1{,}60 \cdot 10^{-19} \, \mathrm{C} = \boxed{-4{,}0 \cdot 10^{-9} \, \mathrm{C}}
+        \end{align*}
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% GEMENGD 2 (H4): wet van Ohm
+\begin{exercise}
+    Door een weerstand van $47\,\mathrm{\Omega}$ loopt een stroom van $250\,\mathrm{mA}$. Bereken de spanning over de weerstand.
+
+    \[ U = \answer[tolerance=0.3,onlineshowanswerbutton]{12} \, \mathrm{V} \]
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & R = 47\,\mathrm{\Omega} & & I = 250\,\mathrm{mA} = 0{,}250\,\mathrm{A}
+        \end{align*}
+
+        \underline{Gevraagd:} $U$
+
+        \underline{Oplossing:}
+        \begin{align*}
+            U = R \cdot I = 47\,\mathrm{\Omega} \cdot 0{,}250\,\mathrm{A} = 11{,}75\,\mathrm{V} \simeq \boxed{1{,}2 \cdot 10^{1}\,\mathrm{V}}
+        \end{align*}
+        De weerstand heeft $2$ beduidende cijfers, dus ook het antwoord.
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% GEMENGD 3 (H2): andere testlading in hetzelfde punt
+\begin{question}
+    In een punt $P$ werkt op een lading van $+2{,}0 \, \mathrm{nC}$ een elektrische kracht met grootte $F$ naar rechts. Je vervangt die lading door een lading van $-6{,}0 \, \mathrm{nC}$ op dezelfde plaats. Welke kracht werkt nu op de lading?
+
+    \begin{multipleChoice}
+        \choice{Een kracht met grootte $F$ naar links.}
+        \choice{Een kracht met grootte $3F$ naar rechts.}
+        \choice[correct]{Een kracht met grootte $3F$ naar links.}
+        \choice{Een kracht met grootte $F/3$ naar links.}
+    \end{multipleChoice}
+
+    \begin{solution}\nl
+        Het elektrisch veld in $P$ hangt enkel af van de bronladingen, niet van de lading die je in $P$ plaatst. Het veld blijft dus gelijk. Uit $\vec{F}_e = Q \cdot \vec{E}$ volgt dat de grootte van de kracht evenredig is met $|Q|$: de lading wordt $3$ keer zo groot, dus ook de kracht. Omdat de nieuwe lading negatief is, is de kracht tegengesteld aan het veld. Het veld wijst naar rechts (de kracht op de positieve lading wees naar rechts), dus de nieuwe kracht wijst naar links.
+    \end{solution}
+\end{question}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% GEMENGD 4 (H3): potentiaal en potentiële energie langs de veldlijnen
+\begin{question}
+    Je verplaatst je in een homogeen elektrisch veld tussen twee geladen platen.
+
+    Als je je verplaatst in de zin van de veldlijnen, dan \wordChoice{\choice{stijgt}\choice[correct]{daalt}\choice{verandert niet}} de potentiaal.
+
+    Een positieve lading die zich in de zin van de veldlijnen verplaatst, krijgt een \wordChoice{\choice{grotere}\choice[correct]{kleinere}\choice{gelijke}} potentiële energie.
+
+    \begin{solution}\nl
+        De potentiaal $V = E \cdot d$ hangt af van de afstand $d$ tot de negatieve plaat. In de zin van de veldlijnen kom je dichter bij de negatieve plaat: $d$ wordt kleiner, dus de potentiaal daalt. Voor een positieve lading volgt uit $E_{\text{pot}} = Q \cdot E \cdot d$ dat ook de potentiële energie daalt.
+    \end{solution}
+\end{question}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% GEMENGD 5 (H4): serieschakeling, stroom en spanningsdeling
+\begin{exercise}
+    Twee weerstanden $R_1 = 15\,\mathrm{\Omega}$ en $R_2 = 25\,\mathrm{\Omega}$ staan in serie op een bron van $12\,\mathrm{V}$.
+
+    \begin{question}
+        Bereken de stroom door de schakeling.
+
+        \[ I = \answer[tolerance=0.008,onlineshowanswerbutton]{0.30} \, \mathrm{A} \]
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & R_1 = 15\,\mathrm{\Omega} & & R_2 = 25\,\mathrm{\Omega} & & U = 12\,\mathrm{V}
+            \end{align*}
+
+            \underline{Gevraagd:} $I$
+
+            \underline{Oplossing:}\\
+            In serie tellen de weerstanden op:
+            \begin{align*}
+                R_{\text{s}} &= R_1 + R_2 = 15\,\mathrm{\Omega} + 25\,\mathrm{\Omega} = 40\,\mathrm{\Omega} \\
+                I &= \frac{U}{R_{\text{s}}} = \frac{12\,\mathrm{V}}{40\,\mathrm{\Omega}} = \boxed{3{,}0 \cdot 10^{-1}\,\mathrm{A}}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken de spanning over $R_2$.
+
+        \[ U_2 = \answer[tolerance=0.2,onlineshowanswerbutton]{7.5} \, \mathrm{V} \]
+
+        \begin{solution}\nl
+            \underline{Gevraagd:} $U_2$
+
+            \underline{Oplossing:}\\
+            Door beide weerstanden loopt dezelfde stroom:
+            \begin{align*}
+                U_2 = R_2 \cdot I = 25\,\mathrm{\Omega} \cdot 0{,}30\,\mathrm{A} = \boxed{7{,}5\,\mathrm{V}}
+            \end{align*}
+            Controle: $U_1 = 15\,\mathrm{\Omega} \cdot 0{,}30\,\mathrm{A} = 4{,}5\,\mathrm{V}$ en $4{,}5\,\mathrm{V} + 7{,}5\,\mathrm{V} = 12\,\mathrm{V}$. De grootste weerstand krijgt de grootste spanning.
+        \end{solution}
+    \end{question}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% GEMENGD 6 (H1): wet van Coulomb, nC en cm
+\begin{exercise}
+    Twee kleine geladen bolletjes met lading $Q_1 = +3{,}0 \, \mathrm{nC}$ en $Q_2 = -5{,}0 \, \mathrm{nC}$ liggen op $4{,}0 \, \mathrm{cm}$ van elkaar.
+
+    \begin{question}
+        Bereken de grootte van de kracht die $Q_1$ op $Q_2$ uitoefent.
+
+        \[ F_{12} = \answer[tolerance=0.2,onlineshowanswerbutton]{8.4} \cdot 10^{-5} \, \mathrm{N} \]
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & Q_1 = +3{,}0 \cdot 10^{-9} \, \mathrm{C} & & Q_2 = -5{,}0 \cdot 10^{-9} \, \mathrm{C} & & r_{12} = 4{,}0 \, \mathrm{cm} = 4{,}0 \cdot 10^{-2} \, \mathrm{m}
+            \end{align*}
+
+            \underline{Gevraagd:} $F_{12}$
+
+            \underline{Oplossing:}\\
+            We passen de wet van Coulomb toe met de absolute waarden van de ladingen:
+            \begin{align*}
+                F_{12} &= k \cdot \frac{|Q_1| \cdot |Q_2|}{r_{12}^2} \\
+                &= 8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot \frac{3{,}0 \cdot 10^{-9} \, \mathrm{C} \cdot 5{,}0 \cdot 10^{-9} \, \mathrm{C}}{(4{,}0 \cdot 10^{-2} \, \mathrm{m})^2} \\
+                &= \boxed{8{,}4 \cdot 10^{-5} \, \mathrm{N}}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Trekken de bolletjes elkaar aan of stoten ze elkaar af?
+
+        \wordChoice{\choice[correct]{Ze trekken elkaar aan.}\choice{Ze stoten elkaar af.}}
+
+        \begin{solution}\nl
+            De ladingen hebben een tegengesteld teken, dus ze trekken elkaar aan.
+        \end{solution}
+    \end{question}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% GEMENGD 7 (H4): lampje losschroeven in parallel
+\begin{question}
+    Drie identieke lampjes staan parallel op een batterij. Je schroeft één lampje los. Wat gebeurt er met de twee andere lampjes?
+
+    \begin{multipleChoice}
+        \choice{Ze doven allebei.}
+        \choice{Ze branden feller.}
+        \choice[correct]{Ze blijven even fel branden.}
+        \choice{Ze branden zwakker.}
+    \end{multipleChoice}
+
+    \begin{solution}\nl
+        In een parallelschakeling heeft elk lampje een eigen pad en staat over elke tak dezelfde spanning, de spanning van de batterij. Die spanning verandert niet als je een tak onderbreekt. Door de andere lampjes loopt dus dezelfde stroom en ze branden even fel. Enkel de totale stroom uit de batterij wordt kleiner.
+    \end{solution}
+\end{question}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% GEMENGD 8 (H2): kracht op een elektron in een veld
+\begin{exercise}
+    Een elektron bevindt zich in een elektrisch veld met grootte $2{,}5 \, \mathrm{kN/C}$ dat naar het oosten wijst.
+
+    \begin{question}
+        Bereken de grootte van de elektrische kracht op het elektron.
+
+        \[ F_e = \answer[tolerance=0.1,onlineshowanswerbutton]{4.0} \cdot 10^{-16} \, \mathrm{N} \]
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & E = 2{,}5 \, \mathrm{kN/C} = 2{,}5 \cdot 10^{3} \, \mathrm{N/C} & & |Q| = e = 1{,}60 \cdot 10^{-19} \, \mathrm{C}
+            \end{align*}
+
+            \underline{Gevraagd:} $F_e$
+
+            \underline{Oplossing:}
+            \begin{align*}
+                F_e &= |Q| \cdot E \\
+                &= 1{,}60 \cdot 10^{-19} \, \mathrm{C} \cdot 2{,}5 \cdot 10^{3} \, \frac{\mathrm{N}}{\mathrm{C}} = \boxed{4{,}0 \cdot 10^{-16} \, \mathrm{N}}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        In welke zin wijst de kracht op het elektron?
+
+        \wordChoice{\choice{naar het oosten}\choice[correct]{naar het westen}\choice{naar het noorden}}
+
+        \begin{solution}\nl
+            Het elektron is negatief geladen. De kracht op een negatieve lading is tegengesteld aan het veld, dus naar het westen.
+        \end{solution}
+    \end{question}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% GEMENGD 9 (H3): potentiaal tussen platen, spanning en afstand tot de positieve plaat gegeven
+\begin{exercise}
+    Tussen twee evenwijdige platen op $6{,}0 \, \mathrm{cm}$ van elkaar staat een spanning van $90 \, \mathrm{V}$. Punt $P$ ligt tussen de platen, op $2{,}0 \, \mathrm{cm}$ van de positieve plaat. Bereken de potentiaal in $P$. Het referentiepunt ligt op de negatieve plaat.
+
+    \[ V_P = \answer[tolerance=2,onlineshowanswerbutton]{60} \, \mathrm{J/C} \]
+
+    \begin{hint}
+        Je kent de grootte van het veld tussen de platen nog niet. Hoe vind je die uit de gegevens?
+    \end{hint}
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & U = 90 \, \mathrm{V} & & \ell = 6{,}0 \, \mathrm{cm} = 6{,}0 \cdot 10^{-2} \, \mathrm{m} & & d_{\text{pos}} = 2{,}0 \, \mathrm{cm} = 2{,}0 \cdot 10^{-2} \, \mathrm{m}
+        \end{align*}
+
+        \underline{Gevraagd:} $V_P$
+
+        \underline{Oplossing:}\\
+        Het veld tussen de platen is homogeen. Uit $U = E \cdot \ell$ volgt de grootte van het veld:
+        \begin{align*}
+            E = \frac{U}{\ell} = \frac{90 \, \mathrm{V}}{6{,}0 \cdot 10^{-2} \, \mathrm{m}} = 1{,}5 \cdot 10^{3} \, \mathrm{N/C}
+        \end{align*}
+        De potentiaal hangt af van de afstand tot de negatieve plaat:
+        \begin{align*}
+            d_P &= \ell - d_{\text{pos}} = 6{,}0 \cdot 10^{-2} \, \mathrm{m} - 2{,}0 \cdot 10^{-2} \, \mathrm{m} = 4{,}0 \cdot 10^{-2} \, \mathrm{m} \\
+            V_P &= E \cdot d_P = 1{,}5 \cdot 10^{3} \, \frac{\mathrm{N}}{\mathrm{C}} \cdot 4{,}0 \cdot 10^{-2} \, \mathrm{m} = \boxed{6{,}0 \cdot 10^{1} \, \mathrm{J/C}}
+        \end{align*}
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% GEMENGD 10 (H4): vervangingsweerstand parallel
+\begin{exercise}
+    Twee weerstanden van $30\,\mathrm{\Omega}$ en $60\,\mathrm{\Omega}$ staan parallel. Bereken de vervangingsweerstand.
+
+    \[ R_{\text{p}} = \answer[tolerance=0.5,onlineshowanswerbutton]{20} \, \mathrm{\Omega} \]
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & R_1 = 30\,\mathrm{\Omega} & & R_2 = 60\,\mathrm{\Omega}
+        \end{align*}
+
+        \underline{Gevraagd:} $R_{\text{p}}$
+
+        \underline{Oplossing:}
+        \begin{align*}
+            \frac{1}{R_{\text{p}}} &= \frac{1}{R_1} + \frac{1}{R_2} = \frac{1}{30\,\mathrm{\Omega}} + \frac{1}{60\,\mathrm{\Omega}} = \frac{3}{60\,\mathrm{\Omega}} \\
+            R_{\text{p}} &= \frac{60\,\mathrm{\Omega}}{3} = \boxed{2{,}0 \cdot 10^{1}\,\mathrm{\Omega}}
+        \end{align*}
+        Zoals verwacht is $R_{\text{p}}$ kleiner dan de kleinste weerstand.
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% GEMENGD 11 (H1): elektroscoop bij nadering
+\begin{question}
+    Je brengt een positief geladen glazen staaf dicht bij de knop van een neutrale elektroscoop, zonder de knop aan te raken. Wat neem je waar?
+
+    \begin{multipleChoice}
+        \choice{De blaadjes blijven hangen, want er is geen contact.}
+        \choice[correct]{De blaadjes spreiden, want ze worden allebei positief.}
+        \choice{De blaadjes spreiden, want ze worden allebei negatief.}
+        \choice{De blaadjes spreiden en blijven gespreid als je de staaf weer wegneemt.}
+    \end{multipleChoice}
+
+    \begin{hint}
+        Welke ladingen kunnen zich in het metaal van de elektroscoop verplaatsen en in welke zin worden ze getrokken?
+    \end{hint}
+
+    \begin{solution}\nl
+        Door influentie worden de vrije elektronen in het metaal naar de knop getrokken, naar de positieve staaf toe. Onderaan in de blaadjes ontstaat een tekort aan elektronen: beide blaadjes worden positief en stoten elkaar af. Er is geen lading toegevoegd. Neem je de staaf weg, dan vloeien de elektronen terug en vallen de blaadjes weer.
+    \end{solution}
+\end{question}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% GEMENGD 12 (H2): afstand uit het veld van een puntlading
+\begin{exercise}
+    Een puntlading $Q = -5{,}0 \, \mathrm{nC}$ zit vast in de ruimte. Op welke afstand van de lading is de grootte van het elektrisch veld gelijk aan $2{,}0 \cdot 10^{3} \, \mathrm{N/C}$?
+
+    \[ r = \answer[tolerance=0.004,onlineshowanswerbutton]{0.15} \, \mathrm{m} \]
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & Q = -5{,}0 \cdot 10^{-9} \, \mathrm{C} & & E = 2{,}0 \cdot 10^{3} \, \mathrm{N/C}
+        \end{align*}
+
+        \underline{Gevraagd:} $r$
+
+        \underline{Oplossing:}\\
+        We vormen de formule voor het veld van een puntlading om naar $r$:
+        \begin{align*}
+            E = k \frac{|Q|}{r^2} \quad \Rightarrow \quad r &= \sqrt{\frac{k \cdot |Q|}{E}} \\
+            &= \sqrt{\frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 5{,}0 \cdot 10^{-9} \, \mathrm{C}}{2{,}0 \cdot 10^{3} \, \mathrm{N/C}}} \\
+            &= \boxed{1{,}5 \cdot 10^{-1} \, \mathrm{m}}
+        \end{align*}
+        Het teken van $Q$ speelt geen rol voor de grootte van het veld. Het bepaalt enkel de zin: het veld wijst naar de negatieve lading toe.
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% GEMENGD 13 (H4): vermogen waterkoker
+\begin{exercise}
+    Een waterkoker heeft een vermogen van $2{,}2\,\mathrm{kW}$ bij een spanning van $230\,\mathrm{V}$.
+
+    \begin{question}
+        Bereken de stroom door de waterkoker.
+
+        \[ I = \answer[tolerance=0.2,onlineshowanswerbutton]{9.6} \, \mathrm{A} \]
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & P = 2{,}2\,\mathrm{kW} = 2{,}2 \cdot 10^{3}\,\mathrm{W} & & U = 230\,\mathrm{V}
+            \end{align*}
+
+            \underline{Gevraagd:} $I$
+
+            \underline{Oplossing:}
+            \begin{align*}
+                I = \frac{P}{U} = \frac{2{,}2 \cdot 10^{3}\,\mathrm{W}}{230\,\mathrm{V}} = \boxed{9{,}6\,\mathrm{A}}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken de weerstand van het verwarmingselement.
+
+        \[ R = \answer[tolerance=0.6,onlineshowanswerbutton]{24} \, \mathrm{\Omega} \]
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & P = 2{,}2 \cdot 10^{3}\,\mathrm{W} & & U = 230\,\mathrm{V}
+            \end{align*}
+
+            \underline{Gevraagd:} $R$
+
+            \underline{Oplossing:}\\
+            Uit $P = \frac{U^{2}}{R}$ volgt:
+            \begin{align*}
+                R = \frac{U^{2}}{P} = \frac{(230\,\mathrm{V})^{2}}{2{,}2 \cdot 10^{3}\,\mathrm{W}} = \boxed{2{,}4 \cdot 10^{1}\,\mathrm{\Omega}}
+            \end{align*}
+        \end{solution}
+    \end{question}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% GEMENGD 14 (H3): negatieve lading spontaan in homogeen veld
+\begin{question}
+    Je laat een negatief geladen deeltje los vanuit rust tussen twee evenwijdige geladen platen. Enkel de elektrische kracht werkt op het deeltje. Welke uitspraken zijn juist?
+
+    \begin{selectAll}
+        \choice{Het deeltje beweegt in de zin van de veldlijnen.}
+        \choice[correct]{Het deeltje beweegt naar de positieve plaat.}
+        \choice[correct]{De potentiële elektrische energie van het deeltje daalt.}
+        \choice[correct]{Het deeltje komt in punten met een steeds hogere potentiaal.}
+        \choice{De kracht op het deeltje wordt groter naarmate het dichter bij een plaat komt.}
+    \end{selectAll}
+
+    \begin{hint}
+        Maak het onderscheid tussen de potentiaal van een punt en de potentiële energie van een lading in dat punt. Wat verandert er door het minteken van de lading?
+    \end{hint}
+
+    \begin{solution}\nl
+        Op een negatieve lading werkt een kracht tegengesteld aan het veld, dus naar de positieve plaat. Bij elke spontane beweging daalt de potentiële energie: het veld verricht positieve arbeid en $\Delta E_{\text{pot}} = -W$. Het deeltje beweegt tegen de veldlijnen in, dus naar punten met een hogere potentiaal. Dat is geen tegenspraak: met $E_{\text{pot}} = Q \cdot V$ en $Q < 0$ geeft een hogere potentiaal een lagere potentiële energie. Het veld is homogeen, dus de kracht is overal tussen de platen even groot.
+    \end{solution}
+\end{question}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% GEMENGD 15 (H1): coulombkracht, ladingen en afstand veranderen
+\begin{exercise}
+    Twee puntladingen oefenen een kracht van $3{,}6 \, \mathrm{mN}$ op elkaar uit. Je maakt beide ladingen twee keer zo groot en je maakt de afstand tussen de ladingen drie keer zo groot. Bereken de grootte van de nieuwe kracht.
+
+    \[ F' = \answer[tolerance=0.04,onlineshowanswerbutton]{1.6} \cdot 10^{-3} \, \mathrm{N} \]
+
+    \begin{hint}
+        Schrijf de wet van Coulomb voor de nieuwe situatie met $2|Q_1|$, $2|Q_2|$ en $3r$. Welke factor komt er voor de oorspronkelijke formule te staan?
+    \end{hint}
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & F = 3{,}6 \, \mathrm{mN} = 3{,}6 \cdot 10^{-3} \, \mathrm{N} & & |Q_1'| = 2|Q_1| & & |Q_2'| = 2|Q_2| & & r' = 3r
+        \end{align*}
+
+        \underline{Gevraagd:} $F'$
+
+        \underline{Oplossing:}\\
+        We vullen de nieuwe ladingen en de nieuwe afstand in de wet van Coulomb in:
+        \begin{align*}
+            F' &= k \cdot \frac{2|Q_1| \cdot 2|Q_2|}{(3r)^2} = \frac{4}{9} \cdot k \cdot \frac{|Q_1| \cdot |Q_2|}{r^2} = \frac{4}{9} \cdot F \\
+            &= \frac{4}{9} \cdot 3{,}6 \cdot 10^{-3} \, \mathrm{N} = \boxed{1{,}6 \cdot 10^{-3} \, \mathrm{N}}
+        \end{align*}
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% GEMENGD 16 (H4): vermogen in serie
+\begin{question}
+    Twee weerstanden $R$ en $3R$ staan in serie op een bron. Welke weerstand wordt het warmst, dus zet het grootste vermogen om?
+
+    \begin{multipleChoice}
+        \choice{$R$, want daar loopt de grootste stroom.}
+        \choice[correct]{$3R$, want bij dezelfde stroom is het vermogen evenredig met de weerstand.}
+        \choice{Beide even warm, want de stroom is overal gelijk.}
+    \end{multipleChoice}
+
+    \begin{hint}
+        Wat is in een serieschakeling gelijk voor beide weerstanden: de stroom of de spanning?
+    \end{hint}
+
+    \begin{solution}\nl
+        In een serieschakeling loopt door beide weerstanden dezelfde stroom $I$. Uit $P = R \cdot I^{2}$ volgt dat het vermogen evenredig is met de weerstand: $3R$ zet $3$ keer zoveel vermogen om als $R$ en wordt het warmst.
+    \end{solution}
+\end{question}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% GEMENGD 17 (H2): waar ligt de bronlading?
+\begin{question}
+    In een punt $P$ wijst het elektrisch veld van één puntlading naar het noorden. Waar kan de puntlading liggen?
+
+    \begin{selectAll}
+        \choice[correct]{Ten zuiden van $P$, als de lading positief is.}
+        \choice{Ten zuiden van $P$, als de lading negatief is.}
+        \choice{Ten noorden van $P$, als de lading positief is.}
+        \choice[correct]{Ten noorden van $P$, als de lading negatief is.}
+    \end{selectAll}
+
+    \begin{solution}\nl
+        Het veld van een positieve lading wijst radiaal weg van de lading. Wijst het veld in $P$ naar het noorden, dan ligt een positieve lading ten zuiden van $P$. Het veld van een negatieve lading wijst naar de lading toe. Een negatieve lading ligt dan ten noorden van $P$.
+    \end{solution}
+\end{question}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% GEMENGD 18 (H3): arbeid uit potentialen, negatieve lading
+\begin{exercise}
+    Een lading $Q = -3{,}0 \, \mathrm{\mu C}$ beweegt van punt $1$, met een potentiaal van $120 \, \mathrm{J/C}$, naar punt $2$, met een potentiaal van $40 \, \mathrm{J/C}$.
+
+    \begin{question}
+        Bereken de arbeid die het elektrisch veld op de lading verricht.
+
+        \[ W = \answer[tolerance=0.06,onlineshowanswerbutton]{-2.4} \cdot 10^{-4} \, \mathrm{J} \]
+
+        \begin{hint}
+            Bepaal eerst de spanning tussen de twee punten. Let op de volgorde van de punten.
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & Q = -3{,}0 \cdot 10^{-6} \, \mathrm{C} & & V(1) = 120 \, \mathrm{J/C} & & V(2) = 40 \, \mathrm{J/C}
+            \end{align*}
+
+            \underline{Gevraagd:} $W_{1 \to 2}$
+
+            \underline{Oplossing:}\\
+            De spanning is het verschil in potentiaal tussen begin- en eindpunt:
+            \begin{align*}
+                U_{12} = V(1) - V(2) = 120 \, \mathrm{J/C} - 40 \, \mathrm{J/C} = 80 \, \mathrm{V}
+            \end{align*}
+            De arbeid van het veld is de lading maal de spanning, met het teken van de lading:
+            \begin{align*}
+                W_{1 \to 2} &= Q \cdot U_{12} \\
+                &= -3{,}0 \cdot 10^{-6} \, \mathrm{C} \cdot 80 \, \mathrm{V} = \boxed{-2{,}4 \cdot 10^{-4} \, \mathrm{J}}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Gebeurt deze beweging spontaan, dus enkel onder invloed van de elektrische kracht?
+
+        \wordChoice{\choice{Ja}\choice[correct]{Nee}}
+
+        \begin{solution}\nl
+            Nee. De arbeid van het veld is negatief: de elektrische kracht werkt de beweging tegen. Er is een externe kracht nodig om de lading van $1$ naar $2$ te brengen. De potentiële energie van de lading stijgt met $\Delta E_{\text{pot}} = -W = +2{,}4 \cdot 10^{-4} \, \mathrm{J}$.
+        \end{solution}
+    \end{question}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% GEMENGD 19 (H1): aantrekking van een neutrale papiersnipper
+\begin{question}
+    Een ballon die je over een trui hebt gewreven, trekt kleine neutrale papiersnippers aan. Welke uitspraken zijn juist?
+
+    \begin{selectAll}
+        \choice{De papiersnipper krijgt een netto lading zodra de ballon in de buurt komt.}
+        \choice[correct]{In de moleculen van het papier verschuiven de ladingscentra een beetje: het papier wordt gepolariseerd.}
+        \choice[correct]{De aantrekking op de ladingen die het dichtst bij de ballon liggen, is groter dan de afstoting op de ladingen die verder liggen.}
+        \choice{Een neutraal stukje aluminiumfolie zou niet aangetrokken worden.}
+    \end{selectAll}
+
+    \begin{hint}
+        Papier is een isolator, aluminium is een geleider. Wat gebeurt er met de ladingen in elk van die materialen in de buurt van een geladen voorwerp?
+    \end{hint}
+
+    \begin{solution}\nl
+        Het papier blijft neutraal, maar wordt gepolariseerd: de tegengestelde ladingen komen net iets dichter bij de ballon te liggen. Omdat de coulombkracht afneemt met het kwadraat van de afstand, is de aantrekking groter dan de afstoting en is er netto een aantrekking. Ook aluminiumfolie wordt aangetrokken. Bij een geleider verplaatsen de vrije elektronen zich (influentie), wat hetzelfde netto effect geeft.
+    \end{solution}
+\end{question}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% GEMENGD 20 (H2): totaal veld in het midden tussen twee tegengestelde ladingen
+\begin{exercise}
+    Twee puntladingen $Q_1 = +4{,}0 \, \mathrm{\mu C}$ en $Q_2 = -2{,}0 \, \mathrm{\mu C}$ liggen op $30 \, \mathrm{cm}$ van elkaar. Punt $P$ ligt in het midden tussen de twee ladingen.
+
+    \begin{question}
+        Bereken de grootte van het totale elektrisch veld in $P$.
+
+        \[ E_{\text{tot}} = \answer[tolerance=0.06,onlineshowanswerbutton]{2.4} \cdot 10^{6} \, \mathrm{N/C} \]
+
+        \begin{hint}
+            Bepaal voor elke lading apart de zin van haar veld in $P$, voor je de velden optelt.
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & Q_1 = +4{,}0 \cdot 10^{-6} \, \mathrm{C} & & Q_2 = -2{,}0 \cdot 10^{-6} \, \mathrm{C} & & r_1 = r_2 = 15 \, \mathrm{cm} = 0{,}15 \, \mathrm{m}
+            \end{align*}
+
+            \underline{Gevraagd:} $E_{\text{tot}}$ in $P$
+
+            \underline{Oplossing:}\\
+            \textbf{Stap 1: grootte van de afzonderlijke velden}
+            \begin{align*}
+                E_1 &= k \frac{|Q_1|}{r_1^2} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 4{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}15 \, \mathrm{m})^2} = 1{,}60 \cdot 10^{6} \, \mathrm{N/C} \\
+                E_2 &= k \frac{|Q_2|}{r_2^2} = \frac{8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot 2{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}15 \, \mathrm{m})^2} = 7{,}99 \cdot 10^{5} \, \mathrm{N/C}
+            \end{align*}
+
+            \textbf{Stap 2: zin van de velden}\\
+            $Q_1$ is positief: $\vec{E}_1$ wijst in $P$ weg van $Q_1$, dus naar $Q_2$.\\
+            $Q_2$ is negatief: $\vec{E}_2$ wijst in $P$ naar $Q_2$ toe.\\
+            Beide velden hebben dezelfde zin, dus we tellen de groottes op.
+
+            \textbf{Stap 3: optellen}
+            \begin{align*}
+                E_{\text{tot}} &= E_1 + E_2 \\
+                &= 1{,}60 \cdot 10^{6} \, \mathrm{N/C} + 7{,}99 \cdot 10^{5} \, \mathrm{N/C} = \boxed{2{,}4 \cdot 10^{6} \, \mathrm{N/C}}
+            \end{align*}
+            Het totale veld in $P$ wijst naar $Q_2$.
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Een proton in $P$ ondervindt een kracht
+        \wordChoice{\choice[correct]{naar $Q_2$ toe}\choice{naar $Q_1$ toe}\choice{gelijk aan nul}}.
+
+        \begin{solution}\nl
+            Een proton is positief. De kracht heeft dus dezelfde zin als het totale veld: naar $Q_2$ toe.
+        \end{solution}
+    \end{question}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% GEMENGD 21 (H4): (R1 + R2) parallel met R3
+\begin{exercise}
+    In de schakeling is $R_1 = 10\,\mathrm{\Omega}$, $R_2 = 20\,\mathrm{\Omega}$ en $R_3 = 30\,\mathrm{\Omega}$. De bron levert $9{,}0\,\mathrm{V}$.
+
+    \begin{center}
+        \begin{circuitikz}[european]
+            \draw (0,0) to[battery1, l=$U$] (0,3) -- (2,3);
+            \draw (2,3) to[R, l=$R_1$, *-] (5,3) to[R, l=$R_2$] (5,0) -- (2,0);
+            \draw (2,3) to[R, l_=$R_3$, -*] (2,0) -- (0,0);
+        \end{circuitikz}
+    \end{center}
+
+    \begin{question}
+        Bereken de totale weerstand van de schakeling.
+
+        \[ R_{\text{tot}} = \answer[tolerance=0.4,onlineshowanswerbutton]{15} \, \mathrm{\Omega} \]
+
+        \begin{hint}
+            Welke weerstanden staan in dezelfde tak? Voeg die eerst samen.
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gegevens:}
+            \begin{align*}
+                & R_1 = 10\,\mathrm{\Omega} & & R_2 = 20\,\mathrm{\Omega} & & R_3 = 30\,\mathrm{\Omega} & & U = 9{,}0\,\mathrm{V}
+            \end{align*}
+
+            \underline{Gevraagd:} $R_{\text{tot}}$
+
+            \underline{Oplossing:}\\
+            $R_1$ en $R_2$ staan in serie in dezelfde tak:
+            \begin{align*}
+                R_{12} = R_1 + R_2 = 10\,\mathrm{\Omega} + 20\,\mathrm{\Omega} = 30\,\mathrm{\Omega}
+            \end{align*}
+            Die tak staat parallel met $R_3$. Twee gelijke weerstanden in parallel geven de helft:
+            \begin{align*}
+                R_{\text{tot}} = \frac{30\,\mathrm{\Omega}}{2} = \boxed{1{,}5 \cdot 10^{1}\,\mathrm{\Omega}}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken de stroom door de bron.
+
+        \[ I = \answer[tolerance=0.02,onlineshowanswerbutton]{0.60} \, \mathrm{A} \]
+
+        \begin{solution}\nl
+            \underline{Gevraagd:} $I$
+
+            \underline{Oplossing:}
+            \begin{align*}
+                I = \frac{U}{R_{\text{tot}}} = \frac{9{,}0\,\mathrm{V}}{15\,\mathrm{\Omega}} = \boxed{6{,}0 \cdot 10^{-1}\,\mathrm{A}}
+            \end{align*}
+        \end{solution}
+    \end{question}
+
+    \begin{question}
+        Bereken de spanning over $R_2$.
+
+        \[ U_2 = \answer[tolerance=0.2,onlineshowanswerbutton]{6.0} \, \mathrm{V} \]
+
+        \begin{hint}
+            Over elke tak staat dezelfde spanning. Hoe groot is de stroom door de tak met $R_1$ en $R_2$?
+        \end{hint}
+
+        \begin{solution}\nl
+            \underline{Gevraagd:} $U_2$
+
+            \underline{Oplossing:}\\
+            Over de tak met $R_1$ en $R_2$ staat de volledige bronspanning van $9{,}0\,\mathrm{V}$. De stroom door die tak:
+            \begin{align*}
+                I_{12} = \frac{U}{R_{12}} = \frac{9{,}0\,\mathrm{V}}{30\,\mathrm{\Omega}} = 0{,}30\,\mathrm{A}
+            \end{align*}
+            Die stroom loopt ook door $R_2$:
+            \begin{align*}
+                U_2 = R_2 \cdot I_{12} = 20\,\mathrm{\Omega} \cdot 0{,}30\,\mathrm{A} = \boxed{6{,}0\,\mathrm{V}}
+            \end{align*}
+            Controle: $U_1 = 10\,\mathrm{\Omega} \cdot 0{,}30\,\mathrm{A} = 3{,}0\,\mathrm{V}$ en $3{,}0\,\mathrm{V} + 6{,}0\,\mathrm{V} = 9{,}0\,\mathrm{V}$.
+        \end{solution}
+    \end{question}
+\end{exercise}
+%———————————————————————————————————————
+
+%———————————————————————————————————————
+% GEMENGD 22 (H1): resulterende coulombkracht, rechte hoek (Pythagoras)
+\begin{exercise}
+    Drie puntladingen liggen in een plat vlak. Lading $Q_3 = +1{,}0 \, \mathrm{\mu C}$ ligt in de oorsprong. Lading $Q_1 = +2{,}0 \, \mathrm{\mu C}$ ligt $30 \, \mathrm{cm}$ recht boven $Q_3$. Lading $Q_2 = +4{,}0 \, \mathrm{\mu C}$ ligt $40 \, \mathrm{cm}$ rechts van $Q_3$. Bereken de grootte van de resulterende elektrische kracht op $Q_3$.
+
+    \[ F_{\text{res}} = \answer[tolerance=0.008,onlineshowanswerbutton]{0.30} \, \mathrm{N} \]
+
+    \begin{hint}
+        Maak een schets met de twee krachten op $Q_3$. Welke hoek maken die krachten met elkaar?
+    \end{hint}
+
+    \begin{solution}\nl
+        \underline{Gegevens:}
+        \begin{align*}
+            & Q_1 = +2{,}0 \cdot 10^{-6} \, \mathrm{C} & & Q_2 = +4{,}0 \cdot 10^{-6} \, \mathrm{C} & & Q_3 = +1{,}0 \cdot 10^{-6} \, \mathrm{C} \\
+            & r_{13} = 30 \, \mathrm{cm} = 0{,}30 \, \mathrm{m} & & r_{23} = 40 \, \mathrm{cm} = 0{,}40 \, \mathrm{m}
+        \end{align*}
+
+        \underline{Gevraagd:} $F_{\text{res}}$ op $Q_3$
+
+        \underline{Oplossing:}\\
+        \textbf{Stap 1: de afzonderlijke krachten}
+        \begin{align*}
+            F_{13} &= k \cdot \frac{|Q_1| \cdot |Q_3|}{r_{13}^2} = 8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot \frac{2{,}0 \cdot 10^{-6} \, \mathrm{C} \cdot 1{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}30 \, \mathrm{m})^2} = 0{,}200 \, \mathrm{N} \\
+            F_{23} &= k \cdot \frac{|Q_2| \cdot |Q_3|}{r_{23}^2} = 8{,}99 \cdot 10^{9} \, \mathrm{\frac{N \cdot m^2}{C^2}} \cdot \frac{4{,}0 \cdot 10^{-6} \, \mathrm{C} \cdot 1{,}0 \cdot 10^{-6} \, \mathrm{C}}{(0{,}40 \, \mathrm{m})^2} = 0{,}225 \, \mathrm{N}
+        \end{align*}
+
+        \textbf{Stap 2: richting van de krachten}\\
+        Alle ladingen zijn positief, dus ze stoten elkaar af. $\vec{F}_{13}$ wijst naar beneden (weg van $Q_1$) en $\vec{F}_{23}$ wijst naar links (weg van $Q_2$). De twee krachten staan loodrecht op elkaar.
+
+        \textbf{Stap 3: optellen met de stelling van Pythagoras}
+        \begin{align*}
+            F_{\text{res}} &= \sqrt{F_{13}^2 + F_{23}^2} \\
+            &= \sqrt{(0{,}200 \, \mathrm{N})^2 + (0{,}225 \, \mathrm{N})^2} = \boxed{3{,}0 \cdot 10^{-1} \, \mathrm{N}}
+        \end{align*}
+    \end{solution}
+\end{exercise}
+%———————————————————————————————————————
+
+\end{document}
